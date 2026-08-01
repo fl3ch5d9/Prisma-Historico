@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma Histórico</title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        /* PALETA: AZUL ESCURO | AZUL CLARO | BRANCO | AMARELO */
+        :root {
+            --azul-escuro: #1a3a6e;
+            --azul-claro: #007BFF;
+            --branco: #FFFFFF;
+            --amarelo: #FFC107;
+            --cinza: #f4f7f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--cinza);
+            color: #2c3e50;
+        }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* ===== HEADER NOVO IGUAL DA FOTO ===== */
+        .header-topo {
+            background: linear-gradient (180deg, #000f33 0%, #002a5c);
+            padding: 25px 20px;
+          text-align: center;
+        }
+        .header-topo h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .header-topo p {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .header-menu {
+            background: var(--azul-escuro); /* Usei sua variável */
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky; /* Menu fica grudado no topo */
+            top: 0;
+            z-index: 100;
+        }
+        .header-menu ul {
+            list-style: none; /* TIRA AS BOLINHAS */
+            display: flex; /* JOGA PRA LINHA */
+            justify-content: flex-start; /* MENU NA ESQUERDA */
+            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
+        }
+        .header-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: lowercase; /* "sobre" "artigos" */
+            transition: 0.3s;
+        }
+        .header-menu a:hover { color: var(--amarelo); }
+
+        /* APAGUEI O "header" e "nav" ANTIGO DAQUI PRA NÃO DAR CONFLITO */
+
+        /* MAIN E CARDS */
+        main { padding: 70px 0; }
+        .titulo-secao { 
+            color: var(--azul-escuro); 
+            font-size: 2.5em; 
+            text-align: center; 
+            margin-bottom: 50px;
+            border-bottom: 4px solid var(--amarelo);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .titulo-wrap { text-align: center; }
+
+        .grid-cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 35px; 
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid var(--azul-claro);
+            transition: all 0.4s ease;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 12px 35px rgba(26,58,110,0.2);
+            border-left-color: var(--amarelo);
+        }
+        .card .periodo { color: var(--azul-claro); font-weight: bold; font-size: 14px; }
+        .card h3 { color: var(--azul-escuro); font-size: 1.6em; margin: 10px 0; }
+        .card p { margin-bottom: 25px; line-height: 1.7; }
+
+        /* BOTÕES */
+        .btn {
+            background: var(--azul-claro);
+            color: var(--branco);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--azul-escuro); transform: scale(1.05); }
+
+        /* FOOTER DOAÇÕES */
+        footer { 
+            background: var(--azul-escuro); 
+            color: var(--branco); 
+            padding: 60px 0 30px; 
+        }
+        .footer-box {
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px dashed var(--amarelo);
+        }
+        .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
+        .btn-doacao {
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 20px 50px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            display: inline-block;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .btn-doacao:hover { background: var(--branco); }
+        .copy { text-align: center; opacity: 0.7; }
+
+        /*periodos*/
+        .introducao-periodo {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        .introducao-periodo p { margin-bottom: 20px; }
+        .introducao-periodo h3 { color: var(--azul-escuro); margin: 30px 0 15px; }
+        .introducao-periodo ul { list-style: none; padding-left: 0; }
+        .introducao-periodo ul li {
+            background: var(--cinza);
+            padding: 12px 20px;
+            border-left: 4px solid var(--amarelo);
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-topo { text-align: center; padding: 30px 0; }
+            .header-topo h1 { font-size: 28px; }
+            .header-menu ul {
+                flex-wrap: wrap; 
+                justify-content: center;
+                gap: 15px 25px;
+            }
+        }
+
+        /*prisma começa aqui todos as paginas */
+        .header-topo {
+  background: 
+    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
+    url('https://www.transparenttextures.com/patterns/old-paper.png');
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 5px double #ffcc00;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-topo .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-topo h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(55px, 10vw, 100px);
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  
+  /* Efeito 3D + Brilho Colonial */
+  text-shadow: 
+    2px 2px 0 #001a38,
+    4px 4px 0 #001a38,
+    0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
+}
+
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
+}
+
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
+}
+
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+/*perfeição header*/
+/* 1. FUNDO GERAL - mais sofisticado */
+body {
+    background: #eef2f7; /* Cinza azulado, não cansa a vista */
+    color: #1a2f4f; /* Texto azul marinho pra leitura */
+    font-family: 'Georgia', serif; /* Combina mais com histórico */
+    margin: 0;
+}
+
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+</style>
+</head>
+<body>
+  
+
+<header class="header-topo">
+    <div class="container">
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
+    </div>
+</header>
+
+<nav class="menu-principal">
+    <div class="menu-esquerda">
+        <a href="index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
+    </div>
+</nav>
+
+  <!--menu-->
+    
+<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+
+
+    <!-- body  -->
+    <div style="text-align: center; margin-bottom: 70px;">
+      <p style="
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #007BFF;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+      ">Os melhores resumos de História em 1 único lugar, compre o e-book completo</p>
+      
+      <h2 style="
+        font-size: clamp(36px, 5vw, 52px);
+        color: #1a3a6e;
+        margin: 0 0 20px 0;
+        font-weight: 800;
+        line-height: 1.2;
+      ">
+        Entenda o Brasil em três períodos
+      </h2>
+
+      <p style="
+        font-size: clamp(17px, 2.2vw, 20px);
+        color: #444;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+      ">
+        Do Brasil Colônia à República Velha. Uma análise crítica dos períodos que definiram 
+        nossa política, economia e sociedade.
+      </p>
+    </div>
+
+    <!-- GRID 3 COLUNAS -->
+    <div style="
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+    ">
+
+      <!-- CARD 1 -->
+      <article style="
+        background: #ffffff;
+        border: 1px solid #d9e2f1;
+        padding: 0;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.boxShadow='0 10px 30px rgba(26,58,110,0.12)'; this.style.borderColor='#007BFF'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='#d9e2f1'">
+        
+        <div style="height: 6px; background: #005ea6;"></div>
+        
+        <div style="padding: 35px 30px;">
+          <span style="
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #005ea6;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          ">1500 — 1822</span>
+          
+          <h3 style="
+            font-size: 26px;
+            color: #1a3a6e;
+            margin: 12px 0 18px 0;
+            font-weight: 700;
+          ">Período Colonial</h3>
+          
+          <p style="
+            font-size: 16px;
+            color: #555;
+            line-height: 1.75;
+            margin: 0 0 25px 0;
+          ">
+            Economia do açúcar e do ouro. Capitanias, escravidão e a formação territorial. 
+            As bases sociais e políticas que ainda reverberam no Brasil de hoje.
+          </p>
+
+          <a href="#" style="
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #007BFF;
+            text-decoration: none;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 2px;
+          " onmouseover="this.style.color='#0056b3'; this.style.borderColor='#0056b3'" onmouseout="this.style.color='#007BFF'; this.style.borderColor='#007BFF'">
+            Ler artigos →
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article style="
+        background: #ffffff;
+        border: 1px solid #d9e2f1;
+        padding: 0;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.boxShadow='0 10px 30px rgba(26,58,110,0.12)'; this.style.borderColor='#ffcc00'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='#d9e2f1'">
+        
+        <div style="height: 6px; background: #ffcc00;"></div>
+        
+        <div style="padding: 35px 30px;">
+          <span style="
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #8a6d00;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          ">1822 — 1889</span>
+          
+          <h3 style="
+            font-size: 26px;
+            color: #1a3a6e;
+            margin: 12px 0 18px 0;
+            font-weight: 700;
+          ">Período Imperial</h3>
+          
+          <p style="
+            font-size: 16px;
+            color: #555;
+            line-height: 1.75;
+            margin: 0 0 25px 0;
+          ">
+            A construção do Estado Nacional. Independência, escravidão, café e a política imperial. 
+            Do Primeiro ao Segundo Reinado e a crise da monarquia.
+          </p>
+
+          <a href="#" style="
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #007BFF;
+            text-decoration: none;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 2px;
+          " onmouseover="this.style.color='#0056b3'; this.style.borderColor='#0056b3'" onmouseout="this.style.color='#007BFF'; this.style.borderColor='#007BFF'">
+            Ler artigos →
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article style="
+        background: #ffffff;
+        border: 1px solid #d9e2f1;
+        padding: 0;
+        transition: all 0.3s ease;
+      " onmouseover="this.style.boxShadow='0 10px 30px rgba(26,58,110,0.12)'; this.style.borderColor='#007BFF'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='#d9e2f1'">
+        
+        <div style="height: 6px; background: #007BFF;"></div>
+        
+        <div style="padding: 35px 30px;">
+          <span style="
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #007BFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+          ">1889 — 1930</span>
+          
+          <h3 style="
+            font-size: 26px;
+            color: #1a3a6e;
+            margin: 12px 0 18px 0;
+            font-weight: 700;
+          ">República Velha</h3>
+          
+          <p style="
+            font-size: 16px;
+            color: #555;
+            line-height: 1.75;
+            margin: 0 0 25px 0;
+          ">
+            Coronelismo, política do café com leite e as primeiras revoltas urbanas. 
+            A República dos oligarcas e o caminho para a Revolução de 30.
+          </p>
+
+          <a href="#" style="
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #007BFF;
+            text-decoration: none;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 2px;
+          " onmouseover="this.style.color='#0056b3'; this.style.borderColor='#0056b3'" onmouseout="this.style.color='#007BFF'; this.style.borderColor='#007BFF'">
+            Ler artigos →
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- FAIXA CTA -->
+    <div style="
+      background: linear-gradient(135deg, #005ea6, #007ad6);
+      margin-top: 80px;
+      padding: 50px 40px;
+      text-align: center;
+    ">
+      <h4 style="
+        font-size: 28px;
+        color: #ffffff;
+        margin: 0 0 15px 0;
+        font-weight: 700;
+      ">Baixe nosso E-book Gratuito</h4>
+      <p style="
+        font-size: 17px;
+        color: #e8f0fe;
+        margin: 0 0 30px 0;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      ">Linha do tempo completa dos 3 períodos com mapas e documentos históricos.</p>
+      
+      <a href="#" style="
+        display: inline-block;
+        background: #ffcc00;
+        color: #1a3a6e;
+        padding: 16px 40px;
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+      " onmouseover="this.style.background='#0056b3'; this.style.color='#ffffff'" onmouseout="this.style.background='#ffcc00'; this.style.color='#1a3a6e'">
+        Acessar E-book
+      </a>
+    </div>
+
+  </div>
+</section>
+<!--introdução sobre o ebook completo-->
+<section style="background-color: #e8f0fe; padding: 0; font-family: 'Segoe UI', Arial, sans-serif;">
+  
+  <!-- HERO AZUL ESCURO -->
+  <div style="background: linear-gradient(135deg, #005ea6, #007ad6); color: #fff; padding: 100px 20px; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <span style="background: #ffcc00; color: #1a3a6e; padding: 8px 20px; border-radius: 20px; font-weight: 800; font-size: 13px;">DESCONSTRUÇÃO HISTORIOGRÁFICA</span>
+      <h1 style="font-size: 48px; font-weight: 900; margin: 25px 0 20px; line-height: 1.2;">
+        A HISTÓRIA QUE TE CONTARAM ESTÁ ERRADA
+      </h1>
+      <p style="font-size: 20px; line-height: 1.7; max-width: 800px; margin: 0 auto 35px; opacity: 0.95;">
+         O Brasil nasceu da exploração e da terra desigual, não de um plano do governo. Essa herança de dor, trabalho forçado e miséria desenha a face do país hoje.
+      </p>
+      
+      <!-- BOTÃO AMARELO OURO CTA -->
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 20px 50px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; box-shadow: 0 6px 0 #d4a500; transition: 0.2s;">
+         QUERO LER O EBOOK COMPLETO →
+      </a>
+    </div>
+  </div>
+
+  <!-- BLOCO 1: DESCONSTRUÇÃO -->
+  <div style="padding: 90px 20px; max-width: 1100px; margin: 0 auto;">
+    
+    <h2 style="font-size: 34px; color: #1a3a6e; text-align: center; margin-bottom: 20px;">A REALIDADE QUE A ESCOLA ESCONDE DE VOCÊ</h2>
+    <p style="font-size: 17px; color: #555; text-align: center; margin-bottom: 60px;">Não é sobre datas. É sobre engrenagens de poder.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+
+      <!-- CARD 1 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">📖 1. Mercantilismo: A Origem da Desigualdade</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Em 1500 Portugal não "descobriu" o Brasil. Ele instalou uma <b>engrenagem econômica</b>. Colônia só serve pra exportar matéria-prima barata e importar luxo caro. 
+          <br><br>Resultado em 2026: Continuamos exportando soja e minério e importando iPhone. A lógica não mudou. Só o nome.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">🔵 2. Plantation: A Fábrica do Brasil</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Latifúndio + Monocultura + Escravidão. Essa era a <b>plantation</b>. O açúcar pagava tudo. O corpo do escravo era a máquina.
+          <br><br>Resultado em 2026: Trocamos a senzala pela CLT precarizada. O controle de corpos continua. Só que agora se chama "meta de produtividade".
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">🟡 3. Fissiparidade: O Brasil Feito por Particulares</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Capistrano chamou de <b>fissiparidade</b>: o Brasil cresceu porque bandeirante, coronel e fazendeiro expandiram, não o Estado.
+          <br><br>Resultado em 2026: O Estado ainda não chega no interior. Quem manda é milícia, agro e igreja. A República Velha nunca acabou.
+        </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">📖 4. Cunhadismo: A Política do Brasil Real</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Não se conquistava com lei. Se conquistava casando com a filha do cacique. Era <b>antropologia aplicada</b>.
+          <br><br>Resultado em 2026: Continuamos fazendo política com aliança, compadrio e QI. O formal é fachada. O real é a relação.
+        </p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">🔵 5. Biopolítica: O Controle Desde Sempre</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Aldeamento jesuíta, senzala, Casa de Fundição. O Estado sempre controlou onde você mora, trabalha e reza. Isso é <b>biopolítica</b>.
+          <br><br>Resultado em 2026: Vigia no trabalho, câmera na rua, score no banco. A vigilância só ficou digital.
+        </p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 14px; box-shadow: 0 5px 20px rgba(0,0,0,0.06); border-top: 4px solid #007BFF;">
+        <h3 style="font-size: 22px; color: #1a3a6e; margin-bottom: 15px;">🟡 6. A República Velha Nunca Morreu</h3>
+        <p style="font-size: 16px; color: #444; line-height: 1.8;">
+          Café com Leite, coronelismo, voto de cabresto. A República era só o Império sem coroa.
+          <br><br>Resultado em 2026: Troca de favores, elite agrária no poder, povo excluído. Capistrano explicaria tudo em 5 minutos.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCO 2: GABARITO DE ANÁLISE -->
+  <div style="background: #1a3a6e; padding: 80px 20px;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <h2 style="font-size: 32px; color: #ffcc00; text-align: center; margin-bottom: 40px;">O QUE FIXAR PARA OS EXAMES</h2>
+      
+      <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 2.2; color: #fff;">
+        <li>✓ <b>Mercantilismo:</b> Lógica de colônia exportadora. Explica nossa dependência até hoje.</li>
+        <li>✓ <b>Plantation:</b> Sistema econômico-social. Base da desigualdade brasileira.</li>
+        <li>✓ <b>Fissiparidade:</b> Expansão feita por particulares. Explica o vazio do Estado.</li>
+        <li>✓ <b>Cunhadismo:</b> Estratégia de aliança e poder fora da lei formal.</li>
+        <li>✓ <b>Biopolítica:</b> Controle de corpos e território como instrumento de domínio.</li>
+        <li>✓ <b>Continuidade Histórica:</b> 1500-2026. As estruturas mudam de nome, não de função.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA FINAL AZUL ESCURO -->
+  <div style="background: #1a3a6e; padding: 90px 20px; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h2 style="font-size: 36px; color: #fff; margin-bottom: 20px;">Se a prova cobrar análise, não data, você está preparado?</h2>
+      <p style="font-size: 18px; color: #e8f0fe; margin-bottom: 35px;">
+        Esse é o método Capistrano. Zero decoreba. 100% raciocínio que banca elite cobra.
+      </p>
+      
+      <!-- BOTÃO AZUL CLARO -->
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #007BFF; color: #fff; padding: 22px 60px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; transition: 0.3s;"
+         onmouseover="this.style.backgroundColor='#0056b3'"
+         onmouseout="this.style.backgroundColor='#007BFF'">
+         ACESSAR O EBOOK CAPISTRANO DESCOMPLICADO →
+      </a>
+      <p style="font-size: 13px; color: #aaa; margin-top: 15px;">+300 páginas | +300 questões | Acesso imediato</p>
+    </div>
+  </div>
+
+</section>
+
+
+<!--Introdução-->
+<section style="background-color: #e8f0fe; padding: 90px 20px; font-family: 'Segoe UI', Arial, sans-serif;">
+  
+  <div style="max-width: 900px; margin: 0 auto;">
+    
+    <h2 style="font-size: 36px; font-weight: 900; color: #1a3a6e; margin-bottom: 25px; line-height: 1.2;">
+      BRASIL: ENSAIOS DE REFLEXÃO
+    </h2>
+    
+    <p style="font-size: 18px; line-height: 1.9; color: #444; margin-bottom: 20px;">
+      <b>Capítulos de História Colonial</b> não narra o Brasil. Ele o disseca. Publicado em 1907 por Capistrano de Abreu, este livro rompe com a história de datas e heróis para revelar a colónia como ela realmente funcionou: um laboratório de poder, violência e extração a serviço do mercantilismo português.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; color: #444; margin-bottom: 20px;">
+      Aqui o açúcar não é só doce. É <b>plantation</b>: latifúndio, monocultura e escravidão estruturando a economia do Nordeste para alimentar a Europa. Aqui o ouro não é só brilho. É <b>biopolítica</b>: casas de fundição, quintos e devassas para controlar corpos e riquezas no interior de Minas. E aqui o território não se expande por acaso. É <b>cunhadismo</b> e <b>fissiparidade</b>: alianças e migrações que criam o Brasil geográfico antes mesmo do Estado existir para governá-lo.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; color: #444; margin-bottom: 20px;">
+      É nesse caldeirão que explodem as rupturas. Da <b>Guerra dos Emboabas</b> à <b>Revolta de Filipe dos Santos</b>, da <b>Inconfidência Mineira</b> à <b>Conjuração Baiana</b>, cada revolta expõe uma camada da tensão colonial. Umas pela disputa de fronteira e impostos. Outras por ideias iluministas. E a última, a mais radical, por igualdade racial e fim da escravidão.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; color: #444; margin-bottom: 35px;">
+      Este ebook reescreve Capistrano para o século XXI. Linguagem moderna, análise cirúrgica e 0% de superficialidade. Foram <b>+400 páginas</b> com diagramas, mapas mentais e <b>+300 questões gabaritadas e comentadas</b> no padrão Fuvest, Unicamp, Cebraspe, FGV e Concurso de Diplomacia. Para quem estuda para <b>Concurso Público, Vestibular ou Enem</b> e se recusa a decorar resumo.
+    </p>
+
+    <div style="border-left: 5px solid #ffcc00; padding-left: 20px; background-color: #ffffff; padding: 25px; border-radius: 8px;">
+      <p style="font-size: 16px; line-height: 1.8; color: #555; margin: 0; font-style: italic;">
+        "Entender o Brasil Colonial é entender a origem das nossas desigualdades regionais, do nosso Estado fiscalizador e das nossas fraturas sociais. O Brasil não nasceu. Ele foi fabricado."
+      </p>
+    </div>
+
+  </div>
+  <div style="text-align: center; margin: 40px 0;">
+  <a href="./artigos/ebook.html" 
+     style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 22px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 22px; box-shadow: 0 6px 0 #d4a500; transition: all 0.2s ease; font-family: 'Segoe UI', Arial, sans-serif;"
+     onmouseover="this.style.backgroundColor='#e6b800'; this.style.transform='translateY(2px)'; this.style.boxShadow='0 4px 0 #b38c00'"
+     onmouseout="this.style.backgroundColor='#ffcc00'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 0 #d4a500'">
+     QUERO ACESSO IMEDIATO AO EBOOK →
+  </a>
+  
+  <p style="font-size: 13px; margin-top: 15px; color: #666; font-weight: 500; font-family: 'Segoe UI', Arial, sans-serif;">
+    🔒 Compra 100% segura pela HOTMART | Acesso no e-mail em até 5 minutos
+  </p>
+</div>
+
+
+
+
+</section>
+
+
+
+
+<!-- SEÇÃO HERO VENDA -->
+<section style="background: linear-gradient(135deg, #005ea6, #007ad6); padding: 80px 20px; text-align: center; color: #fff; font-family: 'Segoe UI', Arial, sans-serif;">
+  
+  <div style="max-width: 1000px; margin: 0 auto;">
+    
+    <!-- TÍTULO -->
+    <h1 style="font-size: 42px; font-weight: 900; margin-bottom: 15px; color: #fff; line-height: 1.2;">
+      🇧🇷 BRASIL: ENSAIOS DE REFLEXÃO
+    </h1>
+    
+    <p style="font-size: 20px; font-weight: 500; margin-bottom: 30px; color: #e8f0fe;">
+      O ebook investigativo, analítico e cirúrgico que aprova em Vestibulares, Enem e Concursos Públicos
+    </p>
+
+    <!-- CARDS DE BENEFÍCIOS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0;">
+      
+      <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; color: #444;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 10px;">📚 +400 Páginas</h3>
+        <p style="color: #555; font-size: 14px; margin: 0;">Conteúdo dissertativo-argumentativo nível Fuvest, Unicamp, Cebraspe, FGV e Diplomacia</p>
+      </div>
+
+      <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; color: #444;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 10px;">📊 +Diagramas</h3>
+        <p style="color: #555; font-size: 14px; margin: 0;">Mapas mentais de Mercantilismo, Plantation, Biopolítica e Revoltas</p>
+      </div>
+
+      <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; color: #444;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 10px;">✅ +300 Questões</h3>
+        <p style="color: #555; font-size: 14px; margin: 0;">Gabaritadas e comentadas questão por questão. Zero superficialidade.</p>
+      </div>
+
+    </div>
+
+    <!-- BLOCO DE PREÇO -->
+    <div style="background-color: #1a3a6e; padding: 30px; border-radius: 16px; margin: 30px auto; max-width: 600px; border: 3px solid #ffcc00;">
+      
+      <p style="font-size: 16px; margin: 0 0 10px 0; text-decoration: line-through; opacity: 0.8; color: #ffffff;">
+        De: R$ 189,90
+      </p>
+      
+      <p style="font-size: 48px; font-weight: 900; margin: 0; color: #FFC107;">
+        R$ 69,90
+      </p>
+      
+      <p style="font-size: 14px; margin: 10px 0 20px 0; color: #ffffff;">
+        🚀 Oferta por tempo limitado
+      </p>
+      <!-- BOTÃO CTA -->
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #007BFF; color: #fff; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-weight: 900; font-size: 20px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+         onmouseover="this.style.backgroundColor='#0056b3'"
+         onmouseout="this.style.backgroundColor='#007BFF'">
+         QUERO GARANTIR MEU EBOOK AGORA →
+      </a>
+
+      <p style="font-size: 12px; margin-top: 15px; opacity: 0.9; color: #ffffff;">
+        🔒 100% Garantido pela HOTMART | Acesso Imediato
+      </p>
+    </div>
+
+    <!-- PARA QUEM É -->
+    <p style="font-size: 16px; margin-top: 25px;">
+      <b>Para quem é:</b> Quem presta <b>Concursos Públicos, Vestibulares e Enem</b> e quer sair do resumo raso e dominar a análise histórica de elite.
+    </p>
+
+  </div>
+</section>
+
+<!-- CSS GLOBAL DO SITE -->
+
+
+<!--botão de comprar ebook-->
+<!-- COLE ISSO NO TOPO DO INDEX.HTML, DEPOIS DO <body> -->
+<div style="background: #1a3a6e; padding: 15px 20px; position: sticky; top: 0; z-index: 999;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+    <a href="#brasil-colonia" style="background: #007BFF; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      📖 Brasil Colônia
+    </a>
+    <a href="#brasil-imperio" style="background: #007BFF; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      🔵 Brasil Império
+    </a>
+    <a href="#republica-velha" style="background: linear-gradient(135deg, #005ea6, #007ad6); color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      🟡 República Velha
+    </a>
+  </div>
+</div>
+<!-- COLE A SECTION DE REVOLTAS AQUI NO MEIO DO INDEX.HTML -->
+<section id="cronologia-revoltas"> 
+<section id="cronologia-revoltas" style="background-color: #e8f0fe; padding: 80px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <h2 style="color: #1a3a6e; font-size: 2.4rem; text-align: center; margin-bottom: 15px;">
+      📜 Cronologia das Revoltas do Brasil
+    </h2>
+    <p style="color: #555; text-align: center; font-size: 1.1rem; margin-bottom: 50px;">Ordem por ANO. De 1556 a 1930. Padrão Fuvest, Cebraspe e Diplomacia.</p>
+
+    <!-- BLOCO 1: COLONIA -->
+    <h3 style="color: #005ea6; font-size: 1.8rem; margin-bottom: 30px; border-left: 5px solid #007ad6; padding-left: 15px;">
+      📖 BRASIL COLÔNIA: 1500 - 1822
+    </h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Confederação dos Tamoios <span style="color:#007BFF; font-weight:normal;">1556-1567</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Aliança indígena no RJ contra portugueses. Resistência à colonização e escravidão.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Amador Bueno <span style="color:#007BFF; font-weight:normal;">1641</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Aclamação popular em SP durante União Ibérica. Movimento nativista separatista.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta de Beckman <span style="color:#007BFF; font-weight:normal;">1684</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">No MA contra a Companhia de Comércio e monopólio. Defesa dos colonos e jesuítas.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Guerra dos Emboabas <span style="color:#007BFF; font-weight:normal;">1708-1709</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Disputa entre paulistas e forasteiros pelo ouro de Minas Gerais.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Guerra dos Mascates <span style="color:#007BFF; font-weight:normal;">1710-1711</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Senhores de engenho de Olinda vs comerciantes do Recife. Luta por poder político.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta de Filipe dos Santos <span style="color:#007BFF; font-weight:normal;">1720</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Protesto em Vila Rica contra Casa de Fundição e o quinto. 1º mártir fiscal.</p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h4 style="color: #ffffff; margin-bottom: 10px; font-size: 1.2rem;">Inconfidência Mineira <span style="color:#ffcc00; font-weight:normal;">1789</span></h4>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">Elite mineira contra a derrama. Influência iluminista. Queria república.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Conjuração Baiana <span style="color:#007BFF; font-weight:normal;">1798</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta popular em Salvador. Pedia fim da escravidão, república e igualdade racial.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolução Pernambucana <span style="color:#007BFF; font-weight:normal;">1817</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">1º movimento separatista e republicano de larga escala. Governo provisório em PE.</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 2: IMPERIO -->
+    <h3 style="color: #005ea6; font-size: 1.8rem; margin-bottom: 30px; border-left: 5px solid #007ad6; padding-left: 15px;">
+      🔵 BRASIL IMPÉRIO: 1822 - 1889
+    </h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Confederação do Equador <span style="color:#007BFF; font-weight:normal;">1824</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">NE contra centralismo de D. Pedro I. Pediam república e autonomia provincial.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta das Garrafadas <span style="color:#007BFF; font-weight:normal;">1831</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Conflito brasileiros vs portugueses no RJ. Culminou na Abdicação.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta do Sal <span style="color:#007BFF; font-weight:normal;">1831</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Protesto popular no CE contra aumento do preço do sal. Crise social.</p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h4 style="color: #ffffff; margin-bottom: 10px; font-size: 1.2rem;">Cabanagem <span style="color:#ffcc00; font-weight:normal;">1835-1840</span></h4>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">Revolta popular no PA. Caboclos, negros e indígenas tomaram Belém.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Guerra dos Farrapos <span style="color:#007BFF; font-weight:normal;">1835-1845</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta no RS contra impostos do charque. Proclamou República Rio-Grandense.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta dos Males <span style="color:#007BFF; font-weight:normal;">1835</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Maior revolta de escravos do Brasil, em Salvador. Muçulmanos queriam liberdade.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Sabinada <span style="color:#007BFF; font-weight:normal;">1837-1838</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta na BA. Classe média queria autonomia e república durante menoridade.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Balaiada <span style="color:#007BFF; font-weight:normal;">1838-1841</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta no MA. Liderada por "balaios". Questões sociais e políticas.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Quebra-Quilos <span style="color:#007BFF; font-weight:normal;">1874-1875</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta popular no NE contra nova lei de pesos e medidas e recenseamento.</p>
+      </div>
+    </div>
+
+    <!-- BLOCO 3: REPUBLICA VELHA -->
+    <h3 style="color: #005ea6; font-size: 1.8rem; margin-bottom: 30px; border-left: 5px solid #007ad6; padding-left: 15px;">
+      🟡 REPÚBLICA VELHA: 1889 - 1930
+    </h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta do Vintém <span style="color:#007BFF; font-weight:normal;">1880</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Protesto no RJ contra aumento da taxa de bondes. Vitória popular.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolução Federalista <span style="color:#007BFF; font-weight:normal;">1893-1895</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Guerra civil no RS entre republicanos federalistas e legalistas.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta da Armada <span style="color:#007BFF; font-weight:normal;">1893-1894</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Marinha contra Floriano Peixoto. Tentativa de derrubar o governo federal.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Guerra de Canudos <span style="color:#007BFF; font-weight:normal;">1896-1897</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Comunidade de sertanejos na BA liderada por Antônio Conselheiro. Exterminada.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta da Vacina <span style="color:#007BFF; font-weight:normal;">1904</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Protesto no RJ contra vacinação obrigatória. Resistência ao Estado.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolta da Chibata <span style="color:#007BFF; font-weight:normal;">1910</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Marinheiros liderados por João Cândido contra castigos corporais.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Guerra do Contestado <span style="color:#007BFF; font-weight:normal;">1912-1916</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Conflito SC/PR. Sertanejos vs empresas estrangeiras e latifúndio.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Juazeiro <span style="color:#007BFF; font-weight:normal;">1914</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Conflito político-militar no CE. Disputa entre oligarquias locais.</p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h4 style="color: #ffffff; margin-bottom: 10px; font-size: 1.2rem;">Revolta dos 18 do Forte <span style="color:#ffcc00; font-weight:normal;">1922</span></h4>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">Início do Tenentismo. Oficiais protestaram em Copacabana contra o governo.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Revolução de 1924 <span style="color:#007BFF; font-weight:normal;">1924</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Revolta tenentista em SP. Bombardeio da cidade. Originou Coluna Prestes.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Coluna Prestes <span style="color:#007BFF; font-weight:normal;">1925-1927</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Marcha de 25 mil km. Pediam voto secreto e moralização.</p>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h4 style="color: #1a3a6e; margin-bottom: 10px; font-size: 1.2rem;">Cangaço <span style="color:#007BFF; font-weight:normal;">1870-1940</span></h4>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Banditismo social no NE. Lampião. Resposta à violência dos coronéis.</p>
+      </div>
+    </div>
+
+    <!-- GABARITO -->
+    <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 35px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+      <h3 style="color: #ffffff; margin-bottom: 20px; font-size: 1.6rem; text-align: center;">🟡 Linha do Tempo para Decorar</h3>
+      <p style="color: #ffffff; line-height: 1.8; font-size: 0.95rem; text-align: center;">
+        <strong>Colônia:</strong> Tamoios 1556 → Beckman 1684 → Emboabas 1708 → Inconfidência 1789 → Pernambuco 1817<br>
+        <strong>Império:</strong> Equador 1824 → Garrafadas 1831 → Cabanagem 1835 → Farrapos 1835 → Quebra-Quilos 1874<br>
+        <strong>República:</strong> Vintém 1880 → Canudos 1897 → Vacina 1904 → Chibata 1910 → Contestado 1912 → Tenentismo 1922
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</section>
+
+<!-- SECTION BRASIL COLONIA -->
+<section id="brasil-colonia" style="background-color: #e8f0fe; padding: 60px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+
+    <h2 style="color: #1a3a6e; font-size: 2rem; text-align: center; margin-bottom: 40px;">
+      BRASIL COLÔNIA: 1500 - 1822
+      <span style="display: block; width: 80px; height: 4px; background: #ffcc00; margin: 10px auto 0;"></span>
+    </h2>
+
+    <!-- GRID DE CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <!-- CARD 1: ECONOMIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">1. A Engrenagem Econômica: Mercantilismo e Plantation</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">O Brasil nasceu para dar lucro a Portugal. Inserido na lógica do mercantilismo, o pacto colonial obrigava a colônia a exportar matéria-prima e importar manufatura da metrópole, sufocando qualquer indústria local.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Foram 3 grandes ciclos: <strong>Pau-Brasil 1500-1530</strong>, extrativista; <strong>Açúcar 1530-1700</strong>, com plantation; e <strong>Ouro 1695-1750</strong>, que deslocou o eixo para o Sudeste.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Entenda os 3 Ciclos no E-book →</a>
+      </div>
+
+      <!-- CARD 2: BIOPOLÍTICA COM DEGRADÊ -->
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.3rem;">2. Engenharia Biopolítica: Controle de Corpos e Território</h3>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">Colonizar não era só explorar. Era controlar. Portugal usou a administração colonial para ocupar: primeiro com as <strong>Capitanias Hereditárias</strong>, depois com o <strong>Governo-Geral</strong>.</p>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">Nos <strong>aldeamentos jesuíticos</strong> o indígena era "civilizado". Na <strong>escravidão africana</strong>, o controle era total sobre o corpo do trabalhador. Era a mercadoria que produzia riqueza.</p>
+        <a href="#" style="display: inline-block; background-color: #ffffff; color: #005ea6; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Veja como o poder funcionava →</a>
+      </div>
+
+      <!-- CARD 3: ANTROPOLOGIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">3. Engenharia Antropológica: Encontro e Conflito</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">O Brasil não nasceu do choque. Nasceu da fusão. O <strong>cunhadismo</strong> foi a chave da expansão: o colonizador se casava com indígenas para ter acesso à terra e às redes de parentesco.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Desse encontro surge a <strong>mestiçagem</strong>. Mas houve também a <strong>fissiparidade</strong>: tribos que se fragmentaram ou foram dizimadas. Uma relação de poder brutalmente desigual.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Descubra a formação do povo brasileiro →</a>
+      </div>
+
+      <!-- CARD 4: REVOLTAS E CRISE -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">4. Rigor Cronológico: As Revoltas e a Crise do Sistema</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Com o fim do ouro e o aumento dos impostos, o sistema entrou em colapso. De 1708 a 1798 o Brasil pegou fogo.</p>
+        <ul style="color: #555; line-height: 1.8; font-size: 0.95rem; padding-left: 20px;">
+          <li><strong>Guerra dos Emboabas 1708-1709:</strong> Disputa entre paulistas e forasteiros pelo ouro.</li>
+          <li><strong>Revolta de Filipe dos Santos 1720:</strong> Primeiro mártir contra a tributação em Vila Rica.</li>
+          <li><strong>Inconfidência Mineira 1789:</strong> Conspiração da elite, influenciada pelo Iluminismo.</li>
+          <li><strong>Conjuração Baiana 1798:</strong> Revolta popular. Pedia fim da escravidão e igualdade racial.</li>
+        </ul>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Leia a Análise Completa no E-book 💛</a>
+      </div>
+
+    </div>
+
+    <!-- CTA FINAL -->
+    <div style="text-align: center; padding: 50px 20px; background-color: #1a3a6e; color: #fff; border-radius: 12px;">
+      <h2 style="color:#ffcc00; font-size: 2rem; margin-bottom: 15px;">Brasil: Ensaio de Reflexão</h2>
+      <p style="color: #fff; font-size: 1.1rem; margin-bottom: 25px;">Domine Brasil Colônia para Fuvest, Unicamp, Cebraspe e Concursos. Análise crítica, zero resumo superficial.</p>
+      <a href="#" style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Garantir meu E-book Agora</a>
+    </div>
+
+  </div>
+</section>
+<!--brasil imperio -->
+<!-- SECTION BRASIL IMPÉRIO -->
+<section id="brasil-imperio" style="background-color: #e8f0fe; padding: 60px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <h2 style="color: #1a3a6e; font-size: 2rem; text-align: center; margin-bottom: 40px;">
+      BRASIL IMPÉRIO: 1822 - 1889
+      <span style="display: block; width: 80px; height: 4px; background: #ffcc00; margin: 10px auto 0;"></span>
+    </h2>
+
+    <!-- GRID DE CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <!-- CARD 1: ECONOMIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">1. Engrenagem Econômica: Café e Dependência</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">A economia seguiu agroexportadora. Trocou-se o açúcar pelo <strong>Café</strong> como motor do país.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Modelo: <strong>latifúndio + monocultura + trabalho escravo</strong>. O capital agora vinha da Inglaterra para ferrovias e portos. O Brasil virou fornecedor de matéria-prima.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Entenda o Ciclo do Café →</a>
+      </div>
+
+      <!-- CARD 2: BIOPOLÍTICA COM DEGRADÊ -->
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.3rem;">2. Engenharia Biopolítica: Estado Centralizado</h3>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">A <strong>Constituição de 1824</strong> criou o <strong>Poder Moderador</strong>. O Imperador controlava tudo: dissolvia a Câmara e nomeava senadores.</p>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">O Estado usava Guarda Nacional e Exército para abafar revoltas e manter a ordem escravista.</p>
+        <a href="#" style="display: inline-block; background-color: #ffffff; color: #005ea6; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Veja o Poder do Imperador →</a>
+      </div>
+
+      <!-- CARD 3: ANTROPOLOGIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">3. Engenharia Antropológica: Nação e Raça</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Como criar um "Brasil" escravista? Com a ideologia da "harmonia racial" e a política de <strong>branqueamento</strong>.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Após 1850, a imigração europeia para o café tinha 2 objetivos: substituir o escravo e "melhorar a raça". Ao mesmo tempo, o país vivia fissiparidade nas revoltas regenciais.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Descubra a Formação Social →</a>
+      </div>
+
+      <!-- CARD 4: REVOLTAS E CRISE -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">4. Rigor Cronológico: Crises e a Queda</h3>
+        <ul style="color: #555; line-height: 1.6; font-size: 0.95rem; padding-left: 20px;">
+          <li><strong>1824:</strong> Confederação do Equador. Pedido de república no NE.</li>
+          <li><strong>1835-1845:</strong> Período Regencial. Cabanagem, Farroupilha, Balaiada.</li>
+          <li><strong>1850:</strong> Lei Eusébio de Queiroz. Fim do tráfico e crise da mão de obra.</li>
+          <li><strong>1888:</strong> Lei Áurea. Quebra da aliança com a elite agrária.</li>
+          <li><strong>1889:</strong> Proclamação da República. Golpe militar + elite do café.</li>
+        </ul>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Leia a Análise Completa →</a>
+      </div>
+
+    </div>
+
+    <!-- GABARITO DE ANÁLISE -->
+    <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 50px;">
+      <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">O que fixar para os Exames</h3>
+      <ul style="color: #ffffff; line-height: 1.8; font-size: 0.95rem; padding-left: 20px;">
+        <li><strong>Poder Moderador:</strong> Chave da Constituição de 1824. Dá poder absoluto ao Imperador.</li>
+        <li><strong>Economia Cafeeira:</strong> Novo plantation. Marca dependência do capital inglês.</li>
+        <li><strong>Lei Eusébio de Queiroz 1850:</strong> Acelera a crise do trabalho escravo.</li>
+        <li><strong>Revoltas Regenciais:</strong> Todas pedem autonomia. Mostram Brasil fragmentado.</li>
+        <li><strong>Abolição 1888:</strong> Motivo principal da queda. Elite do café migra para República.</li>
+        <li><strong>Imigração e Branqueamento:</strong> Política de Estado para substituir o negro.</li>
+      </ul>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div style="text-align: center; padding: 50px 20px; background-color: #1a3a6e; color: #fff; border-radius: 12px;">
+      <h2 style="color:#ffcc00; font-size: 2rem; margin-bottom: 15px;">Brasil: Ensaio de Reflexão</h2>
+      <p style="color: #fff; font-size: 1.1rem; margin-bottom: 25px;">Domine Brasil Império para Fuvest, Unicamp, Cebraspe e Concursos. Análise crítica, zero resumo superficial.</p>
+      <a href="#" style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Garantir meu E-book Agora</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION REPUBLICA VELHA -->
+<section id="republica-velha" style="background-color: #e8f0fe; padding: 60px 20px; font-family: Arial, sans-serif;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <h2 style="color: #1a3a6e; font-size: 2rem; text-align: center; margin-bottom: 40px;">
+      🔵 REPÚBLICA VELHA: 1889 - 1930
+      <span style="display: block; width: 80px; height: 4px; background: #ffcc00; margin: 10px auto 0;"></span>
+    </h2>
+
+    <!-- GRID DE CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 60px;">
+      
+      <!-- CARD 1: ECONOMIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">1. Engrenagem Econômica: Café com Leite</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">A economia continuou <strong>agroexportadora</strong>. A <strong>Política do Café com Leite</strong> era a aliança entre <strong>SP = café</strong> e <strong>MG = leite</strong>. Eles revezavam a presidência.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Modelo: <strong>latifúndio + monocultura + trabalho imigrante</strong>. O Estado comprava e queimava café pra segurar o preço. Dependência total do mercado externo.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Entenda a Crise de 1929 →</a>
+      </div>
+
+      <!-- CARD 2: BIOPOLÍTICA COM DEGRADÊ AZUL ESPERANÇA -->
+      <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.3rem;">2. Engenharia Biopolítica: Coronelismo e Controle</h3>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;">A <strong>Constituição de 1891</strong> era federalista. Na prática criou os <strong>Estados Oligárquicos</strong>.</p>
+        <p style="color: #ffffff; line-height: 1.6; font-size: 0.95rem;"><strong>Coronelismo:</strong> O "coronel" controlava terra, voto e polícia. <strong>Política dos Governadores:</strong> Troca de favores. O presidente não interferia nos Estados em troca de votos.</p>
+        <a href="#" style="display: inline-block; background-color: #ffffff; color: #005ea6; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Veja como o voto funcionava →</a>
+      </div>
+
+      <!-- CARD 3: ANTROPOLOGIA -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">3. Engenharia Antropológica: República sem Cidadão</h3>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">A elite queria um Brasil <strong>"Ordem e Progresso"</strong>, branco e europeu. Continua a política de <strong>branqueamento</strong> com imigração.</p>
+        <p style="color: #555; line-height: 1.6; font-size: 0.95rem;">Surgem 2 Brasis: o do café moderno e o do sertão pobre. Isso gera <strong>fissiparidade</strong>: Canudos, Revolta da Vacina, Revolta da Chibata.</p>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Descubra as Revoltas Sociais →</a>
+      </div>
+
+      <!-- CARD 4: REVOLTAS E CRISE -->
+      <div style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; margin-bottom: 15px; font-size: 1.3rem;">4. Rigor Cronológico: Crises e o Fim</h3>
+        <ul style="color: #555; line-height: 1.8; font-size: 0.95rem; padding-left: 20px;">
+          <li><strong>1889-1894:</strong> República da Espada. Militares no poder.</li>
+          <li><strong>1894-1930:</strong> República Oligárquica. Domínio de SP e MG.</li>
+          <li><strong>1922-1927:</strong> <strong>Tenentismo</strong>. Os 18 do Forte e Coluna Prestes.</li>
+          <li><strong>1929:</strong> <strong>Crise da Bolsa de NY</strong>. Quebra o preço do café.</li>
+          <li><strong>1930:</strong> <strong>Revolução de 1930</strong>. Getúlio assume. Fim da República Velha.</li>
+        </ul>
+        <a href="#" style="display: inline-block; background-color: #007BFF; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px;">Leia a Análise Completa no E-book 🚀</a>
+      </div>
+
+    </div>
+
+    <!-- GABARITO DE ANÁLISE -->
+    <div style="background: linear-gradient(135deg, #005ea6, #007ad6); border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 50px;">
+      <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.5rem;">🟡 O que fixar para os Exames</h3>
+      <ul style="color: #ffffff; line-height: 1.8; font-size: 0.95rem; padding-left: 20px;">
+        <li><strong>Política do Café com Leite:</strong> Eixo SP-MG. Base da República Velha.</li>
+        <li><strong>Coronelismo + Política dos Governadores:</strong> Sistema de fraude e controle do voto.</li>
+        <li><strong>Constituição de 1891:</strong> Federalista. Excluía analfabeto, mulher e mendigo.</li>
+        <li><strong>Questão Social:</strong> Greve = caso de polícia. Não havia direitos trabalhistas.</li>
+        <li><strong>Crise de 1929:</strong> Causa externa que quebrou a economia do café.</li>
+        <li><strong>Tenentismo:</strong> Primeira ruptura militar. Pediam voto secreto e moralização.</li>
+        <li><strong>Revolução de 1930:</strong> Golpe da elite + militares. Fim do pacto oligárquico.</li>
+      </ul>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div style="text-align: center; padding: 50px 20px; background-color: #1a3a6e; color: #fff; border-radius: 12px;">
+      <h2 style="color:#ffcc00; font-size: 2rem; margin-bottom: 15px;">Brasil: Ensaio de Reflexão</h2>
+      <p style="color: #fff; font-size: 1.1rem; margin-bottom: 25px;">Domine República Velha para Fuvest, Unicamp, Cebraspe e Concursos. Análise crítica, zero resumo superficial.</p>
+      <a href="#" style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem;">Garantir meu E-book Agora</a>
+    </div>
+
+  </div>
+</section>
+
+    <!--cards revoltas-->
+    <!-- SECTION CRONOLOGIA DAS REVOLTAS -->
+     
+
+    <!--cards revoltas-->
+    
+    <footer>
+        <div class="container">
+            <div class="footer-box">
+                <h3>Apoie Nosso Projeto</h3>
+                <p>Nos ajude a manter o BrasilHistória gratuito e com conteúdo de qualidade para todos.</p>
+                <a href="/artigos/doacao.html" class="btn-doacao">Fazer Doação 💛</a>
+                <p>PIX: prismahitorico@gmail.com</p>
+            </div>
+            
+        <!--privacidade/termos-->
+
+        <div style="margin-bottom: 10px; text-align: center;">
+    <a href="/artigos/privacidade.html" style="color: #ffcc00; text-decoration: none; margin: 0 8px;">Política de Privacidade</a> 
+    <span style="color: white;">|</span> 
+    <a href="/artigos/privacidade.html" style="color: #ffcc00; text-decoration: none; margin: 0 8px;">Termos de Uso</a>
+</div>
+
+<p style="color: white; text-align: center; margin: 0;">© 2026 PrismaHistórico. Feito com ❤️</p>
+          </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.opacity = "0";
+                setTimeout(() => {
+                    card.style.transition = "0.6s";
+                    card.style.opacity = "1";
+                }, index * 100);
+            });
+        });
+    </script>
+
+</body>
+</html>

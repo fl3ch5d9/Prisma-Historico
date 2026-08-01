@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* PALETA */
+        :root {
+            --azul-escuro: #1a3a6e;
+            --azul-claro: #007BFF;
+            --branco: #FFFFFF;
+            --amarelo: #FFC107;
+            --cinza: #f4f7f9;
+            --verde: #28a745;
+            --vermelho: #dc3545;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--cinza);
+            color: #2c3e50;
+        }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+       
+        
+        /* CONTEUDO QUIZ */
+        main { padding: 70px 0; }
+        .titulo-secao { 
+            color: var(--azul-escuro); 
+            font-size: 2.5em; 
+            text-align: center; 
+            margin-bottom: 50px;
+            border-bottom: 4px solid var(--amarelo);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .titulo-wrap { text-align: center; }
+
+        .quiz-box {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .pergunta {
+            font-size: 1.4em;
+            color: var(--azul-escuro);
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .opcoes { display: flex; flex-direction: column; gap: 15px; }
+        .opcao {
+            background: var(--cinza);
+            padding: 18px 20px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.1em;
+        }
+        .opcao:hover { border-color: var(--azul-claro); background: #e7f1ff; }
+        .opcao.correta { background: #d4edda; border-color: var(--verde); }
+        .opcao.errada { background: #f8d7da; border-color: var(--vermelho); }
+
+        .btn-quiz {
+            background: var(--azul-claro);
+            color: var(--branco);
+            padding: 15px 40px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+        .btn-quiz:hover { background: var(--azul-escuro); }
+        .resultado { text-align: center; font-size: 1.5em; margin-top: 20px; font-weight: bold; }
+
+        /* FOOTER */
+        footer { 
+            background: var(--azul-escuro); 
+            color: var(--branco); 
+            padding: 60px 0 30px; 
+            margin-top: 60px;
+        }
+        .footer-box {
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px dashed var(--amarelo);
+        }
+        .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
+        .btn-doacao {
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 20px 50px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            display: inline-block;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .btn-doacao:hover { background: var(--branco); }
+        .copy { text-align: center; opacity: 0.7; }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-topo { text-align: center; padding: 30px 0; }
+            .header-topo h1 { font-size: 28px; }
+            .header-menu ul { flex-wrap: wrap; justify-content: center; gap: 15px 25px; }
+            .quiz-box { padding: 25px 20px; }
+        }
+
+         /* ===== HEADER IGUAL EM TODAS ===== */
+
+ .header-topo {
+            background: linear-gradient (180deg, #000f33 0%, #002a5c);
+            padding: 25px 20px;
+          text-align: center;
+        }
+        .header-topo h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .header-topo p {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .header-menu {
+            background: var(--azul-escuro); /* Usei sua variável */
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky; /* Menu fica grudado no topo */
+            top: 0;
+            z-index: 100;
+        }
+        .header-menu ul {
+            list-style: none; /* TIRA AS BOLINHAS */
+            display: flex; /* JOGA PRA LINHA */
+            justify-content: flex-start; /* MENU NA ESQUERDA */
+            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
+        }
+        .header-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: lowercase; /* "sobre" "artigos" */
+            transition: 0.3s;
+        }
+        .header-menu a:hover { color: var(--amarelo); }
+
+         /*prisma começa aqui todos as paginas */
+        .header-topo {
+  background: 
+    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
+    url('https://www.transparenttextures.com/patterns/old-paper.png');
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 5px double #ffcc00;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-topo .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-topo h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(55px, 10vw, 100px);
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  
+  /* Efeito 3D + Brilho Colonial */
+  text-shadow: 
+    2px 2px 0 #001a38,
+    4px 4px 0 #001a38,
+    0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
+}
+
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
+}
+
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
+}
+
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+/*perfeição header*/
+/* 1. FUNDO GERAL - mais sofisticado */
+body {
+    background: #eef2f7; /* Cinza azulado, não cansa a vista */
+    color: #1a2f4f; /* Texto azul marinho pra leitura */
+    font-family: 'Georgia', serif; /* Combina mais com histórico */
+    margin: 0;
+}
+
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+    </style>
+</head>
+<body>
+
+<header class="header-topo">
+    <div class="container">
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
+    </div>
+</header>
+
+<nav class="menu-principal">
+    <div class="menu-esquerda">
+        <a href="/index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
+    </div>
+</nav>
+
+<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+
+
+
+<!--quiz-->
+<section style="background-color: #e8f0fe; padding: 80px 20px; font-family: 'Segoe UI', Arial, sans-serif;">
+
+  <div style="max-width: 900px; margin: 0 auto;">
+    
+    <!-- HEADER -->
+    <div style="background: linear-gradient(135deg, #005ea6, #007ad6); color: #fff; padding: 50px 30px; border-radius: 16px; text-align: center; margin-bottom: 50px;">
+      <span style="background: #ffcc00; color: #1a3a6e; padding: 8px 18px; border-radius: 20px; font-weight: 800; font-size: 12px;">TESTE NÍVEL BANCA</span>
+      <h1 style="font-size: 36px; font-weight: 900; margin: 20px 0 10px;">VOCÊ PASSARIA NO VESTIBULAR DE HOJE?</h1>
+      <p style="font-size: 17px; opacity: 0.95;">10 questões de História do Brasil. 80% erra na 3ª. Capistrano aprova quem entende a engrenagem.</p>
+    </div>
+
+    <form id="quizForm">
+
+      <!-- QUESTAO 1 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">📖 1. Segundo Capistrano, o que explica o crescimento do Brasil no período colonial?</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q1" value="errado"> A ação direta do Estado português
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q1" value="certo"> A fissiparidade: expansão feita por particulares
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q1" value="errado"> As missões jesuítas
+        </label>
+      </div>
+
+      <!-- QUESTAO 2 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🔵 2. O sistema Plantation se baseava em:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q2" value="errado"> Pequena propriedade e policultura
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q2" value="certo"> Latifúndio + Monocultura + Escravidão
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q2" value="errado"> Indústria e trabalho assalariado
+        </label>
+      </div>
+
+      <!-- QUESTAO 3 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🟡 3. O que foi o Cunhadismo?</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q3" value="errado"> Uma lei de proteção ao indígena
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q3" value="certo"> Estratégia de aliança através do casamento com filha de cacique
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q3" value="errado"> Um tipo de dança indígena
+        </label>
+      </div>
+
+      <!-- QUESTAO 4 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">📖 4. A Biopolítica no Brasil Colônia pode ser vista em:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q4" value="errado"> As festas religiosas
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q4" value="certo"> Aldeamentos, Senzalas e Casas de Fundição
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q4" value="errado"> No comércio de pau-brasil
+        </label>
+      </div>
+
+      <!-- QUESTAO 5 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🔵 5. Por que a Corte Portuguesa mudou para o Rio em 1808?</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q5" value="errado"> Para fugir do calor europeu
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q5" value="certo"> Para fugir das tropas de Napoleão e manter o controle colonial
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q5" value="errado"> Para explorar o ouro de Minas
+        </label>
+      </div>
+
+      <!-- QUESTAO 6 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🟡 6. A República Velha foi marcada por:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q6" value="errado"> Voto secreto e obrigatório
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q6" value="certo"> Política dos Governadores e Coronelismo
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q6" value="errado"> Industrialização completa do país
+        </label>
+      </div>
+
+      <!-- QUESTAO 7 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">📖 7. A feijoada se popularizou porque:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q7" value="errado"> Foi criada por chefs franceses
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q7" value="certo"> Nasceu nas senzalas com as sobras dos senhores
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q7" value="errado"> Era o prato oficial do Império
+        </label>
+      </div>
+
+      <!-- QUESTAO 8 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🔵 8. A lógica Mercantilista dizia que a colônia deveria:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q8" value="errado"> Industrializar e exportar manufaturados
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q8" value="certo"> Exportar matéria-prima e importar produto caro
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q8" value="errado"> Ser autossuficiente
+        </label>
+      </div>
+
+      <!-- QUESTAO 9 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">🟡 9. Canudos e Contestado mostram que:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q9" value="errado"> A República era amada por todos
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q9" value="certo"> O Estado esmagava quem estava fora da engrenagem econômica
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q9" value="errado"> Não existia religião no sertão
+        </label>
+      </div>
+
+      <!-- QUESTAO 10 -->
+      <div class="questao" style="background: #ffffff; padding: 30px; border-radius: 12px; margin-bottom: 35px; border-left: 5px solid #007BFF;">
+        <h3 style="color: #1a3a6e; font-size: 18px; margin-bottom: 15px;">📖 10. A crise de 1929 derrubou a República Velha porque:</h3>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q10" value="errado"> O povo foi às ruas
+        </label>
+        <label style="display: block; padding: 12px; margin-bottom: 10px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q10" value="certo"> O preço do café despencou e quebrou a base econômica da elite
+        </label>
+        <label style="display: block; padding: 12px; background: #e8f0fe; border-radius: 8px; cursor: pointer;">
+          <input type="radio" name="q10" value="errado"> Vargas era muito popular
+        </label>
+      </div>
+
+      <!-- BOTÃO -->
+      <div style="text-align: center;">
+        <button type="button" onclick="corrigirQuiz()" 
+          style="background-color: #007BFF; color: #fff; padding: 20px 60px; border: none; border-radius: 12px; font-weight: 900; font-size: 20px; cursor: pointer;">
+          CORRIGIR MEU QUIZ →
+        </button>
+      </div>
+
+    </form>
+
+    <!-- RESULTADO -->
+    <div id="resultado" style="display: none; background: #1a3a6e; color: #fff; padding: 40px; border-radius: 14px; margin-top: 40px; text-align: center;">
+      <h2 style="color: #ffcc00; font-size: 28px;">SEU RESULTADO</h2>
+      <p id="nota" style="font-size: 22px; margin: 20px 0;"></p>
+      <p style="font-size: 16px; margin-bottom: 25px;">Se errou 3 ou mais, você precisa do método Capistrano. Decoreba não passa mais.</p>
+      
+      <!-- CTA AMARELO -->
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 18px 45px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 18px;">
+         QUERO ZERAR NA PROVA →
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    function corrigirQuiz() {
+      let acertos = 0;
+      const total = 10;
+      for(let i=1; i<=total; i++) {
+        let resposta = document.querySelector(`input[name="q${i}"]:checked`);
+        if(resposta && resposta.value == "certo") acertos++;
+      }
+      document.getElementById("nota").innerHTML = `Você acertou <b>${acertos} de ${total}</b> questões.`;
+      document.getElementById("resultado").style.display = "block";
+      window.scrollTo(0,document.body.scrollHeight);
+    }
+  </script>
+
+</section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-box">
+                <h3>Apoie Nosso Projeto</h3>
+                <p>Nos ajude a manter o BrasilHistória gratuito e com conteúdo de qualidade para todos.</p>
+                <a href="artigos/doacao.html" class="btn-doacao">Fazer Doação 💛</a>
+                <p>PIX: doacao@brasilhistoria.com</p>
+            </div>
+            <p class="copy">© 2026 BrasilHistória. Feito com ❤️ e muito café.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

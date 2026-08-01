@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Sobre - Prisma Histórico</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f4f9; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* HEADER TOPO novo */
+        .header-topo {
+            background: linear-gradient (180deg, #000f33 0%, #002a5c);
+            padding: 25px 20px;
+          text-align: center;
+        }
+        .header-topo h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .header-topo p {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .header-menu {
+            background: var(--azul-escuro); /* Usei sua variável */
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky; /* Menu fica grudado no topo */
+            top: 0;
+            z-index: 100;
+        }
+        .header-menu ul {
+            list-style: none; /* TIRA AS BOLINHAS */
+            display: flex; /* JOGA PRA LINHA */
+            justify-content: flex-start; /* MENU NA ESQUERDA */
+            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
+        }
+        .header-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: lowercase; /* "sobre" "artigos" */
+            transition: 0.3s;
+        }
+        .header-menu a:hover { color: var(--amarelo); }
+
+         /*prisma começa aqui todos as paginas */
+        .header-topo {
+  background: 
+    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
+    url('https://www.transparenttextures.com/patterns/old-paper.png');
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 5px double #ffcc00;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-topo .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-topo h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(55px, 10vw, 100px);
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  
+  /* Efeito 3D + Brilho Colonial */
+  text-shadow: 
+    2px 2px 0 #001a38,
+    4px 4px 0 #001a38,
+    0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
+}
+
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
+}
+
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
+}
+
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+/*perfeição header*/
+/* 1. FUNDO GERAL - mais sofisticado */
+body {
+    background: #eef2f7; /* Cinza azulado, não cansa a vista */
+    color: #1a2f4f; /* Texto azul marinho pra leitura */
+    font-family: 'Georgia', serif; /* Combina mais com histórico */
+    margin: 0;
+}
+
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+</style>
+</head>
+<body>
+<header class="header-topo">
+    <div class="container">
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
+    </div>
+</header>
+ 
+<nav class="menu-principal">
+    <div class="menu-esquerda">
+        <a href="/index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
+    </div>
+</nav>
+
+        
+    <!--prisma-->
+    <!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <section style="background-color: #ffffff; padding: 100px 20px; font-family: 'Segoe UI', Arial, sans-serif; color: #333;">
+  
+  <div style="max-width: 900px; margin: 0 auto;">
+
+    
+    <!--sobre o prjeto-->
+    <div style="text-align: center; max-width: 900px; margin: 0 auto 60px auto; padding-top: 40px;">
+  
+  <h1 style="font-size: 42px; font-weight: 900; color: #1a3a6e; margin-bottom: 15px; letter-spacing: -0.5px; font-family: 'Segoe UI', Arial, sans-serif;">
+    SOBRE O PROJETO
+  </h1>
+  
+  <h2 style="font-size: 20px; font-weight: 600; color: #007BFF; margin-bottom: 20px; line-height: 1.4; font-family: 'Segoe UI', Arial, sans-serif;">
+    Da Crítica Histórica de 1907 ao Manual de Aprovação de 2026
+  </h2>
+
+  <div style="width: 120px; height: 4px; background-color: #ffcc00; margin: 0 auto; border-radius: 2px;"></div>
+
+</div>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      Este projeto nasceu de uma constatação simples e incômoda: Capistrano de Abreu publicou <b>Capítulos de História Colonial</b> em 1907 e, mais de um século depois, bancas como Fuvest, Unicamp, Cebraspe e FGV continuam cobrando exatamente a lógica que ele desmontou. 
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      O problema é que ninguém lê Capistrano no original para passar em concurso. A linguagem é arcaica, a estrutura é ensaística, e o concurseiro não tem 6 meses para decifrar. Foi aí que começou a investigação: pegar a espinha dorsal crítica de 1907 e traduzi-la para a gramática de prova de 2026.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      <b>O Brasil Colônia não foi um erro de português. Foi um projeto.</b> Um projeto mercantilista de extração. Aqui não se desenvolvia colônia. Se explorava território para alimentar a metrópole. A engrenagem central foi a <b>plantation</b>: latifúndio, monocultura e escravidão africana formando um sistema de eficiência máxima no Nordeste açucareiro. Paralelo a isso, o Estado criou mecanismos de <b>biopolítica</b> para controlar corpos e riquezas. Aldeamentos para gerir indígenas, casas de fundição e o quinto para fiscalizar o ouro, e uma justiça que punia mais para exemplificar do que para reeducar.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      Essa máquina de extração gerou fricção. E toda fricção gera ruptura. Por isso este material não trata as revoltas como lista para decorar. Trata como sintoma. E segue a cronologia exata que as bancas amam cobrar:
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      A <b>Guerra dos Emboabas</b>, 1708-1709, foi o primeiro estalo. Não foi briga de paulista com forasteiro. Foi disputa pelo controle da nova economia do ouro em Minas. Quem manda na riqueza manda na colônia. Depois veio a <b>Revolta de Filipe dos Santos</b>, 1720. A resposta direta à criação das casas de fundição e ao aumento da carga tributária. É a revolta fiscal por excelência. O Estado aperta, a população reage.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      Avançando para o fim do século XVIII, a lógica muda. A <b>Inconfidência Mineira</b>, 1789, já não grita apenas contra impostos. Grita com vocabulário iluminista. Liberdade, república, fim dos privilégios. É a elite letrada de Vila Rica contaminada pelas ideias que vinham dos EUA e da França. Por fim, a <b>Conjuração Baiana</b>, 1798. A mais radical de todas. Aqui a pauta deixa de ser só política e econômica. Entra igualdade racial, fim da escravidão e república popular. Por isso foi duramente reprimida. A elite colonial podia aceitar discutir imposto. Não podia aceitar discutir gente.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      Capistrano viu isso antes de todo mundo. Ele trocou a história dos "grandes homens" pela história das estruturas. Do açúcar, do ouro, da terra, da gente. Esta é a mesma lente que usamos aqui. Mas com uma diferença: transformamos essa análise em ferramenta de aprovação.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      O resultado é este ebook. São <b>+400 páginas</b> onde a Colônia, o Império e a República Velha são destrinchados com linguagem atual, diagramas, mapas mentais e <b>+300 questões comentadas</b> no padrão das maiores bancas. Zero floreio. Zero resumo raso. É o que cai, como cai, e por que cai.
+    </p>
+
+    <div style="border-left: 5px solid #ffcc00; background-color: #e8f0fe; padding: 25px; border-radius: 8px; margin: 40px 0;">
+      <p style="font-size: 18px; line-height: 1.8; color: #1a3a6e; margin: 0; font-style: italic; font-weight: 600;">
+        "Quem domina a lógica da formação do Brasil, domina 40% da prova de História. 
+        Aqui você não decora datas. Você entende o sistema."
+      </p>
+    </div>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
+      Meu compromisso é com o profissionalismo e com o seu resultado. Este blog não é um repositório de conteúdo gratuito. É um laboratório de historiografia aplicada a prova. Cada texto, cada questão, cada mapa foi pensado para que você entre na sala sabendo exatamente o que a banca quer ouvir.
+    </p>
+
+    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 40px;">
+      Se você está se preparando para Vestibular, Enem ou Concurso Público e está cansado de material genérico, você está no lugar certo. Aqui a história é tratada com o rigor que ela merece e com a objetividade que a sua aprovação exige.
+    </p>
+
+    <div style="text-align: center;">
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 20px 50px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; box-shadow: 0 6px 0 #d4a500;">
+         CONHECER O EBOOK COMPLETO →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER PERFEITO COM ESPAÇO -->
+<footer style="background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #fff; padding: 80px 20px 40px; font-family: 'Georgia', serif; margin-top: 60px;">
+    <div class="container" style="max-width: 1100px; margin: 0 auto;">
+
+        <!-- Caixa de Apoio com borda pontilhada -->
+        <div style="background: rgba(0,0,0,0.15); padding: 50px 40px; border-radius: 15px; text-align: center; margin-bottom: 40px; border: 2px dashed #ffcc00;">
+            <h3 style="font-size: 2.2em; margin-bottom: 15px; color: #ffcc00; font-weight: 900; font-family: 'Georgia', serif;">Apoie Nosso Projeto</h3>
+            <p style="font-size: 17px; line-height: 1.7; margin-bottom: 30px; color: #eef2f7;">
+                Nos ajude a manter o PrismaHistórico gratuito e com conteúdo de qualidade para todos.
+            </p>
+            <a href="/artigos/doacao.html" style="background: #ffcc00; color: #0a1f44; padding: 18px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.2em; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 0 #d4a500;">Fazer Doação ♡</a>
+            <p style="font-size: 16px; color: #fff; margin-top: 10px;"><b>PIX:</b> prismahitorico@gmail.com</p>
+        </div>
+
+        <!-- Links + Copyright -->
+        <div style="text-align: center; padding-top: 20px;">
+            <div style="margin-bottom: 15px; font-size: 15px;">
+                <a href="/artigos/privacidade.html" style="color: #ffcc00; text-decoration: none; margin: 0 10px;">Política de Privacidade</a> 
+                <span style="color: rgba(255,255,255,0.5);">|</span> 
+                <a href="/artigos/termos.html" style="color: #ffcc00; text-decoration: none; margin: 0 10px;">Termos de Uso</a>
+            </div>
+            <p style="color: #eef2f7; text-align: center; margin: 0; font-size: 15px;">
+                © 2026 PrismaHistórico. Feito com ❤️
+            </p>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>

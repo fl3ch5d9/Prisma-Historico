@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artigos</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- volta 1 pasta -->
+    
+    <style>
+        /* PALETA */
+        :root {
+            --azul-escuro: #1a3a6e;
+            --azul-claro: #007BFF;
+            --branco: #FFFFFF;
+            --amarelo: #FFC107;
+            --cinza: #f4f7f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--cinza);
+            color: #2c3e50;
+        }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* ===== HEADER IGUAL NAS OUTRAS novo===== */
+        .header-topo {
+            background: linear-gradient (180deg, #000f33 0%, #002a5c);
+            padding: 25px 20px;
+          text-align: center;
+        }
+        .header-topo h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .header-topo p {
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .header-menu {
+            background: var(--azul-escuro); /* Usei sua variável */
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky; /* Menu fica grudado no topo */
+            top: 0;
+            z-index: 100;
+        }
+        .header-menu ul {
+            list-style: none; /* TIRA AS BOLINHAS */
+            display: flex; /* JOGA PRA LINHA */
+            justify-content: flex-start; /* MENU NA ESQUERDA */
+            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
+        }
+        .header-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: lowercase; /* "sobre" "artigos" */
+            transition: 0.3s;
+        }
+        .header-menu a:hover { color: var(--amarelo); }
+
+       
+        /* CONTEUDO ARTIGOS */
+        main { padding: 70px 0; }
+        .titulo-secao { 
+            color: var(--azul-escuro); 
+            font-size: 2.5em; 
+            text-align: center; 
+            margin-bottom: 50px;
+            border-bottom: 4px solid var(--amarelo);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .titulo-wrap { text-align: center; }
+
+        .grid-artigos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
+        .card-artigo {
+            background: var(--branco);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 6px solid var(--azul-claro);
+            transition: 0.4s;
+        }
+        .card-artigo:hover { 
+            transform: translateY(-8px); 
+            border-left-color: var(--amarelo);
+        }
+        .card-artigo h3 { color: var(--azul-escuro); font-size: 1.5em; margin-bottom: 15px; }
+        .card-artigo p { line-height: 1.7; margin-bottom: 20px; }
+
+        .btn {
+            background: var(--azul-claro);
+            color: var(--branco);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn:hover { background: var(--azul-escuro); }
+
+        /* FOOTER */
+        footer { 
+            background: var(--azul-escuro); 
+            color: var(--branco); 
+            padding: 60px 0 30px; 
+            margin-top: 60px;
+        }
+        .footer-box {
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            border: 2px dashed var(--amarelo);
+        }
+        .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
+        .btn-doacao {
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 20px 50px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3em;
+            display: inline-block;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        .btn-doacao:hover { background: var(--branco); }
+        .copy { text-align: center; opacity: 0.7; }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-topo { text-align: center; padding: 30px 0; }
+            .header-topo h1 { font-size: 28px; }
+            .header-menu ul { flex-wrap: wrap; justify-content: center; gap: 15px 25px; }
+        }
+/*header novo mais prisma */
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+
+    </style>
+</head>
+
+
+<body>
+
+<!--header-->
+
+<header class="header-topo">
+    <div class="container">
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">
+            <img src="/img/portugal-bandeira.png" alt="Portugal" style="width: 22px; height: 15px; vertical-align: middle; margin-right: 5px;"> 
+            A História sob múltiplos ângulos críticos 
+            <img src="/img/brasil-indios.jpg" alt="Brasil" style="width: 22px; height: 15px; vertical-align: middle; margin-left: 5px;">
+        </p>
+    </div>
+</header>
+<!--menu-->
+    <nav class="menu-principal">
+    <div class="menu-esquerda">
+
+        <a href="/index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
+    </div>
+</nav>
+
+<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+
+
+
+
+
+
+
+<!--carta de bisagudo-->
+<!-- SEÇÃO DE CONVERSÃO EDITORIAL COM GRADIENTE BASE DO BLOG -->
+<section class="cta-container" style="background: linear-gradient(135deg, #005ea6, #007ad6); border: none; padding: 45px; margin: 50px auto 20px; box-shadow: 0 6px 20px rgba(0, 94, 166, 0.2); border-radius: 4px; max-width: 800px; box-sizing: border-box; color: #ffffff;">
+    <div class="cta-header" style="font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: 1.5px; font-size: 1.25em; color: #ffcc00; text-align: center; margin-bottom: 20px; font-weight: bold;">
+        Subsídios para a Alta Performance Historiográfica
+    </div>
+    <p class="cta-text" style="font-family: Arial, sans-serif; font-size: 1em; color: #ffffff; line-height: 1.7; text-align: justify; margin-bottom: 35px; opacity: 0.95;">
+        A aprovação nas bancas mais exigentes do país exige um repertório analítico que transcende os manuais genéricos. Aceda ao volume completo <strong>"A Economia Política do Conhecimento: Do Códice ao Digital"</strong> e domine os debates críticos sobre biopolítica, mercantilismo editorial e as dinâmicas de poder que moldaram o mundo moderno.
+    </p>
+    <div class="cta-button-wrapper" style="text-align: center;">
+        <a href="ebook.html" class="cta-button" style="display: inline-block; padding: 18px 45px; background-color: #ffcc00; color: #005ea6; font-family: Arial, sans-serif; font-size: 0.95em; font-weight: bold; letter-spacing: 1px; text-decoration: none; border-radius: 4px; text-transform: uppercase; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s ease, background-color 0.2s ease;">
+            Aceder à Obra Completa
+        </a>
+    </div>
+</section>
+
+<!--artigos-->
+<section style="background-color: #e8f0fe; padding: 90px 20px; font-family: 'Segoe UI', Arial, sans-serif;">
+  
+  <div style="max-width: 1100px; margin: 0 auto;">
+    
+    <!-- TOPO CENTRALIZADO -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h1 style="font-size: 42px; font-weight: 900; color: #1a3a6e; margin-bottom: 15px; letter-spacing: -0.5px;">
+        CAPISTRANO ATUALIZADO
+      </h1>
+      <h2 style="font-size: 20px; font-weight: 600; color: #007BFF; margin-bottom: 20px;">
+        Da Colônia à República Velha: A Lógica de Formação do Brasil
+      </h2>
+      <div style="width: 120px; height: 4px; background-color: #ffcc00; margin: 0 auto; border-radius: 2px;"></div>
+    </div>
+
+    <p style="font-size: 18px; line-height: 1.9; color: #444; margin-bottom: 50px; text-align: center;">
+      Capistrano de Abreu em 1907 rompeu com a história de datas. Ele mostrou que o Brasil foi pensado como máquina de extração. 119 anos depois, as bancas ainda cobram essa mesma lógica. Este artigo traduz a crítica de 1907 para a linguagem de prova de 2026.
+    </p>
+
+    <!-- CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px;">
+      
+      <!-- CARD 1: COLÔNIA -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #007BFF;">
+        <h3 style="font-size: 24px; color: #1a3a6e; margin-bottom: 15px; font-weight: 800;">1. BRASIL COLÔNIA</h3>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>O projeto mercantilista:</b> O Brasil não era para ser nação. Era para ser fazenda. A engrenagem era a <b>plantation</b> - latifúndio, monocultura e escravidão gerando lucro para Portugal. 
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>Biopolítica e Território:</b> Aldeamentos e missões controlavam indígenas. Casas de fundição e o quinto controlavam o ouro. O <b>cunhadismo</b> e a <b>fissiparidade</b> explicam como o território se expandiu sem planejamento do Estado.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555;">
+          <b>Rupturas:</b> Guerra dos Emboabas, Revolta de Filipe dos Santos, Inconfidência Mineira e Conjuração Baiana. Todas mostram a tensão entre extração e autonomia.
+        </p>
+      </div>
+
+      <!-- CARD 2: IMPÉRIO -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #ffcc00;">
+        <h3 style="font-size: 24px; color: #1a3a6e; margin-bottom: 15px; font-weight: 800;">2. BRASIL IMPÉRIO</h3>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>A continuidade disfarçada:</b> A Independência trocou o rei por imperador, mas manteve a estrutura. Economia agroexportadora, escravidão e poder nas mãos dos grandes proprietários.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>O Estado Centralizador:</b> Poder Moderado, Guarda Nacional e voto censitário. Era a elite agrária garantindo que nada mudasse. O café substitui o açúcar como motor econômico.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555;">
+          <b>A crise:</b> Questão Religiosa, Militar, Abolicionista e Republicana. O Império ruiu porque tentou modernizar sem tocar na base: a escravidão e o latifúndio.
+        </p>
+      </div>
+
+      <!-- CARD 3: REPÚBLICA VELHA -->
+      <div style="background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #28a745;">
+        <h3 style="font-size: 24px; color: #1a3a6e; margin-bottom: 15px; font-weight: 800;">3. REPÚBLICA VELHA</h3>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>Federalismo Oligárquico:</b> "Política dos Governadores" e "Café com Leite". SP e MG revezavam no poder. O voto era de cabresto e a fraude era institucional.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+          <b>Exclusão e Controle:</b> O Brasil urbano e industrial nascia, mas a política continuava rural. Revoltas como Canudos e Contestado mostram o conflito entre Estado e sertão.
+        </p>
+        <p style="font-size: 16px; line-height: 1.8; color: #555;">
+          <b>Fim do Ciclo:</b> A Crise de 1929 quebrou o café e a Revolução de 1930 derrubou a República Velha. Fecha-se o ciclo que começou na Colônia.
+        </p>
+      </div>
+    </div>
+
+    <!-- GABARITO DE ANÁLISE -->
+    <div style="background: #1a3a6e; color: #ffffff; padding: 40px; border-radius: 12px; margin-bottom: 50px;">
+      <h3 style="font-size: 26px; color: #ffcc00; margin-bottom: 25px; text-align: center;">O QUE FIXAR PARA OS EXAMES</h3>
+      
+      <ul style="list-style: none; padding: 0; font-size: 17px; line-height: 2;">
+        <li><b>→ Plantation:</b> Sistema econômico colonial. Latifúndio + Monocultura + Escravidão. Cai em FGV e Diplomacia.</li>
+        <li><b>→ Biopolítica:</b> Controle do Estado sobre corpos e produção. Ex: Aldeamentos, Casas de Fundição, Quinto.</li>
+        <li><b>→ Cunhadismo:</b> Aliança com indígenas via casamento. Estratégia de expansão territorial.</li>
+        <li><b>→ Fissiparidade:</b> Migrações internas que formaram o território brasileiro.</li>
+        <li><b>→ Cronologia das Revoltas:</b> Emboabas 1708 > Filipe dos Santos 1720 > Inconfidência 1789 > Conjuração 1798</li>
+        <li><b>→ Política dos Governadores:</b> Base da República Velha. Troca de favores entre Presidente e Governadores.</li>
+      </ul>
+    </div>
+
+    <!-- BOTÃO -->
+    <div style="text-align: center;">
+      <a href="ebook.html" 
+         style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 22px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 22px; box-shadow: 0 6px 0 #d4a500; transition: all 0.2s ease;"
+         onmouseover="this.style.backgroundColor='#e6b800'; this.style.transform='translateY(2px)'; this.style.boxShadow='0 4px 0 #b38c00'"
+         onmouseout="this.style.backgroundColor='#ffcc00'; this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 0 #d4a500'">
+         QUERO O EBOOK COMPLETO COM +300 QUESTÕES →
+      </a>
+      <p style="font-size: 13px; margin-top: 15px; color: #666;">
+        🔒 Acesso imediato por e-mail após a compra
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+   
+    <footer>
+        <div class="container">
+            <div class="footer-box">
+                <h3>Apoie Nosso Projeto</h3>
+                <p>Nos ajude a manter o BrasilHistória gratuito e com conteúdo de qualidade para todos.</p>
+                <a href="artigos/doacao.html" class="btn-doacao">Fazer Doação 💛</a>
+                <p>PIX: doacao@brasilhistoria.com</p>
+            </div>
+            <p class="copy">© 2026 BrasilHistória. Feito com ❤️ e muito café.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

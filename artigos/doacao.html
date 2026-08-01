@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoie - BrasilHistória</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        /* PALETA */
+        :root {
+            --azul-escuro: #1a3a6e;
+            --azul-claro: #007BFF;
+            --branco: #FFFFFF;
+            --amarelo: #FFC107;
+            --cinza: #f4f7f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--cinza);
+            color: #2c3e50;
+        }
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+        /* ===== HEADER IGUAL EM TODAS ===== */
+        .header-topo {
+            background: linear-gradient(180deg, #001a4d 0%, var(--azul-claro) 100%);
+            color: var(--branco);
+            padding: 50px 0 60px;
+            text-align: right;
+        }
+        .header-topo h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; }
+        .header-topo p { font-size: 16px; font-weight: 300; opacity: 0.9; }
+
+        .header-menu {
+            background: var(--azul-escuro);
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+            gap: 45px;
+        }
+        .header-menu a {
+            color: var(--branco);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: lowercase;
+            transition: 0.3s;
+        }
+        .header-menu a:hover { color: var(--amarelo); }
+
+        /* CONTEUDO DOACAO */
+        main { padding: 70px 0; }
+        .doacao-box {
+            background: var(--branco);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid var(--amarelo);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .doacao-box .emoji { font-size: 4em; margin-bottom: 20px; }
+        .doacao-box h2 {
+            color: var(--azul-escuro);
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .doacao-box p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .pix-box {
+            background: var(--cinza);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px dashed var(--azul-claro);
+        }
+        .pix-box h3 { color: var(--azul-escuro); margin-bottom: 15px; font-size: 1.5em; }
+        .chave-pix {
+            background: var(--branco);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--azul-escuro);
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .btn-copiar {
+            background: var(--azul-claro);
+            color: var(--branco);
+            padding: 15px 30px;
+            border-radius: 10px;
+            border: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-copiar:hover { background: var(--azul-escuro); }
+
+        .valores {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .valor-btn {
+            background: var(--amarelo);
+            color: var(--azul-escuro);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .valor-btn:hover { transform: scale(1.05); }
+
+        /* FOOTER */
+        footer { 
+            background: var(--azul-escuro); 
+            color: var(--branco); 
+            padding: 60px 0 30px; 
+            margin-top: 60px;
+        }
+        .copy { text-align: center; opacity: 0.7; }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .header-topo { text-align: center; padding: 30px 0; }
+            .header-topo h1 { font-size: 28px; }
+            .header-menu ul { flex-wrap: wrap; justify-content: center; gap: 15px 25px; }
+            .doacao-box { padding: 40px 20px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-topo">
+        <div class="container">
+            <h1>Brasil: Conflitos e História</h1>
+            <p>A História do Brasil na ordem certa, sem complicação</p>
+        </div>
+    </div>
+
+    <div class="header-menu">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">sobre</a></li>
+                    <li><a href="artigos.html">artigos</a></li>
+                    <li><a href="curiosidades.html">curiosidades</a></li>
+                    <li><a href="quiz.html">quiz</a></li>
+                    <li><a href="ebook.html">e-book</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container">
+            <div class="doacao-box">
+                <span class="emoji">💛</span>
+                <h2>Apoie o BrasilHistória</h2>
+                <p>Manter o site gratuito, sem anúncios e com conteúdo de qualidade custa tempo e dinheiro. 
+                Se você gosta do nosso trabalho, considere fazer uma doação. Qualquer valor ajuda muito! 🙏</p>
+
+                <div class="valores">
+                    <div class="valor-btn">R$ 5</div>
+                    <div class="valor-btn">R$ 10</div>
+                    <div class="valor-btn">R$ 20</div>
+                    <div class="valor-btn">R$ 50</div>
+                </div>
+
+                <div class="pix-box">
+                    <h3>Chave PIX</h3>
+                    <p>Escaneie o QR Code ou copie a chave abaixo:</p>
+                    <div class="chave-pix" id="chavePix">doacao@brasilhistoria.com</div>
+                    <button class="btn-copiar" onclick="copiarPix()">Copiar Chave PIX</button>
+                    <p id="msgCopiado" style="margin-top: 10px; color: var(--verde); display: none;">✅ Chave copiada!</p>
+                </div>
+
+                <p style="font-size: 0.9em; opacity: 0.7;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="copy">© 2026 BrasilHistória. Feito com ❤️ e muito café.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copiarPix() {
+            const chave = document.getElementById('chavePix').innerText;
+            navigator.clipboard.writeText(chave);
+            document.getElementById('msgCopiado').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('msgCopiado').style.display = 'none';
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
