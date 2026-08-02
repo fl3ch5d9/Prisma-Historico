@@ -1425,6 +1425,90 @@ body {
             });
         });
     </script>
+<!--interação js / css-->
+<!-- INÍCIO DA INTRODUÇÃO INTERATIVA DO E-BOOK -->
+<div id="intro-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 58, 110, 0.93); display: flex; justify-content: center; align-items: center; z-index: 999999; font-family: sans-serif; padding: 20px; box-sizing: border-box;">
+    <div style="background: #ffffff; max-width: 550px; width: 100%; padding: 35px 30px; border-radius: 16px; border-top: 8px solid #ffcc00; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5); animation: introFadeIn 0.5s ease; border-bottom: 4px solid #e8f0fe;">
+       
+        <!-- Título Principal em Azul Escuro -->
+        <h2 style="color: #1a3a6e; margin-top: 0; margin-bottom: 15px; font-size: 26px; font-weight: bold; letter-spacing: -0.5px;">
+            Boas-vindas, Leitor de História!
+        </h2>
+       
+        <!-- Mensagem Principal -->
+        <p style="color: #2c3e50; line-height: 1.6; font-size: 16px; margin-bottom: 25px;">
+            O e-book <strong style="color: #1a3a6e;">"Brasil: Ensaio de Reflexão"</strong> está a ser preparado para venda. Em breve, terá acesso a um material exclusivo com:
+        </p>
 
+        <!-- Recursos do E-book (Lista com o fundo azul claro #e8f0fe do seu blog) -->
+        <ul style="text-align: left; color: #1a3a6e; list-style: none; padding: 20px; margin: 0 0 25px 0; font-size: 15px; line-height: 1.8; background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #1a3a6e;">
+            <li style="margin-bottom: 12px; display: flex; align-items: center;">
+                <span style="margin-right: 12px; font-size: 18px;">🎨</span> Textos formatados em cores e muitas ilustrações
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center;">
+                <span style="margin-right: 12px; font-size: 18px;">🖼️</span> Imagens históricas marcantes
+            </li>
+            <li style="margin-bottom: 12px; display: flex; align-items: center;">
+                <span style="margin-right: 12px; font-size: 18px;">🧠</span> Mapas mentais e diagramas explicativos
+            </li>
+            <li style="margin-bottom: 0; display: flex; align-items: center;">
+                <span style="margin-right: 12px; font-size: 18px;">📝</span> Questões para Concursos, Vestibulares e ENEM
+            </li>
+        </ul>
+
+        <!-- Status do Blog com Destaque Amarelo -->
+        <p style="color: #444; font-size: 14px; margin-bottom: 25px; font-style: italic; background: #fffde6; padding: 10px; border-radius: 6px; border: 1px dashed #ffcc00;">
+            Enquanto o livro é finalizado, deguste o nosso blog! Ele já está <strong style="color: #1a3a6e; font-size: 16px; background-color: #ffcc00; padding: 2px 6px; border-radius: 4px;">90% concluído</strong> para si.
+        </p>
+
+        <!-- Botão de Ação Destacado em Azul Escuro e Amarelo -->
+        <button id="btn-entrar-blog" style="background-color: #1a3a6e; color: #ffffff; border: 2px solid #1a3a6e; padding: 15px 40px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; width: 100%; box-shadow: 0 4px 15px rgba(26,58,110,0.3); text-transform: uppercase; letter-spacing: 0.5px;">
+            Começar a Degustação
+        </button>
+    </div>
+</div>
+
+<!-- Lógica de Interação (JavaScript) e Animação (CSS) -->
+<style>
+    @keyframes introFadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+</style>
+
+<script>
+    (function() {
+        const modal = document.getElementById("intro-modal");
+        const botao = document.getElementById("btn-entrar-blog");
+
+        // Efeito de Hover: Inverte as cores usando o Amarelo do seu blog ao passar o mouse
+        botao.addEventListener("mouseover", function() {
+            botao.style.backgroundColor = "#ffcc00";
+            botao.style.color = "#1a3a6e";
+            botao.style.borderColor = "#ffcc00";
+            botao.style.boxShadow = "0 4px 20px rgba(255,204,0,0.4)";
+            botao.style.transform = "translateY(-1px)";
+        });
+       
+        botao.addEventListener("mouseout", function() {
+            botao.style.backgroundColor = "#1a3a6e";
+            botao.style.color = "#ffffff";
+            botao.style.borderColor = "#1a3a6e";
+            botao.style.boxShadow = "0 4px 15px rgba(26,58,110,0.3)";
+            botao.style.transform = "translateY(0)";
+        });
+
+        // Fecho do modal com transição suave
+        botao.addEventListener("click", function() {
+            modal.style.transition = "opacity 0.4s ease, visibility 0.4s";
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden";
+            setTimeout(function() {
+                modal.remove();
+            }, 400);
+        });
+    })();
+</script>
+<!-- FIM DA INTRODUÇÃO INTERATIVA -->
 </body>
 </html>

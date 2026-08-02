@@ -22,145 +22,108 @@
 
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-        /* HEADER TOPO novo */
-        .header-topo {
-            background: linear-gradient (180deg, #000f33 0%, #002a5c);
-            padding: 25px 20px;
-          text-align: center;
-        }
-        .header-topo h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        .header-topo p {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .header-menu {
-            background: var(--azul-escuro); /* Usei sua variável */
-            padding: 18px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Menu fica grudado no topo */
-            top: 0;
-            z-index: 100;
-        }
-        .header-menu ul {
-            list-style: none; /* TIRA AS BOLINHAS */
-            display: flex; /* JOGA PRA LINHA */
-            justify-content: flex-start; /* MENU NA ESQUERDA */
-            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
-        }
-        .header-menu a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: lowercase; /* "sobre" "artigos" */
-            transition: 0.3s;
-        }
-        .header-menu a:hover { color: var(--amarelo); }
-
-
-
-         /*prisma começa aqui todos as paginas */
-        .header-topo {
-  background: 
-    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
-    url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 100px 20px;
-  text-align: center;
-  border-bottom: 5px double #ffcc00;
-  width: 100%;
-  box-sizing: border-box;
+       
+/* Container da Section */
+.secao-doacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
 }
 
-.header-topo .container {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Fundo do Card em Branco Puro */
+.card-doacao {
+    background-color: #ffffff;
+    max-width: 680px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border-top: 6px solid #005ea6; /* Seu Azul de Origem */
 }
 
-.header-topo h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(55px, 10vw, 100px);
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  line-height: 1.1;
-  
-  /* Efeito 3D + Brilho Colonial */
-  text-shadow: 
-    2px 2px 0 #001a38,
-    4px 4px 0 #001a38,
-    0 0 15px rgba(255, 204, 0, 0.4);
+/* Cabeçalho */
+.card-header {
+    padding: 25px 30px 10px 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-/* PRISMA em branco */
-.header-topo h1::first-word,
-.header-topo h1 {
-  color: #ffffff;
+.emoji-ancora {
+    font-size: 28px;
 }
 
-/* HISTÓRICO em amarelo - truque com span */
-.header-topo h1 span {
-  color: #ffcc00;
-  text-shadow: 
-    2px 2px 0 #8a6d00,
-    4px 4px 0 #8a6d00,
-    0 0 20px #ffcc00;
-}
-
-.header-topo p {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: #f5f5f5;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Linha decorativa */
-.header-topo p::before,
-.header-topo p::after {
-  content: " ❧ ";
-  color: #ffcc00;
-  font-size: 20px;
-}
-
-    
-    /* Tamanho do logo do header */
-.header-topo .logo-prisma {
-    max-width: 700px; /* muda aqui pra aumentar/diminuir */
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
-    /* Efeito glow direto na imagem */
-    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
-    
-    /* Suaviza a imagem */
-    transition: 0.3s ease;
-    border-radius: 30px;
-}
-
-/* Quando passa o mouse fica mais forte */
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-/*perfeição header*/
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
+.card-header h3 {
+    color: #1a3a6e; /* Seu Azul Escuro */
+    font-size: 22px;
     margin: 0;
 }
 
-/* 2. HEADER - mais profundo e com luz */
+/* Corpo do Texto */
+.card-body {
+    padding: 10px 30px 25px 30px;
+}
+
+.bloco-texto {
+    margin-bottom: 25px;
+}
+
+.bloco-texto h4 {
+    color: #1a3a6e; /* Seu Azul Escuro */
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.bloco-texto p {
+    color: #444444; /* Seu Texto Cinza */
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bloco de Destaque com borda sutil */
+.destaque-meta {
+    background-color: #f8faff;
+    padding: 20px;
+    border-left: 4px solid #ffcc00; /* Seu Amarelo Ouro */
+    border-radius: 0 8px 8px 0;
+}
+
+.chamada-apoio {
+    font-weight: bold;
+    margin-top: 10px !important;
+}
+
+/* Rodapé do Card e Botão */
+.card-footer {
+    padding: 0 30px 35px 30px;
+    text-align: center;
+}
+
+/* Botão com o seu Degradê Oficial */
+.botao-link-asaas {
+    display: inline-block;
+    background: linear-gradient(135deg, #005ea6, #007ad6);
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Seu Hover Escuro */
+.botao-link-asaas:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+/*header novo*/
 .header-topo {
     background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
     padding: 30px 20px 20px 20px;
@@ -292,115 +255,132 @@ body {
 .menu-esquerda a:hover {
     color: #ffcc00;
 }
-/*introdução sobre a doação*/
-/* Configuração do fundo geral do site */
-body {
-    background-color: #e8f0fe;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 20px;
+/*prisma*/
+
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
 }
 
-/* Container da Section */
-.secao-doacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 10px;
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
 }
 
-/* Fundo do Card em Branco Puro */
-.card-doacao {
-    background-color: #ffffff;
-    max-width: 680px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    border-top: 6px solid #005ea6; /* Seu Azul de Origem */
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Cabeçalho */
-.card-header {
-    padding: 25px 30px 10px 30px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
 }
 
-.emoji-ancora {
-    font-size: 28px;
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
 }
 
-.card-header h3 {
-    color: #1a3a6e; /* Seu Azul Escuro */
-    font-size: 22px;
-    margin: 0;
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
 }
+/*perfeição header*/
 
-/* Corpo do Texto */
-.card-body {
-    padding: 10px 30px 25px 30px;
-}
-
-.bloco-texto {
-    margin-bottom: 25px;
-}
-
-.bloco-texto h4 {
-    color: #1a3a6e; /* Seu Azul Escuro */
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-.bloco-texto p {
-    color: #444444; /* Seu Texto Cinza */
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Bloco de Destaque com borda sutil */
-.destaque-meta {
-    background-color: #f8faff;
-    padding: 20px;
-    border-left: 4px solid #ffcc00; /* Seu Amarelo Ouro */
-    border-radius: 0 8px 8px 0;
-}
-
-.chamada-apoio {
-    font-weight: bold;
-    margin-top: 10px !important;
-}
-
-/* Rodapé do Card e Botão */
-.card-footer {
-    padding: 0 30px 35px 30px;
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
     text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
 }
 
-/* Botão com o seu Degradê Oficial */
-.botao-link-asaas {
-    display: inline-block;
-    background: linear-gradient(135deg, #005ea6, #007ad6);
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
     width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);
-    transition: all 0.3s ease;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
 }
 
-/* Seu Hover Escuro */
-.botao-link-asaas:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
 }
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
 
 
 </style>
