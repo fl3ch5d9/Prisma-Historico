@@ -25,38 +25,272 @@
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
         /* ===== HEADER IGUAL EM TODAS ===== */
-        .header-topo {
-            background: linear-gradient(180deg, #001a4d 0%, var(--azul-claro) 100%);
-            color: var(--branco);
-            padding: 50px 0 60px;
-            text-align: right;
-        }
-        .header-topo h1 { font-size: 42px; font-weight: 800; margin-bottom: 10px; }
-        .header-topo p { font-size: 16px; font-weight: 300; opacity: 0.9; }
+       /* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
 
-        .header-menu {
-            background: var(--azul-escuro);
-            padding: 18px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-menu ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            gap: 45px;
-        }
-        .header-menu a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: lowercase;
-            transition: 0.3s;
-        }
-        .header-menu a:hover { color: var(--amarelo); }
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+/*prisma*/
+
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
+}
+
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
+}
+
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
+}
+
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+/*perfeição header*/
+
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+/* 1. FUNDO GERAL - mais sofisticado */
+body {
+    background: #eef2f7; /* Cinza azulado, não cansa a vista */
+    color: #1a2f4f; /* Texto azul marinho pra leitura */
+    font-family: 'Georgia', serif; /* Combina mais com histórico */
+    margin: 0;
+}
+
 
         /* CONTEUDO DOACAO */
         main { padding: 70px 0; }
@@ -153,36 +387,45 @@
 </head>
 <body>
 
-<header>
-    <div class="header-topo">
-        <div class="container">
-            <h1>Brasil: Conflitos e História</h1>
-            <p>A História do Brasil na ordem certa, sem complicação</p>
-        </div>
-    </div>
-
-    <div class="header-menu">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="sobre.html">sobre</a></li>
-                    <li><a href="artigos.html">artigos</a></li>
-                    <li><a href="curiosidades.html">curiosidades</a></li>
-                    <li><a href="quiz.html">quiz</a></li>
-                    <li><a href="ebook.html">e-book</a></li>
-                </ul>
-            </nav>
-        </div>
+<header class="header-topo">
+    <div class="container">
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
     </div>
 </header>
+
+<nav class="menu-principal">
+    <div class="menu-esquerda">
+        <a href="index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
+    </div>
+</nav>
+
+
+ <!--menu-->
+    
+<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+
 
     <main>
         <div class="container">
             <div class="doacao-box">
                 <span class="emoji">💛</span>
-                <h2>Apoie o BrasilHistória</h2>
-                <p>Manter o site gratuito, sem anúncios e com conteúdo de qualidade custa tempo e dinheiro. 
+                <h2>Apoie o Prisma Histórico</h2>
+                <p>Manter o blog gratuito, sem anúncios e com conteúdo de qualidade custa tempo e dinheiro. 
                 Se você gosta do nosso trabalho, considere fazer uma doação. Qualquer valor ajuda muito! 🙏</p>
 
                 <div class="valores">
@@ -192,35 +435,71 @@
                     <div class="valor-btn">R$ 50</div>
                 </div>
 
-                <div class="pix-box">
-                    <h3>Chave PIX</h3>
-                    <p>Escaneie o QR Code ou copie a chave abaixo:</p>
-                    <div class="chave-pix" id="chavePix">doacao@brasilhistoria.com</div>
-                    <button class="btn-copiar" onclick="copiarPix()">Copiar Chave PIX</button>
-                    <p id="msgCopiado" style="margin-top: 10px; color: var(--verde); display: none;">✅ Chave copiada!</p>
-                </div>
+             <!--doacao profissional-->
+             <div class="pix-box" style="background-color: #ffffff; border: 2px dashed #007BFF; padding: 25px; border-radius: 8px; text-align: center; max-width: 500px; margin: 30px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
+    <h3 style="color: #1a3a6e; margin-top: 0; font-size: 20px;">🔵 Chave PIX Direta</h3>
+    <p style="color: #555; font-size: 15px; margin-bottom: 15px;">Apoie o projeto sem formulários. Copie a chave e-mail abaixo:</p>
+    
+    <!-- Sua chave pix oficial com o fundo azul claro da sua paleta -->
+    <div class="chave-pix" id="chavePix" style="background-color: #e8f0fe; padding: 12px 20px; border-radius: 6px; font-family: monospace; font-size: 16px; color: #005ea6; font-weight: bold; display: inline-block; letter-spacing: 1px; border: 1px solid #007ad6; margin-bottom: 15px; word-break: break-all;">cronologia.prisma.historico@gmail.com</div>
+    
+    <!-- Botão estilizado com comportamento de hover dinâmico via JS -->
+    <button class="btn-copiar" id="btnCopiar" onclick="copiarPix()" style="display: block; width: 100%; background: linear-gradient(135deg, #005ea6, #007ad6); color: #ffffff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: background 0.3s; box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);">
+        📋 Copiar Chave PIX
+    </button>
+    
+    <!-- Mensagem de sucesso em verde estruturada -->
+    <p id="msgCopiado" style="margin-top: 12px; color: #28a745; font-weight: bold; display: none; font-size: 14px;">✅ Chave copiada com sucesso!</p>
+</div>
 
-                <p style="font-size: 0.9em; opacity: 0.7;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
-            </div>
-        </div>
-    </main>
+<p style="font-size: 0.9em; opacity: 0.7; text-align: center; color: #555; margin-bottom: 30px;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
 
-    <footer>
-        <div class="container">
-            <p class="copy">© 2026 BrasilHistória. Feito com ❤️ e muito café.</p>
-        </div>
-    </footer>
+<script>
+    // Efeito Visual de Hover via JavaScript para manter compatibilidade com estilo inline
+    const btn = document.getElementById('btnCopiar');
+    if(btn) {
+        btn.addEventListener('mouseover', () => btn.style.background = '#0056b3');
+        btn.addEventListener('mouseout', () => btn.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
+    }
 
-    <script>
-        function copiarPix() {
-            const chave = document.getElementById('chavePix').innerText;
-            navigator.clipboard.writeText(chave);
-            document.getElementById('msgCopiado').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('msgCopiado').style.display = 'none';
-            }, 2000);
+    // Função de Copiar Híbrida e Profissional (Funciona em qualquer celular ou PC)
+    function copiarPix() {
+        const chave = document.getElementById('chavePix').innerText.trim();
+        
+        if (navigator.clipboard && window.isSecureContext) {
+            // Método moderno para sites com HTTPS
+            navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
+        } else {
+            // Método de segurança (Fallback) para navegadores antigos ou HTTP local
+            fallbackCopiar(chave);
         }
-    </script>
+    }
+
+    function fallbackCopiar(texto) {
+        const textArea = document.createElement("textarea");
+        textArea.value = texto;
+        textArea.style.position = "fixed"; // Evita scroll na tela
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            exibirSucesso();
+        } catch (err) {
+            alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function exibirSucesso() {
+        const msg = document.getElementById('msgCopiado');
+        msg.style.display = 'block';
+        setTimeout(() => {
+            msg.style.display = 'none';
+        }, 2500);
+    }
+</script>
+
 
 </body>
 </html>
