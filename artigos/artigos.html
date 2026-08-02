@@ -1,37 +1,15 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>artigos</title>
-    <link rel="stylesheet" href="../css/style.css"> <!-- volta 1 pasta -->
-    
-    <style>
-        /* PALETA NOVA - SÓ PRA ÁREA DO CONTEÚDO */
-        :root {
-            --azul-escuro: #1a3a6e;
-            --azul-claro: #007BFF;
-            --azul-hover: #0056b3;
-            --azul-royal: #005ea6;
-            --azul-vivo: #007ad6;
-            --branco: #FFFFFF;
-            --amarelo: #ffcc00;
-            --cinza-fundo: #e8f0fe;
-            --cinza-texto: #555;
-            --cinza-texto-escuro: #444;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/style.css">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--cinza-fundo); /* AQUI MUDA O FUNDO DO SITE */
-            color: var(--cinza-texto-escuro);
-        }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+<style>
 
-        /* ===== HEADER IGUAL NAS OUTRAS novo===== 
-           NÃO MEXI EM NADA DAQUI PRA BAIXO
-        */
+  /* ===== HEADER NOVO IGUAL DA FOTO ===== */
         .header-topo {
             background: linear-gradient (180deg, #000f33 0%, #002a5c);
             padding: 25px 20px;
@@ -72,109 +50,414 @@
         }
         .header-menu a:hover { color: var(--amarelo); }
 
-       
-        /* CONTEUDO ARTIGOS - AQUI COMEÇA MINHA PARTE */
-        main { padding: 70px 0; }
-        .titulo-secao { 
-            color: var(--azul-escuro); /* #1a3a6e */
-            font-size: 2.5em; 
-            text-align: center; 
-            margin-bottom: 50px;
-            border-bottom: 4px solid var(--amarelo); /* #ffcc00 */
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        .titulo-wrap { text-align: center; }
+         /*prisma começa aqui todos as paginas */
+        .header-topo {
+  background: 
+    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
+    url('https://www.transparenttextures.com/patterns/old-paper.png');
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 5px double #ffcc00;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-        .grid-artigos { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 30px; 
-        }
-        .card-artigo {
-            background: var(--branco); /* #ffffff */
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-left: 6px solid var(--azul-claro); /* #007BFF */
-            transition: 0.4s;
-        }
-        .card-artigo:hover { 
-            transform: translateY(-8px); 
-            border-left-color: var(--amarelo); /* #ffcc00 */
-        }
-        .card-artigo h3 { color: var(--azul-escuro); font-size: 1.5em; margin-bottom: 15px; }
-        .card-artigo p { line-height: 1.7; margin-bottom: 20px; color: var(--cinza-texto); /* #555 */ }
+.header-topo .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-        .btn {
-            background: var(--azul-claro); /* #007BFF */
-            color: var(--branco);
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .btn:hover { background: var(--azul-hover); /* #0056b3 */ }
+.header-topo h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(55px, 10vw, 100px);
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  
+  /* Efeito 3D + Brilho Colonial */
+  text-shadow: 
+    2px 2px 0 #001a38,
+    4px 4px 0 #001a38,
+    0 0 15px rgba(255, 204, 0, 0.4);
+}
 
-        /* CTA COM GRADIENTE PROFISSIONAL */
-        .cta-container {
-            background: linear-gradient(135deg, var(--azul-royal), var(--azul-vivo)); /* #005ea6 -> #007ad6 */
-            border: none;
-            padding: 45px;
-            margin: 50px auto 20px;
-            box-shadow: 0 6px 20px rgba(0, 94, 166, 0.2);
-            border-radius: 4px;
-            max-width: 800px;
-            box-sizing: border-box;
-            color: var(--branco);
-        }
-        .cta-header {
-            font-family: Arial, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 1.25em;
-            color: var(--amarelo); /* #ffcc00 */
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        .cta-text {
-            font-family: Arial, sans-serif;
-            font-size: 1em;
-            color: var(--branco);
-            line-height: 1.7;
-            text-align: justify;
-            margin-bottom: 35px;
-            opacity: 0.95;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 18px 45px;
-            background-color: var(--amarelo); /* #ffcc00 */
-            color: var(--azul-royal); /* #005ea6 */
-            font-family: Arial, sans-serif;
-            font-size: 0.95em;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-        .cta-button:hover {
-            background-color: #e6b800;
-            transform: translateY(-2px);
-        }
+/* PRISMA em branco */
+.header-topo h1::first-word,
+.header-topo h1 {
+  color: #ffffff;
+}
 
-        /* FOOTER */
+/* HISTÓRICO em amarelo - truque com span */
+.header-topo h1 span {
+  color: #ffcc00;
+  text-shadow: 
+    2px 2px 0 #8a6d00,
+    4px 4px 0 #8a6d00,
+    0 0 20px #ffcc00;
+}
+
+.header-topo p {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: clamp(18px, 2.5vw, 26px);
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Linha decorativa */
+.header-topo p::before,
+.header-topo p::after {
+  content: " ❧ ";
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+
+    
+    /* Tamanho do logo do header */
+.header-topo .logo-prisma {
+    max-width: 700px; /* muda aqui pra aumentar/diminuir */
+    width: 80%;
+    height: auto;
+    margin: 0 auto 10px auto;
+    display: block;
+    /* Efeito glow direto na imagem */
+    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
+    
+    /* Suaviza a imagem */
+    transition: 0.3s ease;
+    border-radius: 30px;
+}
+
+/* Quando passa o mouse fica mais forte */
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+/*perfeição header*/
+/* 1. FUNDO GERAL - mais sofisticado */
+body {
+    background: #eef2f7; /* Cinza azulado, não cansa a vista */
+    color: #1a2f4f; /* Texto azul marinho pra leitura */
+    font-family: 'Georgia', serif; /* Combina mais com histórico */
+    margin: 0;
+}
+
+/* 2. HEADER - mais profundo e com luz */
+.header-topo {
+    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+}
+
+/* 3. LOGO - arredondar + brilho */
+.header-topo .logo-prisma {
+    max-width: 420px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 12px auto;
+    display: block;
+    border-radius: 20px; /* Quinas arredondadas */
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+}
+
+/* 4. KICKER - frase de baixo */
+.header-topo .kicker {
+    color: #ffcc00; /* Dourado igual da imagem */
+    font-style: italic;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    margin: 0;
+}
+
+/* 5. MENU - azul escuro combinando */
+.menu-principal {
+    background: #001a4d;
+    padding: 12px 0;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00; /* Dourado no hover */
+}
+
+/* 1. Centralizar os links do menu */
+.menu-principal {
+    text-align: center; /* Adiciona isso aqui */
+}
+
+/* 2. Botão de destaque para o E-BOOK */
+.menu-principal a[href*="ebook"] {
+    background: #ffcc00; /* Amarelo dourado */
+    color: #001a4d !important; /* Texto azul escuro */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 900;
+    margin-left: 15px;
+}
+.menu-principal a[href*="ebook"]:hover {
+    background: #ffd633;
+    color: #001a4d !important;
+    transform: translateY(-2px);
+}
+/* Deixa o menu com flex pra jogar pros lados */
+
+.menu-principal {
+    background: #001a4d; /* Azul escuro do seu site */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupa a tela toda */
+    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
+    box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px; /* Espaço entre os links */
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 12px 24px; /* Botão maior */
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 16px;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+.menu-esquerda a, .menu-direita a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Botão E-BOOK destacado na direita */
+.menu-direita a {
+    background: #ffcc00;
+    color: #001a4d !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 900;
+}
+.menu-direita a:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+/* Hover dos links da esquerda */
+.menu-esquerda a:hover {
+    color: #ffcc00;
+}
+
+
+/* ===== PALETA PRISMA HISTÓRICO ===== */
+:root {
+  --azul-escuro: #1a3a6e;
+  --azul-royal: #005ea6;
+  --azul-vivo: #007ad6;
+  --azul-claro: #007BFF;
+  --azul-hover: #0056b3;
+  --fundo-site: #e8f0fe;
+  --branco-card: #ffffff;
+  --texto-cinza: #555;
+  --texto-paragrafo: #444;
+  --amarelo-ouro: #ffcc00;
+}
+
+/* ===== FUNDO DO SITE ===== */
+body {
+  background-color: var(--fundo-site);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--texto-paragrafo);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== GRID DOS CARDS ===== */
+.prisma-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  padding: 50px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ===== CARD BRANCO ===== */
+.prisma-card {
+  background: var(--branco-card);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 94, 166, 0.15);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--azul-royal);
+  display: flex;
+  flex-direction: column;
+}
+
+.prisma-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 94, 166, 0.25);
+  border-top: 4px solid var(--amarelo-ouro);
+}
+
+/* ===== IMAGEM 16:9 ===== */
+.prisma-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.prisma-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== CONTEÚDO DO CARD ===== */
+.prisma-content {
+  padding: 22px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 📅 ANO - Azul Escuro */
+.prisma-ano {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* 🏛️ TÍTULO - Azul Royal */
+.prisma-titulo {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--azul-royal);
+  line-height: 1.3;
+}
+
+/* 📍 LOCAL - Cinza */
+.prisma-local {
+  font-size: 14px;
+  color: var(--texto-cinza);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* 📖 DESCRIÇÃO - Cinza Escuro */
+.prisma-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--texto-paragrafo);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* 🟡 TAG - Amarelo Ouro */
+.prisma-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 6px 14px;
+  background: rgba(255, 204, 0, 0.15);
+  border: 1px solid var(--amarelo-ouro);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--azul-escuro);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== BOTÃO DO EBOOK ===== */
+.btn-ebook {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--azul-claro);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-ebook:hover {
+  background: var(--azul-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
+}
+
+/* ===== HEADER COM DEGRADÊ ===== */
+.header-prisma {
+  background: linear-gradient(135deg, var(--azul-royal), var(--azul-vivo));
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.header-prisma h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 32px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .prisma-grid {
+    grid-template-columns: 1fr;
+    padding: 30px 16px;
+    gap: 20px;
+  }
+  
+  .prisma-card img {
+    height: 220px;
+  }
+}
+
+/* FOOTER DOAÇÕES */
         footer { 
-            background: var(--azul-escuro); /* #1a3a6e */
+            background: var(--azul-escuro); 
             color: var(--branco); 
             padding: 60px 0 30px; 
-            margin-top: 60px;
         }
         .footer-box {
             background: rgba(0,0,0,0.2);
@@ -182,12 +465,12 @@
             border-radius: 15px;
             text-align: center;
             margin-bottom: 40px;
-            border: 2px dashed var(--amarelo); /* #ffcc00 */
+            border: 2px dashed var(--amarelo);
         }
         .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
         .btn-doacao {
-            background: var(--amarelo); /* #ffcc00 */
-            color: var(--azul-escuro); /* #1a3a6e */
+            background: var(--amarelo);
+            color: var(--azul-escuro);
             padding: 20px 50px;
             border-radius: 12px;
             text-decoration: none;
@@ -200,227 +483,261 @@
         .btn-doacao:hover { background: var(--branco); }
         .copy { text-align: center; opacity: 0.7; }
 
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .header-topo { text-align: center; padding: 30px 0; }
-            .header-topo h1 { font-size: 28px; }
-            .header-menu ul { flex-wrap: wrap; justify-content: center; gap: 15px 25px; }
-        }
+</style>
 
-    </style>
+
+
 </head>
-
 <body>
-
-<!--header - COPIADO E COLADO DO SEU. IGUAL-->
+  
 <header class="header-topo">
     <div class="container">
-        <h1>Prisma Histórico</h1>
-        <p>A História sob múltiplos ângulos críticos</p>
+        <img src="/img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
     </div>
 </header>
+<!-- HEADER ORIGINAL PRISMA HISTÓRICO -->
+</header>
 
-<!--menu - COPIADO E COLADO DO SEU. IGUAL-->
-<nav class="header-menu">
-    <div class="container">
-        <ul>
-            <li><a href="/index.html">início</a></li>
-            <li><a href="/artigos/sobre.html">sobre</a></li>
-            <li><a href="/artigos/artigos.html">artigos</a></li>
-            <li><a href="/artigos/curiosidades.html">curiosidades</a></li>
-            <li><a href="/artigos/quiz.html">quiz</a></li>
-            <li><a href="/artigos/ebook.html">e-book</a></li>
-        </ul>
+<nav class="menu-principal">
+    <div class="menu-esquerda">
+        <a href="/index.html">início</a>
+        <a href="/artigos/sobre.html">sobre</a>
+        <a href="/artigos/artigos.html">artigos</a>
+        <a href="/artigos/curiosidades.html">curiosidades</a>
+        <a href="/artigos/quiz.html">quiz</a>
+    </div>
+    <div class="menu-direita">
+        <a href="/artigos/ebook.html">e-book</a>
     </div>
 </nav>
 
-<main>
-<section style="padding: 60px 20px 30px; background: #e8f0fe;">
-  <div class="container" style="max-width: 1200px; margin: auto; padding: 0 20px;">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h1 style="color: #1a3a6e; font-size: 2.2em; text-align: center; margin-bottom: 15px; border-bottom: 4px solid #ffcc00; display: inline-block; padding-bottom: 8px;">AMÉRICA PORTUGUESA</h1>
-      <h2 style="font-size: 18px; font-weight: 600; color: #007BFF;">1500-1808 | Roteiro de Estudos em Cards</h2>
-    </div>
+<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
+<section style="
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+">
+  <div style="max-width: 1100px; margin: 0 auto;">
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 1200px; margin: 0 auto;">
 
-      <!-- CARD 1 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #007BFF; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🔵 I. ECOLOGIA E ESPAÇO</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Ecologia de Exploração e Dialética do Espaço</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Zoogeografia e Ausência de Tração</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Economia Coletora e Divisão do Trabalho</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Fissiparidade e Antropofagia Ritual</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">V.</b> Poder Fragmentado: Monopólio Espiritual</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">VI.</b> Etnocultura e Epistemicídio Missionário</p>
-      </div>
 
-      <!-- CARD 2 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #ffcc00; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🟡 II. PORTUGAL MODERNO</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Dualidade Estrutural das Forças Sociais</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Blindagem Jurídica do Clero</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Biopolítica e Monopólio Sacramental</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Padroado Régio e Transposição</p>
-      </div>
 
-      <!-- CARD 3 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #007BFF; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🔵 III. ESTADO E PODER</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Dialética: Estado Confessional vs Altar</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Monopólio Régio: Centralização</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Estrutura Estamental e Câmaras</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Direito Regateado: Privilégios do Porto</p>
-      </div>
 
-      <!-- CARD 4 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #ffcc00; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🟡 IV. SOCIEDADE ESTAMENTAL</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Elites Urbanas: Corpo Imune</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Margem Servil e Porosidade</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Agonia das Cortes e Absolutismo</p>
-      </div>
 
-      <!-- CARD 5 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #007BFF; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🔵 V. DEMOGRAFIA E CICLOS</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Vazio Demográfico e Mestiçagem</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Psicologia Quinhentista</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Diáspora Africana e Ciclos Econômicos</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Supressão Tráfico 1850 e Café</p>
-      </div>
+<section class="prisma-grid">
 
-      <!-- CARD 6 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #ffcc00; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🟡 VI. ESCRAVIDÃO</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Rota Transatlântica e Corpo Banto</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Intimidade da Casa-Grande</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Resistência e "Paraíso dos Mulatos"</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Descobridores e Vocação Atlântica</p>
-      </div>
-
-      <!-- CARD 7 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #007BFF; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🔵 VII. EXPANSÃO MARÍTIMA</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Gênese Tecnológica: Ceuta</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Mística da Cruzada</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Batalha das Rotas: Cabo vs Colombo</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Consagração: Boa Esperança</p>
-      </div>
-
-      <!-- CARD 8 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #ffcc00; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🟡 VIII. D. JOÃO II E CABRAL</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Racionalidade Científica e Espionagem</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Desmistificação da Rota Colombina</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Armada de Cabral: Caráter Dual</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Olhar do Escrivão: Caminha</p>
-      </div>
-
-      <!-- CARD 9 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #007BFF; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🔵 IX. PRIMEIRO CONTATO</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Logística Porto Seguro</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Cenografia: Missa da Pascoela</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Burocracia: Nau de Mantimentos</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Inventário de Caminha</p>
-      </div>
-
-      <!-- CARD 10 -->
-      <div style="background: #FFFFFF; border-radius: 10px; padding: 16px 18px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border-left: 4px solid #ffcc00; transition: 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderLeftColor='#007BFF'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.09)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderLeftColor='#ffcc00'; this.style.boxShadow='0 3px 10px rgba(0,0,0,0.06)'">
-        <h3 style="color: #1a3a6e; font-size: 1em; margin-bottom: 10px; font-weight: 800; line-height: 1.3;">🟡 X. PRÉ-COLONIAL</h3>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">I.</b> Cegueira Geográfica Quinhentista</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">II.</b> Privatização por Arrendamento</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">III.</b> Limites Expansão e Pau-Brasil</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">IV.</b> Nau Bretoa 1511</p>
-        <p style="line-height: 1.5; margin-bottom: 6px; color: #555; font-size: 0.88em;"><b style="color: #1a3a6e;">V.</b> Biopolítica do Trato</p>
-      </div>
-
+  <!-- 1. Amador Bueno 1641 -->
+  <div class="prisma-card">
+    <img src="/img/amador-bueno1641.png" alt="Revolta de Amador Bueno 1641">
+    <div class="prisma-content">
+      <div class="prisma-ano">1641</div>
+      <h3 class="prisma-titulo">Revolta de Amador Bueno</h3>
+      <div class="prisma-local">📍 São Paulo</div>
+      <p class="prisma-desc">Após o fim da União Ibérica, colonos aclamam Amador Bueno como rei de São Paulo. Primeiro grito nativista do Brasil.</p>
+      <span class="prisma-tag">Nativista</span>
     </div>
   </div>
-</section>
-</main>
 
-
-<main>
-<!-- SECÇÃO DE CONVERSÃO EDITORIAL COM GRADIENTE BASE DO BLOG -->
-<section class="cta-container">
-    <div class="cta-header">
-        Subsídios para a Alta Performance Historiográfica
+  <!-- 2. Revolta da Cachaça 1660 -->
+  <div class="prisma-card">
+    <img src="/img/cachaça.png" alt="Revolta da Cachaça 1660">
+    <div class="prisma-content">
+      <div class="prisma-ano">1660-1661</div>
+      <h3 class="prisma-titulo">Revolta da Cachaça</h3>
+      <div class="prisma-local">📍 Rio de Janeiro</div>
+      <p class="prisma-desc">Protesto popular contra o monopólio e aumento de impostos sobre a aguardente. Povo destruiu engenhos e destilarias.</p>
+      <span class="prisma-tag">Nativista</span>
     </div>
-    <p class="cta-text">
-        A aprovação nas bancas mais exigentes do país exige um repertório analítico que transcende os manuais genéricos. Aceda ao volume completo <strong>"A Economia Política do Conhecimento: Do Códice ao Digital"</strong> e domine os debates críticos sobre biopolítica, mercantilismo editorial e as dinâmicas de poder que moldaram o mundo moderno.
-    </p>
-    <div style="text-align: center;">
-        <a href="/artigos/ebook.html" class="cta-button">
-            Aceder à Obra Completa
-        </a>
+  </div>
+
+  <!-- 3. Beckman 1684 -->
+  <div class="prisma-card">
+    <img src="/img/revolta-backman.png" alt="Revolta de Beckman 1684">
+    <div class="prisma-content">
+      <div class="prisma-ano">1684</div>
+      <h3 class="prisma-titulo">Revolta de Beckman</h3>
+      <div class="prisma-local">📍 Maranhão</div>
+      <p class="prisma-desc">Contra o monopólio da Companhia de Comércio e a falta de escravos. Liderada por Manuel Beckman, tomou o poder por 2 meses.</p>
+      <span class="prisma-tag">Nativista</span>
     </div>
+  </div>
+
+  <!-- 4. Guerra dos Bárbaros 1687 -->
+  <div class="prisma-card">
+    <img src="/img/guerra-dos-barbaros.png" alt="Guerra dos Bárbaros">
+    <div class="prisma-content">
+      <div class="prisma-ano">1687-1713</div>
+      <h3 class="prisma-titulo">Guerra dos Bárbaros</h3>
+      <div class="prisma-local">📍 Sertão do Nordeste</div>
+      <p class="prisma-desc">Resistência indígena contra a expansão das fazendas de gado e colonos portugueses no interior nordestino.</p>
+      <span class="prisma-tag">Nativista</span>
+    </div>
+  </div>
+
+  <!-- 5. Emboabas 1707 -->
+  <div class="prisma-card">
+    <img src="/img/emboabas.png" alt="Guerra dos Emboabas">
+    <div class="prisma-content">
+      <div class="prisma-ano">1707-1709</div>
+      <h3 class="prisma-titulo">Guerra dos Emboabas</h3>
+      <div class="prisma-local">📍 Minas Gerais</div>
+      <p class="prisma-desc">Conflito entre paulistas bandeirantes e forasteiros "emboabas" pelo controle das minas de ouro.</p>
+      <span class="prisma-tag">Nativista</span>
+    </div>
+  </div>
+
+  <!-- 6. Mascates 1710 -->
+  <div class="prisma-card">
+    <img src="/img/mascates.png" alt="Guerra dos Mascates">
+    <div class="prisma-content">
+      <div class="prisma-ano">1710-1711</div>
+      <h3 class="prisma-titulo">Guerra dos Mascates</h3>
+      <div class="prisma-local">📍 Pernambuco</div>
+      <p class="prisma-desc">Recife comerciantes vs Olinda senhores de engenho. Disputa por autonomia política e econômica.</p>
+      <span class="prisma-tag">Nativista</span>
+    </div>
+  </div>
+
+  <!-- 7. Terço Velho 1718 -->
+  <div class="prisma-card">
+    <img src="/img/terco-velho.png" alt="Sublevação do Terço Velho">
+    <div class="prisma-content">
+      <div class="prisma-ano">1718</div>
+      <h3 class="prisma-titulo">Sublevação do Terço Velho</h3>
+      <div class="prisma-local">📍 Bahia</div>
+      <p class="prisma-desc">Motim militar por atraso de soldos. Tropas tomaram Salvador e exigiram pagamento da Coroa.</p>
+      <span class="prisma-tag">Nativista</span>
+    </div>
+  </div>
+
+  <!-- 8. Vila Rica 1720 -->
+  <div class="prisma-card">
+    <img src="/img/vila-rica.png" alt="Revolta de Vila Rica">
+    <div class="prisma-content">
+      <div class="prisma-ano">1720</div>
+      <h3 class="prisma-titulo">Revolta de Vila Rica</h3>
+      <div class="prisma-local">📍 Minas Gerais</div>
+      <p class="prisma-desc">Liderada por Filipe dos Santos contra as Casas de Fundição e a opressão fiscal de Portugal.</p>
+      <span class="prisma-tag">Nativista</span>
+    </div>
+  </div>
+
+  <!-- 9. Inconfidência 1789 -->
+  <div class="prisma-card">
+    <img src="" alt="Inconfidência Mineira">
+    <div class="prisma-content">
+      <div class="prisma-ano">1789</div>
+      <h3 class="prisma-titulo">Inconfidência Mineira</h3>
+      <div class="prisma-local">📍 Minas Gerais</div>
+      <p class="prisma-desc">Conspiração de elite contra a derrama. Ideais iluministas. Tiradentes virou mártir da liberdade.</p>
+      <span class="prisma-tag">Emancipacionista</span>
+    </div>
+  </div>
+
+  <!-- 10. Conjuração Baiana 1798 -->
+  <div class="prisma-card">
+    <img src="" alt="Conjuração Baiana">
+    <div class="prisma-content">
+      <div class="prisma-ano">1798</div>
+      <h3 class="prisma-titulo">Conjuração Baiana</h3>
+      <div class="prisma-local">📍 Bahia</div>
+      <p class="prisma-desc">Revolta popular e abolicionista. Alfaiates, soldados e negros queriam república e fim da escravidão.</p>
+      <span class="prisma-tag">Emancipacionista</span>
+    </div>
+  </div>
+
+  <!-- 11. Suassunas 1801 -->
+  <div class="prisma-card">
+    <img src="" alt="Conspiração dos Suassunas">
+    <div class="prisma-content">
+      <div class="prisma-ano">1801</div>
+      <h3 class="prisma-titulo">Conspiração dos Suassunas</h3>
+      <div class="prisma-local">📍 Pernambuco</div>
+      <p class="prisma-desc">Reuniões secretas com ideais republicanos. Descoberta antes de virar revolta armada.</p>
+      <span class="prisma-tag">Emancipacionista</span>
+    </div>
+  </div>
+
+  <!-- 12. Pernambucana 1817 -->
+  <div class="prisma-card">
+    <img src="" alt="Revolução Pernambucana">
+    <div class="prisma-content">
+      <div class="prisma-ano">1817</div>
+      <h3 class="prisma-titulo">Revolução Pernambucana</h3>
+      <div class="prisma-local">📍 Pernambuco</div>
+      <p class="prisma-desc">Única revolta colonial que tomou o poder. Instaurou república por 75 dias. Influência dos EUA e França.</p>
+      <span class="prisma-tag">Emancipacionista</span>
+    </div>
+  </div>
+
+  <!-- 13. Liberal do Porto 1820 -->
+  <div class="prisma-card">
+    <img src="" alt="Revolução Liberal do Porto">
+    <div class="prisma-content">
+      <div class="prisma-ano">1820</div>
+      <h3 class="prisma-titulo">Revolução Liberal do Porto</h3>
+      <div class="prisma-local">📍 Portugal e Brasil</div>
+      <p class="prisma-desc">Exigiu retorno de D. João VI e Constituição. Acelerou o processo de independência do Brasil em 1822.</p>
+      <span class="prisma-tag">Emancipacionista</span>
+    </div>
+  </div>
+
 </section>
 
-<!--artigos-->
-<section style="padding: 90px 20px;">
-  
-  <div class="container">
+<!-- FOOTER ORIGINAL PRISMA HISTÓRICO -->
+ 
+<!-- FOOTER CENTRALIZADO PRISMA HISTÓRICO -->
+<footer style="background: #1a3a6e; color: #FFF; padding: 60px 20px 30px; text-align: center;">
+  <div style="max-width: 800px; margin: auto;">
     
-    <!-- TOPO CENTRALIZADO -->
-    <div class="titulo-wrap">
-      <h1 class="titulo-secao">CAPISTRANO ATUALIZADO</h1>
-      <h2 style="font-size: 20px; font-weight: 600; color: var(--azul-claro); margin-bottom: 20px;">
-        Da Colônia à República Velha: A Lógica de Formação do Brasil
-      </h2>
-    </div>
-
-    <p style="font-size: 18px; line-height: 1.9; color: var(--cinza-texto-escuro); margin-bottom: 50px; text-align: center;">
-      Capistrano de Abreu em 1907 rompeu com a história de datas. Ele mostrou que o Brasil foi pensado como máquina de extração. 119 anos depois, as bancas ainda cobram essa mesma lógica. Este artigo traduz a crítica de 1907 para a linguagem de prova de 2026.
+    <!-- LOGO -->
+    <h2 style="color: #ffcc00; font-size: 2em; font-weight: 900; margin-bottom: 15px; letter-spacing: 2px;">PRISMA <span style="color: #FFF;">HISTÓRICO</span></h2>
+    <p style="font-size: 0.95em; line-height: 1.7; opacity: 0.8; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      História para Aprovação. Material gratuito e direto ao ponto para Enem, Vestibulares e Concursos Públicos.
     </p>
 
-    <!-- CARDS -->
-    <div class="grid-artigos">
-      
-      <!-- CARD 1: COLÔNIA -->
-      <div class="card-artigo">
-        <h3>1. BRASIL COLÔNIA</h3>
-        <p><b>O projeto mercantilista:</b> O Brasil não era para ser nação. Era para ser fazenda. A engrenagem era a <b>plantation</b> - latifúndio, monocultura e escravidão gerando lucro para Portugal.</p>
-      </div>
-
-      <!-- CARD 2: IMPÉRIO -->
-      <div class="card-artigo">
-        <h3>2. BRASIL IMPÉRIO</h3>
-        <p><b>A continuidade disfarçada:</b> A Independência trocou o rei por imperador, mas manteve a estrutura. Economia agroexportadora, escravidão e poder nas mãos dos grandes proprietários.</p>
-      </div>
-
-      <!-- CARD 3: REPÚBLICA VELHA -->
-      <div class="card-artigo">
-        <h3>3. REPÚBLICA VELHA</h3>
-        <p><b>Federalismo Oligárquico:</b> "Política dos Governadores" e "Café com Leite". SP e MG revezavam no poder. O voto era de cabresto.</p>
-      </div>
+    <!-- BOX DE DOAÇÃO CENTRALIZADA -->
+    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,204,0,0.3); padding: 35px 30px; border-radius: 12px; margin-bottom: 40px;">
+      <h3 style="color: #ffcc00; font-size: 1.4em; font-weight: 800; margin-bottom: 12px;">Apoie Nosso Projeto</h3>
+      <p style="font-size: 0.9em; line-height: 1.6; opacity: 0.85; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Este blog é um projeto independente. Se o conteúdo te ajudou, considere apoiar com um café para mantermos o site gratuito.
+      </p>
+      <a href="/artigos/doacao.html" style="background: #ffcc00; color: #1a3a6e; padding: 14px 35px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 1em; display: inline-block; transition: 0.3s; margin-bottom: 12px;">
+        ☕ Fazer uma Doação
+      </a>
+      <p style="font-size: 0.85em; opacity: 0.7; margin: 0;">
+        PIX: cronologia.prisma.historico@gmail.com
+      </p>
     </div>
 
-    <!-- BOTÃO -->
-    <div style="text-align: center; margin-top: 50px;">
-      <a href="ebook.html" 
-         style="display: inline-block; background-color: var(--amarelo); color: var(--azul-escuro); padding: 22px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 22px; box-shadow: 0 6px 0 #d4a500;">
-         QUERO O EBOOK COMPLETO COM +300 QUESTÕES →
-      </a>
+    
+
+    <!-- LINKS LEGAIS -->
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+      <a href="/artigos/privacidade.html" style="color: #ffcc00; text-decoration: none; font-size: 0.85em;">Política de Privacidade</a>
+      <span style="opacity: 0.3; color: #FFF;">|</span>
+      <a href="/artigos/termos.html" style="color: #ffcc00; text-decoration: none; font-size: 0.85em;">Termos de Uso</a>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
+      <p style="font-size: 0.85em; opacity: 0.6; margin: 0;">
+        © 2026 Prisma Histórico. Todos os direitos reservados.
+      </p>
     </div>
 
   </div>
-
-</section>
-</main>
-   
-<footer>
-    <div class="container">
-        <div class="footer-box">
-            <h3>Apoie Nosso Projeto</h3>
-            <p>Nos ajude a manter o Prisma Histórico gratuito e com conteúdo de qualidade para todos.</p>
-            <a href="artigos/doacao.html" class="btn-doacao">Fazer Doação 💛</a>
-            <p>PIX: doacao@prismahistorico.com</p>
-        </div>
-        <p class="copy">© 2026 Prisma Histórico. Feito com ❤️ e muito café.</p>
-    </div>
 </footer>
+
+<style>
+  /* Hover pros links do footer */
+  footer a:hover { color: #ffcc00 !important; opacity: 1 !important; }
+  footer a[style*="background: #ffcc00"]:hover { background: #FFF !important; transform: translateY(-2px); }
+</style>
+
+</body>
+</html>
 
 </body>
 </html>
