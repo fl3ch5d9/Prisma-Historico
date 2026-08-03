@@ -167,15 +167,17 @@
         }
 
         /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .header-topo { text-align: center; padding: 30px 0; }
-            .header-topo h1 { font-size: 28px; }
-            .header-menu ul {
-                flex-wrap: wrap; 
-                justify-content: center;
-                gap: 15px 25px;
-            }
-        }
+       /* RESPONSIVO */
+@media (max-width: 1024px) { /* Mudou de 768px para 1024px */
+    .header-topo { text-align: center; padding: 30px 0; }
+    .header-topo h1 { font-size: 28px; }
+    .header-menu ul {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px 25px;
+    }
+}
+
 
         /*prisma começa aqui todos as paginas */
         .header-topo {
@@ -405,6 +407,87 @@ body {
 .menu-esquerda a:hover {
     color: #ffcc00;
 }
+
+/*responsivo*/
+@media screen and (max-width: 1024px) {
+    .header-topo { 
+        text-align: center !important; 
+        padding: 30px 0 !important; 
+    }
+    .header-topo h1 { 
+        font-size: 28px !important; 
+    }
+    
+    /* Força o menu a virar uma coluna vertical centralizada */
+    .header-menu,
+    .header-menu div,
+    .header-menu .container,
+    .header-menu ul,
+    .header-menu nav {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;    
+        justify-content: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        float: none !important;
+    }
+
+    /* Garante que os links fiquem um embaixo do outro */
+    .header-menu li,
+    .header-menu a,
+    .header-menu ul li {
+        display: inline-block !important;
+        text-align: center !important;
+        width: 100% !important;
+        float: none !important;
+    }
+}
+
+/* nova nave celular quebra*/
+
+
+
+@media screen and (max-width: 1024px) {
+    /* Transforma o menu num bloco flexível que aceita quebra de linha */
+    nav.menu-principal {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
+    }
+
+    /* Força os links da esquerda a distribuírem-se e quebrarem de forma alinhada */
+    .menu-esquerda {
+        display: flex !important;
+        flex-wrap: wrap !important; /* Faz os links irem para baixo organizadamente */
+        justify-content: center !important; /* Centraliza os links na tela */
+        gap: 12px 20px !important; /* Espaço entre as linhas e entre os links */
+        width: 100% !important;
+    }
+
+    /* Centraliza o bloco da direita (e-book) logo abaixo */
+    .menu-direita {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 5px !important;
+    }
+
+    /* Garante que os links fiquem legíveis e fáceis de clicar */
+    nav.menu-principal a {
+        display: inline-block !important;
+        text-align: center !important;
+        white-space: nowrap !important; /* Impede que uma palavra se quebre ao meio */
+    }
+}
+</style>
+
+
+
+
 
 </style>
 </head>

@@ -1,29 +1,54 @@
-/* ===== HEADER ===== */
-
-/* CONTAINER PADRÃO */
+/* ==========================================
+   CONTEÚDO PRINCIPAL (ESTILOS PADRÃO)
+   ========================================== */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ESPAÇO PRA NAO FICAR GRUDADO NO CONTEUDO */
 main {
     padding-top: 40px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .header-topo { 
-        text-align: center; 
-        padding: 30px 0; 
+/* ==========================================
+   REGRAS RESPONSIVAS (PARA TELAS ATÉ 1024PX)
+   ========================================== */
+/* ==========================================================
+   CORREÇÃO GLOBAL DO MENU RESPONSIVO (PROS OUTROS MENUS)
+   ========================================================== */
+@media screen and (max-width: 1024px) {
+    /* Transforma o menu num bloco flexível que aceita quebra de linha */
+    nav.menu-principal {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
     }
-    .header-topo h1 { 
-        font-size: 28px; 
+
+    /* Força os links da esquerda a distribuírem-se e quebrarem de forma alinhada */
+    .menu-esquerda {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 12px 20px !important;
+        width: 100% !important;
     }
-    .header-menu .container ul {
-        flex-wrap: wrap; /* quebra linha no celular */
-        justify-content: center;
-        gap: 15px 25px;
+
+    /* Centraliza o bloco da direita (e-book) logo abaixo */
+    .menu-direita {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin-top: 5px !important;
+    }
+
+    /* Garante que os links fiquem legíveis e fáceis de clicar */
+    nav.menu-principal a {
+        display: inline-block !important;
+        text-align: center !important;
+        white-space: nowrap !important;
     }
 }
