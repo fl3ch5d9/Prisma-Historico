@@ -84,37 +84,8 @@
         .btn-quiz:hover { background: var(--azul-escuro); }
         .resultado { text-align: center; font-size: 1.5em; margin-top: 20px; font-weight: bold; }
 
-        /* FOOTER */
-        footer { 
-            background: var(--azul-escuro); 
-            color: var(--branco); 
-            padding: 60px 0 30px; 
-            margin-top: 60px;
-        }
-        .footer-box {
-            background: rgba(0,0,0,0.2);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 40px;
-            border: 2px dashed var(--amarelo);
-        }
-        .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
-        .btn-doacao {
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            padding: 20px 50px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3em;
-            display: inline-block;
-            margin: 20px 0;
-            transition: 0.3s;
-        }
-        .btn-doacao:hover { background: var(--branco); }
-        .copy { text-align: center; opacity: 0.7; }
-
+       
+       
         /* RESPONSIVO */
         @media (max-width: 768px) {
             .header-topo { text-align: center; padding: 30px 0; }
@@ -393,6 +364,7 @@ body {
 .menu-esquerda a:hover {
     color: #ffcc00;
 }
+ /* FOOTER */
 
     </style>
 </head>
@@ -624,18 +596,29 @@ body {
 
 </section>
     
-    <footer>
-        <div class="container">
-            <div class="footer-box">
-                <h3>Apoie Nosso Projeto</h3>
-                <p>Nos ajude a manter o BrasilHistória gratuito e com conteúdo de qualidade para todos.</p>
-                <a href="artigos/doacao.html" class="btn-doacao">Fazer Doação 💛</a>
-                <p>PIX: doacao@brasilhistoria.com</p>
-            </div>
-            <p class="copy">© 2026 BrasilHistória. Feito com ❤️ e muito café.</p>
-        </div>
-    </footer>
-
+    <!--footer-->
+    <div style="background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box;">
     
+    <!-- CAIXA DE APOIO -->
+    <div style="background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06);">
+        <h3 style="font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; margin-top: 0; font-weight: 700;">Apoie o Canal de Estudos</h3>
+        <p style="line-height: 1.7; color: #333; margin-bottom: 25px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
+        
+        <a href="/artigos/doacao.html" style="background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);">☕ Apoie o Canal de Estudos</a>
+        
+        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
+    </div>
+
+    <!-- RODAPÉ LEGAL -->
+    <div style="text-align: center; margin: 0 0 20px 0;">
+        <a href="/artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Política de Privacidade</a>
+        <span style="color: #0a1e3d; opacity: 0.3;">|</span>
+        <a href="/artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Termos de Uso</a>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
+
+</div>    
 </body>
 </html>

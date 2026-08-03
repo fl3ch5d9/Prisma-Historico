@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="../css/style.css">
 
 <style>
+  /* 1. Tira margem/padding padrão do navegador */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--azul-escuro); /* pinta o fundo de azul pra não aparecer branco */
+}
+
 
   /* ===== HEADER NOVO IGUAL DA FOTO ===== */
         .header-topo {
@@ -454,36 +461,10 @@ body {
 }
 
 /* FOOTER DOAÇÕES */
-        footer { 
-            background: var(--azul-escuro); 
-            color: var(--branco); 
-            padding: 60px 0 30px; 
-        }
-        .footer-box {
-            background: rgba(0,0,0,0.2);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 40px;
-            border: 2px dashed var(--amarelo);
-        }
-        .footer-box h3 { font-size: 2em; margin-bottom: 15px; color: var(--amarelo); }
-        .btn-doacao {
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            padding: 20px 50px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3em;
-            display: inline-block;
-            margin: 20px 0;
-            transition: 0.3s;
-        }
-        .btn-doacao:hover { background: var(--branco); }
-        .copy { text-align: center; opacity: 0.7; }
+/* ===== RESET GERAL ===== */
 
-</style>
+
+ </style>
 
 
 
@@ -686,58 +667,28 @@ body {
 </section>
 
 <!-- FOOTER ORIGINAL PRISMA HISTÓRICO -->
- 
-<!-- FOOTER CENTRALIZADO PRISMA HISTÓRICO -->
-<footer style="background: #1a3a6e; color: #FFF; padding: 60px 20px 30px; text-align: center;">
-  <div style="max-width: 800px; margin: auto;">
+ <div style="background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box;">
     
-    <!-- LOGO -->
-    <h2 style="color: #ffcc00; font-size: 2em; font-weight: 900; margin-bottom: 15px; letter-spacing: 2px;">PRISMA <span style="color: #FFF;">HISTÓRICO</span></h2>
-    <p style="font-size: 0.95em; line-height: 1.7; opacity: 0.8; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-      História para Aprovação. Material gratuito e direto ao ponto para Enem, Vestibulares e Concursos Públicos.
-    </p>
-
-    <!-- BOX DE DOAÇÃO CENTRALIZADA -->
-    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,204,0,0.3); padding: 35px 30px; border-radius: 12px; margin-bottom: 40px;">
-      <h3 style="color: #ffcc00; font-size: 1.4em; font-weight: 800; margin-bottom: 12px;">Apoie Nosso Projeto</h3>
-      <p style="font-size: 0.9em; line-height: 1.6; opacity: 0.85; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
-        Este blog é um projeto independente. Se o conteúdo te ajudou, considere apoiar com um café para mantermos o site gratuito.
-      </p>
-      <a href="/artigos/doacao.html" style="background: #ffcc00; color: #1a3a6e; padding: 14px 35px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 1em; display: inline-block; transition: 0.3s; margin-bottom: 12px;">
-        ☕ Fazer uma Doação
-      </a>
-      <p style="font-size: 0.85em; opacity: 0.7; margin: 0;">
-        PIX: cronologia.prisma.historico@gmail.com
-      </p>
+    <!-- CAIXA DE APOIO -->
+    <div style="background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06);">
+        <h3 style="font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; margin-top: 0; font-weight: 700;">Apoie o Canal de Estudos</h3>
+        <p style="line-height: 1.7; color: #333; margin-bottom: 25px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
+        
+        <a href="/artigos/doacao.html" style="background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);">☕ Apoie o Canal de Estudos</a>
+        
+        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
 
-    
-
-    <!-- LINKS LEGAIS -->
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
-      <a href="/artigos/privacidade.html" style="color: #ffcc00; text-decoration: none; font-size: 0.85em;">Política de Privacidade</a>
-      <span style="opacity: 0.3; color: #FFF;">|</span>
-      <a href="/artigos/termos.html" style="color: #ffcc00; text-decoration: none; font-size: 0.85em;">Termos de Uso</a>
+    <!-- RODAPÉ LEGAL -->
+    <div style="text-align: center; margin: 0 0 20px 0;">
+        <a href="/artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Política de Privacidade</a>
+        <span style="color: #0a1e3d; opacity: 0.3;">|</span>
+        <a href="/artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Termos de Uso</a>
     </div>
 
     <!-- COPYRIGHT -->
-    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
-      <p style="font-size: 0.85em; opacity: 0.6; margin: 0;">
-        © 2026 Prisma Histórico. Todos os direitos reservados.
-      </p>
-    </div>
+    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
 
-  </div>
-</footer>
-
-<style>
-  /* Hover pros links do footer */
-  footer a:hover { color: #ffcc00 !important; opacity: 1 !important; }
-  footer a[style*="background: #ffcc00"]:hover { background: #FFF !important; transform: translateY(-2px); }
-</style>
-
-</body>
-</html>
-
+</div>
 </body>
 </html>
