@@ -12,63 +12,72 @@
   --branco:#ffffff; --texto-cinza:#555; --amarelo:#ffcc00;
 }
 *{margin:0; padding:0; box-sizing:border-box;}
-body{background:var(--fundo); font-family:'Segoe UI',Arial,sans-serif; color:#444;}
+body{background:var(--fundo); font-family:'Georgia',serif; color:#444;}
 .container{max-width:1200px; margin:0 auto; padding:0 20px;}
 
 /* HEADER */
 .header-topo{background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%); padding: 30px 20px 20px; text-align: center; border-bottom: 3px solid var(--amarelo);}
 .header-topo .logo-prisma{max-width: 420px; width: 90%; margin: 0 auto 12px; display: block; border-radius: 20px; filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));}
-.header-topo .kicker{color: var(--amarelo); font-style: italic; font-size: 1.1rem; font-family:'Georgia',serif;}
-.menu-principal{background: #001a4d; display: flex; justify-content: space-between; padding: 18px 40px; border-bottom: 3px solid var(--amarelo);}
-.menu-principal a{color:#fff; text-decoration:none; margin:0 12px; font-weight:600; transition:0.3s;}
+.header-topo .kicker{color: var(--amarelo); font-style: italic; font-size: 1.1rem;}
+
+/* MENU */
+.menu-principal{background: #001a4d; display: flex; justify-content: space-between; align-items:center; padding: 18px 40px; border-bottom: 3px solid var(--amarelo); position:sticky; top:0; z-index:100;}
+.menu-principal a{color:#fff; text-decoration:none; margin:0 12px; font-weight:600; transition:0.3s; font-family:'Segoe UI',Arial,sans-serif;}
 .menu-direita a{background:var(--amarelo); color:#001a4d!important; padding:10px 22px; border-radius:8px; font-weight:900;}
 .menu-direita a:hover{background:#ffd633; transform:scale(1.05);}
 .menu-esquerda a:hover{color:var(--amarelo);}
 
 /* HERO */
 .hero{background: linear-gradient(135deg, #005ea6, #007ad6); color:#fff; padding:100px 20px; text-align:center;}
-.hero h1{font-size:48px; font-family:'Georgia',serif; margin-bottom:15px; line-height:1.1;}
+.hero h1{font-size:48px; margin-bottom:15px; line-height:1.1;}
 .hero h1 span{color:var(--amarelo);}
-.hero p{font-size:18px; max-width:700px; margin:0 auto 30px; color:#e8f0fe;}
+.hero p{font-size:18px; max-width:700px; margin:0 auto 30px; color:#e8f0fe; font-family:'Segoe UI',Arial,sans-serif;}
 .beneficios{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:40px; max-width:1000px; margin-left:auto; margin-right:auto;}
-.card-beneficio{background:rgba(255,255,255,0.1); padding:25px; border-radius:12px; border-left:4px solid var(--amarelo); text-align:left; backdrop-filter:blur(5px);}
+.card-beneficio{background:rgba(255,255,255,0.1); padding:25px; border-radius:12px; border-left:4px solid var(--amarelo); text-align:left; backdrop-filter:blur(5px); font-family:'Segoe UI',Arial,sans-serif;}
 
 /* SUMARIO CARDS */
-.section-titulo{text-align:center; font-size:36px; color:var(--azul-escuro); margin:80px 0 20px; font-family:'Georgia',serif;}
-.sub-titulo{text-align:center; color:var(--texto-cinza); margin-bottom:50px; font-size:18px;}
+.section-titulo{text-align:center; font-size:36px; color:var(--azul-escuro); margin:80px 0 20px;}
+.sub-titulo{text-align:center; color:var(--texto-cinza); margin-bottom:50px; font-size:18px; font-family:'Segoe UI',Arial,sans-serif;}
 .grid-sumario{display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); gap:30px; padding:0 20px 80px;}
 
 .card-periodo{background:var(--branco); border-radius:15px; padding:35px; box-shadow:0 8px 25px rgba(26,58,110,0.1); border-top:5px solid var(--amarelo); transition:0.3s;}
 .card-periodo:hover{transform:translateY(-5px); box-shadow:0 12px 35px rgba(26,58,110,0.15);}
-.card-periodo h3{color:var(--azul-escuro); font-size:26px; margin-bottom:15px; font-family:'Georgia',serif;}
-.card-periodo .periodo-data{color:var(--azul-claro); font-weight:700; font-size:14px; margin-bottom:20px; letter-spacing:1px;}
+.card-periodo h3{color:var(--azul-escuro); font-size:26px; margin-bottom:15px;}
+.card-periodo .periodo-data{color:var(--azul-claro); font-weight:700; font-size:14px; margin-bottom:20px; letter-spacing:1px; font-family:'Segoe UI',Arial,sans-serif;}
 .card-periodo details{margin-top:15px;}
-.card-periodo summary{cursor:pointer; color:var(--azul-claro); font-weight:700; padding:10px 0; list-style:none;}
+.card-periodo summary{cursor:pointer; color:var(--azul-claro); font-weight:700; padding:10px 0; list-style:none; font-family:'Segoe UI',Arial,sans-serif;}
 .card-periodo summary:hover{color:var(--azul-hover);}
-.card-periodo ul{list-style:none; padding:15px 0 0 0; text-align:left; max-height:400px; overflow-y:auto;}
+.card-periodo ul{list-style:none; padding:15px 0 0 0; text-align:left; max-height:400px; overflow-y:auto; font-family:'Segoe UI',Arial,sans-serif;}
 .card-periodo li{color:var(--texto-cinza); font-size:14px; padding:8px 0; border-bottom:1px dashed #e8f0fe; line-height:1.5;}
 
 /* CTA */
 .cta-final{background:var(--branco); padding:80px 20px; text-align:center; margin-top:0;}
-.btn-ebook{background:var(--azul-claro); color:#fff; padding:20px 50px; border-radius:12px; text-decoration:none; font-weight:900; font-size:20px; display:inline-block; transition:0.3s; box-shadow:0 4px 0 var(--azul-hover);}
+.btn-ebook{background:var(--azul-claro); color:#fff; padding:20px 50px; border-radius:12px; text-decoration:none; font-weight:900; font-size:20px; display:inline-block; transition:0.3s; box-shadow:0 4px 0 var(--azul-hover); font-family:'Segoe UI',Arial,sans-serif;}
 .btn-ebook:hover{background:var(--azul-hover); transform:translateY(-3px);}
 
 /* FOOTER */
-footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #fff; padding: 80px 20px 40px; font-family: 'Georgia', serif; margin-top: 60px;}
+footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #fff; padding: 80px 20px 40px; margin-top: 60px;}
 .caixa-apoio{background: rgba(0,0,0,0.15); padding: 50px 40px; border-radius: 15px; text-align: center; margin-bottom: 40px; border: 2px dashed var(--amarelo);}
 </style>
 </head>
 <body>
 
 <header class="header-topo">
-    <img src="img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-    <p class="kicker">A História sob múltiplos ângulos críticos</p>
+    <div class="container">
+        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <p class="kicker">A História sob múltiplos ângulos críticos</p>
+    </div>
 </header>
+
 <nav class="menu-principal">
     <div class="menu-esquerda">
-        <a href="index.html">início</a><a href="artigos/sobre.html">sobre</a><a href="artigos/artigos.html">artigos</a><a href="artigos/curiosidades.html">curiosidades</a>
+        <a href="../index.html">início</a>
+        <a href="sobre.html">sobre</a>
+        <a href="artigos.html">artigos</a>
+        <a href="curiosidades.html">curiosidades</a>
+        <a href="quiz.html">quiz</a>
     </div>
-    <div class="menu-direita"><a href="artigos/ebook.html">e-book</a></div>
+    <div class="menu-direita"><a href="ebook.html">e-book</a></div>
 </nav>
 
 <section class="hero">
@@ -91,51 +100,36 @@ footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #ff
     <div class="card-periodo">
         <h3>🔵 BRASIL COLÔNIA</h3>
         <p class="periodo-data">1500 — 1822</p>
-        <p>Da ecologia de exploração até o Diretório Pombalino. O período mais cobrado em Fuvest e FGV.</p>
+        <p style="font-family:'Segoe UI',Arial,sans-serif;">Da ecologia de exploração até o Diretório Pombalino. O período mais cobrado em Fuvest e FGV.</p>
         <details open>
             <summary>Ver 60+ Tópicos ▼</summary>
             <ul>
                 <li>I. A Ecologia de Exploração e a Dialética do Espaço Colonial</li>
                 <li>II. Zoogeografia, Adaptação e a Ausência de Tração Animal</li>
-                <li>III. A Economia Coletora, a Divisão Sociossexual do Trabalho e a Tecno-Estrutura do Fogo</li>
+                <li>III. A Economia Coletora e a Tecno-Estrutura do Fogo</li>
                 <li>IV. A Dinâmica da Fissiparidade e a Antropofagia Ritual</li>
-                <li>V. O Poder Fragmentado: O Monopólio Espiritual contra a Fraqueza Política</li>
-                <li>VI. A Etnocultura Estética e o Epistemicídio Linguístico-Missionário</li>
-                <li>I. Portugal no Alvorecer Moderno: A Dualidade Estrutural das Forças Sociais</li>
-                <li>II. A Blindagem Jurídica do Clero e a Soberania Fragmentada do Estado</li>
-                <li>III. Biopolítica e o Monopólio Sacramental do Quotidiano Colonial</li>
-                <li>IV. O Padroado Régio e a Transposição do Modelo para o Espaço Brasileiro</li>
-                <li>I. A Gênese Tecnológica e o Ensaio Geral de Ceuta</li>
-                <li>II. A Mística da Cruzada e a Geopolítica do Fechamento das Rotas do Levante</li>
-                <li>III. A Batalha das Rotas: A Rota do Cabo contra a Solução Ocidental Colombina</li>
-                <li>IV. A Consagração do Périplo: de D. João II à Invenção da Boa Esperança</li>
-                <li>I. O Primeiro Contacto e a Logística de Reconhecimento de Porto Seguro</li>
-                <li>II. A Cenografia Ideológica: A Missa da Pascoela e a Obediência da Cruz</li>
-                <li>I. O Despertar da Inércia Régia e a Biopolítica dos Condenados</li>
-                <li>II. A Carta de Doação: Soberania Delegada e a Alçada Penal Estamental</li>
-                <li>III. O Foral: A Partilha Fiscal do Exotismo e o Monopólio do Pau-Brasil</li>
-                <li>I. A Guerra Total na Guanabara: Do Sacrifício de Estácio à Cidade Real do Castelo</li>
-                <li>II. A Engenharia dos Aldeamentos: Espaço, Disciplina e Polícia Cristã</li>
-                <li>I. A Economia Política do Aprisionamento e a Racionalidade do Semovente Indígena</li>
-                <li>II. A Inflexão Habsburga de 1580 e a Reconfiguração Geopolítica das Fronteiras</li>
-                <li>I. A Conquista do Pará e o Fechamento da Fronteira Amazônica (1616)</li>
-                <li>II. O Engenho Real como Complexo Agroindustrial Absoluto</li>
-                <li>I. A Fratura Psicológica da Colónia: O Choque Estamental entre o Reinol e o Mazombo</li>
-                <li>II. A Folha-Geral de 1617: A Anatomia Orçamental do Estado Confessional</li>
-                <li>O Saque de Matanzas e o Novo Capital de Giro (1628)</li>
-                <li>A Invasão de Olinda e Recife (1630)</li>
-                <li>O Governo de Nassau: Modernidade, Contradições e a Ordem Pós-Nassau</li>
-                <li>A Instrumentalização do Bandeirante: O Braço Armado do Mercantilismo</li>
-                <li>A Engenharia Geopolítica: A Criação do Estado do Maranhão (1621)</li>
-                <li>A Companhia de Jesus no Norte: A Ascensão de Antônio Vieira</li>
-                <li>A Revolta de Beckman (1684)</li>
-                <li>A Solução Pastoril: A Conquista do Sertão pelo Gado Vacum</li>
-                <li>A Descoberta dos Aluviões e a Cartografia do Ouro (Pós-1690)</li>
-                <li>A Guerra dos Emboabas (1707–1709) e o Massacre do Capão</li>
-                <li>A Guerra Civil Pernambucana: O Cerco ao Recife</li>
-                <li>A Radiografia Económica do Império: O Tratado de Antonil (1711)</li>
-                <li>O Diretório dos Índios (1757) e a Farsa da Cidadania Indígena</li>
-                <li>A Ofensiva Diplomática e o Desmantelamento da Companhia de Jesus (1758–1759)</li>
+                <li>V. O Poder Fragmentado: Monopólio Espiritual vs Fraqueza Política</li>
+                <li>VI. O Epistemicídio Linguístico-Missionário</li>
+                <li>VII. O Padroado Régio e a Transposição para o Brasil</li>
+                <li>VIII. A Batalha das Rotas: Cabo vs Solução Ocidental</li>
+                <li>IX. A Cenografia Ideológica: Missa e Obediência da Cruz</li>
+                <li>X. A Carta de Doação: Soberania Delegada</li>
+                <li>XI. A Guerra Total na Guanabara</li>
+                <li>XII. A Engenharia dos Aldeamentos</li>
+                <li>XIII. A Economia do Aprisionamento Indígena</li>
+                <li>XIV. O Engenho Real como Complexo Agroindustrial</li>
+                <li>XV. O Saque de Matanzas e o Capital de Giro</li>
+                <li>XVI. A Invasão Holandesa: Olinda e Recife</li>
+                <li>XVII. O Governo de Nassau: Modernidade e Contradições</li>
+                <li>XVIII. A Instrumentalização do Bandeirante</li>
+                <li>XIX. A Revolta de Beckman (1684)</li>
+                <li>XX. A Conquista do Sertão pelo Gado</li>
+                <li>XXI. A Descoberta do Ouro e a Cartografia (Pós-1690)</li>
+                <li>XXII. A Guerra dos Emboabas (1707–1709)</li>
+                <li>XXIII. A Guerra dos Mascates: Cerco ao Recife</li>
+                <li>XXIV. O Tratado de Antonil (1711)</li>
+                <li>XXV. O Diretório dos Índios (1757)</li>
+                <li>XXVI. O Desmantelamento da Companhia de Jesus</li>
             </ul>
         </details>
     </div>
@@ -144,103 +138,35 @@ footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #ff
     <div class="card-periodo">
     <h3>🟡 BRASIL IMPÉRIO</h3>
     <p class="periodo-data">1822 — 1889</p>
-    <p>Do "fraque e cartola" ao abolicionismo. A construção do Estado Nacional e suas contradições.</p>
+    <p style="font-family:'Segoe UI',Arial,sans-serif;">Do "fraque e cartola" ao abolicionismo. A construção do Estado Nacional e suas contradições.</p>
     <details>
         <summary>Ver Estrutura do Período ▼</summary>
         <ul>
-            <li>A Grande Fuga Geopolítica: O Dia em que um Império Cruzou o Atlântico</li>
-            <li>Uma Decisão Estratégica ou um Abandono Coletivo?</li>
-            <li>O Impacto na Colónia: O Nascimento de um Novo Brasil</li>
-            <li>O Preço da Proteção e a Metamorfose Cultural do Brasil</li>
+            <li>A Grande Fuga Geopolítica: A Corte Cruzando o Atlântico</li>
+            <li>O Impacto na Colônia: Nascimento de um Novo Brasil</li>
             <li>O Choque de Dois Mundos: Nobreza Europeia x Realidade Tropical</li>
-            <li>O Legado Invisível: Da Colônia a Império</li>
-            <li>À Sombra do Trono: O Poder Político Oculto das Mulheres da Corte</li>
-            <li>Dona Maria I: Muito Além do Estigma da "Loucura"</li>
-            <li>Carlota Joaquina: A Arquiteta de Impérios no Exílio</li>
-            <li>Reflexão Crítica: Por que a História silenciou estas mulheres?</li>
-            <li>O Preço do Brilho da Corte: O Cotidiano Invisível das Mulheres Comuns em 1808</li>
-            <li>As Mulheres Indígenas: O Avanço da Fronteira e o Apagamento</li>
-            <li>As Mulheres Brancas Pobres: A Perda de Espaço e a Inflação</li>
-            <li>Reflexão Crítica: A Modernização que Excluiu</li>
-            <li>O Despertar dos Trópicos: O Decreto que Demoliu o Pacto Colonial</li>
-            <li>A Ilusão da Liberdade Económica e a Nova Dependência</li>
-            <li>Reflexão Crítica: O Nascimento de uma Nova Identidade</li>
-            <li>Patins de Gelo nos Trópicos: O Absurdo Consumismo que Desenhou o Novo Brasil</li>
-            <li>O Delírio Comercial da Revolução Industrial</li>
-            <li>Reflexão Crítica: A Colonização do Gosto e do Consumo</li>
-            <li>A Vitrina do Império: A Rua do Ouvidor e a Invenção da Vaidade Tropical</li>
-            <li>As Modistas Francesas e a Colonização da Estética</li>
-            <li>Reflexão Crítica: A Segregação Social Através da Elegância</li>
-            <li>A Revolução Pernambucana de 1817 e a Explosão do Descontentamento</li>
-            <li>A Anatomia da Revolta: O Preço do Luxo Carioca</li>
-            <li>A Pátria Iluminista no Coração do Nordeste</li>
-            <li>Reflexão Crítica: A Reação Violenta e o Legado Rachado</li>
-            <li>O Grande Êxodo Inverso: A Revolução de 1820 e o Rei que Esvaziou o Brasil</li>
-            <li>A Revolução do Porto: O Grito de uma Metrópole Decadente</li>
-            <li>O Saque Final e a Herança Maldita</li>
-            <li>Reflexão Crítica: O Pavio Aceso de 1822</li>
-            <li>Os Arquitetos da Emancipação: As Correntes Ocultas por Trás do Grito do Ipiranga</li>
-            <li>O Tabuleiro das Ideias: Autonomia versus Ruptura</li>
-            <li>O Único Ponto de Encontro: A Resistência a Lisboa</li>
-            <li>A Força do Povo e os Bastidores do "Fico": O Dia em que o Rio de Janeiro Dobrou um Príncipe</li>
-            <li>A Ordem de Lisboa: O Decreto do Despejo Político</li>
-            <li>A Engenharia da Pressão Popular: O Abaixo-Assinado dos 8 Mil</li>
-            <li>O Dia do Fico: O Teatro do Poder</li>
-            <li>Reflexão Crítica: A Invenção do Cidadão Brasileiro</li>
-            <li>A Independência de Sangue e Pólvora: As Guerras Silenciadas que Fraturaram o Norte e o Nordeste</li>
-            <li>A Bahia em Chamas: O Verdadeiro Berço da Libertação</li>
-            <li>A Carnificina do Jenipapo: O Sangue Sertanejo no Piauí</li>
-            <li>Reflexão Crítica: Por que a História Oficial escondeu estas Guerras?</li>
-            <li>A Independência Comprada: A Dívida Oculta que Deu Origem ao Brasil Imperial</li>
-            <li>O Isolamento Diplomático e o Nó da Legitimidade</li>
-            <li>O Tratado de 1825: A Fatura de Dois Milhões de Libras</li>
-            <li>A Ciranda Financeira dos Banqueiros Ingleses</li>
-            <li>Reflexão Crítica: A Soberania Hipotecada</li>
-            <li>I. A Lei da Espada: O Autoritarismo Oculto na Constituição de 1824</li>
-            <li>Reflexão Crítica: A Liberdade Blindada pelas Elites</li>
-            <li>O Pântano da Cisplatina: O Conflito que Sangrou as Finanças e o Trono do Imperador</li>
-            <li>O Custo Humano e Financeiro de uma Guerra Impopular</li>
-            <li>A Humilhação Diplomática e a Perda do Território</li>
-            <li>Reflexão Crítica: O Pavio Curto para a Abdicação</li>
-            <li>O Crepúsculo do Imperador: A Noite das Garrafadas e os Bastidores do Colapso de 1831</li>
-            <li>A Noite das Garrafadas: A Guerra Civil de Vidro e Pedras</li>
-            <li>Os Bastidores da Abdicação: O Cerco do Campo de Santana</li>
-            <li>Reflexão Crítica: A Fuga e o Trono Vazio</li>
-            <li>Anatomia do Despedaçamento: O Choque entre a Cabanagem e a Farroupilha no Brasil Regencial</li>
-            <li>A Cabanagem (Pará): O Grito Sangrento dos Excluídos</li>
-            <li>A Guerra dos Farrapos (Sul): A Rebelião dos Donos do Gado</li>
-            <li>Reflexão Crítica: Duas Guerras, Duas Réguas Morais</li>
-            <li>O Golpe da Maioridade: As Rasteiras Parlamentares que Coroaram uma Criança para Salvar o Império</li>
-            <li>O Tabuleiro Político: A Dança das Cadeiras entre Liberais e Conservadores</li>
-            <li>A Engenharia do Golpe: A Constituição Rasgada nos Bastidores</li>
-            <li>Reflexão Crítica: O Nascimento do Segundo Reinado sob o Signo da Aparência</li>
-            <li>A Fábrica de um Monarca: O Isolamento Psicológico e a Rotina Desumana que Criaram Dom Pedro II</li>
-            <li>O Abandono Institucionalizado e a Ausência de Afeto</li>
-            <li>A Engrenagem Desumana: O Programa de Estudos de um Prodígio Forçado</li>
-            <li>A Máscara de Imperador: O Autocontrolo como Sobrevivência</li>
-            <li>Reflexão Crítica: O Preço da Estabilidade</li>
-            <li>O Teatro das Cadeiras: O "Parlamentarismo às Avessas" e a Maquiavélica Arte de Governar de Dom Pedro II</li>
-            <li>A Inversão da Pirâmide: Como Funcionava o Sistema</li>
-            <li>Liberais e Conservadores: Duas Faces da Mesma Moeda</li>
-            <li>Reflexão Crítica: A Estabilidade ao Preço da Paralisia</li>
-            <li>O Dia em que o Brasil Mostrou os Dentes à Rainha Vitória: A Questão Christie e as Fissuras do Império</li>
-            <li>O Pavio Curto de um Embaixador Arrogante</li>
-            <li>O Bloqueio Naval e o Orgulho Nacional</li>
-            <li>Reflexão Crítica: A Ilusão da Força e o Início do Fim</li>
-            <li>A Vitória Pirrônica do Império: Como a Guerra do Paraguai Consolidou o Exército e Destruiu a Coroa</li>
-            <li>A Trincheira dos Excluídos: O Nascimento de um Exército Cidadão</li>
-            <li>A Bancarrota Imperial: O Nó de Libra Esterlina</li>
-            <li>Reflexão Crítica: O Início do Fim do Tabuleiro Imperial</li>
-            <li>A Farsa do Gradualismo: Como as Leis Abolicionistas Foram Desenhadas para Adiar o Fim da Escravidão</li>
-            <li>A Lei do Ventre Livre (1871): A Engenharia do Cativeiro Prolongado</li>
-            <li>A Lei dos Sexagenários (1885): A Crueldade Vestida de Liberdade</li>
-            <li>Reflexão Crítica: O Colapso de um Império Sem Base</li>
-            <li>O Trono Isolado: A Questão Religiosa e a Perda da Legitimidade Divina (1872–1875)</li>
-            <li>O Choque com Roma: Bispos contra Maçons</li>
-            <li>Reflexão Crítica: A Solidão da Coroa</li>
-            <li>O Golpe do Silêncio: O 15 de Novembro e uma República de Costas Voltadas para o Povo (1889)</li>
-            <li>Os Bastidores do 15 de Novembro: A Mentira que Moveu o Marechal</li>
-            <li>Reflexão Crítica: A Herança de um Regime Exclusivista</li>
+            <li>À Sombra do Trono: O Poder Político das Mulheres da Corte</li>
+            <li>O Preço do Brilho: Cotidiano das Mulheres Comuns em 1808</li>
+            <li>O Despertar dos Trópicos: Fim do Pacto Colonial</li>
+            <li>A Vitrina do Império: Rua do Ouvidor e a Vaidade Tropical</li>
+            <li>A Revolução Pernambucana de 1817</li>
+            <li>O Grande Êxodo Inverso: A Revolução de 1820</li>
+            <li>Os Arquitetos da Emancipação: Bastidores do Grito do Ipiranga</li>
+            <li>A Força do Povo e os Bastidores do "Fico"</li>
+            <li>A Independência de Sangue e Pólvora: Guerras do Norte</li>
+            <li>A Independência Comprada: A Dívida de 2 Milhões de Libras</li>
+            <li>A Lei da Espada: Autoritarismo na Constituição de 1824</li>
+            <li>O Pântano da Cisplatina</li>
+            <li>O Crepúsculo do Imperador: Noite das Garrafadas</li>
+            <li>Anatomia do Despedaçamento: Cabanagem e Farroupilha</li>
+            <li>O Golpe da Maioridade</li>
+            <li>A Fábrica de um Monarca: A Rotina de Dom Pedro II</li>
+            <li>O "Parlamentarismo às Avessas"</li>
+            <li>A Questão Christie e as Fissuras do Império</li>
+            <li>A Guerra do Paraguai: Vitória que Destruiu a Coroa</li>
+            <li>A Farsa do Gradualismo: Leis Abolicionistas</li>
+            <li>O Trono Isolado: A Questão Religiosa</li>
+            <li>O Golpe do Silêncio: 15 de Novembro de 1889</li>
         </ul>
     </details>
 </div>
@@ -249,21 +175,23 @@ footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #ff
     <div class="card-periodo">
         <h3>🔵 REPÚBLICA VELHA</h3>
         <p class="periodo-data">1889 — 1930</p>
-        <p>Belle Époque e Cortiço. Café com leite, coronelismo e o nascimento da cultura urbana brasileira.</p>
+        <p style="font-family:'Segoe UI',Arial,sans-serif;">Belle Époque e Cortiço. Café com leite, coronelismo e o nascimento da cultura urbana brasileira.</p>
         <details>
             <summary>Ver Estrutura do Período ▼</summary>
             <ul>
                 <li>I. A Proclamação e a Constituição de 1891: Federalismo Oligárquico</li>
-                <li>II. Política do Café com Leite e a Política dos Governadores</li>
+                <li>II. Política do Café com Leite e Política dos Governadores</li>
                 <li>III. O Coronelismo e o Voto de Cabresto</li>
                 <li>IV. As Revoltas Urbanas: Vacina, Chibata e Cangaço</li>
-                <li>V. Economia Exportadora e a Entrada do Capital Estrangeiro</li>
+                <li>V. Economia Exportadora e Capital Estrangeiro</li>
                 <li>VI. O Rio Belle Époque: Avenida Central e Higienismo</li>
-                <li>VII. Imigração Europeia e a Formação do Proletariado</li>
+                <li>VII. Imigração Europeia e Formação do Proletariado</li>
                 <li>VIII. O Nascimento do Samba e do Carnaval Urbano</li>
                 <li>IX. A Semana de Arte Moderna de 1922</li>
-                <li>X. A Crise de 1929 e a Revolução de 1930</li>
-                <li>... +50 tópicos detalhados no e-book completo</li>
+                <li>X. Tenentismo e as Revoltas Militares</li>
+                <li>XI. A Crise de 1929 e a Revolução de 1930</li>
+                <li>XII. A Cultura do Boteco e do Rádio</li>
+                <li>... +40 tópicos detalhados no e-book completo</li>
             </ul>
         </details>
     </div>
@@ -271,8 +199,8 @@ footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #ff
 </div>
 
 <section class="cta-final">
-    <h2 style="color:var(--azul-escuro); font-size:32px; font-family:'Georgia',serif;">Leve o Prisma Histórico Completo</h2>
-    <p style="color:var(--texto-cinza); margin:15px 0 30px; font-size:18px;">Acesso imediato | PDF + Mapas Mentais + 300 Questões Comentadas</p>
+    <h2 style="color:var(--azul-escuro); font-size:32px;">Leve o Prisma Histórico Completo</h2>
+    <p style="color:var(--texto-cinza); margin:15px 0 30px; font-size:18px; font-family:'Segoe UI',Arial,sans-serif;">Acesso imediato | PDF + Mapas Mentais + 300 Questões Comentadas</p>
     <a href="#" class="btn-ebook">QUERO MEU E-BOOK AGORA →</a>
 </section>
 
@@ -280,14 +208,14 @@ footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #ff
     <div class="container">
         <div class="caixa-apoio">
             <h3 style="font-size: 2.2em; margin-bottom: 15px; color: var(--amarelo); font-weight: 900;">Apoie Nosso Projeto</h3>
-            <p style="font-size: 17px; margin-bottom: 30px; color: #eef2f7;">Nos ajude a manter o PrismaHistórico gratuito e com conteúdo de qualidade para todos.</p>
-            <a href="artigos/doacao.html" style="background: var(--amarelo); color: #0a1f44; padding: 18px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.2em; display: inline-block; box-shadow: 0 4px 0 #d4a500;">Fazer Doação ♡</a>
-            <p style="font-size: 16px; color: #fff; margin-top: 10px;"><b>PIX:</b> cronologia.prisma.historico@gmail.com</p>
+            <p style="font-size: 17px; margin-bottom: 30px; color: #eef2f7; font-family:'Segoe UI',Arial,sans-serif;">Nos ajude a manter o PrismaHistórico gratuito e com conteúdo de qualidade para todos.</p>
+            <a href="doacao.html" style="background: var(--amarelo); color: #0a1f44; padding: 18px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.2em; display: inline-block; box-shadow: 0 4px 0 #d4a500; font-family:'Segoe UI',Arial,sans-serif;">Fazer Doação ♡</a>
+            <p style="font-size: 16px; color: #fff; margin-top: 10px; font-family:'Segoe UI',Arial,sans-serif;"><b>PIX:</b> cronologia.prisma.historico@gmail.com</p>
         </div>
-        <div style="text-align: center;">
-            <a href="artigos/privacidade.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Política de Privacidade</a> 
+        <div style="text-align: center; font-family:'Segoe UI',Arial,sans-serif;">
+            <a href="privacidade.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Política de Privacidade</a> 
             <span style="color: rgba(255,255,255,0.5);">|</span> 
-            <a href="artigos/termos.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Termos de Uso</a>
+            <a href="termos.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Termos de Uso</a>
             <p style="color: #eef2f7; margin-top:15px;">© 2026 PrismaHistórico. Feito com ❤️</p>
         </div>
     </div>

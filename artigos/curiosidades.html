@@ -1,612 +1,245 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiosidades - Prisma Histórico</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        :root {
-            --azul-escuro: #1a3a6e;
-            --azul-royal: #005ea6;
-            --azul-vivo: #007ad6;
-            --azul-claro: #007BFF;
-            --azul-hover: #0056b3;
-            --fundo-site: #e8f0fe;
-            --branco-card: #ffffff;
-            --texto-cinza: #555;
-            --texto-escuro: #444;
-            --amarelo-ouro: #ffcc00;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Arial, sans-serif; 
-            background: var(--fundo-site); 
-            color: var(--texto-cinza);
-            line-height: 1.8;
-        }
-        .container { max-width: 1100px; margin: auto; padding: 0 24px; }
-
-        /* HEADER */
-        .header-topo {
-  background: 
-    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
-    url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 100px 20px;
-  text-align: center;
-  border-bottom: 5px double #ffcc00;
-  width: 100%;
-  box-sizing: border-box;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curiosidades - Prisma Histórico</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+:root {
+    --azul-escuro: #1a3a6e;
+    --azul-royal: #005ea6;
+    --azul-vivo: #007ad6;
+    --azul-claro: #007BFF;
+    --azul-hover: #0056b3;
+    --fundo-site: #e8f0fe;
+    --branco-card: #ffffff;
+    --texto-cinza: #555;
+    --texto-escuro: #444;
+    --amarelo-ouro: #ffcc00;
 }
-
-.header-topo .container {
-  max-width: 1200px;
-  margin: 0 auto;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Georgia', serif; 
+    background: var(--fundo-site); 
+    color: var(--texto-escuro);
+    line-height: 1.8;
 }
+.container { max-width: 1200px; margin: auto; padding: 0 24px; }
 
-.header-topo h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(55px, 10vw, 100px);
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  line-height: 1.1;
-  
-  /* Efeito 3D + Brilho Colonial */
-  text-shadow: 
-    2px 2px 0 #001a38,
-    4px 4px 0 #001a38,
-    0 0 15px rgba(255, 204, 0, 0.4);
+/* HEADER */
+.header-topo {
+    background: 
+      linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%),
+      url('https://www.transparenttextures.com/patterns/old-paper.png');
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--amarelo-ouro);
 }
-
-/* PRISMA em branco */
-.header-topo h1::first-word,
-.header-topo h1 {
-  color: #ffffff;
-}
-
-/* HISTÓRICO em amarelo - truque com span */
-.header-topo h1 span {
-  color: #ffcc00;
-  text-shadow: 
-    2px 2px 0 #8a6d00,
-    4px 4px 0 #8a6d00,
-    0 0 20px #ffcc00;
-}
-
-.header-topo p {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: #f5f5f5;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Linha decorativa */
-.header-topo p::before,
-.header-topo p::after {
-  content: " ❧ ";
-  color: #ffcc00;
-  font-size: 20px;
-}
-
- 
-    /* Tamanho do logo do header */
 .header-topo .logo-prisma {
-    max-width: 700px; /* muda aqui pra aumentar/diminuir */
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
-    /* Efeito glow direto na imagem */
-    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
-    
-    /* Suaviza a imagem */
+    max-width: 420px; width: 90%; height: auto;
+    margin: 0 auto 12px auto; display: block;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
     transition: 0.3s ease;
-    border-radius: 30px;
 }
-
-/* Quando passa o mouse fica mais forte */
 .header-topo .logo-prisma:hover {
     filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
 }
-/*perfeição header*/
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
-    margin: 0;
-}
-
-/* 2. HEADER - mais profundo e com luz */
-.header-topo {
-    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
-}
-
-/* 3. LOGO - arredondar + brilho */
-.header-topo .logo-prisma {
-    max-width: 420px;
-    width: 90%;
-    height: auto;
-    margin: 0 auto 12px auto;
-    display: block;
-    border-radius: 20px; /* Quinas arredondadas */
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
-}
-
-/* 4. KICKER - frase de baixo */
 .header-topo .kicker {
-    color: #ffcc00; /* Dourado igual da imagem */
-    font-style: italic;
-    font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    margin: 0;
+    color: var(--amarelo-ouro);
+    font-style: italic; font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
 }
 
-/* 5. MENU - azul escuro combinando */
+/* MENU */
 .menu-principal {
     background: #001a4d;
-    padding: 12px 0;
-    border-bottom: 2px solid #ffcc00;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 18px 40px; box-sizing: border-box;
+    border-bottom: 3px solid var(--amarelo-ouro); 
+    position: sticky; top: 0; z-index: 100;
 }
-
-.menu-principal a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.menu-principal a:hover {
-    color: #ffcc00; /* Dourado no hover */
-}
-
-/* 1. Centralizar os links do menu */
-.menu-principal {
-    text-align: center; /* Adiciona isso aqui */
-}
-
-/* 2. Botão de destaque para o E-BOOK */
-.menu-principal a[href*="ebook"] {
-    background: #ffcc00; /* Amarelo dourado */
-    color: #001a4d !important; /* Texto azul escuro */
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 900;
-    margin-left: 15px;
-}
-.menu-principal a[href*="ebook"]:hover {
-    background: #ffd633;
-    color: #001a4d !important;
-    transform: translateY(-2px);
-}
-/* Deixa o menu com flex pra jogar pros lados */
-
-.menu-principal {
-    background: #001a4d; /* Azul escuro do seu site */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ocupa a tela toda */
-    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
-    box-sizing: border-box;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
-}
-
 .menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px; /* Espaço entre os links */
-    font-weight: 600;
-    font-size: 16px;
-    transition: 0.3s;
+    color: #fff; text-decoration: none; margin: 0 12px;
+    font-weight: 600; font-size: 16px; transition: 0.3s;
 }
-
-/* Botão E-BOOK destacado na direita */
+.menu-esquerda a:hover { color: var(--amarelo-ouro); }
 .menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 12px 24px; /* Botão maior */
-    border-radius: 8px;
-    font-weight: 900;
-    font-size: 16px;
+    background: var(--amarelo-ouro); color: #001a4d !important;
+    padding: 10px 22px; border-radius: 8px; font-weight: 900;
 }
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
+.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
 
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
+/* SEÇÃO VENDA EBOOK */
+.prisma-venda { background: linear-gradient(135deg, #1a3a6e 0%, #005ea6 100%); color: #fff; padding: 80px 20px; position: relative; overflow: hidden; }
+.prisma-venda .container {max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;}
+.prisma-venda .selo {display: inline-block; background: #ffcc00; color: #1a3a6e; font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase;}
+.prisma-venda h2 {font-size: 36px; line-height: 1.2; margin-bottom: 16px; color: #fff;}
+.prisma-venda h2 span {color: #ffcc00;}
+.prisma-venda .subtitulo {font-size: 18px; color: #e8f0fe; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;}
+.prisma-venda .lista-beneficios {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; text-align: left; margin: 40px 0;}
+.prisma-venda .item-beneficio {background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-left: 3px solid #ffcc00; padding: 18px; border-radius: 10px; backdrop-filter: blur(5px);}
+.prisma-venda .item-beneficio strong {color: #ffcc00; display: block; margin-bottom: 6px; font-size: 16px;}
+.prisma-venda .btn-comprar {background: #007BFF; color: #fff; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 18px; display: inline-block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,123,255,0.4);}
+.prisma-venda .btn-comprar:hover {background: #0056b3; transform: translateY(-3px);}
 
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 500;
-    transition: 0.3s;
-}
+/* CARDS ERA */
+.era { padding: 60px 20px; }
+.era .container {max-width: 1200px; margin: 0 auto;}
+.era .era-header {text-align: center; margin-bottom: 40px;}
+.era .era-header .datas {font-size: 14px; font-weight: 700; color: #007BFF; letter-spacing: 2px; text-transform: uppercase;}
+.era .era-header h2 {font-size: 32px; color: #1a3a6e; margin: 10px 0;}
+.era .era-header p {font-size: 16px; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;}
+.era .grid-eixos {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;}
+.era .card-eixo {background: #ffffff; color: #444; border-left: 5px solid #ffcc00; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(26,58,110,0.08); transition: all 0.3s ease;}
+.era .card-eixo:hover {transform: translateY(-5px); box-shadow: 0 8px 24px rgba(26,58,110,0.12);}
+.era .card-eixo .emoji {font-size: 32px; display: block; margin-bottom: 12px;}
+.era .card-eixo h3 {font-size: 18px; margin-bottom: 10px; color: #1a3a6e;}
+.era .card-eixo p {font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 12px;}
+.era .card-eixo ul {padding-left: 18px; margin-bottom: 0; color: #555; font-size: 14px;}
 
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 900;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
+/* CTA E FOOTER */
+.cta {background: #1a3a6e; color: #fff; text-align: center; padding: 60px 20px;}
+.cta h2 {color: #fff; font-size: 32px; margin-bottom: 12px;}
+.cta a {background: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; font-size: 16px;}
+.cta a:hover {background: #e6b800;}
 
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-/*matriz dos cards curiosidades*/
-
-    </style>
-
+.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; box-sizing: border-box; }
+.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
+.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
+.caixa-apoio a { background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; }
+.links-legais { text-align: center; margin: 0 0 20px 0; }
+.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
+.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
+</style>
 </head>
 <body>
 
-<!--header topo novo -->
 <header class="header-topo">
     <div class="container">
-        <img src="img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
         <p class="kicker">A História sob múltiplos ângulos críticos</p>
     </div>
 </header>
 
 <nav class="menu-principal">
     <div class="menu-esquerda">
-        <a href="index.html">início</a>
-        <a href="artigos/sobre.html">sobre</a>
-        <a href="artigos/artigos.html">artigos</a>
-        <a href="artigos/curiosidades.html">curiosidades</a>
-        <a href="artigos/quiz.html">quiz</a>
+        <a href="../index.html">início</a>
+        <a href="sobre.html">sobre</a>
+        <a href="artigos.html">artigos</a>
+        <a href="curiosidades.html">curiosidades</a>
+        <a href="quiz.html">quiz</a>
     </div>
     <div class="menu-direita">
-        <a href="artigos/ebook.html">e-book</a>
+        <a href="ebook.html">e-book</a>
     </div>
 </nav>
 
-   
-<!--fim header nave menu -->
-<!--prisma-->
-<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
-<section style="
-  background: #e8f0fe;
-  padding: 90px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-">
-  <div style="max-width: 1100px; margin: 0 auto;">
-
-    <!--introdução da compra do ebook -->
-    <!-- 📖 SECTION DE CONVERSÃO - PRISMA HISTÓRICO -->
-<section class="prisma-venda" style="background: linear-gradient(135deg, #1a3a6e 0%, #005ea6 100%); color: #fff; padding: 80px 20px; position: relative; overflow: hidden;">
-  <style>
-    .prisma-venda .container {max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;}
-    .prisma-venda .selo {display: inline-block; background: #ffcc00; color: #1a3a6e; font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase;}
-    .prisma-venda h2 {font-size: 36px; line-height: 1.2; margin-bottom: 16px; color: #fff;}
-    .prisma-venda h2 span {color: #ffcc00;}
-    .prisma-venda .subtitulo {font-size: 18px; color: #e8f0fe; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;}
-    .prisma-venda .lista-beneficios {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; text-align: left; margin: 40px 0;}
-    .prisma-venda .item-beneficio {background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-left: 3px solid #ffcc00; padding: 18px; border-radius: 10px; backdrop-filter: blur(5px);}
-    .prisma-venda .item-beneficio strong {color: #ffcc00; display: block; margin-bottom: 6px; font-size: 16px;}
-    .prisma-venda .item-beneficio p {margin: 0; font-size: 14px; color: #e8f0fe;}
-    .prisma-venda .cta-box {background: #ffffff; color: #1a3a6e; padding: 30px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); margin-top: 30px;}
-    .prisma-venda .cta-box h3 {font-size: 24px; color: #1a3a6e; margin-bottom: 10px;}
-    .prisma-venda .cta-box p {color: #555; margin-bottom: 20px;}
-    .prisma-venda .btn-comprar {background: #007BFF; color: #fff; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 18px; display: inline-block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,123,255,0.4);}
-    .prisma-venda .btn-comprar:hover {background: #0056b3; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,123,255,0.6);}
-    .prisma-venda .obs {font-size: 12px; color: #777; margin-top: 12px;}
-    /* Efeito de brilho no fundo */
-    .prisma-venda::before {content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,204,0,0.1) 0%, transparent 50%); z-index: 1;}
-  </style>
-
+<!-- SEÇÃO VENDA -->
+<section class="prisma-venda">
   <div class="container">
     <span class="selo">📖 E-book Exclusivo</span>
-    
     <h2>Chega de decorar datas. <br> <span>Entenda como o Brasil REALMENTE vivia.</span></h2>
-    
-    <p class="subtitulo">
-      Você já leu sobre Colônia, Império e República Velha. <br>
-      Mas e o cheiro da rua? A roupa que usavam? O que comiam? Como se divertiam?
-    </p>
-
-    <p class="subtitulo" style="font-size: 20px; font-weight: 600;">
-      É isso que a Fuvest, FGV e o ENEM estão cobrando agora. <br>
-      E é isso que está dentro do <b>PRISMA HISTÓRICO</b>.
-    </p>
+    <p class="subtitulo">Você já leu sobre Colônia, Império e República Velha. Mas e o cheiro da rua? A roupa que usavam? O que comiam?</p>
+    <p class="subtitulo" style="font-size: 20px; font-weight: 600;">É isso que a Fuvest, FGV e o ENEM estão cobrando agora. E é isso que está dentro do <b>PRISMA HISTÓRICO</b>.</p>
 
     <div class="lista-beneficios">
-      <div class="item-beneficio">
-        <strong>🔵 Colônia: A Casa, a Senzala e a Igreja</strong>
-        <p>Descubra por que o senhor de engenho tomava banho 1x por mês e por que o samba nasceu dentro da senzala.</p>
-      </div>
-      <div class="item-beneficio">
-        <strong>🟡 Império: O Rio que queria ser Paris</strong>
-        <p>Entenda a hipocrisia do fraque e cartola no calor de 40°C e como nasceu a feijoada na cozinha da senzala.</p>
-      </div>
-      <div class="item-beneficio">
-        <strong>🔵 República Velha: Belle Époque e Cortiço</strong>
-        <p>Revele o motivo da Revolta da Vacina e como o samba virou arma de resistência cultural no quintal das tias baianas.</p>
-      </div>
+      <div class="item-beneficio"><strong>🔵 Colônia: A Casa, a Senzala e a Igreja</strong><p>Descubra por que o senhor de engenho tomava banho 1x por mês e por que o samba nasceu dentro da senzala.</p></div>
+      <div class="item-beneficio"><strong>🟡 Império: O Rio que queria ser Paris</strong><p>Entenda a hipocrisia do fraque e cartola no calor de 40°C e como nasceu a feijoada.</p></div>
+      <div class="item-beneficio"><strong>🔵 República Velha: Belle Époque e Cortiço</strong><p>Revele o motivo da Revolta da Vacina e como o samba virou arma de resistência cultural.</p></div>
     </div>
 
-    <div class="cta-box">
+    <div style="background: #fff; color: #1a3a6e; padding: 30px; border-radius: 16px; margin-top: 30px;">
       <h3>PRISMA HISTÓRICO PARA VESTIBULARES, ENEM E CONCURSOS</h3>
-      <p>O único material que transforma o cotidiano em questão de prova. Com fontes, imagens de época e +200 questões comentadas.</p>
-      
-      <a href="artigos/ebook.html" class="btn-comprar">
-        QUERO DEGUSTAR CADA HISTÓRIA →
-      </a>
-      <p class="obs">Acesso imediato | PDF + Audiobook Bônus | 7 dias de garantia</p>
+      <p style="color: #555; margin-bottom: 20px;">O único material que transforma o cotidiano em questão de prova. Com fontes, imagens de época e +200 questões comentadas.</p>
+      <a href="ebook.html" class="btn-comprar">QUERO DEGUSTAR CADA HISTÓRIA →</a>
+      <p style="font-size: 12px; color: #777; margin-top: 12px;">Acesso imediato | PDF + Audiobook Bônus | 7 dias de garantia</p>
     </div>
-
-    <p style="margin-top: 30px; font-size: 14px; color: #e8f0fe;">
-      ⚠️ Se você quer passar, precisa pensar como o examinador. <br>
-      E ele não pergunta "em que ano foi". Ele pergunta "como viviam".
-    </p>
   </div>
 </section>
 
-<!--body-->
-<main style="background: #e8f0fe;">
+<main>
 
-<!-- 🔵 ERA 1: COLÔNIA -->
-<section class="era" style="padding: 60px 20px; background: #e8f0fe;">
-  <style>
-    .era .container {max-width: 1200px; margin: 0 auto;}
-    .era .era-header {text-align: center; margin-bottom: 40px;}
-    .era .era-header .datas {font-size: 14px; font-weight: 700; color: #007BFF; letter-spacing: 2px; text-transform: uppercase;}
-    .era .era-header h2 {font-size: 32px; color: #1a3a6e; margin: 10px 0;}
-    .era .era-header p {font-size: 16px; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;}
-    .era .grid-eixos {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;}
-    .era .card-eixo {background: #ffffff; color: #444; border-left: 5px solid #ffcc00; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(26,58,110,0.08); transition: all 0.3s ease;}
-    .era .card-eixo:hover {transform: translateY(-5px); box-shadow: 0 8px 24px rgba(26,58,110,0.12);}
-    .era .card-eixo .emoji {font-size: 32px; display: block; margin-bottom: 12px;}
-    .era .card-eixo h3 {font-size: 18px; margin-bottom: 10px; color: #1a3a6e;}
-    .era .card-eixo p {font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 12px;}
-    .era .card-eixo ul {padding-left: 18px; margin-bottom: 0; color: #555; font-size: 14px;}
-    .era .card-eixo b {color: #1a3a6e; font-weight: 700;}
-  </style>
-  
+<!-- ERA 1: COLÔNIA -->
+<section class="era" style="background: #e8f0fe;">
   <div class="container">
     <div class="era-header">
       <p class="datas">1500 — 1822</p>
       <h2>Brasil Colônia: A Casa, a Senzala e a Igreja</h2>
-      <p>O Brasil era um arquipélago de engenhos. A vida privada girava em torno da <b>casa-grande</b>, da <b>senzala</b> e do adro da igreja. O público e o privado se confundiam na rua de terra.</p>
+      <p>O Brasil era um arquipélago de engenhos. A vida privada girava em torno da <b>casa-grande</b>, da <b>senzala</b> e do adro da igreja.</p>
     </div>
     <div class="grid-eixos">
-      
-      <div class="card-eixo">
-        <span class="emoji">🏠</span>
-        <h3>Costumes e Vida Privada</h3>
-        <p>Patriarcado absoluto. O <b>senhor de engenho</b> era lei, juiz e padre dentro de suas terras. A mulher branca vivia reclusa, "de portas adentro".</p>
-        <ul>
-          <li><b>Rituais:</b> Batizado e casamento arranjado selavam alianças.</li>
-          <li><b>Hierarquia:</b> Casa-grande > Senzala > Agregados > Indígenas aldeados.</li>
-        </ul>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">⛪</span>
-        <h3>Religiões e Sincretismos</h3>
-        <p>Catolicismo barroco, inquisitorial e festivo. As <b>Irmandades do Rosário</b> eram o espaço de autonomia negra. Paralelo, corria o <b>calundu</b>.</p>
-        <ul>
-          <li><b>Festas:</b> Corpus Christi, Festa de Reis. A rua virava teatro sagrado.</li>
-          <li><b>Medo:</b> A Inquisição e a devassa. Pecado era crime público.</li>
-        </ul>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">👗</span>
-        <h3>Vestimentas e Indumentária</h3>
-        <p>Contradição tropical. A elite usava <b>veludo, casaca e peruca</b> importados de Portugal sob 40°C. Era símbolo de poder. O escravo usava <b>pano da costa</b>.</p>
-      </div>
-
-      <div class="card-eixo">
-        <span class="emoji">🛁</span>
-        <h3>Higiene e Saúde</h3>
-        <p>Medo da água fria. Banho era visto como causa de doença. A elite usava <b>bacio e penico</b> no quarto. Remédio: <b>mezinhas, sangria e benzedeira</b>.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">🎶</span>
-        <h3>Música e Instrumentos</h3>
-        <p>Na igreja: <b>música sacra barroca</b> com órgão. Na senzala: <b>atabaque, berimbau</b>. Nas casas: <b>modinha</b> ao som de viola.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">🛍️</span>
-        <h3>Cultura de Mercado</h3>
-        <p>O comércio era de rua. O <b>escravo de ganho</b> vendia angu, peixe e doces no tabuleiro. A feira era o ponto de encontro da vila.</p>
-      </div>
+      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes e Vida Privada</h3><p>Patriarcado absoluto. O <b>senhor de engenho</b> era lei, juiz e padre.</p><ul><li><b>Rituais:</b> Batizado e casamento arranjado.</li><li><b>Hierarquia:</b> Casa-grande > Senzala > Agregados</li></ul></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religiões e Sincretismos</h3><p>Catolicismo barroco. As <b>Irmandades do Rosário</b> eram o espaço de autonomia negra.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>A elite usava <b>veludo e peruca</b> sob 40°C. O escravo usava <b>pano da costa</b>.</p></div>
+      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene e Saúde</h3><p>Banho era visto como causa de doença. Remédio: <b>mezinhas e benzedeira</b>.</p></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Na igreja: <b>música sacra</b>. Na senzala: <b>atabaque, berimbau</b>.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Cultura de Mercado</h3><p>O <b>escravo de ganho</b> vendia angu e doces no tabuleiro.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 🟡 ERA 2: IMPÉRIO -->
-<section class="era" style="padding: 60px 20px; background: #ffffff;">
-  <style>
-    .era .container {max-width: 1200px; margin: 0 auto;}
-    .era .era-header {text-align: center; margin-bottom: 40px;}
-    .era .era-header .datas {font-size: 14px; font-weight: 700; color: #007BFF; letter-spacing: 2px; text-transform: uppercase;}
-    .era .era-header h2 {font-size: 32px; color: #1a3a6e; margin: 10px 0;}
-    .era .era-header p {font-size: 16px; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;}
-    .era .grid-eixos {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;}
-    .era .card-eixo {background: #ffffff; color: #444; border-left: 5px solid #ffcc00; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(26,58,110,0.08); transition: all 0.3s ease;}
-    .era .card-eixo:hover {transform: translateY(-5px); box-shadow: 0 8px 24px rgba(26,58,110,0.12);}
-    .era .card-eixo .emoji {font-size: 32px; display: block; margin-bottom: 12px;}
-    .era .card-eixo h3 {font-size: 18px; margin-bottom: 10px; color: #1a3a6e;}
-    .era .card-eixo p {font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 12px;}
-    .era .card-eixo ul {padding-left: 18px; margin-bottom: 0; color: #555; font-size: 14px;}
-    .era .card-eixo b {color: #1a3a6e; font-weight: 700;}
-  </style>
-
+<!-- ERA 2: IMPÉRIO -->
+<section class="era" style="background: #ffffff;">
   <div class="container">
     <div class="era-header">
       <p class="datas">1808 — 1889</p>
       <h2>Brasil Império: O Rio Europeu e o Sertão</h2>
-      <p>Com a Corte, o Rio de Janeiro quis ser Paris. Nasceu o "fraque e cartola". Mas para além da Rua do Ouvidor, o Brasil continuava sendo de tropeiros, fazendeiros e escravizados.</p>
+      <p>Com a Corte, o Rio de Janeiro quis ser Paris. Nasceu o "fraque e cartola".</p>
     </div>
     <div class="grid-eixos">
-      
-      <div class="card-eixo">
-        <span class="emoji">🏠</span>
-        <h3>Costumes e Vida Privada</h3>
-        <p>Nasce o <b>salão</b>. O piano vira móvel de status. As moças "de família" aprendiam francês e bordado.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">⛪</span>
-        <h3>Religiões e Sincretismos</h3>
-        <p>O catolicismo perde força. Cresce o <b>espiritismo kardecista</b> na elite. Nas senzalas, o <b>Candomblé</b> se organiza em terreiros.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">👗</span>
-        <h3>Vestimentas e Indumentária</h3>
-        <p>Moda francesa na <b>Rua do Ouvidor</b>. Homens: <b>fraque, colete, cartola</b>. Mulheres: <b>crinolina</b>. Objetivo: mostrar que não se trabalhava.</p>
-      </div>
-
-      <div class="card-eixo">
-        <span class="emoji">🛁</span>
-        <h3>Higiene e Saúde</h3>
-        <p>Surge o "higienismo". Dom Pedro II cria o primeiro esgoto do Rio em 1864. Nas casas ricas aparece a <b>banheira de zinco</b>.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">🎶</span>
-        <h3>Música e Instrumentos</h3>
-        <p>Ópera no Theatro São Pedro. Nas ruas nasce o <b>choro</b>: flauta, violão de 7 cordas e cavaquinho. Primeira música urbana brasileira.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">🛍️</span>
-        <h3>Cultura de Mercado</h3>
-        <p>As <b>lojas de secos e molhados</b>. O comércio de escravizados é o grande negócio. Surge a feijoada.</p>
-      </div>
+      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes</h3><p>Nasce o <b>salão</b>. O piano vira móvel de status.</p></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religião</h3><p>Cresce o <b>espiritismo kardecista</b> na elite. Nas senzalas, o <b>Candomblé</b>.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>Moda francesa: <b>fraque, colete, cartola, crinolina</b>.</p></div>
+      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene</h3><p>Surge o "higienismo". Primeira banheira de zinco nas casas ricas.</p></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Nasce o <b>choro</b>: flauta, violão de 7 cordas e cavaquinho.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Mercado</h3><p>As <b>lojas de secos e molhados</b>. Surge a feijoada.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 🔵 ERA 3: REPÚBLICA VELHA -->
-<section class="era" style="padding: 60px 20px; background: #e8f0fe;">
-  <style>
-    .era .container {max-width: 1200px; margin: 0 auto;}
-    .era .era-header {text-align: center; margin-bottom: 40px;}
-    .era .era-header .datas {font-size: 14px; font-weight: 700; color: #007BFF; letter-spacing: 2px; text-transform: uppercase;}
-    .era .era-header h2 {font-size: 32px; color: #1a3a6e; margin: 10px 0;}
-    .era .era-header p {font-size: 16px; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;}
-    .era .grid-eixos {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;}
-    .era .card-eixo {background: #ffffff; color: #444; border-left: 5px solid #ffcc00; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(26,58,110,0.08); transition: all 0.3s ease;}
-    .era .card-eixo:hover {transform: translateY(-5px); box-shadow: 0 8px 24px rgba(26,58,110,0.12);}
-    .era .card-eixo .emoji {font-size: 32px; display: block; margin-bottom: 12px;}
-    .era .card-eixo h3 {font-size: 18px; margin-bottom: 10px; color: #1a3a6e;}
-    .era .card-eixo p {font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 12px;}
-    .era .card-eixo ul {padding-left: 18px; margin-bottom: 0; color: #555; font-size: 14px;}
-    .era .card-eixo b {color: #1a3a6e; font-weight: 700;}
-  </style>
+<!-- ERA 3: REPÚBLICA VELHA -->
+<section class="era" style="background: #e8f0fe;">
   <div class="container">
     <div class="era-header">
       <p class="datas">1889 — 1930</p>
       <h2>República Velha: Belle Époque e Cortiço</h2>
-      <p>O Brasil se divide em dois: o Rio da <b>Belle Époque</b>, com luz elétrica e avenida, e o Brasil dos cortiços, do samba e da vacina obrigatória.</p>
+      <p>O Brasil se divide: o Rio da <b>Belle Époque</b> e o Brasil dos cortiços e do samba.</p>
     </div>
     <div class="grid-eixos">
-      
-      <div class="card-eixo">
-        <span class="emoji">🏠</span>
-        <h3>Costumes e Vida Privada</h3>
-        <p>A família patriarcal entra em crise. Surge o <b>apartamento</b> e o cortiço. A rua vira espaço de lazer: cinema e café.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">⛪</span>
-        <h3>Religiões e Sincretismos</h3>
-        <p>Separação entre Igreja e Estado. O samba nasce nos <b>quintais de tias baianas</b> com forte matriz religiosa afro.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">👗</span>
-        <h3>Vestimentas e Indumentária</h3>
-        <p>Homens: <b>terno de linho branco e chapéu Panamá</b>. No morro: a roupa do <b>malandro</b>. A roupa diz de qual "mundo" você é.</p>
-      </div>
-
-      <div class="card-eixo">
-        <span class="emoji">🛁</span>
-        <h3>Higiene e Saúde</h3>
-        <p>Banho diário vira obrigação moral. <b>Oswaldo Cruz</b> e a vacina obrigatória geram a Revolta da Vacina.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #ffcc00;">
-        <span class="emoji">🎶</span>
-        <h3>Música e Instrumentos</h3>
-        <p>Nasce o <b>samba</b> e o <b>maxixe</b>. Pixinguinha e Donga. Instrumentos: <b>pandeiro, tantã, cavaquinho</b>. É resistência cultural.</p>
-      </div>
-
-      <div class="card-eixo" style="border-left-color: #007BFF;">
-        <span class="emoji">🛍️</span>
-        <h3>Cultura de Mercado</h3>
-        <p>Chegam os imigrantes italianos: macarrão e pizza. Surgem os primeiros <b>botecos</b>. O vendedor ambulante de pastel.</p>
-      </div>
+      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes</h3><p>Surge o <b>apartamento</b> e o cortiço. A rua vira cinema e café.</p></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religião</h3><p>Samba nasce nos <b>quintais de tias baianas</b>.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>Homens: <b>terno de linho branco e chapéu Panamá</b>. No morro: o <b>malandro</b>.</p></div>
+      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene</h3><p><b>Oswaldo Cruz</b> e a Revolta da Vacina.</p></div>
+      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Nasce o <b>samba</b> e o <b>maxixe</b>. Pixinguinha e Donga.</p></div>
+      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Mercado</h3><p>Chegam italianos: macarrão e pizza. Surgem os primeiros <b>botecos</b>.</p></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- 📖 CTA -->
-<section class="cta" style="background: #1a3a6e; color: #fff; text-align: center; padding: 60px 20px;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 style="color: #fff; font-size: 32px; margin-bottom: 12px;">Quer entender o Brasil pelos detalhes?</h2>
-    <p style="color: #e8f0fe; margin-bottom: 24px; font-size: 16px;">Baixe o e-book com fontes, imagens de época e 200 questões de Fuvest/FGV sobre cotidiano.</p>
-    <a href="artigos/ebook.html" style="background: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; font-size: 16px;"
-       onmouseover="this.style.background='#e6b800'"
-       onmouseout="this.style.background='#ffcc00'">
-       Comprar e-book completo →
-    </a>
+<section class="cta">
+  <div class="container">
+    <h2>Quer entender o Brasil pelos detalhes?</h2>
+    <p style="color: #e8f0fe; margin-bottom: 24px;">Baixe o e-book com fontes, imagens de época e 200 questões de Fuvest/FGV sobre cotidiano.</p>
+    <a href="ebook.html">Comprar e-book completo →</a>
   </div>
 </section>
 
-<!-- FOOTER PERFEITO COM ESPAÇO -->
- <div style="background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box;">
-    
-    <!-- CAIXA DE APOIO -->
-    <div style="background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06);">
-        <h3 style="font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; margin-top: 0; font-weight: 700;">Apoie o Canal de Estudos</h3>
-        <p style="line-height: 1.7; color: #333; margin-bottom: 25px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
-        
-        <a href="artigos/doacao.html" style="background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);">☕ Apoie o Canal de Estudos</a>
-        
+<div class="rodape-apoio">
+    <div class="caixa-apoio">
+        <h3>Apoie o Canal de Estudos</h3>
+        <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
+        <a href="doacao.html">☕ Apoie o Canal de Estudos</a>
         <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
-
-    <!-- RODAPÉ LEGAL -->
-    <div style="text-align: center; margin: 0 0 20px 0;">
-        <a href="artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Política de Privacidade</a>
-        <span style="color: #0a1e3d; opacity: 0.3;">|</span>
-        <a href="artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Termos de Uso</a>
+    <div class="links-legais">
+        <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a>
     </div>
-
-    <!-- COPYRIGHT -->
-    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-
+    <p class="copy">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
 </div>
+
 </body>
 </html>

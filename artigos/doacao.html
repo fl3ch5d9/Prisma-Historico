@@ -1,570 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apoie - BrasilHistória</title>
-    <link rel="stylesheet" href="../css/style.css">
-    
-    <style>
-        /* PALETA */
-        :root {
-            --azul-escuro: #1a3a6e;
-            --azul-claro: #007BFF;
-            --branco: #FFFFFF;
-            --amarelo: #FFC107;
-            --cinza: #f4f7f9;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--cinza);
-            color: #2c3e50;
-        }
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-
-       
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
-    margin: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apoie - Prisma Histórico</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+:root{
+  --azul-escuro:#1a3a6e; --azul-royal:#005ea6; --azul-vivo:#007ad6;
+  --azul-claro:#007BFF; --azul-hover:#0056b3; --fundo:#e8f0fe;
+  --branco:#ffffff; --texto-cinza:#555; --amarelo:#ffcc00;
 }
+*{margin:0; padding:0; box-sizing:border-box;}
+body{background:var(--fundo); font-family:'Georgia',serif; color:#444;}
+.container{max-width:1200px; margin:0 auto; padding:0 20px;}
 
+/* HEADER */
+.header-topo{background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%); padding: 30px 20px 20px; text-align: center; border-bottom: 3px solid var(--amarelo);}
+.header-topo .logo-prisma{max-width: 420px; width: 90%; margin: 0 auto 12px; display: block; border-radius: 20px; filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));}
+.header-topo .kicker{color: var(--amarelo); font-style: italic; font-size: 1.1rem;}
 
-        /* CONTEUDO DOACAO */
-        main { padding: 70px 0; }
-        .doacao-box {
-            background: var(--branco);
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 3px solid var(--amarelo);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .doacao-box .emoji { font-size: 4em; margin-bottom: 20px; }
-        .doacao-box h2 {
-            color: var(--azul-escuro);
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .doacao-box p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
+/* MENU */
+.menu-principal{background: #001a4d; display: flex; justify-content: space-between; align-items:center; padding: 18px 40px; border-bottom: 3px solid var(--amarelo); position:sticky; top:0; z-index:100;}
+.menu-principal a{color:#fff; text-decoration:none; margin:0 12px; font-weight:600; transition:0.3s; font-family:'Segoe UI',Arial,sans-serif;}
+.menu-direita a{background:var(--amarelo); color:#001a4d!important; padding:10px 22px; border-radius:8px; font-weight:900;}
+.menu-direita a:hover{background:#ffd633; transform:scale(1.05);}
+.menu-esquerda a:hover{color:var(--amarelo);}
 
-        .pix-box {
-            background: var(--cinza);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            border: 2px dashed var(--azul-claro);
-        }
-        .pix-box h3 { color: var(--azul-escuro); margin-bottom: 15px; font-size: 1.5em; }
-        .chave-pix {
-            background: var(--branco);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.3em;
-            font-weight: bold;
-            color: var(--azul-escuro);
-            margin: 15px 0;
-            word-break: break-all;
-        }
-        .btn-copiar {
-            background: var(--azul-claro);
-            color: var(--branco);
-            padding: 15px 30px;
-            border-radius: 10px;
-            border: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-copiar:hover { background: var(--azul-escuro); }
-
-        .valores {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .valor-btn {
-            background: var(--amarelo);
-            color: var(--azul-escuro);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .valor-btn:hover { transform: scale(1.05); }
-
-       
-       
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            .header-topo { text-align: center; padding: 30px 0; }
-            .header-topo h1 { font-size: 28px; }
-            .header-menu ul { flex-wrap: wrap; justify-content: center; gap: 15px 25px; }
-            .doacao-box { padding: 40px 20px; }
-        }
-
-         /* ===== HEADER IGUAL EM TODAS ===== */
-   
-/* Deixa o menu com flex pra jogar pros lados */
-/* RESPONSIVO header */
-       /* RESPONSIVO */
-@media (max-width: 1024px) { /* Mudou de 768px para 1024px */
-    .header-topo { text-align: center; padding: 30px 0; }
-    .header-topo h1 { font-size: 28px; }
-    .header-menu ul {
-        flex-wrap: wrap; 
-        justify-content: center;
-        gap: 15px 25px;
-    }
-}
-/* ===== HEADER NOVO IGUAL DA FOTO ===== */
-        .header-topo {
-            background: linear-gradient (180deg, #000f33 0%, #002a5c);
-            padding: 25px 20px;
-          text-align: center;
-        }
-        .header-topo h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        .header-topo p {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .header-menu {
-            background: var(--azul-escuro); /* Usei sua variável */
-            padding: 18px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Menu fica grudado no topo */
-            top: 0;
-            z-index: 100;
-        }
-        .header-menu ul {
-            list-style: none; /* TIRA AS BOLINHAS */
-            display: flex; /* JOGA PRA LINHA */
-            justify-content: flex-start; /* MENU NA ESQUERDA */
-            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
-        }
-        .header-menu a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: lowercase; /* "sobre" "artigos" */
-            transition: 0.3s;
-        }
-        .header-menu a:hover { color: var(--amarelo); }
-
-        /*prisma começa aqui todos as paginas */
-        .header-topo {
-  background: 
-    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
-    url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 100px 20px;
-  text-align: center;
-  border-bottom: 5px double #ffcc00;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.header-topo .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-topo h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(55px, 10vw, 100px);
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  line-height: 1.1;
-  
-  /* Efeito 3D + Brilho Colonial */
-  text-shadow: 
-    2px 2px 0 #001a38,
-    4px 4px 0 #001a38,
-    0 0 15px rgba(255, 204, 0, 0.4);
-}
-
-/* PRISMA em branco */
-.header-topo h1::first-word,
-.header-topo h1 {
-  color: #ffffff;
-}
-
-/* HISTÓRICO em amarelo - truque com span */
-.header-topo h1 span {
-  color: #ffcc00;
-  text-shadow: 
-    2px 2px 0 #8a6d00,
-    4px 4px 0 #8a6d00,
-    0 0 20px #ffcc00;
-}
-
-.header-topo p {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: #f5f5f5;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Linha decorativa */
-.header-topo p::before,
-.header-topo p::after {
-  content: " ❧ ";
-  color: #ffcc00;
-  font-size: 20px;
-}
-
-
-    
-    /* Tamanho do logo do header */
-.header-topo .logo-prisma {
-    max-width: 700px; /* muda aqui pra aumentar/diminuir */
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
-    /* Efeito glow direto na imagem */
-    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
-    
-    /* Suaviza a imagem */
-    transition: 0.3s ease;
-    border-radius: 30px;
-}
-
-/* Quando passa o mouse fica mais forte */
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-/*perfeição header*/
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
-    margin: 0;
-}
-
-/* 2. HEADER - mais profundo e com luz */
-.header-topo {
-    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
-    padding: 30px 20px 20px 20px;
+/* DOACAO */
+main { padding: 70px 0; }
+.doacao-box {
+    background: var(--branco);
+    padding: 60px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     text-align: center;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
+    border: 3px solid var(--amarelo);
+    max-width: 700px;
+    margin: 0 auto;
+}
+.doacao-box .emoji { font-size: 4em; margin-bottom: 20px; }
+.doacao-box h2 {
+    color: var(--azul-escuro);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.doacao-box p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
 
-/* 3. LOGO - arredondar + brilho */
-.header-topo .logo-prisma {
-    max-width: 420px;
-    width: 90%;
-    height: auto;
-    margin: 0 auto 12px auto;
-    display: block;
-    border-radius: 20px; /* Quinas arredondadas */
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
+.pix-box {
+    background: #e8f0fe;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 2px dashed var(--azul-claro);
 }
-
-/* 4. KICKER - frase de baixo */
-.header-topo .kicker {
-    color: #ffcc00; /* Dourado igual da imagem */
-    font-style: italic;
-    font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    margin: 0;
+.pix-box h3 { color: var(--azul-escuro); margin-bottom: 15px; font-size: 1.5em; }
+.chave-pix {
+    background: var(--branco);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--azul-escuro);
+    margin: 15px 0;
+    word-break: break-all;
+    font-family: monospace;
+    border: 1px solid var(--azul-vivo);
 }
-
-/* 5. MENU - azul escuro combinando */
-.menu-principal {
-    background: #001a4d;
-    padding: 12px 0;
-    border-bottom: 2px solid #ffcc00;
-}
-
-.menu-principal a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
+.btn-copiar {
+    background: linear-gradient(135deg, #005ea6, #007ad6);
+    color: var(--branco);
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
     transition: 0.3s;
+    font-family:'Segoe UI',Arial,sans-serif;
+    width:100%;
 }
+.btn-copiar:hover { background: var(--azul-hover); transform: translateY(-2px); }
 
-.menu-principal a:hover {
-    color: #ffcc00; /* Dourado no hover */
-}
-
-/* 1. Centralizar os links do menu */
-.menu-principal {
-    text-align: center; /* Adiciona isso aqui */
-}
-
-/* 2. Botão de destaque para o E-BOOK */
-.menu-principal a[href*="ebook"] {
-    background: #ffcc00; /* Amarelo dourado */
-    color: #001a4d !important; /* Texto azul escuro */
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 900;
-    margin-left: 15px;
-}
-.menu-principal a[href*="ebook"]:hover {
-    background: #ffd633;
-    color: #001a4d !important;
-    transform: translateY(-2px);
-}
-/* Deixa o menu com flex pra jogar pros lados */
-
-.menu-principal {
-    background: #001a4d; /* Azul escuro do seu site */
+.valores {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ocupa a tela toda */
-    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
-    box-sizing: border-box;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+.valor-btn {
+    background: var(--amarelo);
+    color: var(--azul-escuro);
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: default;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
 
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px; /* Espaço entre os links */
-    font-weight: 600;
-    font-size: 16px;
-    transition: 0.3s;
+/* FOOTER */
+footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #fff; padding: 60px 20px 30px; margin-top: 60px;}
+.caixa-apoio{background: rgba(0,0,0,0.15); padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 30px; border: 2px dashed var(--amarelo);}
+
+@media (max-width: 768px) {
+    .doacao-box { padding: 40px 20px; }
 }
-
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 12px 24px; /* Botão maior */
-    border-radius: 8px;
-    font-weight: 900;
-    font-size: 16px;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
-
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 900;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
-
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-/*responsivo*/
-@media screen and (max-width: 1024px) {
-    .header-topo { 
-        text-align: center !important; 
-        padding: 30px 0 !important; 
-    }
-    .header-topo h1 { 
-        font-size: 28px !important; 
-    }
-    
-    /* Força o menu a virar uma coluna vertical centralizada */
-    .header-menu,
-    .header-menu div,
-    .header-menu .container,
-    .header-menu ul,
-    .header-menu nav {
-        display: flex !important;
-        flex-direction: column !important; 
-        align-items: center !important;    
-        justify-content: center !important;
-        gap: 12px !important;
-        width: 100% !important;
-        float: none !important;
-    }
-
-    /* Garante que os links fiquem um embaixo do outro */
-    .header-menu li,
-    .header-menu a,
-    .header-menu ul li {
-        display: inline-block !important;
-        text-align: center !important;
-        width: 100% !important;
-        float: none !important;
-    }
-}
-
-/* nova nave celular quebra*/
-
-
-
-@media screen and (max-width: 1024px) {
-    /* Transforma o menu num bloco flexível que aceita quebra de linha */
-    nav.menu-principal {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
-        padding: 15px 0 !important;
-    }
-
-    /* Força os links da esquerda a distribuírem-se e quebrarem de forma alinhada */
-    .menu-esquerda {
-        display: flex !important;
-        flex-wrap: wrap !important; /* Faz os links irem para baixo organizadamente */
-        justify-content: center !important; /* Centraliza os links na tela */
-        gap: 12px 20px !important; /* Espaço entre as linhas e entre os links */
-        width: 100% !important;
-    }
-
-    /* Centraliza o bloco da direita (e-book) logo abaixo */
-    .menu-direita {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin-top: 5px !important;
-    }
-
-    /* Garante que os links fiquem legíveis e fáceis de clicar */
-    nav.menu-principal a {
-        display: inline-block !important;
-        text-align: center !important;
-        white-space: nowrap !important; /* Impede que uma palavra se quebre ao meio */
-    }
-}
- </style>
+</style>
 </head>
 <body>
 
 <header class="header-topo">
     <div class="container">
-        <img src="img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
         <p class="kicker">A História sob múltiplos ângulos críticos</p>
     </div>
 </header>
 
 <nav class="menu-principal">
     <div class="menu-esquerda">
-        <a href="index.html">início</a>
-        <a href="artigos/sobre.html">sobre</a>
-        <a href="artigos/artigos.html">artigos</a>
-        <a href="artigos/curiosidades.html">curiosidades</a>
-        <a href="artigos/quiz.html">quiz</a>
+        <a href="../index.html">início</a>
+        <a href="sobre.html">sobre</a>
+        <a href="artigos.html">artigos</a>
+        <a href="curiosidades.html">curiosidades</a>
+        <a href="quiz.html">quiz</a>
+        <a href="ebook.html">e-book</a>
     </div>
-    <div class="menu-direita">
-        <a href="artigos/ebook.html">e-book</a>
-    </div>
+    <div class="menu-direita"><a href="doacao.html">doação</a></div>
 </nav>
 
+<main>
+    <div class="container">
+        <div class="doacao-box">
+            <span class="emoji">💛</span>
+            <h2>Apoie o Prisma Histórico</h2>
+            <p>Manter o blog gratuito, sem anúncios e com conteúdo de qualidade custa tempo e dinheiro. 
+            Se você gosta do nosso trabalho, considere fazer uma doação. Qualquer valor ajuda muito! 🙏</p>
 
- <!--menu-->
-    
-<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
-<section style="
-  background: #e8f0fe;
-  padding: 90px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-">
-  <div style="max-width: 1100px; margin: 0 auto;">
+            <div class="valores">
+                <div class="valor-btn">R$ 5</div>
+                <div class="valor-btn">R$ 10</div>
+                <div class="valor-btn">R$ 20</div>
+                <div class="valor-btn">R$ 50</div>
+            </div>
 
+            <div class="pix-box">
+                <h3>🔵 Chave PIX Direta</h3>
+                <p style="font-size: 15px; color: #555; margin-bottom: 15px; font-family:'Segoe UI',Arial,sans-serif;">Apoie o projeto sem formulários. Copie a chave e-mail abaixo:</p>
+                
+                <div class="chave-pix" id="chavePix">cronologia.prisma.historico@gmail.com</div>
+                
+                <button class="btn-copiar" id="btnCopiar" onclick="copiarPix()">📋 Copiar Chave PIX</button>
+                
+                <p id="msgCopiado" style="margin-top: 12px; color: #28a745; font-weight: bold; display: none; font-size: 14px; font-family:'Segoe UI',Arial,sans-serif;">✅ Chave copiada com sucesso!</p>
+            </div>
 
-
-    <main>
-        <div class="container">
-            <div class="doacao-box">
-                <span class="emoji">💛</span>
-                <h2>Apoie o Prisma Histórico</h2>
-                <p>Manter o blog gratuito, sem anúncios e com conteúdo de qualidade custa tempo e dinheiro. 
-                Se você gosta do nosso trabalho, considere fazer uma doação. Qualquer valor ajuda muito! 🙏</p>
-
-                <div class="valores">
-                    <div class="valor-btn">R$ 5</div>
-                    <div class="valor-btn">R$ 10</div>
-                    <div class="valor-btn">R$ 20</div>
-                    <div class="valor-btn">R$ 50</div>
-                </div>
-
-             <!--doacao profissional-->
-             <div class="pix-box" style="background-color: #ffffff; border: 2px dashed #007BFF; padding: 25px; border-radius: 8px; text-align: center; max-width: 500px; margin: 30px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
-    <h3 style="color: #1a3a6e; margin-top: 0; font-size: 20px;">🔵 Chave PIX Direta</h3>
-    <p style="color: #555; font-size: 15px; margin-bottom: 15px;">Apoie o projeto sem formulários. Copie a chave e-mail abaixo:</p>
-    
-    <!-- Sua chave pix oficial com o fundo azul claro da sua paleta -->
-    <div class="chave-pix" id="chavePix" style="background-color: #e8f0fe; padding: 12px 20px; border-radius: 6px; font-family: monospace; font-size: 16px; color: #005ea6; font-weight: bold; display: inline-block; letter-spacing: 1px; border: 1px solid #007ad6; margin-bottom: 15px; word-break: break-all;">cronologia.prisma.historico@gmail.com</div>
-    
-    <!-- Botão estilizado com comportamento de hover dinâmico via JS -->
-    <button class="btn-copiar" id="btnCopiar" onclick="copiarPix()" style="display: block; width: 100%; background: linear-gradient(135deg, #005ea6, #007ad6); color: #ffffff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: background 0.3s; box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);">
-        📋 Copiar Chave PIX
-    </button>
-    
-    <!-- Mensagem de sucesso em verde estruturada -->
-    <p id="msgCopiado" style="margin-top: 12px; color: #28a745; font-weight: bold; display: none; font-size: 14px;">✅ Chave copiada com sucesso!</p>
-</div>
-
-<p style="font-size: 0.9em; opacity: 0.7; text-align: center; color: #555; margin-bottom: 30px;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
+            <p style="font-size: 0.9em; opacity: 0.7; color: #555;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
+        </div>
+    </div>
+</main>
 
 <script>
-    // Efeito Visual de Hover via JavaScript para manter compatibilidade com estilo inline
     const btn = document.getElementById('btnCopiar');
-    if(btn) {
-        btn.addEventListener('mouseover', () => btn.style.background = '#0056b3');
-        btn.addEventListener('mouseout', () => btn.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
-    }
+    btn.addEventListener('mouseover', () => btn.style.background = '#0056b3');
+    btn.addEventListener('mouseout', () => btn.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
 
-    // Função de Copiar Híbrida e Profissional (Funciona em qualquer celular ou PC)
     function copiarPix() {
         const chave = document.getElementById('chavePix').innerText.trim();
         
         if (navigator.clipboard && window.isSecureContext) {
-            // Método moderno para sites com HTTPS
             navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
         } else {
-            // Método de segurança (Fallback) para navegadores antigos ou HTTP local
             fallbackCopiar(chave);
         }
     }
@@ -572,7 +184,7 @@ body {
     function fallbackCopiar(texto) {
         const textArea = document.createElement("textarea");
         textArea.value = texto;
-        textArea.style.position = "fixed"; // Evita scroll na tela
+        textArea.style.position = "fixed";
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
@@ -588,12 +200,20 @@ body {
     function exibirSucesso() {
         const msg = document.getElementById('msgCopiado');
         msg.style.display = 'block';
-        setTimeout(() => {
-            msg.style.display = 'none';
-        }, 2500);
+        setTimeout(() => { msg.style.display = 'none'; }, 2500);
     }
 </script>
 
+<footer>
+    <div class="container">
+        <div style="text-align: center; font-family:'Segoe UI',Arial,sans-serif;">
+            <a href="privacidade.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Política de Privacidade</a> 
+            <span style="color: rgba(255,255,255,0.5);">|</span> 
+            <a href="termos.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Termos de Uso</a>
+            <p style="color: #eef2f7; margin-top:15px;">© 2026 Prisma Histórico. Feito com ❤️</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

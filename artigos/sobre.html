@@ -1,398 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Sobre - Prisma Histórico</title>
-    <style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<title>Sobre - Prisma Histórico</title>
+<style>
 :root {
-            --azul-escuro: #1a3a6e;
-            --azul-claro: #007BFF;
-            --branco: #FFFFFF;
-            --amarelo: #FFC107;
-            --cinza: #f4f7f9;
-        }
-
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { font-family: Arial, sans-serif; background: #f4f4f9; }
-
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-       
-/* Container da Section */
-.secao-doacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 10px;
+    --azul-escuro: #1a3a6e;
+    --azul-claro: #007BFF;
+    --branco: #FFFFFF;
+    --amarelo: #FFC107;
+    --cinza: #f4f7f9;
 }
 
-/* Fundo do Card em Branco Puro */
-.card-doacao {
-    background-color: #ffffff;
-    max-width: 680px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
-    border-top: 6px solid #005ea6; /* Seu Azul de Origem */
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', serif; background: #eef2f7; color: #1a2f4f; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-/* Cabeçalho */
-
-.emoji-ancora {
-    font-size: 28px;
-}
-
-.card-header h3 {
-    color: #1a3a6e; /* Seu Azul Escuro */
-    font-size: 22px;
-    margin: 0;
-}
-
-/* Corpo do Texto */
-.card-body {
-    padding: 10px 30px 25px 30px;
-}
-
-.bloco-texto {
-    margin-bottom: 25px;
-}
-
-.bloco-texto h4 {
-    color: #1a3a6e; /* Seu Azul Escuro */
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-.bloco-texto p {
-    color: #444444; /* Seu Texto Cinza */
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Bloco de Destaque com borda sutil */
-.destaque-meta {
-    background-color: #f8faff;
-    padding: 20px;
-    border-left: 4px solid #ffcc00; /* Seu Amarelo Ouro */
-    border-radius: 0 8px 8px 0;
-}
-
-.chamada-apoio {
-    font-weight: bold;
-    margin-top: 10px !important;
-}
-
-/* Rodapé do Card e Botão */
-.card-footer {
-    padding: 0 30px 35px 30px;
-    text-align: center;
-}
-
-/* Botão com o seu Degradê Oficial */
-.botao-link-asaas {
-    display: inline-block;
-    background: linear-gradient(135deg, #005ea6, #007ad6);
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-    width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);
-    transition: all 0.3s ease;
-}
-
-/* Seu Hover Escuro */
-.botao-link-asaas:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
-}
-
-
-/*header novo*/
+/* HEADER */
 .header-topo {
-            background: linear-gradient (180deg, #000f33 0%, #002a5c);
-            padding: 25px 20px;
-          text-align: center;
-        }
-        .header-topo h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        .header-topo p {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .header-menu {
-            background: var(--azul-escuro); /* Usei sua variável */
-            padding: 18px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Menu fica grudado no topo */
-            top: 0;
-            z-index: 100;
-        }
-        .header-menu ul {
-            list-style: none; /* TIRA AS BOLINHAS */
-            display: flex; /* JOGA PRA LINHA */
-            justify-content: flex-start; /* MENU NA ESQUERDA */
-            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
-        }
-        .header-menu a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: lowercase; /* "sobre" "artigos" */
-            transition: 0.3s;
-        }
-        .header-menu a:hover { color: var(--amarelo); }
-
-         /*prisma começa aqui todos as paginas */
-        .header-topo {
   background: 
-    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
+    linear-gradient(180deg, rgba(0, 16, 46, 1) 0%, rgba(0, 51, 102, 1) 50%, rgba(0, 86, 163, 1) 100%),
     url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 100px 20px;
+  padding: 30px 20px 20px 20px;
   text-align: center;
-  border-bottom: 5px double #ffcc00;
-  width: 100%;
-  box-sizing: border-box;
+  border-bottom: 3px solid #ffcc00;
 }
-
-.header-topo .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-topo h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(55px, 10vw, 100px);
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  line-height: 1.1;
-  
-  /* Efeito 3D + Brilho Colonial */
-  text-shadow: 
-    2px 2px 0 #001a38,
-    4px 4px 0 #001a38,
-    0 0 15px rgba(255, 204, 0, 0.4);
-}
-
-/* PRISMA em branco */
-.header-topo h1::first-word,
-.header-topo h1 {
-  color: #ffffff;
-}
-
-/* HISTÓRICO em amarelo - truque com span */
-.header-topo h1 span {
-  color: #ffcc00;
-  text-shadow: 
-    2px 2px 0 #8a6d00,
-    4px 4px 0 #8a6d00,
-    0 0 20px #ffcc00;
-}
-
-.header-topo p {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: #f5f5f5;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Linha decorativa */
-.header-topo p::before,
-.header-topo p::after {
-  content: " ❧ ";
-  color: #ffcc00;
-  font-size: 20px;
-}
-
-
-    
-    /* Tamanho do logo do header */
 .header-topo .logo-prisma {
-    max-width: 700px; /* muda aqui pra aumentar/diminuir */
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
-    /* Efeito glow direto na imagem */
-    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
-    
-    /* Suaviza a imagem */
-    transition: 0.3s ease;
-    border-radius: 30px;
+    max-width: 420px; width: 90%; height: auto;
+    margin: 0 auto 12px auto; display: block;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
 }
-
-/* Quando passa o mouse fica mais forte */
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-/*perfeição header*/
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
-    margin: 0;
-}
-
-/* 2. HEADER - mais profundo e com luz */
-.header-topo {
-    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
-}
-
-/* 3. LOGO - arredondar + brilho */
-.header-topo .logo-prisma {
-    max-width: 420px;
-    width: 90%;
-    height: auto;
-    margin: 0 auto 12px auto;
-    display: block;
-    border-radius: 20px; /* Quinas arredondadas */
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
-}
-
-/* 4. KICKER - frase de baixo */
 .header-topo .kicker {
-    color: #ffcc00; /* Dourado igual da imagem */
-    font-style: italic;
-    font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    margin: 0;
+    color: #ffcc00; font-style: italic; font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
 }
 
-/* 5. MENU - azul escuro combinando */
+/* MENU */
 .menu-principal {
     background: #001a4d;
-    padding: 12px 0;
-    border-bottom: 2px solid #ffcc00;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 18px 40px; box-sizing: border-box;
+    border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 100;
 }
-
-.menu-principal a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.menu-principal a:hover {
-    color: #ffcc00; /* Dourado no hover */
-}
-
-/* 1. Centralizar os links do menu */
-.menu-principal {
-    text-align: center; /* Adiciona isso aqui */
-}
-
-/* 2. Botão de destaque para o E-BOOK */
-.menu-principal a[href*="ebook"] {
-    background: #ffcc00; /* Amarelo dourado */
-    color: #001a4d !important; /* Texto azul escuro */
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 900;
-    margin-left: 15px;
-}
-.menu-principal a[href*="ebook"]:hover {
-    background: #ffd633;
-    color: #001a4d !important;
-    transform: translateY(-2px);
-}
-/* Deixa o menu com flex pra jogar pros lados */
-
-.menu-principal {
-    background: #001a4d; /* Azul escuro do seu site */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ocupa a tela toda */
-    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
-    box-sizing: border-box;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
-}
-
 .menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px; /* Espaço entre os links */
-    font-weight: 600;
-    font-size: 16px;
-    transition: 0.3s;
+    color: #fff; text-decoration: none; margin: 0 12px;
+    font-weight: 600; font-size: 16px; transition: 0.3s;
 }
-
-/* Botão E-BOOK destacado na direita */
+.menu-esquerda a:hover { color: #ffcc00; }
 .menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 12px 24px; /* Botão maior */
-    border-radius: 8px;
-    font-weight: 900;
-    font-size: 16px;
+    background: #ffcc00; color: #001a4d !important;
+    padding: 10px 22px; border-radius: 8px; font-weight: 900;
 }
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
+.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
+
+/* SEÇÃO SOBRE */
+.secao-sobre {
+  background: #e8f0fe;
+  padding: 90px 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
+.titulo-sobre { text-align: center; max-width: 900px; margin: 0 auto 60px auto; padding-top: 40px; }
+.titulo-sobre h1 { font-size: 42px; font-weight: 900; color: #1a3a6e; margin-bottom: 15px; letter-spacing: -0.5px; font-family: 'Segoe UI', Arial, sans-serif; }
+.titulo-sobre h2 { font-size: 20px; font-weight: 600; color: #007BFF; margin-bottom: 20px; line-height: 1.4; font-family: 'Segoe UI', Arial, sans-serif; }
+.barra { width: 120px; height: 4px; background-color: #ffcc00; margin: 0 auto; border-radius: 2px; }
+.texto p { font-size: 18px; line-height: 1.9; margin-bottom: 25px; }
+.destaque { border-left: 5px solid #ffcc00; background-color: #e8f0fe; padding: 25px; border-radius: 8px; margin: 40px 0; }
+.destaque p { font-size: 18px; line-height: 1.8; color: #1a3a6e; margin: 0; font-style: italic; font-weight: 600; }
+.btn-ebook { display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 20px 50px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; box-shadow: 0 6px 0 #d4a500; }
 
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
+/* DOAÇÃO */
+.secao-doacao { display: flex; justify-content: center; align-items: center; padding: 40px 10px; }
+.card-doacao { background-color: #ffffff; max-width: 680px; width: 100%; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); overflow: hidden; border-top: 6px solid #005ea6; }
+.card-header { padding: 25px 30px 10px 30px; text-align: center; }
+.emoji-ancora { font-size: 28px; }
+.card-header h3 { color: #1a3a6e; font-size: 22px; margin: 0; }
+.card-body { padding: 10px 30px 25px 30px; }
+.bloco-texto { margin-bottom: 25px; }
+.bloco-texto h4 { color: #1a3a6e; font-size: 16px; margin-bottom: 8px; }
+.bloco-texto p { color: #444; font-size: 15px; line-height: 1.6; margin: 0; }
+.destaque-meta { background-color: #f8faff; padding: 20px; border-left: 4px solid #ffcc00; border-radius: 0 8px 8px 0; }
+.chamada-apoio { font-weight: bold; margin-top: 10px !important; }
 
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 900;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
-
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-
-
-
-
+/* RODAPÉ APOIO */
+.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box; }
+.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
+.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
+.caixa-apoio a { background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25); }
+.links-legais { text-align: center; margin: 0 0 20px 0; }
+.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
+.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
 </style>
 </head>
 <body>
@@ -417,211 +116,87 @@ body {
     </div>
 </nav>
 
-        
-    <!--prisma-->
-    <!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
-
-<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
-<section style="
-  background: #e8f0fe;
-  padding: 90px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-">
-  <div style="max-width: 1100px; margin: 0 auto;">
-
+<section class="secao-sobre">
+  <div class="container">
     
-    <!--sobre o prjeto-->
-    <div style="text-align: center; max-width: 900px; margin: 0 auto 60px auto; padding-top: 40px;">
-  
-  <h1 style="font-size: 42px; font-weight: 900; color: #1a3a6e; margin-bottom: 15px; letter-spacing: -0.5px; font-family: 'Segoe UI', Arial, sans-serif;">
-    SOBRE O PROJETO
-  </h1>
-  
-  <h2 style="font-size: 20px; font-weight: 600; color: #007BFF; margin-bottom: 20px; line-height: 1.4; font-family: 'Segoe UI', Arial, sans-serif;">
-    Este projeto nasceu de uma constatação simples e incômoda: 
-    as grandes obras de referência da nossa historiografia clássica continuam
-     definindo a lógica cobrada por bancas como Fuvest, 
-    Enem, e Concursos Públicos, mas a linguagem original dessas obras é arcaica e de difícil acesso.
-  </h2>
-
-  <div style="width: 120px; height: 4px; background-color: #ffcc00; margin: 0 auto; border-radius: 2px;"></div>
-
-</div>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-      <b>Ensaio de Reflexão :</b> O estudante focado em aprovação 
-    não dispõe de meses para decifrar estruturas ensaísticas complexas e
-    vocabulários antigos. Por isso, este trabalho realizou uma investigação profunda: 
-    extrair a espinha dorsal crítica dessas obras fundamentais e traduzi-la diretamente 
-    para a gramática de provas atuais. O resultado é um material cirúrgico, 
-    estruturado para quem precisa garantir pontos sem perder tempo. 
-    </p>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-    A proposta deste material parte de um desafio real enfrentado por
-     candidatos a exames oficiais: 
-     as bancas examinadoras mais concorridas do país ainda baseiam suas 
-     questões na lógica de clássicos da historiografia, mas o acesso ao texto 
-     original é pouco prático para a rotina de estudos atual. Sabendo que o concurseiro
-    e o vestibulando precisam de objetividade, este projeto filtrou as análises estruturais
-    mais importantes sobre o período colonial, o império e a república, convertendo abordagens 
-    densas em resumos 
-    focados na interpretação exigida pelas provas contemporâneas.
-    </p>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-      
-      A conclusão deste trabalho converge para um único objetivo: transformar
-       o conhecimento histórico denso em uma ferramenta 
-       de precisão para a sua aprovação.<b> Estudar História</b> 
-      para exames de alto rendimento não exige memorização mecânica 
-      de fatos, mas sim o domínio da interpretação estrutural 
-      que as bancas utilizam para formular as questões mais difíceis. 
-      Ao finalizar esta leitura, você não terá apenas revisado os períodos da <b>América Portuguesa, 
-      do Império e da Primeira República </b>; você terá assimilado, e sem anacronismo, os conceitos fundamentais exigidos 
-      pelos editais contemporâneos de forma direta e sem ruídos. Este resumo entrega a 
-      você o repertório crítico necessário para identificar os distratores,
-    compreender as entrelinhas das questões e garantir a sua vaga.  
-    </p>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-      <b>📖 Texto de Divulgação:</b> As Revoltas como Sintoma da História.
-        Toda máquina de extração gera fricção. E toda fricção gera ruptura.
-    </p>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-      Se você está estudando para exames de alto rendimento como <b> Fuvest, Enem, Concursos Públicos entre outros Vestibulares</b>
-    esqueça as listas de nomes e datas para decorar. 
-       As bancas não querem que você decore as revoltas; 
-       elas querem que você compreenda as fraturas do sistema. 
-       Este material trata cada conflito como um sintoma de tensões profundas.
-      Veja a linha do tempo exata que as bancas amam cobrar, 
-      destrinchada pela lógica deste e-book completo:
-    </p>
-
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-  <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-  A análise histórica tradicional foi substituída aqui pela história das estruturas. 
-  Do açúcar, do ouro, da terra, da gente. Compreender a América Portuguesa,
-   o Império e a Primeira República não é apenas decorar o passado, 
-   mas sim decifrar as bases que explicam a nossa própria realidade brasileira atual. 
-   Esta é a lente que usamos aqui. Mas com uma diferença: 
-   transformamos essa análise estrutural em ferramenta de aprovação.
-</p>
-
-</p>
-
-<p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-  O resultado é este ebook. São <b>+200 páginas</b> onde a América Portuguesa, o Império e a Primeira República  são destrinchados com linguagem atual, diagramas, mapas mentais e <b>+ 200 questões comentadas</b> no padrão das maiores bancas. Zero floreio. Zero resumo raso. É o que cai, como cai, e por que cai.
-</p>
-
-<!-- BLOCO DE INCENTIVO (Adicionado sem alterar os parágrafos de cima) -->
-<div style="background-color: #ffffff; border-left: 5px solid #ffcc00; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
-    <h4 style="color: #1a3a6e; font-size: 20px; margin-top: 0; margin-bottom: 15px;">🚀 O Mapeamento Completo de Todas as Revoltas</h4>
-    
-    <p style="font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px;">
-        Ao adquirir este material, você dominará <b>absolutamente todas as revoltas e movimentos sociais</b> da colonização à primeira república. Cada conflito é dissecado como um sintoma das crises estruturais do país, preparando você para gabaritar qualquer banca examinadora.
-    </p>
-
-    <!-- Botão com seu degradê oficial -->
-    <a href="SEU_LINK_DO_EBOOK_ASAAS" style="display: inline-block; background: linear-gradient(135deg, #005ea6, #007ad6); color: #ffffff; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 17px; text-align: center; box-shadow: 0 4px 10px rgba(0, 94, 166, 0.2);">
-        📖 Adquirir o E-book com Todas as Revoltas
-    </a>
-</div>
-
-       
-    
-
-    
-
-    <div style="border-left: 5px solid #ffcc00; background-color: #e8f0fe; padding: 25px; border-radius: 8px; margin: 40px 0;">
-      <p style="font-size: 18px; line-height: 1.8; color: #1a3a6e; margin: 0; font-style: italic; font-weight: 600;">
-        "Quem domina a lógica da formação do Brasil, domina 40% da prova de História. 
-        Aqui você não decora datas. Você entende o sistema."
-      </p>
+    <div class="titulo-sobre">
+      <h1>SOBRE O PROJETO</h1>
+      <h2>Este projeto nasceu de uma constatação simples e incômoda: as grandes obras de referência da nossa historiografia clássica continuam definindo a lógica cobrada por bancas como Fuvest, Enem, e Concursos Públicos, mas a linguagem original dessas obras é arcaica e de difícil acesso.</h2>
+      <div class="barra"></div>
     </div>
 
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 25px;">
-      Meu compromisso é com o profissionalismo e com o seu resultado. Este blog não é um repositório de conteúdo gratuito. É um laboratório de historiografia aplicada a prova. Cada texto, cada questão, cada mapa mental foi pensado para que você entre na sala sabendo exatamente o que a banca quer saber.
-    </p>
+    <div class="texto">
+      <p><b>Ensaio de Reflexão:</b> O estudante focado em aprovação não dispõe de meses para decifrar estruturas ensaísticas complexas e vocabulários antigos. Por isso, este trabalho realizou uma investigação profunda: extrair a espinha dorsal crítica dessas obras fundamentais e traduzi-la diretamente para a gramática de provas atuais.</p>
 
-    <p style="font-size: 18px; line-height: 1.9; margin-bottom: 40px;">
-      Se você está se preparando para Vestibular, Enem ou Concurso Público e está cansado de material genérico, você está no lugar certo. Aqui a história é tratada com o rigor que ela merece e com a objetividade que a sua aprovação exige.
-    </p>
+      <p>A proposta deste material parte de um desafio real enfrentado por candidatos a exames oficiais: as bancas examinadoras mais concorridas do país ainda baseiam suas questões na lógica de clássicos da historiografia...</p>
 
-    <div style="text-align: center;">
-      <a href=artigos/ebook.html" 
-         style="display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 20px 50px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; box-shadow: 0 6px 0 #d4a500;">
-         CONHECER O EBOOK COMPLETO →
-      </a>
+      <p>A conclusão deste trabalho converge para um único objetivo: transformar o conhecimento histórico denso em uma ferramenta de precisão para a sua aprovação. <b>Estudar História</b> para exames de alto rendimento não exige memorização mecânica de fatos...</p>
+
+      <p><b>📖 Texto de Divulgação:</b> As Revoltas como Sintoma da História. Toda máquina de extração gera fricção. E toda fricção gera ruptura.</p>
+
+      <p>Se você está estudando para exames de alto rendimento como <b>Fuvest, Enem, Concursos Públicos entre outros Vestibulares</b> esqueça as listas de nomes e datas para decorar...</p>
+
+      <p>O resultado é este ebook. São <b>+200 páginas</b> onde a América Portuguesa, o Império e a Primeira República são destrinchados com linguagem atual, diagramas, mapas mentais e <b>+ 200 questões comentadas</b> no padrão das maiores bancas.</p>
+
+      <div style="background-color: #ffffff; border-left: 5px solid #ffcc00; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
+        <h4 style="color: #1a3a6e; font-size: 20px; margin-bottom: 15px;">🚀 O Mapeamento Completo de Todas as Revoltas</h4>
+        <p style="font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px;">Ao adquirir este material, você dominará <b>absolutamente todas as revoltas e movimentos sociais</b> da colonização à primeira república.</p>
+        <a href="SEU_LINK_DO_EBOOK_ASAAS" style="display: inline-block; background: linear-gradient(135deg, #005ea6, #007ad6); color: #ffffff; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 17px;">📖 Adquirir o E-book com Todas as Revoltas</a>
+      </div>
+
+      <div class="destaque">
+        <p>"Quem domina a lógica da formação do Brasil, domina 40% da prova de História. Aqui você não decora datas. Você entende o sistema."</p>
+      </div>
+
+      <p>Meu compromisso é com o profissionalismo e com o seu resultado. Este blog não é um repositório de conteúdo gratuito. É um laboratório de historiografia aplicada a prova.</p>
+
+      <p>Se você está se preparando para Vestibular, Enem ou Concurso Público e está cansado de material genérico, você está no lugar certo.</p>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="artigos/ebook.html" class="btn-ebook">CONHECER O EBOOK COMPLETO →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!--introdução sobre a doação-->
-<!-- Seção de Doação Principal do Blog -->
 <section class="secao-doacao">
     <div class="card-doacao">
-        
-        <!-- Cabeçalho do Card com seu Azul Escuro -->
         <header class="card-header">
             <span class="emoji-ancora">🎓</span>
             <h3>Conheça a história por trás deste código</h3>
         </header>
-<section>
         <div class="card-body">
-            <!-- Bloco 1: O Sonho -->
             <div class="bloco-texto">
                 <h4>🔵 A Sala de Aula ficou distante</h4>
-                <p>Em 2025, concluí com muito orgulho todas as matérias de <strong>Licenciatura em História</strong>. A realização de me tornar professor e transformar vidas através da educação estava apenas a um passo de distância. 
-                    No entanto, o <strong>desemprego</strong> me atingiu. Sem renda e desempregado fui impedido de pagar a taxa de rematrícula necessária para 
-                    realizar meu último estágio supervisionado obrigatório, além das mensalidades atrasadas. Minha formação foi travada na reta final por situações financeira.</p>
+                <p>Em 2025, concluí com muito orgulho todas as matérias de <strong>Licenciatura em História</strong>. A realização de me tornar professor estava a um passo... fui impedido de pagar a taxa de rematrícula.</p>
             </div>
-
-            <!-- Bloco 2: A Recusa -->
             <div class="bloco-texto">
                 <h4>💻 A Recusa em Desistir</h4>
-                <p>Através de reflexões profundas sobre o que estava acontecendo, decidi usar o conhecimento que tenho. Estudei, lutei e construí tudo o que você vê aqui sozinho. <strong>Desenvolvi cada linha de código deste blog (HTML, CSS e JavaScript)</strong>, criei a identidade visual nas ferramentas de design (Figma, GIMP e Canva) e escrevi um e-book histórico rigoroso, totalmente livre de anacronismo, abordando a América Portuguesa, o Império e a Primeira República  dentro de seus próprios contextos.</p>
+                <p>Desenvolvi cada linha de código deste blog <strong>HTML, CSS e JavaScript</strong>, criei a identidade visual no Figma, GIMP e Canva e escrevi um e-book histórico rigoroso...</p>
             </div>
-
-            <!-- Bloco 3: O Impacto -->
             <div class="bloco-texto destaque-meta">
                 <h4>🚀 Como o seu apoio faz a diferença</h4>
-                <p>Este blog e o meu e-book são a minha forma de resistir e de arrecadar
-                     os fundos necessários para custear toda estrutura que este site esta oferecendo, e o mais importante,
-                     conseguir o diploma de Licenciatura em História para finalmente entrar em uma sala de aula para lecionar.</p>
-                
-                <p class="chamada-apoio">Ao fazer uma doação espontânea de qualquer valor, você valoriza o trabalho de um profissional que programou e escreveu seu próprio projeto do zero e investe diretamente no futuro da educação!</p>
+                <p>Este blog e o meu e-book são a minha forma de resistir e arrecadar fundos para custear toda estrutura...</p>
+                <p class="chamada-apoio">Ao fazer uma doação espontânea de qualquer valor, você valoriza o trabalho de um profissional que programou e escreveu seu próprio projeto do zero.</p>
             </div>
         </div>
-
+    </div>
 </section>
-        <!-- Rodapé do Card com o Botão em Degradê -->
-       <div style="background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box;">
-    
-    <!-- CAIXA DE APOIO -->
-    <div style="background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06);">
-        <h3 style="font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; margin-top: 0; font-weight: 700;">Apoie o Canal de Estudos</h3>
-        <p style="line-height: 1.7; color: #333; margin-bottom: 25px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
-        
-        <a href="artigos/doacao.html" style="background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);">☕ Apoie o Canal de Estudos</a>
-        
+
+<div class="rodape-apoio">
+    <div class="caixa-apoio">
+        <h3>Apoie o Canal de Estudos</h3>
+        <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
+        <a href="artigos/doacao.html">☕ Apoie o Canal de Estudos</a>
         <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
-
-    <!-- RODAPÉ LEGAL -->
-    <div style="text-align: center; margin: 0 0 20px 0;">
-        <a href="artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Política de Privacidade</a>
-        <span style="color: #0a1e3d; opacity: 0.3;">|</span>
-        <a href="artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Termos de Uso</a>
+    <div class="links-legais">
+        <a href="artigos/privacidade.html">Política de Privacidade</a>
+        <span>|</span>
+        <a href="artigos/termos.html">Termos de Uso</a>
     </div>
-
-    <!-- COPYRIGHT -->
-    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-
+    <p class="copy">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
 </div>
-
-<!-- FOOTER PERFEITO COM ESPAÇO -->
 
 </body>
 </html>

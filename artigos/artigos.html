@@ -1,293 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artigos - Prisma Histórico</title>
+<link rel="stylesheet" href="../css/style.css">
 
 <style>
-  /* 1. Tira margem/padding padrão do navegador */
-html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--azul-escuro); /* pinta o fundo de azul pra não aparecer branco */
-}
-
-
-  /* ===== HEADER NOVO IGUAL DA FOTO ===== */
-        .header-topo {
-            background: linear-gradient (180deg, #000f33 0%, #002a5c);
-            padding: 25px 20px;
-          text-align: center;
-        }
-        .header-topo h1 {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-        .header-topo p {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        .header-menu {
-            background: var(--azul-escuro); /* Usei sua variável */
-            padding: 18px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky; /* Menu fica grudado no topo */
-            top: 0;
-            z-index: 100;
-        }
-        .header-menu ul {
-            list-style: none; /* TIRA AS BOLINHAS */
-            display: flex; /* JOGA PRA LINHA */
-            justify-content: flex-start; /* MENU NA ESQUERDA */
-            gap: 45px; /* ESPAÇO ENTRE OS LINKS */
-        }
-        .header-menu a {
-            color: var(--branco);
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            text-transform: lowercase; /* "sobre" "artigos" */
-            transition: 0.3s;
-        }
-        .header-menu a:hover { color: var(--amarelo); }
-
-         /*prisma começa aqui todos as paginas */
-        .header-topo {
-  background: 
-    linear-gradient(rgba(0, 42, 92, 0.95), rgba(0, 74, 130, 0.95)),
-    url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 100px 20px;
-  text-align: center;
-  border-bottom: 5px double #ffcc00;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.header-topo .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.header-topo h1 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(55px, 10vw, 100px);
-  font-weight: 900;
-  margin: 0 0 20px 0;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  line-height: 1.1;
-  
-  /* Efeito 3D + Brilho Colonial */
-  text-shadow: 
-    2px 2px 0 #001a38,
-    4px 4px 0 #001a38,
-    0 0 15px rgba(255, 204, 0, 0.4);
-}
-
-/* PRISMA em branco */
-.header-topo h1::first-word,
-.header-topo h1 {
-  color: #ffffff;
-}
-
-/* HISTÓRICO em amarelo - truque com span */
-.header-topo h1 span {
-  color: #ffcc00;
-  text-shadow: 
-    2px 2px 0 #8a6d00,
-    4px 4px 0 #8a6d00,
-    0 0 20px #ffcc00;
-}
-
-.header-topo p {
-  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: #f5f5f5;
-  font-style: italic;
-  margin: 0;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-}
-
-/* Linha decorativa */
-.header-topo p::before,
-.header-topo p::after {
-  content: " ❧ ";
-  color: #ffcc00;
-  font-size: 20px;
-}
-
-
-    
-    /* Tamanho do logo do header */
-.header-topo .logo-prisma {
-    max-width: 700px; /* muda aqui pra aumentar/diminuir */
-    width: 80%;
-    height: auto;
-    margin: 0 auto 10px auto;
-    display: block;
-    /* Efeito glow direto na imagem */
-    filter: drop-shadow(0 0 15px rgba(0, 94, 166, 0.7));
-    
-    /* Suaviza a imagem */
-    transition: 0.3s ease;
-    border-radius: 30px;
-}
-
-/* Quando passa o mouse fica mais forte */
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-/*perfeição header*/
-/* 1. FUNDO GERAL - mais sofisticado */
-body {
-    background: #eef2f7; /* Cinza azulado, não cansa a vista */
-    color: #1a2f4f; /* Texto azul marinho pra leitura */
-    font-family: 'Georgia', serif; /* Combina mais com histórico */
-    margin: 0;
-}
-
-/* 2. HEADER - mais profundo e com luz */
-.header-topo {
-    background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%);
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar luxo */
-}
-
-/* 3. LOGO - arredondar + brilho */
-.header-topo .logo-prisma {
-    max-width: 420px;
-    width: 90%;
-    height: auto;
-    margin: 0 auto 12px auto;
-    display: block;
-    border-radius: 20px; /* Quinas arredondadas */
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5)); /* Brilho dourado */
-}
-
-/* 4. KICKER - frase de baixo */
-.header-topo .kicker {
-    color: #ffcc00; /* Dourado igual da imagem */
-    font-style: italic;
-    font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    margin: 0;
-}
-
-/* 5. MENU - azul escuro combinando */
-.menu-principal {
-    background: #001a4d;
-    padding: 12px 0;
-    border-bottom: 2px solid #ffcc00;
-}
-
-.menu-principal a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.menu-principal a:hover {
-    color: #ffcc00; /* Dourado no hover */
-}
-
-/* 1. Centralizar os links do menu */
-.menu-principal {
-    text-align: center; /* Adiciona isso aqui */
-}
-
-/* 2. Botão de destaque para o E-BOOK */
-.menu-principal a[href*="ebook"] {
-    background: #ffcc00; /* Amarelo dourado */
-    color: #001a4d !important; /* Texto azul escuro */
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 900;
-    margin-left: 15px;
-}
-.menu-principal a[href*="ebook"]:hover {
-    background: #ffd633;
-    color: #001a4d !important;
-    transform: translateY(-2px);
-}
-/* Deixa o menu com flex pra jogar pros lados */
-
-.menu-principal {
-    background: #001a4d; /* Azul escuro do seu site */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ocupa a tela toda */
-    padding: 18px 40px; /* AQUI que engrossa: 18px em cima/baixo */
-    box-sizing: border-box;
-    border-bottom: 3px solid #ffcc00; /* Linha dourada pra dar destaque */
-}
-
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px; /* Espaço entre os links */
-    font-weight: 600;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 12px 24px; /* Botão maior */
-    border-radius: 8px;
-    font-weight: 900;
-    font-size: 16px;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
-
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-.menu-esquerda a, .menu-direita a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* Botão E-BOOK destacado na direita */
-.menu-direita a {
-    background: #ffcc00;
-    color: #001a4d !important;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 900;
-}
-.menu-direita a:hover {
-    background: #ffd633;
-    transform: scale(1.05);
-}
-
-/* Hover dos links da esquerda */
-.menu-esquerda a:hover {
-    color: #ffcc00;
-}
-
-
-/* ===== PALETA PRISMA HISTÓRICO ===== */
 :root {
   --azul-escuro: #1a3a6e;
   --azul-royal: #005ea6;
@@ -301,16 +20,61 @@ body {
   --amarelo-ouro: #ffcc00;
 }
 
-/* ===== FUNDO DO SITE ===== */
-body {
-  background-color: var(--fundo-site);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--texto-paragrafo);
-  margin: 0;
-  padding: 0;
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--fundo-site);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto-paragrafo);
 }
 
-/* ===== GRID DOS CARDS ===== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* HEADER */
+.header-topo {
+    background: 
+      linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%),
+      url('https://www.transparenttextures.com/patterns/old-paper.png');
+    padding: 30px 20px 20px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--amarelo-ouro);
+}
+.header-topo .logo-prisma {
+    max-width: 420px; width: 90%; height: auto;
+    margin: 0 auto 12px auto; display: block;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
+    transition: 0.3s ease;
+}
+.header-topo .logo-prisma:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
+}
+.header-topo .kicker {
+    color: var(--amarelo-ouro);
+    font-style: italic; font-size: 1.1rem;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
+}
+
+/* MENU */
+.menu-principal {
+    background: #001a4d;
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 18px 40px; box-sizing: border-box;
+    border-bottom: 3px solid var(--amarelo-ouro); 
+    position: sticky; top: 0; z-index: 100;
+}
+.menu-esquerda a, .menu-direita a {
+    color: #fff; text-decoration: none; margin: 0 12px;
+    font-weight: 600; font-size: 16px; transition: 0.3s;
+}
+.menu-esquerda a:hover { color: var(--amarelo-ouro); }
+.menu-direita a {
+    background: var(--amarelo-ouro); color: #001a4d !important;
+    padding: 10px 22px; border-radius: 8px; font-weight: 900;
+}
+.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
+
+/* GRID DOS CARDS */
 .prisma-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -320,7 +84,7 @@ body {
   margin: 0 auto;
 }
 
-/* ===== CARD BRANCO ===== */
+/* CARD BRANCO */
 .prisma-card {
   background: var(--branco-card);
   border-radius: 14px;
@@ -331,186 +95,84 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 .prisma-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0, 94, 166, 0.25);
   border-top: 4px solid var(--amarelo-ouro);
 }
 
-/* ===== IMAGEM 16:9 ===== */
+/* IMAGEM */
 .prisma-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 200px; object-fit: cover; display: block;
   transition: transform 0.4s ease;
 }
+.prisma-card:hover img { transform: scale(1.05); }
 
-.prisma-card:hover img {
-  transform: scale(1.05);
-}
-
-/* ===== CONTEÚDO DO CARD ===== */
-.prisma-content {
-  padding: 22px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 📅 ANO - Azul Escuro */
+/* CONTEÚDO */
+.prisma-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
 .prisma-ano {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--azul-escuro);
-  letter-spacing: 1.2px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+  font-size: 12px; font-weight: 800; color: var(--azul-escuro);
+  letter-spacing: 1.2px; margin-bottom: 8px; text-transform: uppercase;
 }
-
-/* 🏛️ TÍTULO - Azul Royal */
 .prisma-titulo {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  color: var(--azul-royal);
-  line-height: 1.3;
+  font-size: 20px; font-weight: 700; margin: 0 0 8px 0;
+  color: var(--azul-royal); line-height: 1.3;
 }
-
-/* 📍 LOCAL - Cinza */
-.prisma-local {
-  font-size: 14px;
-  color: var(--texto-cinza);
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-/* 📖 DESCRIÇÃO - Cinza Escuro */
+.prisma-local { font-size: 14px; color: var(--texto-cinza); margin-bottom: 12px; font-weight: 500; }
 .prisma-desc {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--texto-paragrafo);
-  margin-bottom: 16px;
-  flex-grow: 1;
+  font-size: 14px; line-height: 1.7; color: var(--texto-paragrafo);
+  margin-bottom: 16px; flex-grow: 1;
 }
-
-/* 🟡 TAG - Amarelo Ouro */
 .prisma-tag {
-  display: inline-block;
-  align-self: flex-start;
-  padding: 6px 14px;
-  background: rgba(255, 204, 0, 0.15);
-  border: 1px solid var(--amarelo-ouro);
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--azul-escuro);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  display: inline-block; align-self: flex-start;
+  padding: 6px 14px; background: rgba(255, 204, 0, 0.15);
+  border: 1px solid var(--amarelo-ouro); border-radius: 20px;
+  font-size: 11px; font-weight: 700; color: var(--azul-escuro);
+  text-transform: uppercase; letter-spacing: 0.5px;
 }
 
-/* ===== BOTÃO DO EBOOK ===== */
-.btn-ebook {
-  display: inline-block;
-  padding: 14px 28px;
-  background: var(--azul-claro);
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
+/* FOOTER APOIO */
+.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; box-sizing: border-box; }
+.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
+.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
+.caixa-apoio a { background: var(--amarelo-ouro); color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25); }
+.links-legais { text-align: center; margin: 0 0 20px 0; }
+.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
+.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
 
-.btn-ebook:hover {
-  background: var(--azul-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 86, 179, 0.4);
-}
-
-/* ===== HEADER COM DEGRADÊ ===== */
-.header-prisma {
-  background: linear-gradient(135deg, var(--azul-royal), var(--azul-vivo));
-  padding: 40px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.header-prisma h1 {
-  color: #fff;
-  margin: 0;
-  font-size: 32px;
-}
-
-/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
-  .prisma-grid {
-    grid-template-columns: 1fr;
-    padding: 30px 16px;
-    gap: 20px;
-  }
-  
-  .prisma-card img {
-    height: 220px;
-  }
+  .prisma-grid { grid-template-columns: 1fr; padding: 30px 16px; gap: 20px; }
+  .prisma-card img { height: 220px; }
 }
-
-/* FOOTER DOAÇÕES */
-/* ===== RESET GERAL ===== */
-
-
- </style>
-
-
-
+</style>
 </head>
 <body>
   
 <header class="header-topo">
     <div class="container">
-        <img src="img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
+        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
         <p class="kicker">A História sob múltiplos ângulos críticos</p>
     </div>
-</header>
-<!-- HEADER ORIGINAL PRISMA HISTÓRICO -->
 </header>
 
 <nav class="menu-principal">
     <div class="menu-esquerda">
-        <a href="index.html">início</a>
-        <a href="artigos/sobre.html">sobre</a>
-        <a href="artigos/artigos.html">artigos</a>
-        <a href="artigos/curiosidades.html">curiosidades</a>
-        <a href="artigos/quiz.html">quiz</a>
+        <a href="../index.html">início</a>
+        <a href="sobre.html">sobre</a>
+        <a href="artigos.html">artigos</a>
+        <a href="curiosidades.html">curiosidades</a>
+        <a href="quiz.html">quiz</a>
     </div>
     <div class="menu-direita">
-        <a href="artigos/ebook.html">e-book</a>
+        <a href="ebook.html">e-book</a>
     </div>
 </nav>
-
-<!-- SECÇÃO DE REFORÇO DE MARCA: PRISMA HISTÓRICO introdução -->
-<section style="
-  background: #e8f0fe;
-  padding: 90px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
-">
-  <div style="max-width: 1100px; margin: 0 auto;">
-
-
-
-
-
 
 <section class="prisma-grid">
 
   <!-- 1. Amador Bueno 1641 -->
   <div class="prisma-card">
-    <img src="img/amador-bueno1641.png" alt="Revolta de Amador Bueno 1641">
+    <img src="../img/amador-bueno1641.png" alt="Revolta de Amador Bueno 1641">
     <div class="prisma-content">
       <div class="prisma-ano">1641</div>
       <h3 class="prisma-titulo">Revolta de Amador Bueno</h3>
@@ -522,7 +184,7 @@ body {
 
   <!-- 2. Revolta da Cachaça 1660 -->
   <div class="prisma-card">
-    <img src="img/cachaça.png" alt="Revolta da Cachaça 1660">
+    <img src="../img/cachaça.png" alt="Revolta da Cachaça 1660">
     <div class="prisma-content">
       <div class="prisma-ano">1660-1661</div>
       <h3 class="prisma-titulo">Revolta da Cachaça</h3>
@@ -534,7 +196,7 @@ body {
 
   <!-- 3. Beckman 1684 -->
   <div class="prisma-card">
-    <img src="img/revolta-backman.png" alt="Revolta de Beckman 1684">
+    <img src="../img/revolta-backman.png" alt="Revolta de Beckman 1684">
     <div class="prisma-content">
       <div class="prisma-ano">1684</div>
       <h3 class="prisma-titulo">Revolta de Beckman</h3>
@@ -546,7 +208,7 @@ body {
 
   <!-- 4. Guerra dos Bárbaros 1687 -->
   <div class="prisma-card">
-    <img src="img/guerra-dos-barbaros.png" alt="Guerra dos Bárbaros">
+    <img src="../img/guerra-dos-barbaros.png" alt="Guerra dos Bárbaros">
     <div class="prisma-content">
       <div class="prisma-ano">1687-1713</div>
       <h3 class="prisma-titulo">Guerra dos Bárbaros</h3>
@@ -558,7 +220,7 @@ body {
 
   <!-- 5. Emboabas 1707 -->
   <div class="prisma-card">
-    <img src="img/emboabas.png" alt="Guerra dos Emboabas">
+    <img src="../img/emboabas.png" alt="Guerra dos Emboabas">
     <div class="prisma-content">
       <div class="prisma-ano">1707-1709</div>
       <h3 class="prisma-titulo">Guerra dos Emboabas</h3>
@@ -570,7 +232,7 @@ body {
 
   <!-- 6. Mascates 1710 -->
   <div class="prisma-card">
-    <img src="img/mascates.png" alt="Guerra dos Mascates">
+    <img src="../img/mascates.png" alt="Guerra dos Mascates">
     <div class="prisma-content">
       <div class="prisma-ano">1710-1711</div>
       <h3 class="prisma-titulo">Guerra dos Mascates</h3>
@@ -582,7 +244,7 @@ body {
 
   <!-- 7. Terço Velho 1718 -->
   <div class="prisma-card">
-    <img src="img/terco-velho.png" alt="Sublevação do Terço Velho">
+    <img src="../img/terco-velho.png" alt="Sublevação do Terço Velho">
     <div class="prisma-content">
       <div class="prisma-ano">1718</div>
       <h3 class="prisma-titulo">Sublevação do Terço Velho</h3>
@@ -594,7 +256,7 @@ body {
 
   <!-- 8. Vila Rica 1720 -->
   <div class="prisma-card">
-    <img src="img/vila-rica.png" alt="Revolta de Vila Rica">
+    <img src="../img/vila-rica.png" alt="Revolta de Vila Rica">
     <div class="prisma-content">
       <div class="prisma-ano">1720</div>
       <h3 class="prisma-titulo">Revolta de Vila Rica</h3>
@@ -606,7 +268,7 @@ body {
 
   <!-- 9. Inconfidência 1789 -->
   <div class="prisma-card">
-    <img src="" alt="Inconfidência Mineira">
+    <img src="../img/inconfidencia.png" alt="Inconfidência Mineira">
     <div class="prisma-content">
       <div class="prisma-ano">1789</div>
       <h3 class="prisma-titulo">Inconfidência Mineira</h3>
@@ -618,7 +280,7 @@ body {
 
   <!-- 10. Conjuração Baiana 1798 -->
   <div class="prisma-card">
-    <img src="" alt="Conjuração Baiana">
+    <img src="../img/conjuracao-baiana.png" alt="Conjuração Baiana">
     <div class="prisma-content">
       <div class="prisma-ano">1798</div>
       <h3 class="prisma-titulo">Conjuração Baiana</h3>
@@ -630,7 +292,7 @@ body {
 
   <!-- 11. Suassunas 1801 -->
   <div class="prisma-card">
-    <img src="" alt="Conspiração dos Suassunas">
+    <img src="../img/suassunas.png" alt="Conspiração dos Suassunas">
     <div class="prisma-content">
       <div class="prisma-ano">1801</div>
       <h3 class="prisma-titulo">Conspiração dos Suassunas</h3>
@@ -642,7 +304,7 @@ body {
 
   <!-- 12. Pernambucana 1817 -->
   <div class="prisma-card">
-    <img src="" alt="Revolução Pernambucana">
+    <img src="../img/pernambucana.png" alt="Revolução Pernambucana">
     <div class="prisma-content">
       <div class="prisma-ano">1817</div>
       <h3 class="prisma-titulo">Revolução Pernambucana</h3>
@@ -654,7 +316,7 @@ body {
 
   <!-- 13. Liberal do Porto 1820 -->
   <div class="prisma-card">
-    <img src="" alt="Revolução Liberal do Porto">
+    <img src="../img/liberal-porto.png" alt="Revolução Liberal do Porto">
     <div class="prisma-content">
       <div class="prisma-ano">1820</div>
       <h3 class="prisma-titulo">Revolução Liberal do Porto</h3>
@@ -666,29 +328,20 @@ body {
 
 </section>
 
-<!-- FOOTER ORIGINAL PRISMA HISTÓRICO -->
- <div style="background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box;">
-    
-    <!-- CAIXA DE APOIO -->
-    <div style="background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06);">
-        <h3 style="font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; margin-top: 0; font-weight: 700;">Apoie o Canal de Estudos</h3>
-        <p style="line-height: 1.7; color: #333; margin-bottom: 25px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
-        
-        <a href="artigos/doacao.html" style="background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25);">☕ Apoie o Canal de Estudos</a>
-        
+<div class="rodape-apoio">
+    <div class="caixa-apoio">
+        <h3>Apoie o Canal de Estudos</h3>
+        <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
+        <a href="doacao.html">☕ Apoie o Canal de Estudos</a>
         <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
-
-    <!-- RODAPÉ LEGAL -->
-    <div style="text-align: center; margin: 0 0 20px 0;">
-        <a href="artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Política de Privacidade</a>
-        <span style="color: #0a1e3d; opacity: 0.3;">|</span>
-        <a href="artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px;">Termos de Uso</a>
+    <div class="links-legais">
+        <a href="privacidade.html">Política de Privacidade</a>
+        <span>|</span>
+        <a href="termos.html">Termos de Uso</a>
     </div>
-
-    <!-- COPYRIGHT -->
-    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-
+    <p class="copy">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
 </div>
+
 </body>
 </html>

@@ -1,54 +1,39 @@
-/* ==========================================
-   CONTEÚDO PRINCIPAL (ESTILOS PADRÃO)
-   ========================================== */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prisma Histórico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-main {
-    padding-top: 40px;
-}
+  <nav class="navbar">
+    <a href="#inicio" class="logo">Prisma Histórico</a>
+    <ul class="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#artigo">Artigo</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#ebook" class="ebook-btn">Ebook</a></li>
+    </ul>
+  </nav>
 
-/* ==========================================
-   REGRAS RESPONSIVAS (PARA TELAS ATÉ 1024PX)
-   ========================================== */
-/* ==========================================================
-   CORREÇÃO GLOBAL DO MENU RESPONSIVO (PROS OUTROS MENUS)
-   ========================================================== */
-@media screen and (max-width: 1024px) {
-    /* Transforma o menu num bloco flexível que aceita quebra de linha */
-    nav.menu-principal {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-        width: 100% !important;
-        padding: 15px 0 !important;
-    }
+  <section id="inicio">
+    <h1>Bem-vindo ao Prisma Histórico</h1>
+    <p>Descubra a história por um novo ângulo. Aqui cada fato tem várias faces, igual um prisma.</p>
+    <a href="#artigo" class="btn">Começar a Ler</a>
+  </section>
 
-    /* Força os links da esquerda a distribuírem-se e quebrarem de forma alinhada */
-    .menu-esquerda {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 12px 20px !important;
-        width: 100% !important;
-    }
+  <section id="sobre"><h1>Sobre</h1><p>O Prisma Histórico nasceu pra contar a história de forma leve, profunda e sem enrolação.</p></section>
+  <section id="artigo"><h1>Artigo</h1><p>Aqui entram teus artigos históricos.</p><a href="#" class="btn">Ler Último Artigo</a></section>
+  <section id="curiosidades"><h1>Curiosidades</h1><p>Fatos históricos bizarros e pouco conhecidos.</p></section>
+  <section id="quiz"><h1>Quiz Histórico</h1><p>Testa teu conhecimento!</p><a href="#" class="btn">Jogar Agora</a></section>
+  <section id="ebook"><h1>Ebook Exclusivo</h1><p>Baixa nosso ebook gratuito.</p><a href="#" class="btn" style="background: #f5e6c8; color: #1a3a2f;">Baixar Ebook</a></section>
 
-    /* Centraliza o bloco da direita (e-book) logo abaixo */
-    .menu-direita {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
-        margin-top: 5px !important;
-    }
+  <footer><p>© 2026 Prisma Histórico. Feito com respeito pela história.</p></footer>
 
-    /* Garante que os links fiquem legíveis e fáceis de clicar */
-    nav.menu-principal a {
-        display: inline-block !important;
-        text-align: center !important;
-        white-space: nowrap !important;
-    }
-}
+</body>
+</html>
