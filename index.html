@@ -269,3 +269,50 @@ h2{font-size:2.5rem;color:var(--laranja);margin-bottom:20px}
 <div class="grid-3"> <!-- Abriu linha 3 -->
   <div class="card"> ... Praieira ... </div>
 </div> <!-- Fechou linha 3 - sobrou 1, fica sozinho alinhado na esquerda -->
+
+<!--aviso-->
+<!-- POPUP EBOOK EM BREVE -->
+<div id="popup-ebook" class="popup-overlay">
+  <div class="popup-box">
+    <button class="popup-fechar" onclick="fecharPopup()">×</button>
+    <div class="popup-icone">📚</div>
+    <h2>EM BREVE: E-BOOK PRISMA HISTÓRICO</h2>
+    <p>O material mais completo para dominar os <strong>3 períodos</strong> que mais caem em prova:</p>
+    <ul>
+      <li>✅ <b>Brasil Colônia, Império e República Velha</b></li>
+      <li>✅ <b>Historiografias e Análise Crítica</b></li>
+      <li>✅ <b>300+ Questões Gabaritadas e Comentadas</b></li>
+      <li>✅ <b>Ilustrações, Mapas Mentais e Infográficos</b></li>
+    </ul>
+    <p class="popup-aviso">Cadastre-se pra ser avisado no lançamento com desconto exclusivo.</p>
+    <a href="/artigos/ebook.html" class="btn-popup">QUERO SER AVISADO →</a>
+  </div>
+</div>
+
+<script>
+// Mostra o popup 1.5s depois de entrar
+window.addEventListener('load', function() {
+  // Só mostra se a pessoa não viu nas últimas 24h
+  if(!localStorage.getItem('popupVisto')){
+    setTimeout(function(){
+      document.getElementById('popup-ebook').style.display = 'flex';
+    }, 1500);
+  }
+});
+
+function fecharPopup(){
+  document.getElementById('popup-ebook').style.display = 'none';
+  // Salva que já viu pra não encher o saco
+  localStorage.setItem('popupVisto', 'true');
+}
+
+// Fecha clicando fora
+document.getElementById('popup-ebook').addEventListener('click', function(e){
+  if(e.target == this){
+    fecharPopup();
+  }
+});
+</script>
+  
+</body>
+</html>
