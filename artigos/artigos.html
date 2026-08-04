@@ -5,155 +5,210 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artigos - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
-
 <style>
 :root {
-  --azul-escuro: #1a3a6e;
-  --azul-royal: #005ea6;
-  --azul-vivo: #007ad6;
-  --azul-claro: #007BFF;
-  --azul-hover: #0056b3;
-  --fundo-site: #e8f0fe;
-  --branco-card: #ffffff;
-  --texto-cinza: #555;
-  --texto-paragrafo: #444;
-  --amarelo-ouro: #ffcc00;
+  --preto: #0a0a0a;
+  --preto-claro: #1a1a1a;
+  --laranja: #ff8c00;
+  --laranja-claro: #ffa500;
+  --branco: #f5f5f5;
+  --cinza: #888888;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--fundo-site);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--texto-paragrafo);
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* HEADER */
-.header-topo {
-    background: 
-      linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%),
-      url('https://www.transparenttextures.com/patterns/old-paper.png');
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid var(--amarelo-ouro);
-}
-.header-topo .logo-prisma {
-    max-width: 420px; width: 90%; height: auto;
-    margin: 0 auto 12px auto; display: block;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
-    transition: 0.3s ease;
-}
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-.header-topo .kicker {
-    color: var(--amarelo-ouro);
-    font-style: italic; font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
-}
-
-/* MENU */
+/* ===== MENU PRINCIPAL ===== */
 .menu-principal {
-    background: #001a4d;
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 18px 40px; box-sizing: border-box;
-    border-bottom: 3px solid var(--amarelo-ouro); 
-    position: sticky; top: 0; z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--preto);
+  padding: 18px 40px;
+  border-bottom: 2px solid var(--laranja);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.menu-esquerda a, .menu-direita a {
-    color: #fff; text-decoration: none; margin: 0 12px;
-    font-weight: 600; font-size: 16px; transition: 0.3s;
-}
-.menu-esquerda a:hover { color: var(--amarelo-ouro); }
-.menu-direita a {
-    background: var(--amarelo-ouro); color: #001a4d !important;
-    padding: 10px 22px; border-radius: 8px; font-weight: 900;
-}
-.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
 
-/* GRID DOS CARDS */
+.menu-esquerda a, 
+.menu-direita a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.menu-esquerda a:hover, 
+.menu-direita a:hover {
+  color: var(--laranja);
+}
+
+/* Botão do e-book em destaque */
+.menu-direita a {
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+.menu-direita a:hover {
+  background: var(--laranja-claro);
+  color: var(--preto);
+}
+
+/* ===== GRID DOS CARDS ===== */
 .prisma-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-  padding: 50px 20px;
-  max-width: 1300px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px;
+  background: var(--preto);
 }
 
-/* CARD BRANCO */
 .prisma-card {
-  background: var(--branco-card);
-  border-radius: 14px;
+  background: var(--preto-claro);
+  border: 1px solid #333;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 94, 166, 0.15);
-  transition: all 0.3s ease;
-  border-top: 4px solid var(--azul-royal);
-  display: flex;
-  flex-direction: column;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
 }
+
 .prisma-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 94, 166, 0.25);
-  border-top: 4px solid var(--amarelo-ouro);
+  border-color: var(--laranja);
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-/* IMAGEM */
 .prisma-card img {
-  width: 100%; height: 200px; object-fit: cover; display: block;
-  transition: transform 0.4s ease;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
-.prisma-card:hover img { transform: scale(1.05); }
 
-/* CONTEÚDO */
-.prisma-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+.prisma-content {
+  padding: 20px;
+}
+
 .prisma-ano {
-  font-size: 12px; font-weight: 800; color: var(--azul-escuro);
-  letter-spacing: 1.2px; margin-bottom: 8px; text-transform: uppercase;
+  color: var(--laranja);
+  font-weight: 700;
+  font-size: 14px;
 }
+
 .prisma-titulo {
-  font-size: 20px; font-weight: 700; margin: 0 0 8px 0;
-  color: var(--azul-royal); line-height: 1.3;
+  color: var(--branco);
+  font-size: 18px;
+  margin: 8px 0;
 }
-.prisma-local { font-size: 14px; color: var(--texto-cinza); margin-bottom: 12px; font-weight: 500; }
+
+.prisma-local {
+  color: var(--cinza);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
 .prisma-desc {
-  font-size: 14px; line-height: 1.7; color: var(--texto-paragrafo);
-  margin-bottom: 16px; flex-grow: 1;
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
+
 .prisma-tag {
-  display: inline-block; align-self: flex-start;
-  padding: 6px 14px; background: rgba(255, 204, 0, 0.15);
-  border: 1px solid var(--amarelo-ouro); border-radius: 20px;
-  font-size: 11px; font-weight: 700; color: var(--azul-escuro);
-  text-transform: uppercase; letter-spacing: 0.5px;
+  display: inline-block;
+  background: rgba(255, 140, 0, 0.15);
+  color: var(--laranja);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-/* FOOTER APOIO */
-.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; box-sizing: border-box; }
-.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
-.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
-.caixa-apoio a { background: var(--amarelo-ouro); color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25); }
-.links-legais { text-align: center; margin: 0 0 20px 0; }
-.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
-.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
+/* Atraso em cascata */
+.prisma-grid .prisma-card:nth-child(1) { animation-delay: 0.1s; }
+.prisma-grid .prisma-card:nth-child(2) { animation-delay: 0.2s; }
+.prisma-grid .prisma-card:nth-child(3) { animation-delay: 0.3s; }
+.prisma-grid .prisma-card:nth-child(4) { animation-delay: 0.4s; }
+.prisma-grid .prisma-card:nth-child(5) { animation-delay: 0.5s; }
+.prisma-grid .prisma-card:nth-child(6) { animation-delay: 0.6s; }
 
-@media (max-width: 768px) {
-  .prisma-grid { grid-template-columns: 1fr; padding: 30px 16px; gap: 20px; }
-  .prisma-card img { height: 220px; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RODAPÉ ===== */
+.rodape-apoio {
+  background: var(--preto-claro);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+
+.caixa-apoio h3 {
+  color: var(--branco);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.caixa-apoio p {
+  color: var(--cinza);
+  margin-bottom: 15px;
+}
+
+.caixa-apoio a {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.caixa-apoio a:hover {
+  background: var(--laranja-claro);
+  transform: scale(1.05);
+}
+
+.links-legais a {
+  color: var(--cinza);
+  text-decoration: none;
+  margin: 0 8px;
+}
+.links-legais a:hover {
+  color: var(--laranja);
+}
+
+.copy {
+  color: #555;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .prisma-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .prisma-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .menu-principal {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 </style>
 </head>
 <body>
   
-<header class="header-topo">
-    <div class="container">
-        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-        <p class="kicker">A História sob múltiplos ângulos críticos</p>
-    </div>
-</header>
 
 <nav class="menu-principal">
     <div class="menu-esquerda">

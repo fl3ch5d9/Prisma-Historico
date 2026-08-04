@@ -7,102 +7,216 @@
 <title>Sobre - Prisma Histórico</title>
 <style>
 :root {
-    --azul-escuro: #1a3a6e;
-    --azul-claro: #007BFF;
-    --branco: #FFFFFF;
-    --amarelo: #FFC107;
-    --cinza: #f4f7f9;
+  --preto: #0a0a0a;
+  --preto-claro: #1a1a1a;
+  --laranja: #ff8c00;
+  --laranja-claro: #ffa500;
+  --branco: #f5f5f5;
+  --cinza: #aaaaaa;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Georgia', serif; background: #eef2f7; color: #1a2f4f; }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-/* HEADER */
-.header-topo {
-  background: 
-    linear-gradient(180deg, rgba(0, 16, 46, 1) 0%, rgba(0, 51, 102, 1) 50%, rgba(0, 86, 163, 1) 100%),
-    url('https://www.transparenttextures.com/patterns/old-paper.png');
-  padding: 30px 20px 20px 20px;
-  text-align: center;
-  border-bottom: 3px solid #ffcc00;
-}
-.header-topo .logo-prisma {
-    max-width: 420px; width: 90%; height: auto;
-    margin: 0 auto 12px auto; display: block;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
-}
-.header-topo .kicker {
-    color: #ffcc00; font-style: italic; font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
-}
-
-/* MENU */
+/* ===== MENU - MESMO DO ANTERIOR ===== */
 .menu-principal {
-    background: #001a4d;
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 18px 40px; box-sizing: border-box;
-    border-bottom: 3px solid #ffcc00; position: sticky; top: 0; z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--preto);
+  padding: 18px 40px;
+  border-bottom: 2px solid var(--laranja);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.menu-esquerda a, .menu-direita a {
-    color: #fff; text-decoration: none; margin: 0 12px;
-    font-weight: 600; font-size: 16px; transition: 0.3s;
-}
-.menu-esquerda a:hover { color: #ffcc00; }
+.menu-esquerda a, 
 .menu-direita a {
-    background: #ffcc00; color: #001a4d !important;
-    padding: 10px 22px; border-radius: 8px; font-weight: 900;
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
-.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
+.menu-esquerda a:hover, 
+.menu-direita a:hover { color: var(--laranja); }
+.menu-direita a {
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+.menu-direita a:hover { background: var(--laranja-claro); }
 
-/* SEÇÃO SOBRE */
+/* ===== SEÇÃO SOBRE ===== */
 .secao-sobre {
-  background: #e8f0fe;
-  padding: 90px 20px;
-  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--preto);
+  padding: 60px 20px;
+  color: var(--branco);
 }
-.titulo-sobre { text-align: center; max-width: 900px; margin: 0 auto 60px auto; padding-top: 40px; }
-.titulo-sobre h1 { font-size: 42px; font-weight: 900; color: #1a3a6e; margin-bottom: 15px; letter-spacing: -0.5px; font-family: 'Segoe UI', Arial, sans-serif; }
-.titulo-sobre h2 { font-size: 20px; font-weight: 600; color: #007BFF; margin-bottom: 20px; line-height: 1.4; font-family: 'Segoe UI', Arial, sans-serif; }
-.barra { width: 120px; height: 4px; background-color: #ffcc00; margin: 0 auto; border-radius: 2px; }
-.texto p { font-size: 18px; line-height: 1.9; margin-bottom: 25px; }
-.destaque { border-left: 5px solid #ffcc00; background-color: #e8f0fe; padding: 25px; border-radius: 8px; margin: 40px 0; }
-.destaque p { font-size: 18px; line-height: 1.8; color: #1a3a6e; margin: 0; font-style: italic; font-weight: 600; }
-.btn-ebook { display: inline-block; background-color: #ffcc00; color: #1a3a6e; padding: 20px 50px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 20px; box-shadow: 0 6px 0 #d4a500; }
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-/* DOAÇÃO */
-.secao-doacao { display: flex; justify-content: center; align-items: center; padding: 40px 10px; }
-.card-doacao { background-color: #ffffff; max-width: 680px; width: 100%; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); overflow: hidden; border-top: 6px solid #005ea6; }
-.card-header { padding: 25px 30px 10px 30px; text-align: center; }
-.emoji-ancora { font-size: 28px; }
-.card-header h3 { color: #1a3a6e; font-size: 22px; margin: 0; }
-.card-body { padding: 10px 30px 25px 30px; }
-.bloco-texto { margin-bottom: 25px; }
-.bloco-texto h4 { color: #1a3a6e; font-size: 16px; margin-bottom: 8px; }
-.bloco-texto p { color: #444; font-size: 15px; line-height: 1.6; margin: 0; }
-.destaque-meta { background-color: #f8faff; padding: 20px; border-left: 4px solid #ffcc00; border-radius: 0 8px 8px 0; }
-.chamada-apoio { font-weight: bold; margin-top: 10px !important; }
+.titulo-sobre h1 {
+  font-size: 42px;
+  text-align: center;
+  color: var(--laranja);
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+.titulo-sobre h2 {
+  font-size: 18px;
+  text-align: center;
+  color: var(--cinza);
+  font-weight: 400;
+  line-height: 1.7;
+}
+.barra {
+  width: 80px;
+  height: 4px;
+  background: var(--laranja);
+  margin: 25px auto;
+}
 
-/* RODAPÉ APOIO */
-.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; width: 100%; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; box-sizing: border-box; }
-.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
-.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
-.caixa-apoio a { background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; box-shadow: 0 4px 12px rgba(255, 204, 0, 0.25); }
-.links-legais { text-align: center; margin: 0 0 20px 0; }
-.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
-.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
+.texto p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.texto b { color: var(--laranja); }
+
+.destaque {
+  background: var(--preto-claro);
+  border-left: 4px solid var(--laranja);
+  padding: 25px;
+  margin: 40px 0;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--branco);
+}
+
+/* Caixa do E-book */
+.texto > div[style*="background-color: #ffffff"] {
+  background: var(--preto-claro) !important;
+  border-left: 5px solid var(--laranja) !important;
+  box-shadow: 0 0 15px rgba(255,140,0,0.2) !important;
+}
+.texto > div h4 {
+  color: var(--laranja) !important;
+}
+.texto > div p {
+  color: var(--cinza) !important;
+}
+.texto > div a {
+  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro)) !important;
+  color: var(--preto) !important;
+  transition: transform 0.3s;
+}
+.texto > div a:hover { transform: scale(1.05); }
+
+.btn-ebook {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+.btn-ebook:hover {
+  background: var(--laranja-claro);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,140,0,0.4);
+}
+
+/* ===== SEÇÃO DOAÇÃO ===== */
+.secao-doacao {
+  background: var(--preto-claro);
+  padding: 60px 20px;
+}
+.card-doacao {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--preto);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 40px;
+}
+.card-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.emoji-ancora { font-size: 40px; }
+.card-header h3 {
+  color: var(--laranja);
+  font-size: 28px;
+  margin-top: 10px;
+}
+.bloco-texto {
+  margin-bottom: 25px;
+}
+.bloco-texto h4 {
+  color: var(--branco);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.bloco-texto p {
+  color: var(--cinza);
+  line-height: 1.7;
+}
+.destaque-meta {
+  background: rgba(255,140,0,0.1);
+  border: 1px dashed var(--laranja);
+  padding: 20px;
+  border-radius: 8px;
+}
+.chamada-apoio {
+  color: var(--laranja) !important;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape-apoio {
+  background: var(--preto);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+.caixa-apoio h3 { color: var(--branco); font-size: 22px; }
+.caixa-apoio p { color: var(--cinza); }
+.caixa-apoio a {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.caixa-apoio a:hover { background: var(--laranja-claro); }
+.links-legais a { color: var(--cinza); text-decoration: none; margin: 0 8px; }
+.links-legais a:hover { color: var(--laranja); }
+.copy { color: #555; font-size: 13px; margin-top: 20px; }
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .menu-principal { flex-direction: column; gap: 10px; }
+  .titulo-sobre h1 { font-size: 32px; }
+  .card-doacao { padding: 20px; }
+}
 </style>
 </head>
 <body>
 
-<header class="header-topo">
-    <div class="container">
-        <img src="img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-        <p class="kicker">A História sob múltiplos ângulos críticos</p>
-    </div>
-</header>
- 
+
 <nav class="menu-principal">
     <div class="menu-esquerda">
         <a href="index.html">início</a>

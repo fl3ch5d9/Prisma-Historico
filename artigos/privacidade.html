@@ -7,51 +7,144 @@
 <meta name="description" content="Conheça a Política de Privacidade do Prisma Histórico. Saiba como protegemos seus dados conforme a LGPD.">
 <link rel="stylesheet" href="../css/style.css">
 <style>
-:root{
-  --azul-escuro:#1a3a6e; --azul-royal:#005ea6; --azul-vivo:#007ad6;
-  --azul-claro:#007BFF; --azul-hover:#0056b3; --fundo:#e8f0fe;
-  --branco:#ffffff; --texto-cinza:#555; --amarelo:#ffcc00;
+
+:root {
+  --preto: #0a0a0a;
+  --preto-claro: #1a1a1a;
+  --laranja: #ff8c00;
+  --laranja-claro: #ffa500;
+  --branco: #f5f5f5;
+  --cinza: #aaaaaa;
 }
-*{margin:0; padding:0; box-sizing:border-box;}
-body{background:var(--fundo); font-family:'Georgia',serif; color:#444; line-height:1.8;}
-.container{max-width:900px; margin:0 auto; padding:0 20px;}
 
-/* HEADER */
-.header-topo{background: linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%); padding: 30px 20px 20px; text-align: center; border-bottom: 3px solid var(--amarelo);}
-.header-topo .logo-prisma{max-width: 420px; width: 90%; margin: 0 auto 12px; display: block; border-radius: 20px; filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));}
-.header-topo .kicker{color: var(--amarelo); font-style: italic; font-size: 1.1rem;}
+/* ===== MENU ===== */
+header { /* se tiver header na pagina */
+  position: sticky;
+  top: 0;
+  background: var(--preto);
+  border-bottom: 2px solid var(--laranja);
+  z-index: 9999;
+}
+.menu-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-esquerda { display: flex; gap: 25px; flex-wrap: wrap; }
+.menu-esquerda a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.menu-esquerda a:hover { color: var(--laranja); }
+.menu-direita a {
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.3s;
+}
+.menu-direita a:hover { background: var(--laranja-claro); }
 
-/* MENU */
-.menu-principal{background: #001a4d; display: flex; justify-content: space-between; align-items:center; padding: 18px 40px; border-bottom: 3px solid var(--amarelo); position:sticky; top:0; z-index:100;}
-.menu-principal a{color:#fff; text-decoration:none; margin:0 12px; font-weight:600; transition:0.3s; font-family:'Segoe UI',Arial,sans-serif;}
-.menu-direita a{background:var(--amarelo); color:#001a4d!important; padding:10px 22px; border-radius:8px; font-weight:900;}
-.menu-direita a:hover{background:#ffd633; transform:scale(1.05);}
-.menu-esquerda a:hover{color:var(--amarelo);}
+/* ===== CONTEÚDO LEGAL ===== */
+body { 
+  background: var(--preto); 
+  color: var(--branco); 
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.7;
+}
 
-/* CONTEÚDO */
-.secao-texto-legal { padding: 60px 20px; background: var(--branco); }
-.secao-texto-legal .container { max-width: 900px; margin: 0 auto; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-.secao-texto-legal h1 { font-size: 2.5rem; color: var(--azul-escuro); margin-bottom: 10px; }
-.secao-texto-legal .data-atualizacao { color: #777; font-size: 0.9rem; margin-bottom: 30px; font-family:'Segoe UI',Arial,sans-serif; }
-.secao-texto-legal h2 { font-size: 1.5rem; color: var(--azul-escuro); margin-top: 30px; margin-bottom: 15px; border-left: 4px solid var(--azul-claro); padding-left: 15px; }
-.secao-texto-legal p, .secao-texto-legal li { margin-bottom: 15px; line-height: 1.8; font-size: 1rem; font-family:'Segoe UI',Arial,sans-serif; color: var(--texto-cinza); }
-.secao-texto-legal ul { padding-left: 20px; }
-.secao-texto-legal a { color: var(--azul-claro); text-decoration: none; }
+.secao-texto-legal {
+  padding: 60px 20px;
+  background: var(--preto-claro);
+}
+.container { max-width: 900px; margin: 0 auto; }
+
+.secao-texto-legal h1 {
+  color: var(--laranja);
+  font-size: 38px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.data-atualizacao {
+  color: var(--cinza);
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.secao-texto-legal h2 {
+  color: var(--laranja);
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--laranja);
+  padding-left: 15px;
+}
+.secao-texto-legal p {
+  color: var(--cinza);
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.secao-texto-legal strong { color: var(--branco); font-weight: 700; }
+
+.secao-texto-legal ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.secao-texto-legal ul li {
+  color: var(--cinza);
+  background: var(--preto);
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 3px solid var(--laranja);
+}
+.secao-texto-legal a {
+  color: var(--laranja);
+  text-decoration: none;
+  font-weight: 700;
+}
 .secao-texto-legal a:hover { text-decoration: underline; }
 
-/* FOOTER */
-footer{background: linear-gradient(180deg, #0a1f44 0%, #1e4d8f 100%); color: #fff; padding: 60px 20px 30px; margin-top: 60px;}
-.caixa-apoio{background: rgba(0,0,0,0.15); padding: 40px; border-radius: 15px; text-align: center; margin-bottom: 30px; border: 2px dashed var(--amarelo);}
+/* ===== FOOTER ===== */
+footer {
+  background: var(--preto);
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+.caixa-apoio h3 { color: var(--laranja)!important; }
+.caixa-apoio p { color: var(--cinza)!important; }
+.caixa-apoio a {
+  background: var(--laranja)!important;
+  color: var(--preto)!important;
+}
+footer a { color: var(--laranja)!important; }
+footer p { color: var(--cinza); }
+
+/* Sobrescreve cores inline */
+[style*="color: var(--amarelo)"] { color: var(--laranja)!important; }
+[style*="color: #eef2f7"] { color: var(--branco)!important; }
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+.menu-principal { flex-direction: column; gap: 15px; padding: 15px 20px; }
+.secao-texto-legal h1 { font-size: 28px; }
+}
 </style>
 </head>
 <body>
 
-<header class="header-topo">
-    <div class="container">
-        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-        <p class="kicker">A História sob múltiplos ângulos críticos</p>
-    </div>
-</header>
+
 
 <nav class="menu-principal">
     <div class="menu-esquerda">

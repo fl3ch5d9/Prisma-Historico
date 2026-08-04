@@ -1,39 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prisma Histórico</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body { background: #0a0a0a; color: #fff; }
+.subtitulo-secao { color: #ff8c00; font-size: 1.6rem; margin: 40px 0 20px 0; border-left: 4px solid #ff8c00; padding-left: 12px; }
+.subtitulo-secao-menor { color: #ff8c00; font-size: 1.1rem; margin: 20px 0 15px 0; }
 
-  <nav class="navbar">
-    <a href="#inicio" class="logo">Prisma Histórico</a>
-    <ul class="menu">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#artigo">Artigo</a></li>
-      <li><a href="#curiosidades">Curiosidades</a></li>
-      <li><a href="#quiz">Quiz</a></li>
-      <li><a href="#ebook" class="ebook-btn">Ebook</a></li>
-    </ul>
-  </nav>
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 1150px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
 
-  <section id="inicio">
-    <h1>Bem-vindo ao Prisma Histórico</h1>
-    <p>Descubra a história por um novo ângulo. Aqui cada fato tem várias faces, igual um prisma.</p>
-    <a href="#artigo" class="btn">Começar a Ler</a>
-  </section>
+.card {
+  background: #1a1a1a;
+  border: 2px solid #ff8c00;
+  border-radius: 10px;
+  padding: 14px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 0 12px rgba(255, 140, 0, 0.35); }
+.card h3 { font-size: 0.95rem; color: #ff8c00; margin-bottom: 8px; }
+.card p { font-size: 0.82rem; color: #e0e0e0; margin-bottom: 12px; flex-grow: 1; }
+.card .btn-card { background: #ff8c00; color: #0a0a0a; padding: 8px 10px; border-radius: 6px; text-decoration: none; font-weight: 700; text-align: center; font-size: 0.85rem; }
 
-  <section id="sobre"><h1>Sobre</h1><p>O Prisma Histórico nasceu pra contar a história de forma leve, profunda e sem enrolação.</p></section>
-  <section id="artigo"><h1>Artigo</h1><p>Aqui entram teus artigos históricos.</p><a href="#" class="btn">Ler Último Artigo</a></section>
-  <section id="curiosidades"><h1>Curiosidades</h1><p>Fatos históricos bizarros e pouco conhecidos.</p></section>
-  <section id="quiz"><h1>Quiz Histórico</h1><p>Testa teu conhecimento!</p><a href="#" class="btn">Jogar Agora</a></section>
-  <section id="ebook"><h1>Ebook Exclusivo</h1><p>Baixa nosso ebook gratuito.</p><a href="#" class="btn" style="background: #f5e6c8; color: #1a3a2f;">Baixar Ebook</a></section>
+@media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
 
-  <footer><p>© 2026 Prisma Histórico. Feito com respeito pela história.</p></footer>
+/*efeitos hover cards*/
 
-</body>
-</html>
+.card {
+  /* ... o que já tem ... */
+  position: relative;
+  overflow: hidden; /* importante pro brilho */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.card:hover::before {
+  left: 100%; /* passa um brilho laranja por cima */
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02); /* sobe + aumenta um pouco */
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.5); /* brilho mais forte */
+  border-color: #ffa500;
+}

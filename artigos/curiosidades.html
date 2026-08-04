@@ -5,138 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curiosidades - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
+
 <style>
 :root {
-    --azul-escuro: #1a3a6e;
-    --azul-royal: #005ea6;
-    --azul-vivo: #007ad6;
-    --azul-claro: #007BFF;
-    --azul-hover: #0056b3;
-    --fundo-site: #e8f0fe;
-    --branco-card: #ffffff;
-    --texto-cinza: #555;
-    --texto-escuro: #444;
-    --amarelo-ouro: #ffcc00;
+  --preto: #0a0a0a;
+  --preto-claro: #1a1a1a;
+  --laranja: #ff8c00;
+  --laranja-claro: #ffa500;
+  --branco: #f5f5f5;
+  --cinza: #aaaaaa;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    font-family: 'Georgia', serif; 
-    background: var(--fundo-site); 
-    color: var(--texto-escuro);
-    line-height: 1.8;
-}
-.container { max-width: 1200px; margin: auto; padding: 0 24px; }
 
-/* HEADER */
-.header-topo {
-    background: 
-      linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%),
-      url('https://www.transparenttextures.com/patterns/old-paper.png');
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid var(--amarelo-ouro);
-}
-.header-topo .logo-prisma {
-    max-width: 420px; width: 90%; height: auto;
-    margin: 0 auto 12px auto; display: block;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
-    transition: 0.3s ease;
-}
-.header-topo .logo-prisma:hover {
-    filter: drop-shadow(0 0 25px rgba(255, 204, 0, 0.8));
-}
-.header-topo .kicker {
-    color: var(--amarelo-ouro);
-    font-style: italic; font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
+body {
+  padding-top: 80px; /* ESSENCIAL: espaço pro header fixo */
+  background: var(--preto);
+  color: var(--branco);
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
 }
 
-/* MENU */
-.menu-principal {
-    background: #001a4d;
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 18px 40px; box-sizing: border-box;
-    border-bottom: 3px solid var(--amarelo-ouro); 
-    position: sticky; top: 0; z-index: 100;
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== HEADER NAVBAR ===== */
+.navbar {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--laranja);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
-.menu-esquerda a, .menu-direita a {
-    color: #fff; text-decoration: none; margin: 0 12px;
-    font-weight: 600; font-size: 16px; transition: 0.3s;
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.menu-esquerda a:hover { color: var(--amarelo-ouro); }
-.menu-direita a {
-    background: var(--amarelo-ouro); color: #001a4d !important;
-    padding: 10px 22px; border-radius: 8px; font-weight: 900;
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--branco);
+  text-decoration: none;
+  letter-spacing: 2px;
 }
-.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
+.logo span { color: var(--laranja); }
 
-/* SEÇÃO VENDA EBOOK */
-.prisma-venda { background: linear-gradient(135deg, #1a3a6e 0%, #005ea6 100%); color: #fff; padding: 80px 20px; position: relative; overflow: hidden; }
-.prisma-venda .container {max-width: 1000px; margin: 0 auto; text-align: center; position: relative; z-index: 2;}
-.prisma-venda .selo {display: inline-block; background: #ffcc00; color: #1a3a6e; font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase;}
-.prisma-venda h2 {font-size: 36px; line-height: 1.2; margin-bottom: 16px; color: #fff;}
-.prisma-venda h2 span {color: #ffcc00;}
-.prisma-venda .subtitulo {font-size: 18px; color: #e8f0fe; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;}
-.prisma-venda .lista-beneficios {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; text-align: left; margin: 40px 0;}
-.prisma-venda .item-beneficio {background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-left: 3px solid #ffcc00; padding: 18px; border-radius: 10px; backdrop-filter: blur(5px);}
-.prisma-venda .item-beneficio strong {color: #ffcc00; display: block; margin-bottom: 6px; font-size: 16px;}
-.prisma-venda .btn-comprar {background: #007BFF; color: #fff; padding: 18px 40px; border-radius: 10px; text-decoration: none; font-weight: 800; font-size: 18px; display: inline-block; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,123,255,0.4);}
-.prisma-venda .btn-comprar:hover {background: #0056b3; transform: translateY(-3px);}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.menu a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.menu a:hover { color: var(--laranja); }
 
-/* CARDS ERA */
-.era { padding: 60px 20px; }
-.era .container {max-width: 1200px; margin: 0 auto;}
-.era .era-header {text-align: center; margin-bottom: 40px;}
-.era .era-header .datas {font-size: 14px; font-weight: 700; color: #007BFF; letter-spacing: 2px; text-transform: uppercase;}
-.era .era-header h2 {font-size: 32px; color: #1a3a6e; margin: 10px 0;}
-.era .era-header p {font-size: 16px; color: #555; max-width: 700px; margin: 0 auto; line-height: 1.6;}
-.era .grid-eixos {display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;}
-.era .card-eixo {background: #ffffff; color: #444; border-left: 5px solid #ffcc00; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(26,58,110,0.08); transition: all 0.3s ease;}
-.era .card-eixo:hover {transform: translateY(-5px); box-shadow: 0 8px 24px rgba(26,58,110,0.12);}
-.era .card-eixo .emoji {font-size: 32px; display: block; margin-bottom: 12px;}
-.era .card-eixo h3 {font-size: 18px; margin-bottom: 10px; color: #1a3a6e;}
-.era .card-eixo p {font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 12px;}
-.era .card-eixo ul {padding-left: 18px; margin-bottom: 0; color: #555; font-size: 14px;}
+/* BOTÃO EBOOK */
+.ebook-btn {
+  background: var(--laranja);
+  color: var(--preto)!important;
+  padding: 10px 20px!important;
+  border-radius: 8px;
+  font-weight: 700!important;
+}
+.ebook-btn:hover { background: var(--laranja-claro); transform: translateY(-2px); }
 
-/* CTA E FOOTER */
-.cta {background: #1a3a6e; color: #fff; text-align: center; padding: 60px 20px;}
-.cta h2 {color: #fff; font-size: 32px; margin-bottom: 12px;}
-.cta a {background: #ffcc00; color: #1a3a6e; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; font-size: 16px;}
-.cta a:hover {background: #e6b800;}
+/* ===== SEÇÃO DE VENDA ===== */
+.prisma-venda {
+  background: linear-gradient(180deg, var(--preto) 0%, var(--preto-claro) 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+.selo {
+  display: inline-block;
+  background: rgba(255, 140, 0, 0.15);
+  color: var(--laranja);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: 1px solid var(--laranja);
+  margin-bottom: 20px;
+}
+.prisma-venda h2 { font-size: 40px; line-height: 1.2; }
+.prisma-venda h2 span { color: var(--laranja); }
+.subtitulo { font-size: 18px; color: var(--cinza); max-width: 700px; margin: 10px auto; }
 
-.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; box-sizing: border-box; }
-.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; border: 1px solid rgba(10,30,61,0.08); box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
-.caixa-apoio h3 { font-size: 1.8em; margin-bottom: 12px; color: #0a1e3d; font-weight: 700; }
-.caixa-apoio a { background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; margin: 10px 0; }
-.links-legais { text-align: center; margin: 0 0 20px 0; }
-.links-legais a { color: #0a1e3d; text-decoration: none; margin: 0 15px; font-weight: 500; font-size: 14px; }
-.copy { text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d; }
+.lista-beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 50px 0;
+  text-align: left;
+}
+.item-beneficio {
+  background: var(--preto-claro);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid var(--laranja);
+}
+.item-beneficio strong { color: var(--branco); }
+.item-beneficio p { color: var(--cinza); margin-top: 8px; }
+
+/* Caixa Branca vira Card Preto */
+.prisma-venda > div > div[style] {
+  background: var(--preto-claro)!important;
+  color: var(--branco)!important;
+  border: 2px solid var(--laranja);
+}
+.prisma-venda h3 { color: var(--laranja); }
+
+.btn-comprar {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
+  color: var(--preto);
+  padding: 16px 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* ===== SEÇÕES DAS ERAS ===== */
+.era {
+  padding: 80px 20px;
+  background: var(--preto)!important; /* Sobrescreve o inline #e8f0fe e #fff */
+}
+.era:nth-child(even) { background: var(--preto-claro)!important; }
+
+.era-header { text-align: center; margin-bottom: 50px; }
+.datas { color: var(--laranja); font-weight: 700; letter-spacing: 2px; }
+.era-header h2 { color: var(--branco); font-size: 34px; margin: 10px 0; }
+.era-header p { color: var(--cinza); font-size: 18px; max-width: 700px; margin: 0 auto; }
+
+.grid-eixos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.card-eixo {
+  background: var(--preto-claro);
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid var(--laranja);
+  transition: all 0.4s;
+}
+.card-eixo:hover { box-shadow: 0 0 15px rgba(255,140,0,0.3); }
+.card-eixo.emoji { font-size: 32px; }
+.card-eixo h3 { color: var(--branco); margin: 10px 0; }
+.card-eixo p,.card-eixo li { color: var(--cinza); }
+.card-eixo b { color: var(--laranja); }
+
+/* Força sobrescrever as cores inline azul/amarelo */
+.card-eixo[style] { border-left-color: var(--laranja)!important; }
+
+/* ===== CTA FINAL ===== */
+.cta {
+  background: var(--preto-claro);
+  padding: 80px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+.cta h2 { color: var(--laranja); font-size: 36px; }
+.cta a {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 18px 45px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape-apoio {
+  background: var(--preto);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+.caixa-apoio a { background: var(--laranja); color: var(--preto); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+.links-legais a { color: var(--cinza); text-decoration: none; }
+.copy { color: #555; font-size: 13px; margin-top: 20px; }
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+.lista-beneficios,.grid-eixos { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+.navbar { position: relative; }
+ body { padding-top: 0; }
+.nav-container { flex-direction: column; gap: 15px; }
+.lista-beneficios,.grid-eixos { grid-template-columns: 1fr; }
+}
+
+
+
 </style>
 </head>
 <body>
 
-<header class="header-topo">
-    <div class="container">
-        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-        <p class="kicker">A História sob múltiplos ângulos críticos</p>
-    </div>
+  <header class="navbar"><div class="container nav-container">
+  <a href="#inicio" class="logo">PRISMA<span>HISTÓRICO</span></a>
+  <nav>
+    <ul class="menu">
+      <li><a href="inicio">Início</a></li>
+      <li><a href="/artigos/sobre.html">Sobre</a></li>
+      <li><a href="/artigos/artigos.html">Artigos</a></li>
+      <li><a href="/artigos/curiosidades.html">Curiosidades</a></li>
+      <li><a href="/artigos/quiz.html">Quiz</a></li>
+
+      <li><a href="/artigos/ebook.html" class="ebook-btn">Ebook Grátis</a></li>
+    </ul>
+  </nav>
+</div>
 </header>
 
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="../index.html">início</a>
-        <a href="sobre.html">sobre</a>
-        <a href="artigos.html">artigos</a>
-        <a href="curiosidades.html">curiosidades</a>
-        <a href="quiz.html">quiz</a>
-    </div>
-    <div class="menu-direita">
-        <a href="ebook.html">e-book</a>
-    </div>
-</nav>
-
-<!-- SEÇÃO VENDA -->
 <section class="prisma-venda">
   <div class="container">
     <span class="selo">📖 E-book Exclusivo</span>

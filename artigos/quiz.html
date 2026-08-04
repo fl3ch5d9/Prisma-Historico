@@ -6,126 +6,262 @@
 <title>Quiz - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-:root {
-    --azul-escuro: #1a3a6e;
-    --azul-royal: #005ea6;
-    --azul-vivo: #007ad6;
-    --azul-claro: #007BFF;
-    --azul-hover: #0056b3;
-    --fundo-site: #e8f0fe;
-    --branco-card: #ffffff;
-    --texto-cinza: #555;
-    --texto-escuro: #444;
-    --amarelo-ouro: #ffcc00;
-    --verde: #28a745;
-    --vermelho: #dc3545;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    font-family: 'Georgia', serif; 
-    background: var(--fundo-site); 
-    color: var(--texto-escuro);
-    line-height: 1.8;
-}
-.container { max-width: 1200px; margin: auto; padding: 0 24px; }
-
-/* HEADER */
-.header-topo {
-    background: 
-      linear-gradient(180deg, #00102e 0%, #003366 50%, #0056a3 100%),
-      url('https://www.transparenttextures.com/patterns/old-paper.png');
-    padding: 30px 20px 20px 20px;
-    text-align: center;
-    border-bottom: 3px solid var(--amarelo-ouro);
-}
-.header-topo .logo-prisma {
-    max-width: 420px; width: 90%; height: auto;
-    margin: 0 auto 12px auto; display: block;
-    border-radius: 20px;
-    filter: drop-shadow(0 0 20px rgba(255, 204, 0, 0.5));
-}
-.header-topo .kicker {
-    color: var(--amarelo-ouro);
-    font-style: italic; font-size: 1.1rem;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.4); margin: 0;
+  :root {
+  --preto: #0a0a0a;
+  --preto-claro: #1a1a1a;
+  --laranja: #ff8c00;
+  --laranja-claro: #ffa500;
+  --branco: #f5f5f5;
+  --cinza: #aaaaaa;
 }
 
-/* MENU */
-.menu-principal {
-    background: #001a4d;
-    display: flex; justify-content: space-between; align-items: center;
-    width: 100%; padding: 18px 40px; box-sizing: border-box;
-    border-bottom: 3px solid var(--amarelo-ouro); 
-    position: sticky; top: 0; z-index: 100;
+/* Sobrescreve o fundo azul inline */
+section[style*="background: #e8f0fe"] {
+  background: var(--preto-claro)!important;
 }
-.menu-esquerda a, .menu-direita a {
-    color: #fff; text-decoration: none; margin: 0 12px;
-    font-weight: 600; font-size: 16px; transition: 0.3s;
-}
-.menu-esquerda a:hover { color: var(--amarelo-ouro); }
-.menu-direita a {
-    background: var(--amarelo-ouro); color: #001a4d !important;
-    padding: 10px 22px; border-radius: 8px; font-weight: 900;
-}
-.menu-direita a:hover { background: #ffd633; transform: scale(1.05); }
 
-/* QUIZ */
+/* ===== HEADER DO QUIZ ===== */
 .quiz-header {
-    background: linear-gradient(135deg, #005ea6, #007ad6); 
-    color: #fff; padding: 50px 30px; border-radius: 16px; 
-    text-align: center; margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 .quiz-header span {
-    background: #ffcc00; color: #1a3a6e; padding: 8px 18px; 
-    border-radius: 20px; font-weight: 800; font-size: 12px;
+  display: inline-block;
+  background: rgba(255, 140, 0, 0.15);
+  color: var(--laranja);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid var(--laranja);
+  letter-spacing: 1px;
 }
-.quiz-header h1 {font-size: 36px; font-weight: 900; margin: 20px 0 10px; color: #fff;}
-.quiz-header p {font-size: 17px; opacity: 0.95;}
+.quiz-header h1 {
+  color: var(--branco);
+  font-size: 38px;
+  margin: 20px 0 15px 0;
+  letter-spacing: 2px;
+}
+.quiz-header p {
+  color: var(--cinza);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
+/* ===== QUESTÕES ===== */
 .questao {
-    background: #ffffff; padding: 30px; border-radius: 12px; 
-    margin-bottom: 25px; border-left: 5px solid #007BFF;
+  background: var(--preto);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--laranja);
+  transition: all 0.3s;
 }
-.questao h3 {color: #1a3a6e; font-size: 18px; margin-bottom: 15px;}
+.questao:hover {
+  box-shadow: 0 0 15px rgba(255,140,0,0.2);
+}
+.questao h3 {
+  color: var(--branco);
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Estilo dos radios e labels */
 .questao label {
-    display: block; padding: 12px; margin-bottom: 10px; 
-    background: #e8f0fe; border-radius: 8px; cursor: pointer;
-    transition: 0.2s;
+  display: block;
+  background: var(--preto-claro);
+  color: var(--cinza);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  font-size: 16px;
 }
-.questao label:hover { background: #dbe8ff; }
-.questao input { margin-right: 10px; }
+.questao label:hover {
+  background: #2a2a2a;
+  border-color: var(--laranja);
+  color: var(--branco);
+}
+.questao input[type="radio"] {
+  margin-right: 12px;
+  accent-color: var(--laranja); /* deixa a bolinha laranja */
+  transform: scale(1.2);
+}
 
+/* ===== BOTÃO CORRIGIR ===== */
 .btn-quiz {
-    background-color: #007BFF; color: #fff; padding: 20px 60px; 
-    border: none; border-radius: 12px; font-weight: 900; 
-    font-size: 20px; cursor: pointer; transition: 0.3s;
+  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
+  color: var(--preto);
+  padding: 18px 50px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
 }
-.btn-quiz:hover { background-color: #0056b3; transform: translateY(-2px); }
+.btn-quiz:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,140,0,0.4);
+}
 
+/* ===== RESULTADO ===== */
 #resultado {
-    display: none; background: #1a3a6e; color: #fff; 
-    padding: 40px; border-radius: 14px; margin-top: 40px; text-align: center;
+  display: none; /* começa escondido */
+  background: var(--preto);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 50px;
+  border: 2px solid var(--laranja);
+  animation: fadeIn 0.6s ease-in-out;
 }
-#resultado h2 {color: #ffcc00; font-size: 28px;}
-.btn-ebook {display: inline-block; background-color: #ffcc00; color: #1a3a6e; 
-    padding: 18px 45px; border-radius: 12px; text-decoration: none; 
-    font-weight: 900; font-size: 18px;}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#resultado h2 {
+  color: var(--laranja);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+#nota b { color: var(--laranja); font-size: 26px; }
 
-/* FOOTER */
-.rodape-apoio { background: #e8f0fe; color: #0a1e3d; padding: 70px 20px 40px 20px; }
-.caixa-apoio { background: #ffffff; padding: 50px 40px; border-radius: 16px; text-align: center; margin: 0 auto 40px auto; max-width: 800px; box-shadow: 0 8px 30px rgba(10,30,61,0.06); }
-.caixa-apoio a { background: #ffcc00; color: #0a1e3d; padding: 16px 40px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 1.1em; display: inline-block; }
+.btn-ebook {
+  display: inline-block;
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+.btn-ebook:hover {
+  background: var(--laranja-claro);
+  transform: scale(1.05);
+}
+
+/* ===== RODAPÉ ===== */
+.rodape-apoio {
+  background: var(--preto);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 2px solid var(--laranja);
+}
+.rodape-apoio h3 { color: var(--branco); }
+.rodape-apoio p { color: var(--cinza); }
+.rodape-apoio a { color: var(--cinza); }
+.rodape-apoio .caixa-apoio a { background: var(--laranja); color: var(--preto); }
+
+/* Força o rodapé pra tema escuro */
+.rodape-apoio span[style*="color: #0a1e3d"] { color: var(--laranja)!important; }
+.rodape-apoio a[style*="color: #0a1e3d"] { color: var(--cinza)!important; }
+.rodape-apoio p[style*="color: #0a1e3d"] { color: #555!important; }
+
+/*
+header
+*/
+
+header {
+  background: var(--preto);
+  border-bottom: 2px solid var(--laranja);
+  position: fixed; /* fica fixo no topo */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0; /* o padding vai no nav */
+}
+
+.menu-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between; /* joga um pra esquerda e outro pra direita */
+  align-items: center;
+}
+
+/* LADO ESQUERDA */
+.menu-esquerda {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-esquerda a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* Linha laranja embaixo no hover */
+.menu-esquerda a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--laranja);
+  transition: width 0.3s;
+}
+.menu-esquerda a:hover::after { width: 100%; }
+.menu-esquerda a:hover { color: var(--laranja); }
+
+/* LADO DIREITA - BOTÃO E-BOOK */
+.menu-direita a {
+  background: var(--laranja);
+  color: var(--preto);
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.menu-direita a:hover {
+  background: var(--laranja-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255,140,0,0.3);
+}
+
+/* IMPORTANTE: espaço pro conteúdo não ficar atrás do header */
+body {
+  padding-top: 70px; /* altura do header */
+  background: var(--preto);
+  margin: 0;
+}
+
+/* RESPONSIVO */
+@media (max-width: 800px) {
+  .menu-principal {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  header { position: relative; } /* tira o fixo no celular */
+  body { padding-top: 0; }
+  .menu-esquerda { flex-wrap: wrap; justify-content: center; gap: 15px; }
+}
 </style>
 </head>
 <body>
 
-<header class="header-topo">
-    <div class="container">
-        <img src="../img/prisma.png" alt="Prisma Histórico" class="logo-prisma">
-        <p class="kicker">A História sob múltiplos ângulos críticos</p>
-    </div>
-</header>
 
+<header>
 <nav class="menu-principal">
     <div class="menu-esquerda">
         <a href="../index.html">início</a>
@@ -138,6 +274,7 @@ body {
         <a href="ebook.html">e-book</a>
     </div>
 </nav>
+</header>
 
 <section style="background: #e8f0fe; padding: 80px 20px;">
   <div style="max-width: 900px; margin: 0 auto;">
