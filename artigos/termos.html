@@ -5,150 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>termos</title>
 <link rel="stylesheet" href="../css/style.css">
-<style>
+
     /* ===== PÁGINA LEGAL: TERMOS E PRIVACIDADE ===== */
 
-:root{
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #ffffff;
-  --cinza: #aaaaaa;
-}
 
-body {
-  background: var(--preto)!important;
-  color: var(--branco)!important;
-}
-
-/* ===== MENU IGUAL AO DAS OUTRAS PÁGINAS ===== */
-.menu-principal{
-  background: var(--preto); 
-  display: flex; 
-  justify-content: space-between; 
-  align-items:center; 
-  padding: 18px 40px; 
-  border-bottom: 3px solid var(--laranja); 
-  position:sticky; top:0; z-index:100;
-}
-.menu-esquerda{display:flex; gap:25px; flex-wrap:wrap;}
-.menu-principal a{
-  color:var(--branco); 
-  text-decoration:none; 
-  font-weight:600; 
-  transition:0.3s; 
-  font-family:'Segoe UI',Arial,sans-serif;
-  text-transform: uppercase;
-  font-size: 15px;
-}
-.menu-esquerda a:hover{color:var(--laranja);}
-.menu-direita a{
-  background:var(--laranja); 
-  color:var(--preto)!important; 
-  padding:10px 22px; 
-  border-radius:8px; 
-  font-weight:900;
-}
-.menu-direita a:hover{background:var(--laranja-claro); transform:scale(1.05);}
-
-/* ===== CONTEÚDO TERMOS ===== */
-.secao-texto-legal {
-  background: var(--preto-claro);
-  padding: 80px 20px;
-}
-.secao-texto-legal .container { 
-  max-width: 900px; 
-  margin: 0 auto; 
-}
-
-.secao-texto-legal h1 {
-  color: var(--laranja);
-  font-size: 38px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-family: 'Georgia', serif;
-}
-.data-atualizacao {
-  color: var(--cinza);
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 14px;
-  font-family:'Segoe UI',Arial,sans-serif;
-}
-.secao-texto-legal h2 {
-  color: var(--laranja);
-  font-size: 24px;
-  margin-top: 40px;
-  margin-bottom: 15px;
-  border-left: 4px solid var(--laranja);
-  padding-left: 15px;
-  font-family: 'Georgia', serif;
-}
-.secao-texto-legal p {
-  color: var(--cinza); /* cinza claro pra ler no fundo preto */
-  margin-bottom: 20px;
-  font-size: 16px;
-  line-height: 1.8;
-  font-family:'Segoe UI',Arial,sans-serif;
-}
-.secao-texto-legal strong { color: var(--branco); font-weight: 700; }
-
-.secao-texto-legal ul {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-.secao-texto-legal ul li {
-  color: var(--cinza);
-  background: var(--preto); /* card preto */
-  padding: 15px 20px;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  border-left: 3px solid var(--laranja);
-  font-family:'Segoe UI',Arial,sans-serif;
-}
-.secao-texto-legal a {
-  color: var(--laranja);
-  text-decoration: none;
-  font-weight: 700;
-}
-.secao-texto-legal a:hover { text-decoration: underline; }
-
-/* ===== FOOTER ===== */
-footer {
-  background: var(--preto);
-  border-top: 2px solid var(--laranja);
-  padding: 40px 20px;
-  text-align: center;
-}
-footer a { color: var(--laranja)!important; }
-
-/* RESPONSIVO */
-@media (max-width: 800px) {
-  .menu-principal { flex-direction: column; gap: 15px; padding: 15px 20px; }
-}
-
-
-</style>
 </head>
 <body>
 
 <header>
-
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="/index.html">início</a>
-        <a href="/artigos/sobre.html">sobre</a>
-        <a href="/artigos/artigos.html">artigos</a>
-        <a href="/artigos/curiosidades.html">curiosidades</a>
-        <a href="/artigos/quiz.html">quiz</a>
-    </div>
-    <div class="menu-direita"><a href="/artigos/ebook.html">e-book</a></div>
-</nav>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
+  <nav>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#" class="btn-ebook">Ebook Grátis</a>
+  </nav>
 </header>
 
-
+<div class="container"></div>
 <section class="secao-texto-legal">
     <div class="container">
         <h1>Termos de Uso</h1>

@@ -6,200 +6,25 @@
 <title>Apoie - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-:root {
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #f5f5f5;
-  --cinza: #aaaaaa;
-  --verde: #28a745;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-  background: var(--preto); 
-  color: var(--branco); 
-  font-family: 'Segoe UI', Arial, sans-serif;
-  padding-top: 70px; /* espaço pro menu fixo */
-}
-
-/* ===== MENU ===== */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--preto);
-  border-bottom: 2px solid var(--laranja);
-  z-index: 9999;
-}
-.menu-principal {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.menu-esquerda { display: flex; gap: 25px; }
-.menu-esquerda a {
-  color: var(--branco);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: color 0.3s;
-}
-.menu-esquerda a:hover { color: var(--laranja); }
-.menu-direita a {
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 10px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 800;
-  transition: all 0.3s;
-}
-.menu-direita a:hover { background: var(--laranja-claro); }
-
-/* ===== BOX DOAÇÃO ===== */
-.container { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
-
-.doacao-box {
-  background: var(--preto-claro);
-  padding: 50px 40px;
-  border-radius: 20px;
-  text-align: center;
-  border: 2px solid var(--laranja);
-  box-shadow: 0 0 30px rgba(255,140,0,0.15);
-}
-.doacao-box .emoji {
-  font-size: 50px;
-  display: block;
-  margin-bottom: 20px;
-}
-.doacao-box h2 {
-  color: var(--laranja);
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-.doacao-box > p {
-  color: var(--cinza);
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-/* BOTÕES DE VALORES */
-.valores {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-bottom: 40px;
-}
-.valor-btn {
-  background: var(--preto);
-  border: 2px solid var(--laranja);
-  color: var(--laranja);
-  padding: 15px 10px;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.valor-btn:hover {
-  background: var(--laranja);
-  color: var(--preto);
-  transform: translateY(-3px);
-}
-
-/* BOX PIX */
-.pix-box {
-  background: var(--preto);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid #333;
-  margin-bottom: 30px;
-}
-.pix-box h3 {
-  color: var(--laranja);
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-.pix-box p { color: var(--cinza); }
-
-.chave-pix {
-  background: var(--preto-claro);
-  color: var(--branco);
-  padding: 18px;
-  border-radius: 10px;
-  border: 1px dashed var(--laranja);
-  font-weight: 700;
-  font-size: 16px;
-  word-break: break-all;
-  margin: 20px 0;
-}
-
-/* BOTÃO COPIAR */
-.btn-copiar {
-  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
-  color: var(--preto);
-  padding: 16px 40px;
-  border: none;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s;
-  width: 100%;
-}
-.btn-copiar:hover {
-  transform: scale(1.03);
-  box-shadow: 0 5px 20px rgba(255,140,0,0.4);
-}
-#msgCopiado {
-  color: var(--verde)!important;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: var(--preto-claro);
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-footer a { color: var(--laranja)!important; text-decoration: none; }
-footer p { color: var(--cinza); }
-
-/* Sobrescreve cores inline */
-[style*="color: #555"] { color: var(--cinza)!important; }
-[style*="color: var(--amarelo)"] { color: var(--laranja)!important; }
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-.valores { grid-template-columns: repeat(2, 1fr); }
-.menu-principal { flex-direction: column; gap: 15px; padding: 15px 20px; }
-.doacao-box { padding: 30px 20px; }
-}
 
 </style>
 </head>
 <body>
 
 <header>
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="/index.html">início</a>
-        <a href="/artigos/sobre.html">sobre</a>
-        <a href="/artigos/artigos.html">artigos</a>
-        <a href="/artigos/curiosidades.html">curiosidades</a>
-        <a href="/artigos/quiz.html">quiz</a>
-        <a href="/artigos/ebook.html">e-book</a>
-    </div>
-    <div class="menu-direita"><a href="/artigos/doacao.html">doação</a></div>
-</nav>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
+  <nav>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#" class="btn-ebook">Ebook Grátis</a>
+  </nav>
 </header>
+
+<div class="container"></div>
+
 
 <main>
     <div class="container">

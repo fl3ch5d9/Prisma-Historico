@@ -5,225 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artigos - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
-<style>
-:root {
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #f5f5f5;
-  --cinza: #888888;
-}
 
-/* ===== MENU PRINCIPAL ===== */
-.menu-principal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--preto);
-  padding: 18px 40px;
-  border-bottom: 2px solid var(--laranja);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.menu-esquerda a, 
-.menu-direita a {
-  color: var(--branco);
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.menu-esquerda a:hover, 
-.menu-direita a:hover {
-  color: var(--laranja);
-}
-
-/* Botão do e-book em destaque */
-.menu-direita a {
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 8px 16px;
-  border-radius: 6px;
-}
-.menu-direita a:hover {
-  background: var(--laranja-claro);
-  color: var(--preto);
-}
-
-/* ===== GRID DOS CARDS ===== */
-.prisma-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 40px;
-  background: var(--preto);
-}
-
-.prisma-card {
-  background: var(--preto-claro);
-  border: 1px solid #333;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.prisma-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--laranja);
-  box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
-}
-
-.prisma-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.prisma-content {
-  padding: 20px;
-}
-
-.prisma-ano {
-  color: var(--laranja);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.prisma-titulo {
-  color: var(--branco);
-  font-size: 18px;
-  margin: 8px 0;
-}
-
-.prisma-local {
-  color: var(--cinza);
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.prisma-desc {
-  color: #ccc;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-
-.prisma-tag {
-  display: inline-block;
-  background: rgba(255, 140, 0, 0.15);
-  color: var(--laranja);
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-/* Atraso em cascata */
-.prisma-grid .prisma-card:nth-child(1) { animation-delay: 0.1s; }
-.prisma-grid .prisma-card:nth-child(2) { animation-delay: 0.2s; }
-.prisma-grid .prisma-card:nth-child(3) { animation-delay: 0.3s; }
-.prisma-grid .prisma-card:nth-child(4) { animation-delay: 0.4s; }
-.prisma-grid .prisma-card:nth-child(5) { animation-delay: 0.5s; }
-.prisma-grid .prisma-card:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== RODAPÉ ===== */
-.rodape-apoio {
-  background: var(--preto-claro);
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-
-.caixa-apoio h3 {
-  color: var(--branco);
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.caixa-apoio p {
-  color: var(--cinza);
-  margin-bottom: 15px;
-}
-
-.caixa-apoio a {
-  display: inline-block;
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-.caixa-apoio a:hover {
-  background: var(--laranja-claro);
-  transform: scale(1.05);
-}
-
-.links-legais a {
-  color: var(--cinza);
-  text-decoration: none;
-  margin: 0 8px;
-}
-.links-legais a:hover {
-  color: var(--laranja);
-}
-
-.copy {
-  color: #555;
-  font-size: 13px;
-  margin-top: 20px;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
-  .prisma-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .prisma-grid {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  .menu-principal {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-</style>
 </head>
 <body>
   
 
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="/index.html">início</a>
-        <a href="/artigos/sobre.html">sobre</a>
-        <a href="/artigos/artigos.html">artigos</a>
-        <a href="/artigos/curiosidades.html">curiosidades</a>
-        <a href="/artigos/quiz.html">quiz</a>
-    </div>
-    <div class="menu-direita">
-        <a href="/artigos/ebook.html">e-book</a>
-    </div>
-</nav>
-
+<header>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
+  <nav>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#" class="btn-ebook">Ebook Grátis</a>
+  </nav>
+</header>
 <section class="prisma-grid">
+  
+
+ <div class="container">
+
+  <!-- ===== BLOCO 1: AMÉRICA PORTUGUESA 1500-1822 ===== -->
+  <h2 class="titulo-periodo">América Portuguesa - Período Colonial</h2>
 
   <!-- 1. Amador Bueno 1641 -->
   <div class="prisma-card">
@@ -323,7 +127,7 @@
 
   <!-- 9. Inconfidência 1789 -->
   <div class="prisma-card">
-    <img src="" alt="Inconfidência Mineira">
+    <img src="/img/inconfidencia.png" alt="Inconfidência Mineira">
     <div class="prisma-content">
       <div class="prisma-ano">1789</div>
       <h3 class="prisma-titulo">Inconfidência Mineira</h3>
@@ -335,7 +139,7 @@
 
   <!-- 10. Conjuração Baiana 1798 -->
   <div class="prisma-card">
-    <img src="" alt="Conjuração Baiana">
+    <img src="/img/conjuracao-baiana.png" alt="Conjuração Baiana">
     <div class="prisma-content">
       <div class="prisma-ano">1798</div>
       <h3 class="prisma-titulo">Conjuração Baiana</h3>
@@ -347,7 +151,7 @@
 
   <!-- 11. Suassunas 1801 -->
   <div class="prisma-card">
-    <img src="../img/suassunas.png" alt="Conspiração dos Suassunas">
+    <img src="/img/suassunas.png" alt="Conspiração dos Suassunas">
     <div class="prisma-content">
       <div class="prisma-ano">1801</div>
       <h3 class="prisma-titulo">Conspiração dos Suassunas</h3>
@@ -359,7 +163,7 @@
 
   <!-- 12. Pernambucana 1817 -->
   <div class="prisma-card">
-    <img src="../img/pernambucana.png" alt="Revolução Pernambucana">
+    <img src="/img/pernambucana.png" alt="Revolução Pernambucana">
     <div class="prisma-content">
       <div class="prisma-ano">1817</div>
       <h3 class="prisma-titulo">Revolução Pernambucana</h3>
@@ -371,7 +175,7 @@
 
   <!-- 13. Liberal do Porto 1820 -->
   <div class="prisma-card">
-    <img src="../img/liberal-porto.png" alt="Revolução Liberal do Porto">
+    <img src="/img/liberal-porto.png" alt="Revolução Liberal do Porto">
     <div class="prisma-content">
       <div class="prisma-ano">1820</div>
       <h3 class="prisma-titulo">Revolução Liberal do Porto</h3>
@@ -381,14 +185,35 @@
     </div>
   </div>
 
-</section>
+  <!-- ===== BLOCO 2: IMPÉRIO 1822-1889 ===== -->
+  <h2 class="titulo-periodo">Período Imperial</h2>
+  
+  <!-- Aqui você pode adicionar cards do Império depois -->
+  <div class="prisma-card vazio">
+    <div class="prisma-content">
+      <h3 class="prisma-titulo">Em breve</h3>
+      <p class="prisma-desc">Cards do Período Imperial serão adicionados aqui.</p>
+    </div>
+  </div>
 
-<div class="rodape-apoio">
+  <!-- ===== BLOCO 3: PRIMEIRA REPÚBLICA 1889-1930 ===== -->
+  <h2 class="titulo-periodo">Primeira República</h2>
+
+  <!-- Aqui você pode adicionar cards da Primeira República depois -->
+  <div class="prisma-card vazio">
+    <div class="prisma-content">
+      <h3 class="prisma-titulo">Em breve</h3>
+      <p class="prisma-desc">Cards da Primeira República serão adicionados aqui.</p>
+    </div>
+  </div>
+
+  <!-- ===== RODAPÉ DE APOIO ===== -->
+  <div class="rodape-apoio">
     <div class="caixa-apoio">
         <h3>Apoie o Canal de Estudos</h3>
         <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar e nos ajuda a criar mais materiais gratuitos.</p>
         <a href="/artigos/doacao.html">☕ Apoie o Canal de Estudos</a>
-        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
+        <p style="font-size: 14px; margin: 20px 0 0 0;">ou via PIX: <span style="font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
     <div class="links-legais">
         <a href="/artigos/privacidade.html">Política de Privacidade</a>
@@ -396,7 +221,8 @@
         <a href="/artigos/termos.html">Termos de Uso</a>
     </div>
     <p class="copy">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-</div>
+  </div>
 
+</div>
 </body>
 </html>

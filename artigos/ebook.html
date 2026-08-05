@@ -5,248 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-book Prisma Histórico - 400+ Páginas</title>
 <link rel="stylesheet" href="../css/style.css">
-<style>
-    :root {
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #f5f5f5;
-  --cinza: #aaaaaa;
-}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--preto); color: var(--branco); font-family: 'Segoe UI', Arial, sans-serif; }
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ===== HEADER TOPO COM LOGO ===== */
-.header-topo {
-  background: var(--preto-claro);
-  padding: 20px 0;
-  text-align: center;
-  border-bottom: 1px solid #333;
-}
-.logo-prisma {
-  height: 60px;
-  margin-bottom: 8px;
-}
-.kicker {
-  color: var(--cinza);
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-/* ===== MENU ===== */
-.menu-principal {
-  background: var(--preto);
-  border-bottom: 2px solid var(--laranja);
-  padding: 18px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.menu-esquerda { display: flex; gap: 25px; }
-.menu-esquerda a {
-  color: var(--branco);
-  text-decoration: none;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: color 0.3s;
-}
-.menu-esquerda a:hover { color: var(--laranja); }
-.menu-direita a {
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 10px 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 800;
-  transition: all 0.3s;
-}
-.menu-direita a:hover { background: var(--laranja-claro); }
-
-/* ===== HERO ===== */
-.hero {
-  background: linear-gradient(180deg, var(--preto) 0%, var(--preto-claro) 100%);
-  padding: 80px 20px;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 48px;
-  color: var(--branco);
-  line-height: 1.2;
-}
-.hero h1 span { color: var(--laranja); font-size: 32px; }
-.hero p {
-  color: var(--cinza);
-  font-size: 18px;
-  max-width: 700px;
-  margin: 20px auto 40px;
-}
-
-.beneficios {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.card-beneficio {
-  background: var(--preto-claro);
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #333;
-  text-align: center;
-}
-.card-beneficio b { color: var(--laranja); }
-
-/* ===== SEÇÃO SUMÁRIO ===== */
-.section-titulo {
-  text-align: center;
-  font-size: 32px;
-  color: var(--laranja);
-  margin-top: 60px;
-}
-.sub-titulo {
-  text-align: center;
-  color: var(--cinza);
-  margin-bottom: 40px;
-}
-
-.grid-sumario {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
-}
-.card-periodo {
-  background: var(--preto-claro);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid #333;
-  transition: all 0.4s;
-}
-.card-periodo:hover {
-  border-color: var(--laranja);
-  box-shadow: 0 0 20px rgba(255,140,0,0.2);
-}
-.card-periodo h3 { color: var(--branco); font-size: 20px; margin-bottom: 5px; }
-.periodo-data { color: var(--laranja); font-weight: 700; margin-bottom: 15px; }
-.card-periodo p { color: var(--cinza); font-size: 15px; margin-bottom: 20px; }
-
-/* ACCORDION DETAILS */
-details {
-  background: var(--preto);
-  border-radius: 8px;
-  padding: 15px;
-}
-summary {
-  color: var(--laranja);
-  font-weight: 700;
-  cursor: pointer;
-  list-style: none;
-}
-summary::-webkit-details-marker { display: none; }
-details[open] summary { margin-bottom: 15px; }
-details ul {
-  list-style: none;
-  padding-left: 0;
-}
-details li {
-  color: var(--cinza);
-  padding: 8px 0;
-  border-bottom: 1px dashed #333;
-  font-size: 14px;
-}
-details li:last-child { border-bottom: none; }
-
-/* ===== CTA FINAL ===== */
-.cta-final {
-  background: var(--preto-claro);
-  padding: 80px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-.cta-final h2 { color: var(--laranja); }
-.cta-final p { color: var(--cinza); }
-.btn-ebook {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
-  color: var(--preto);
-  padding: 20px 60px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 900;
-  font-size: 18px;
-  box-shadow: 0 5px 0 #e67e00;
-  transition: all 0.3s;
-}
-.btn-ebook:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,140,0,0.4);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: var(--preto);
-  padding: 60px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-.caixa-apoio h3 { color: var(--laranja); font-size: 2.2em; }
-.caixa-apoio p { color: var(--cinza); }
-.caixa-apoio a {
-  background: var(--laranja)!important;
-  color: var(--preto)!important;
-  box-shadow: 0 4px 0 #e67e00!important;
-}
-.caixa-apoio b { color: var(--laranja); }
-footer a { color: var(--laranja)!important; }
-
-/* Sobrescreve as cores inline azuis */
-[style*="color:var(--azul-escuro)"] { color: var(--laranja)!important; }
-[style*="color:var(--texto-cinza)"] { color: var(--cinza)!important; }
-[style*="color: var(--amarelo)"] { color: var(--laranja)!important; }
-
-/* RESPONSIVO */
-@media (max-width: 1000px) {
-.beneficios { grid-template-columns: repeat(2, 1fr); }
-.grid-sumario { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-.menu-principal { flex-direction: column; gap: 15px; }
-.hero h1 { font-size: 36px; }
-}
-</style>
+    
 </head>
 <body>
 
 
 
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="/index.html">início</a>
-        <a href="/artigos/sobre.html">sobre</a>
-        <a href="/artigos/artigos.html">artigos</a>
-        <a href="/artigos/curiosidades.html">curiosidades</a>
-        <a href="/artigos/quiz.html">quiz</a>
-    </div>
-    <div class="menu-direita"><a href="/artigos/ebook.html">e-book</a></div>
-</nav>
+<header>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
+  <nav>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="/artigos/ebook.html" class="btn-ebook">Ebook Grátis</a>
+  </nav>
+</header>
 
+<div class="container"></div>
 <section class="hero">
     <h1>PRISMA HISTÓRICO <br><span>+400 PÁGINAS</span></h1>
     <p>O único material que destrincha Brasil Colônia, Império e República Velha com diagramas, imagens, mapas mentais e questões de banca.</p>
     <div class="beneficios">
-        <div class="card-beneficio">📖 <b>400+ Páginas</b><br>Análise profunda, zero romantização</div>
+        <div class="card-beneficio">📖 <b>200+ Páginas</b><br>Análise profunda, zero romantização</div>
         <div class="card-beneficio">🗺️ <b>Mapas Mentais</b><br>Memorize estruturas inteiras</div>
         <div class="card-beneficio">📊 <b>Diagramas e Imagens</b><br>Visualize o cotidiano colonial</div>
         <div class="card-beneficio">📚 <b>Sumário Digital</b><br>Navegue por 150+ tópicos</div>
@@ -260,11 +43,13 @@ footer a { color: var(--laranja)!important; }
 
     <!-- CARD 1: COLONIA -->
     <div class="card-periodo">
-        <h3>🔵 BRASIL COLÔNIA</h3>
-        <p class="periodo-data">1500 — 1822</p>
-        <p style="font-family:'Segoe UI',Arial,sans-serif;">Da ecologia de exploração até o Diretório Pombalino. O período mais cobrado em Fuvest e FGV.</p>
-        <details open>
-            <summary>Ver 60+ Tópicos ▼</summary>
+        <div class="card-header">
+            <h3>🔵 BRASIL COLÔNIA</h3>
+            <p class="periodo-data">1500 — 1822</p>
+            <p class="descricao">Da ecologia de exploração até o Diretório Pombalino. O período mais cobrado em Fuvest e FGV.</p>
+        </div>
+        <details>
+            <summary>Ver 60+ Tópicos</summary>
             <ul>
                 <li>I. A Ecologia de Exploração e a Dialética do Espaço Colonial</li>
                 <li>II. Zoogeografia, Adaptação e a Ausência de Tração Animal</li>
@@ -298,48 +83,52 @@ footer a { color: var(--laranja)!important; }
 
     <!-- CARD 2: IMPERIO -->
     <div class="card-periodo">
-    <h3>🟡 BRASIL IMPÉRIO</h3>
-    <p class="periodo-data">1822 — 1889</p>
-    <p style="font-family:'Segoe UI',Arial,sans-serif;">Do "fraque e cartola" ao abolicionismo. A construção do Estado Nacional e suas contradições.</p>
-    <details>
-        <summary>Ver Estrutura do Período ▼</summary>
-        <ul>
-            <li>A Grande Fuga Geopolítica: A Corte Cruzando o Atlântico</li>
-            <li>O Impacto na Colônia: Nascimento de um Novo Brasil</li>
-            <li>O Choque de Dois Mundos: Nobreza Europeia x Realidade Tropical</li>
-            <li>À Sombra do Trono: O Poder Político das Mulheres da Corte</li>
-            <li>O Preço do Brilho: Cotidiano das Mulheres Comuns em 1808</li>
-            <li>O Despertar dos Trópicos: Fim do Pacto Colonial</li>
-            <li>A Vitrina do Império: Rua do Ouvidor e a Vaidade Tropical</li>
-            <li>A Revolução Pernambucana de 1817</li>
-            <li>O Grande Êxodo Inverso: A Revolução de 1820</li>
-            <li>Os Arquitetos da Emancipação: Bastidores do Grito do Ipiranga</li>
-            <li>A Força do Povo e os Bastidores do "Fico"</li>
-            <li>A Independência de Sangue e Pólvora: Guerras do Norte</li>
-            <li>A Independência Comprada: A Dívida de 2 Milhões de Libras</li>
-            <li>A Lei da Espada: Autoritarismo na Constituição de 1824</li>
-            <li>O Pântano da Cisplatina</li>
-            <li>O Crepúsculo do Imperador: Noite das Garrafadas</li>
-            <li>Anatomia do Despedaçamento: Cabanagem e Farroupilha</li>
-            <li>O Golpe da Maioridade</li>
-            <li>A Fábrica de um Monarca: A Rotina de Dom Pedro II</li>
-            <li>O "Parlamentarismo às Avessas"</li>
-            <li>A Questão Christie e as Fissuras do Império</li>
-            <li>A Guerra do Paraguai: Vitória que Destruiu a Coroa</li>
-            <li>A Farsa do Gradualismo: Leis Abolicionistas</li>
-            <li>O Trono Isolado: A Questão Religiosa</li>
-            <li>O Golpe do Silêncio: 15 de Novembro de 1889</li>
-        </ul>
-    </details>
-</div>
+        <div class="card-header">
+            <h3>🟡 BRASIL IMPÉRIO</h3>
+            <p class="periodo-data">1822 — 1889</p>
+            <p class="descricao">Do "fraque e cartola" ao abolicionismo. A construção do Estado Nacional e suas contradições.</p>
+        </div>
+        <details>
+            <summary>Ver Estrutura do Período</summary>
+            <ul>
+                <li>A Grande Fuga Geopolítica: A Corte Cruzando o Atlântico</li>
+                <li>O Impacto na Colônia: Nascimento de um Novo Brasil</li>
+                <li>O Choque de Dois Mundos: Nobreza Europeia x Realidade Tropical</li>
+                <li>À Sombra do Trono: O Poder Político das Mulheres da Corte</li>
+                <li>O Preço do Brilho: Cotidiano das Mulheres Comuns em 1808</li>
+                <li>O Despertar dos Trópicos: Fim do Pacto Colonial</li>
+                <li>A Vitrina do Império: Rua do Ouvidor e a Vaidade Tropical</li>
+                <li>A Revolução Pernambucana de 1817</li>
+                <li>O Grande Êxodo Inverso: A Revolução de 1820</li>
+                <li>Os Arquitetos da Emancipação: Bastidores do Grito do Ipiranga</li>
+                <li>A Força do Povo e os Bastidores do "Fico"</li>
+                <li>A Independência de Sangue e Pólvora: Guerras do Norte</li>
+                <li>A Independência Comprada: A Dívida de 2 Milhões de Libras</li>
+                <li>A Lei da Espada: Autoritarismo na Constituição de 1824</li>
+                <li>O Pântano da Cisplatina</li>
+                <li>O Crepúsculo do Imperador: Noite das Garrafadas</li>
+                <li>Anatomia do Despedaçamento: Cabanagem e Farroupilha</li>
+                <li>O Golpe da Maioridade</li>
+                <li>A Fábrica de um Monarca: A Rotina de Dom Pedro II</li>
+                <li>O "Parlamentarismo às Avessas"</li>
+                <li>A Questão Christie e as Fissuras do Império</li>
+                <li>A Guerra do Paraguai: Vitória que Destruiu a Coroa</li>
+                <li>A Farsa do Gradualismo: Leis Abolicionistas</li>
+                <li>O Trono Isolado: A Questão Religiosa</li>
+                <li>O Golpe do Silêncio: 15 de Novembro de 1889</li>
+            </ul>
+        </details>
+    </div>
 
     <!-- CARD 3: REPUBLICA VELHA -->
     <div class="card-periodo">
-        <h3>🔵 REPÚBLICA VELHA</h3>
-        <p class="periodo-data">1889 — 1930</p>
-        <p style="font-family:'Segoe UI',Arial,sans-serif;">Belle Époque e Cortiço. Café com leite, coronelismo e o nascimento da cultura urbana brasileira.</p>
+        <div class="card-header">
+            <h3>🔵 REPÚBLICA VELHA</h3>
+            <p class="periodo-data">1889 — 1930</p>
+            <p class="descricao">Belle Époque e Cortiço. Café com leite, coronelismo e o nascimento da cultura urbana brasileira.</p>
+        </div>
         <details>
-            <summary>Ver Estrutura do Período ▼</summary>
+            <summary>Ver Estrutura do Período</summary>
             <ul>
                 <li>I. A Proclamação e a Constituição de 1891: Federalismo Oligárquico</li>
                 <li>II. Política do Café com Leite e Política dos Governadores</li>
@@ -361,26 +150,10 @@ footer a { color: var(--laranja)!important; }
 </div>
 
 <section class="cta-final">
-    <h2 style="color:var(--azul-escuro); font-size:32px;">Leve o Prisma Histórico Completo</h2>
-    <p style="color:var(--texto-cinza); margin:15px 0 30px; font-size:18px; font-family:'Segoe UI',Arial,sans-serif;">Acesso imediato | PDF + Mapas Mentais + 300 Questões Comentadas</p>
+    <h2>Leve o Prisma Histórico Completo</h2>
+    <p>Acesso imediato | PDF + Mapas Mentais + 300 Questões Comentadas</p>
     <a href="#" class="btn-ebook">QUERO MEU E-BOOK AGORA →</a>
 </section>
 
-<footer>
-    <div class="container">
-        <div class="caixa-apoio">
-            <h3 style="font-size: 2.2em; margin-bottom: 15px; color: var(--amarelo); font-weight: 900;">Apoie Nosso Projeto</h3>
-            <p style="font-size: 17px; margin-bottom: 30px; color: #eef2f7; font-family:'Segoe UI',Arial,sans-serif;">Nos ajude a manter o PrismaHistórico gratuito e com conteúdo de qualidade para todos.</p>
-            <a href="/artigos/doacao.html" style="background: var(--amarelo); color: #0a1f44; padding: 18px 55px; border-radius: 12px; text-decoration: none; font-weight: 900; font-size: 1.2em; display: inline-block; box-shadow: 0 4px 0 #d4a500; font-family:'Segoe UI',Arial,sans-serif;">Fazer Doação ♡</a>
-            <p style="font-size: 16px; color: #fff; margin-top: 10px; font-family:'Segoe UI',Arial,sans-serif;"><b>PIX:</b> cronologia.prisma.historico@gmail.com</p>
-        </div>
-        <div style="text-align: center; font-family:'Segoe UI',Arial,sans-serif;">
-            <a href="/artigos/privacidade.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Política de Privacidade</a> 
-            <span style="color: rgba(255,255,255,0.5);">|</span> 
-            <a href="/artigos/termos.html" style="color: var(--amarelo); text-decoration: none; margin: 0 10px;">Termos de Uso</a>
-            <p style="color: #eef2f7; margin-top:15px;">© 2026 PrismaHistórico. Feito com ❤️</p>
-        </div>
-    </div>
-</footer>
 </body>
 </html>

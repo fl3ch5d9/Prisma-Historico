@@ -6,320 +6,125 @@
 <title>Curiosidades - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
 
-<style>
-:root {
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #f5f5f5;
-  --cinza: #aaaaaa;
-}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  padding-top: 80px; /* ESSENCIAL: espaço pro header fixo */
-  background: var(--preto);
-  color: var(--branco);
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/* ===== HEADER NAVBAR ===== */
-.navbar {
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--laranja);
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--branco);
-  text-decoration: none;
-  letter-spacing: 2px;
-}
-.logo span { color: var(--laranja); }
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-.menu a {
-  color: var(--branco);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-  transition: color 0.3s;
-}
-.menu a:hover { color: var(--laranja); }
-
-/* BOTÃO EBOOK */
-.ebook-btn {
-  background: var(--laranja);
-  color: var(--preto)!important;
-  padding: 10px 20px!important;
-  border-radius: 8px;
-  font-weight: 700!important;
-}
-.ebook-btn:hover { background: var(--laranja-claro); transform: translateY(-2px); }
-
-/* ===== SEÇÃO DE VENDA ===== */
-.prisma-venda {
-  background: linear-gradient(180deg, var(--preto) 0%, var(--preto-claro) 100%);
-  padding: 80px 20px;
-  text-align: center;
-}
-.selo {
-  display: inline-block;
-  background: rgba(255, 140, 0, 0.15);
-  color: var(--laranja);
-  padding: 8px 16px;
-  border-radius: 30px;
-  font-weight: 700;
-  border: 1px solid var(--laranja);
-  margin-bottom: 20px;
-}
-.prisma-venda h2 { font-size: 40px; line-height: 1.2; }
-.prisma-venda h2 span { color: var(--laranja); }
-.subtitulo { font-size: 18px; color: var(--cinza); max-width: 700px; margin: 10px auto; }
-
-.lista-beneficios {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 50px 0;
-  text-align: left;
-}
-.item-beneficio {
-  background: var(--preto-claro);
-  padding: 25px;
-  border-radius: 12px;
-  border-left: 4px solid var(--laranja);
-}
-.item-beneficio strong { color: var(--branco); }
-.item-beneficio p { color: var(--cinza); margin-top: 8px; }
-
-/* Caixa Branca vira Card Preto */
-.prisma-venda > div > div[style] {
-  background: var(--preto-claro)!important;
-  color: var(--branco)!important;
-  border: 2px solid var(--laranja);
-}
-.prisma-venda h3 { color: var(--laranja); }
-
-.btn-comprar {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro));
-  color: var(--preto);
-  padding: 16px 40px;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 18px;
-}
-
-/* ===== SEÇÕES DAS ERAS ===== */
-.era {
-  padding: 80px 20px;
-  background: var(--preto)!important; /* Sobrescreve o inline #e8f0fe e #fff */
-}
-.era:nth-child(even) { background: var(--preto-claro)!important; }
-
-.era-header { text-align: center; margin-bottom: 50px; }
-.datas { color: var(--laranja); font-weight: 700; letter-spacing: 2px; }
-.era-header h2 { color: var(--branco); font-size: 34px; margin: 10px 0; }
-.era-header p { color: var(--cinza); font-size: 18px; max-width: 700px; margin: 0 auto; }
-
-.grid-eixos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-.card-eixo {
-  background: var(--preto-claro);
-  padding: 25px;
-  border-radius: 12px;
-  border-left: 5px solid var(--laranja);
-  transition: all 0.4s;
-}
-.card-eixo:hover { box-shadow: 0 0 15px rgba(255,140,0,0.3); }
-.card-eixo.emoji { font-size: 32px; }
-.card-eixo h3 { color: var(--branco); margin: 10px 0; }
-.card-eixo p,.card-eixo li { color: var(--cinza); }
-.card-eixo b { color: var(--laranja); }
-
-/* Força sobrescrever as cores inline azul/amarelo */
-.card-eixo[style] { border-left-color: var(--laranja)!important; }
-
-/* ===== CTA FINAL ===== */
-.cta {
-  background: var(--preto-claro);
-  padding: 80px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-.cta h2 { color: var(--laranja); font-size: 36px; }
-.cta a {
-  display: inline-block;
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 18px 45px;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 18px;
-}
-
-/* ===== RODAPÉ ===== */
-.rodape-apoio {
-  background: var(--preto);
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-.caixa-apoio a { background: var(--laranja); color: var(--preto); padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; }
-.links-legais a { color: var(--cinza); text-decoration: none; }
-.copy { color: #555; font-size: 13px; margin-top: 20px; }
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-.lista-beneficios,.grid-eixos { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 600px) {
-.navbar { position: relative; }
- body { padding-top: 0; }
-.nav-container { flex-direction: column; gap: 15px; }
-.lista-beneficios,.grid-eixos { grid-template-columns: 1fr; }
-}
-
-
-
-</style>
 </head>
 <body>
 
-  <header class="navbar"><div class="container nav-container">
-  <a href="#inicio" class="logo">PRISMA<span>HISTÓRICO</span></a>
+ <header>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
   <nav>
-    <ul class="menu">
-      <li><a href="/index.html">Início</a></li>
-      <li><a href="/artigos/sobre.html">Sobre</a></li>
-      <li><a href="/artigos/artigos.html">Artigos</a></li>
-      <li><a href="/artigos/curiosidades.html">Curiosidades</a></li>
-      <li><a href="/artigos/quiz.html">Quiz</a></li>
-
-      <li><a href="/artigos/ebook.html" class="ebook-btn">Ebook Grátis</a></li>
-    </ul>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#" class="btn-ebook">Ebook Grátis</a>
   </nav>
-</div>
 </header>
 
-<section class="prisma-venda">
-  <div class="container">
-    <span class="selo">📖 E-book Exclusivo</span>
-    <h2>Chega de decorar datas. <br> <span>Entenda como o Brasil REALMENTE vivia.</span></h2>
-    <p class="subtitulo">Você já leu sobre Colônia, Império e República Velha. Mas e o cheiro da rua? A roupa que usavam? O que comiam?</p>
-    <p class="subtitulo" style="font-size: 20px; font-weight: 600;">É isso que a Fuvest, FGV e o ENEM estão cobrando agora. E é isso que está dentro do <b>PRISMA HISTÓRICO</b>.</p>
-
-    <div class="lista-beneficios">
-      <div class="item-beneficio"><strong>🔵 Colônia: A Casa, a Senzala e a Igreja</strong><p>Descubra por que o senhor de engenho tomava banho 1x por mês e por que o samba nasceu dentro da senzala.</p></div>
-      <div class="item-beneficio"><strong>🟡 Império: O Rio que queria ser Paris</strong><p>Entenda a hipocrisia do fraque e cartola no calor de 40°C e como nasceu a feijoada.</p></div>
-      <div class="item-beneficio"><strong>🔵 República Velha: Belle Époque e Cortiço</strong><p>Revele o motivo da Revolta da Vacina e como o samba virou arma de resistência cultural.</p></div>
-    </div>
-
-    <div style="background: #fff; color: #1a3a6e; padding: 30px; border-radius: 16px; margin-top: 30px;">
-      <h3>PRISMA HISTÓRICO PARA VESTIBULARES, ENEM E CONCURSOS</h3>
-      <p style="color: #555; margin-bottom: 20px;">O único material que transforma o cotidiano em questão de prova. Com fontes, imagens de época e +200 questões comentadas.</p>
-      <a href="ebook.html" class="btn-comprar">QUERO DEGUSTAR CADA HISTÓRIA →</a>
-      <p style="font-size: 12px; color: #777; margin-top: 12px;">Acesso imediato | PDF + Audiobook Bônus | 7 dias de garantia</p>
-    </div>
+<section class="hero-curiosidades">
+  <div class="container-pagina">
+    <span class="selo-curiosidade">🧠 Fatos que não caem no livro</span>
+    <h1 class="titulo-pagina">Curiosidades do Brasil Real</h1>
+    <p class="subtitulo-pagina">O que a Fuvest, FGV e o ENEM cobram e a escola não te conta. História pelo cheiro, pela roupa e pelo prato.</p>
   </div>
 </section>
 
 <main>
+  <div class="container-curiosidades">
 
-<!-- ERA 1: COLÔNIA -->
-<section class="era" style="background: #e8f0fe;">
-  <div class="container">
-    <div class="era-header">
-      <p class="datas">1500 — 1822</p>
-      <h2>Brasil Colônia: A Casa, a Senzala e a Igreja</h2>
-      <p>O Brasil era um arquipélago de engenhos. A vida privada girava em torno da <b>casa-grande</b>, da <b>senzala</b> e do adro da igreja.</p>
+    <!-- GRID DE CURIOSIDADES -->
+    <div class="grid-curiosidades">
+
+      <!-- 1 -->
+      <div class="card-curiosidade">
+        <div class="icone">🚿</div>
+        <h3>O banho era visto como doença</h3>
+        <p>No Brasil Colônia, tomar banho 1x por semana era "coisa de escravo". A elite achava que água abria os poros e pegava doença. Por isso usavam muito perfume e lenço perfumado.</p>
+        <span class="tag">Colônia</span>
+      </div>
+
+      <!-- 2 -->
+      <div class="card-curiosidade">
+        <div class="icone">👗</div>
+        <h3>Fraque e cartola no calor de 40°C</h3>
+        <p>No Império, a elite do Rio copiava a moda de Paris. Andavam de fraque, colete e cartola no verão carioca pra mostrar "civilização". Morriam de insolação.</p>
+        <span class="tag">Império</span>
+      </div>
+
+      <!-- 3 -->
+      <div class="card-curiosidade">
+        <div class="icone">🍛</div>
+        <h3>A feijoada não foi comida de escravo</h3>
+        <p>Mito! A feijoada nasceu nas casas da elite no Império como prato "chique francês". Só depois foi pro morro e virou comida popular na República Velha.</p>
+        <span class="tag">Império</span>
+      </div>
+
+      <!-- 4 -->
+      <div class="card-curiosidade">
+        <div class="icone">💉</div>
+        <h3>A Revolta da Vacina foi por causa da beleza</h3>
+        <p>Em 1904 o Rio queria ser "Paris dos Trópicos". Oswaldo Cruz obrigou vacina. O povo se revoltou não só pela agulha, mas porque derrubaram cortiços e expulsaram pobres do centro.</p>
+        <span class="tag">República Velha</span>
+      </div>
+
+      <!-- 5 -->
+      <div class="card-curiosidade">
+        <div class="icone">🎶</div>
+        <h3>O samba nasceu na cozinha</h3>
+        <p>O primeiro samba gravado "Pelo Telefone" foi composto no quintal da Tia Ciata, em 1916. A polícia invadia porque achava que era "coisa de vagabundo".</p>
+        <span class="tag">República Velha</span>
+      </div>
+
+      <!-- 6 -->
+      <div class="card-curiosidade">
+        <div class="icone">🕯️</div>
+        <h3>Irmandade do Rosário = banco dos negros</h3>
+        <p>Na Colônia, negros alforriados criaram as Irmandades. Era igreja, caixa econômica e sindicato. Juntavam dinheiro pra comprar alforria de outros escravos.</p>
+        <span class="tag">Colônia</span>
+      </div>
+
+      <!-- 7 -->
+      <div class="card-curiosidade">
+        <div class="icone">🎩</div>
+        <h3>Chapéu definia sua classe</h3>
+        <p>Na República Velha: Cartola = político. Panamá = comerciante. Boné = operário. Chapéu de palha = caipira. Só de olhar você sabia quem era quem.</p>
+        <span class="tag">República Velha</span>
+      </div>
+
+      <!-- 8 -->
+      <div class="card-curiosidade">
+        <div class="icone">🍺</div>
+        <h3>A cachaça derrubou um governo</h3>
+        <p>Na Revolta da Cachaça de 1660, o povo do Rio destruiu engenhos porque Portugal proibiu a aguardente pra vender vinho caro. Foi o 1º protesto de consumo do Brasil.</p>
+        <span class="tag">Colônia</span>
+      </div>
+
+      <!-- 9 -->
+      <div class="card-curiosidade">
+        <div class="icone">🏠</div>
+        <h3>Cortiço tinha 1 banheiro pra 200 pessoas</h3>
+        <p>Na República Velha, imigrantes viviam amontoados. O "Cabeça de Gato" no RJ tinha 3 mil moradores e 4 privadas. Foi isso que gerou as epidemias.</p>
+        <span class="tag">República Velha</span>
+      </div>
+
     </div>
-    <div class="grid-eixos">
-      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes e Vida Privada</h3><p>Patriarcado absoluto. O <b>senhor de engenho</b> era lei, juiz e padre.</p><ul><li><b>Rituais:</b> Batizado e casamento arranjado.</li><li><b>Hierarquia:</b> Casa-grande > Senzala > Agregados</li></ul></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religiões e Sincretismos</h3><p>Catolicismo barroco. As <b>Irmandades do Rosário</b> eram o espaço de autonomia negra.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>A elite usava <b>veludo e peruca</b> sob 40°C. O escravo usava <b>pano da costa</b>.</p></div>
-      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene e Saúde</h3><p>Banho era visto como causa de doença. Remédio: <b>mezinhas e benzedeira</b>.</p></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Na igreja: <b>música sacra</b>. Na senzala: <b>atabaque, berimbau</b>.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Cultura de Mercado</h3><p>O <b>escravo de ganho</b> vendia angu e doces no tabuleiro.</p></div>
+
+    <!-- CAIXA DE DESTAQUE -->
+    <div class="caixa-destaque">
+      <h3>🔥 Quer cair essas curiosidades na prova?</h3>
+      <p>Elas estão todas no e-book PRISMA HISTÓRICO com 200 questões comentadas de Fuvest, FGV e ENEM sobre cotidiano.</p>
+      <a href="/artigos/ebook.html" class="btn-comprar">QUERO ACESSO AO E-BOOK →</a>
     </div>
+
   </div>
-</section>
-
-<!-- ERA 2: IMPÉRIO -->
-<section class="era" style="background: #ffffff;">
-  <div class="container">
-    <div class="era-header">
-      <p class="datas">1808 — 1889</p>
-      <h2>Brasil Império: O Rio Europeu e o Sertão</h2>
-      <p>Com a Corte, o Rio de Janeiro quis ser Paris. Nasceu o "fraque e cartola".</p>
-    </div>
-    <div class="grid-eixos">
-      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes</h3><p>Nasce o <b>salão</b>. O piano vira móvel de status.</p></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religião</h3><p>Cresce o <b>espiritismo kardecista</b> na elite. Nas senzalas, o <b>Candomblé</b>.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>Moda francesa: <b>fraque, colete, cartola, crinolina</b>.</p></div>
-      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene</h3><p>Surge o "higienismo". Primeira banheira de zinco nas casas ricas.</p></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Nasce o <b>choro</b>: flauta, violão de 7 cordas e cavaquinho.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Mercado</h3><p>As <b>lojas de secos e molhados</b>. Surge a feijoada.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ERA 3: REPÚBLICA VELHA -->
-<section class="era" style="background: #e8f0fe;">
-  <div class="container">
-    <div class="era-header">
-      <p class="datas">1889 — 1930</p>
-      <h2>República Velha: Belle Époque e Cortiço</h2>
-      <p>O Brasil se divide: o Rio da <b>Belle Époque</b> e o Brasil dos cortiços e do samba.</p>
-    </div>
-    <div class="grid-eixos">
-      <div class="card-eixo"><span class="emoji">🏠</span><h3>Costumes</h3><p>Surge o <b>apartamento</b> e o cortiço. A rua vira cinema e café.</p></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">⛪</span><h3>Religião</h3><p>Samba nasce nos <b>quintais de tias baianas</b>.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">👗</span><h3>Vestimentas</h3><p>Homens: <b>terno de linho branco e chapéu Panamá</b>. No morro: o <b>malandro</b>.</p></div>
-      <div class="card-eixo"><span class="emoji">🛁</span><h3>Higiene</h3><p><b>Oswaldo Cruz</b> e a Revolta da Vacina.</p></div>
-      <div class="card-eixo" style="border-left-color: #ffcc00;"><span class="emoji">🎶</span><h3>Música</h3><p>Nasce o <b>samba</b> e o <b>maxixe</b>. Pixinguinha e Donga.</p></div>
-      <div class="card-eixo" style="border-left-color: #007BFF;"><span class="emoji">🛍️</span><h3>Mercado</h3><p>Chegam italianos: macarrão e pizza. Surgem os primeiros <b>botecos</b>.</p></div>
-    </div>
-  </div>
-</section>
-
 </main>
 
-<section class="cta">
+<!-- CTA FINAL -->
+<section class="cta-curiosidades">
   <div class="container">
-    <h2>Quer entender o Brasil pelos detalhes?</h2>
-    <p style="color: #e8f0fe; margin-bottom: 24px;">Baixe o e-book com fontes, imagens de época e 200 questões de Fuvest/FGV sobre cotidiano.</p>
+    <h2>Gostou das curiosidades?</h2>
+    <p>Tem muito mais dentro do PRISMA HISTÓRICO. História que vira nota.</p>
     <a href="/artigos/ebook.html">Comprar e-book completo →</a>
   </div>
 </section>
@@ -329,7 +134,7 @@ body {
         <h3>Apoie o Canal de Estudos</h3>
         <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
         <a href="/artigos/doacao.html">☕ Apoie o Canal de Estudos</a>
-        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
+        <p style="font-size: 14px; margin: 20px 0 0 0;">ou via PIX: <span style="font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
     </div>
     <div class="links-legais">
         <a href="/artigos/privacidade.html">Política de Privacidade</a> | <a href="/artigos/termos.html">Termos de Uso</a>

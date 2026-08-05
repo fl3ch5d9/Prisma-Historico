@@ -5,312 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/style.css">
 <title>Sobre - Prisma Histórico</title>
-<style>
-:root {
-  --preto: #0a0a0a;
-  --preto-claro: #1a1a1a;
-  --laranja: #ff8c00;
-  --laranja-claro: #ffa500;
-  --branco: #f5f5f5;
-  --cinza: #aaaaaa;
-}
 
-/* ===== MENU - MESMO DO ANTERIOR ===== */
-.menu-principal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--preto);
-  padding: 18px 40px;
-  border-bottom: 2px solid var(--laranja);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.menu-esquerda a, 
-.menu-direita a {
-  color: var(--branco);
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 600;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-.menu-esquerda a:hover, 
-.menu-direita a:hover { color: var(--laranja); }
-.menu-direita a {
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 8px 16px;
-  border-radius: 6px;
-}
-.menu-direita a:hover { background: var(--laranja-claro); }
-
-/* ===== SEÇÃO SOBRE ===== */
-.secao-sobre {
-  background: var(--preto);
-  padding: 60px 20px;
-  color: var(--branco);
-}
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.titulo-sobre h1 {
-  font-size: 42px;
-  text-align: center;
-  color: var(--laranja);
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-.titulo-sobre h2 {
-  font-size: 18px;
-  text-align: center;
-  color: var(--cinza);
-  font-weight: 400;
-  line-height: 1.7;
-}
-.barra {
-  width: 80px;
-  height: 4px;
-  background: var(--laranja);
-  margin: 25px auto;
-}
-
-.texto p {
-  font-size: 17px;
-  line-height: 1.8;
-  color: #ddd;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-.texto b { color: var(--laranja); }
-
-.destaque {
-  background: var(--preto-claro);
-  border-left: 4px solid var(--laranja);
-  padding: 25px;
-  margin: 40px 0;
-  font-style: italic;
-  font-size: 18px;
-  color: var(--branco);
-}
-
-/* Caixa do E-book */
-.texto > div[style*="background-color: #ffffff"] {
-  background: var(--preto-claro) !important;
-  border-left: 5px solid var(--laranja) !important;
-  box-shadow: 0 0 15px rgba(255,140,0,0.2) !important;
-}
-.texto > div h4 {
-  color: var(--laranja) !important;
-}
-.texto > div p {
-  color: var(--cinza) !important;
-}
-.texto > div a {
-  background: linear-gradient(135deg, var(--laranja), var(--laranja-claro)) !important;
-  color: var(--preto) !important;
-  transition: transform 0.3s;
-}
-.texto > div a:hover { transform: scale(1.05); }
-
-.btn-ebook {
-  display: inline-block;
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 15px 35px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 16px;
-  transition: all 0.3s;
-}
-.btn-ebook:hover {
-  background: var(--laranja-claro);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255,140,0,0.4);
-}
-
-/* ===== SEÇÃO DOAÇÃO ===== */
-.secao-doacao {
-  background: var(--preto-claro);
-  padding: 60px 20px;
-}
-.card-doacao {
-  max-width: 900px;
-  margin: 0 auto;
-  background: var(--preto);
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 40px;
-}
-.card-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.emoji-ancora { font-size: 40px; }
-.card-header h3 {
-  color: var(--laranja);
-  font-size: 28px;
-  margin-top: 10px;
-}
-.bloco-texto {
-  margin-bottom: 25px;
-}
-.bloco-texto h4 {
-  color: var(--branco);
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.bloco-texto p {
-  color: var(--cinza);
-  line-height: 1.7;
-}
-.destaque-meta {
-  background: rgba(255,140,0,0.1);
-  border: 1px dashed var(--laranja);
-  padding: 20px;
-  border-radius: 8px;
-}
-.chamada-apoio {
-  color: var(--laranja) !important;
-  font-weight: 600;
-  margin-top: 10px;
-}
-
-/* ===== RODAPÉ ===== */
-.rodape-apoio {
-  background: var(--preto);
-  padding: 40px 20px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-.caixa-apoio h3 { color: var(--branco); font-size: 22px; }
-.caixa-apoio p { color: var(--cinza); }
-.caixa-apoio a {
-  display: inline-block;
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 10px;
-}
-.caixa-apoio a:hover { background: var(--laranja-claro); }
-.links-legais a { color: var(--cinza); text-decoration: none; margin: 0 8px; }
-.links-legais a:hover { color: var(--laranja); }
-.copy { color: #555; font-size: 13px; margin-top: 20px; }
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-  .menu-principal { flex-direction: column; gap: 10px; }
-  .titulo-sobre h1 { font-size: 32px; }
-  .card-doacao { padding: 20px; }
-}
-</style>
 </head>
 <body>
 
 
-<nav class="menu-principal">
-    <div class="menu-esquerda">
-        <a href="/index.html">início</a>
-        <a href="artigos/sobre.html">sobre</a>
-        <a href="artigos/artigos.html">artigos</a>
-        <a href="artigos/curiosidades.html">curiosidades</a>
-        <a href="artigos/quiz.html">quiz</a>
-    </div>
-    <div class="menu-direita">
-        <a href="artigos/ebook.html">e-book</a>
-    </div>
-</nav>
+<header>
+  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
+  <nav>
+    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
+    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
+    <a href="artigos.html">Artigos</a>
+    <a href="curiosidades.html">Curiosidades</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#" class="btn-ebook">Ebook Grátis</a>
+  </nav>
+</header>
 
-<section class="secao-sobre">
-  <div class="container">
-    
-    <div class="titulo-sobre">
-      <h1>SOBRE O PROJETO</h1>
-      <h2>Este projeto nasceu de uma constatação simples e incômoda: as grandes obras de referência da nossa historiografia clássica continuam definindo a lógica cobrada por bancas como Fuvest, Enem, e Concursos Públicos, mas a linguagem original dessas obras é arcaica e de difícil acesso.</h2>
-      <div class="barra"></div>
-    </div>
 
-    <div class="texto">
-      <p><b>Ensaio de Reflexão:</b> O estudante focado em aprovação não dispõe de meses para decifrar estruturas ensaísticas complexas e vocabulários antigos. Por isso, este trabalho realizou uma investigação profunda: extrair a espinha dorsal crítica dessas obras fundamentais e traduzi-la diretamente para a gramática de provas atuais.</p>
 
-      <p>A proposta deste material parte de um desafio real enfrentado por candidatos a exames oficiais: as bancas examinadoras mais concorridas do país ainda baseiam suas questões na lógica de clássicos da historiografia...</p>
-
-      <p>A conclusão deste trabalho converge para um único objetivo: transformar o conhecimento histórico denso em uma ferramenta de precisão para a sua aprovação. <b>Estudar História</b> para exames de alto rendimento não exige memorização mecânica de fatos...</p>
-
-      <p><b>📖 Texto de Divulgação:</b> As Revoltas como Sintoma da História. Toda máquina de extração gera fricção. E toda fricção gera ruptura.</p>
-
-      <p>Se você está estudando para exames de alto rendimento como <b>Fuvest, Enem, Concursos Públicos entre outros Vestibulares</b> esqueça as listas de nomes e datas para decorar...</p>
-
-      <p>O resultado é este ebook. São <b>+200 páginas</b> onde a América Portuguesa, o Império e a Primeira República são destrinchados com linguagem atual, diagramas, mapas mentais e <b>+ 200 questões comentadas</b> no padrão das maiores bancas.</p>
-
-      <div style="background-color: #ffffff; border-left: 5px solid #ffcc00; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-family: Arial, sans-serif;">
-        <h4 style="color: #1a3a6e; font-size: 20px; margin-bottom: 15px;">🚀 O Mapeamento Completo de Todas as Revoltas</h4>
-        <p style="font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 20px;">Ao adquirir este material, você dominará <b>absolutamente todas as revoltas e movimentos sociais</b> da colonização à primeira república.</p>
-        <a href="SEU_LINK_DO_EBOOK_ASAAS" style="display: inline-block; background: linear-gradient(135deg, #005ea6, #007ad6); color: #ffffff; padding: 15px 30px; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 17px;">📖 Adquirir o E-book com Todas as Revoltas</a>
-      </div>
-
-      <div class="destaque">
-        <p>"Quem domina a lógica da formação do Brasil, domina 40% da prova de História. Aqui você não decora datas. Você entende o sistema."</p>
-      </div>
-
-      <p>Meu compromisso é com o profissionalismo e com o seu resultado. Este blog não é um repositório de conteúdo gratuito. É um laboratório de historiografia aplicada a prova.</p>
-
-      <p>Se você está se preparando para Vestibular, Enem ou Concurso Público e está cansado de material genérico, você está no lugar certo.</p>
-
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="artigos/ebook.html" class="btn-ebook">CONHECER O EBOOK COMPLETO →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+ 
 <section class="secao-doacao">
-    <div class="card-doacao">
-        <header class="card-header">
-            <span class="emoji-ancora">🎓</span>
-            <h3>Conheça a história por trás deste código</h3>
-        </header>
-        <div class="card-body">
-            <div class="bloco-texto">
-                <h4>🔵 A Sala de Aula ficou distante</h4>
-                <p>Em 2025, concluí com muito orgulho todas as matérias de <strong>Licenciatura em História</strong>. A realização de me tornar professor estava a um passo... fui impedido de pagar a taxa de rematrícula.</p>
-            </div>
-            <div class="bloco-texto">
-                <h4>💻 A Recusa em Desistir</h4>
-                <p>Desenvolvi cada linha de código deste blog <strong>HTML, CSS e JavaScript</strong>, criei a identidade visual no Figma, GIMP e Canva e escrevi um e-book histórico rigoroso...</p>
-            </div>
-            <div class="bloco-texto destaque-meta">
-                <h4>🚀 Como o seu apoio faz a diferença</h4>
-                <p>Este blog e o meu e-book são a minha forma de resistir e arrecadar fundos para custear toda estrutura...</p>
-                <p class="chamada-apoio">Ao fazer uma doação espontânea de qualquer valor, você valoriza o trabalho de um profissional que programou e escreveu seu próprio projeto do zero.</p>
+    <div class="container">
+        <div class="card-doacao">
+            <header class="card-header">
+                <span class="emoji-ancora">⚡</span>
+                <h3>Mantenha a Máquina de Aprovação Ligada</h3>
+            </header>
+            <div class="card-body">
+                <div class="bloco-texto">
+                    <h4>🎯 Por que o Prisma Existe</h4>
+                    <p>As bancas não cobram decoração. Elas cobram LÓGICA. A lógica de 500 anos de poder, economia e conflito no Brasil.</p>
+                    <p>O problema: essa lógica está enterrada em livros de 800 páginas com uma linguagem que ninguém tem tempo de ler.</p>
+                    <p>Aqui a gente faz o trabalho pesado por você. Extrai, traduz e transforma em mapas, diagramas e questões no padrão Fuvest, Enem e Concursos.</p>
+                </div>
+                <div class="bloco-texto">
+                    <h4>🚧 Bastidor: 100% Raiz</h4>
+                    <p>Este projeto é feito por uma pessoa só. Da pesquisa à programação. Do design do mapa mental à correção de cada questão.</p>
+                    <p>Manter esse nível de profundidade custa. Custa hospedagem, ferramentas e centenas de horas para transformar conteúdo denso em material que cabe na sua cabeça e cai na prova.</p>
+                </div>
+                <div class="bloco-texto destaque-meta">
+                    <h4>💎 Seu Apoio = Mais Aprovações</h4>
+                    <p>Quando você apoia, você não paga uma conta. Você investe para que mais gente tenha acesso a um método que corta o caminho e vai direto no que a banca quer.</p>
+                    <p class="chamada-apoio">Cada contribuição mantém o Prisma independente, sem anúncios e 100% focado em uma coisa: o seu resultado.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
-<div class="rodape-apoio">
-    <div class="caixa-apoio">
-        <h3>Apoie o Canal de Estudos</h3>
-        <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
-        <a href="/artigos/doacao.html">☕ Apoie o Canal de Estudos</a>
-        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
-    </div>
-    <div class="links-legais">
-        <a href="artigos/privacidade.html">Política de Privacidade</a>
-        <span>|</span>
-        <a href="artigos/termos.html">Termos de Uso</a>
-    </div>
-    <p class="copy">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-</div>
-
 </body>
 </html>
