@@ -3,47 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/artigos/style.css">
+<link rel="stylesheet" href="../css/style.css">
 <title>Prisma Histórico</title>
 <style>
 
 
-/*fim style */
-
-:root{--preto:#000;--preto-claro:#0a0a0a;--cinza:#111;--laranja:#ff6600;--laranja-hover:#ff8533;--branco:#f2f2f2;--cinza-texto:#ccc}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Poppins',sans-serif;background:var(--preto-claro);color:var(--branco);line-height:1.7}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-.navbar{background:var(--preto);padding:15px 0;position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--laranja)}
-.nav-container{display:flex;justify-content:space-between;align-items:center}
-.logo{color:var(--branco);font-size:1.6rem;font-weight:800;text-decoration:none}
-.logo span{color:var(--laranja)}
-.menu{list-style:none;display:flex;gap:10px}
-.menu li a{color:var(--branco);text-decoration:none;font-weight:500;padding:10px 15px;border-radius:6px;transition:0.3s}
-.menu li a:hover{background:var(--laranja);color:var(--preto)}
-.ebook-btn{background:var(--laranja);color:var(--preto)!important;font-weight:700!important}
-.section{padding:100px 0;text-align:center}
-.bg-dark{background:var(--cinza)}
-.hero{min-height:90vh;display:flex;align-items:center;background:var(--preto-claro)}
-.hero h1{font-size:3.2rem;font-weight:800;margin-bottom:20px}
-.hero h1 span{color:var(--laranja)}
-.hero p{font-size:1.2rem;color:var(--cinza-texto);max-width:700px;margin:0 auto 30px}
-h2{font-size:2.5rem;color:var(--laranja);margin-bottom:20px}
-.btn{padding:14px 32px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block;transition:0.3s;border:none;cursor:pointer}
-.btn-primary{background:var(--laranja);color:var(--preto)}
-.btn-primary:hover{background:var(--laranja-hover);transform:translateY(-3px)}
-.btn-secondary{background:transparent;color:var(--branco);border:2px solid var(--laranja);margin-left:15px}
-.btn-secondary:hover{background:var(--laranja);color:var(--preto)}
-.btn-dark{background:var(--preto);color:var(--laranja);border:2px solid var(--laranja)}
-.btn-small{padding:8px 20px;font-size:0.9rem}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-.card{background:var(--preto-claro);padding:30px;border-radius:10px;border:1px solid #222;text-align:left;transition:0.3s}
-.card:hover{border-color:var(--laranja);transform:translateY(-5px)}
-.card h3{color:var(--laranja);margin-bottom:10px}
-.cta{background:linear-gradient(135deg,var(--laranja),#cc5200);color:var(--preto)}
-.cta h2{color:var(--preto)}
-.footer{background:var(--preto);padding:30px 0;text-align:center;border-top:2px solid var(--laranja);color:var(--cinza-texto)}
-@media (max-width:768px){.nav-container{flex-direction:column;gap:15px}.menu{flex-wrap:wrap;justify-content:center}.hero h1{font-size:2.2rem}.hero-btns{display:flex;flex-direction:column;gap:15px}.btn-secondary{margin-left:0}}
 
 /*header*/
 
@@ -52,269 +16,202 @@ h2{font-size:2.5rem;color:var(--laranja);margin-bottom:20px}
 
 <body>
 
+ <!-- /*NAVBAR*/ - Esse é o seu header -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">PRISMA<span>HISTÓRICO</span></a>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="/artigos/sobre.html">Sobre</a></li>
+                <li><a href="/artigos/artigos.html">Artigos</a></li>
+                <li><a href="/artigos/curiosidades.html">Curiosidades</a></li>
+                <li><a href="/artigos/quiz.html">Quiz</a></li>
+                <li><a href="/artigos/ebook.html" class="ebook-btn">Ebook</a></li>
+            </ul>
+        </div>
+    </nav>
+ <!--cards-->
+ <!-- SEÇÃO 1: EXPANSÃO, RECONHECIMENTO E PRIMEIROS CONTATOS -->
+<section class="container section">
+    <h2>01. Expansão Ultramarina e Primeiros Contactos</h2>
+    <p class="section-subtitle">A génese tecnológica lusa, as rotas transatlânticas e a fenomenologia do achamento.</p>
+    
+    <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>I. Rota Transatlântica e Sociedade</h3>
+            <p>Geopolítica Interna do Café.</p>
+            <p>A Rota Transatlântica e a Instrumentalização Biopolítica do Corpo Banto.</p>
+            <p>A Intimidade da Casa-Grande e a Dialética da Exclusão Social.</p>
+            <p>A Resistência Cultural e o Paradoxo do "Paraíso dos Mulatos".</p>
+            <p>Os Descobridores: A Posição Geopolítica Lusa e a Vocação Atlântica.</p>
+        </div>
 
-  <header>
-  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
-  <nav>
-    <a href="../index.html">Início</a>
-    <a href="artigos/sobre.html">Sobre</a>
-    <a href="artigos/artigos.html">Artigos</a>
-    <a href="artigos/curiosidades.html">Curiosidades</a>
-    <a href="artigos/quiz.html">Quiz</a>
-    <a href="artigos/ebook.html" class="btn-ebook">Ebook Grátis</a>
-  </nav>
-</header>
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>II. A Gênese Tecnológica e as Rotas</h3>
+            <p>A Gênese Tecnológica e o Ensaio Geral de Ceuta.</p>
+            <p>A Mística da Cruzada e a Geopolítica do Fechamento das Rotas do Levante.</p>
+            <p>A Batalha das Rotas: A Rota do Cabo contra a Solução Ocidental Colombina.</p>
+            <p>A Consagração do Périplo: de D. João II à Invenção da Boa Esperança.</p>
+        </div>
 
-<div class="container"></div>
+        <!-- Card 3 -->
+        <div class="card">
+            <h3>III. Racionalidade e a Armada</h3>
+            <p>A Racionalidade Científica de D. João II: Espionagem Industrial e Planeamento Bélico.</p>
+            <p>A Desmistificação da Rota Colombina e o Cabo da Boa Esperança como Eixo Geopolítico.</p>
+            <p>A Armada de Cabral: O Caráter Dual da Frota e a Intencionalidade do Desvio.</p>
+            <p>O Olhar do Escrivão: A Fenomenologia do Achamento e a Construção do Monte Pascoal.</p>
+        </div>
+    </div>
+</section>
 
+<!-- SEÇÃO 2: RECONHECIMENTO, ARRENDAMENTO E EXTRATIVISMO -->
+<section class="container section bg-dark">
+    <h2>02. Reconhecimento Territorial e Economia Extrativista</h2>
+    <p class="section-subtitle">A burocracia do achamento, o consórcio de cristãos-novos e o choque franco-luso.</p>
+    
+    <div class="card-grid">
+        <!-- Card 4 -->
+        <div class="card">
+            <h3>IV. O Primeiro Contacto e Inventário</h3>
+            <p>O Primeiro Contacto e a Logística de Reconhecimento de Porto Seguro.</p>
+            <p>A Cenografia Ideológica: A Missa da Pascoela e a Obediência da Cruz.</p>
+            <p>A Burocracia do Achamento: O Regresso da Nau de Mantimentos e os Degradados.</p>
+            <p>O Inventário de Caminha: Análise Crítica da Utilidade da Pousada Brasílica.</p>
+        </div>
 
+        <!-- Card 5 -->
+        <div class="card">
+            <h3>V. Cegueira Geográfica e Arrendamento</h3>
+            <p>A Cegueira Geográfica Quinhentista e a Onomástica do Calendário Litúrgico.</p>
+            <p>A Desilusão Antropológica e a Privatização por Arrendamento (O Consórcio de Cristãos-Novos).</p>
+            <p>Os Limites da Expansão Setentrional e o Monopólio da Madeira Tintureira.</p>
+            <p>A Nau Bretoa (1511): A Micro-História da Racionalidade Jurídica e do Escambo Regulado.</p>
+            <p>Biopolítica do Trato, a Carga de Semoventes e a Vitória do Nome Comercial.</p>
+        </div>
 
-<h2 class="subtitulo-secao">Século XVI (Anos 1500)</h2>
-<!-- OUTRAS REVOLTAS SÉCULO XVI - 1500 -->
-<h3 class="subtitulo-secao-menor">Outras Revoltas e Conflitos do Século XVI</h3>
+        <!-- Card 6 -->
+        <div class="card">
+            <h3>VI. Geografia do Extrativismo e Fronteiras</h3>
+            <p>A Geografia do Extrativismo e a Infraestrutura das Feitorias Insulares.</p>
+            <p>A Guerra Geopolítica do Prata e a Superação do Teto Continental.</p>
+            <p>A Socioantropologia do Cunhadismo e a Assimetria da Miscigenação.</p>
+            <p>O Choque Franco-Luso e o Escambo da Ilegalidade.</p>
+        </div>
+    </div>
+</section>
 
-<div class="grid-3"> <!-- ABRIU GRID 1 -->
-  <div class="card">
-    <h3>Revolta dos Tupinambá em Porto Seguro</h3>
-    <p><strong>Período:</strong> 1539 - 1540</p>
-    <p>Uma das primeiras grandes reações contra as Capitanias Hereditárias. Indígenas destruíram engenhos e igrejas em BA.</p>
-    <a href="tupinamba-portoseguro.html" class="btn-card">Ver Resumo</a>
-  </div>
+<!-- SEÇÃO 3: CONFLITOS INICIAIS, OCUPAÇÃO E DOAÇÕES -->
+<section class="container section">
+    <h2>03. Conflitos Iniciais e o Sistema de Doações</h2>
+    <p class="section-subtitle">A quebra das parcerias, as primeiras fundações e a engenharia das Capitanias Hereditárias.</p>
+    
+    <div class="card-grid">
+        <!-- Card 7 -->
+        <div class="card">
+            <h3>VII. Dumping Francês e Transplante Agrário</h3>
+            <p>I. O Dumping Comercial Francês e a Rutura das Parcerias Coloniais.</p>
+            <p>II. A Guerra de Procuração: Clivagens Étnicas e as Matrizes Tupi.</p>
+            <p>III. A Resposta Militar: O Terror de Cristóvão Jaques e os Limites do Guarda-Costa.</p>
+            <p>IV. O Debate da Ocupação: Do Extrativismo Parasitário ao Transplante Agrário.</p>
+            <p>V. A Miragem da Prata e a Fundação de São Vicente.</p>
+        </div>
 
-  <div class="card">
-    <h3>Revolta de São Vicente</h3>
-    <p><strong>Período:</strong> 1545 - 1549</p>
-    <p>Conflitos liderados por Carijós e Tupiniquins contra as primeiras tentativas de escravização em massa no litoral paulista.</p>
-    <a href="sao-vicente.html" class="btn-card">Ver Resumo</a>
-  </div>
+        <!-- Card 8 -->
+        <div class="card">
+            <h3>VIII. Quimera do Prata e Cimento Social</h3>
+            <p>I. A Quimera Metalúrgica do Prata e o Desvio de Sebastião Cabot.</p>
+            <p>II. A Tragédia de Pêro Lobo e a Fronteira Invertida de Pizarro.</p>
+            <p>III. A Burocracia Transserrana: A Fundação de São Vicente e Piratininga como Cimento Social.</p>
+            <p>IV. A Inteligência de Diogo de Gouveia e o Contra-Ataque de Itamaracá.</p>
+        </div>
 
-  <div class="card">
-    <h3>Confederação dos Tamoios</h3>
-    <p><strong>Período:</strong> 1554 - 1567</p>
-    <p>Revolta dos indígenas Tupinambá contra a escravização portuguesa e aliança com os franceses no RJ e SP.</p>
-    <a href="tamoios.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 1 -->
+        <!-- Card 9 -->
+        <div class="card">
+            <h3>IX. Donatários, Cartas de Doação e Forais</h3>
+            <p>I. O Despertar da Inércia Régia e a Biopolítica dos Condenados.</p>
+            <p>II. A Pequena Nobreza da Índia e o Perfil Sociológico dos Donatários.</p>
+            <p>III. A Carta de Doação: Soberania Delegada e a Alçada Penal Estamental.</p>
+            <p>IV. O Foral: A Partilha Fiscal do Exotismo e o Monopólio do Pau-Brasil.</p>
+            <p>V. A Blindagem contra o Feudalismo Fragmentador e a Geometria de Tordesilhas.</p>
+        </div>
+    </div>
+</section>
 
-<div class="grid-3"> <!-- ABRIU GRID 2 -->
-  <div class="card">
-    <h3>Confederação dos Amoipiras</h3>
-    <p><strong>Período:</strong> 1555 - 1560</p>
-    <p>Resistência indígena contra o trabalho forçado nos engenhos de açúcar na Bahia.</p>
-    <a href="amoipiras.html" class="btn-card">Ver Resumo</a>
-  </div>
+<!-- SEÇÃO 4: CENTRALIZAÇÃO POLÍTICA E ENGENHARIA DE MISSOES -->
+<section class="container section bg-dark">
+    <h2>04. Governo-Geral e a Ocupação do Espaço Colonial</h2>
+    <p class="section-subtitle">A refundação burocrática de 1549, guerras totais e a transição demográfica.</p>
+    
+    <div class="card-grid">
+        <!-- Card 10 -->
+        <div class="card">
+            <h3>X. Centralização de 1549 e Salvador</h3>
+            <p>I. O Vício Constitucional do Sistema Feudal-Mercantil e a Anarquia Intercapitanial.</p>
+            <p>II. O Remédio Joanino: A Revogação dos Forais e a Tríade Burocrática de 1549.</p>
+            <p>III. A Instalação da Capital e a Economia de Permuta da Cidade do Salvador.</p>
+            <p>IV. O Braço Espiritual e as Fraturas do Estado Confessional: Do Caos Eclesiástico ao Choque com Bispo Sardinha.</p>
+            <p>V. A Inversão Missionária no Sul: A Fundação de São Paulo de Piratininga.</p>
+            <p>VI. A Resposta Francesa: Villegaignon e o Modelo Híbrido da França Antártica (1555).</p>
+        </div>
 
-  <div class="card">
-    <h3>Guerra dos Aimorés</h3>
-    <p><strong>Período:</strong> 1555 - 1673</p>
-    <p>Longo conflito de guerrilha dos indígenas Aimorés contra a destruição das suas vilas pelos colonos em BA e ES.</p>
-    <a href="aimores.html" class="btn-card">Ver Resumo</a>
-  </div>
+        <!-- Card 11 -->
+        <div class="card">
+            <h3>XI. Engenharia dos Aldeamentos</h3>
+            <p>I. A Guerra Total na Guanabara: Do Sacrifício de Estácio à Cidade Real do Castelo.</p>
+            <p>II. A Aliança Toga-Bata: Mem de Sá, Nóbrega e a Concepção Jesuítica do Indígena.</p>
+            <p>III. A Engenharia dos Aldeamentos: Espaço, Disciplina e Polícia Cristã.</p>
+            <p>IV. O Paradoxo do Resgate e o Fenômeno do Desaparecimento Ecológico.</p>
+        </div>
 
-  <div class="card">
-    <h3>Confederação dos Tamoios - 2ª Fase</h3>
-    <p><strong>Período:</strong> 1562 - 1563</p>
-    <p>Fase final que levou ao Armistício de Iperoig intermediado pelos jesuítas Anchieta e Nóbrega.</p>
-    <a href="tamoios-2fase.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 2 -->
+        <!-- Card 12 -->
+        <div class="card">
+            <h3>XII. Ofensiva Senhorial e Escravidão</h3>
+            <p>I. A Ofensiva Senhorial de Pernambuco: O Avanço para o São Francisco e a Ilusão Metalúrgica.</p>
+            <p>II. O Bipolarismo Administrativo e a Guerra de Extermínio de Cabo Frio.</p>
+            <p>III. A Catástrofe Demográfica Indígena: O "Gasto" das Almas e a Fraude do Descimento.</p>
+            <p>IV. A Transição para a Escravidão Africana e o Achaque da Inconstância Oligárquica.</p>
+        </div>
+    </div>
+</section>
 
-<div class="grid-3"> <!-- ABRIU GRID 3 -->
-  <div class="card">
-    <h3>Guerra de Cabo Frio</h3>
-    <p><strong>Período:</strong> 1575</p>
-    <p>Continuação dos conflitos com sobreviventes dos Tamoios. Expedição portuguesa destruiu aldeias e escravizou indígenas na região dos Lagos - RJ.</p>
-    <a href="guerra-cabofrio.html" class="btn-card">Ver Resumo</a>
-  </div>
+<!-- SEÇÃO 5: UNIÃO IBÉRICA E AS FRONTEIRAS DO NORTE -->
+<section class="container section">
+    <h2>05. União Ibérica e Consolidação Territorial</h2>
+    <p class="section-subtitle">A inflexão habsburga, guerras de procuração e a expansão em direção ao Maranhão.</p>
+    
+    <div class="card-grid">
+        <!-- Card 13 -->
+        <div class="card">
+            <h3>XIII. Inflexão Habsburga e Sesmarias</h3>
+            <p>I. A Economia Política do Aprisionamento e a Racionalidade do Semovente Indígena.</p>
+            <p>II. A Inflexão Habsburga de 1580 e a Reconfiguração Geopolítica das Fronteiras.</p>
+            <p>III. A Pacificação do Eixo Sul-Centro: O Encerramento do Enclave Tamoio e a Barreira Aimoré.</p>
+            <p>IV. A Conquista de Sergipe e a Transição para o Latifúndio das Sesmarias.</p>
+            <p>V. O Circuito dos Vaus e a Consolidação do Espaço Nordestino.</p>
+            <p>VI. A Fronteira Potiguar: O Escambo do Âmbar e o Estopim da Guerra de Goiana (1574).</p>
+        </div>
 
-  <div class="card">
-    <h3>Revolta do Santuário / Santidade de Jaguaripe</h3>
-    <p><strong>Período:</strong> 1586 - 1590</p>
-    <p>Revolta religiosa e cultural. Indígenas fugidos criaram comunidade sincrética pregando o fim da escravidão e expulsão dos portugueses na BA.</p>
-    <a href="santidade-jaguaripe.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 3 - SOBROU 2, FICOU LINHA COM 2 CARDS -->
+        <!-- Card 14 -->
+        <div class="card">
+            <h3>XIV. Guerrilha Potiguar e Pacto das Neves</h3>
+            <p>I. O Impasse Inicial e as Incursões de Fachada da Burocracia Lusa.</p>
+            <p>II. A Intervenção Castelhana de Flores Valdez e a Fundação de Filipéia.</p>
+            <p>III. A Fratura Nacionalista e o Retorno da Guerrilha Franco-Potiguar.</p>
+            <p>IV. A Traição do Prata e a Inversão das Alianças Historiográficas: O Caso dos Tabajaras.</p>
+            <p>V. O Pacto das Neves e a Pacificação Definitiva da Paraíba (Agosto de 1585).</p>
+        </div>
 
-<!-- CARDS SÉCULO XVII - 1600 -->
-<h2 class="subtitulo-secao">Século XVII (Anos 1600)</h2>
+        <!-- Card 15 -->
+        <div class="card">
+            <h3>XV. Jornada do Maranhão e Projeção ao Pará</h3>
+            <p>I. O Embate Estratégico em Guaxenduba e a Ofensiva de Resistência Lusa.</p>
+            <p>II. A Trégua de 1614 e a Guerra de Bastidores das Relações Diplomáticas.</p>
+            <p>III. A Burocracia das Cortes Europeias e a Escrita da Jornada do Maranhão.</p>
+            <p>IV. A Ofensiva de Alexandre de Moura e a Capitulação de São Luís (1615).</p>
 
-<div class="grid-3"> <!-- ABRIU GRID 4 -->
-  <div class="card">
-    <h3>Aclamação de Amador Bueno</h3>
-    <p><strong>Período:</strong> 1641</p>
-    <p>Tentativa de colonos paulistas de coroar um rei local para romper com Portugal após o fim da União Ibérica.</p>
-    <a href="amador-bueno.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Revolta da Cachaça / Jerônimo Barbalho</h3>
-    <p><strong>Período:</strong> 1660 - 1661</p>
-    <p>Protesto dos produtores de cana-de-açúcar contra o aumento de impostos e a proibição da venda de cachaça pela Coroa no RJ.</p>
-    <a href="revolta-cachaca.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Revolta de Nosso Pai</h3>
-    <p><strong>Período:</strong> 1666</p>
-    <p>Deposição do governador Jerônimo de Mendonça Furtado pela elite local, insatisfeita com a sua administração corrupta em PE.</p>
-    <a href="revolta-nosso-pai.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 4 -->
-
-<div class="grid-3"> <!-- ABRIU GRID 5 -->
-  <div class="card">
-    <h3>Guerra dos Bárbaros / Confederação dos Cariris</h3>
-    <p><strong>Período:</strong> 1683 - 1713</p>
-    <p>Aliança de várias tribos indígenas contra o avanço da pecuária nas suas terras no Nordeste.</p>
-    <a href="guerra-barbaros.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Revolta de Beckman</h3>
-    <p><strong>Período:</strong> 1684</p>
-    <p>Revolta de colonos liderados pelos irmãos Beckman contra o monopólio da Companhia de Comércio do Maranhão e contra os jesuítas.</p>
-    <a href="beckman.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 5 - SOBROU 2 -->
-
-<!-- CARDS SÉCULO XVIII - 1700 -->
-<h2 class="subtitulo-secao">Século XVIII (Anos 1700)</h2>
-
-<div class="grid-3"> <!-- ABRIU GRID 6 -->
-  <div class="card">
-    <h3>Guerra dos Emboabas</h3>
-    <p><strong>Período:</strong> 1707 - 1709</p>
-    <p>Conflito armado entre os paulistas e os "emboabas" pelo controle das minas de ouro em Minas Gerais.</p>
-    <a href="emboabas.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Guerra dos Mascates</h3>
-    <p><strong>Período:</strong> 1710 - 1711</p>
-    <p>Guerra civil entre a elite de Olinda e os comerciantes portugueses de Recife pelo poder político em Pernambuco.</p>
-    <a href="mascates.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Motins do Maneta</h3>
-    <p><strong>Período:</strong> 1711</p>
-    <p>Protestos em Salvador contra o aumento de impostos sobre o sal e o comércio monopolista.</p>
-    <a href="maneta.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 6 -->
-
-<div class="grid-3"> <!-- ABRIU GRID 7 -->
-  <div class="card">
-    <h3>Revolta de Vila Rica / Filipe dos Santos</h3>
-    <p><strong>Período:</strong> 1720</p>
-    <p>Protesto contra a criação das Casas de Fundição para cobrar o imposto do ouro em Minas Gerais.</p>
-    <a href="filipe-santos.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Guerras Guaraníticas</h3>
-    <p><strong>Período:</strong> 1750 - 1756</p>
-    <p>Conflito entre jesuítas e índios Guarani contra Portugal e Espanha pelo Tratado de Madrid que redefiniu fronteiras no Sul.</p>
-    <a href="guaraniticas.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Inconfidência Mineira</h3>
-    <p><strong>Período:</strong> 1789</p>
-    <p>Primeira grande conspiração separatista contra Portugal, motivada pela ameaça da cobrança da "derrama" em MG.</p>
-    <a href="inconfidencia.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 7 -->
-
-<div class="grid-3"> <!-- ABRIU GRID 8 -->
-  <div class="card">
-    <h3>Conjuração Baiana / Revolta dos Alfaiates</h3>
-    <p><strong>Período:</strong> 1798</p>
-    <p>Movimento separatista de base popular que defendia independência, República e fim da escravidão na Bahia.</p>
-    <a href="conj-bahiana.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 8 - SOBROU 1 -->
-
-<!-- CARDS SÉCULO XIX - ATÉ 1820 -->
-<h2 class="subtitulo-secao">Século XIX (Até 1820)</h2>
-
-<div class="grid-3"> <!-- ABRIU GRID 9 -->
-  <div class="card">
-    <h3>Conspiração dos Suassunas</h3>
-    <p><strong>Período:</strong> 1801</p>
-    <p>Projeto de insurreição em Pernambuco influenciado pelas ideias iluministas francesas. Foi desarticulado antes de explodir.</p>
-    <a href="suassunas.html" class="btn-card">Ver Resumo</a>
-  </div>
-
-  <div class="card">
-    <h3>Revolução Pernambucana</h3>
-    <p><strong>Período:</strong> 1817</p>
-    <p>A única revolta separatista do período colonial que tomou o poder. Proclamou uma República que durou +70 dias contra a alta de impostos.</p>
-    <a href="revolucao-pernambucana.html" class="btn-card">Ver Resumo</a>
-  </div>
-</div> <!-- FECHOU GRID 9 - SOBROU 2 -->
-
-<h2 class="subtitulo-secao">Império do Brasil (1822 - 1889)</h2>
-
-<div class="grid-3"> <!-- Abriu linha 1 -->
-  <div class="card"> ... Confederação do Equador ... </div>
-  <div class="card"> ... Cabanagem ... </div>
-  <div class="card"> ... Sabinada ... </div>
-</div> <!-- Fechou linha 1 -->
-
-<div class="grid-3"> <!-- Abriu linha 2 -->
-  <div class="card"> ... Revolta dos Malês ... </div>
-  <div class="card"> ... Balaiada ... </div>
-  <div class="card"> ... Guerra dos Farrapos ... </div>
-</div> <!-- Fechou linha 2 -->
-
-<div class="grid-3"> <!-- Abriu linha 3 -->
-  <div class="card"> ... Praieira ... </div>
-</div> <!-- Fechou linha 3 - sobrou 1, fica sozinho alinhado na esquerda -->
-
-<!--aviso-->
-<!-- POPUP EBOOK EM BREVE -->
-<div id="popup-ebook" class="popup-overlay">
-  <div class="popup-box">
-    <button class="popup-fechar" onclick="fecharPopup()">×</button>
-    <div class="popup-icone">📚</div>
-    <h2>EM BREVE: E-BOOK PRISMA HISTÓRICO</h2>
-    <p>O material mais completo para dominar os <strong>3 períodos</strong> que mais caem em prova:</p>
-    <ul>
-      <li>✅ <b>Brasil Colônia, Império e República Velha</b></li>
-      <li>✅ <b>Historiografias e Análise Crítica</b></li>
-      <li>✅ <b>300+ Questões Gabaritadas e Comentadas</b></li>
-      <li>✅ <b>Ilustrações, Mapas Mentais e Infográficos</b></li>
-    </ul>
-    <p class="popup-aviso">Cadastre-se pra ser avisado no lançamento com desconto exclusivo.</p>
-    <a href="/artigos/ebook.html" class="btn-popup">QUERO SER AVISADO →</a>
-  </div>
-</div>
-
-<script>
-// Mostra o popup 1.5s depois de entrar
-window.addEventListener('load', function() {
-  // Só mostra se a pessoa não viu nas últimas 24h
-  if(!localStorage.getItem('popupVisto')){
-    setTimeout(function(){
-      document.getElementById('popup-ebook').style.display = 'flex';
-    }, 1500);
-  }
-});
-
-function fecharPopup(){
-  document.getElementById('popup-ebook').style.display = 'none';
-  // Salva que já viu pra não encher o saco
-  localStorage.setItem('popupVisto', 'true');
-}
-
-// Fecha clicando fora
-document.getElementById('popup-ebook').addEventListener('click', function(e){
-  if(e.target == this){
-    fecharPopup();
-  }
-});
-</script>
-  
+    
 </body>
 </html>

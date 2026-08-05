@@ -10,142 +10,184 @@
 <body>
 
 
-<header>
-  <div class="logo">PRISMA<span>HISTÓRICO</span></div>
-  <nav>
-    <a href="../index.html">Início</a> <!-- VOLTA PRA RAIZ -->
-    <a href="sobre.html">Sobre</a> <!-- MESMA PASTA -->
-    <a href="artigos.html">Artigos</a>
-    <a href="curiosidades.html">Curiosidades</a>
-    <a href="quiz.html">Quiz</a>
-    <a href="#" class="btn-ebook">Ebook Grátis</a>
-  </nav>
-</header>
-<div class="container"></div>
-<section style="background: #e8f0fe; padding: 80px 20px;">
-  <div style="max-width: 900px; margin: 0 auto;">
+    <!-- CABEÇALHO DO QUIZ -->
+     <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Puxa o seu CSS (Ajuste o caminho se necessário) -->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Prisma Histórico | Quiz</title>
+</head>
+<body>
+
+    <!-- NAVBAR - Menu de Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">PRISMA<span>HISTÓRICO</span></a>
+            <ul class="menu">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="artigos.html">Artigos</a></li>
+                <li><a href="curiosidades.html">Curiosidades</a></li>
+                <li><a href="quiz.html" class="ativo">Quiz</a></li>
+                <li><a href="ebook.html" class="ebook-btn">Ebook</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL DO QUIZ -->
+    <main class="container">
+        
+        <div class="quiz-header">
+            <span>TESTE NÍVEL BANCA</span>
+            <h1>VOCÊ PASSARIA NO VESTIBULAR DE HOJE?</h1>
+            <p>10 questões de História do Brasil. 80% erra na 3ª. Capistrano aprova quem entende a engrenagem.</p>
+        </div>
+
+        <form id="quizForm">
+
+            <!-- QUESTÃO 1 -->
+            <div class="questao">
+                <h3>📖 1. Segundo Capistrano, o que explains o crescimento do Brasil no período colonial?</h3>
+                <label><input type="radio" name="q1" value="errado"> A ação direta do Estado português</label>
+                <label><input type="radio" name="q1" value="certo"> A fissiparidade: expansão feita por particulares</label>
+                <label><input type="radio" name="q1" value="errado"> As missões jesuítas</label>
+            </div>
+
+            <!-- QUESTÃO 2 -->
+            <div class="questao">
+                <h3>🔵 2. O sistema Plantation se baseava em:</h3>
+                <label><input type="radio" name="q2" value="errado"> Pequena propriedade e policultura</label>
+                <label><input type="radio" name="q2" value="certo"> Latifúndio + Monocultura + Escravidão</label>
+                <label><input type="radio" name="q2" value="errado"> Indústria e trabalho assalariado</label>
+            </div>
+
+            <!-- QUESTÃO 3 -->
+            <div class="questao">
+                <h3>🟡 3. O que foi o Cunhadismo?</h3>
+                <label><input type="radio" name="q3" value="errado"> Uma lei de proteção ao indígena</label>
+                <label><input type="radio" name="q3" value="certo"> Estratégia de aliança através do casamento com filha de cacique</label>
+                <label><input type="radio" name="q3" value="errado"> Um tipo de dança indígena</label>
+            </div>
+
+            <!-- QUESTÃO 4 -->
+            <div class="questao">
+                <h3>📖 4. A Biopolítica no Brasil Colônia pode ser vista em:</h3>
+                <label><input type="radio" name="q4" value="errado"> As festas religiosas</label>
+                <label><input type="radio" name="q4" value="certo"> Aldeamentos, Senzalas e Casas de Fundição</label>
+                <label><input type="radio" name="q4" value="errado"> No comércio de pau-brasil</label>
+            </div>
+
+            <!-- QUESTÃO 5 -->
+            <div class="questao">
+                <h3>🔵 5. Por que a Corte Portuguesa mudou para o Rio em 1808?</h3>
+                <label><input type="radio" name="q5" value="errado"> Para fugir do calor europeu</label>
+                <label><input type="radio" name="q5" value="certo"> Para fugir das tropas de Napoleão e manter o controle colonial</label>
+                <label><input type="radio" name="q5" value="errado"> Para explorar o ouro de Minas</label>
+            </div>
+
+            <!-- QUESTÃO 6 -->
+            <div class="questao">
+                <h3>🟡 6. A República Velha foi marcada por:</h3>
+                <label><input type="radio" name="q6" value="errado"> Voto secreto e obrigatório</label>
+                <label><input type="radio" name="q6" value="certo"> Política dos Governadores e Coronelismo</label>
+                <label><input type="radio" name="q6" value="errado"> Industrialização completa do país</label>
+            </div>
+
+            <!-- QUESTÃO 7 -->
+            <div class="questao">
+                <h3>📖 7. A feijoada se popularizou porque:</h3>
+                <label><input type="radio" name="q7" value="errado"> Foi criada por chefs franceses</label>
+                <label><input type="radio" name="q7" value="certo"> Nasceu nas senzalas com as sobras dos senhores</label>
+                <label><input type="radio" name="q7" value="errado"> Era o prato oficial do Império</label>
+            </div>
+
+            <!-- QUESTÃO 8 -->
+            <div class="questao">
+                <h3>🔵 8. A lógica Mercantilista dizia que a colônia deveria:</h3>
+                <label><input type="radio" name="q8" value="errado"> Industrializar e exportar manufaturados</label>
+                <label><input type="radio" name="q8" value="certo"> Exportar matéria-prima e importar produto caro</label>
+                <label><input type="radio" name="q8" value="errado"> Ser autossuficiente</label>
+            </div>
+
+            <!-- QUESTÃO 9 -->
+            <div class="questao">
+                <h3>🟡 9. Canudos e Contestado mostram que:</h3>
+                <label><input type="radio" name="q9" value="errado"> A República era amada por todos</label>
+                <label><input type="radio" name="q9" value="certo"> O Estado esmagava quem estava fora da engrenagem econômica</label>
+                <label><input type="radio" name="q9" value="errado"> Não existia religião no sertão</label>
+            </div>
+
+            <!-- QUESTÃO 10 -->
+            <div class="questao">
+                <h3>📖 10. A crise de 1929 derrubou a República Velha porque:</h3>
+                <label><input type="radio" name="q10" value="errado"> O povo foi às ruas</label>
+                <label><input type="radio" name="q10" value="certo"> O preço do café despencou e quebrou a base econômica da elite</label>
+                <label><input type="radio" name="q10" value="errado"> Vargas era muito popular</label>
+            </div>
+
+            <!-- BOTÃO DE CORREÇÃO -->
+            <div class="container-btn-quiz">
+                <button type="button" onclick="corrigirQuiz()" class="btn-quiz">CORRIGIR MEU QUIZ →</button>
+            </div>
+
+        </form>
+
+        <!-- CAIXA DE RESULTADO -->
+        <div id="resultado" class="card-resultado">
+            <h2>SEU RESULTADO</h2>
+            <p id="nota" class="nota-quiz"></p>
+            <p class="aviso-quiz">Se errou 3 ou mais, você precisa do método Capistrano. Decoreba não passa mais.</p>
+            <a href="ebook.html" class="btn-ebook">QUERO ZERAR NA PROVA →</a>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ DE APOIO -->
+    <footer class="rodape-apoio">
+        <div class="caixa-apoio">
+            <h3>Apoie o Canal de Estudos</h3>
+            <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
+            <a href="doacao.html" class="btn-apoio">☕ Apoie o Canal de Estudos</a>
+            <p class="texto-pix">ou via PIX: <span class="chave-pix">cronologia.prisma.historico@gmail.com</span></p>
+        </div>
+        <div class="links-politicas">
+            <a href="privacidade.html">Política de Privacidade</a> | 
+            <a href="termos.html">Termos de Uso</a>
+        </div>
+        <p class="copyright-texto">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPT DO QUIZ -->
+    <script>
+        function corrigirQuiz() {
+            let acertos = 0;
+            const total = 10;
+            for(let i=1; i<=total; i++) {
+                let resposta = document.querySelector(`input[name="q${i}"]:checked`);
+                if(resposta && resposta.value == "certo") acertos++;
+            }
+            document.getElementById("nota").innerHTML = `Você acertou <b>${acertos} de ${total}</b> questões.`;
+            document.getElementById("resultado").style.display = "block";
+            
+            // Faz o navegador deslizar a tela suavemente até a caixa de resultado
+            document.getElementById("resultado").scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
     
-    <div class="quiz-header">
-      <span>TESTE NÍVEL BANCA</span>
-      <h1>VOCÊ PASSARIA NO VESTIBULAR DE HOJE?</h1>
-      <p>10 questões de História do Brasil. 80% erra na 3ª. Capistrano aprova quem entende a engrenagem.</p>
-    </div>
-
-    <form id="quizForm">
-
-      <div class="questao">
-        <h3>📖 1. Segundo Capistrano, o que explica o crescimento do Brasil no período colonial?</h3>
-        <label><input type="radio" name="q1" value="errado"> A ação direta do Estado português</label>
-        <label><input type="radio" name="q1" value="certo"> A fissiparidade: expansão feita por particulares</label>
-        <label><input type="radio" name="q1" value="errado"> As missões jesuítas</label>
-      </div>
-
-      <div class="questao">
-        <h3>🔵 2. O sistema Plantation se baseava em:</h3>
-        <label><input type="radio" name="q2" value="errado"> Pequena propriedade e policultura</label>
-        <label><input type="radio" name="q2" value="certo"> Latifúndio + Monocultura + Escravidão</label>
-        <label><input type="radio" name="q2" value="errado"> Indústria e trabalho assalariado</label>
-      </div>
-
-      <div class="questao">
-        <h3>🟡 3. O que foi o Cunhadismo?</h3>
-        <label><input type="radio" name="q3" value="errado"> Uma lei de proteção ao indígena</label>
-        <label><input type="radio" name="q3" value="certo"> Estratégia de aliança através do casamento com filha de cacique</label>
-        <label><input type="radio" name="q3" value="errado"> Um tipo de dança indígena</label>
-      </div>
-
-      <div class="questao">
-        <h3>📖 4. A Biopolítica no Brasil Colônia pode ser vista em:</h3>
-        <label><input type="radio" name="q4" value="errado"> As festas religiosas</label>
-        <label><input type="radio" name="q4" value="certo"> Aldeamentos, Senzalas e Casas de Fundição</label>
-        <label><input type="radio" name="q4" value="errado"> No comércio de pau-brasil</label>
-      </div>
-
-      <div class="questao">
-        <h3>🔵 5. Por que a Corte Portuguesa mudou para o Rio em 1808?</h3>
-        <label><input type="radio" name="q5" value="errado"> Para fugir do calor europeu</label>
-        <label><input type="radio" name="q5" value="certo"> Para fugir das tropas de Napoleão e manter o controle colonial</label>
-        <label><input type="radio" name="q5" value="errado"> Para explorar o ouro de Minas</label>
-      </div>
-
-      <div class="questao">
-        <h3>🟡 6. A República Velha foi marcada por:</h3>
-        <label><input type="radio" name="q6" value="errado"> Voto secreto e obrigatório</label>
-        <label><input type="radio" name="q6" value="certo"> Política dos Governadores e Coronelismo</label>
-        <label><input type="radio" name="q6" value="errado"> Industrialização completa do país</label>
-      </div>
-
-      <div class="questao">
-        <h3>📖 7. A feijoada se popularizou porque:</h3>
-        <label><input type="radio" name="q7" value="errado"> Foi criada por chefs franceses</label>
-        <label><input type="radio" name="q7" value="certo"> Nasceu nas senzalas com as sobras dos senhores</label>
-        <label><input type="radio" name="q7" value="errado"> Era o prato oficial do Império</label>
-      </div>
-
-      <div class="questao">
-        <h3>🔵 8. A lógica Mercantilista dizia que a colônia deveria:</h3>
-        <label><input type="radio" name="q8" value="errado"> Industrializar e exportar manufaturados</label>
-        <label><input type="radio" name="q8" value="certo"> Exportar matéria-prima e importar produto caro</label>
-        <label><input type="radio" name="q8" value="errado"> Ser autossuficiente</label>
-      </div>
-
-      <div class="questao">
-        <h3>🟡 9. Canudos e Contestado mostram que:</h3>
-        <label><input type="radio" name="q9" value="errado"> A República era amada por todos</label>
-        <label><input type="radio" name="q9" value="certo"> O Estado esmagava quem estava fora da engrenagem econômica</label>
-        <label><input type="radio" name="q9" value="errado"> Não existia religião no sertão</label>
-      </div>
-
-      <div class="questao">
-        <h3>📖 10. A crise de 1929 derrubou a República Velha porque:</h3>
-        <label><input type="radio" name="q10" value="errado"> O povo foi às ruas</label>
-        <label><input type="radio" name="q10" value="certo"> O preço do café despencou e quebrou a base econômica da elite</label>
-        <label><input type="radio" name="q10" value="errado"> Vargas era muito popular</label>
-      </div>
-
-      <div style="text-align: center;">
-        <button type="button" onclick="corrigirQuiz()" class="btn-quiz">CORRIGIR MEU QUIZ →</button>
-      </div>
-
-    </form>
-
-    <div id="resultado">
-      <h2>SEU RESULTADO</h2>
-      <p id="nota" style="font-size: 22px; margin: 20px 0;"></p>
-      <p style="font-size: 16px; margin-bottom: 25px;">Se errou 3 ou mais, você precisa do método Capistrano. Decoreba não passa mais.</p>
-      <a href="/artigos/ebook.html" class="btn-ebook">QUERO ZERAR NA PROVA →</a>
-    </div>
-
-  </div>
-
-  <script>
-    function corrigirQuiz() {
-      let acertos = 0;
-      const total = 10;
-      for(let i=1; i<=total; i++) {
-        let resposta = document.querySelector(`input[name="q${i}"]:checked`);
-        if(resposta && resposta.value == "certo") acertos++;
-      }
-      document.getElementById("nota").innerHTML = `Você acertou <b>${acertos} de ${total}</b> questões.`;
-      document.getElementById("resultado").style.display = "block";
-      window.scrollTo(0,document.body.scrollHeight);
-    }
-  </script>
-</section>
-
-<div class="rodape-apoio">
-    <div class="caixa-apoio">
-        <h3>Apoie o Canal de Estudos</h3>
-        <p>Se nossos conteúdos te ajudam, considere apoiar. Sua contribuição mantém o projeto no ar.</p>
-        <a href="/artigos/doacao.html">☕ Apoie o Canal de Estudos</a>
-        <p style="font-size: 14px; margin: 20px 0 0 0; color: #555;">ou via PIX: <span style="color: #0a1e3d; font-weight: 700;">cronologia.prisma.historico@gmail.com</span></p>
-    </div>
-    <div style="text-align: center; margin: 0 0 20px 0;">
-        <a href="/artigos/privacidade.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px;">Política de Privacidade</a> | 
-        <a href="/artigos/termos.html" style="color: #0a1e3d; text-decoration: none; margin: 0 15px;">Termos de Uso</a>
-    </div>
-    <p style="text-align: center; opacity: 0.6; font-size: 13px; margin: 0; color: #0a1e3d;">© 2026 Prisma - Canal de Estudos. Todos os direitos reservados.</p>
-</div>
+</script>
 
 </body>
 </html>
