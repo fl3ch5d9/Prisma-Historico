@@ -2175,3 +2175,285 @@ o e-book.Substitua o texto fictício COLE_AQUI_O_SEU_LINK_DE_PAGAMENTO_DO_ASAAS 
    como um sistema para capturar o e-mail do aluno antes de abrir o carrinho, 
    criar páginas para os resumos individuais ou adicionar animações aos cards — 
 estarei sempre por aqui para ajudar a evoluir a sua plataforma.*/
+
+
+/*introdução colonia */
+/* ==========================================================================
+   PRISMA HISTÓRICO - CSS TOTALMENTE SEPARADO E REFORÇADO
+   ========================================================================== */
+
+/* Contentor Principal - Ignora travas de largura do elemento pai e centraliza */
+.prisma-cronologia {
+    width: 100vw !important;        /* Força ocupar 100% da largura visível do monitor */
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;  /* Rompe as margens do contentor pai antigo */
+    margin-right: -50vw !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    padding: 40px 10% !important;   /* Deixa um espaçamento confortável nas laterais */
+    background-color: #121212 !important;
+    color: #ffffff !important;
+    box-sizing: border-box !important;
+}
+
+/* Cabeçalho da Linha do Tempo */
+.prisma-main-header {
+    text-align: center !important;
+    margin-bottom: 50px !important;
+    width: 100% !important;
+}
+
+.prisma-main-header h2 {
+    font-size: 2.5rem !important;
+    color: #ff6600 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 15px !important;
+    letter-spacing: 2px !important;
+    font-weight: 800 !important;
+}
+
+.prisma-main-header p {
+    font-size: 1.1rem !important;
+    color: #cccccc !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+}
+
+.prisma-orange-bar {
+    width: 100px !important;
+    height: 4px !important;
+    background-color: #ff6600 !important;
+    margin: 20px auto 0 !important;
+}
+
+/* Blocos Temáticos de Linhas */
+.prisma-theme-block {
+    margin-bottom: 60px !important;
+    width: 100% !important;
+    max-width: 1300px !important; /* Limita os cartões a uma largura elegante centralizada */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+.prisma-theme-block h3 {
+    color: #ff6600 !important;
+    text-transform: uppercase !important;
+    font-size: 1.4rem !important;
+    border-left: 4px solid #ff6600 !important;
+    padding-left: 15px !important;
+    margin-bottom: 25px !important;
+    letter-spacing: 1px !important;
+    margin-top: 0 !important;
+}
+
+/* Alinhamento dos Cartões na Horizontal */
+.prisma-row-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    width: 100% !important;
+    justify-content: center !important; /* Garante alinhamento central absoluto dos cartões */
+    box-sizing: border-box !important;
+}
+
+/* Estilo Individual dos Cartões */
+.prisma-article-card {
+    flex: 1 1 280px !important; /* Faz crescer horizontalmente até um tamanho mínimo de 280px */
+    max-width: 320px !important; /* Evita que fiquem gigantescos em ecrãs ultra-wide */
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+
+.prisma-article-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: #ff6600 !important;
+}
+
+.prisma-article-card h4 {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    margin: 0 0 12px 0 !important;
+    line-height: 1.4 !important;
+    border-bottom: 1px solid #333333 !important;
+    padding-bottom: 8px !important;
+}
+
+.prisma-article-card p {
+    color: #bbbbbb !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+/* Cartão de Destaque da Reflexão Crítica */
+.prisma-reflection-card {
+    flex: 1 1 280px !important;
+    max-width: 320px !important;
+    background: linear-gradient(135deg, #1e1e1e 0%, #291507 100%) !important;
+    border: 1px solid #333333 !important;
+    border-left: 3px solid #ff6600 !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    transition: transform 0.2s ease !important;
+}
+
+.prisma-reflection-card:hover {
+    transform: translateY(-3px) !important;
+}
+
+.prisma-reflection-card h5 {
+    color: #ff6600 !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    margin: 0 0 8px 0 !important;
+    letter-spacing: 1px !important;
+}
+
+.prisma-reflection-card p {
+    color: #ffffff !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+
+/*IMperio cards*/
+/* ==========================================================================
+   PRISMA HISTÓRICO - CSS SEPARADO DO IMPÉRIO (1822 - 1889)
+   ========================================================================== */
+/* ===== SEÇÃO IMPÉRIO ===== */
+.prisma-seccao-imperio {
+  background-color: #121212;;
+  color: #ffffff;
+  padding: 80px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CABEÇALHO */
+.prisma-header-imperio {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.prisma-header-imperio h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.prisma-header-imperio p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 700px;
+  margin: 0 auto 25px auto;
+  line-height: 1.6;
+}
+
+.prisma-barra-laranja {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6600, #ff9500);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* BLOCOS */
+.prisma-bloco-imperio {
+  margin-bottom: 70px;
+}
+
+.prisma-bloco-imperio h3 {
+  font-size: 1.8rem;
+  color: #ff6600;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* GRELHA DE CARTOES */
+.prisma-grelha-imperio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CARTAO */
+.prisma-cartao-imperio {
+  background-color: #111111;
+  border: 1px solid #222;
+  border-left: 4px solid #ff6600;
+  padding: 25px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.prisma-cartao-imperio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+  border-color: #ff6600;
+}
+
+.prisma-ano-tag {
+  display: inline-block;
+  background-color: #ff6600;
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.prisma-cartao-imperio h4 {
+  font-size: 1.3rem;
+  color: #ff9500;
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.prisma-cartao-imperio p {
+  font-size: 0.95rem;
+  color: #dddddd;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .prisma-header-imperio h2 {
+    font-size: 1.8rem;
+  }
+  .prisma-bloco-imperio h3 {
+    font-size: 1.4rem;
+  }
+  .prisma-grelha-imperio {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*paletas de cores do blog 
+Fundo: 
+#121212 Preto CarvãoCartão:
+ #1a1a1a Carvão Claro  
+Laranja Principal: #ff6600
+Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
+*/
