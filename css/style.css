@@ -2457,3 +2457,145 @@ Fundo:
 Laranja Principal: #ff6600
 Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
 */
+
+
+/*introdução */
+.prisma-hero-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.prisma-headline-cirurgica {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+}
+.prisma-headline-cirurgica .laranja {
+  color: #FF3C00;
+  display: block;
+  font-size: 1.8rem;
+  margin-top: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+.prisma-barra-laranja {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF3C00, #FF8C00);
+  margin: 0 auto 30px auto;
+  border-radius: 2px;
+}
+.prisma-texto-principal {
+  font-size: 1.25rem;
+  color: #CCCCCC;
+  line-height: 1.8;
+  margin: 30px 0;
+}
+.prisma-slogan {
+  font-size: 1.1rem;
+  color: #FF3C00;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 60px;
+}
+.prisma-bloco-ebook {
+  background-color: #1A1A1A;
+  border: 1px solid #2A2A2A;
+  border-top: 4px solid #FF3C00;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: left;
+}
+.prisma-tag-ebook {
+  display: inline-block;
+  background-color: #FF3C00;
+  color: #0A0A0A;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.prisma-bloco-ebook h2 {
+  color: #FF8C00;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align: center;
+  line-height: 1.4;
+}
+.prisma-bloco-ebook h3 {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 3px solid #FF3C00;
+  padding-left: 12px;
+}
+.prisma-bloco-ebook p {
+  color: #CCCCCC;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.prisma-lista-ebook {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.prisma-lista-ebook li {
+  color: #CCCCCC;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.prisma-lista-ebook li::before {
+  content: "✓ ";
+  color: #FF3C00;
+  font-weight: 800;
+  margin-right: 5px;
+}
+.prisma-lista-ebook strong {
+  color: #FF8C00;
+}
+.prisma-botao {
+  display: inline-block;
+  background: linear-gradient(90deg, #FF3C00, #FF8C00);
+  color: #0A0A0A;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 16px 40px;
+  border-radius: 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+.prisma-botao:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 60, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .prisma-hero-intro {
+    padding: 60px 20px;
+  }
+  .prisma-headline-cirurgica {
+    font-size: 2.2rem;
+  }
+  .prisma-headline-cirurgica .laranja {
+    font-size: 1.3rem;
+  }
+  .prisma-bloco-ebook {
+    padding: 30px 20px;
+  }
+}
