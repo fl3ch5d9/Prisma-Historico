@@ -621,134 +621,163 @@ h2 {
 }
 
 /*cards artigo revoltas*/
-/* ==========================================================================
-   ESTILIZAÇÃO DOS TÍTULOS E GRIDS DE REVOLTAS
-   ========================================================================== */
+/* PALETA PRISMA HISTÓRICO */
+:root {
+  --carvao-fundo: #0A0A0A;
+  --carvao-card: #1A1A1A;
+  --laranja: #FF3C00;
+  --laranja-destaque: #FF8C00;
+  --texto-branco: #FFFFFF;
+  --texto-cinza: #CCCCCC;
+  --borda: #2A2A2A;
+}
+
+.section {
+  background-color: var(--carvao-fundo);
+  padding: 80px 20px;
+  color: var(--texto-branco);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .subtitulo-secao {
-  font-size: 2.2rem;
-  color: var(--laranja);
-  margin: 60px 0 15px;
-  text-align: left;
-  font-weight: 800;
-  border-bottom: 2px solid var(--cinza);
-  padding-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: var(--texto-branco);
+}
+
+.subtitulo-secao::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--laranja), var(--laranja-destaque));
+  margin: 15px auto 50px auto;
+  border-radius: 2px;
 }
 
 .subtitulo-secao-menor {
-  font-size: 1.3rem;
-  color: var(--branco);
-  margin-bottom: 30px;
-  text-align: left;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--texto-cinza);
+  margin-bottom: 40px;
+  font-weight: 400;
 }
 
-/* Força os trios simétricos de cards */
+/* GRID 3 EM 3 */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 30px;
-  width: 100%;
 }
 
-/* ==========================================================================
-   CARDS DE ARTIGOS PADRÃO E DESTAQUES
-   ========================================================================== */
+/* CARD */
 .card {
-  background: var(--preto);
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #111827;
-  text-align: left;
+  background-color: var(--carvao-card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
 }
 
 .card:hover {
+  transform: translateY(-8px);
   border-color: var(--laranja);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 102, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(255, 60, 0, 0.2);
 }
 
-.card h3 {
-  color: var(--branco);
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--cinza-texto);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* Cards com Imagem (Destaques) */
-.card-destaque {
-  padding: 0;
-  overflow: hidden;
-}
-
-.card-destaque img {
+.card img {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* Recorta a imagem de forma proporcional sem distorcer */
-  border-bottom: 2px solid var(--laranja);
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid var(--laranja);
 }
 
 .card-content {
   padding: 25px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
 }
 
-.card-destaque h3 {
-  color: var(--laranja);
-}
-
-/* Botões Internos dos Cards */
-.btn-card {
-  background: transparent;
-  color: var(--laranja);
-  border: 2px solid var(--laranja);
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
+.card h3 {
+  font-size: 1.3rem;
   font-weight: 700;
-  text-align: center;
-  font-size: 0.9rem;
-  transition: 0.3s;
+  color: var(--laranja-destaque);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card p {
+  color: var(--texto-cinza);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.card p strong {
+  color: var(--texto-branco);
+  font-weight: 700;
+}
+
+/* BOTÃO */
+.btn-card {
   display: inline-block;
+  background: linear-gradient(90deg, var(--laranja), var(--laranja-destaque));
+  color: var(--carvao-fundo);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
   margin-top: auto;
 }
 
 .btn-card:hover {
-  background: var(--laranja);
-  color: var(--preto);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 60, 0, 0.4);
 }
 
-/* ==========================================================================
-   RESPONSIVIDADE PARA TELEMÓVEIS E TABLETS
-   ========================================================================== */
-@media (max-width: 1024px) {
+/* CARD DESTAQUE */
+.card-destaque {
+  border: 2px solid var(--laranja);
+}
+
+.card-destaque h3 {
+  color: var(--laranja);
+  font-size: 1.5rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .grid-3 {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
   .subtitulo-secao {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 /*
@@ -767,289 +796,138 @@ h2 {
 /* ==========================================================================
    HEADER / HERO DAS CURIOSIDADES
    ========================================================================== */
-.hero-curiosidades {
-  padding: 80px 0 40px;
-  background: radial-gradient(circle at top, var(--cinza) 0%, var(--preto-claro) 100%);
+/* PALETA CURIOsIDADES */
+:root {
+  --carvao-fundo: #0A0A0A;
+  --carvao-card: #1A1A1A;
+  --laranja: #FF3C00;
+  --laranja-destaque: #FF8C00;
+  --texto-branco: #FFFFFF;
+  --texto-cinza: #CCCCCC;
+  --borda: #2A2A2A;
+}
+
+.section.curiosidades {
+  background-color: var(--carvao-fundo);
+  padding: 100px 20px;
+  color: var(--texto-branco);
+}
+
+.curiosidades .subtitulo-secao {
+  font-size: 2.8rem;
+  font-weight: 900;
   text-align: center;
-  width: 100%;
-}
-
-.container-pagina {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.selo-curiosidade {
-  display: inline-block;
-  background: rgba(255, 102, 0, 0.1);
-  color: var(--laranja);
-  padding: 6px 16px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 102, 0, 0.2);
-}
-
-.titulo-pagina {
-  font-size: 3rem;
-  color: var(--branco);
-  font-weight: 800;
-  margin-bottom: 15px;
-  letter-spacing: -1px;
-}
-
-.subtitulo-pagina {
-  font-size: 1.2rem;
-  color: var(--cinza-texto);
-  line-height: 1.7;
-}
-
-/* ==========================================================================
-   GRID DE CURIOSIDADES (3 EM 3 CARDS)
-   ========================================================================== */
-.container-curiosidades {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px 80px;
-}
-
-.grid-curiosidades {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Trava em 3 colunas perfeitas */
-  gap: 30px;
-  margin-bottom: 60px;
-  width: 100%;
-}
-
-/* ESTILIZAÇÃO DOS CARDS INDIVIDUAIS */
-.card-curiosidade {
-  background: var(--preto);
-  padding: 35px 25px;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.card-curiosidade:hover {
-  border-color: var(--laranja);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(255, 102, 0, 0.1);
-}
-
-.card-curiosidade .icone {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.card-curiosidade h3 {
-  color: var(--branco);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.card-curiosidade p {
-  color: var(--cinza-texto);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 45px; /* Abre espaço fixo para a tag na base */
-}
-
-/* Tags de Período Histórico */
-.card-curiosidade .tag {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-  background: var(--cinza);
-  color: var(--laranja);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 4px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid #1f2937;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-/* ==========================================================================
-   CAIXA DE DESTAQUE DO E-BOOK (MEIO DA PÁGINA)
-   ========================================================================== */
-.caixa-destaque {
-  background: var(--cinza);
-  border: 2px dashed var(--laranja);
-  padding: 40px;
-  border-radius: 16px;
+.curiosidades .subtitulo-secao::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--laranja), var(--laranja-destaque));
+  margin: 15px auto 20px auto;
+  border-radius: 2px;
+}
+
+.curiosidades .subtitulo-secao-menor {
   text-align: center;
+  color: var(--texto-cinza);
+  font-size: 1.1rem;
+  margin-bottom: 70px;
+}
+
+.titulo-categoria {
+  font-size: 1.8rem;
+  color: var(--laranja-destaque);
+  margin: 60px 0 30px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 800;
+}
+
+.barra-laranja {
+  width: 6px;
+  height: 30px;
+  background-color: var(--laranja);
+  border-radius: 3px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: var(--carvao-card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.texto-intro {
+  text-align: center;
+  color: var(--texto-cinza);
+  font-size: 1rem;
+  margin: -40px 0 40px 0;
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
 }
 
-.caixa-destaque h3 {
-  color: var(--laranja);
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin-bottom: 12px;
+/* SECTION INQUISIÇÃO - TEMA ESCURO */
+.section-inquisicao {
+  background: linear-gradient(180deg, #0A0A0A 0%, #050505 100%);
+  padding: 100px 20px;
+  border-top: 3px solid var(--laranja);
+  border-bottom: 3px solid var(--laranja);
 }
 
-.caixa-destaque p {
-  color: var(--branco);
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.btn-comprar {
-  display: inline-block;
-  background: var(--laranja);
-  color: var(--preto);
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-comprar:hover {
-  background: var(--laranja-hover);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   CTA FINAL DE VENDAS
-   ========================================================================== */
-.cta-curiosidades {
-  background: linear-gradient(135deg, var(--laranja), #cc5200);
-  padding: 60px 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.cta-curiosidades h2 {
-  color: var(--preto);
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.cta-curiosidades p {
-  color: var(--preto);
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
-.cta-curiosidades a {
-  display: inline-block;
-  background: var(--preto);
-  color: var(--laranja);
-  padding: 14px 32px;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  border: 2px solid var(--preto);
-  transition: 0.3s;
-}
-
-.cta-curiosidades a:hover {
-  background: transparent;
-  color: var(--preto);
-}
-
-/* ==========================================================================
-   RODAPÉ DE APOIO E LINKS LEGAIS
-   ========================================================================== */
-.rodape-apoio {
-  background: var(--preto);
-  padding: 60px 20px 30px;
-  text-align: center;
-  border-top: 2px solid var(--laranja);
-}
-
-.caixa-apoio {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  background: var(--preto-claro);
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-}
-
-.caixa-apoio h3 {
-  color: var(--branco);
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.caixa-apoio p {
-  color: var(--cinza-texto);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.caixa-apoio a {
-  display: inline-block;
-  background: transparent;
-  color: var(--laranja);
-  border: 2px solid var(--laranja);
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.caixa-apoio a:hover {
-  background: var(--laranja);
-  color: var(--preto);
-}
-
-.links-legais {
-  margin-bottom: 20px;
-  color: var(--cinza-texto);
-  font-size: 0.9rem;
-}
-
-.links-legais a {
-  color: var(--cinza-texto);
-  text-decoration: none;
-}
-
-.links-legais a:hover {
+.section-inquisicao .subtitulo-secao {
   color: var(--laranja);
 }
 
-.rodape-apoio .copy {
-  color: #555;
-  font-size: 0.85rem;
+.section-inquisicao .subtitulo-secao::after {
+  background: linear-gradient(90deg, #8B0000, var(--laranja));
 }
 
-/* ==========================================================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================================================== */
-@media (max-width: 1024px) {
-  .grid-curiosidades {
-    grid-template-columns: repeat(2, 1fr); /* Passa para 2 colunas em tablets */
-  }
+.titulo-categoria.inquisicao {
+  color: #FF3C00;
 }
 
-@media (max-width: 768px) {
-  .grid-curiosidades {
-    grid-template-columns: 1fr; /* Passa para 1 coluna no telemóvel */
-    gap: 20px;
-  }
-  
-  .titulo-pagina { font-size: 2.2rem; }
-  .caixa-destaque { padding: 25px; }
-  .cta-curiosidades h2 { font-size: 1.8rem; }
+.barra-vermelha {
+  width: 6px;
+  height: 30px;
+  background: linear-gradient(180deg, #8B0000, #FF3C00);
+  border-radius: 3px;
 }
 
+/* CARD DE TORTURA */
+.card-tortura {
+  border: 1px solid #3A0000;
+  background-color: #120000;
+}
+
+.card-tortura:hover {
+  border-color: #8B0000;
+  box-shadow: 0 10px 25px rgba(139, 0, 0, 0.3);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.card-tortura h3 {
+  color: #FF3C00;
+  font-size: 1.2rem;
+}
+
+.card-tortura img {
+  border-bottom: 3px solid #8B0000;
+  filter: grayscale(40%) contrast(1.1);
+}
 /*quiz*/
 /* ==========================================================================
    SISTEMA DE RESULTADO DO QUIZ
