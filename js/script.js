@@ -118,7 +118,7 @@ const timer = setInterval(function() {
         }
     }
     //quiz 
-     <!-- SCRIPT DO QUIZ -->
+    
     
         function corrigirQuiz() {
             let acertos = 0;
