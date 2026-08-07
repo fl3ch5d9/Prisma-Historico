@@ -3090,3 +3090,119 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
   .time-box span { font-size: 1.8rem; }
   .notify-form { flex-direction: column; }
 }
+/*menu hamburguer*/
+/* ===== NAVBAR DESKTOP ===== */
+.navbar {
+  background: #1a1a1a;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: #f39c12; /* laranja prisma */
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.menu a:hover {
+  color: #f39c12;
+}
+
+.ebook-btn {
+  background: #f39c12;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #000 !important;
+}
+.ebook-btn:hover {
+  background: #e67e22;
+}
+
+/* Botão hambúrguer - escondido no desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    border-top: 1px solid #333;
+  }
+
+  .menu.active {
+    max-height: 400px; /* altura quando abre */
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .menu a {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .ebook-btn {
+    margin: 10px 0;
+    display: inline-block;
+    width: 80%;
+  }
+}
