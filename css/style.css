@@ -2892,3 +2892,104 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
   25% { transform: rotate(15deg); }
  75% { transform: rotate(-15deg); }
 }
+
+/*cards para celular /*
+
+/* ===== CARDS REVOLTAS - SOBRE/ARTIGO ===== */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px; /* espaço entre as linhas de cards */
+  width: 100%;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #222;
+  border-left: 4px solid var(--laranja, #FF8C00);
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  min-width: 0; /* impede de estourar */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--laranja, #FF8C00);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--laranja, #FF8C00);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* Títulos da seção */
+.subtitulo-secao {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.subtitulo-secao-menor {
+  font-size: 1rem;
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+/* Botão do e-book */
+.btn-cta {
+  display: inline-block;
+  background: var(--laranja, #FF8C00);
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.btn-cta:hover {
+  background: #ffa733;
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVO ===== */
+
+/* Tablet: 2 colunas */
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular: 1 coluna */
+@media (max-width: 600px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .subtitulo-secao {
+    font-size: 1.6rem;
+  }
+}
