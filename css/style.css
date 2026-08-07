@@ -3206,3 +3206,35 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
     width: 80%;
   }
 }
+
+/*hambruguer 2 */
+/* HAMBURGUER - SÓ APARECE NO CELULAR */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff; /* muda pra cor do seu menu se precisar */
+  margin: 5px 0;
+}
+
+/* MOBILE: ESCONDE O MENU E MOSTRA O BOTÃO */
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .menu {
+    display: none; /* menu some */
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .menu.active {
+    display: flex; /* menu aparece quando clica */
+  }
+}
