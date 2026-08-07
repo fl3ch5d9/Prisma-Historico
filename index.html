@@ -35,21 +35,25 @@
     <section class="ebook-coming-soon">
   <div class="container">
     <div class="ebook-badge">LANÇAMENTO</div>
-    <h2>O Prisma Histórico</h2>
-    <p>O e-book completo com mapas mentais, questões e linha do tempo vai ficar pronto em breve.</p>
+    <h2>Prisma Histórico</h2>
+    <p>Imagine decorar todas as revoltas do Brasil em apenas alguns dias com mapas mentais e infográficos.
+         <strong>Questões comentadas + imagens que grudam na memória.
+            <p><strong>Você que está estudando para Vestibulares, ENEM e Concursos Públicos:</strong> 
+a chance de garantir a sua vaga chegou. 
+Com o e-book <span style="color:var(--laranja)">Prisma Histórico</span> sua leitura será muito mais eficiente, 
+com mapas mentais, questões comentadas, diagramas, imagens e os segredos pra gabaritar as questões de Revoltas do Brasil. 
+<span style="color:var(--laranja); font-weight:700;">Em breve.</span></p>
+            
+    </strong> O "Prisma Histórico" vai ficar pronto em breve.</p>
     
     <div class="countdown">
-      <div class="time-box"><span id="dias">00</span><small>Dias</small></div>
-      <div class="time-box"><span id="horas">00</span><small>Horas</small></div>
-      <div class="time-box"><span id="minutos">00</span><small>Min</small></div>
-    </div>
+  <div class="time-box"><span id="dias">00</span><small>Dias</small></div>
+  <div class="time-box"><span id="horas">00</span><small>Horas</small></div>
+  <div class="time-box"><span id="minutos">00</span><small>Min</small></div>
+  <div class="time-box"><span id="segundos">00</span><small>Seg</small></div>
+</div>
 
-    <form class="notify-form">
-      <input type="email" placeholder="Digite seu e-mail para avisar" required>
-      <button type="submit">Me Avise</button>
-    </form>
-    <p class="form-msg"></p>
-  </div>
+   
 </section>
 
  <!--introdução do index-->
@@ -613,34 +617,38 @@
   </div>
 </footer>
 <script>
-// DATA DO LANÇAMENTO - MUDA AQUI
-const dataLancamento = new Date("Dec 15, 2026 00:00:00").getTime();
+// CONTAGEM DE 30 DIAS A PARTIR DE HOJE
+const hoje = new Date();
+const dataLancamento = new Date();
+dataLancamento.setDate(hoje.getDate() + 30);
+dataLancamento.setHours(23, 59, 59, 999);
 
 const timer = setInterval(function() {
   const agora = new Date().getTime();
   const distancia = dataLancamento - agora;
 
+  // Se acabou
+  if (distancia < 0) {
+    clearInterval(timer);
+    document.querySelector(".countdown").innerHTML = "<h3 style='color:var(--laranja)'>Já Disponível!</h3>";
+    return;
+  }
+
   const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
   const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((distancia % (1000 * 60)) / 1000); // ADICIONEI
 
-  document.getElementById("dias").innerHTML = dias.toString().padStart(2, '0');
-  document.getElementById("horas").innerHTML = horas.toString().padStart(2, '0');
-  document.getElementById("minutos").innerHTML = minutos.toString().padStart(2, '0');
+  // Só atualiza se o elemento existir
+  if(document.getElementById("dias")) document.getElementById("dias").innerHTML = dias.toString().padStart(2, '0');
+  if(document.getElementById("horas")) document.getElementById("horas").innerHTML = horas.toString().padStart(2, '0');
+  if(document.getElementById("minutos")) document.getElementById("minutos").innerHTML = minutos.toString().padStart(2, '0');
+  if(document.getElementById("segundos")) document.getElementById("segundos").innerHTML = segundos.toString().padStart(2, '0');
 
-  if (distancia < 0) {
-    clearInterval(timer);
-    document.querySelector(".countdown").innerHTML = "<h3>Já Disponível!</h3>";
-  }
 }, 1000);
 
 // Form de notificação simples
-document.querySelector('.notify-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  document.querySelector('.form-msg').innerText = 'Pronto! Te avisaremos quando lançar 🚀';
-  this.reset();
-});
-</script>
 
+</script>
 </body>
 </html>
