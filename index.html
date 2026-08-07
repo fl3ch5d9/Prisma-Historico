@@ -623,48 +623,8 @@ com mapas mentais, questões comentadas, diagramas, imagens e os segredos pra ga
 
   </div>
 </footer>
-<script>
-// CONTAGEM DE 30 DIAS A PARTIR DE HOJE
-const hoje = new Date();
-const dataLancamento = new Date();
-dataLancamento.setDate(hoje.getDate() + 30);
-dataLancamento.setHours(23, 59, 59, 999);
 
-const timer = setInterval(function() {
-  const agora = new Date().getTime();
-  const distancia = dataLancamento - agora;
+<script src="js/script.js"></script>
 
-  // Se acabou
-  if (distancia < 0) {
-    clearInterval(timer);
-    document.querySelector(".countdown").innerHTML = "<h3 style='color:var(--laranja)'>Já Disponível!</h3>";
-    return;
-  }
-
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((distancia % (1000 * 60)) / 1000); // ADICIONEI
-
-  // Só atualiza se o elemento existir
-  if(document.getElementById("dias")) document.getElementById("dias").innerHTML = dias.toString().padStart(2, '0');
-  if(document.getElementById("horas")) document.getElementById("horas").innerHTML = horas.toString().padStart(2, '0');
-  if(document.getElementById("minutos")) document.getElementById("minutos").innerHTML = minutos.toString().padStart(2, '0');
-  if(document.getElementById("segundos")) document.getElementById("segundos").innerHTML = segundos.toString().padStart(2, '0');
-
-}, 1000);
-
-// Form de notificação simples
-
-</script>
-
-<script>
-  const btn = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-  
-  btn.addEventListener('click', function(){
-    menu.classList.toggle('active');
-  });
-</script>
 </body>
 </html>

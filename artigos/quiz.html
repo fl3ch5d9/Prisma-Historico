@@ -148,22 +148,8 @@
 
   
 
-    <!-- SCRIPT DO QUIZ -->
-    <script>
-        function corrigirQuiz() {
-            let acertos = 0;
-            const total = 10;
-            for(let i=1; i<=total; i++) {
-                let resposta = document.querySelector(`input[name="q${i}"]:checked`);
-                if(resposta && resposta.value == "certo") acertos++;
-            }
-            document.getElementById("nota").innerHTML = `Você acertou <b>${acertos} de ${total}</b> questões.`;
-            document.getElementById("resultado").style.display = "block";
-            
-            // Faz o navegador deslizar a tela suavemente até a caixa de resultado
-            document.getElementById("resultado").scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+  
+  
 
 
 <!--footer-->
