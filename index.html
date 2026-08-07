@@ -658,5 +658,14 @@ const timer = setInterval(function() {
 
 </script>
 <script src="/js/script.js"></script>
+
+<script>
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
