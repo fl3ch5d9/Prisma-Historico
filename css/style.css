@@ -3238,3 +3238,11 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
     display: flex; /* menu aparece quando clica */
   }
 }
+
+/*final hamburguer */
+.hamburger{display:none;background:0;border:0;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:25px;height:3px;background:#fff;margin:5px 0}
+@media (max-width:768px){
+  .hamburger{display:block}
+  .menu{display:none;flex-direction:column;width:100%;background:#111}
+  .menu.active{display:flex}
