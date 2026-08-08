@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // 1. MENU HAMBURGUER - só 1 vez
+  // ===== 1. MENU HAMBURGUER =====
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('menu');
   if (hamburger && menu) {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 2. CONTAGEM DE 30 DIAS - só roda se existir .countdown
+  // ===== 2. CONTAGEM DE 30 DIAS =====
   const countdownEl = document.querySelector(".countdown");
   if (countdownEl) {
     const hoje = new Date();
@@ -40,14 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
   }
 
-  // 3. BOTÃO COPIAR PIX - só roda se existir btnCopiar
+  // ===== 3. BOTÃO COPIAR PIX - HOVER =====
   const btnCopiar = document.getElementById('btnCopiar');
   if (btnCopiar) {
     btnCopiar.addEventListener('mouseover', () => btnCopiar.style.background = '#0056b3');
     btnCopiar.addEventListener('mouseout', () => btnCopiar.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
   }
 
-  // 4. MODAL EBOOK
+  // ===== 4. MODAL EBOOK =====
   window.abrirCheckout = function() {
     const modal = document.getElementById('modalCheckout');
     if(modal) {
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // 5. QUIZ
+  // ===== 5. QUIZ NOVO =====
   window.corrigirQuiz = function() {
     let acertos = 0;
     const total = 10;
@@ -88,80 +88,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-}); // fim DOMContentLoaded
-
-// FUNÇÃO COPIAR PIX FORA DO DOM
-function copiarPix() {
-  const chaveEl = document.getElementById('chavePix');
-  if(!chaveEl) return;
-  const chave = chaveEl.innerText.trim();
-  
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
-  } else {
-    fallbackCopiar(chave);
-  }
-}
-
-function fallbackCopiar(texto) {
-  const textArea = document.createElement("textarea");
-  textArea.value = texto;
-  textArea.style.position = "fixed";
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-  try {
-    document.execCommand('copy');
-    exibirSucesso();
-  } catch (err) {
-    alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
-  }
-  document.body.removeChild(textArea);
-}
-
-function exibirSucesso() {
-  const msg = document.getElementById('msgCopiado');
-  if(msg) {
-    msg.style.display = 'block';
-    setTimeout(() => { msg.style.display = 'none'; }, 2500);
-  }
-}
-
-/* quiz velho */ 
-
-    const btn = document.getElementById('btnCopiar');
-    btn.addEventListener('mouseover', () => btn.style.background = '#0056b3');
-    btn.addEventListener('mouseout', () => btn.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
-
-    function copiarPix() {
-        const chave = document.getElementById('chavePix').innerText.trim();
-        
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
-        } else {
-            fallbackCopiar(chave);
-        }
+  // ===== COPIAR PIX - CLIQUE =====
+  window.copiarPix = function() {
+    const chaveEl = document.getElementById('chavePix');
+    if(!chaveEl) return;
+    const chave = chaveEl.innerText.trim();
+    
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
+    } else {
+      fallbackCopiar(chave);
     }
+  }
 
-    function fallbackCopiar(texto) {
-        const textArea = document.createElement("textarea");
-        textArea.value = texto;
-        textArea.style.position = "fixed";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            exibirSucesso();
-        } catch (err) {
-            alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
-        }
-        document.body.removeChild(textArea);
+  function fallbackCopiar(texto) {
+    const textArea = document.createElement("textarea");
+    textArea.value = texto;
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      exibirSucesso();
+    } catch (err) {
+      alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
     }
+    document.body.removeChild(textArea);
+  }
 
-    function exibirSucesso() {
-        const msg = document.getElementById('msgCopiado');
-        msg.style.display = 'block';
-        setTimeout(() => { msg.style.display = 'none'; }, 2500);
+  function exibirSucesso() {
+    const msg = document.getElementById('msgCopiado');
+    if(msg) {
+      msg.style.display = 'block';
+      setTimeout(() => { msg.style.display = 'none'; }, 2500);
     }
+  }
 
+}); // <- só 1 fechamento no final
