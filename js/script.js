@@ -126,3 +126,42 @@ function exibirSucesso() {
     setTimeout(() => { msg.style.display = 'none'; }, 2500);
   }
 }
+
+/* quiz velho */ 
+
+    const btn = document.getElementById('btnCopiar');
+    btn.addEventListener('mouseover', () => btn.style.background = '#0056b3');
+    btn.addEventListener('mouseout', () => btn.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
+
+    function copiarPix() {
+        const chave = document.getElementById('chavePix').innerText.trim();
+        
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
+        } else {
+            fallbackCopiar(chave);
+        }
+    }
+
+    function fallbackCopiar(texto) {
+        const textArea = document.createElement("textarea");
+        textArea.value = texto;
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            exibirSucesso();
+        } catch (err) {
+            alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function exibirSucesso() {
+        const msg = document.getElementById('msgCopiado');
+        msg.style.display = 'block';
+        setTimeout(() => { msg.style.display = 'none'; }, 2500);
+    }
+
