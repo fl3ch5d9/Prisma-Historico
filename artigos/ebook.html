@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-book Prisma Histórico - 400+ Páginas</title>
+<title>E-book Prisma Histórico </title>
 <link rel="stylesheet" href="../css/style.css">
 
     
@@ -11,22 +11,27 @@
 <body>
 
 
-
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">PRISMA<span>HISTÓRICO</span></div>
-    <ul class="menu">
+
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="menu" id="menu">
       <li><a href="../index.html">Início</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="artigos.html">Artigos</a></li>
       <li><a href="curiosidades.html">Curiosidades</a></li>
       <li><a href="quiz.html">Quiz</a></li>
       <li><a href="ebook.html" class="ebook-btn">Ebook</a></li>
+      
     </ul>
   </div>
 </nav>
-
-
 
 <!--section ebook vendas-->
 <!-- BANNER PRINCIPAL (HERO EBOOK) -->
@@ -196,7 +201,7 @@
                 <div class="preco-box">
                     <span class="preco-de">De R$ 149,90,00</span>
                     <span class="preco-por">R$ 67,90</span>
-                    <p class="preco-info">Boleto</p>
+                    <p class="preco-info">E-book Completo </p>
                 </div>
                 
                 <div class="formas-pagamento">
@@ -205,6 +210,7 @@
                         <span>⚡</span>
                        
                         <span>📄 Boleto</span>
+                        <span>💸 Pix</span>
                     </div>
                 </div>
                 
@@ -214,35 +220,13 @@
                 </a>
                 
                 <div class="modal-seguranca">
-                    <p>🔒 Ambiente seguro homologado pelo <b>Asaas</b>.</p>
+                    <p>🔒 Ambiente seguro homologado pelo <b>Hotmart</b>.</p>
                     <p>🛡️ Garantia incondicional de 7 dias ou seu dinheiro de volta.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    function abrirCheckout() {
-        // Altera o display do modal de 'none' para 'flex' para exibir na tela
-        document.getElementById('modalCheckout').style.display = 'flex';
-        // Impede a página de rolar ao fundo enquanto a loja está aberta
-        document.body.style.overflow = 'hidden';
-    }
-
-    function fecharCheckout() {
-        document.getElementById('modalCheckout').style.display = 'none';
-        // Devolve o controle de rolagem normal da página
-        document.body.style.overflow = 'auto';
-    }
-
-    // Camada extra: se o utilizador clicar no fundo escuro fora da janela, ela também fecha
-    window.onclick = function(event) {
-        const modal = document.getElementById('modalCheckout');
-        if (event.target == modal) {
-            fecharCheckout();
-        }
-    }
-</script>
 
 <!--footer-->
 <footer class="footer">
@@ -261,7 +245,7 @@
         <h4>Navegação</h4>
         <ul>
           
-          <li><a href="/artigos/ebook.html" class="link-destaque">Comprar E-book</a></li>
+          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
         </ul>
       </div>
 
@@ -269,8 +253,8 @@
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="/artigos/privacidade.html">Política de Privacidade</a></li>
-          <li><a href="/artigos/termos.html">Termos de Uso</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
           
         </ul>
       </div>
@@ -299,7 +283,7 @@
 </footer>
 
 
-
+<script src="../js/script.js"></script>
 
 </body>
 </html>
