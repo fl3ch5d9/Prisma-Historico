@@ -3090,3 +3090,381 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
   .time-box span { font-size: 1.8rem; }
   .notify-form { flex-direction: column; }
 }
+
+/*ajuste de casse */
+
+.countdown-wrapper {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.countdown-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 60px;
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/*erros no cronometro*/
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS DO BANNER (HERO)
+   ========================================================================== */
+.hero-section {
+    background-color: #ffffff; /* Ajuste para a cor de fundo do seu site */
+    padding: 60px 20px;
+    font-family: sans-serif;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Garante que quebra em ecrãs pequenos (telemóveis) */
+    align-items: center;
+    gap: 40px;
+}
+
+/* LADO ESQUERDO: CONTEÚDO */
+.hero-content {
+    flex: 1;
+    min-width: 300px; /* Impede que o texto fique demasiado espremido */
+}
+
+.hero-tag {
+    background-color: #e6f0fa; /* Cor de fundo suave para a etiqueta */
+    color: #0066cc; /* Cor do texto da etiqueta */
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #222222;
+    margin: 20px 0 15px 0;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BOTÕES DE AÇÃO */
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Verde de destaque */
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    color: #333333;
+    border: 1px solid #cccccc;
+}
+
+.btn-secondary:hover {
+    background-color: #e2e6ea;
+}
+
+/* ==========================================================================
+   LADO DIREITO: MOCKUP DO E-BOOK (3D)
+   ========================================================================== */
+.hero-visual {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup-placeholder {
+    perspective: 1000px; /* Ativa o efeito 3D */
+    padding: 20px;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 280px; /* Limita o tamanho máximo da capa */
+    height: auto;
+    border-radius: 2px 8px 8px 2px;
+    box-shadow: 
+        5px 5px 20px rgba(0, 0, 0, 0.3),
+        -2px 0 0 rgba(0, 0, 0, 0.1); /* Sombra lateral simula páginas do livro */
+    transform: rotateY(-15deg) rotateX(5deg); /* Inclinação tridimensional */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.book-cover:hover {
+    transform: rotateY(-5deg) rotateX(2deg) scale(1.03);
+    box-shadow: 
+        10px 15px 30px rgba(0, 0, 0, 0.4),
+        -2px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   CRONÓMETRO (COUNTDOWN)
+   ========================================================================== */
+.countdown-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Fundo diferente para destacar o cronómetro */
+    margin-top: 40px;
+}
+
+.countdown-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 70px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222222;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: #777777;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/*erro 2 */
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS DO BANNER (HERO)
+   ========================================================================== */
+.hero-section {
+    background-color: #1a1a1a; /* Fundo Carvão */
+    padding: 60px 20px;
+    font-family: sans-serif;
+    color: #ffffff; /* Texto geral em Branco */
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+/* LADO ESQUERDO: CONTEÚDO */
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-tag {
+    background-color: rgba(255, 102, 0, 0.15); /* Laranja suave de fundo */
+    color: #ff6600; /* Texto Laranja */
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #ff6600; /* Título Laranja */
+    margin: 20px 0 15px 0;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #ffffff; /* Subtítulo Branco */
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BOTÕES DE AÇÃO */
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #ff6600; /* Botão Principal Laranja */
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #e05500; /* Laranja mais escuro no hover */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   LADO DIREITO: MOCKUP DO E-BOOK (3D)
+   ========================================================================== */
+.hero-visual {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.mockup-placeholder {
+    perspective: 1000px;
+    padding: 20px;
+}
+
+.book-cover {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 2px 8px 8px 2px;
+    box-shadow: 
+        5px 5px 25px rgba(0, 0, 0, 0.6), /* Sombra mais escura para o fundo carvão */
+        -2px 0 0 rgba(255, 255, 255, 0.1); 
+    transform: rotateY(-15deg) rotateX(5deg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.book-cover:hover {
+    transform: rotateY(-5deg) rotateX(2deg) scale(1.03);
+    box-shadow: 
+        10px 15px 35px rgba(0, 0, 0, 0.8),
+        -2px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   CRONÓMETRO (COUNTDOWN)
+   ========================================================================== */
+.countdown-wrapper {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111111; /* Carvão ainda mais escuro para contrastar */
+    border-top: 1px solid #222222;
+}
+
+.countdown-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff; /* Texto Branco */
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1a1a1a; /* Caixas em tom carvão */
+    padding: 15px 20px;
+    border-radius: 8px;
+    min-width: 70px;
+    border: 1px solid #333333; /* Borda subtil */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.countdown-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6600; /* Números em Laranja para destaque máximo */
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: #aaaaaa; /* Legenda em cinza claro para legibilidade */
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
