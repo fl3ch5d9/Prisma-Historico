@@ -3248,3 +3248,68 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
   .menu{display:none;flex-direction:column;width:100%;background:#111}
   .menu.active{display:flex}
 }
+
+/*contagem regressiva */
+
+/* Seção Geral do E-book */
+.ebook-coming-soon {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* Container que centraliza e limita a largura do texto */
+.ebook-coming-soon .container {
+  max-width: 700px; /* Largura ideal para leitura de parágrafos */
+  margin: 0 auto;   /* Centraliza o bloco na tela */
+}
+
+/* Badge / Etiqueta de LANÇAMENTO */
+.ebook-coming-soon .ebook-badge {
+  display: inline-block;
+  background-color: var(--laranja);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* Título Principal */
+.ebook-coming-soon h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Estilo Base para TODOS os parágrafos da seção */
+.ebook-coming-soon p {
+  text-align: left;       /* Alinhamento perfeito à esquerda */
+  line-height: 1.6;       /* Espaçamento confortável entre as linhas */
+  font-size: 1.1rem;      /* Tamanho de fonte ideal para telas */
+  margin-top: 0;
+  margin-bottom: 20px;    /* Espaço idêntico e limpo entre os parágrafos */
+}
+
+/* Primeiro parágrafo (Introdução) */
+.ebook-coming-soon .ebook-intro {
+  /* Caso queira aplicar um estilo único para a introdução */
+}
+
+/* Segundo parágrafo (Benefícios) */
+.ebook-coming-soon .ebook-benefits {
+  /* Caso queira aplicar um estilo único para os benefícios */
+}
+
+/* Terceiro parágrafo (Chamada para Ação / Em breve) */
+.ebook-coming-soon .ebook-call-to-action {
+  background-color: rgba(255, 255, 255, 0.03); /* Leve fundo de destaque */
+  padding: 24px;
+  border-left: 4px solid var(--laranja);       /* Barra lateral laranja */
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0;                            /* Zera a margem do último item */
+}
