@@ -3731,41 +3731,4 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
 
 
 /*mockup*/
-/* Atualização das classes no seu CSS existente */
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* A classe original agora limpa o fundo cinza e as bordas para focar apenas na imagem */
-.mockup-placeholder {
-    width: 100%;
-    max-width: 400px;
-    height: 500px;
-    background: transparent;    /* Remove o fundo cinza antigo */
-    border: none;               /* Remove a borda tracejada antiga */
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;           /* Garante que a imagem não saia dos cantos arredondados */
-    padding: 0;                 /* Remove o espaçamento interno antigo */
-}
-
-/* Esta regra faz a imagem dentro do placeholder preencher o quadrado perfeitamente */
-.mockup-placeholder img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Estica a imagem preenchendo tudo sem distorcer */
-    border-radius: 12px;
-}
-
-/* Ajuste de altura para ecrãs de telemóvel */
-@media (max-width: 992px) {
-    .mockup-placeholder {
-        height: 380px;
-    }
-}
 
