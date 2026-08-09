@@ -65,27 +65,57 @@
 </section>
 
 <!-- Bloco HTML do Cronómetro -->
-<div class="countdown-wrapper">
-    <p class="countdown-title">O e-book cirúrgico chega em:</p>
-    <div class="countdown-container">
-        <div class="countdown-box">
-            <span id="days" class="countdown-number">00</span>
-            <span class="countdown-label">Dias</span>
-        </div>
-        <div class="countdown-box">
-            <span id="hours" class="countdown-number">00</span>
-            <span class="countdown-label">Horas</span>
-        </div>
-        <div class="countdown-box">
-            <span id="minutes" class="countdown-number">00</span>
-            <span class="countdown-label">Min</span>
-        </div>
-        <div class="countdown-box">
-            <span id="seconds" class="countdown-number">00</span>
-            <span class="countdown-label">Seg</span>
-        </div>
+<!-- Secção do Cronómetro Avançado -->
+<div class="cronometro-container">
+    <p class="cronometro-titulo">O DESCONTO EXCLUSIVO DE LANÇAMENTO EXPIRA EM:</p>
+    <div id="countdown-timer">
+        <div class="timer-box"><span id="days">30</span><label>Dias</label></div>
+        <div class="timer-box"><span id="hours">20</span><label>Horas</label></div>
+        <div class="timer-box"><span id="minutes">30</span><label>Min</label></div>
+        <div class="timer-box"><span id="seconds">00</span><label>Seg</label></div>
     </div>
 </div>
+
+<script>
+    function startCountdown() {
+        // Duração: Mude o primeiro número para a quantidade de DIAS que quiser (Ex: 3 dias)
+        const diasDesejados = 30; 
+        const duration = diasDesejados * 24 * 60 * 60; // Transforma dias em segundos
+
+        // Chave única para o teste de dias
+        let startTime = localStorage.getItem('prisma_timer_dias');
+
+        if (!startTime) {
+            startTime = Date.now();
+            localStorage.setItem('prisma_timer_dias', startTime);
+        }
+
+        const timerInterval = setInterval(function() {
+            const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+            let timeRemaining = duration - elapsedTime;
+
+            // Se o tempo acabar, reinicia o ciclo de dias
+            if (timeRemaining <= 0) {
+                localStorage.setItem('prisma_timer_dias', Date.now());
+                timeRemaining = duration;
+            }
+
+            // Cálculos matemáticos para extrair cada bloco de tempo
+            const djs = Math.floor(timeRemaining / (3600 * 24));
+            const hrs = Math.floor((timeRemaining % (3600 * 24)) / 3600);
+            const mins = Math.floor((timeRemaining % 3600) / 60);
+            const secs = Math.floor(timeRemaining % 60);
+
+            // Atualiza os elementos no HTML com os novos valores
+            document.getElementById('days').innerText = djs.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hrs.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = mins.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = secs.toString().padStart(2, '0');
+        }, 1000);
+    }
+    
+    document.addEventListener("DOMContentLoaded", startCountdown);
+</script>
 
 
    

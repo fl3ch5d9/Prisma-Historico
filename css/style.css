@@ -3468,3 +3468,63 @@ Laranja Destaque: #ff9500Texto: #ffffff e #dddddd
     margin-top: 5px;
 }
 
+/*cronometro novo*/
+/* Contentor Principal do Cronómetro */
+.cronometro-container {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: #1a1a1a; /* Carvão Escuro */
+    border-radius: 12px;
+    margin: 30px auto;
+    max-width: 500px;
+    border: 2px solid #ff6b00; /* Laranja Vibrante na borda para destaque */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Título de Alerta / Escassez */
+.cronometro-titulo {
+    font-size: 13px;
+    font-weight: 800;
+    color: #ff6b00; /* Laranja Vibrante chamativo */
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+/* Alinhamento dos blocos de tempo */
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Caixas Individuais de Tempo (Dias, Horas, Min, Seg) */
+.timer-box {
+    background-color: #262626; /* Carvão Médio para contraste com o fundo */
+    padding: 12px 10px;
+    border-radius: 8px;
+    min-width: 75px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease;
+}
+
+/* Números do Contador */
+.timer-box span {
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffffff; /* Branco Puro para leitura cirúrgica */
+    font-family: 'Montserrat', 'Inter', monospace;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+/* Legendas abaixo dos números (Dias, Horas...) */
+.timer-box label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #a3a3a3; /* Cinza claro para não poluir o visual */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
