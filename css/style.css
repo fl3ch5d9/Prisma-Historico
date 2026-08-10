@@ -1926,8 +1926,18 @@ footer p {
   z-index: 2000; /* Fica acima da navbar */
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
+
+/* Aplica os ajustes apenas em telas de celular (até 768px de largura) */
+@media (max-width: 768px) {
+    .modal-content {
+        max-height: 85vh; /* Limita a altura do modal a 85% da tela do celular */
+        overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo passar do limite */
+        padding: 15px;    /* Reduz o espaçamento interno para ganhar espaço */
+    }
+}
+
 
 .modal-content {
   background: var(--preto);
