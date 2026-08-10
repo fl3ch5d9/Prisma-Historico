@@ -3878,6 +3878,7 @@ footer {
     padding: 24px !important;
     box-sizing: border-box !important;
     backdrop-filter: blur(8px) !important;
+overflow-y: auto !important; 
 }
 
 .modal-content {
@@ -3888,8 +3889,11 @@ footer {
     position: relative !important;
     border: 1px solid #2d2d2d !important;
     box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8) !important;
-    overflow: hidden !important;
     box-sizing: border-box !important;
+    overflow: auto !important; 
+    
+    /* ADICIONADO: Define uma altura máxima baseada na tela do celular */
+    max-height: calc(100vh - 48px) !important; 
 }
 
 .btn-fechar-modal {
