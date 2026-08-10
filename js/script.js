@@ -201,3 +201,18 @@ function toggleMenu() {
         links.classList.toggle('menu-aberto');
     }
 }
+
+
+/* --- CORREÇÃO DA PÁGINA EM BRANCO AO VOLTAR (NATIVO E SEGURO) --- */
+window.addEventListener("pageshow", function (event) {
+    // 1. Força a página a atualizar se vier do histórico/cache do navegador
+    if (event.persisted || (typeof window.performance !== "undefined" && window.performance.navigation.type === 2)) {
+        window.location.reload();
+    }
+    
+    // 2. Garante por segurança que o modal comece escondido ao voltar
+    const modal = document.querySelector('.modal-overlay');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+});
