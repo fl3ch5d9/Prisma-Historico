@@ -177,6 +177,9 @@
 </section>
 
 <!-- JANELA MODAL DE CHECKOUT (LOJA) -->
+<!-- Botão para Testar e Abrir o Modal (Coloque onde quiser no seu site) -->
+<button onclick="abrirCheckout()" class="btn-checkout-final">Quero Investigar e Passar</button>
+
 <div id="modalCheckout" class="modal-overlay">
     <div class="modal-content">
         <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()">&times;</button>
@@ -190,7 +193,7 @@
                 
                 <ul class="modal-lista-beneficios">
                     <li>✅ Páginas ilustradas de conteúdo cirúrgico</li>
-                    <li>✅ Questões comentadas (Fuvest, ENEM e Concursos Públicos )</li>
+                    <li>✅ Questões comentadas (Fuvest, ENEM e Concursos Públicos)</li>
                     <li>✅ Mapas mentais e diagramas inclusos</li>
                     <li>✅ Atualizações em tempo real</li>
                 </ul>
@@ -199,28 +202,26 @@
             <!-- Lado Direito: Pagamento e Segurança -->
             <div class="modal-pagamento">
                 <div class="preco-box">
-                    <span class="preco-de">De R$ 149,90,00</span>
+                    <span class="preco-de">De R$ 149,90</span> <!-- Corrigido aqui -->
                     <span class="preco-por">R$ 67,90</span>
-                    <p class="preco-info">E-book Completo </p>
+                    <p class="preco-info">E-book Completo</p>
                 </div>
                 
                 <div class="formas-pagamento">
                     <p>💳 Formas de pagamento:</p>
                     <div class="icones-pagamento">
-                        <span>⚡</span>
-                       
+                        <span>⚡ Pix</span>
                         <span>📄 Boleto</span>
-                        <span>💸 Pix</span>
                     </div>
                 </div>
                 
-                <!-- INSIRA O SEU LINK DO ASAAS NO LINK ABAIXO -->
-                <a href="COLE_AQUI_O_SEU_LINK_DE_PAGAMENTO_DO_ASAAS" target="_blank" class="btn-checkout-final">
+                <!-- COLOQUE O SEU LINK DE PAGAMENTO ABAIXO -->
+                <a href="#" target="_blank" class="btn-checkout-final">
                     🔒 IR PARA O PAGAMENTO SEGURO
                 </a>
                 
                 <div class="modal-seguranca">
-                    <p>🔒 Ambiente seguro homologado pelo <b>Hotmart</b>.</p>
+                    <p>🔒 Ambiente seguro homologado.</p>
                     <p>🛡️ Garantia incondicional de 7 dias ou seu dinheiro de volta.</p>
                 </div>
             </div>
@@ -228,7 +229,6 @@
     </div>
 </div>
 
-<!--footer-->
 <footer class="footer">
   <div class="container">
 
@@ -244,12 +244,23 @@
       <div class="footer-col">
         <h4>Navegação</h4>
         <ul>
-          
           <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
         </ul>
       </div>
+ <!--Coluna 3 doacao-->
+<div class="footer-donate">
+    <p>Se curtiu o conteúdo, fortalece o projeto</p>
 
-      <!-- COLUNA 3: LEGAL -->
+    <a href="doacao.html" target="_blank" class="btn-doar">
+    Ajude o Projeto <span class="maozinha">🙏</span>
+</a>
+        
+
+</div>
+
+
+
+      <!-- COLUNA 4: LEGAL -->
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
@@ -275,7 +286,7 @@
 
     <!-- COPYRIGHT -->
     <div class="footer-bottom">
-      <p>© 2026 Prisma Histórico | Todos os direitos reservados.</p>
+      <p>© 2026 Prisma Histórico. Todos os direitos reservados.</p>
       
     </div>
 

@@ -159,3 +159,25 @@ const atualizarCronometro = setInterval(function() {
             "<p class='countdown-title' style='color: var(--brand-orange);'>🔥 O E-book já está disponível! Garanta o seu abaixo.</p>";
     }
 }, 1000);
+
+
+//boao de compra hotmart
+
+<script>
+    function abrirCheckout() {
+        document.getElementById('modalCheckout').classList.add('ativo');
+    }
+
+    function fecharCheckout() {
+        document.getElementById('modalCheckout').classList.remove('ativo');
+    }
+
+    // Fecha se o utilizador clicar fora da caixa do modal
+    window.onclick = function(event) {
+        const modal = document.getElementById('modalCheckout');
+        if (event.target == modal) {
+            fecharCheckout();
+        }
+    }
+</script>
+
