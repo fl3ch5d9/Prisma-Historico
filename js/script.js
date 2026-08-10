@@ -188,3 +188,16 @@ window.addEventListener('click', function(event) {
     }
 });
 
+// Lógica de Controlo do Menu de Navegação
+
+
+// Lógica de Controlo Oficial acionada pelo seu onclick="toggleMenu()"
+function toggleMenu() {
+    var hamburguer = document.querySelector('.prisma-menu-hamburguer');
+    var links = document.querySelector('.prisma-menu-links');
+    
+    if (hamburguer && links) {
+        hamburguer.classList.toggle('ativo');
+        links.classList.toggle('menu-aberto');
+    }
+}

@@ -50,68 +50,138 @@ body {
 /* ==========================================================================
    5. NAVBAR / MENU DE NAVEGAÇÃO
    ========================================================================== */
-.navbar {
-  background: var(--preto);
-  padding: 15px 0;
-  position: sticky;        /* Faz o menu ficar fixo no topo ao rolar a página */
-  top: 0;
-  z-index: 1000;           /* Garante que o menu fique sempre por cima de qualquer elemento */
-  border-bottom: 2px solid var(--laranja); /* Linha laranja estilosa abaixo do menu */
-  width: 100%;             /* Garante que a barra ocupe toda a largura do ecrã */
-  display: flex;           /* Habilita o alinhamento flexível */
-  justify-content: flex-end; /* Empurra e alinha absolutamente todos os elementos para a direita */
+/* 1. Fundo do Header em Carvão Escuro */
+.prisma-nav {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: #1a1a1a !important; /* Seu Carvão Oficial */
+    padding: 20px 40px !important;
+    position: relative !important;
+    z-index: 999999 !important;
+    border-bottom: 1px solid #333333 !important;
+    box-sizing: border-box !important;
+    font-family: 'Segoe UI', Roboto, sans-serif !important;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: flex-end; /* Alinha a logo e o menu totalmente para a direita */
-  align-items: center;       /* Alinha os itens perfeitamente no centro vertical */
-  width: 100%;               /* Força o container a usar todo o espaço horizontal */
-  max-width: 1100px;         /* Limita a largura para alinhar com o bloco .container */
-  margin: 0 auto;            /* Centraliza o menu no ecrã */
-  padding: 0 20px;           /* Mantém o recuo nas laterais para não colar no canto */
+/* 2. Seu Logotipo Prisma Histórico em Branco */
+.prisma-logo {
+    color: #ffffff !important; /* Texto Branco Puro */
+    font-size: 20px !important;
+    font-weight: 800 !important;
 }
 
-.logo {
-  color: var(--branco);
-  font-size: 1.6rem;
-  font-weight: 800;
-  text-decoration: none;
+/* 3. Lista de Links no Computador (Alinhados Lado a Lado) */
+.prisma-menu-links {
+    display: flex !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 32px !important;
 }
 
-.logo span {
-  color: var(--laranja); /* Pinta apenas a palavra "HISTÓRICO" de laranja */
+.prisma-menu-links li {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-.menu {
-  list-style: none;   /* Remove aquelas bolinhas padrão de listas (ul) */
-  display: flex;
-  gap: 10px;          /* Dá um espaçamento de 10px entre cada link do menu */
-  margin-left: auto;  /* Alinha o menu totalmente à direita */
+/* 4. Os Seus Links Oficiais em Branco Puro */
+.prisma-menu-links a {
+    color: #ffffff !important; /* Texto Branco Puro */
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    transition: color 0.2s ease !important;
 }
 
-
-.menu li a {
-  color: var(--branco);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 10px 15px;
-  border-radius: 6px;
-  transition: 0.3s; /* Faz a mudança de cor do hover ser suave */
+/* Efeito ao passar o rato: Acende no seu Laranja */
+.prisma-menu-links a:hover {
+    color: #ff6600 !important; /* Seu Laranja Oficial */
 }
 
-/* Quando passa o mouse nos links comuns do menu */
-.menu li a:hover {
-  background: var(--laranja);
-  color: var(--preto);
+/* 5. Ícone Hambúrguer (Ocultado automaticamente no Computador) */
+.prisma-menu-hamburguer {
+    display: none !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 28px !important;
+    height: 20px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 0 !important;
 }
 
-/* O botão de destaque do Ebook dentro do menu */
-.ebook-btn {
-  background: var(--laranja);
-  color: var(--preto) !important; /* !important garante que o texto continue preto ignorando outras regras */
-  font-weight: 700 !important;
+/* Suas três barras em Branco Puro sobre o fundo Carvão */
+.prisma-barra {
+    height: 3px !important;
+    width: 100% !important;
+    background-color: #ffffff !important; /* Barras Brancas */
+    border-radius: 10px !important;
+    transition: all 0.3s ease !important;
 }
+
+/* ======================================================= */
+/*    RESPONSIVIDADE: COMPORTAMENTO EM SMARTPHONES         */
+/* ======================================================= */
+@media (max-width: 768px) {
+    /* Força o seu Hambúrguer a aparecer no telemóvel */
+    .prisma-menu-hamburguer {
+        display: flex !important;
+    }
+
+    /* Transforma a lista de links num menu suspenso vertical */
+    .prisma-menu-links {
+        display: none !important; /* Começa escondido */
+        flex-direction: column !important;
+        width: 100% !important;
+        background-color: #262626 !important; /* Seu Carvão Secundário */
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        padding: 15px 0 !important;
+        gap: 0 !important;
+        border-bottom: 1px solid #333333 !important;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Classe que o JavaScript ativa para fazer o menu descer */
+    .prisma-menu-links.menu-aberto {
+        display: flex !important;
+    }
+
+    .prisma-menu-links li {
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    .prisma-menu-links a {
+        display: block !important;
+        padding: 14px 0 !important;
+        width: 100% !important;
+        color: #ffffff !important; /* Mantém o Texto Branco Puro no telemóvel */
+    }
+    
+    .prisma-menu-links a:hover {
+        background-color: rgba(255, 102, 0, 0.1) !important; /* Destaque sutil em laranja no clique */
+    }
+
+    /* ANIMAÇÃO DAS BARRAS: Transforma as 3 linhas num X Laranja mecânico */
+    .prisma-menu-hamburguer.ativo .prisma-barra:nth-child(1) {
+        transform: translateY(8px) rotate(45deg) !important;
+        background-color: #ff6600 !important;
+    }
+
+    .prisma-menu-hamburguer.ativo .prisma-barra:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    .prisma-menu-hamburguer.ativo .prisma-barra:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg) !important;
+        background-color: #ff6600 !important;
+    }
+}
+
 
 /* ==========================================================================
    6. SEÇÕES E COMPONENTES GENÉRICOS
@@ -1839,7 +1909,7 @@ footer p {
 }
 
 
-/*botão de compra ASSAS*/
+/*botão de compra hotmart*/
 
 /* ==========================================================================
    MODAL DE CHECKOUT STYLE (LOJA VIRTUAL PREMIUM)
@@ -3973,3 +4043,9 @@ footer {
     margin: 0 0 8px 0 !important;
     line-height: 1.4 !important;
 }
+/* hamburgurer*/
+
+
+/* ======================================================= */
+/*    ESTILIZAÇÃO GLOBAL DO MENU (CORES FIXADAS DIRETO)    */
+/* ==============================/* 1. Fundo do Header em Carvão Escuro */
