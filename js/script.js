@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 document.addEventListener('DOMContentLoaded', function() {
 
   // ===== 1. MENU HAMBURGUER =====
@@ -130,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }); // <- só 1 fechamento no final
 
 //cronometro 
->>>>>>> 220eb95aaa4629a2d7bdbde6f6a1b522f8eae5ae
+
 
 // Altere esta data para o dia exato do lançamento do seu e-book!
 // Formato padrão: "Mês Dia, Ano Horas:Minutos:Segundos"
@@ -164,29 +163,28 @@ const atualizarCronometro = setInterval(function() {
 //boao de compra hotmart
 
 
-// FUNÇÕES QUE CONTROLAM DIRETAMENTE O STYLE.DISPLAY
 
-// 1. Função para o botão do seu blog ABRIR o modal
+// 1. Função para ABRIR o modal quando clica no botão laranja
 function abrirCheckout() {
-    const modal = document.getElementById('modalCheckout');
+    var modal = document.getElementById('modalCheckout');
     if (modal) {
         modal.style.setProperty('display', 'flex', 'important');
     }
 }
 
-// 2. Função para o botão X FECHAR o modal
+// 2. Função para FECHAR o modal quando clica no X
 function fecharCheckout() {
-    const modal = document.getElementById('modalCheckout');
+    var modal = document.getElementById('modalCheckout');
     if (modal) {
         modal.style.setProperty('display', 'none', 'important');
     }
 }
 
-// 3. Fecha se clicar no fundo escuro (fora da caixa)
-window.onclick = function(event) {
-    const modal = document.getElementById('modalCheckout');
+// 3. Função para FECHAR o modal se o cliente clicar na área escura (fora da caixa)
+window.addEventListener('click', function(event) {
+    var modal = document.getElementById('modalCheckout');
     if (event.target === modal) {
         fecharCheckout();
     }
-}
+});
 
