@@ -3737,3 +3737,235 @@ footer {
         margin: 15px auto 0 auto;
     }
 }
+/*modal*/
+
+/* Suas classes originais com a paleta carvão, laranja, branco e verde */
+:root {
+    --cor-carvao-dark: #1a1a1a;
+    --cor-carvao-light: #262626;
+    --cor-laranja: #ff6600;
+    --cor-laranja-hover: #e65c00;
+    --cor-verde: #2ecc71;
+    --texto-branco: #ffffff;
+    --texto-cinza: #a6a6a6;
+    --bg-overlay: rgba(0, 0, 0, 0.8);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+    /* O JavaScript vai controlar o display dinamicamente */
+    justify-content: center;
+    align-items: center;
+    z-index: 999999 !important;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.modal-content {
+    background: var(--cor-carvao-dark);
+    width: 100%;
+    max-width: 800px;
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid #333333;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.btn-fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 35px;
+    color: var(--texto-cinza);
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 100;
+    line-height: 1;
+}
+
+.btn-fechar-modal:hover {
+    color: var(--cor-laranja);
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-produto {
+    background-color: var(--cor-carvao-light);
+    padding: 40px;
+    border-right: 1px solid #333333;
+}
+
+.modal-tag {
+    background: rgba(255, 102, 0, 0.1);
+    color: var(--cor-laranja);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 102, 0, 0.2);
+}
+
+.modal-produto h2 {
+    color: var(--texto-branco);
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.modal-sub {
+    color: var(--texto-cinza);
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+.modal-lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-lista-beneficios li {
+    color: var(--texto-branco);
+    font-size: 14px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.check-icon {
+    color: var(--cor-verde);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.modal-pagamento {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preco-box {
+    margin-bottom: 25px;
+}
+
+.preco-de {
+    color: var(--texto-cinza);
+    text-decoration: line-through;
+    font-size: 14px;
+    display: block;
+}
+
+.preco-por {
+    color: var(--texto-branco);
+    font-size: 36px;
+    font-weight: 800;
+    display: block;
+    line-height: 1.1;
+    margin: 4px 0;
+}
+
+.preco-info {
+    color: var(--cor-verde);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.formas-pagamento {
+    margin-bottom: 25px;
+}
+
+.titulo-pagamento {
+    font-size: 13px;
+    color: var(--texto-cinza);
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.icones-pagamento {
+    display: flex;
+    gap: 10px;
+}
+
+.tag-pagamento {
+    background: var(--cor-carvao-light);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--texto-branco);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border: 1px solid #333333;
+}
+
+.flash-icon {
+    color: #ecc94b;
+    margin-right: 4px;
+}
+
+.btn-checkout-final {
+    display: block;
+    background-color: var(--cor-laranja);
+    color: var(--texto-branco);
+    text-align: center;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+    transition: background-color 0.2s, transform 0.1s;
+    margin-bottom: 20px;
+}
+
+.btn-checkout-final:hover {
+    background-color: var(--cor-laranja-hover);
+}
+
+.btn-checkout-final:active {
+    transform: scale(0.98);
+}
+
+.modal-seguranca {
+    border-top: 1px solid #333333;
+    padding-top: 15px;
+}
+
+.modal-seguranca p {
+    font-size: 11px;
+    color: var(--texto-cinza);
+    margin: 0 0 6px 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 680px) {
+    .modal-grid { grid-template-columns: 1fr; }
+    .modal-produto { padding: 30px 24px; border-right: none; border-bottom: 1px solid #333333; }
+    .modal-pagamento { padding: 30px 24px; }
+    .modal-content { max-height: 95vh; overflow-y: auto; }
+}

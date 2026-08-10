@@ -163,21 +163,30 @@ const atualizarCronometro = setInterval(function() {
 
 //boao de compra hotmart
 
-<script>
-    function abrirCheckout() {
-        document.getElementById('modalCheckout').classList.add('ativo');
-    }
 
-    function fecharCheckout() {
-        document.getElementById('modalCheckout').classList.remove('ativo');
-    }
+// FUNÇÕES QUE CONTROLAM DIRETAMENTE O STYLE.DISPLAY
 
-    // Fecha se o utilizador clicar fora da caixa do modal
-    window.onclick = function(event) {
-        const modal = document.getElementById('modalCheckout');
-        if (event.target == modal) {
-            fecharCheckout();
-        }
+// 1. Função para o botão do seu blog ABRIR o modal
+function abrirCheckout() {
+    const modal = document.getElementById('modalCheckout');
+    if (modal) {
+        modal.style.setProperty('display', 'flex', 'important');
     }
-</script>
+}
+
+// 2. Função para o botão X FECHAR o modal
+function fecharCheckout() {
+    const modal = document.getElementById('modalCheckout');
+    if (modal) {
+        modal.style.setProperty('display', 'none', 'important');
+    }
+}
+
+// 3. Fecha se clicar no fundo escuro (fora da caixa)
+window.onclick = function(event) {
+    const modal = document.getElementById('modalCheckout');
+    if (event.target === modal) {
+        fecharCheckout();
+    }
+}
 
