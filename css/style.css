@@ -4264,3 +4264,143 @@ overflow-y: auto !important;
   line-height: 1.5;
   margin: 0;
 }
+
+
+
+/* Container principal que agrupa todos os cartões */
+.prisma-grid-emojis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* Estilo padronizado para todos os cartões (fundo carvão) */
+.prisma-cartao-emoji {
+  background-color: #1a1a1a; /* Cor carvão escura */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Borda sutil e elegante */
+  border-radius: 8px;
+  padding: 30px;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Efeito ao passar o mouse: a borda acende em Laranja e o cartão sobe */
+.prisma-cartao-emoji:hover {
+  transform: translateY(-5px);
+  border-color: #ff6600; /* Laranja de destaque do Prisma */
+  box-shadow: 0 12px 24px rgba(255, 102, 0, 0.08); /* Brilho laranja sutil */
+}
+
+/* Tamanho e espaçamento do emoji */
+.prisma-emoji-icone {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* Títulos em Branco Puro */
+.prisma-cartao-emoji h4 {
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Texto descritivo em branco levemente opaco para melhor leitura */
+.prisma-cartao-emoji p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+/*emoji grid*/
+
+/* Container que força 3 cards na horizontal */
+.prisma-grid-emojis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas */
+  gap: 24px;
+  padding: 40px 0;
+  width: 100%;
+}
+
+/* Estilo unificado para os blocos pequenos */
+.prisma-cartao-emoji {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 25px; /* Reduzi um pouco o padding para o card ficar mais compacto */
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.prisma-cartao-emoji:hover {
+  transform: translateY(-5px);
+  border-color: #ff6600;
+  box-shadow: 0 12px 24px rgba(255, 102, 0, 0.08);
+}
+
+.prisma-emoji-icone {
+  font-size: 32px; /* Ícone ligeiramente menor para se adequar ao card pequeno */
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.prisma-cartao-emoji h4 {
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.prisma-cartao-emoji p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Regra para celulares: os cards ficam em 1 coluna para não espremer o texto */
+@media (max-width: 900px) {
+  .prisma-grid-emojis {
+    grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .prisma-grid-emojis {
+    grid-template-columns: 1fr; /* 1 por linha no celular */
+  }
+}
+/*cores prisma historico maiuscula header*/
+/* Importação da fonte clássica romana no topo do CSS */
+@import url('https://googleapis.com');
+
+/* Estilo do título da marca */
+.prisma-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff; /* HISTÓRICO em Branco */
+  text-transform: uppercase; /* Garante que tudo fique em MAIÚSCULO */
+  letter-spacing: 3px; /* Espaçamento sofisticado entre as letras */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra para destacar no fundo carvão */
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Aplicação do Laranja na primeira palavra */
+.prisma-logo span {
+  color: #ff6600; /* PRISMA em Laranja */
+}
