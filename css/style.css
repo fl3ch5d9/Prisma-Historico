@@ -4063,3 +4063,154 @@ overflow-y: auto !important;
 /* ======================================================= */
 /*    ESTILIZAÇÃO GLOBAL DO MENU (CORES FIXADAS DIRETO)    */
 /* ==============================/* 1. Fundo do Header em Carvão Escuro */
+/* ========================================== */
+/*    ESTILIZAÇÃO INTERAÇÃO DO E-BOOK          */
+/* ========================================== */
+
+/* Bloco de Chamada na Página */
+.prisma-aviso-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 60px 20px !important;
+    box-sizing: border-box !important;
+}
+
+.prisma-aviso-card {
+    background-color: #1a1a1a !important; /* Fundo Carvão */
+    border: 1px solid #333333 !important;
+    border-radius: 16px !important;
+    padding: 40px !important;
+    max-width: 550px !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+    box-sizing: border-box !important;
+}
+
+.prisma-aviso-card h2, .prisma-pop-content h2 {
+    color: #ffffff !important; /* Texto Branco */
+    font-size: 26px !important;
+    margin: 0 0 12px 0 !important;
+    font-weight: 800 !important;
+}
+
+.prisma-aviso-card p, .prisma-pop-content p {
+    color: #ffffff !important; /* Texto Branco */
+    font-size: 15px !important;
+    margin: 0 0 25px 0 !important;
+    line-height: 1.5 !important;
+}
+
+.prisma-aviso-tag {
+    background: rgba(255, 102, 0, 0.1) !important;
+    color: #ff6600 !important; /* Laranja */
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    margin-bottom: 20px !important;
+    letter-spacing: 1px !important;
+}
+
+/* O Botão Comercial Principal */
+.prisma-aviso-btn {
+    background-color: #ff6600 !important; /* Laranja */
+    color: #000000 !important; /* Texto Preto que pediu */
+    padding: 16px 32px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    width: 100% !important;
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+.prisma-aviso-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px rgba(255, 102, 0, 0.5) !important;
+}
+
+.prisma-aviso-btn:active {
+    transform: translateY(1px) !important;
+}
+
+/* --- ESTRUTURA DO POP-UP (OVERLAY) --- */
+.prisma-pop-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    display: none; /* Controlado por JS */
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 9999999 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.prisma-pop-content {
+    background-color: #1a1a1a !important; /* Fundo Carvão */
+    border: 1px solid #333333 !important;
+    padding: 45px 35px !important;
+    max-width: 450px !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.7) !important;
+}
+
+.prisma-pop-fechar {
+    position: absolute !important;
+    top: 15px !important;
+    right: 20px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 35px !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+}
+
+.prisma-pop-fechar:hover {
+    color: #ff6600 !important;
+}
+
+.prisma-pop-status {
+    background: rgba(255, 102, 0, 0.08) !important;
+    border: 1px solid rgba(255, 102, 0, 0.2) !important;
+    color: #ff6600 !important; /* Texto Laranja */
+    padding: 12px 15px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-bottom: 25px !important;
+    line-height: 1.4 !important;
+}
+
+.prisma-pop-entendido {
+    background-color: #ffffff !important; /* Fundo Branco */
+    color: #000000 !important; /* Texto Preto */
+    border: none !important;
+    padding: 14px 25px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: 0.2s !important;
+}
+
+.prisma-pop-entendido:hover {
+    background-color: #ff6600 !important; /* Vira Laranja no hover */
+    color: #000000 !important;
+}

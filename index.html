@@ -41,6 +41,44 @@
 
 
 <!-- Estrutura do Menu de Navegação Oficial no index.html -->
+
+<!-- ========================================== -->
+<!--     CAIXA DE AVISO DO E-BOOK (EM BREVE)    -->
+<!-- ========================================== -->
+<div class="prisma-aviso-container">
+    <div class="prisma-aviso-card">
+        <span class="prisma-aviso-tag">PRODUTO DIGITAL</span>
+        <h2>E-book Prisma Histórico</h2>
+        <p>O método inovador para entender a engrenagem da História do Brasil sem decoreba.</p>
+        
+        <!-- Botão com Sombra e Efeito de Clique Dinâmico -->
+        <button type="button" class="prisma-aviso-btn" onclick="mostrarAvisoBreve()">
+            🚀 REVELAR DATA DE LANÇAMENTO
+        </button>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!--       MODAL DE INTERAÇÃO (POP-UP)          -->
+<!-- ========================================== -->
+<div id="prismaModalBreve" class="prisma-pop-overlay">
+    <div class="prisma-pop-content">
+        <button type="button" class="prisma-pop-fechar" onclick="esconderAvisoBreve()">&times;</button>
+        
+        <span style="font-size: 45px; display: block; margin-bottom: 15px;">⏳</span>
+        <h2>Quase Pronto!</h2>
+        <p>A nossa equipe está a finalizar os últimos mapas mentais visuais e infográficos cirúrgicos.</p>
+        
+        <div class="prisma-pop-status">
+            O blog já está 100% operacional. O e-book será lançado em breve!
+        </div>
+        
+        <button type="button" class="prisma-pop-entendido" onclick="esconderAvisoBreve()">
+            ENTENDIDO, VOU AGUARDAR!
+        </button>
+    </div>
+</div>
+
   <!--erros no cronometros -->
   <!-- BANNER -->
 <section class="hero-section">

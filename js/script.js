@@ -216,3 +216,19 @@ window.addEventListener("pageshow", function (event) {
         modal.style.display = 'none';
     }
 });
+
+
+// Funções isoladas para controlar o aviso de "Em Breve" do E-book
+function mostrarAvisoBreve() {
+    var modal = document.getElementById('prismaModalBreve');
+    if (modal) {
+        modal.style.setProperty('display', 'flex', 'important');
+    }
+}
+
+function esconderAvisoBreve() {
+    var modal = document.getElementById('prismaModalBreve');
+    if (modal) {
+        modal.style.setProperty('display', 'none', 'important');
+    }
+}
