@@ -4599,3 +4599,228 @@ body {
 
 
 /* Evita que qualquer seção geral herde o comportamento de coluna restrita do Hero */
+/*dois botões ebook e doacao*/
+/* ================================
+   HERO - ESTILO PROFISSIONAL
+   ================================ */
+
+.hero-container {
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 30px;
+    box-sizing: border-box;
+
+    /* Fundo carvão */
+    background: #171717;
+    
+    /* Detalhes decorativos em laranja */
+    background-image:
+        radial-gradient(circle at 50% 20%, rgba(230, 108, 24, 0.14), transparent 35%),
+        linear-gradient(135deg, #171717 0%, #222222 100%);
+}
+
+/* CONTEÚDO CENTRAL */
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 55px 45px;
+
+    background: rgba(35, 35, 35, 0.92);
+
+    border: 1px solid rgba(230, 108, 24, 0.35);
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(230, 108, 24, 0.08);
+
+    box-sizing: border-box;
+}
+
+/* ETIQUETA */
+.hero-tag {
+    display: inline-block;
+
+    padding: 9px 18px;
+    margin-bottom: 20px;
+
+    background: #e66c18;
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    box-shadow: 0 6px 20px rgba(230, 108, 24, 0.25);
+}
+
+/* TÍTULO */
+.hero-title {
+    max-width: 780px;
+
+    margin: 0 auto 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+/* DESTAQUE LARANJA NO TÍTULO */
+.hero-title::after {
+    content: "";
+    display: block;
+
+    width: 80px;
+    height: 4px;
+
+    margin: 25px auto 0;
+
+    background: #e66c18;
+    border-radius: 10px;
+}
+
+/* SUBTÍTULO */
+.hero-subtitle {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: #e7e7e7;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ÁREA DOS BOTÕES */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 220px;
+    padding: 15px 25px;
+
+    background: #e66c18;
+    color: #ffffff;
+
+    border: 2px solid #e66c18;
+    border-radius: 10px;
+
+    font-weight: 800;
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 8px 25px rgba(230, 108, 24, 0.25);
+}
+
+/* HOVER BOTÃO PRINCIPAL */
+.btn-primary:hover {
+    background: #ff7d24;
+    border-color: #ff7d24;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(230, 108, 24, 0.35);
+}
+
+/* BOTÃO SECUNDÁRIO */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+    padding: 15px 25px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 2px solid #e66c18;
+    border-radius: 10px;
+
+    font-weight: 700;
+    font-size: 15px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER BOTÃO SECUNDÁRIO */
+.btn-secondary:hover {
+    background: #e66c18;
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(230, 108, 24, 0.25);
+}
+
+
+/* ================================
+   RESPONSIVO
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .hero-container {
+        padding: 35px 18px;
+    }
+
+    .hero-content {
+        padding: 40px 22px;
+        border-radius: 16px;
+    }
+
+    .hero-title {
+        font-size: 38px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 320px;
+    }
+}
