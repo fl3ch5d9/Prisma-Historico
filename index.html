@@ -49,8 +49,53 @@
 </nav>
 
  <!-- Estrutura do Menu de Navegação Oficial -->
-<!-- Seção Apresentação Prisma Histórico - Unificada e Calibrada -->
- <!-- Seção Apresentação Prisma Histórico - Alinhamento Centralizado e Livro Inteiro -->
+
+<!--banner-->
+ 
+       
+
+    <!-- Estrutura HTML do Modal -->
+    <!-- Início do Bloco do Banner -->
+<div id="bannerModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+    
+    <div style="position: relative; background-color: #121212; border: 2px solid #e08b26; border-radius: 12px; padding: 10px; max-width: 90%; max-height: 85vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);">
+        
+        <!-- Botão de Fechar (X) -->
+        <button id="closeBtn" style="position: absolute; top: -15px; right: -15px; background-color: #e08b26; color: #ffffff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 20px; font-weight: bold; cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+            &times;
+        </button>
+        
+        <!-- Imagem do Banner -->
+        <img src="img/banner.png" alt="Banner Prisma Histórico" style="max-width: 100%; max-height: 80vh; object-fit: contain; display: block; border-radius: 6px;">
+        
+    </div>
+
+    <!-- Script de Controle -->
+    <script>
+        (function() {
+            const modal = document.getElementById("bannerModal");
+            const closeBtn = document.getElementById("closeBtn");
+
+            // Exibe o banner imediatamente ao carregar a página
+            setTimeout(() => {
+                modal.style.opacity = "1";
+                modal.style.pointerEvents = "auto";
+            }, 300);
+
+            // Função para fechar o banner
+            function fechar() {
+                modal.style.opacity = "0";
+                modal.style.pointerEvents = "none";
+            }
+
+            // Eventos para fechar
+            closeBtn.onclick = fechar;
+            modal.onclick = function(e) { if (e.target === modal) fechar(); };
+        })();
+    </script>
+</div>
+<!-- Fim do Bloco do Banner -->
+
 <!-- SEÇÃO APRESENTAÇÃO: TEXTO + LIVRO LADO A LADO -->
 <section class="secao-apresentacao-prisma" style="max-width: 1300px; margin: 40px auto; padding: 30px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 50px; background-color: #0c0c0e; font-family: 'Inter', sans-serif;">
     
