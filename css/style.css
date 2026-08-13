@@ -4404,3 +4404,187 @@ overflow-y: auto !important;
 .prisma-logo span {
   color: #ff6600; /* PRISMA em Laranja */
 }
+/*body*/
+/* Container Pai: Fundo Carvão e alinhamento de 3 em 3 */
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    gap: 30px; /* Espaço entre os cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    background-color: #121214; /* Fundo Carvão Principal */
+    box-sizing: border-box;
+}
+
+/* Estrutura do Card: Fundo Carvão Destacado */
+.card {
+    background-color: #1a1a1e; /* Fundo do Card (Grafite/Carvão) */
+    border: 1px solid rgba(255, 107, 0, 0.15); /* Borda laranja suave */
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+    transform: translateY(-5px); /* Sobe levemente */
+    border-color: #ff6b00; /* Borda acende em Laranja */
+}
+
+/* Caixa da Imagem */
+.card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Imagem sem distorção */
+}
+
+/* Espaçamento do Conteúdo */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Título em Branco */
+.card-content h3 {
+    color: #ffffff; /* Texto Branco */
+    font-size: 1.25rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+/* Descrição em Branco Fosco / Cinza Claro */
+.card-content p {
+    color: #e2e2e6; /* Texto Branco Claro */
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex: 1; /* Alinha o link sempre abaixo */
+}
+
+/* Link em Laranja */
+.card-content a {
+    color: #ff6b00; /* Texto Laranja */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.card-content a:hover {
+    color: #ffffff; /* Fica branco no hover */
+    text-decoration: underline;
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .blog-container {
+        grid-template-columns: 1fr; /* Vira 1 coluna no celular */
+        gap: 20px;
+        padding: 40px 20px;
+    }
+}
+
+
+
+/* Reseta margens e define o padrão de caixa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Fundo da página (Cinza bem escuro para contrastar) */
+body {
+    background-color: #121212;
+}
+
+/* Container principal dos cards */
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O Card em tom Carvão */
+.card {
+    background-color: #212121; /* Cor de Carvão */
+    border-radius: 12px;
+    border: 1px solid #333333; /* Linha sutil para dar acabamento */
+    overflow: hidden;
+    flex: 1 1 300px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Área da imagem */
+.card-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bloco de conteúdo com os textos e o link */
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+/* Título em Laranja */
+.card-content h3 {
+    font-size: 1.3rem;
+    color: #FF6600; /* Laranja vibrante */
+}
+
+/* Texto de descrição em Branco */
+.card-content p {
+    font-size: 0.95rem;
+    color: #FFFFFF; /* Texto Branco */
+    line-height: 1.6;
+    opacity: 0.9; /* Deixa o texto levemente confortável para leitura */
+}
+
+/* Botão "Ler mais" em Laranja com texto Branco */
+.card-content a {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    background-color: #FF6600; /* Fundo Laranja */
+    color: #FFFFFF; /* Texto Branco */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase; /* Deixa o texto em maiúsculo */
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito Hover do botão (Inverte as cores ao passar o mouse) */
+.card-content a:hover {
+    background-color: #FFFFFF; /* Fundo vira Branco */
+    color: #FF6600; /* Texto vira Laranja */
+}
