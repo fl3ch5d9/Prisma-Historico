@@ -4590,3 +4590,12 @@ body {
 }
 
 
+/*main contaner */
+
+/* ==========================================================================
+   RESET DE SEGURANÇA: LIBERTAÇÃO DO RODAPÉ E DA ESTRUTURA GLOBAL
+   ========================================================================== */
+
+
+
+/* Evita que qualquer seção geral herde o comportamento de coluna restrita do Hero */

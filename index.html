@@ -338,51 +338,136 @@
         </div>
 
         <!-- LADO DIREITO: MOCKUP DO E-BOOK -->
-        <div class="hero-visual">
-            <div class="mockup-placeholder">
-                <!-- A sua imagem foi movida para aqui para ficar ao lado do texto -->
-                <img src="img/prisma.png" alt="Capa do E-book Prisma Histórico" class="book-cover">
-            </div>
+        <!-- Seção Unificada do Produto (Fundo carvão isolado que não vaza para o rodapé) -->
+<section class="prisma-secao" style="
+    background-color: #1C1C1C; /* Fundo carvão */
+    color: #F5F5F5; /* Texto claro para leitura */
+    padding: 60px 20px;
+    border-radius: 12px;
+    font-family: sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+">
+
+    <!-- Container da Imagem do Banner / Mockup -->
+    <div class="hero-visual" style="max-width: 400px; margin: 0 auto 40px auto; text-align: center;">
+        <div class="mockup-placeholder">
+            <img src="img/prisminha.png" alt="Capa do E-book Prisma Histórico" class="book-cover" style="
+                max-width: 100%; 
+                height: auto; 
+                border-radius: 8px;
+                filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.5));
+            ">
         </div>
     </div>
-<!-- Seção Unificada do Produto e Cronômetro -->
 
- <!--introdução do index-->
+    <!-- Título Principal -->
+    <h1 class="prisma-headline-cirurgica" style="color: #FFFFFF; margin-bottom: 10px; text-align: center; font-size: 2.5rem;">
+        PRISMA HISTÓRICO
+        <span class="laranja" style="display: block; color: #FF6600; font-size: 0.6em; margin-top: 5px; font-weight: bold;">
+            A História do Brasil que não é contada
+        </span>
+    </h1>
 
- <section class="prisma-hero-intro">
-  <h1 class="prisma-headline-cirurgica">
-    PRISMA HISTÓRICO
-    <span class="laranja">A História do Brasil que não é contada</span>
-  </h1>
-  <div class="prisma-barra-laranja"></div>
-  <p class="prisma-texto-principal">
-    Sem heróis de mármore, sem datas decoradas. <br>
-    Aqui o prisma se parte para expor as profundas fissuras do poder, da dívida e da guerra que ergueram a nossa história. Bem-vindo ao Prisma Histórico.
-  </p>
-  <p class="prisma-slogan">
-    Vestibulares | Enem | Concuros Públicos 
-  </p>
-  <div class="prisma-bloco-ebook">
-    <span class="prisma-tag-ebook">EBOOK EXCLUSIVO</span>
-    <h2>Historiografia Detalhada, Cirúrgica, Documentada e Investigativa</h2>
-    <p>
-      Não é resumo. Não é decoreba. <br>
-      No Prisma Histórico, cada evento é destrinchado em 3 camadas: o Fato Documentado, com base em fontes primárias, tratados e cartas; o Debate Historiográfico, confrontando as correntes clássicas e as novas tendências de análise; e a Reflexão Crítica, revelando quem ganhou, quem perdeu e quem pagou a conta.
+    <!-- Barra Laranja Centralizada -->
+    <div class="prisma-barra-laranja" style="width: 60px; height: 4px; background-color: #FF6600; margin: 0 auto 20px auto;"></div>
+
+    <!-- Headline de Impacto Principal -->
+    <h2 class="prisma-lead-copy" style="
+        color: #FFFFFF; 
+        font-size: 2.2rem; 
+        font-weight: 800; 
+        line-height: 1.3; 
+        max-width: 800px; 
+        margin: 0 auto 25px auto; 
+        text-align: center;
+        letter-spacing: -0.5px;
+    ">
+        Esqueça a narrativa oficial. <br>
+        <span style="color: #FF6600;">A verdade sobre o Brasil</span> não está nos monumentos de mármore.
+    </h2>
+
+    <!-- Texto de Apoio Centralizado -->
+    <p class="prisma-texto-principal" style="
+        color: #CCCCCC; 
+        font-size: 1.15rem; 
+        line-height: 1.7; 
+        max-width: 700px; 
+        margin: 0 auto 20px auto; 
+        text-align: center;
+    ">
+        Aqui, não estudamos o romantismo dos livros didáticos e sim as engrenagens ocultas do poder, as dívidas impagáveis e as guerras silenciadas que moldaram o nosso destino. Prepare-se para enxergar a história através de um prisma sem filtros.
     </p>
-    <h3>Ebook Prisma Histórico para Vestibular, ENEM e Concursos Públicos</h3>
-    <p>
+
+    <!-- Slogan / Público-Alvo -->
+    <p class="prisma-slogan" style="color: #FF6600; font-weight: bold; margin-bottom: 0; text-align: center; font-size: 1.1rem;">
+        Vestibulares | Enem | Concursos Públicos 
+    </p>
+
+</section> <!-- Fim da seção escura. O conteúdo abaixo daqui voltará ao normal da página -->
+
+  <!-- Bloco do E-book com fundo carvão levemente mais claro, borda fina e sombra laranja -->
+  <div class="prisma-bloco-ebook" style="
+    background-color: #262626; /* Tom de carvão secundário para contraste */
+    border: 1px solid rgba(255, 102, 0, 0.3); /* Borda sutil laranja */
+    box-shadow: 0px 10px 30px rgba(255, 102, 0, 0.15); /* Sombra (shadow) laranja cirúrgica */
+    padding: 30px;
+    border-radius: 8px;
+  ">
+    <span class="prisma-tag-ebook" style="
+        background-color: #FF6600; 
+        color: #FFFFFF; 
+        padding: 4px 8px; 
+        font-size: 0.75em; 
+        font-weight: bold; 
+        border-radius: 4px;
+    ">EBOOK EXCLUSIVO</span>
+    
+    <h2 style="color: #FFFFFF; margin-top: 15px;">Historiografia Detalhada, Cirúrgica, Documentada e Investigativa</h2>
+    
+    <p style="
+    color: #DDDDDD; 
+    line-height: 1.6; 
+    text-align: center; /* Alinha o texto no centro */
+    max-width: 650px;    /* Limita a largura para o texto não espalhar na tela */
+    margin: 0 auto;      /* Centraliza o bloco na página */
+">
+    Não é resumo. Não é decoreba. <br>
+    No Prisma Histórico, cada evento é destrinchado em 3 camadas: o Fato Documentado, com base em fontes primárias, tratados e cartas; o Debate Historiográfico, confrontando as correntes clássicas e as novas tendências de análise; e a Reflexão Crítica, revelando quem ganhou, quem perdeu e quem pagou a conta.
+</p>
+
+    <h3 style="color: #FF6600;">Ebook Prisma Histórico para Vestibular, ENEM e Concursos Públicos</h3>
+    
+    <p style="color: #DDDDDD; line-height: 1.6;">
       Transformamos toda essa investigação em conteúdo que aprova. <br>
       Pare de memorizar história. Comece a investigar história. E passe na frente.
     </p>
-    <ul class="prisma-lista-ebook">
-      <li><strong>Conteúdo Cirúrgico:</strong> Só o que cai. Analisado a fundo, sem perda de tempo.</li>
-      <li><strong>Mapas Mentais e Linhas do Tempo:</strong> Pra visualizar conexões que a banca adora cobrar.</li>
-      <li><strong>Questões Comentadas:</strong> Com o olhar crítico do prisma. Você entende o "porquê" da alternativa.</li>
-      <li><strong>Temas Quentes:</strong> Independência Comprada, Guerra do Paraguai, Questão Religiosa, Abolição, Golpe da República. Tudo com base documental.</li>
+    
+    <ul class="prisma-lista-ebook" style="color: #DDDDDD; line-height: 1.8; padding-left: 20px;">
+      <li><strong style="color: #FF6600;">Conteúdo Cirúrgico:</strong> Só o que cai. Analisado a fundo, sem perda de tempo.</li>
+      <li><strong style="color: #FF6600;">Mapas Mentais e Linhas do Tempo:</strong> Pra visualizar conexões que a banca adora cobrar.</li>
+      <li><strong style="color: #FF6600;">Questões Comentadas:</strong> Com o olhar crítico do prisma. Você entende o "porquê" da alternativa.</li>
+      <li><strong style="color: #FF6600;">Temas Quentes:</strong> Independência Comprada, Guerra do Paraguai, Questão Religiosa, Abolição, Golpe da República. Tudo com base documental.</li>
     </ul>
-    <a href="artigos/ebook.html" class="prisma-botao">Quero Investigar e Passar</a>
+    
+    <a href="artigos/ebook.html" class="prisma-botao" style="
+        display: inline-block;
+        background-color: #FF6600;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 12px 24px;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 15px rgba(255, 102, 0, 0.4);
+    ">Quero Investigar e Passar</a>
   </div>
+</div>
 </section>
+
+ <!--introdução do index-->
+
+  
 
  <!-- ==========================================================================
    PRISMA HISTÓRICO - CRONOLOGIA LINEAR COMPLETA (HTML UNIFICADO)
@@ -539,7 +624,11 @@
     
 
 
+        </div>
+    </section>
+
 <!-- SEÇÃO 5: UNIÃO IBÉRICA E AS FRONTEIRAS DO NORTE -->
+<section class="prisma-cronologia bg-dark">
 <div class="prisma-main-header">
     <h2>União Ibérica e Consolidação Territorial</h2>
     <p>A inflexão habsburga, guerras de procuração e a expansão em direção ao Maranhão.</p>
@@ -882,7 +971,6 @@
 
   </div>
 </section>
-
 <!--footer-->
 <footer class="footer">
   <div class="container">
