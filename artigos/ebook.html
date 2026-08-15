@@ -49,6 +49,23 @@
     </div>
 </section>
 
+<style>
+/* Estilo aplicado individualmente nos 4 cards de benefícios */
+.card-beneficio {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #1a1a1a;
+  background-image: 
+    linear-gradient(rgba(30, 30, 30, 0.85), rgba(217, 83, 30, 0.45)), 
+    url('../img/ebook-capaok.png');
+  border: 1px solid rgba(217, 83, 30, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+}
+</style>
+
 <!-- SEÇÃO DO SUMÁRIO INTERATIVO -->
 <section class="container section">
     <h2 class="section-titulo">AMOSTRA DO SUMÁRIO COMPLETO</h2>
@@ -57,7 +74,7 @@
     <div class="grid-sumario">
 
         <!-- CARD 1: COLONIA -->
-        <div class="card-periodo">
+        <div class="card-periodo card-bg-1">
             <div class="card-header-periodo">
                 <h3>🔵 Colonização</h3>
                 <p class="periodo-data">1500 — 1822</p>
@@ -97,7 +114,7 @@
         </div>
 
         <!-- CARD 2: IMPERIO -->
-        <div class="card-periodo">
+        <div class="card-periodo card-bg-2">
             <div class="card-header-periodo">
                 <h3>🟡 BRASIL IMPÉRIO</h3>
                 <p class="periodo-data">1822 — 1889</p>
@@ -136,7 +153,7 @@
         </div>
 
         <!-- CARD 3: REPUBLICA VELHA -->
-        <div class="card-periodo">
+        <div class="card-periodo card-bg-3">
             <div class="card-header-periodo">
                 <h3>🔵 Primeira República</h3>
                 <p class="periodo-data">1889 — 1930</p>
@@ -164,6 +181,26 @@
 
     </div>
 </section>
+
+<style>
+/* Estrutura padrão refinada dos cards com fundo escuro base */
+.card-periodo {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Cor carvão de segurança caso a imagem demore */
+}
+
+/* Marca d'água com tom laranja escuro transparente combinando com o blog */
+.card-bg-1, .card-bg-2, .card-bg-3 {
+  background-image: 
+    linear-gradient(rgba(30, 30, 30, 0.85), rgba(217, 83, 30, 0.45)), 
+    url('../img/ebook-capaok.png');
+}
+</style>
 
 <!-- ========================================== -->
 <!--       BOTÃO DE COMPRA DO SEU BLOG          -->
