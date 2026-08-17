@@ -362,16 +362,22 @@
 ">
 
     <!-- Container da Imagem do Banner / Mockup -->
-    <div class="hero-visual" style="max-width: 400px; margin: 0 auto 40px auto; text-align: center;">
-        <div class="mockup-placeholder">
-            <img src="img/prisminha.png" alt="Capa do E-book Prisma Histórico" class="book-cover" style="
-                max-width: 100%; 
-                height: auto; 
-                border-radius: 8px;
-                filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.5));
-            ">
-        </div>
+   <div class="hero-visual" style="max-width: 400px; margin: 0 auto 40px auto; text-align: center;">
+    <div class="mockup-placeholder" style="
+        position: relative;
+        padding: 4px; /* Espessura da borda */
+        background: linear-gradient(135deg, #ff6a00 0%, #1a1a1a 100%); /* Borda Laranja + Carvão */
+        border-radius: 12px; /* Garante que a borda externa seja arredondada */
+    ">
+        <img src="img/tratados-tordesilha.webp" alt="Capa do E-book Prisma Histórico" class="book-cover" style="
+            display: block;
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 8px; /* Arredondamento interno da imagem */
+            filter: contrast(1.15) saturate(1.2) drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.5)); /* Intensifica a imagem */
+        ">
     </div>
+</div>
 
     <!-- Título Principal -->
     <h1 class="prisma-headline-cirurgica" style="color: #FFFFFF; margin-bottom: 10px; text-align: center; font-size: 2.5rem;">
