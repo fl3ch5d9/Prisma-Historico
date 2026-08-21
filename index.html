@@ -36,63 +36,54 @@
         </nav>
     </header>
 
-    <!-- ÁREA DE VENDAS PRINCIPAL (HERO) -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-container">
-            <h1>Seus E-books de Curiosidades</h1>
-            <p>Aprenda fatos surpreendentes e apoie o nosso projeto digital com a nossa seleção exclusiva de infoprodutos.</p>
-            <div class="hero-buttons">
-                <a href="/artigos/ebook.html" class="btn-primary">Ver E-books</a>
-                <a href="/artigos/doacao.html" class="btn-secondary">Apoiadores</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- VITRINE DE PRODUTOS -->
-    <main class="vitrine-section" id="ebooks">
-        <div class="section-title">
-            <h2>Nossos E-books</h2>
-            <p>Escolha o seu próximo infoproduto e comece a ler agora mesmo.</p>
-        </div>
 
-        <div class="grid-produtos">
-            <!-- Produto 1 -->
-            <div class="card-produto">
-                <div class="card-tag">Mais Lido</div>
-                <div class="card-body">
-                    <h3>E-book Curiosidades Vol. 1</h3>
-                    <p>Fatos incríveis sobre a ciência e a história do mundo que vão expandir o seu conhecimento.</p>
-                </div>
-                <div class="card-footer">
-                    <span class="preco">R$ 29,90</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
+  <!--sumario-->
+<!-- SEÇÃO COM DOIS CARDS LADO A LADO - CORRIGIDA (SEM DUPLICAÇÃO E SEM SUBIR NO HEADER) -->
+<!-- SEÇÃO DE DIVULGAÇÃO + IMAGEM E BOTÃO DE COMPRA -->
+<section class="secao-dois-cards" style="padding: 140px 0 80px 0; background-color: #fafaf7; width: 100%; display: block; box-sizing: border-box; clear: both; position: relative;">
+    <div class="container-cards" style="max-width: 1140px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
+        
+        <div class="grade-dois-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; box-sizing: border-box;">
+            
+            <!-- CARD 1: DIVULGAÇÃO E PROPÓSITO DO E-BOOK -->
+            <div class="card-item" style="background: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a; margin: 0 0 15px 0; font-weight: 700;">Domine o Edital Sem Perder Tempo</h3>
+                <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #766144; font-weight: 600; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: 0.5px;">A análise teórica e cirúrgica que precisas</p>
+                
+                <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.6; margin: 0 0 15px 0;">
+                    Cansado de apostilas gigantes que te fazem perder horas com decorebas inúteis? O <strong>Prisma Histórico</strong> foi desenhado exclusivamente para desmistificar a história de forma analítica, direta e focada nos temas que realmente caem na prova.
+                </p>
+                <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.6; margin: 0;">
+                    Ideal para quem está a correr contra o tempo e precisa de uma revisão de alto impacto para garantir a pontuação máxima no exame.
+                </p>
             </div>
 
-            <!-- Produto 2 -->
-            <div class="card-produto">
-                <div class="card-tag">Lançamento</div>
-                <div class="card-body">
-                    <h3>O Guia do Quiz Perfeito</h3>
-                    <p>Como criar jogos interativos que engajam o seu público e geram vendas automáticas na internet.</p>
+            <!-- CARD 2: IMAGEM DO E-BOOK + BOTÃO DE COMPRA -->
+            <div class="card-item" style="background: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                
+                <!-- ESPAÇO PARA A IMAGEM DO TEU E-BOOK (Altera o src para o caminho da tua imagem) -->
+                <div class="box-imagem-ebook" style="width: 100%; max-width: 220px; margin-bottom: 25px;">
+                    <img src="caminho-da-tua-imagem/capa-ebook.png" alt="Capa do E-book Prisma Histórico" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
                 </div>
-                <div class="card-footer">
-                    <span class="preco">R$ 19,90</span>
-                    <a href="#" class="btn-comprar">Comprar Agora</a>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- SEÇÃO DE DOAÇÃO -->
-    <section class="doacoes-section" id="doacoes">
-        <h2>Apoie o Nosso Projeto ☕</h2>
-        <p>Gosta do nosso conteúdo de curiosidades? Ajude-nos a manter o site ativo com qualquer valor via PIX.</p>
-        <div class="box-pix">
-            <span class="pix-label">Chave PIX (E-mail):</span>
-            <code class="pix-key">seu-email@dominio.com</code>
+                <!-- PREÇO E BOTÃO -->
+                <div class="box-compra-direta" style="width: 100%;">
+                    <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #777777; margin: 0 0 5px 0; text-decoration: line-through;">De R$ 97,00</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 26px; color: #1a1a1a; margin: 0 0 20px 0; font-weight: 700;">Por apenas <span style="color: #766144;">R$ 47,00</span></p>
+                    
+                    <!-- LINK DE COMPRA (Muda o href para o teu link da Hotmart, Kiwify, etc.) -->
+                    <a href="TEU-LINK-DE-PAGAMENTO-AQUI" style="display: block; width: 100%; background-color: #766144; color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; padding: 15px 0; border-radius: 5px; box-shadow: 0 4px 12px rgba(118,97,68,0.2); transition: background 0.3s ease;">
+                        🚀 Garantir Meu Acesso Imediato
+                    </a>
+                </div>
+
+            </div>
+
         </div>
-    </section>
+
+    </div>
+</section>
 
     <!-- RODAPÉ -->
    <footer class="footer">
