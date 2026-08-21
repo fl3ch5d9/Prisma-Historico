@@ -1,1077 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="./css/style.css">
-
-
-<title>Prisma Histórico | Guia de História para Concursos e Vestibulares</title>
-
-<meta name="description" content="Domine as revoltas do Brasil Colônia, Império e República. Cronologia completa, análises profundas e linhas do tempo para gabaritar vestibulares e concursos!">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma Histórico</title>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body>
 
- <!-- /*NAVBAR*/ - Esse é o seu header -->
- <!-- NAV PURA SEM NENHUM CSS (COLE NO INDEX.HTML) -->
-<nav class="prisma-nav">
-    <div class="prisma-logo">
-  <span>Prisma</span> Histórico
-</div>
-
-    
-    <ul class="prisma-menu-links">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="artigos/sobre.html">Sobre</a></li>
-        <li><a href="artigos/artigos.html">Artigos</a></li>
-        <li><a href="artigos/curiosidades.html">Curiosidades</a></li>
-        <li><a href="artigos/quiz.html">Quiz</a></li>
-        <li><a href="artigos/ebook.html">E-book</a></li>
-    </ul>
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="toggleMenu()" aria-label="Abrir menu">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
-</nav>
-
- <!-- Estrutura do Menu de Navegação Oficial -->
-
-<!--banner-->
- 
-       
-
-    <!-- Estrutura HTML do Modal -->
-    <!-- Início do Bloco do Banner -->
-<div id="bannerModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
-    
-    <div style="position: relative; background-color: #121212; border: 2px solid #e08b26; border-radius: 12px; padding: 10px; max-width: 90%; max-height: 85vh; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);">
+    <!-- CABEÇALHO UNIFICADO -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="#">Prisma Histórico</a>
+        </div>
         
-        <!-- Botão de Fechar (X) -->
-        <button id="closeBtn" style="position: absolute; top: -15px; right: -15px; background-color: #e08b26; color: #ffffff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 20px; font-weight: bold; cursor: pointer; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
-            &times;
+        <!-- Botão do Menu Hambúrguer para Telemóvel -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </button>
-        
-        <!-- Imagem do Banner -->
-        <img src="img/banner.png" alt="Banner Prisma Histórico" style="max-width: 100%; max-height: 80vh; object-fit: contain; display: block; border-radius: 6px;">
-        
-    </div>
 
-    <!-- Script de Controle -->
-    <script>
-        (function() {
-            const modal = document.getElementById("bannerModal");
-            const closeBtn = document.getElementById("closeBtn");
+        <!-- Todos os menus agrupados no mesmo container -->
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/artigos/sobre.html">Sobre</a></li>
+                <li><a href="/artigos/artigos.html">Artigos</a></li>
+                <li><a href="/artigos/curiosidades.html">Curiosidades</a></li>
+                <li><a href="/artigos/quiz.html">Quiz</a></li>
+                
+                <li><a href="/artigos/ebook.html">E-books</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            // Exibe o banner imediatamente ao carregar a página
-            setTimeout(() => {
-                modal.style.opacity = "1";
-                modal.style.pointerEvents = "auto";
-            }, 300);
-
-            // Função para fechar o banner
-            function fechar() {
-                modal.style.opacity = "0";
-                modal.style.pointerEvents = "none";
-            }
-
-            // Eventos para fechar
-            closeBtn.onclick = fechar;
-            modal.onclick = function(e) { if (e.target === modal) fechar(); };
-        })();
-    </script>
-</div>
-<!-- Fim do Bloco do Banner -->
-
-<!-- SEÇÃO APRESENTAÇÃO: TEXTO + LIVRO LADO A LADO -->
-<section class="secao-apresentacao-prisma" style="max-width: 1300px; margin: 40px auto; padding: 30px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 50px; background-color: #0c0c0e; font-family: 'Inter', sans-serif;">
-    
-    <!-- LADO ESQUERDO: O Texto do seu Manifesto -->
-    <div class="texto-bloco" style="flex: 1.2; min-width: 320px; text-align: left; display: flex; flex-direction: column; justify-content: center;">
-        <!-- Selo de Categoria -->
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.4); padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; align-self: flex-start;">
-            <span style="width: 6px; height: 6px; background-color: #ff6b00; border-radius: 50%;"></span>
-            <span style="color: #ff6b00; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Manifesto de Elite</span>
-        </div>
-<!--paragrafos-->
-<!-- Container principal para garantir o alinhamento e isolamento do bloco -->
-<div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: sans-serif;">
-    
-    <!-- Título curto e impactante -->
-    <h2 style="font-size: 2rem; line-height: 1.2; color: #ffffff; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px;">
-        O <span style="color: #ff6b00;">Prisma Histórico</span>
-    </h2>
-    
-    <!-- Parágrafo formatado para leitura fluida e alinhamento com imagens -->
-    <p style="font-size: 1.05rem; line-height: 1.6; color: #ffffff; font-weight: 400; margin: 0 0 15px 0; text-align: justify;">
-        O domínio de um novo campo de conhecimento exige mais do que a simples memorização de regras; requer a compreensão profunda dos mecanismos que fundamentam a teoria e a prática. Este material foi desenvolvido com o objetivo de oferecer um percurso didático claro, autônomo e rigoroso, servindo como uma ferramenta de apoio seguro para os seus estudos.
-    </p>
-    
-</div>
-
-      <p style="font-size: 1.1rem; line-height: 1.6; color: #e2e2e6; margin-bottom: 25px; text-align: justify;">
-    Mais do que memorizar dados isolados, compreender o passado exige conectar os fios da história de forma integrada. Este ecossistema entrega a ciência histórica por meio de uma <span style="color: #ff6b00; font-weight: 600;">engenharia visual lógica</span>, precisa e estruturada, transformando conceitos complexos em um percurso didático fluido e de alta absorção.
-</p>
-
-
-        <div style="color: #ffffff; font-size: 1.3rem; font-weight: 700; border-top: 1px solid rgba(255, 107, 0, 0.2); padding-top: 20px; font-family: sans-serif; text-align: center;">
-    Garanta Agora a Trilogia Completa por:
-    <div style="margin-top: 15px; display: inline-block;">
-        <span class="preco-3d" style="
-            font-size: 3.5rem; 
-            font-weight: 950; 
-            color: #00ff2b; 
-            background: linear-gradient(to bottom, #05ff37, #009914);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Arial Black', Impact, sans-serif;
-            letter-spacing: -1px;
-            filter: drop-shadow(0px 2px 4px rgba(0,255,43,0.4));
-            animation: pulsarBrilho 2s infinite ease-in-out;
-        ">R$ 69,90</span>
-    </div>
-</div>
-
-<style>
-@keyframes pulsarBrilho {
-    0% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 6px 1px rgba(0,0,0,.1), 
-            0 0 5px rgba(0,255,43,0.5),
-            0 0 10px rgba(255,255,255,0.3);
-        transform: scale(1);
-    }
-    50% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 8px 3px rgba(0,0,0,.3), 
-            0 0 15px rgba(0,255,43,0.8),
-            0 0 25px rgba(255,255,255,0.6);
-        transform: scale(1.05);
-    }
-    100% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 6px 1px rgba(0,0,0,.1), 
-            0 0 5px rgba(0,255,43,0.5),
-            0 0 10px rgba(255,255,255,0.3);
-        transform: scale(1);
-    }
-}
-</style>
-
-    </div>
-
-    <!-- LADO DIREITO: O Livro integrado perfeitamente dentro da section -->
-    <div class="imagens-container" style="flex: 1.8; min-width: 320px; display: flex; justify-content: center; align-items: center; padding: 0;">
-        <img src="img/ebook-capaok.png" alt="Capas Prisma Histórico" style="
-            width: 100% !important;
-            height: auto !important;
-            display: block;
-            border: 3px solid #ff6b00;
-            border-radius: 16px;
-            box-shadow: 0 0 35px 8px rgba(255, 107, 0, 0.3);
-        " />
-    </div>
-
-</section>
-
-<!-- BANNER DE POSICIONAMENTO PREMIUM -->
-<section class="banner-prisma-container" style="padding: 60px 20px; background-color: #121214; font-family: 'Inter', sans-serif; display: flex; justify-content: center;">
-    <div style="max-width: 900px; width: 100%; background: #1a1a1e; border: 1px solid #ff6b00; border-radius: 16px; padding: 50px 40px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); position: relative; overflow: hidden; text-align: left;">
-        
-        <!-- Detalhe Visual de Fundo / Luz de Destaque Laranja -->
-        <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255, 107, 0, 0.15); filter: blur(60px); border-radius: 50%; pointer-events: none;"></div>
-        
-        <!-- Selo de Categoria -->
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 107, 0, 0.1); border: 1px solid rgba(255, 107, 0, 0.4); padding: 6px 14px; border-radius: 20px; margin-bottom: 25px;">
-            <span style="width: 6px; height: 6px; background-color: #ff6b00; border-radius: 50%;"></span>
-            <span style="color: #ff6b00; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Manifesto de Elite</span>
-        </div>
-
-        <!-- Citação de Impacto -->
-        <blockquote style="margin: 0; padding: 0; border: none;">
-            <p style="font-size: 1.8rem; line-height: 1.5; color: #ffffff; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px;">
-                "O <span style="color: #ff6b00;">Prisma Histórico</span> afasta-se de qualquer apostila comercial que satura a internet. Esses materiais tradicionais subestimam o estudante com decorebas, tabelas frias e caixas de texto soltas que não conectam os fios da história."
-            </p>
-            <p style="font-size: 1.2rem; line-height: 1.6; color: #e2e2e6; font-weight: 400; margin-bottom: 35px;">
-                Este ecossistema entrega o que há de mais avançado nas humanidades digitais: a ciência histórica pura, decifrada por meio de uma engenharia visual lógica, colorida e cirúrgica. O panorama completo dos três períodos (<span style="color: #ff6b00; font-weight: 600;">América Portuguesa, Império e Primeira República</span>) com densidade investigativa e rigor documental definitivo.
-            </p>
-        </blockquote>
-
-        <!-- Rodapé do Banner / CTA Sutil -->
-       <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255, 107, 0, 0.2); padding-top: 25px; font-family: sans-serif;">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 1.5rem;">🔍</span>
-        <span style="color: #c4c4cc; font-size: 0.95rem; font-weight: 500;">Metodologia Historiográfica Investigativa</span>
-    </div>
-    <div style="color: #ffffff; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-        Trilogia Completa por apenas:
-        <span class="preco-3d" style="
-            font-size: 2.8rem; 
-            font-weight: 950; 
-            color: #00ff2b; 
-            background: linear-gradient(to bottom, #05ff37, #009914);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'Arial Black', Impact, sans-serif;
-            letter-spacing: -1px;
-            filter: drop-shadow(0px 2px 4px rgba(0,255,43,0.4));
-            animation: pulsarBrilho 2s infinite ease-in-out;
-            display: inline-block;
-            line-height: 1;
-        ">R$ 69,90</span>
-    </div>
-</div>
-
-<style>
-@keyframes pulsarBrilho {
-    0% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 6px 1px rgba(0,0,0,.1), 
-            0 0 5px rgba(0,255,43,0.5),
-            0 0 10px rgba(255,255,255,0.3);
-        transform: scale(1);
-    }
-    50% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 8px 3px rgba(0,0,0,.3), 
-            0 0 15px rgba(0,255,43,0.8),
-            0 0 25px rgba(255,255,255,0.6);
-        transform: scale(1.05);
-    }
-    100% {
-        text-shadow: 
-            0 1px 0 #00770f, 
-            0 2px 0 #00660c, 
-            0 3px 0 #00550a, 
-            0 4px 0 #004408, 
-            0 5px 0 #003306, 
-            0 6px 1px rgba(0,0,0,.1), 
-            0 0 5px rgba(0,255,43,0.5),
-            0 0 10px rgba(255,255,255,0.3);
-        transform: scale(1);
-    }
-}
-</style>
-
-    </div>
-</section>
-
-<!-- Seção Integrada: Texto + Duas Capas Inteiras com Efeito Glow Laranja -->
-
-<!-- ========================================== -->
-<!--     CAIXA DE AVISO DO E-BOOK (EM BREVE)    -->
-<!-- ========================================== -->
-<div class="prisma-aviso-container">
-    <div class="prisma-aviso-card">
-        <span class="prisma-aviso-tag">PRODUTO DIGITAL</span>
-        <h2>E-book Prisma Histórico</h2>
-        <p>O método inovador para entender a engrenagem da História do Brasil sem decoreba.</p>
-        
-        <!-- Botão com Sombra e Efeito de Clique Dinâmico -->
-        <button type="button" class="prisma-aviso-btn" onclick="mostrarAvisoBreve()">
-            🚀 REVELAR DATA DE LANÇAMENTO
-        </button>
-    </div>
-</div>
-
-<!-- ========================================== -->
-<!--       MODAL DE INTERAÇÃO (POP-UP)          -->
-<!-- ========================================== -->
-<div id="prismaModalBreve" class="prisma-pop-overlay">
-    <div class="prisma-pop-content">
-        <button type="button" class="prisma-pop-fechar" onclick="esconderAvisoBreve()">&times;</button>
-        
-        <span style="font-size: 45px; display: block; margin-bottom: 15px;">⏳</span>
-        <h2>Quase Pronto!</h2>
-        <p>A nossa equipe está a finalizar os últimos mapas mentais visuais e infográficos cirúrgicos.</p>
-        
-        <div class="prisma-pop-status">
-            O blog já está 100% operacional. O e-book será lançado em breve!
-        </div>
-        
-        <button type="button" class="prisma-pop-entendido" onclick="esconderAvisoBreve()">
-            ENTENDIDO, VOU AGUARDAR!
-        </button>
-    </div>
-</div>
-
-  <!--erros no cronometros -->
-  <!-- BANNER -->
-<section class="hero-section">
-    <div class="hero-container">
-        <!-- LADO ESQUERDO: CONTEÚDO -->
-        <div class="hero-content">
-            <span class="hero-tag">LANÇAMENTO EXCLUSIVO</span>
-            <h1 class="hero-title">Domine a História do Brasil sem decorar textos infinitos.</h1>
-            <p class="hero-subtitle">Aprenda as revoltas e os bastidores que os vestibulares e concursos mais cobram através de mapas mentais visuais e infográficos cirúrgicos.</p>
-            
-            <div class="hero-actions">
-                <a href="artigos/ebook.html" class="btn-primary">Quero Gabaritar História</a>
-                <a href="artigos/doacao.html" class="btn-secondary">Apoie o Projeto</a>
+    <!-- ÁREA DE VENDAS PRINCIPAL (HERO) -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <h1>Seus E-books de Curiosidades</h1>
+            <p>Aprenda fatos surpreendentes e apoie o nosso projeto digital com a nossa seleção exclusiva de infoprodutos.</p>
+            <div class="hero-buttons">
+                <a href="/artigos/ebook.html" class="btn-primary">Ver E-books</a>
+                <a href="/artigos/doacao.html" class="btn-secondary">Apoiadores</a>
             </div>
-        </div>
-
-        <!-- LADO DIREITO: MOCKUP DO E-BOOK -->
-        <!-- Seção Unificada do Produto (Fundo carvão isolado que não vaza para o rodapé) -->
-<section class="prisma-secao" style="
-    background-color: #1C1C1C; /* Fundo carvão */
-    color: #F5F5F5; /* Texto claro para leitura */
-    padding: 60px 20px;
-    border-radius: 12px;
-    font-family: sans-serif;
-    width: 100%;
-    box-sizing: border-box;
-">
-
-    <!-- Container da Imagem do Banner / Mockup -->
-   <div class="hero-visual" style="max-width: 400px; margin: 0 auto 40px auto; text-align: center;">
-    <div class="mockup-placeholder" style="
-        position: relative;
-        padding: 4px; /* Espessura da borda */
-        background: linear-gradient(135deg, #ff6a00 0%, #1a1a1a 100%); /* Borda Laranja + Carvão */
-        border-radius: 12px; /* Garante que a borda externa seja arredondada */
-    ">
-        <img src="img/tratados-tordesilha.webp" alt="Capa do E-book Prisma Histórico" class="book-cover" style="
-            display: block;
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 8px; /* Arredondamento interno da imagem */
-            filter: contrast(1.15) saturate(1.2) drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.5)); /* Intensifica a imagem */
-        ">
-    </div>
-</div>
-
-    <!-- Título Principal -->
-    <h1 class="prisma-headline-cirurgica" style="color: #FFFFFF; margin-bottom: 10px; text-align: center; font-size: 2.5rem;">
-        PRISMA HISTÓRICO
-        <span class="laranja" style="display: block; color: #FF6600; font-size: 0.6em; margin-top: 5px; font-weight: bold;">
-            A História do Brasil que não é contada
-        </span>
-    </h1>
-
-    <!-- Barra Laranja Centralizada -->
-    <div class="prisma-barra-laranja" style="width: 60px; height: 4px; background-color: #FF6600; margin: 0 auto 20px auto;"></div>
-
-    <!-- Headline de Impacto Principal -->
-    <h2 class="prisma-lead-copy" style="
-        color: #FFFFFF; 
-        font-size: 2.2rem; 
-        font-weight: 800; 
-        line-height: 1.3; 
-        max-width: 800px; 
-        margin: 0 auto 25px auto; 
-        text-align: center;
-        letter-spacing: -0.5px;
-    ">
-        Esqueça a narrativa oficial. <br>
-        <span style="color: #FF6600;">A verdade sobre o Brasil</span> não está nos monumentos de mármore.
-    </h2>
-
-    <!-- Texto de Apoio Centralizado -->
-    <p class="prisma-texto-principal" style="
-        color: #CCCCCC; 
-        font-size: 1.15rem; 
-        line-height: 1.7; 
-        max-width: 700px; 
-        margin: 0 auto 20px auto; 
-        text-align: center;
-    ">
-        Aqui, não estudamos o romantismo dos livros didáticos e sim as engrenagens ocultas do poder, as dívidas impagáveis e as guerras silenciadas que moldaram o nosso destino. Prepare-se para enxergar a história através de um prisma sem filtros.
-    </p>
-
-    <!-- Slogan / Público-Alvo -->
-    <p class="prisma-slogan" style="color: #FF6600; font-weight: bold; margin-bottom: 0; text-align: center; font-size: 1.1rem;">
-        Vestibulares | Enem | Concursos Públicos 
-    </p>
-
-</section> <!-- Fim da seção escura. O conteúdo abaixo daqui voltará ao normal da página -->
-
-  <!-- Bloco do E-book com fundo carvão levemente mais claro, borda fina e sombra laranja -->
-  <div class="prisma-bloco-ebook" style="
-    background-color: #262626; /* Tom de carvão secundário para contraste */
-    border: 1px solid rgba(255, 102, 0, 0.3); /* Borda sutil laranja */
-    box-shadow: 0px 10px 30px rgba(255, 102, 0, 0.15); /* Sombra (shadow) laranja cirúrgica */
-    padding: 30px;
-    border-radius: 8px;
-  ">
-    <span class="prisma-tag-ebook" style="
-        background-color: #FF6600; 
-        color: #FFFFFF; 
-        padding: 4px 8px; 
-        font-size: 0.75em; 
-        font-weight: bold; 
-        border-radius: 4px;
-    ">EBOOK EXCLUSIVO</span>
-    
-    <h2 style="color: #FFFFFF; margin-top: 15px;">Historiografia Detalhada, Cirúrgica, Documentada e Investigativa</h2>
-    
-    <p style="
-    color: #DDDDDD; 
-    line-height: 1.6; 
-    text-align: center; /* Alinha o texto no centro */
-    max-width: 650px;    /* Limita a largura para o texto não espalhar na tela */
-    margin: 0 auto;      /* Centraliza o bloco na página */
-">
-    Não é resumo. Não é decoreba. <br>
-    No Prisma Histórico, cada evento é destrinchado em 3 camadas: o Fato Documentado, com base em fontes primárias, tratados e cartas; o Debate Historiográfico, confrontando as correntes clássicas e as novas tendências de análise; e a Reflexão Crítica, revelando quem ganhou, quem perdeu e quem pagou a conta.
-</p>
-
-    <h3 style="color: #FF6600;">Ebook Prisma Histórico para Vestibular, ENEM e Concursos Públicos</h3>
-    
-    <p style="color: #DDDDDD; line-height: 1.6;">
-      Transformamos toda essa investigação em conteúdo que aprova. <br>
-      Pare de memorizar história. Comece a investigar história. E passe na frente.
-    </p>
-    
-    <ul class="prisma-lista-ebook" style="color: #DDDDDD; line-height: 1.8; padding-left: 20px;">
-      <li><strong style="color: #FF6600;">Conteúdo Cirúrgico:</strong> Só o que cai. Analisado a fundo, sem perda de tempo.</li>
-      <li><strong style="color: #FF6600;">Mapas Mentais e Linhas do Tempo:</strong> Pra visualizar conexões que a banca adora cobrar.</li>
-      <li><strong style="color: #FF6600;">Questões Comentadas:</strong> Com o olhar crítico do prisma. Você entende o "porquê" da alternativa.</li>
-      <li><strong style="color: #FF6600;">Temas Quentes:</strong> Independência Comprada, Guerra do Paraguai, Questão Religiosa, Abolição, Golpe da República. Tudo com base documental.</li>
-    </ul>
-    
-    <a href="artigos/ebook.html" class="prisma-botao" style="
-        display: inline-block;
-        background-color: #FF6600;
-        color: #FFFFFF;
-        text-decoration: none;
-        padding: 12px 24px;
-        font-weight: bold;
-        border-radius: 4px;
-        margin-top: 20px;
-        box-shadow: 0px 4px 15px rgba(255, 102, 0, 0.4);
-    ">Quero Investigar e Passar</a>
-  </div>
-</div>
-</section>
-
- <!--introdução do index-->
-
-  
-
- <!-- ==========================================================================
-   PRISMA HISTÓRICO - CRONOLOGIA LINEAR COMPLETA (HTML UNIFICADO)
-   ========================================================================== -->
-
-<!-- SEÇÃO 1: EXPANSÃO, RECONHECIMENTO E PRIMEIROS CONTATOS -->
-<section class="prisma-cronologia">
-    <div class="prisma-main-header">
-        <h2>Expansão Ultramarina e Primeiros Contatos</h2>
-        <p>A genese tecnológica lusa, as rotas transatlânticas e a fenomenologia do achamento.</p>
-        <p class="prisma-subtitle-tag">Vestibulares | Enem | Concursos Públicos</p>
-        <div class="prisma-orange-bar"></div>
-    </div>
-
-    <div class="prisma-theme-block">
-        <h3>Dinâmicas Globais e Tecnológicas</h3>
-        <div class="prisma-row-container">
-            <div class="prisma-article-card">
-                <h4>Dinâmicas da Colonização Lusa</h4>
-                <p>Motivações econômicas: Busca por especiarias, ouro, prata e novas rotas comerciais.</p>
-                <p>A Intimidade da Casa Grande e a Dialética da Exclusão Social.</p>
-                <p>A Resistência Cultural e o Paradoxo do "Paraíso dos Mulatos".</p>
-                <p>Os Descobridores: A Posição Geopolítica Lusa e a Vocação Atlântica.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>A Gênese Tecnológica e as Rotas</h4>
-                <p>A Gênese Tecnológica e o Ensaio Geral de Ceuta.</p>
-                <p>A Mística da Cruzada e a Geopolítica do Fechamento das Rotas do Levante.</p>
-                <p>A Batalha das Rotas: A Rota do Cabo contra a Solução Ocidental Colombina.</p>
-                <p>A Consagração do Périplo: de D. João II à Invenção da Boa Esperança.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Racionalidade e a Armada</h4>
-                <p>A Racionalidade Científica de D. João II: Espionagem Industrial e Planeamento Bélico.</p>
-                <p>A Desmistificação da Rota Colombina e o Cabo da Boa Esperança como Eixo Geopolítico.</p>
-                <p>A Armada de Cabral: O Caráter Dual da Frota e a Intencionalidade do Desvio.</p>
-                <p>O Olhar do Escrivão: A Fenomenologia do Achamento e a Construção do Monte Pascoal.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SEÇÃO 2: RECONHECIMENTO, ARRENDAMENTO E EXTRATIVISMO -->
-<section class="prisma-cronologia bg-dark">
-    <div class="prisma-main-header">
-        <h2>Reconhecimento Territorial e Economia Extrativista</h2>
-        <p>A burocracia do achamento, o consórcio de cristãos-novos e o choque franco-luso.</p>
-        <div class="prisma-orange-bar"></div>
-    </div>
-
-    <div class="prisma-theme-block">
-        <h3>Exploração Primitiva e Escambo</h3>
-        <div class="prisma-row-container">
-            <div class="prisma-article-card">
-                <h4>O Primeiro Contato e Inventário</h4>
-                <p>O Primeiro Contato e a Logística de Reconhecimento de Porto Seguro.</p>
-                <p>A Cenografia Ideológica: A Missa da Pascoela e a Obediência da Cruz.</p>
-                <p>A Burocracia do Achamento: O Regresso da Nau de Mantimentos e os Degradados.</p>
-                <p>O Inventário de Caminha: Análise Crítica da Utilidade da Pousada Brasílica.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Cegueira Geográfica e Arrendamento</h4>
-                <p>A Cegueira Geográfica Quinhentista e a Onomástica do Calendário Litúrgico.</p>
-                <p>A Desilusão Antropológica e a Privatização por Arrendamento (O Consórcio de Cristãos-Novos).</p>
-                <p>Os Limites da Expansão Setentrional e o Monopólio da Madeira Tintureira.</p>
-                <p>A Nau Bretoa (1511): A Micro-História da Racionalidade Jurídica e do Escambo Regulado.</p>
-                <p>Biopolítica do Trato, a Carga de Semoventes e a Vitória do Nome Comercial.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Geografia do Extrativismo e Fronteiras</h4>
-                <p>A Geografia do Extrativismo e a Infraestrutura das Feitorias Insulares.</p>
-                <p>A Guerra Geopolítica do Prata e a Superação do Teto Continental.</p>
-                <p>A Socioantropologia do Cunhadismo e a Assimetria da Miscigenação.</p>
-                <p>O Choque Franco-Luso e o Escambo da Ilegalidade.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SEÇÃO 3: CONFLITOS INICIAIS, OCUPAÇÃO E DOAÇÕES -->
-<section class="prisma-cronologia">
-    <div class="prisma-main-header">
-        <h2>Conflitos Iniciais e o Sistema de Doações</h2>
-        <p>A quebra das parcerias, as primeiras fundações e a engenharia das Capitanias Hereditárias.</p>
-        <div class="prisma-orange-bar"></div>
-    </div>
-
-    <div class="prisma-theme-block">
-        <h3>A Engenharia das Capitanias</h3>
-        <div class="prisma-row-container">
-            <div class="prisma-article-card">
-                <h4>Dumping Francês e Transplante Agrário</h4>
-                <p>I. O Dumping Comercial Francês e a Rutura das Parcerias Coloniais.</p>
-                <p>II. A Guerra de Procuração: Clivagens Étnicas e as Matrizes Tupi.</p>
-                <p>III. A Resposta Militar: O Terror de Cristóvão Jaques e os Limites do Guarda-Costa.</p>
-                <p>IV. O Debate da Ocupação: Do Extrativismo Parasitário ao Transplante Agrário.</p>
-                <p>V. A Miragem da Prata e a Fundação de São Vicente.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Quimera do Prata e Cimento Social</h4>
-                <p>I. A Quimera Metalúrgica do Prata e o Desvio de Sebastião Cabot.</p>
-                <p>II. A Tragédia de Pêro Lobo e a Fronteira Invertida de Pizarro.</p>
-                <p>III. A Burocracia Transserrana: A Fundação de São Vicente e Piratininga como Cimento Social.</p>
-                <p>IV. A Inteligência de Diogo de Gouveia e o Contra-Ataque de Itamaracá.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Donatários, Cartas de Doação e Forais</h4>
-                <p>I. O Despertar da Inércia Régia e a Biopolítica dos Condenados.</p>
-                <p>II. A Pequena Nobreza da Índia e o Perfil Sociológico dos Donatários.</p>
-                <p>III. A Carta de Doação: Soberania Delegada e a Alçada Penal Estamental.</p>
-                <p>IV. O Foral: A Partilha Fiscal do Exotismo e o Monopólio do Pau-Brasil.</p>
-                <p>V. A Blindagem contra o Feudalismo Fragmentador e a Geometria de Tordesilhas.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SEÇÃO 4: CENTRALIZAÇÃO POLÍTICA E ENGENHARIA DE MISSOES -->
-<section class="prisma-cronologia bg-dark">
-    <div class="prisma-main-header">
-        <h2>Governo-Geral e a Ocupação do Espaço Colonial</h2>
-        <p>A refundação burocrática de 1549, guerras totais e a transição demográfica.</p>
-        <div class="prisma-orange-bar"></div>
-    </div>
-
-    <div class="prisma-theme-block">
-        <h3>Estruturação Administrativa</h3>
-        <div class="prisma-row-container">
-            <div class="prisma-article-card">
-                <h4>Centralização de 1549 e Salvador</h4>
-                <p>I. O Vício Constitucional do Sistema Feudal-Mercantil e a Anarquia Intercapitanial.</p>
-                <p>II. O Remédio Joanino: A Revogação dos Forais e a Tríade Burocrática de 1549.</p>
-                <p>III. A Instalação da Capital e a Economia de Permuta da Cidade do Salvador.</p>
-                <p>IV. O Braço Espiritual e as Fraturas do Estado Confessional: Choque com Bispo Sardinha.</p>
-                <p>V. A Inversão Missionária no Sul: A Fundação de São Paulo de Piratininga.</p>
-                <p>VI. A Resposta Francesa: Villegaignon e a França Antártica (1555).</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Engenharia dos Aldeamentos</h4>
-                <p>I. A Guerra Total na Guanabara: Do Sacrifício de Estácio à Cidade Real do Castelo.</p>
-                <p>II. A Aliança Toga-Bata: Mem de Sá, Nóbrega e a Concepção Jesuítica do Indígena.</p>
-                <p>III. A Engenharia dos Aldeamentos: Espaço, Disciplina e Polícia Cristã.</p>
-                <p>IV. O Paradoxo do Resgate e o Fenômeno do Desaparecimento Ecológico.</p>
-            </div>
-            <div class="prisma-article-card">
-                <h4>Ofensiva Senhorial e Escravidão</h4>
-                <p>I. A Ofensiva Senhorial de Pernambuco: O Avanço para o São Francisco e a Ilusão Metalúrgica.</p>
-                <p>II. O Bipolarismo Administrativo e a Guerra de Extermínio de Cabo Frio.</p>
-                <p>III. A Catástrofe Demográfica Indígena: O "Gasto" das Almas e a Fraude do Descimento.</p>
-                <p>IV. A Transição para a Escravidão Africana e o Achaque da Inconstância Oligárquica.</p>
-            </div>
-            </div>
-        
-    
-
-
         </div>
     </section>
 
-<!-- SEÇÃO 5: UNIÃO IBÉRICA E AS FRONTEIRAS DO NORTE -->
-<section class="prisma-cronologia bg-dark">
-<div class="prisma-main-header">
-    <h2>União Ibérica e Consolidação Territorial</h2>
-    <p>A inflexão habsburga, guerras de procuração e a expansão em direção ao Maranhão.</p>
-    <div class="prisma-orange-bar"></div>
-</div>
-
-<!-- TEMA 1 -->
-<div class="prisma-theme-block">
-    <h3>Origem e Contexto</h3>
-    <div class="prisma-row-container">
-        
-        <div class="prisma-article-card">
-            <h4>1580 - 1640: 60 Anos de 1 Só Rei</h4>
-            <p>I. Crise de Sucessão em Portugal: Morte de D. Sebastião sem herdeiro.</p>
-            <p>II. Filipe II da Espanha assume o trono português.</p>
-            <p>III. Promessa: Portugal manteria autonomia e leis.</p>
+    <!-- VITRINE DE PRODUTOS -->
+    <main class="vitrine-section" id="ebooks">
+        <div class="section-title">
+            <h2>Nossos E-books</h2>
+            <p>Escolha o seu próximo infoproduto e comece a ler agora mesmo.</p>
         </div>
 
-        <div class="prisma-article-card">
-            <h4>A Dinastia Filipina</h4>
-            <p>I. Filipe I, II e III governaram Portugal e Espanha.</p>
-            <p>II. Administração separada: Vice-Rei em Lisboa.</p>
-            <p>III. Manutenção do Império Português no Brasil e África.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Por que Não Houve Resistência?</h4>
-            <p>I. Elite mercantil ganhou acesso a novos mercados.</p>
-            <p>II. Nobreza foi comprada com cargos e honrarias.</p>
-            <p>III. Povo não tinha poder pra decidir nada.</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- TEMA 2 -->
-<div class="prisma-theme-block">
-    <h3>Impactos no Brasil</h3>
-    <div class="prisma-row-container">
-
-        <div class="prisma-article-card">
-            <h4>Vantagens para a Elite</h4>
-            <p>I. Acesso ao Mercado Espanhol: Vender açúcar e ouro na América Espanhola.</p>
-            <p>II. Proteção Militar: Marinha espanhola protegia as rotas.</p>
-            <p>III. Expansão Livre: Fim de Tordesilhas na prática.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Guerra e Invasão</h4>
-            <p>I. Invasões Holandesas: Espanha em guerra, Brasil foi alvo.</p>
-            <p>II. Expulsão dos Franceses do Maranhão.</p>
-            <p>III. Guerras de Procuração na Ásia e África.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Expansão Territorial</h4>
-            <p>I. Bandeirantes dobraram o território para o Oeste.</p>
-            <p>II. Fundação de Belém e ocupação da Amazônia.</p>
-            <p>III. Base para o "Uti Possidetis" do futuro.</p>
-        </div>
-
-    </div>
-</div>
-
-<!-- TEMA 3 -->
-<div class="prisma-theme-block">
-    <h3>Fim e Legado</h3>
-    <div class="prisma-row-container">
-
-        <div class="prisma-article-card">
-            <h4>1640: A Restauração</h4>
-            <p>I. Revolta em Lisboa contra impostos para guerra espanhola.</p>
-            <p>II. D. João IV da Casa de Bragança assume.</p>
-            <p>III. 28 anos de guerra até Espanha reconhecer.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>O Legado Territorial</h4>
-            <p>I. Expansão Irreversível: Terras conquistadas ficaram.</p>
-            <p>II. Brasil saiu 3x maior do que entrou em 1580.</p>
-            <p>III. Formação das fronteiras do Brasil atual.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Consequência Política</h4>
-            <p>I. Brasil virou centro do Império Português.</p>
-            <p>II. Experiência de unidade territorial.</p>
-            <p>III. Preparou o caminho para 1822.</p>
-        </div>
-
-    </div>
-</div>
-   
-<!--fronteiras -->
-    
-            </section>
-
-            <div class="prisma-theme-block">
-    <h3>A Expansão das Fronteiras</h3>
-    <div class="prisma-row-container">
-        
-        <div class="prisma-article-card">
-            <h4>Bandeirantes</h4>
-            <p>Quem abriu o interior atrás de ouro e índio.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Tratado de Madrid</h4>
-            <p>Legalizaram o Brasil do tamanho que é hoje.</p>
-        </div>
-
-        <div class="prisma-article-card">
-            <h4>Missões Jesuíticas</h4>
-            <p>Padres ocuparam o Sul pra Portugal não perder.</p>
-        </div>
-
-    </div>
-</div>
-<!-- ==========================================================================
-
-   ========================================================================== -->
-   <!-- SEÇÃO: O IMPÉRIO DO BRASIL (1822 - 1889) -->
-<section class="prisma-seccao-imperio">
-
-    <!-- CABEÇALHO DA ERA IMPERIAL -->
-    <div class="prisma-header-imperio">
-        <h2>O Primeiro Reinado &amp; A Engenharia do Autoritarismo</h2>
-        <p>A soberania hipotecada pelas dívidas inglesas, o absolutismo constitucional e o colapso de 1831.</p>
-        <div class="prisma-barra-laranja"></div>
-    </div>
-
-    <!-- BLOCO III: PRIMEIRO REINADO -->
-    <div class="prisma-bloco-imperio">
-        <h3> A Soberania Hipotecada &amp; A Lei da Espada (1822–1831)</h3>
-        <div class="prisma-grelha-imperio">
-            
-            <!-- Cartão 1 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1822–1825</span>
-                <h4>A Independência Comprada</h4>
-                <p>• A Independência Comprada: A Dívida Oculta que Deu Origem ao Brasil Imperial</p>
-                <p>• O Isolamento Diplomático e o Nó da Legitimidade</p>
-                <p>• O Tratado de 1825: A Fatura de Dois Milhões de Libras</p>
-                <p>• A Ciranda Financeira dos Banqueiros Ingleses</p>
-                <p>• Reflexão Crítica: A Soberania Hipotecada</p>
+        <div class="grid-produtos">
+            <!-- Produto 1 -->
+            <div class="card-produto">
+                <div class="card-tag">Mais Lido</div>
+                <div class="card-body">
+                    <h3>E-book Curiosidades Vol. 1</h3>
+                    <p>Fatos incríveis sobre a ciência e a história do mundo que vão expandir o seu conhecimento.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="preco">R$ 29,90</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
             </div>
 
-            <!-- Cartão 2 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1824</span>
-                <h4>A Lei da Espada</h4>
-                <p>• I. A Lei da Espada: O Autoritarismo Oculto na Constituição de 1824</p>
-                <p>• II. A lei da Espada: O Autoritarismo Oculto na Constituição de 1824</p>
-                <p>• Reflexão Crítica: A Liberdade Blindada pelas Elites</p>
+            <!-- Produto 2 -->
+            <div class="card-produto">
+                <div class="card-tag">Lançamento</div>
+                <div class="card-body">
+                    <h3>O Guia do Quiz Perfeito</h3>
+                    <p>Como criar jogos interativos que engajam o seu público e geram vendas automáticas na internet.</p>
+                </div>
+                <div class="card-footer">
+                    <span class="preco">R$ 19,90</span>
+                    <a href="#" class="btn-comprar">Comprar Agora</a>
+                </div>
             </div>
-
-            <!-- Cartão 3 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1825–1831</span>
-                <h4>O Pântano da Cisplatina</h4>
-                <p>• O Pântano da Cisplatina: O Conflito que Sangrou as Finanças e o Trono do Imperador</p>
-                <p>• O Custo Humano e Financeiro de uma Guerra Impopular</p>
-                <p>• A Humilhação Diplomática e a Perda do Território</p>
-                <p>• Reflexão Crítica: O Pavio Curto para a Abdicação</p>
-            </div>
-
-            <!-- Cartão 4 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1831</span>
-                <h4>O Crepúsculo do Imperador</h4>
-                <p>• O Crepúsculo do Imperador: A Noite das Garrafadas e os Bastidores do Colapso de 1831</p>
-                <p>• A Noite das Garrafadas: A Guerra Civil de Vidro e Pedras</p>
-                <p>• Os Bastidores da Abdicação: O Cerco do Campo de Santana</p>
-                <p>• Reflexão Crítica: A Fuga e o Trono Vazio</p>
-            </div>
-
         </div>
-    </div>
-
-    <!-- BLOCO IV: SEGUNDO REINADO -->
-    <div class="prisma-bloco-imperio">
-        <h3> O Teatro Imperial, a Fábrica do Monarca &amp; O Ocaso (1831–1889)</h3>
-        <div class="prisma-grelha-imperio">
-            
-            <!-- Cartão 5 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1835–1845</span>
-                <h4>Anatomia do Despedaçamento</h4>
-                <p>• Anatomia do Despedaçamento: O Choque entre a Cabanagem e a Farroupilha no Brasil Regencial</p>
-                <p>• A Cabanagem (Pará): O Grito Sangrento dos Excluídos</p>
-                <p>• A Guerra dos Farrapos (Sul): A Rebelião dos Donos do Gado</p>
-                <p>• Reflexão Crítica: Duas Guerras, Duas Réguas Morais</p>
-            </div>
-
-            <!-- Cartão 6 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1840</span>
-                <h4>O Golpe da Maioridade</h4>
-                <p>• O Golpe da Maioridade: As Rasteiras Parlamentares que Coroaram uma Criança para Salvar o Império</p>
-                <p>• O Tabuleiro Político: A Dança das Cadeiras entre Liberais e Conservadores</p>
-                <p>• A Engenharia do Golpe: A Constituição Rasgada nos Bastidores</p>
-                <p>• Reflexão Crítica: O Nascimento do Segundo Reinado sob o Signo da Aparência</p>
-            </div>
-
-            <!-- Cartão 7 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1840–1850</span>
-                <h4>A Fábrica de um Monarca</h4>
-                <p>• A Fábrica de um Monarca: O Isolamento Psicológico e a Rotina Desumana que Criaram Dom Pedro II</p>
-                <p>• O Abandono Institucionalizado e a Ausência de Afeto</p>
-                <p>• A Engrenagem Desumana: O Programa de Estudos de um Prodígio Forçado</p>
-                <p>• A Máscara de Imperador: O Autocontrole como Sobrevivência</p>
-                <p>• Reflexão Crítica: O Preço da Estabilidade</p>
-            </div>
-
-            <!-- Cartão 8 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1847–1853</span>
-                <h4>O Teatro das Cadeiras</h4>
-                <p>• O Teatro das Cadeiras: O "Parlamentarismo às Avessas" e a Maquiavélica Arte de Governar de Dom Pedro II</p>
-                <p>• A Inversão da Pirâmide: Como Funcionava o Sistema</p>
-                <p>• Liberais e Conservadores: Duas Faces da Mesma Moeda</p>
-                <p>• Reflexão Crítica: A Estabilidade ao Preço da Paralisia</p>
-            </div>
-
-            <!-- Cartão 9 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1861–1863</span>
-                <h4>A Questão Christie</h4>
-                <p>• O Dia em que o Brasil Mostrou os Dentes à Rainha Vitória: A Questão Christie e as Fissuras do Império</p>
-                <p>• O Pavio Curto de um Embaixador Arrogante</p>
-                <p>• O Bloqueio Naval e O Orgulho Nacional</p>
-                <p>• Reflexão Crítica: A Ilusão da Força e o Início do Fim</p>
-            </div>
-
-            <!-- Cartão 10 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1864–1870</span>
-                <h4>A Vitória Pirrônica</h4>
-                <p>• A Vitória Pirrônica do Império: Como a Guerra do Paraguai Consolidou o Exército e Destruiu a Coroa</p>
-                <p>• A Trincheira dos Excluídos: O Nascimento de um Exército Cidadão</p>
-                <p>• A Bancarrota Imperial: O Nó de Libra Esterlina</p>
-                <p>• Reflexão Crítica: O Início do Fim do Tabuleiro Imperial</p>
-            </div>
-
-            <!-- Cartão 11 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1871–1885</span>
-                <h4>A Farsa do Gradualismo</h4>
-                <p>• A Farsa do Gradualismo: Como as Leis Abolicionistas Foram Desenhadas para Adiar o Fim da Escravidão</p>
-                <p>• A Lei do Ventre Livre (1871): A Engenharia do Cativeiro Prolongado</p>
-                <p>• A Lei dos Sexagenários (1885): A Crueldade Vestida de Liberdade</p>
-                <p>• Reflexão Crítica: O Colapso de um Império Sem Base</p>
-            </div>
-
-            <!-- Cartão 12 -->
-            <div class="prisma-cartao-imperio">
-                <span class="prisma-ano-tag">1872–1889</span>
-                <h4>O Trono Isolado e o Ocaso</h4>
-                <p>• O Trono Isolado: A Questão Religiosa e a Perda da Legitimidade Divina (1872–1875)</p>
-                <p>• O Choque com Roma: Bispos contra Maçons</p>
-                <p>• Reflexão Crítica: A Solidão da Coroa</p>
-                <p>• O Golpe do Silêncio: O 15 de Novembro e uma República de Costas Voltadas para o Povo (1889)</p>
-                <p>• Os Bastidores do 15 de Novembro: A Mentira que Moveu o Marechal</p>
-                <p>• Reflexão Crítica: A Herança de um Regime Exclusivista</p>
-            </div>
-
-        </div>
-    </div>
-
-
-    
-        <!--Primeira República-->
-        <div class="container" style="max-width: 1200px; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1A1A1A; color: #FFFFFF; padding: 40px 20px; line-height: 1.6;">
-    
-    <header style="text-align: center; margin-bottom: 50px; border-bottom: 3px solid #FF6600; padding-bottom: 20px;">
-        <h1 style="color: #FF6600; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0;">A Primeira República</h1>
-        <p style="color: #E0E0E0; font-size: 1.2rem; margin: 0;">Principais acontecimentos do período oligárquico (1889 — 1930)</p>
-    </header>
-
-    <main style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        
-        <!-- PALETA 1: Fundo Carvão, Borda Laranja, Texto Branco -->
-        <article style="background-color: #2D2D2D; border-left: 5px solid #FF6600; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF6600;">1889</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Proclamação da República</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Fim da monarquia através de um golpe militar liderado pelo Marechal Deodoro da Fonseca, iniciando a República Velha.</p>
-        </article>
-
-        <!-- PALETA 2: Fundo Laranja, Borda Carvão, Texto Branco -->
-        <article style="background-color: #FF6600; border-left: 5px solid #1A1A1A; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #1A1A1A; background-color: rgba(255, 255, 255, 0.2); display: inline-block; padding: 2px 8px; border-radius: 4px; width: fit-content;">1891</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Primeira Constituição Republicana</h2>
-            <p style="font-size: 0.95rem; color: #FFFFFF; margin: 0; flex-grow: 1;">Instituição do federalismo, descentralização do poder e criação do sufrágio universal masculino aberto (voto de cabresto).</p>
-        </article>
-
-        <!-- PALETA 3: Fundo Carvão, Borda Laranja Total, Texto Branco -->
-        <article style="background-color: #1A1A1A; border: 2px solid #FF8533; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF8533;">1893 – 1897</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Guerra de Canudos</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Conflito no sertão baiano liderado por Antônio Conselheiro. O massacre da comunidade revelou a violência do novo regime contra o povo.</p>
-        </article>
-
-        <!-- PALETA 1: Repetição do Ciclo (Fundo Carvão, Borda Laranja) -->
-        <article style="background-color: #2D2D2D; border-left: 5px solid #FF6600; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF6600;">1898 – 1930</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Política do Café com Leite</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Alternância de poder federal estruturada pelas oligarquias paulista (café) e mineira (leite), sustentada pela Política dos Governadores.</p>
-        </article>
-
-        <!-- PALETA 2: Repetição do Ciclo (Fundo Laranja, Borda Carvão) -->
-        <article style="background-color: #FF6600; border-left: 5px solid #1A1A1A; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #1A1A1A; background-color: rgba(255, 255, 255, 0.2); display: inline-block; padding: 2px 8px; border-radius: 4px; width: fit-content;">1904</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Revolta da Vacina</h2>
-            <p style="font-size: 0.95rem; color: #FFFFFF; margin: 0; flex-grow: 1;">Levante popular no Rio de Janeiro contra a obrigatoriedade da vacinação da varíola, num cenário de reforma urbana excludente.</p>
-        </article>
-
-        <!-- PALETA 3: Repetição do Ciclo (Fundo Carvão, Borda Laranja Total) -->
-        <article style="background-color: #1A1A1A; border: 2px solid #FF8533; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF8533;">1910</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Revolta da Chibata</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Motim de marinheiros de baixa patente, liderados por João Cândido, exigindo o fim dos castigos físicos e melhores condições na Marinha.</p>
-        </article>
-
-        <!-- PALETA 1: Repetição do Ciclo (Fundo Carvão, Borda Laranja) -->
-        <article style="background-color: #2D2D2D; border-left: 5px solid #FF6600; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF6600;">1922</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Semana de Arte Moderna</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Ruptura cultural em São Paulo e o início das revoltas militares (Tenentismo), contestando a legitimidade do domínio oligárquico.</p>
-        </article>
-
-        <!-- PALETA 2: Repetição do Ciclo (Fundo Laranja, Borda Carvão) -->
-        <article style="background-color: #FF6600; border-left: 5px solid #1A1A1A; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #1A1A1A; background-color: rgba(255, 255, 255, 0.2); display: inline-block; padding: 2px 8px; border-radius: 4px; width: fit-content;">1929</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">A Grande Depressão</h2>
-            <p style="font-size: 0.95rem; color: #FFFFFF; margin: 0; flex-grow: 1;">A crise mundial quebra a economia cafeeira. Rompe-se a aliança política tradicional entre as elites de São Paulo e Minas Gerais.</p>
-        </article>
-
-        <!-- PALETA 3: Repetição do Ciclo (Fundo Carvão, Borda Laranja Total) -->
-        <article style="background-color: #1A1A1A; border: 2px solid #FF8533; border-radius: 8px; padding: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column;">
-            <div style="font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: #FF8533;">1930</div>
-            <h2 style="font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 700; color: #FFFFFF;">Revolução de 1930</h2>
-            <p style="font-size: 0.95rem; color: #E0E0E0; margin: 0; flex-grow: 1;">Movimento armado liderado por Getúlio Vargas depondo Washington Luís, impedindo a posse de Júlio Prestes e encerrando o período.</p>
-        </article>
-
     </main>
 
+    <!-- SEÇÃO DE DOAÇÃO -->
+    <section class="doacoes-section" id="doacoes">
+        <h2>Apoie o Nosso Projeto ☕</h2>
+        <p>Gosta do nosso conteúdo de curiosidades? Ajude-nos a manter o site ativo com qualquer valor via PIX.</p>
+        <div class="box-pix">
+            <span class="pix-label">Chave PIX (E-mail):</span>
+            <code class="pix-key">seu-email@dominio.com</code>
+        </div>
+    </section>
 
-    </div>
-</section>
-<!-- FIM DA SEÇÃO DO IMPÉRIO -->
- <section class="section">
-  <div class="container">
-    <h2 class="subtitulo-secao">Por que Escolher Este Material?</h2>
-
-    
-    
-    <!--emoji-->
-   <div class="prisma-grid-emojis">
-  
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">🚀</span>
-    <h4>Lançamento Exclusivo</h4>
-    <p>A contagem regressiva começou para o método que vai revolucionar sua preparação. Esqueça os resumos superficiais: nossa estrutura foi desenhada do zero para quem busca gabaritar História nos vestibulares e concursos mais exigentes do país.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">📖</span>
-    <h4>E-book Completo</h4>
-    <p>Sabemos que o seu tempo é escasso. Por isso, eliminamos as notas de rodapé inúteis e focamos estritamente nas conexões lógicas, recorrências de banca e nos bastidores políticos que as provas realmente cobram, sem perda de tempo.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">🔍</span>
-    <h4>Investigação Crítica</h4>
-    <p>O E-book Prisma Histórico substitui os textos infinitos por uma engenharia visual poderosa. Através de mapas mentais cirúrgicos e infográficos cronológicos, você visualiza a matéria e compreende as engrenagens dos fatos em vez de apenas memorizá-los.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">🔍</span>
-    <h4>Três Camadas de Análise</h4>
-    <p>Nossa investigação divide cada evento em três pilares fundamentais: o Fato Documentado por fontes primárias, o Debate Historiográfico entre as grandes correntes de análise e a Reflexão Crítica sobre quem de fato controlou as estruturas de poder.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">👑</span>
-    <h4>A Fábrica do Monarca</h4>
-    <p>Explore as fissuras e os bastidores do Primeiro e Segundo Reinado. Entenda como o absolutismo constitucional, o parlamentarismo às avessas e a engenharia do autoritarismo moldaram as elites brasileiras longe dos heróis de mármore dos livros tradicionais.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">⚔️</span>
-    <h4>Revoltas e Choques Sociais</h4>
-    <p>Destrinchamos a dinâmica das clivagens étnicas, das guerras de procuração e dos conflitos internos — da resistência cultural colonial às revoltas regenciais. Entenda quem financiou, quem combateu e quem pagou a conta de cada insurreição.</p>
-  </div>
-
-  <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">📜</span>
-    <h4>Rigor Documental</h4>
-    <p>Toda a nossa base teórica está ancorada no cruzamento rigoroso de fontes primárias, tratados coloniais, cartas imperiais e legislações esquecidas. Uma abordagem investigativa que constrói um arsenal intelectual imbatível para suas questões discursivas.</p>
-  </div>
-
-   <div class="prisma-cartao-emoji">
-    <span class="prisma-emoji-icone">✒️</span>
-    <h4>A História Não Contada</h4>
-    <p>Uma imersão profunda na formação territorial e socioeconômica do Brasil. Da economia extrativista do pau-brasil e transição demográfica até os arranjos políticos que desenharam as fronteiras e as profundas fissuras sociais do nosso país atual.</p>
-  </div>
-
-
-</div>
-
-    
-    
-    
-    
-    
-    <div class="cta-box">
-  <p class="cta-texto">Domine a história do Brasil. Clique abaixo e garanta acesso imediato a esse conteúdo inédito.</p>
-  <a href="artigos/ebook.html" class="btn-cta">Garantir Acesso Imediato</a>
-</div>
-
-  </div>
-</section>
-<!--footer-->
-<footer class="footer">
+    <!-- RODAPÉ -->
+   <footer class="footer">
   <div class="container">
 
     <div class="footer-grid">
@@ -1086,9 +110,8 @@
       <div class="footer-col">
         <h4>Navegação</h4>
         <ul>
-          
          
-          <li><a href="artigos/ebook.html" class="link-destaque">Comprar E-book</a></li>
+          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
         </ul>
       </div>
 
@@ -1096,8 +119,8 @@
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
-          <li><a href="artigos/privacidade.html">Política de Privacidade</a></li>
-          <li><a href="artigos/termos.html">Termos de Uso</a></li>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
           
         </ul>
       </div>
@@ -1116,7 +139,15 @@
 
     </div>
 
-<script src="./js/script.js"></script>
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <p>© 2026  Prisma Histórico | Todos os direitos reservados.</p>
+      
+    </div>
 
+  </div>
+</footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

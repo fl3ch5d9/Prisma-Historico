@@ -1,234 +1,96 @@
+// SELECIONA OS ELEMENTOS DO HEADER
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-document.addEventListener('DOMContentLoaded', function() {
-
-  // ===== 1. MENU HAMBURGUER =====
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-  if (hamburger && menu) {
-    hamburger.addEventListener('click', function() {
-      menu.classList.toggle('active');
+// ABRE E FECHA O MENU AO CLICAR NO BOTÃO HAMBÚRGUER
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
     });
-  }
+}
 
-  // ===== 2. CONTAGEM DE 30 DIAS =====
-  const countdownEl = document.querySelector(".countdown");
-  if (countdownEl) {
-    const hoje = new Date();
-    const dataLancamento = new Date();
-    dataLancamento.setDate(hoje.getDate() + 30);
-    dataLancamento.setHours(23, 59, 59, 999);
+// FECHA O MENU AUTOMATICAMENTE SE O UTILIZADOR CLICAR EM QUALQUER LINK
+const navLinks = document.querySelectorAll('.nav-menu a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
 
-    const timer = setInterval(function() {
-      const agora = new Date().getTime();
-      const distancia = dataLancamento - agora;
+// botão quiz 
 
-      if (distancia < 0) {
-        clearInterval(timer);
-        countdownEl.innerHTML = "<h3 style='color:var(--laranja)'>Já Disponível!</h3>";
-        return;
-      }
+function corrigirQuiz() {
+    // 1. Seleciona todas as questões dentro do formulário
+    const questoes = document.querySelectorAll('.questao');
+    let totalAcertos = 0;
+    let totalQuestoes = questoes.length; // No seu caso, são 10 questões
 
-      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-      if(document.getElementById("dias")) document.getElementById("dias").innerHTML = dias.toString().padStart(2, '0');
-      if(document.getElementById("horas")) document.getElementById("horas").innerHTML = horas.toString().padStart(2, '0');
-      if(document.getElementById("minutos")) document.getElementById("minutos").innerHTML = minutos.toString().padStart(2, '0');
-      if(document.getElementById("segundos")) document.getElementById("segundos").innerHTML = segundos.toString().padStart(2, '0');
-
-    }, 1000);
-  }
-
-  // ===== 3. BOTÃO COPIAR PIX - HOVER =====
-  const btnCopiar = document.getElementById('btnCopiar');
-  if (btnCopiar) {
-    btnCopiar.addEventListener('mouseover', () => btnCopiar.style.background = '#0056b3');
-    btnCopiar.addEventListener('mouseout', () => btnCopiar.style.background = 'linear-gradient(135deg, #005ea6, #007ad6)');
-  }
-
-  // ===== 4. MODAL EBOOK =====
-  window.abrirCheckout = function() {
-    const modal = document.getElementById('modalCheckout');
-    if(modal) {
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+    // 2. Passa por cada questão para verificar o que foi marcado
+    for (let i = 1; i <= totalQuestoes; i++) {
+        // Procura o rádio que o usuário selecionou para a pergunta atual (q1, q2, q3...)
+        const respostaMarcada = document.querySelector(`input[name="q${i}"]:checked`);
+        
+        // Se o usuário marcou e o valor for "certo", soma um ponto
+        if (respostaMarcada && respostaMarcada.value === 'certo') {
+            totalAcertos++;
+        }
     }
-  }
 
-  window.fecharCheckout = function() {
-    const modal = document.getElementById('modalCheckout');
-    if(modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
+    // 3. Seleciona os elementos da caixa de resultado do seu HTML
+    const caixaResultado = document.getElementById('resultado');
+    const textoNota = document.getElementById('nota');
+
+    if (caixaResultado && textoNota) {
+        // Atualiza o texto da nota com o formato: "Acertos / Total" (Ex: 8 / 10)
+        textoNota.innerText = `${totalAcertos} / ${totalQuestoes}`;
+        
+        // Garante que a caixa de resultado fique visível na tela
+        caixaResultado.style.display = 'block';
+        
+        // Faz a página rolar suavemente até o resultado para o usuário ver a nota
+        caixaResultado.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+}
+// ebook
 
-  window.onclick = function(event) {
-    const modal = document.getElementById('modalCheckout');
-    if (event.target == modal) {
-      fecharCheckout();
-    }
-  }
-
-  // ===== 5. QUIZ NOVO =====
-  window.corrigirQuiz = function() {
-    let acertos = 0;
-    const total = 10;
-    for(let i=1; i<=total; i++) {
-      let resposta = document.querySelector(`input[name="q${i}"]:checked`);
-      if(resposta && resposta.value == "certo") acertos++;
-    }
-    const notaEl = document.getElementById("nota");
-    const resultadoEl = document.getElementById("resultado");
-    if(notaEl && resultadoEl) {
-      notaEl.innerHTML = `Você acertou <b>${acertos} de ${total}</b> questões.`;
-      resultadoEl.style.display = "block";
-      resultadoEl.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  // ===== COPIAR PIX - CLIQUE =====
-  window.copiarPix = function() {
-    const chaveEl = document.getElementById('chavePix');
-    if(!chaveEl) return;
-    const chave = chaveEl.innerText.trim();
-    
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(chave).then(() => exibirSucesso()).catch(() => fallbackCopiar(chave));
-    } else {
-      fallbackCopiar(chave);
-    }
-  }
-
-  function fallbackCopiar(texto) {
-    const textArea = document.createElement("textarea");
-    textArea.value = texto;
-    textArea.style.position = "fixed";
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    try {
-      document.execCommand('copy');
-      exibirSucesso();
-    } catch (err) {
-      alert('Não foi possível copiar automaticamente. Por favor, copie manualmente: ' + texto);
-    }
-    document.body.removeChild(textArea);
-  }
-
-  function exibirSucesso() {
-    const msg = document.getElementById('msgCopiado');
-    if(msg) {
-      msg.style.display = 'block';
-      setTimeout(() => { msg.style.display = 'none'; }, 2500);
-    }
-  }
-
-}); // <- só 1 fechamento no final
-
-//cronometro 
-
-
-// Altere esta data para o dia exato do lançamento do seu e-book!
-// Formato padrão: "Mês Dia, Ano Horas:Minutos:Segundos"
-const dataLancamento = new Date("September 1, 2026 00:00:00").getTime();
-
-const atualizarCronometro = setInterval(function() {
-    const agora = new Date().getTime();
-    const distancia = dataLancamento - agora;
-
-    // Cálculos de tempo para dias, horas, minutos e segundos
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-    // Formata os números para exibirem sempre dois dígitos (ex: 05 em vez de 5)
-    document.getElementById("days").innerHTML = dias < 10 ? "0" + dias : dias;
-    document.getElementById("hours").innerHTML = horas < 10 ? "0" + horas : horas;
-    document.getElementById("minutes").innerHTML = minutos < 10 ? "0" + minutos : minutos;
-    document.getElementById("seconds").innerHTML = segundos < 10 ? "0" + segundos : segundos;
-
-    // O que acontece quando a contagem regressiva termina
-    if (distancia < 0) {
-        clearInterval(atualizarCronometro);
-        document.querySelector(".countdown-wrapper").innerHTML = 
-            "<p class='countdown-title' style='color: var(--brand-orange);'>🔥 O E-book já está disponível! Garanta o seu abaixo.</p>";
-    }
-}, 1000);
-
-
-//boao de compra hotmart
-
-
-
-// 1. Função para ABRIR o modal quando clica no botão laranja
 function abrirCheckout() {
-    var modal = document.getElementById('modalCheckout');
-    if (modal) {
-        modal.style.setProperty('display', 'flex', 'important');
-    }
+    const modal = document.getElementById('modalCheckout');
+    if (modal) modal.style.display = 'flex';
 }
 
-// 2. Função para FECHAR o modal quando clica no X
 function fecharCheckout() {
-    var modal = document.getElementById('modalCheckout');
-    if (modal) {
-        modal.style.setProperty('display', 'none', 'important');
-    }
+    const modal = document.getElementById('modalCheckout');
+    if (modal) modal.style.display = 'none';
 }
 
-// 3. Função para FECHAR o modal se o cliente clicar na área escura (fora da caixa)
-window.addEventListener('click', function(event) {
-    var modal = document.getElementById('modalCheckout');
-    if (event.target === modal) {
-        fecharCheckout();
-    }
-});
+// doação
 
-// Lógica de Controlo do Menu de Navegação
+function copiarPix() {
+    // 1. Pega o elemento com o texto do e-mail do PIX
+    const chaveElemento = document.getElementById('chavePix');
+    const msgCopiado = document.getElementById('msgCopiado');
+    const btnCopiar = document.getElementById('btnCopiar');
 
+    if (chaveElemento) {
+        const textoPix = chaveElemento.innerText;
 
-// Lógica de Controlo Oficial acionada pelo seu onclick="toggleMenu()"
-function toggleMenu() {
-    var hamburguer = document.querySelector('.prisma-menu-hamburguer');
-    var links = document.querySelector('.prisma-menu-links');
-    
-    if (hamburguer && links) {
-        hamburguer.classList.toggle('ativo');
-        links.classList.toggle('menu-aberto');
-    }
-}
+        // 2. Copia o texto para a área de transferência do sistema
+        navigator.clipboard.writeText(textoPix).then(() => {
+            // Mostra a mensagem de sucesso verde
+            if (msgCopiado) msgCopiado.style.display = 'block';
+            
+            // Muda temporariamente o texto do botão
+            if (btnCopiar) btnCopiar.innerText = '✅ Chave Copiada!';
 
-
-/* --- CORREÇÃO DA PÁGINA EM BRANCO AO VOLTAR (NATIVO E SEGURO) --- */
-window.addEventListener("pageshow", function (event) {
-    // 1. Força a página a atualizar se vier do histórico/cache do navegador
-    if (event.persisted || (typeof window.performance !== "undefined" && window.performance.navigation.type === 2)) {
-        window.location.reload();
-    }
-    
-    // 2. Garante por segurança que o modal comece escondido ao voltar
-    const modal = document.querySelector('.modal-overlay');
-    if (modal) {
-        modal.style.display = 'none';
-    }
-});
-
-
-// Funções isoladas para controlar o aviso de "Em Breve" do E-book
-function mostrarAvisoBreve() {
-    var modal = document.getElementById('prismaModalBreve');
-    if (modal) {
-        modal.style.setProperty('display', 'flex', 'important');
-    }
-}
-
-function esconderAvisoBreve() {
-    var modal = document.getElementById('prismaModalBreve');
-    if (modal) {
-        modal.style.setProperty('display', 'none', 'important');
+            // 3. Esconde o aviso após 3 segundos
+            setTimeout(() => {
+                if (msgCopiado) msgCopiado.style.display = 'none';
+                if (btnCopiar) btnCopiar.innerText = '📋 Copiar Chave PIX';
+            }, 3000);
+        }).catch(err => {
+            console.error('Erro ao copiar a chave: ', err);
+        });
     }
 }
