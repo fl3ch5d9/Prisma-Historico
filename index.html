@@ -10,36 +10,340 @@
 <body>
 
     <!-- CABEÇALHO UNIFICADO -->
-    <header class="main-header">
-        <div class="logo">
-            <a href="#">Prisma Histórico</a>
+   <nav class="prisma-nav">
+        <div class="prisma-logo">
+            <span>Prisma</span> Histórico
         </div>
         
-        <!-- Botão do Menu Hambúrguer para Telemóvel -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <ul class="prisma-menu-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="artigos/sobre.html">Sobre</a></li>
+            <li><a href="artigos/artigos.html">Artigos</a></li>
+            <li><a href="artigos/curiosidades.html">Curiosidades</a></li>
+            <li><a href="artigos/quiz.html">Quiz</a></li>
+            <li><a href="artigos/ebook.html">E-book</a></li>
+        </ul>
+
+        <button type="button" class="prisma-menu-hamburguer" onclick="toggleMenu()" aria-label="Abrir menu">
+            <span class="prisma-barra"></span>
+            <span class="prisma-barra"></span>
+            <span class="prisma-barra"></span>
         </button>
+    </nav>
 
-        <!-- Todos os menus agrupados no mesmo container -->
-        <nav class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="/index.html">Início</a></li>
-                <li><a href="/artigos/sobre.html">Sobre</a></li>
-                <li><a href="/artigos/artigos.html">Artigos</a></li>
-                <li><a href="/artigos/curiosidades.html">Curiosidades</a></li>
-                <li><a href="/artigos/quiz.html">Quiz</a></li>
+
+
+
+  <!--introdução oceonografia-->
+  <!-- INTRODUÇÃO ESTRATÉGICA DO SUMÁRIO -->
+<!-- O SEU HEADER DO SITE TERMINA AQUI -->
+
+<!-- O CONTEÚDO PRINCIPAL QUE FAZ O DESLOCAMENTO DO HEADER -->
+<main class="conteudo-principal">
+
+    <!-- SEÇÃO DA INTRODUÇÃO EM DUAS COLUNAS LADO A LADO -->
+    <section class="secao-introducao-ebook">
+        
+        <!-- COLUNA DA ESQUERDA: SEUS TEXTOS -->
+        <div class="coluna-esquerda-texto">
+            <header class="topo-secao">
+                <h3 class="subtitulo-introducao">
+                    A ciência oculta por trás<br>da Construção de uma América Colonial
+                </h3>
+            </header>
+
+            <article class="texto-manifesto">
+                <p class="paragrafo-introducao">
+                    Mais do que datas e nomes esquecidos, a consolidação do território brasileiro foi o resultado de uma das mais sofisticadas operações de <strong>engenharia náutica, inteligência hidrográfica e biopolítica</strong> da história ocidental. O que determinou a sobrevivência e o domínio nos trópicos não foram os meros decretos reais, mas sim o <strong>domínio absoluto da arquitetura naval lusa</strong> — calcada no cálculo geométrico das caravelas e na física de empuxo e resistência de carenas —, combinada à precisão milimétrica de instrumentos como a balestilha e o astrolábio de metal.
+                </p>
                 
-                <li><a href="/artigos/ebook.html">E-books</a></li>
-            </ul>
-        </nav>
-    </header>
+                <p class="paragrafo-introducao">
+                    Portugal operou uma verdadeira engrenagem de <strong>espionagem industrial e planejamento bélico</strong> que subverteu os regimes de ventos do Atlântico pelo cálculo preciso da <em>volta do mar</em>, anulou o fechamento geopolítico das rotas do Levante e transformou as armadas transatlânticas em complexos agroindustriais flutuantes. Foi a aplicação brutal dessa tecno-estrutura náutica e logística que permitiu violar o teto continental do Prata e projetar, sobre o vazio demográfico americano, uma <strong>malha implacável de integração territorial e poder</strong>.
+                </p>
+            </article>
+        </div>
+
+        <!-- COLUNA DA DIREITA: SEU CARD DE IMAGEM -->
+                <!-- COLUNA DA DIREITA: CARD DE IMAGEM + BOTÃO DE COMPRA -->
+        <aside class="coluna-direita-card">
+    
+    <div class="card-imagem-ebook">
+        <img src="artigos/imagem-do-ebook.jpg" alt="Capa do E-book Prisma Histórico">
+        <p>E-book Digital Completo</p>
+    </div>
+
+    <!-- BOTÃO DE COMPRA PERSONALIZADO -->
+    <a href="artigos/ebook.html" class="prisma-botao-compra">
+        Garantir Meu E-book Agora
+    </a>
+
+
+    </section>
+<style>
+/* CONTEÚDO PRINCIPAL: FAZ APENAS O DESLOCAMENTO CIRÚRGICO DO HEADER FIXO */
+.conteudo-principal {
+    display: block;
+    clear: both;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 140px !important; /* Cria o recuo exato para desgrudar tudo do topo */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+/* ESTRUTURA DE DUAS COLUNAS DA INTRODUÇÃO */
+.secao-introducao-ebook {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+/* ALINHAMENTOS DO TEXTO NA ESQUERDA (SEM COLAR NA BORDA DA TELA) */
+.coluna-esquerda-texto {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.topo-secao {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.subtitulo-introducao {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.texto-manifesto {
+    line-height: 1.8;
+    color: #4a5568;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.texto-manifesto p {
+    margin: 0;
+}
+
+.texto-manifesto p + p {
+    margin-top: 20px; /* Dá espaço entre os dois parágrafos */
+}
+
+/* ALINHAMENTO DO CARD DE IMAGEM NA DIREITA */
+.coluna-direita-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.card-imagem-ebook {
+    width: 100%;
+    max-width: 360px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-imagem-ebook img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-imagem-ebook p {
+    margin: 12px 0 0 0;
+    font-size: 0.9rem;
+    color: #718096;
+    font-weight: 600;
+}
+
+/* REGRA DE RESPONSIVIDADE: FICA LADO A LADO NO COMPUTADOR */
+@media (min-width: 768px) {
+    .secao-introducao-ebook {
+        grid-template-columns: 1.2fr 0.8fr; /* Divide em coluna de texto e coluna de imagem */
+        align-items: center;
+    }
+}
+/*aside*/
+/* CLASSE DO CONTAINER DA DIREITA */
+.coluna-direita-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* CLASSE DO BOTÃO DE COMPRA CARVÃO COM EFEITO HOVER */
+.prisma-botao-compra {
+    display: inline-block;
+    width: 100%;
+    max-width: 360px; /* Alinha na largura exata do card de cima */
+    padding: 16px 24px;
+    background-color: #36454F; /* Fundo Carvão Mineral */
+    color: #ffffff; /* Letras Brancas */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    border: 2px solid #36454F; /* Borda Carvão */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Suaviza o efeito do mouse */
+}
+
+/* EFEITO QUANDO PASSA O MOUSE (INVERSÃO PROFISSIONAL) */
+.prisma-botao-compra:hover {
+    background-color: #ffffff !important; /* Fundo vira Branco */
+    color: #36454F !important; /* Texto vira Carvão */
+    border: 2px solid #36454F !important; /* Destaca a Borda Carvão */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px); /* Pequeno salto interativo */
+}
+
+
+</style>
 
 
 
-  <!--sumario-->
 
+
+
+        <!-- SECTION INTERNA: PARA AS TECNOLOGIAS E CURIOSIDADES -->
+        <section class="grade-tecnologias-curiosidade">
+            
+            <article class="item-tecnologia">
+                <header>
+                    <strong>Engenharia Náutica e Hidrografia:</strong>
+                </header>
+                <p>Como a espionagem industrial lusa e o design geométrico das armadas superaram o fechamento do Levante e o teto continental do Prata.</p>
+            </article>
+
+            <article class="item-tecnologia">
+                <header>
+                    <strong>Geografia do Espaço e Logística:</strong>
+                </header>
+                <p>O nascimento do Caminho Novo e o circuito dos vaus terrestres redesenhando as fronteiras contra vazios demográficos intransitáveis.</p>
+            </article>
+
+            <article class="item-tecnologia">
+                <header>
+                    <strong>A Tecno-Estrutura do Fogo:</strong>
+                </header>
+                <p>As práticas primitivas de manejo ambiental, a divisão sociossexual do trabalho e as dinâmicas de fissiparidade que garantiram a posse da terra.</p>
+            </article>
+
+            <article class="item-tecnologia">
+                <header>
+                    <strong>Onomástica e Cenografia:</strong>
+                </header>
+                <p>O uso estratégico do calendário litúrgico e o choque eclesiástico manipulando o imaginário e a administração da burocracia régia.</p>
+            </article>
+
+            <article class="item-tecnologia">
+                <header>
+                    <strong>Técnicas de Sobrevivência e Ecologia:</strong>
+                </header>
+                <p>A violenta adaptação biológica à ausência de tração animal, a zoogeografia do gado vacum e o terror bélico nos confins do sertão.</p>
+            </article>
+
+        </section>
+        
+        <footer>
+            <p class="chamada-sumario-final">
+                Abra os blocos abaixo e explore a malha completa de integração territorial que definiu a construção do nosso país.
+            </p>
+        </footer>
+    </section>
+
+    <!-- SUA GRADE DE SUMÁRIOS ENTRA LOGO ABAIXO, TAMBÉM COMO UMA SEÇÃO SEMÂNTICA -->
+    <section class="grade-sumarios">
+        <!-- Card 1, Card 2, Card 3... -->
+    </section>
+
+</main>
+<style>
+/* Garante o isolamento completo da página */
+.conteudo-principal {
+  /* DESLOCAMENTO DO CONTEÚDO PRINCIPAL EM RELAÇÃO AO HEADER FIXO */
+
+    padding-top: 130px !important; /* Afasta o card para baixo da barra carvão */
+
+    display: block;
+    clear: both;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.secao-introducao-ebook {
+    background: #ffffff;
+    border-left: 4px solid #4caf50;
+    padding: 24px;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.grade-tecnologias-curiosidade {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .grade-tecnologias-curiosidade {
+        grid-template-columns: repeat(2, 1fr); /* Organiza em duas colunas no desktop */
+    }
+}
+
+.item-tecnologia {
+    background: #f8faf8;
+    padding: 16px;
+    border-radius: 6px;
+}
+
+.item-tecnologia strong {
+    color: #111;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.item-tecnologia p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+
+
+</style>
   <!-- SEÇÃO CONTRASTE: SOLUÇÃO PARA ESTUDANTES -->
 <div class="bloco-solucao-estudante">
     <div class="cabecalho-solucao">

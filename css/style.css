@@ -27,13 +27,21 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 5%;
-    position: fixed;
+    
+    /* MUDANÇA ESSENCIAL: Mantém fixo no topo, mas respeita o espaço do texto */
+    position: sticky; 
+    
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
     border-bottom: 1px solid #2d2d2d;
+    box-sizing: border-box; /* Garante que o menu não quebre o tamanho da tela */
+    
+    /* GERA O ESPAÇO QUE VOCÊ PRECISA LOGO ABAIXO DO SEU MENU */
+    margin-bottom: 40px; 
 }
+
 
 .logo a {
     color: #ffffff;
@@ -460,13 +468,15 @@ body {
 
 
 /* ==========================================================================
-   2. MENUS DE NAVEGAÇÃO (main-header do index & prisma-nav de curiosidades)
+   2.  NAVE MÃE DO HEADERMENUS DE NAVEGAÇÃO (main-header do index & prisma-nav de curiosidades)
    ========================================================================== */
-.main-header, .prisma-nav {
-    background-color: #1a1a1a;
-    color: #ffffff;
+/* 1. MANTÉM O SEU HEADER EXATAMENTE COMO ESTAVA (COR CARVÃO E FIXO) */
+/* BARRA DE NAVEGAÇÃO PRINCIPAL FIXA */
+.prisma-nav {
+    background-color: #36454F; /* Cor Carvão Mineral */
+    color: #ffffff; /* Letras Brancas */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo na esquerda, links na extrema direita */
     align-items: center;
     padding: 1.2rem 5%;
     position: fixed;
@@ -475,52 +485,66 @@ body {
     left: 0;
     z-index: 1000;
     border-bottom: 1px solid #2d2d2d;
+    box-sizing: border-box; /* Impede o site de quebrar ou dançar para os lados */
 }
 
-.logo a, .prisma-logo {
+/* ESTILIZAÇÃO DO LOGO */
+.prisma-logo {
     color: #ffffff;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-.logo a span, .prisma-logo span {
-    border-bottom: 2px solid #ffffff;
+.prisma-logo span {
+    border-bottom: 2px solid #ffffff; /* Linha branca embaixo da palavra Prisma */
 }
 
-/* 2.1 Links dos Menus */
-.nav-menu ul, .prisma-menu-links {
+/* LISTA DOS LINKS DO MENU (ALINHADOS À DIREITA) */
+.prisma-menu-links {
     display: flex;
     list-style: none;
     align-items: center;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-menu a, .prisma-menu-links a {
-    color: #cccccc;
+/* ESTILO DOS LINKS (COR BRANCA SUAVE DE PARTIDA) */
+.prisma-menu-links a {
+    color: #e0e0e0; 
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-menu a:hover, .prisma-menu-links a:hover {
-    color: #ffffff;
+/* EFEITO PASSAR O MOUSE (BRANCO PURO E BRILHANTE) */
+.prisma-menu-links a:hover {
+    color: #ffffff !important;
 }
 
-/* 2.2 Botões do Menu Hambúrguer (Celular) */
-.menu-toggle, .prisma-menu-hamburguer {
+/* BOTÃO DO MENU HAMBÚRGUER (OCULTO NO COMPUTADOR) */
+.prisma-menu-hamburguer {
     display: none;
     flex-direction: column;
     background: none;
     border: none;
     cursor: pointer;
     gap: 5px;
+    padding: 0;
 }
 
-.menu-toggle .bar, .prisma-barra {
+/* AS TRES BARRINHAS DO MENU CELULAR */
+.prisma-barra {
     width: 25px;
     height: 3px;
     background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* AFRESTA DE ESPAÇO PARA O SEU CONTEÚDO NÃO SUBIR PARA TRÁS DO MENU FIXO */
+.introducao-tecnica-sumario {
+    margin-top: 130px !important; /* Cria o colchão exato para o texto brotar abaixo do menu carvão */
 }
 
 /* ==========================================================================
