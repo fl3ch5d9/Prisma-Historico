@@ -13,7 +13,7 @@
 body {
     overflow-y: auto;
     background-color: #ffffff;
-    color: #1a1a1a;
+    color:#36454F;
     line-height: 1.6;
 }
 
@@ -21,7 +21,7 @@ body {
    2. CABEÇALHO UNIFICADO (header.main-header)
    ========================================================================== */
 .main-header {
-    background-color: #1a1a1a;
+    background-color: #36454F;
     color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -112,7 +112,7 @@ body {
 
 .btn-primary {
     background-color: #ffffff;
-    color: #1a1a1a;
+    color: #36454F;
     padding: 0.8rem 2rem;
     border-radius: 4px;
     text-decoration: none;
@@ -136,7 +136,7 @@ body {
 
 .btn-secondary:hover {
     background-color: #ffffff;
-    color: #1a1a1a;
+    color: #36454F;
 }
 
 /* ==========================================================================
@@ -191,7 +191,7 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: #1a1a1a;
+    background: #36454F;
     color: #ffffff;
     font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
@@ -226,7 +226,7 @@ body {
 }
 
 .btn-comprar {
-    background-color: #1a1a1a;
+    background-color: #36454F;
     color: #ffffff;
     text-decoration: none;
     padding: 0.6rem 1.5rem;

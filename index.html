@@ -39,51 +39,395 @@
 
 
   <!--sumario-->
+
+  <!-- SEÇÃO CONTRASTE: SOLUÇÃO PARA ESTUDANTES -->
+<div class="bloco-solucao-estudante">
+    <div class="cabecalho-solucao">
+        <span class="etiqueta-metodo">Método Prisma</span>
+        <h2>Chega de perder tempo com o jeito errado.</h2>
+        <p>A preparação para exames de alto desempenho exige estratégia analítica, não decoreba de véspera.</p>
+    </div>
+
+    <!-- TABELA DE CONTRASTE SIMPLIFICADA -->
+    <div class="grade-contraste">
+        <!-- O Jeito Errado (A Dor) -->
+        <div class="caixa-contraste caixa-dor">
+            <h4>O Jeito Tradicional</h4>
+            <ul>
+                <li>Textos massantes com mais de 800 páginas.</li>
+                <li>Listas infinitas de datas para decorar.</li>
+                <li>Estudo passivo que gera cansaço mental.</li>
+                <li>Desespero na hora de interpretar as questões.</li>
+            </ul>
+        </div>
+
+        <!-- O Jeito Certo (A Sua Solução) -->
+        <div class="caixa-contraste caixa-alivio">
+            <h4>A Abordagem Cirúrgica</h4>
+            <ul>
+                <li>Análise direta das engrenagens do poder.</li>
+                <li>Conexões lógicas entre os fatos históricos.</li>
+                <li>Leitura fluida, sofisticada e sem enrolação.</li>
+                <li>Domínio total da competência de interpretação.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- CSS TOTALMENTE CASADO COM O BLOCO ACIMA -->
+<style>
+    .bloco-solucao-estudante {
+        max-width: 1200px;
+        margin: 80px auto 40px auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .cabecalho-solucao {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .etiqueta-metodo {
+        display: inline-block;
+        background-color: #766144; /* Destaque elegante */
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 6px 12px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+
+    .cabecalho-solucao h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        color: #1a1a1a;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 0 0 15px 0;
+    }
+
+    .cabecalho-solucao p {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        color: #555555;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Grade que põe o problema e a solução lado a lado */
+    .grade-contraste {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .caixa-contraste {
+        padding: 40px;
+        border-radius: 8px;
+        box-sizing: border-box;
+        border: 1px solid #e2e2d9;
+    }
+
+    /* Estilo da Dor (Discreto para não chamar atenção positiva) */
+    .caixa-dor {
+        background-color: #ffffff;
+        opacity: 0.8;
+    }
+
+    /* Estilo da Solução (Ganha o tom carvão imponente) */
+    .caixa-alivio {
+        background-color: #212529; /* Tom Carvão */
+        color: #ffffff;
+        border-color: #212529;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .caixa-contraste h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        margin: 0 0 20px 0;
+        font-weight: 700;
+    }
+
+    .caixa-alivio h4 {
+        color: #ffffff;
+    }
+
+    .caixa-dor h4 {
+        color: #766144;
+    }
+
+    .caixa-contraste ul {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.8;
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .caixa-dor ul {
+        color: #555555;
+    }
+
+    .caixa-alivio ul {
+        color: #e2e2d9;
+    }
+
+    .caixa-contraste li {
+        margin-bottom: 10px;
+    }
+</style>
+
 <!-- SEÇÃO COM DOIS CARDS LADO A LADO - CORRIGIDA (SEM DUPLICAÇÃO E SEM SUBIR NO HEADER) -->
 <!-- SEÇÃO DE DIVULGAÇÃO + IMAGEM E BOTÃO DE COMPRA -->
-<section class="secao-dois-cards" style="padding: 140px 0 80px 0; background-color: #fafaf7; width: 100%; display: block; box-sizing: border-box; clear: both; position: relative;">
-    <div class="container-cards" style="max-width: 1140px; margin: 0 auto; padding: 0 20px; box-sizing: border-box;">
-        
-        <div class="grade-dois-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; box-sizing: border-box;">
+<!-- CÓDIGO COMPLETO DA SEÇÃO DE CARDS PREMIUM -->
+
+<!-- CSS DEDICADO AOS EFEITOS INTERATIVOS E SOFISTICAÇÃO -->
+        <!-- TÍTULO PRINCIPAL CORRIGIDO E FECHADO CORRETAMENTE -->
+        <div style="text-align: center; margin-bottom: 60px; width: 100%; display: block; clear: both;">
+            <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #766144; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px;">Uma perspectiva analítica e profunda sobre a formação do Brasil</p>
+        </div>
+
+        <!-- GRADE COM ALTURA TRAVADA E ALINHAMENTO IMPECÁVEL -->
+        <div class="grade-tres-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%; box-sizing: border-box;">
             
-            <!-- CARD 1: DIVULGAÇÃO E PROPÓSITO DO E-BOOK -->
-            <div class="card-item" style="background: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center;">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a; margin: 0 0 15px 0; font-weight: 700;">Domine o Edital Sem Perder Tempo</h3>
-                <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #766144; font-weight: 600; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: 0.5px;">A análise teórica e cirúrgica que precisas</p>
+            <!-- CARD 1: O PROPÓSITO DO LIVRO -->
+            <div class="card-item card-texto-alinhado" style="background: #ffffff; padding: 45px 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; height: 520px; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+                <div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a; margin: 0 0 15px 0; font-weight: 700;">A Construção da Identidade</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 12px; color: #766144; font-weight: 600; margin: 0 0 25px 0; text-transform: uppercase; letter-spacing: 1px;">Investigação Crítica e Estrutural</p>
+                    
+                    <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.7; margin: 0 0 15px 0; text-align: justify;">
+                        Muito além dos fatos isolados, a compreensão do Brasil exige uma imersão nas engrenagens que moveram o power. O <strong>Prisma Histórico</strong> desconstrói narrativas superficiais para expor as forças políticas e econômicas reais que moldaram as bases da nossa sociedade.
+                    </p>
+                </div>
                 
-                <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.6; margin: 0 0 15px 0;">
-                    Cansado de apostilas gigantes que te fazem perder horas com decorebas inúteis? O <strong>Prisma Histórico</strong> foi desenhado exclusivamente para desmistificar a história de forma analítica, direta e focada nos temas que realmente caem na prova.
-                </p>
-                <p style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.6; margin: 0;">
-                    Ideal para quem está a correr contra o tempo e precisa de uma revisão de alto impacto para garantir a pontuação máxima no exame.
-                </p>
+                <!-- BOTÃO PRETO/CARVÃO QUE EXPANDE NO HOVER -->
+                <a href="artigos/ebook.html" class="botao-animado-geral">Saiba Mais</a>
             </div>
 
-            <!-- CARD 2: IMAGEM DO E-BOOK + BOTÃO DE COMPRA -->
-            <div class="card-item" style="background: #ffffff; padding: 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                
-                <!-- ESPAÇO PARA A IMAGEM DO TEU E-BOOK (Altera o src para o caminho da tua imagem) -->
-                <div class="box-imagem-ebook" style="width: 100%; max-width: 220px; margin-bottom: 25px;">
-                    <img src="" alt="Capa do E-book Prisma Histórico" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-                </div>
-
-                <!-- PREÇO E BOTÃO -->
-                <div class="box-compra-direta" style="width: 100%;">
-                    <p style="font-family: 'Inter', sans-serif; font-size: 13px; color: #777777; margin: 0 0 5px 0; text-decoration: line-through;">De R$ 149,90</p>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 26px; color: #36454F; margin: 0 0 20px 0; font-weight: 700;">Por apenas: <span style="color: #36454F;">R$ 49,00</span></p>
+            <!-- CARD 2: O QUE VOCÊ VAI ENCONTRAR (CONTEÚDO) -->
+            <div class="card-item card-texto-alinhado" style="background: #ffffff; padding: 45px 40px; border-radius: 8px; border: 1px solid #e2e2d9; box-shadow: 0 4px 12px rgba(0,0,0,0.02); box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; height: 520px; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+                <div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a; margin: 0 0 15px 0; font-weight: 700;">Os Três Grandes Marcos</h3>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 12px; color: #766144; font-weight: 600; margin: 0 0 25px 0; text-transform: uppercase; letter-spacing: 1px;">Da Colônia à República Velha</p>
                     
-                    <!-- LINK DE COMPRA (Muda o href para o teu link da Hotmart, Kiwify, etc.) -->
-                    <a href="artigos/ebook.html" style="display: block; width: 100%; background-color: #36454F; color: #ffffff; text-decoration: none; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; padding: 15px 0; border-radius: 5px; box-shadow: 0 4px 12px rgba(118,97,68,0.2); transition: background 0.3s ease;">
-                        🚀 Garantir Meu Acesso Imediato
-                    </a>
+                    <ul style="font-family: 'Inter', sans-serif; font-size: 14px; color: #444444; line-height: 1.8; margin: 0; padding-left: 15px; text-align: justify;">
+                        <li style="margin-bottom: 12px;"><strong>Colonização:</strong> O choque de culturas, as dinâmicas de exploração e as heranças estruturais que persistem na atualidade.</li>
+                        <li style="margin-bottom: 12px;"><strong>Império:</strong> A centralização política, a arquitetura da corte no Rio de Janeiro e as tensões que culminaram no fim do regime.</li>
+                        <li><strong>Primeira República:</strong> As manobras oligárquicas dos barões do café, os movimentos de resistência e o novo arranjo civil.</li>
+                    </ul>
+                </div>
+                
+                <!-- BOTÃO PRETO/CARVÃO QUE EXPANDE NO HOVER -->
+                <a href="artigos/ebook.html" class="botao-animado-geral">Ver Conteúdo</a>
+            </div>
+
+            <!-- CARD 3: SOFISTICADO COM IMAGEM DE FUNDO E PREÇO -->
+            <div class="card-item card-promocional-premium" style="height: 520px;">
+                
+                <!-- Imagem preenchendo de ponta a ponta sem distorcer -->
+                <img src="img/revolta-tupi.webp" alt="Capa do Livro Prisma Histórico" class="imagem-fundo-card">
+                
+                <!-- Película protetora gradiente para sofisticação do texto -->
+                <div class="pelicula-gradiente"></div>
+
+                <!-- Conteúdo de Venda com Preço e Botão Carvão (Sem Ícone) -->
+                <div class="conteudo-promocional">
+                    <p class="preco-antigo">De R$ 149,90</p>
+                    <p class="preco-atual">Por apenas: <span>R$ 49,00</span></p>
+                    
+                    <!-- BOTÃO PRETO/CARVÃO QUE EXPANDE NO HOVER (SEM LIVRINHO) -->
+                    <a href="artigos/ebook.html" class="botao-animado-geral botao-destaque-premium">Adquirir Obra Completa</a>
                 </div>
 
             </div>
 
         </div>
-
     </div>
 </section>
+<style>
+    /* Organiza os 3 cards lado a lado */
+    .grade-tres-cards {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 30px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Estilo base comum para os três cards */
+    .card-item {
+        border-radius: 8px !important;
+        border: 1px solid #e2e2d9 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+        box-sizing: border-box !important;
+        height: 540px !important;
+        overflow: hidden !important;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    /* Cards brancos de texto */
+    .card-texto-alinhado {
+        background: #ffffff !important;
+        padding: 45px 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
+    .card-texto-alinhado:hover {
+        border-color: #766144 !important;
+        box-shadow: 0 12px 24px rgba(118, 97, 68, 0.08) !important;
+    }
+
+    /* Títulos internos */
+    .card-item h3 {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 24px !important;
+        color: #1a1a1a !important;
+        margin: 0 0 15px 0 !important;
+        font-weight: 700 !important;
+    }
+
+    .subtitulo-card {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 12px !important;
+        color: #766144 !important;
+        font-weight: 600 !important;
+        margin: 0 0 25px 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* CORREÇÃO CRUCIAL: ALINHAMENTO NATURAL À ESQUERDA SEM DEFORMAR AS PALAVRAS */
+    .paragrafo-card {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 14px !important;
+        color: #444444 !important;
+        line-height: 1.7 !important;
+        margin: 0 !important;
+        text-align: left !important;
+    }
+
+    .lista-card {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 14px !important;
+        color: #444444 !important;
+        line-height: 1.7 !important;
+        margin: 0 !important;
+        padding-left: 15px !important;
+        text-align: left !important;
+    }
+
+    .lista-card li {
+        margin-bottom: 12px !important;
+    }
+
+    /* Card 3 (Imagem de fundo) */
+    .card-promocional-premium {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+    }
+
+    .card-promocional-premium:hover {
+        border-color: #766144 !important;
+        box-shadow: 0 12px 24px rgba(118, 97, 68, 0.15) !important;
+    }
+
+    .imagem-fundo-card {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+        display: block !important;
+    }
+
+    .pelicula-gradiente {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 55%, rgba(0,0,0,0) 100%) !important;
+        z-index: 2 !important;
+    }
+
+    .conteudo-promocional {
+        position: relative !important;
+        z-index: 3 !important;
+        width: 100% !important;
+        padding: 40px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    .preco-antigo {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 13px !important;
+        color: #ffffff !important;
+        opacity: 0.65 !important;
+        margin: 0 0 5px 0 !important;
+        text-decoration: line-through !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .preco-atual {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 26px !important;
+        color: #ffffff !important;
+        margin: 0 0 25px 0 !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    /* Botões Carvão */
+    .botao-animado-geral {
+        display: block !important;
+        width: 100% !important;
+        background-color: #212529 !important;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-family: 'Inter', sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.8px !important;
+        padding: 15px 0 !important;
+        border-radius: 4px !important;
+        text-align: center !important;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+        box-sizing: border-box !important;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .botao-destaque-premium {
+        background-color: #1a1a1a !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4) !important;
+    }
+
+    .botao-animado-geral:hover {
+        transform: scale(1.04) !important;
+        background-color: #343a40 !important;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.15) !important;
+    }
+    
+    .botao-destaque-premium:hover {
+        background-color: #2b2b2b !important;
+    }
+</style>
 
     <!-- RODAPÉ -->
    <footer class="footer">
