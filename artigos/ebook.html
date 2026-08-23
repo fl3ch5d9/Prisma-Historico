@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prisma Histórico </title>
+<link rel="stylesheet" href="../css/style.css">
+
+    
+</head>
+<body>
+
+
+<nav class="prisma-nav">
+    <div class="prisma-logo">
+  <span>Prisma</span> Histórico
+</div>
+
+    
+    
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="ebook.html">E-book</a></li>
+    </ul>
+
+    <button type="button" class="prisma-menu-hamburguer" onclick="toggleMenu()" aria-label="Abrir menu">
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+    </button>
+</nav>
+<!--section ebook vendas-->
+<!-- BANNER PRINCIPAL (HERO EBOOK) -->
+<section class="hero-ebook">
+    <div class="container">
+        <h1>PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
+        <p>O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem, garanta já o seu e-book completo</strong>.</p>
+        
+        <div class="beneficios">
+            <div class="card-beneficio">📖 <b>Páginas Ilustradas</b><br>Análise profunda, zero romantização</div>
+            <div class="card-beneficio">🗺️ <b>Mapas Mentais</b><br>Memorize estruturas inteiras</div>
+            <div class="card-beneficio">📊 <b>Diagramas e Imagens</b><br>Visualize o cotidiano colonial</div>
+            <div class="card-beneficio">📚 <b>Sumário Digital</b><br>Navegue por vários tópicos</div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Estilo aplicado individualmente nos 4 cards de benefícios */
+.card-beneficio{
+  position: relative;
+  background-image: url('../img/tratados-tordesilha.webp'); /* Imagem de fundo adicionada */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a; /* Cor carvão de segurança caso a imagem demore */
+}
+</style>
+
+<!-- SEÇÃO DO SUMÁRIO INTERATIVO -->
+
+
+<!-- ========================================== -->
+<!--       BOTÃO DE COMPRA DO SEU BLOG          -->
+<!-- ========================================== -->
+<!-- ======================================================= -->
+<!-- 1. SECÇÃO DO BOTÃO DE COMPRA PRINCIPAL (CENTRALIZADO)   -->
+<!-- ======================================================= -->
+<!-- ========================================== -->
+<!--       BOTÃO DE COMPRA DO SEU BLOG          -->
+<!-- ========================================== -->
+<div class="prisma-btn-container">
+    <!-- Botão com a sua classe original e efeitos controlados pelo CSS abaixo -->
+    <button type="button" class="btn-checkout-final" onclick="abrirCheckout()">
+        🛒 Comprar e-book completo
+    </button>
+</div>
+
+<!-- ======================================================= -->
+<!-- 2. MODAL DE CHECKOUT (MANTÉM AS SUAS CLASSES ORIGINAIS) -->
+<!-- ======================================================= -->
+<div id="modalCheckout" class="modal-overlay">
+    <div class="modal-content">
+        <!-- Botão Fechar (O famoso X) -->
+        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()" aria-label="Fechar modal">&times;</button>
+        
+        <div class="modal-grid">
+            <!-- Lado Esquerdo: Detalhes do Produto -->
+            <div class="modal-produto">
+                <span class="modal-tag">PRODUTO DIGITAL</span>
+                <h2>E-book Prisma Histórico</h2>
+                <p class="modal-sub">Versão Completa + Conteúdos Bónus</p>
+                
+                <ul class="modal-lista-beneficios">
+                    <li><span class="check-icon">✓</span> Páginas ilustradas de conteúdo cirúrgico</li>
+                    <li><span class="check-icon">✓</span> Questões comentadas (Fuvest, ENEM e Concursos)</li>
+                    <li><span class="check-icon">✓</span> Mapas mentais e diagramas inclusos</li>
+                    <li><span class="check-icon">✓</span> Atualizações em tempo real</li>
+                </ul>
+            </div>
+            
+            <!-- Lado Direito: Pagamento e Segurança -->
+            <div class="modal-pagamento">
+                <div class="preco-box">
+                    <span class="preco-de">De R$ 149,90</span>
+                    <span class="preco-por">R$ 49.90</span>
+                    <p class="preco-info">E-book Completo</p>
+                </div>
+                
+                <div class="formas-pagamento">
+                    <p class="titulo-pagamento">Formas de pagamento suportadas:</p>
+                    <div class="icones-pagamento">
+                        <span class="tag-pagamento"><span class="flash-icon">⚡</span> Pix</span>
+                        <span class="tag-pagamento">📄 Boleto</span>
+                    </div>
+                </div>
+                
+                <!-- LINK DE PAGAMENTO SEGURO -->
+                <a href="#" target="_blank" class="btn-checkout-final">
+                    🔒 IR PARA O PAGAMENTO SEGURO
+                </a>
+                
+                <div class="modal-seguranca">
+                    <p>🔒 Ambiente seguro homologado.</p>
+                    <p>🛡️ Garantia incondicional de 7 dias ou seu dinheiro de volta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+      
+      <!-- COLUNA 1: LOGO E SOBRE -->
+      <div class="footer-col">
+        <h3 class="footer-logo">Prisma Histórico</h3>
+        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
+      </div>
+
+      <!-- COLUNA 2: LINKS RÁPIDOS -->
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          
+         
+          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 3: LEGAL -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- COLUNA 4: CONTATO -->
+      <div class="footer-col">
+        <h4>Contato e Suporte</h4>
+        <ul>
+          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
+        
+        </ul>
+        <div class="footer-selo">
+          <p>🔒 Compra 100% Segura</p>
+        </div>
+      </div>
+
+    </div>
+
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

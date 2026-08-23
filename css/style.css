@@ -1,0 +1,1989 @@
+
+/* ==========================================================================
+   1. RESET GERAL E CONFIGURAÇÕES BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-y: auto;
+    background-color: #ffffff;
+    color:#36454F;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO UNIFICADO (header.main-header)
+   ========================================================================== */
+.main-header {
+    background-color: #36454F;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    
+    /* MUDANÇA ESSENCIAL: Mantém fixo no topo, mas respeita o espaço do texto */
+    position: sticky; 
+    
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2d2d2d;
+    box-sizing: border-box; /* Garante que o menu não quebre o tamanho da tela */
+    
+    /* GERA O ESPAÇO QUE VOCÊ PRECISA LOGO ABAIXO DO SEU MENU */
+    margin-bottom: 40px; 
+}
+
+
+.logo a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* 2.1 Botão do Menu Hambúrguer (.menu-toggle) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+
+/* 2.2 Menu de Navegação (.nav-menu) */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ÁREA DE VENDAS PRINCIPAL (section#inicio.hero-section)
+   ========================================================================== */
+.hero-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 5% 4rem 5%;
+}
+
+.hero-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container p {
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #ffffff;
+    color: #36454F;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e6e6e6;
+}
+
+.btn-secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #36454F;
+}
+
+/* ==========================================================================
+   4. VITRINE DE PRODUTOS (main#ebooks.vitrine-section)
+   ========================================================================== */
+.vitrine-section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title p {
+    color: #666666;
+}
+
+/* 4.1 Grid de Produtos (.grid-produtos) */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* 4.2 Card Individual (.card-produto) */
+.card-produto {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* 4.3 Etiqueta do Card (.card-tag) */
+.card-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #36454F;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* 4.4 Corpo do Card (.card-body) */
+.card-body h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    padding-right: 4.5rem;
+}
+
+.card-body p {
+    color: #666666;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* 4.5 Rodapé do Card (.card-footer) */
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-comprar {
+    background-color: #36454F;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #333333;
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE DOAÇÃO (section#doacoes.doacoes-section)
+   ========================================================================== */
+.doacoes-section {
+    background-color: #f9f9f9;
+    padding: 5rem 5%;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+}
+
+.doacoes-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.doacoes-section p {
+    color: #666666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* 5.1 Bloco do PIX (.box-pix) */
+.box-pix {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 1.5rem;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+    border-radius: 6px;
+}
+
+.pix-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.pix-key {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   6. REGRAS DE CONTEÚDO PARA PÁGINAS INTERNAS (.content-wrapper)
+   ========================================================================== */
+.content-wrapper {
+    max-width: 800px;
+    margin: 8rem auto 4rem auto;
+    padding: 0 2rem;
+}
+
+.content-wrapper h1, 
+.content-wrapper h2 {
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.content-wrapper p {
+    color: #444444;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (footer.main-footer)
+   ========================================================================== */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MEDIA QUERIES PARA TELEMÓVEL)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 2rem 0;
+        display: none;
+        border-bottom: 1px solid #2d2d2d;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .hero-container h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .content-wrapper {
+        margin-top: 7rem;
+    }
+}
+
+
+/*curiosidades*/
+/*botão de curiosidades*/
+/* Configuração da caixa do CTA (melhorando o estilo que já tem) */
+.cta-ebook {
+    background-color: #fdfdfb; /* Fundo ligeiramente diferente para destacar a caixa */
+    padding: 40px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e2d9;
+    max-width: 650px;
+    margin: 60px auto 0 auto; /* Centraliza a caixa na página */
+}
+
+.cta-ebook h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.cta-ebook p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+}
+
+/* O BOTÃO REAL */
+.btn-cta {
+    display: inline-block;
+    background-color: #766144; /* Tom bronze sofisticado */
+    color: #ffffff !important; /* Força o texto a ficar branco */
+    text-decoration: none; /* Remove o sublinhado de link */
+    padding: 14px 32px; /* Dá volume ao botão (altura e largura) */
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600; /* Texto ligeiramente em negrito */
+    border-radius: 4px; /* Cantos suavemente arredondados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra muito sutil */
+    transition: all 0.3s ease; /* Efeito suave ao passar o rato */
+}
+
+/* Efeito ao passar o rato (Hover) */
+.btn-cta:hover {
+    background-color: #5c4b34; /* Escurece o bronze no hover */
+    transform: translateY(-2px); /* O botão sobe ligeiramente (efeito premium) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Aumenta a sombra no hover */
+}
+
+
+
+
+/* ==========================================================================
+   1. RESET GERAL E CONFIGURAÇÕES BASE
+   ========================================================================== */
+/* Contentor da secção de curiosidades */
+.secao-curiosidades {
+    max-width: 700px; /* Limita a largura para o texto não espalhar pelo ecrã inteiro */
+    margin: 40px auto; /* Centraliza o bloco na página e afasta dos outros elementos */
+    padding: 0 20px; /* Evita que o texto encoste nas bordas em telemóveis */
+    text-align: left; /* Alinhamento elegante à esquerda (mude para 'center' se preferir tudo centralizado) */
+}
+
+/* Título Principal */
+.subtitulo-secao {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    margin-bottom: 8px; /* Espaço curto para o subtítulo */
+    font-weight: 700;
+}
+
+/* Subtítulo Menor */
+.subtitulo-secao-menor {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #766144; /* Tom bronze/ouro velho sutil */
+    text-transform: uppercase; /* Dá um toque editorial moderno */
+    letter-spacing: 1px; /* Afasta as letras suavemente */
+    margin-top: 0;
+    margin-bottom: 20px; /* Espaço generoso antes de começar o texto */
+    font-weight: 500;
+}
+
+/* Texto de Introdução */
+.texto-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.7; /* Linha com espaçamento confortável para leitura */
+    color: #4a4a4a; /* Cinza escuro confortável para os olhos */
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   2.  NAVE MÃE DO HEADERMENUS DE NAVEGAÇÃO (main-header do index & prisma-nav de curiosidades)
+   ========================================================================== */
+/* 1. MANTÉM O SEU HEADER EXATAMENTE COMO ESTAVA (COR CARVÃO E FIXO) */
+/* BARRA DE NAVEGAÇÃO PRINCIPAL FIXA */
+.prisma-nav {
+    background-color: #36454F; /* Cor Carvão Mineral */
+    color: #ffffff; /* Letras Brancas */
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, links na extrema direita */
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2d2d2d;
+    box-sizing: border-box; /* Impede o site de quebrar ou dançar para os lados */
+}
+
+/* ESTILIZAÇÃO DO LOGO */
+.prisma-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.prisma-logo span {
+    border-bottom: 2px solid #ffffff; /* Linha branca embaixo da palavra Prisma */
+}
+
+/* LISTA DOS LINKS DO MENU (ALINHADOS À DIREITA) */
+.prisma-menu-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILO DOS LINKS (COR BRANCA SUAVE DE PARTIDA) */
+.prisma-menu-links a {
+    color: #e0e0e0; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* EFEITO PASSAR O MOUSE (BRANCO PURO E BRILHANTE) */
+.prisma-menu-links a:hover {
+    color: #ffffff !important;
+}
+
+/* BOTÃO DO MENU HAMBÚRGUER (OCULTO NO COMPUTADOR) */
+.prisma-menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+    padding: 0;
+}
+
+/* AS TRES BARRINHAS DO MENU CELULAR */
+.prisma-barra {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* AFRESTA DE ESPAÇO PARA O SEU CONTEÚDO NÃO SUBIR PARA TRÁS DO MENU FIXO */
+.introducao-tecnica-sumario {
+    margin-top: 130px !important; /* Cria o colchão exato para o texto brotar abaixo do menu carvão */
+}
+
+/* ==========================================================================
+   3. ÁREA DE VENDAS PRINCIPAL (index.html - hero-section)
+   ========================================================================== */
+.hero-section {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 5% 4rem 5%;
+}
+
+.hero-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-container p {
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary { background-color: #ffffff; color: #1a1a1a; }
+.btn-secondary { border: 2px solid #ffffff; color: #ffffff; }
+
+/* ==========================================================================
+   4. ESTRUTURA DA PÁGINA DE CURIOSIDADES (.section.curiosidades)
+   ========================================================================== */
+.section.curiosidades {
+    padding: 8rem 5% 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitulo-secao {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+}
+
+.subtitulo-secao-menor {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.titulo-categoria {
+    font-size: 1.6rem;
+    margin: 3.5rem 0 1.5rem 0;
+    color: #1a1a1a;
+    border-left: 4px solid #1a1a1a;
+    padding-left: 12px;
+}
+
+/* ==========================================================================
+   5. GRIDS E CARDS (Compatível com Index e Curiosidades)
+   ========================================================================== */
+.grid-produtos, .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-produto, .card {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-produto:hover, .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.card-content, .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3, .card-body h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.card-content p, .card-body p {
+    color: #555555;
+    font-size: 0.95rem;
+}
+
+.card-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-comprar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   6. SEÇÃO DE DOAÇÃO & RODAPÉ GERAL
+   ========================================================================== */
+.doacoes-section {
+    background-color: #f9f9f9;
+    padding: 5rem 5%;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+}
+
+.box-pix {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 1.5rem;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+    border-radius: 6px;
+}
+
+.pix-key {
+    background: #f0f0f0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 5%;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-toggle, .prisma-menu-hamburguer {
+        display: flex;
+    }
+
+    .nav-menu, .prisma-menu-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        padding: 2rem 0;
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        border-bottom: 1px solid #2d2d2d;
+    }
+
+    .nav-menu.active, .prisma-menu-links.active {
+        display: block;
+    }
+
+    .grid-produtos, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*sobre */
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O SOBRE.HTML (CLASSES IDENTICAS)
+   ========================================================================== */
+
+/* Ajuste de margem superior para o conteúdo não ficar por baixo do menu fixo */
+.secao-manifesto {
+    padding: 10rem 0 4rem 0;
+    background-color: #ffffff;
+}
+
+/* Alinhamento dos dois blocos de manifesto em colunas lado a lado */
+.secao-manifesto .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Caixa contendo o texto do manifesto */
+.bloco-manifesto {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+.bloco-manifesto h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+/* Subfrase de destaque interna do manifesto */
+.sub-frase {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 1.2rem;
+    border-left: 3px solid #1a1a1a;
+    padding-left: 10px;
+}
+
+.bloco-manifesto p {
+    color: #444444;
+}
+
+/* Seção cinza de fundo para a área de doação */
+.section-doacao {
+    padding: 5rem 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+/* Bloco centralizado de suporte financeiro */
+.doacao-box {
+    background: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Tag escura de aviso no topo da doação */
+.doacao-tag {
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+/* Texto corrido explicativo */
+.doacao-texto {
+    color: #444444;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin: 1.5rem 0;
+}
+
+/* Bloco cinza com o texto de destino da verba */
+.doacao-texto-destaque {
+    font-weight: 600;
+    color: #1a1a1a;
+    background: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.botoes-doacao {
+    margin-bottom: 1rem;
+}
+
+/* Botão de ação para o PIX */
+.btn-doacao {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-doacao:hover {
+    background-color: #333333;
+}
+
+/* Pequena observação embaixo do botão */
+.doacao-obs {
+    font-size: 0.9rem;
+    color: #777777;
+}
+
+/* Rodapé completo estruturado em fundo escuro */
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 4rem 0 2rem 0;
+}
+
+/* Divisão do rodapé em 4 colunas responsivas */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h3, .footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.footer-col p {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-col ul li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover, .footer-col ul li a.link-destaque {
+    color: #ffffff;
+}
+
+/* Pequeno selo de segurança */
+.footer-selo {
+    margin-top: 1rem;
+    background: #2a2a2a;
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+/* Linha final de direitos autorais */
+.footer-bottom {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 2rem;
+    text-align: center;
+    color: #777777;
+    font-size: 0.9rem;
+}
+
+/* Correções de espaçamento e colunas para telas de celular */
+@media (max-width: 768px) {
+    .secao-manifesto .container {
+        grid-template-columns: 1fr;
+    }
+
+    .doacao-box {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/*quiz*/
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA ARTIGOS.HTML (CLASSES IDENTICAS)
+   ========================================================================== */
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O QUIZ (CLASSES IDENTICAS AO SEU HTML)
+   ========================================================================== */
+
+/* Espaçamento do container principal do quiz em relação ao menu fixo */
+main.container {
+    max-width: 800px;
+    margin: 8rem auto 4rem auto;
+    padding: 0 5%;
+}
+
+/* Cabeçalho do Quiz (Texto superior e Título principal) */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.quiz-header span {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.quiz-header h1 {
+    font-size: 2.3rem;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+    font-weight: 800;
+}
+
+.quiz-header p {
+    color: #666666;
+    font-size: 1.05rem;
+}
+
+/* Bloco de cada Questão */
+.questao {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+
+.questao h3 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Opções de resposta (Labels) */
+.questao label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333333;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.questao label:hover {
+    background-color: #f0f0f0;
+    border-color: #cccccc;
+}
+
+.questao input[type="radio"] {
+    accent-color: #1a1a1a; /* Deixa a bolinha de marcação preta */
+    width: 18px;
+    height: 18px;
+}
+
+/* Alinhamento do Botão de Correção */
+.container-btn-quiz {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.btn-quiz {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.btn-quiz:hover {
+    background-color: #333333;
+}
+
+/* Caixa Oculta de Resultado (Só aparece após a correção) */
+.card-resultado {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    border: 1px solid #2d2d2d;
+}
+
+.card-resultado h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.nota-quiz {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.aviso-quiz {
+    font-size: 1.05rem;
+    color: #cccccc;
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Botão de chamada para ação do E-book */
+.btn-ebook {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-ebook:hover {
+    background-color: #e6e6e6;
+}
+
+/* Otimização de visualização do formulário em smartphones */
+@media (max-width: 768px) {
+    main.container {
+        margin-top: 7rem;
+    }
+    .quiz-header h1 {
+        font-size: 1.8rem;
+    }
+    .questao {
+        padding: 1.5rem;
+    }
+    .questao label {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+}
+
+/*ebook*/
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O EBOOK.HTML (CLASSES IDENTICAS)
+   ========================================================================== */
+
+/* 1. BANNER PRINCIPAL (hero-ebook) */
+.hero-ebook {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 10rem 0 5rem 0;
+    text-align: center;
+}
+
+.hero-ebook h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-ebook h1 span {
+    border-bottom: 3px solid #ffffff;
+    padding-bottom: 5px;
+}
+
+.hero-ebook p {
+    color: #cccccc;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    padding: 0 5%;
+}
+
+/* 2. GRADE DE BENEFÍCIOS (.beneficios e .card-beneficio) */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.card-beneficio {
+    position: relative;
+    background-image: url('../img/tratados-tordesilha.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1a1a1a; /* Cor de segurança */
+    padding: 2.5rem 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid #333333;
+    box-shadow: inset 0 0 0 2000px rgba(26, 26, 26, 0.85); /* Escurece a imagem de fundo para o texto em branco destacar */
+}
+
+/* 3. SEÇÃO DO SUMÁRIO INTERATIVO (.grid-sumario e cards de períodos) */
+.section-titulo {
+    text-align: center;
+    font-size: 2.3rem;
+    color: #1a1a1a;
+    margin-top: 5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.sub-titulo {
+    text-align: center;
+    color: #666666;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+.grid-sumario {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 5%;
+}
+
+.card-periodo {
+    position: relative;
+    background-image: url('../img/tratados-tordesilha.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1a1a1a; /* Cor de segurança */
+    border: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Cabeçalho interno do período do sumário */
+.card-header-periodo {
+    padding: 2.5rem 2rem 1.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0.96); /* Fundo branco semi-transparente por cima da imagem */
+    color: #1a1a1a;
+    flex-grow: 1;
+}
+
+.card-header-periodo h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.periodo-data {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.card-header-periodo .descricao {
+    color: #666666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Lista sanfonada html (<details> e <summary>) */
+.card-periodo details {
+    background-color: #ffffff;
+    border-top: 1px solid #e6e6e6;
+}
+
+.card-periodo summary {
+    padding: 1.2rem 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* Remove seta padrão */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-periodo summary::after {
+    content: '➕';
+    font-size: 0.8rem;
+}
+
+.card-periodo details[open] summary::after {
+    content: '➖';
+}
+
+.card-periodo details ul {
+    list-style: none;
+    padding: 0 2rem 2rem 2rem;
+    max-height: 300px;
+    overflow-y: auto; /* Adiciona barra de rolagem interna se a lista for muito longa */
+}
+
+.card-periodo details ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 0.9rem;
+    color: #444444;
+}
+
+.card-periodo details ul li:last-child {
+    border-bottom: none;
+}
+
+/* 4. BOTÃO DE COMPRA PRINCIPAL (.prisma-btn-container) */
+.prisma-btn-container {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 0 5%;
+}
+
+.btn-checkout-final {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 1.2rem 3.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.btn-checkout-final:hover {
+    background-color: #333333;
+}
+
+/* 5. MODAL DE CHECKOUT (.modal-overlay, .modal-content, etc) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: none; /* Controlado via JS com abrirCheckout() e fecharCheckout() */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    max-width: 850px;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-fechar-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Lado Esquerdo do Modal (Detalhes do Produto) */
+.modal-produto {
+    background-color: #f9f9f9;
+    padding: 3rem 2.5rem;
+    border-right: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-tag {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.modal-produto h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 0.4rem;
+}
+
+.modal-sub {
+    color: #666666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.modal-lista-beneficios {
+    list-style: none;
+}
+
+.modal-lista-beneficios li {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #444444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-icon {
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* Lado Direito do Modal (Pagamento) */
+.modal-pagamento {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.preco-box {
+    margin-bottom: 1.5rem;
+}
+
+.preco-de {
+    display: block;
+    color: #999999;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
+.preco-por {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+
+.preco-info {
+    color: #666666;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.formas-pagamento {
+    margin-bottom: 2rem;
+}
+
+.titulo-pagamento {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 0.6rem;
+}
+
+.icones-pagamento {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag-pagamento {
+    border: 1px solid #e6e6e6;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.modal-pagamento .btn-checkout-final {
+    width: 100%;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+}
+
+.modal-seguranca {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #777777;
+    line-height: 1.5;
+}
+
+/* 6. RESPONSIVIDADE DO E-BOOK */
+@media (max-width: 768px) {
+    .hero-ebook h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-ebook p {
+        font-size: 1rem;
+    }
+    
+    .grid-sumario {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-produto {
+        border-right: none;
+        border-bottom: 1px solid #e6e6e6;
+        padding: 2rem 1.5rem;
+    }
+    
+    .modal-pagamento {
+        padding: 2rem 1.5rem;
+    }
+    
+    .preco-por {
+        font-size: 2.2rem;
+    }
+}
+/*doação*/
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O HTML DE DOAÇÃO (CLASSES IDENTICAS)
+   ========================================================================== */
+
+/* Espaçamento do container principal em relação ao menu fixo do topo */
+main {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    background-color: #ffffff;
+}
+
+/* Caixa centralizada de doação */
+.doacao-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+}
+
+/* Ícone de emoji no topo da caixa */
+.doacao-box .emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Título principal e parágrafo de introdução */
+.doacao-box h2 {
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.doacao-box p {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Seção de botões de valores pré-definidos */
+.valores {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+/* Botões individuais de valores */
+.valor-btn {
+    border: 1px solid #e6e6e6;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.valor-btn:hover {
+    background-color: #f9f9f9;
+    border-color: #1a1a1a;
+}
+
+/* Caixa interna do PIX Direto */
+.pix-box {
+    background-color: #f9f9f9;
+    border: 1px solid #e6e6e6;
+    padding: 2rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.pix-box h3 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Bloco contendo o texto da chave PIX */
+.chave-pix {
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    padding: 0.8rem 1rem;
+    font-family: monospace;
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    word-break: break-all; /* Evita quebra de layout em telas pequenas */
+}
+
+/* Botão de copiar a chave */
+.btn-copiar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.btn-copiar:hover {
+    background-color: #333333;
+}
+
+/* Ajustes de visualização para celulares */
+@media (max-width: 768px) {
+    main {
+        padding-top: 7rem;
+    }
+    .doacao-box {
+        padding: 2rem 1.5rem;
+    }
+    .valores {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .doacao-box h2 {
+        font-size: 1.6rem;
+    }
+}
+/*privacidade*/
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O PRIVACIDADE.HTML (CLASSES IDENTICAS)
+   ========================================================================== */
+
+/* Espaçamento superior da seção legal para evitar que o menu fixo cubra o texto */
+.secao-texto-legal {
+    padding: 10rem 0 5rem 0;
+    background-color: #ffffff;
+}
+
+/* Largura máxima focada em leitura limpa para o texto do documento */
+.secao-texto-legal .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Título principal do documento legal */
+.secao-texto-legal h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* Estilo do bloco de data de última atualização */
+.data-atualizacao {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 1rem;
+}
+
+/* Subtítulos de seções legais (1, 2, 3...) */
+.secao-texto-legal h2 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Texto corrido e parágrafos normais */
+.secao-texto-legal p {
+    font-size: 1.05rem;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* Links dentro do texto de privacidade */
+.secao-texto-legal a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.secao-texto-legal a:hover {
+    color: #555555;
+}
+
+/* Lista interna de tópicos coletados */
+.secao-texto-legal ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: square; /* Marcador quadrado simples */
+}
+
+/* Itens individuais da lista */
+.secao-texto-legal li {
+    font-size: 1.05rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+/* Destaques fortes internos da LGPD */
+.secao-texto-legal strong {
+    color: #1a1a1a;
+}
+
+/* Ajustes rápidos para telas menores de celular */
+@media (max-width: 768px) {
+    .secao-texto-legal {
+        padding-top: 8rem;
+    }
+    .secao-texto-legal h1 {
+        font-size: 2rem;
+    }
+    .secao-texto-legal h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/*termos*/
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS PARA O TERMOS.HTML (CLASSES IDENTICAS)
+   ========================================================================== */
+
+/* Espaçamento superior para o cabeçalho não cobrir os Termos de Uso */
+.secao-texto-legal {
+    padding: 10rem 0 5rem 0;
+    background-color: #ffffff;
+}
+
+/* Container centralizado e focado em uma leitura confortável */
+.secao-texto-legal .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* Título principal do documento legal */
+.secao-texto-legal h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* Bloco da data da última modificação */
+.data-atualizacao {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 1rem;
+}
+
+/* Títulos das seções de termos (1, 2, 3...) */
+.secao-texto-legal h2 {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Parágrafos de texto corrido */
+.secao-texto-legal p {
+    font-size: 1.05rem;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+/* Links dentro dos textos dos termos */
+.secao-texto-legal a {
+    color: #1a1a1a;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.secao-texto-legal a:hover {
+    color: #555555;
+}
+
+/* Alinhamento da lista de Permitido e Proibido */
+.secao-texto-legal ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: square;
+}
+
+/* Itens individuais da lista */
+.secao-texto-legal li {
+    font-size: 1.05rem;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+}
+
+/* Destaque nos textos em negrito */
+.secao-texto-legal strong {
+    color: #1a1a1a;
+}
+
+/* Responsividade do documento legal em celulares */
+@media (max-width: 768px) {
+    .secao-texto-legal {
+        padding-top: 8rem;
+    }
+    .secao-texto-legal h1 {
+        font-size: 2rem;
+    }
+    .secao-texto-legal h2 {
+        font-size: 1.25rem;
+    }
+}
+/*footer*/
+/* Estilo para a caixa do logótipo */
+
+/* 1. ESTRUTURA GERAL DO RODAPÉ */
+.footer {
+    background-color: #f9f9f6; /* Fundo off-white/creme sutil, muito elegante */
+    color: #4a4a4a; /* Texto cinza escuro suave */
+    padding: 60px 20px 30px 20px; /* Afasta o conteúdo das bordas (cima, lados, baixo) */
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    border-top: 1px solid #e2e2d9; /* Linha divisória fina no topo */
+}
+
+/* Contentor que limita a largura máxima no ecrã */
+.footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 2. A GRELHA (COLUNAS) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Coluna do Sobre é maior */
+    gap: 40px; /* Espaço generoso entre as colunas */
+    margin-bottom: 40px; /* Afasta as colunas do copyright */
+}
+
+/* 3. ESTILIZAÇÃO DAS COLUNAS */
+.footer-col h3.footer-logo {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 22px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.footer-col h4 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 4. LINKS E LISTAS */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px; /* Afasta um link do outro (evita texto grudado) */
+    font-size: 14px;
+}
+
+.footer-col ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #766144; /* Tom bronze elegante no hover */
+}
+
+/* Destaque para o botão de compra */
+.link-destaque {
+    font-weight: 600;
+    color: #766144 !important;
+}
+
+/* Selo de segurança */
+.footer-selo {
+    margin-top: 20px;
+    background: #fff;
+    padding: 8px 12px;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #e2e2d9;
+    font-size: 13px;
+}
+
+/* 5. COPYRIGHT (PARTE INFERIOR) */
+.footer-bottom {
+    border-top: 1px solid #e2e2d9;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #8a8a8a;
+}
+
+/* 6. ADAPTAÇÃO PARA TELEMÓVEIS (RESPONSIVIDADE) */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Transforma colunas em linhas no telemóvel */
+        gap: 30px;
+    }
+    .footer {
+        padding: 40px 20px 20px 20px;
+    }
+}
+
+/*sumário*/
+

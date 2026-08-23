@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Prisma Histórico</title>
+    <!-- Ligação correta para o CSS que está na raiz -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- NAV REUTILIZADA DA PÁGINA DE CURIOSIDADES -->
+    <nav class="prisma-nav">
+        <div class="prisma-logo">
+            <span>Prisma</span> Histórico
+        </div>
+        
+        <ul class="prisma-menu-links">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="artigos.html">Artigos</a></li>
+            <li><a href="curiosidades.html">Curiosidades</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+        </ul>
+
+        <button type="button" class="prisma-menu-hamburguer" onclick="toggleMenu()" aria-label="Abrir menu">
+            <span class="prisma-barra"></span>
+            <span class="prisma-barra"></span>
+            <span class="prisma-barra"></span>
+        </button>
+    </nav>
+
+    <!-- SECÇÃO MANIFESTO ORGANIZADA -->
+    <section class="secao-manifesto">
+        <div class="container">
+            <div class="bloco-manifesto animate-up">
+                <h2>📖 Por que o Prisma Existe</h2>
+                <p class="sub-frase">As bancas não cobram decoração. Elas cobram <strong>LÓGICA</strong>.</p>
+                <p>O método tradicional falhou ao empurrar textos maçantes goela abaixo. O Prisma nasceu para quebrar a decoreba e entregar a engrenagem real dos acontecimentos históricos de forma cirúrgica.</p>
+            </div>
+
+            <div class="bloco-manifesto animate-up delay-1">
+                <h2>🎯 Resultado: 1000x Mais</h2>
+                <p class="sub-frase">Um projeto de estudo que foi desenvolvido para ajudar de maneira eficaz as dificuldades de compreender a História</p>
+                <p>Focar naquilo que realmente cai, com profundidade de nível superior traduzida para uma linguagem direta, clara e focada no topo da sua lista de aprovação.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECÇÃO DE APOIO E DOAÇÃO ADAPTADA -->
+    <section class="section-doacao">
+        <div class="container">
+            <div class="doacao-box">
+                <span class="doacao-tag">⚡ APOIE O PROJETO</span>
+                <h2 class="subtitulo-secao">Ajude na Manutenção do Site</h2>
+                <p class="doacao-texto">
+                    Atrás de cada página deste e-book e de cada artigo do site existem centenas de horas de estudo,
+                    triagem de questões e pesquisas profundas para entregar a você o caminho mais curto até 
+                    a aprovação, sem rodeios ou perda de tempo. Manter essa estrutura no ar com alta velocidade, 
+                    sem anúncios invasivos e com ferramentas de edição de ponta exige um custo financeiro diário. 
+                    Quando você contribui com qualquer valor, você não está apenas pagando um custo de hospedagem; 
+                    você está financiando a continuidade de um projeto que preza pelo seu tempo e pela sua evolução
+                    nos concursos. Sua doação é o combustível que me dá fôlego para continuar atualizando os materiais
+                    e criando conteúdos diretos que aceleram a sua conquista em Vestibulares e Concursos Públicos. 
+                    Apoie este projeto e faça parte da engrenagem que transforma o seu effort na sua futura nomeação.
+                </p>
+                <p class="doacao-texto-destaque">
+                    Todo valor é revertido para: manutenção do site + revisão e atualização do e-book
+                </p>
+
+                <div class="botoes-doacao">
+                    <!-- Link ajustado para abrir a página de doação dentro da mesma pasta -->
+                    <a href="doacao.html" target="_blank" class="btn-doacao">
+                        💰 Fazer Doação via PIX
+                    </a>
+                </div>
+
+                <p class="doacao-obs">Qualquer valor já ajuda muito</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ REESTRUTURADO EM COLUNAS -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+              
+                <!-- COLUNA 1: LOGO E SOBRE -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">Prisma Histórico</h3>
+                    <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
+                </div>
+
+                <!-- COLUNA 2: LINKS RÁPIDOS -->
+                <div class="footer-col">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 3: LEGAL -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 4: CONTATO -->
+                <div class="footer-col">
+                    <h4>Contato e Suporte</h4>
+                    <ul>
+                        <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
+                    </ul>
+                    <div class="footer-selo">
+                        <p>🔒 Compra 100% Segura</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="footer-bottom">
+                <p>© 2026 Prisma Histórico | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script puxando da raiz para o menu hambúrguer funcionar -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
