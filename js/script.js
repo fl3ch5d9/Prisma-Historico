@@ -1,23 +1,40 @@
 // SELECIONA OS ELEMENTOS DO HEADER
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-// ABRE E FECHA O MENU AO CLICAR NO BOTÃO HAMBÚRGUER
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
+function togglePrismaMenu(event) {
+    if (event) event.preventDefault();
+    
+    // Seleciona o botão e a lista de links usando as classes reais do seu HTML
+    const botao = document.querySelector('.prisma-menu-hamburguer');
+    const menuLinks = document.querySelector('.prisma-menu-links');
+    
+    if (botao && menuLinks) {
+        // Alterna a classe 'active' para abrir/fechar
+        botao.classList.toggle('active');
+        menuLinks.classList.toggle('active');
+        
+        // Atualiza a acessibilidade
+        const isExpanded = botao.classList.contains('active');
+        botao.setAttribute('aria-expanded', isExpanded);
+    }
 }
 
 // FECHA O MENU AUTOMATICAMENTE SE O UTILIZADOR CLICAR EM QUALQUER LINK
-const navLinks = document.querySelectorAll('.nav-menu a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu) {
-            navMenu.classList.remove('active');
-        }
+// Executa assim que a página carrega para mapear os links corretos
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.prisma-menu-links a');
+    const botao = document.querySelector('.prisma-menu-hamburguer');
+    const menuLinks = document.querySelector('.prisma-menu-links');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menuLinks && botao) {
+                menuLinks.classList.remove('active');
+                botao.classList.remove('active');
+                botao.setAttribute('aria-expanded', 'false');
+            }
+        });
     });
 });
+
 
 // botão quiz 
 
@@ -93,4 +110,22 @@ function copiarPix() {
             console.error('Erro ao copiar a chave: ', err);
         });
     }
+}
+
+
+// novo hamburguer 
+
+function togglePrismaMenu(event) {
+    event.preventDefault();
+    
+    const botao = event.currentTarget;
+    const menu = document.getElementById('prisma-menu-nav'); // Mude para o ID do seu menu
+    
+    // Alterna a classe active
+    botao.classList.toggle('active');
+    if (menu) menu.classList.toggle('active');
+    
+    // Atualiza a acessibilidade
+    const isExpanded = botao.classList.contains('active');
+    botao.setAttribute('aria-expanded', isExpanded);
 }
