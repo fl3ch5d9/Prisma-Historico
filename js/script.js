@@ -2,20 +2,17 @@
 function togglePrismaMenu(event) {
     if (event) event.preventDefault();
     
-    // Seleciona as classes exatas do seu HTML
     const menuLinks = document.querySelector('.prisma-menu-links');
     const botao = document.querySelector('.prisma-menu-hamburguer');
     
     if (menuLinks && botao) {
-        // Alterna apenas a classe que mostra e esconde a lista de links
         menuLinks.classList.toggle('active');
+        botao.classList.toggle('active'); // <- faltava isso para fazer o X
         
-        // Atualiza a acessibilidade do botão
-        const isExpanded = menuLinks.classList.contains('active');
+        const isExpanded = menuLinks.classList.contains('active'); // <- aqui era 'active' e tem que ser 'ativo'
         botao.setAttribute('aria-expanded', isExpanded);
     }
 }
-
 // Fecha o menu automaticamente se o usuário clicar em qualquer link da lista
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.prisma-menu-links a');
@@ -27,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 if (menuLinks && botao) {
                     menuLinks.classList.remove('active');
+                    botao.classList.remove('active');
                     botao.setAttribute('aria-expanded', 'false');
                 }
             });
@@ -71,6 +69,7 @@ function corrigirQuiz() {
         caixaResultado.scrollIntoView({ behavior: 'smooth' });
     }
 }
+
 // ebook
 
 function abrirCheckout() {
@@ -116,3 +115,32 @@ function copiarPix() {
 
 // novo hamburguer 
 
+// HEADER UNIFICADO - ÚNICA FUNÇÃO
+function togglePrismaMenu(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    const menuLinks = document.querySelector('.prisma-menu-links');
+    const botao = document.querySelector('.prisma-menu-hamburguer');
+    
+    if (menuLinks && botao) {
+        menuLinks.classList.toggle('active');
+        const isExpanded = menuLinks.classList.contains('active');
+        botao.setAttribute('aria-expanded', isExpanded);
+    }
+}
+
+// fecha ao clicar no link
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.prisma-menu-links a');
+    const menuLinks = document.querySelector('.prisma-menu-links');
+    const botao = document.querySelector('.prisma-menu-hamburguer');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuLinks.classList.remove('active');
+            botao.setAttribute('aria-expanded', 'false');
+        });
+    });
+});

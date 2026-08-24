@@ -22,105 +22,6 @@ body {
    ========================================================================== */
 
 
-/* ================= 1. BARRA DO MENU PRINCIPAL (NAV) ================= */
-/* ================= 1. BARRA DO MENU PRINCIPAL (NAV) ================= */
-.prisma-nav {
-    background-color: #36454F; /* Cor Carvão original */
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 5%;
-    
-    position: sticky; 
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #2d2d2d;
-    box-sizing: border-box; 
-    margin-bottom: 40px; 
-}
-
-/* Estilo da Logo */
-.prisma-logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-/* ================= 2. VERSÃO COMPUTADOR (DESKTOP) ================= */
-
-/* Esconde o botão hambúrguer no computador */
-.prisma-menu-hamburguer {
-    display: none;
-}
-
-/* Força os links a ficarem visíveis e lado a lado no PC */
-.prisma-menu-links {
-    display: flex !important; /* O !important garante que não suma no PC */
-    flex-direction: row !important;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-    position: static !important;
-    background: none !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-}
-
-/* Links Brancos com efeito profissional */
-.prisma-menu-links a {
-    color: #ffffff; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    opacity: 0.85; 
-}
-
-/* Efeito ao passar o mouse */
-.prisma-menu-links a:hover {
-    opacity: 1;
-    color: #ffffff;
-}
-
-/* ================= 3. VERSÃO CELULAR (MOBILE) ================= */
-@media (max-width: 768px) {
-    
-    /* Mostra o botão hambúrguer apenas no celular */
-    .prisma-menu-hamburguer {
-        display: flex; 
-        flex-direction: column;
-        background: none;
-        border: none;
-        cursor: pointer;
-        gap: 5px;
-    }
-
-    /* Desenha as três linhas em branco */
-    .prisma-barra {
-        width: 25px;
-        height: 3px;
-        background-color: #ffffff;
-        display: block;
-    }
-
-    /* Transforma a lista em menu suspenso escondido no celular */
-    .prisma-menu-links {
-        display: none !important; /* Sobrescreve o flex do PC apenas no mobile */
-        flex-direction: column !important;
-        position: absolute !important;
-        top: 100% !important; 
-        right: 0 !important;
-        background-color: #36454F !important; 
-        padding: 20px !important;
-        width: 200px !important;
-        box-shadow: 0px 4px 10px rgba(0,0,0,0.3) !important;
-        gap: 15px !important;
-    }
-}
-
 /* ==========================================================================
    3. ÁREA DE VENDAS PRINCIPAL (section#inicio.hero-section)
    ========================================================================== */
@@ -365,49 +266,6 @@ body {
 /* ==========================================================================
    8. RESPONSIVIDADE (MEDIA QUERIES PARA TELEMÓVEL)
    ========================================================================== */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-        padding: 2rem 0;
-        display: none;
-        border-bottom: 1px solid #2d2d2d;
-    }
-
-    .nav-menu.active {
-        display: block;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .hero-container h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .grid-produtos {
-        grid-template-columns: 1fr;
-    }
-
-    .content-wrapper {
-        margin-top: 7rem;
-    }
-}
-
 
 /*curiosidades*/
 /*botão de curiosidades*/
@@ -507,75 +365,6 @@ body {
    ========================================================================== */
 /* 1. MANTÉM O SEU HEADER EXATAMENTE COMO ESTAVA (COR CARVÃO E FIXO) */
 /* BARRA DE NAVEGAÇÃO PRINCIPAL FIXA */
-.prisma-nav {
-    background-color: #36454F; /* Cor Carvão Mineral */
-    color: #ffffff; /* Letras Brancas */
-    display: flex;
-    justify-content: space-between; /* Logo na esquerda, links na extrema direita */
-    align-items: center;
-    padding: 1.2rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #2d2d2d;
-    box-sizing: border-box; /* Impede o site de quebrar ou dançar para os lados */
-}
-
-/* ESTILIZAÇÃO DO LOGO */
-.prisma-logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.prisma-logo span {
-    border-bottom: 2px solid #ffffff; /* Linha branca embaixo da palavra Prisma */
-}
-
-/* LISTA DOS LINKS DO MENU (ALINHADOS À DIREITA) */
-.prisma-menu-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-/* ESTILO DOS LINKS (COR BRANCA SUAVE DE PARTIDA) */
-.prisma-menu-links a {
-    color: #e0e0e0; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-/* EFEITO PASSAR O MOUSE (BRANCO PURO E BRILHANTE) */
-.prisma-menu-links a:hover {
-    color: #ffffff !important;
-}
-
-/* BOTÃO DO MENU HAMBÚRGUER (OCULTO NO COMPUTADOR) */
-.prisma-menu-hamburguer {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 5px;
-    padding: 0;
-}
-
-/* AS TRES BARRINHAS DO MENU CELULAR */
-.prisma-barra {
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff;
-    transition: all 0.3s ease;
-}
 
 /* AFRESTA DE ESPAÇO PARA O SEU CONTEÚDO NÃO SUBIR PARA TRÁS DO MENU FIXO */
 .introducao-tecnica-sumario {
@@ -775,32 +564,6 @@ body {
 /* ==========================================================================
    7. RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
-@media (max-width: 768px) {
-    .menu-toggle, .prisma-menu-hamburguer {
-        display: flex;
-    }
-
-    .nav-menu, .prisma-menu-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #1a1a1a;
-        padding: 2rem 0;
-        display: none;
-        flex-direction: column;
-        gap: 1.5rem;
-        border-bottom: 1px solid #2d2d2d;
-    }
-
-    .nav-menu.active, .prisma-menu-links.active {
-        display: block;
-    }
-
-    .grid-produtos, .grid-3 {
-        grid-template-columns: 1fr;
-    }
-}
 
 /*sobre */
 
@@ -1804,17 +1567,7 @@ main {
 }
 
 /* Ajustes rápidos para telas menores de celular */
-@media (max-width: 768px) {
-    .secao-texto-legal {
-        padding-top: 8rem;
-    }
-    .secao-texto-legal h1 {
-        font-size: 2rem;
-    }
-    .secao-texto-legal h2 {
-        font-size: 1.25rem;
-    }
-}
+
 
 /*termos*/
 
@@ -2010,147 +1763,142 @@ main {
 }
 
 /* 6. ADAPTAÇÃO PARA TELEMÓVEIS (RESPONSIVIDADE) */
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr; /* Transforma colunas em linhas no telemóvel */
-        gap: 30px;
-    }
-    .footer {
-        padding: 40px 20px 20px 20px;
-    }
-}
+
 
 /*novo hamburguer*/
 
 /* Base do botão hambúrguer (Branco e escondido no computador) */
-.prisma-menu-hamburguer {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.prisma-barra {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: #ffffff; /* Linhas Brancas */
-  transition: 0.3s ease-in-out;
-}
-
-/* ================= CONFIGURAÇÃO PARA CELULAR ================= */
-@media (max-width: 768px) {
-  /* Mostra o botão no celular */
-  .prisma-menu-hamburguer {
-    display: block;
-    z-index: 1010;
-  }
-
-  /* Animação que transforma as barras em "X" */
-  .prisma-menu-hamburguer.active .prisma-barra:nth-child(2) {
-    opacity: 0;
-  }
-  .prisma-menu-hamburguer.active .prisma-barra:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .prisma-menu-hamburguer.active .prisma-barra:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Estilo do Menu Lateral (Carvão) */
-  .prisma-menu-links {
-    position: fixed;
-    right: -100%; /* Escondido para a direita */
-    top: 0;
-    width: 70%;
-    height: 100vh;
-    background-color: #212529; /* Cor Carvão */
+/* ===== MENU PRISMA - VERSÃO FINAL CORRIGIDA ===== */
+.prisma-nav {
+    background-color: #36454F;
+    color: #ffffff;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 100px;
-    gap: 25px;
-    transition: 0.4s ease-in-out;
-    z-index: 1005;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-  }
-
-  /* Exibe os links em lista vertical no celular */
-  .prisma-menu-links li {
-    list-style: none;
-  }
-
-  .prisma-menu-links a {
-    color: #ffffff; /* Texto dos links em branco */
-    text-decoration: none;
-    font-size: 20px;
-  }
-
-  /* Classe ativada pelo JavaScript para abrir o menu */
-  .prisma-menu-links.active {
-    right: 0; /* Desliza para dentro da tela */
-  }
+    padding: 1.2rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2d2d2d;
+    box-sizing: border-box;
 }
 
+.prisma-logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+.prisma-logo span { border-bottom: 2px solid #ffffff; }
 
-/* segundo css teste hamburguer */
-/* ================= VERSÃO COMPUTADOR (DESKTOP) ================= */
-
-/* --- CONFIGURAÇÃO PADRÃO PARA CELULAR --- */
-
-/* --- COMPORTAMENTO DO MENU PARA CELULAR --- */
-
-/* Esconde a lista de links por padrão no mobile */
 .prisma-menu-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.prisma-menu-links a {
+    color: #e0e0e0; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.prisma-menu-links a:hover { color: #ffffff !important; }
+
+/* HAMBURGUER - SEMPRE BRANCO */
+.prisma-menu-hamburguer {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    list-style: none;
-    box-sizing: border-box;
-    z-index: 999;
-}
-
-/* ÚNICA REGRA DE ABERTURA: Ativada pelo 'active' do seu JavaScript */
-.prisma-menu-links.active {
-    display: flex !important;
-}
-
-/* Mantém o botão do hambúrguer estático (sempre três travessões) */
-.prisma-menu-hamburguer {
+    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+    gap: 5px;
+    padding: 10px;
+    z-index: 1001;
 }
-
-/* As barras herdam o tamanho e a cor que você já definiu no seu site */
 .prisma-barra {
+    width: 25px;
+    height: 3px;
+    background: #ffffff !important; /* TRAVESSÃO BRANCO FORÇADO */
     display: block;
+    transition: 0.3s;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+  .prisma-menu-hamburguer { display: none !important; }
+  .prisma-menu-links {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    width: auto !important;
+    background: transparent !important;
+  }
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 768px) {
+    .prisma-menu-hamburguer { display: flex !important; }
+
+    .prisma-menu-links {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    background: #36454F !important;
+    padding: 20px !important;
+    width: 200px !important;
+    height: auto !important;
+    max-height: none !important;
+    gap: 15px !important;
+}
+    .prisma-menu-links.active,
+    .prisma-menu-links.active { 
+        display: flex !important; 
+    }
+
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(2){opacity:0}
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(2){opacity:0}
+    .prisma-menu-hamburguer.active .prisma-barra:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 }
 
 
-/* --- COMPORTAMENTO PARA TELAS GRANDES (DESKTOP) --- */
-@media (min-width: 769px) {
-    /* Esconde o botão de três travessões no computador */
-    .prisma-menu-hamburguer {
-        display: none !important;
-    }
-    
-    /* Força a lista a ficar visível, limpa e na horizontal no computador */
-    .prisma-menu-links {
-        display: flex !important;
-        flex-direction: row !important;
-        position: static !important;
-        width: auto !important;
-        padding: 0 !important;
-    }
+@media (max-width: 768px) {
+  .prisma-menu-links {
+    height: auto !important;
+    max-height: fit-content !important;
+    min-height: 0 !important;
+    bottom: auto !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .prisma-menu-links {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    background: #36454F !important;
+    padding: 20px !important;
+    width: 200px !important;
+    height: auto !important;
+    max-height: none !important;
+    gap: 15px !important;
+  }
+
+  .prisma-menu-links.active {
+    display: flex !important;
+  }
 }
