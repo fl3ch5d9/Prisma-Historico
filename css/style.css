@@ -1938,3 +1938,27 @@ body > * {
     max-width: 100% !important;
   }
 }
+
+/*rodape celular*/
+/* FIX DO RODAPÉ ESMAGADO */
+/* SÓ CELULAR - não afeta notebook */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  .footer-col {
+    width: 100% !important;
+  }
+
+  .footer-col a {
+    word-break: break-all !important; /* pra email não sair pra fora */
+  }
+
+  .footer {
+    padding: 30px 20px !important;
+  }
+}
