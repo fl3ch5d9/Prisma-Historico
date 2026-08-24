@@ -1962,3 +1962,17 @@ body > * {
     padding: 30px 20px !important;
   }
 }
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+  .footer-col a {
+    word-break: break-all !important;
+    font-size: 14px !important;
+  }
+  .footer {
+    overflow: hidden !important;
+  }
+}
