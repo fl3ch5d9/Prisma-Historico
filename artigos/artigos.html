@@ -108,63 +108,6 @@
         </div>
 
 
-<section class="ebook-promo" style="text-align: center; padding: 40px 20px; background-color: #f9f9f9; border-radius: 8px; margin-top: 30px;">
-  <h2>Artigos e Análises</h2>
-  <p style="font-size: 1.1em; line-height: 1.6; max-width: 800px; margin: 0 auto 25px auto; color: #333;">
-    Quer dominar os bastidores desses conflitos e entender exatamente como eles aparecem nos vestibulares? O conteúdo aprofundado e focado na <strong>lógica das provas sobre todas as revoltas</strong> brasileiras você encontra no e-book <strong>Prisma Histórico</strong>. O guia definitivo para você parar de decorar e passar a gabaritar.
-  </p>
-  
-  <!-- Botão com a cor carvão e efeitos de movimento -->
-  <a href="ebook.html" id="btnPrisma" class="btn-buy" style="
-    display: inline-block; 
-    padding: 15px 30px; 
-    background-color: #36454F; 
-    color: #fff; 
-    text-decoration: none; 
-    font-weight: bold; 
-    border-radius: 5px; 
-    font-size: 1.1em; 
-    box-shadow: 0 4px 0 #1e272d;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    user-select: none;
-  ">
-    Quero Garantir Meu E-book Prisma Histórico
-  </a>
-</section>
-
-<!-- Script para fazer o botão se mover ao ser clicado -->
-<script>
-  const botao = document.getElementById('btnPrisma');
-
-  botao.addEventListener('mousedown', () => {
-    // Efeito de afundar o botão no clique (Active State)
-    botao.style.transform = 'translateY(4px)';
-    botao.style.boxShadow = '0 0px 0 #1e272d';
-  });
-
-  botao.addEventListener('mouseup', () => {
-    // Retorna o botão à posição original
-    botao.style.transform = 'translateY(0)';
-    botao.style.boxShadow = '0 4px 0 #1e272d';
-    
-    // Adiciona uma pequena animação de pulso/vibração ao soltar o clique
-    botao.animate([
-      { transform: 'scale(1)' },
-      { transform: 'scale(1.03)' },
-      { transform: 'scale(1)' }
-    ], {
-      duration: 150,
-      iterations: 1
-    });
-  });
-
-  // Garante que o botão volte ao normal se o usuário arrastar o mouse para fora antes de soltar
-  botao.addEventListener('mouseleave', () => {
-    botao.style.transform = 'translateY(0)';
-    botao.style.boxShadow = '0 4px 0 #1e272d';
-  });
-</script>
-
 
 
 
