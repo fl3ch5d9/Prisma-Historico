@@ -1976,3 +1976,60 @@ body > * {
     overflow: hidden !important;
   }
 }
+/*novo visual*/
+
+:root{--abismo:#0C0D0A;--abismo2:#1A1812;--ouro:#AE8A5A;--ouroE:#947347;--ouroE2:#86653A;--cafe:#4A371C;--cafe2:#684E2B;--cafe3:#634E30;--papel:#E8DCC5}
+body,html{background:var(--abismo)!important;color:var(--papel)!important}
+.prisma-nav,.prisma-menu-links{background:var(--abismo)!important}
+.prisma-logo span,.subtitulo-introducao,.item-tecnologia strong,.caixa-contraste h4,.titulo-periodo{color:var(--ouro)!important}
+.texto-manifesto,.item-tecnologia p,.caixa-contraste li,.lista-topicos-ebook{color:var(--papel)!important}
+.card-imagem-ebook,.secao-introducao-ebook,.item-tecnologia,.caixa-contraste,.card-sumario-retratil{background:var(--abismo2)!important;border-color:var(--cafe)!important}
+.prisma-botao-compra{background:var(--ouro)!important;color:var(--abismo)!important;border-color:var(--ouro)!important}
+.conteudo-lista-sumario::-webkit-scrollbar-thumb{background:var(--ouroE)!important}
+.footer{background:var(--abismo2)!important}
+
+body, main, .conteudo-principal {
+  background: #0C0D0A !important;
+}
+
+
+/* PALETA OFICIAL PRISMA - OVERRIDE TOTAL */
+:root{
+  --abismo-1: #0C0D0A;
+  --abismo-2: #1A1812;
+  --titulo: #AE8A5A;
+  --detalhe-1: #947347;
+  --detalhe-2: #86653A;
+  --borda-1: #4A371C;
+  --borda-2: #684E2B;
+  --borda-3: #634E30;
+  --texto: #E8DCC5;
+}
+body, .conteudo-principal, .secao-sumario-interativo{
+  background: var(--abismo-1) !important;
+  color: var(--texto) !important;
+}
+.secao-introducao-ebook, .card-imagem-ebook, .item-tecnologia, .caixa-contraste, .card-item, .card-sumario-retratil, .conteudo-lista-sumario, .bloco-solucao-estudante{
+  background: var(--abismo-2) !important;
+  border-color: var(--borda-1) !important;
+  color: var(--texto) !important;
+}
+h1,h2,h3,h4, .subtitulo-introducao, .titulo-periodo, .cabecalho-solucao h2{
+  color: var(--titulo) !important;
+}
+p, li, .texto-manifesto, .paragrafo-introducao, .lista-topicos-ebook{
+  color: var(--texto) !important;
+}
+strong{ color: var(--titulo) !important; }
+.prisma-botao-compra, .botao-animado-geral{
+  background: var(--titulo) !important;
+  color: var(--abismo-1) !important;
+  border-color: var(--titulo) !important;
+}
+.prisma-botao-compra:hover{
+  background: var(--detalhe-1) !important;
+  color: var(--abismo-1) !important;
+}
+.etiqueta-metodo{ background: var(--borda-2) !important; color: var(--texto) !important; }
+.conteudo-lista-sumario::-webkit-scrollbar-thumb{ background: var(--titulo) !important; }
+.icone-status::before, .icone-status::after{ background: var(--titulo) !important; }
