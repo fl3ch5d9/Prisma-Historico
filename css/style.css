@@ -2151,4 +2151,20 @@ footer > div,
     gap: 20px !important;
   }
 }
+.beneficios {
+  align-items: stretch !important;
+}
 
+.beneficios {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 colunas IGUAIS */
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.card-beneficio {
+  width: 100% !important; /* agora ocupa a célula toda */
+  min-width: 0 !important;
+  height: 100% !important; /* mesma altura */
+  box-sizing: border-box !important;
+}
