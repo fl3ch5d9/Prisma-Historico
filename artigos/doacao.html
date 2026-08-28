@@ -5,7 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apoie - Prisma Histórico</title>
 <link rel="stylesheet" href="../css/style.css">
+<style>
+  /*doacao*/
 
+.container{
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.doacao-box{
+  max-width: 550px;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.doacao-box h2{
+  margin: 10px 0;
+}
+
+.doacao-box p{
+  color: #bbb;
+  line-height: 1.5;
+}
+
+.valores{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.valor-btn{
+  padding: 14px;
+  border: 1px solid #c9a86a;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  background: #1a1a1a;
+}
+
+.valor-btn:hover{
+  background: #c9a86a;
+  color: #000;
+}
+
+.pix-box{
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.chave-pix{
+  background: #f1f1f1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  word-break: break-all;
+  margin: 15px 0;
+  border: 1px dashed #999;
+}
+
+.btn-copiar{
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-copiar:active{
+  transform: scale(0.98);
+}
+
+/* celular */
+@media (max-width: 600px){
+  .doacao-box{
+    padding: 20px 15px;
+  }
+}
+</style>
 
 </head>
 <body>
