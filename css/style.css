@@ -2168,3 +2168,72 @@ footer > div,
   height: 100% !important; /* mesma altura */
   box-sizing: border-box !important;
 }
+
+.hero-ebook {
+  text-align: left !important;
+}
+
+.hero-ebook .container {
+  padding: 0 16px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.beneficios {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  justify-content: start !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  width: 100% !important;
+}
+
+/* CELULAR - 2 por linha, igual no seu último print */
+.beneficios {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.card-beneficio {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* COMPUTADOR - volta os 4 lado a lado perfeito */
+@media (min-width: 769px) {
+  .beneficios {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+
+/* cards index*/
+/* CONTAINER DOS CARDS */
+.prisma-conteudo, .grid-historico, .cards-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* 2 por linha no celular */
+  gap: 12px !important;
+  align-items: stretch !important; /* estica todos pra mesma altura */
+}
+
+/* CADA CARD */
+.prisma-conteudo .card, .grid-historico .card, .card-historico {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  min-height: 280px !important;
+  box-sizing: border-box !important;
+}
+
+/* NO COMPUTADOR VOLTA 3 POR LINHA */
+@media (min-width: 769px) {
+  .prisma-conteudo, .grid-historico, .cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+}
