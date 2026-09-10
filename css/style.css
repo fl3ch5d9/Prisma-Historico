@@ -2271,3 +2271,12 @@ footer > div,
   }
 }
 
+#modalCheckout{
+  overflow-y: auto !important;
+  align-items: flex-start !important;
+}
+.modal-content{
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  margin: 20px auto !important;
+}
