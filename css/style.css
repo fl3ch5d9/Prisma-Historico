@@ -1782,11 +1782,22 @@ strong{ color: var(--titulo) !important; }
   color: var(--borda-gold);
 }
 
+/* SÓ O BOTÃO NO CENTRO */
 .prisma-btn-container{
-  text-align: center;
-  padding: 40px 20px;
-  background: var(--carvao-escuro);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 50px 20px !important;
+  width: 100% !important;
 }
+
+.prisma-btn-container .btn-checkout-final,
+.btn-checkout-final{
+  margin: 0 auto !important;
+  display: inline-block !important;
+}
+
 .btn-checkout-final{
   background: var(--borda-gold);
   color: var(--carvao-escuro);
@@ -2224,4 +2235,38 @@ footer > div,
   margin: 0 !important;
 }
 
-/* CADA CARD DENTRO DA MATRIZ */
+/* EBOOK NOVO */
+
+/* ===== CORREÇÃO DEFINITIVA DESKTOP - COLA NO FINAL ===== */
+.hero-ebook{
+  text-align: left !important;
+  padding: 80px 60px 40px !important;
+}
+
+.hero-ebook h1{
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+.hero-ebook p{
+  text-align: left !important;
+  margin: 20px 0 0 0 !important; /* tira o auto */
+  max-width: 650px !important;
+}
+
+.beneficios{
+  text-align: left !important;
+}
+
+@media (max-width: 768px){
+  .hero-ebook{
+    padding: 40px 20px !important;
+    text-align: left !important;
+  }
+  .beneficios{
+    grid-template-columns: 1fr !important; /* no celular vira 1 coluna, senão esmaga */
+  }
+  .modal-grid{
+    grid-template-columns: 1fr !important;
+  }
+}

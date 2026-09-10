@@ -86,8 +86,41 @@
 .btn-checkout-final{display:block;background:#C9A86A;color:#000;font-weight:900;padding:16px;border-radius:8px;text-decoration:none;transition:.2s}
 .btn-checkout-final:hover{background:#fff;transform:scale(1.02)}
 .modal-seguranca{margin-top:15px;font-size:11px;color:#666;line-height:1.4}
+
 @media(max-width:768px){.modal-grid{grid-template-columns:1fr}.modal-content::before{background:rgba(17,17,17,.95)}}
+
+/* CORREÇÃO - SEMPRE À ESQUERDA NO NOTEBOOK */
+@media (min-width: 769px) {
+  .hero, .hero h1, .hero p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    max-width: 750px;
+  }
+  
+  .hero p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Os cards continuam em linha */
+  .cards-container {
+    justify-content: flex-start !important;
+  }
+}
+
+/* NO CELULAR CONTINUA COMO ESTÁ */
+@media (max-width: 768px) {
+  .hero {
+    text-align: left !important;
+    padding: 20px;
+  }
+}
+
+
+
 </style>
+
 
 <div id="modalCheckout" class="modal-overlay">
     <div class="modal-content">
