@@ -63,58 +63,79 @@
 <!-- ======================================================= -->
 <!-- 2. MODAL DE CHECKOUT (MANTÉM AS SUAS CLASSES ORIGINAIS) -->
 <!-- ======================================================= -->
+<style>
+#modalCheckout{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
+.modal-content{position:relative;max-width:900px;width:100%;background:#111 url('container:///mnt/data/portuguese_court_arrival.webp') center/cover no-repeat;border:1px solid #C9A86A;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.8)}
+.modal-content::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, #111 55%, rgba(17,17,17,.85) 100%);z-index:1}
+.modal-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:0}
+.btn-fechar-modal{position:absolute;top:15px;right:15px;z-index:3;background:transparent;border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;font-size:24px;cursor:pointer}
+.modal-produto{padding:40px;color:#fff}
+.modal-tag{background:#C9A86A;color:#000;font-size:11px;font-weight:800;letter-spacing:1px;padding:6px 10px;border-radius:4px}
+.modal-produto h2{font-family:serif;font-size:32px;margin:15px 0 5px}
+.modal-sub{color:#C9A86A;margin-bottom:25px}
+.modal-lista-beneficios{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
+.modal-lista-beneficios li{display:flex;gap:10px;color:#ccc;font-size:15px}
+.check-icon{color:#C9A86A;font-weight:bold}
+.modal-pagamento{background:#1A1A1A;padding:40px;border-left:1px solid #222;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.preco-de{color:#666;text-decoration:line-through;font-size:14px;display:block}
+.preco-por{color:#fff;font-size:42px;font-weight:900;display:block}
+.preco-info{color:#C9A86A;font-size:13px;margin-bottom:20px}
+.titulo-pagamento{font-size:12px;color:#777;margin-bottom:10px;text-transform:uppercase}
+.icones-pagamento{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:25px}
+.tag-pagamento{background:#222;border:1px solid #333;color:#ddd;padding:6px 10px;border-radius:20px;font-size:12px}
+.btn-checkout-final{display:block;background:#C9A86A;color:#000;font-weight:900;padding:16px;border-radius:8px;text-decoration:none;transition:.2s}
+.btn-checkout-final:hover{background:#fff;transform:scale(1.02)}
+.modal-seguranca{margin-top:15px;font-size:11px;color:#666;line-height:1.4}
+@media(max-width:768px){.modal-grid{grid-template-columns:1fr}.modal-content::before{background:rgba(17,17,17,.95)}}
+</style>
+
 <div id="modalCheckout" class="modal-overlay">
     <div class="modal-content">
-        <!-- Botão Fechar (O famoso X) -->
-        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()" aria-label="Fechar modal">&times;</button>
-        
+        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()" aria-label="Fechar">&times;</button>
         <div class="modal-grid">
-            <!-- Lado Esquerdo: Detalhes do Produto -->
             <div class="modal-produto">
-                <span class="modal-tag">PRODUTO DIGITAL</span>
-                <h2>E-book Prisma Histórico</h2>
-                <p class="modal-sub">Versão Completa + Conteúdos Bônus</p>
-                
+                <span class="modal-tag">EDIÇÃO HISTÓRICA COMPLETA</span>
+                <h2> Prisma Histórico</h2>
+                <p class="modal-sub"> Da Colonização à Primeira República</p>
                 <ul class="modal-lista-beneficios">
-                    <li><span class="check-icon">✓</span> Páginas ilustradas de conteúdo cirúrgico</li>
-                    <li><span class="check-icon">✓</span> Questões comentadas (Fuvest, ENEM e Concursos)</li>
-                    <li><span class="check-icon">✓</span> Mapas mentais e diagramas inclusos</li>
-                    <li><span class="check-icon">✓</span> Atualizações em tempo real</li>
-                </ul>
+               <li><span class="check-icon">✓</span> + 130 páginas ilustradas sem romantização</li>
+<li><span class="check-icon">✓</span> Fuvest, ENEM e Vestibulares</li>
+<li><span class="check-icon">✓</span> Mapas, linha do tempo e imagens da Colônia à Primeira República</li>
+<li><span class="check-icon">✓</span> Conteúdo analítico, crítico-reflexivo e investigativo</li>
+<li><span class="check-icon">✓</span> Mapas mentais e infográficos didáticos</li>
+<li><span class="check-icon">✓</span> Análise de documentos oficiais históricos</li>
+<li><span class="check-icon">✓</span> Detalhes inéditos sobre engenharia náutica da época</li>
+
             </div>
-            
-            <!-- Lado Direito: Pagamento e Segurança -->
             <div class="modal-pagamento">
                 <div class="preco-box">
                     <span class="preco-de">De R$ 149,90</span>
-                    <span class="preco-por">R$ 49.90</span>
-                    <p class="preco-info">E-book Completo</p>
+                    <span class="preco-por">R$ 49,90</span>
+                    <p class="preco-info">Pagamento único • Acesso imediato</p>
                 </div>
-                
                 <div class="formas-pagamento">
-                    <p class="titulo-pagamento">Formas de pagamento suportadas:</p>
+                    <p class="titulo-pagamento">Checkout 100% seguro</p>
                     <div class="icones-pagamento">
-                        <span class="tag-pagamento"><span class="flash-icon">⚡</span> Pix</span>
+                        <span class="tag-pagamento">⚡ Pix Instantâneo</span>
+                        <span class="tag-pagamento">💳 Cartão em até 12x</span>
                         <span class="tag-pagamento">📄 Boleto</span>
                     </div>
                 </div>
-                
-                <!-- LINK DE PAGAMENTO SEGURO -->
                 <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-checkout-final">
-                    🔒 IR PARA O PAGAMENTO SEGURO
+                    🔒 GARANTIR MEU ACESSO AGORA
                 </a>
-                
                 <div class="modal-seguranca">
-                    <p>🔒 Ambiente seguro homologado.</p>
-                    <p>🛡️ Garantia incondicional de 7 dias ou seu dinheiro de volta.</p>
+                    <p>🔒 Ambiente criptografado Hotmart</p>
+                    <p>🛡️ 7 dias de garantia incondicional</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
+<script>
+function fecharCheckout(){ document.getElementById('modalCheckout').style.display='none' }
+</script>
 
 
 <footer class="footer">
