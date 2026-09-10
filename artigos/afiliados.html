@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Afiliados - Prisma Histórico</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Acompanhando o tom escuro do seu site */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header-afiliados {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1f1f1f, #000000);
+}
+
+.header-afiliados h1 span {
+    color: #ff9900; /* Cor de destaque para o seu e-book */
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.vantagens h2 {
+    color: #ff9900;
+}
+
+.vantagens ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vantagens li {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.cta-section {
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+}
+
+.btn-afiliado {
+    display: inline-block;
+    background-color: #ff9900;
+    color: #000000;
+    padding: 15px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-afiliado:hover {
+    background-color: #e68a00;
+}
+
+/* Container Principal da Área de Afiliados */
+.secao-afiliados {
+    background-color: #16161a; /* Fundo escuro premium */
+    color: #ffffff;
+    padding: 80px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.afiliados-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+.afiliados-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tag-lucro {
+    background-color: rgba(255, 153, 0, 0.2);
+    color: #ff9900;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.afiliados-header h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.afiliados-header .subtitulo {
+    font-size: 1.2rem;
+    color: #a0a0ab;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Organização do Conteúdo */
+.afiliados-corpo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #1e1e24;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #2e2e38;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-texto p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e4e4e7;
+    margin-bottom: 15px;
+}
+
+/* Lista de Benefícios */
+.afiliados-beneficios h3 {
+    font-size: 1.4rem;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-beneficios li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e4e4e7;
+}
+
+/* Adiciona um checkmark dourado antes de cada item da lista */
+.lista-beneficios li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #ff9900;
+    font-weight: bold;
+}
+
+/* Área do Botão */
+.afiliados-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.botao-hotmart {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff9900, #ff6600);
+    color: #ffffff;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(255, 102, 0, 0.4);
+}
+
+/* Efeitos de Hover no Botão */
+.botao-hotmart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 102, 0, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .afiliados-header h2 { font-size: 1.8rem; }
+    .afiliados-corpo { padding: 25px; }
+    .botao-hotmart { width: 100%; box-sizing: border-box; padding: 15px 20px; font-size: 1.1rem; }
+}
+
+/* Estilos novos que se somam ao CSS anterior */
+
+.card-descricao-produto {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #2e2e38;
+}
+
+.card-descricao-produto h3 {
+    font-size: 1.4rem;
+    color: #ff9900;
+    margin-bottom: 15px;
+}
+
+.card-descricao-produto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e4e4e7;
+}
+
+/* Caixa de destaque cinza para a parte mais técnica/científica */
+.destaque-cientifico {
+    background-color: #16161a;
+    padding: 20px;
+    border-left: 4px solid #ff9900;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.destaque-cientifico p {
+    font-style: italic;
+    color: #d4d4d8;
+    margin-bottom: 10px;
+}
+
+.destaque-cientifico p:last-child {
+    margin-bottom: 0;
+}
+
+/* Texto acima do botão final */
+.chamada-final {
+    font-size: 1.1rem;
+    color: #a0a0ab;
+    margin-bottom: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+/* botão  inicio */
+/* Botão Flutuante Voltar ao Topo */
+#btnTopo {
+    display: none; /* Começa escondido e aparece apenas quando rolar a página */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99; /* Garante que ficará em cima de outros elementos */
+    border: none;
+    outline: none;
+    background-color: #ff9900; /* Cor padrão do seu projeto */
+    color: #000000;
+    cursor: pointer;
+    padding: 15px 18px;
+    border-radius: 50%; /* Deixa o botão perfeitamente redondo */
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+#btnTopo:hover {
+    background-color: #ffffff; /* Muda para branco ao passar o mouse */
+    color: #ff9900;
+    transform: translateY(-5px); /* Dá um leve salto para cima */
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+}
+
+/* Deixa a rolagem da página suave ao clicar */
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+   <!-- NAV PADRONIZADA (IGUAL CURIOSIDADES E SOBRE) -->
+       <nav class="prisma-nav">
+    <div class="prisma-logo">
+        <span>Prisma</span> Histórico
+    </div>
+    
+    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="afiliados.html">Afiliados</a></li>
+        <li><a href="artigos.html">Artigos</a></li>
+        <li><a href="curiosidades.html">Curiosidades</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="ebook.html">E-book</a></li>
+    </ul>
+
+    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+    </button>
+</nav>
+
+<!-- Seção Completa de Recrutamento de Afiliados -->
+<section class="secao-afiliados">
+    <div class="afiliados-container">
+        
+        <!-- Cabeçalho da Seção -->
+        <header class="afiliados-header">
+            <span class="tag-lucro">🎯 Oportunidade</span>
+            <h2>Lucre Alto no Nicho de Educação com 40% de Comissão!</h2>
+            <p class="subtitulo">
+                Se você quer promover um produto de alta conversão, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar.
+            </p>
+        </header>
+
+        <!-- Corpo com a Apresentação -->
+        <div class="afiliados-corpo">
+            <div class="card-texto">
+                <p>
+                    O e-book <strong>"A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República"</strong> resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.).
+                </p>
+                <p>
+                    Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam milhões de leads quentes todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação.
+                </p>
+            </div>
+
+            <!-- Seção Completa de Recrutamento de Afiliados e Detalhes do Produto -->
+<section class="secao-afiliados">
+    <div class="afiliados-container">
+        
+        <!-- Cabeçalho da Seção -->
+        <header class="afiliados-header">
+            <span class="tag-lucro">🎯 Oportunidade</span>
+            <h2>Lucre Alto no Nicho de Educação com 40% de Comissão!</h2>
+            <p class="subtitulo">
+                Se você quer promover um produto de alta conversão, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar.
+            </p>
+        </header>
+
+        <!-- Corpo com a Apresentação -->
+        <div class="afiliados-corpo">
+            
+            <!-- Proposta Comercial -->
+            <div class="card-comercial">
+                <p>
+                    O e-book <strong>"A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República"</strong> resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.).
+                </p>
+                <p>
+                    Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam milhões de leads quentes todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação.
+                </p>
+            </div>
+
+            <!-- NOVO: Descrição Profunda do Produto -->
+            <div class="card-descricao-produto">
+                <h3>📚 O que torna este E-book indispensável?</h3>
+                <p>
+                    Este material foi feito para historiadores, engenheiros náuticos, entusiastas de estratégia militar, estudantes e qualquer pessoa que queira enxergar a história do Brasil por trás dos bastidores científicos nunca antes revelados pelos livros didáticos tradicionais.
+                </p>
+                <div class="destaque-cientifico">
+                    <p>
+                        A consolidação do território brasileiro sob a ótica de uma sofisticada operação de <strong>engenharia náutica, inteligência hidrográfica e biopolítica</strong>. 
+                    </p>
+                    <p>
+                        Mostre domínio absoluto ao explicar que a sobrevivência nos trópicos não foi mero acaso ou decreto real, mas sim o resultado da física de empuxo das carenas, do cálculo geométrico das caravelas e do uso milimétrico do astrolábio e da balestilha.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Benefícios em Lista -->
+            <div class="afiliados-beneficios">
+                <h3>🚀 Por que se afiliar ao nosso projeto?</h3>
+                <ul class="lista-beneficios">
+                    <li><strong>Comissão Agressiva:</strong> Você recebe 40% de comissão líquida por cada venda realizada.</li>
+                    <li><strong>Produto de Fácil Conversão:</strong> Ticket ideal para vendas rápidas no tráfego direto ou orgânico.</li>
+                    <li><strong>Gancho de Vendas Irrecusável:</strong> O e-book entrega o que nenhum cursinho tradicional ensina: o "DNA tecnológico" e o repertório interdisciplinar perfeito para tirar Nota 1000 na Redação e acertar as questões mais difíceis de Ciências Humanas.</li>
+                    <li><strong>Mercado Recorrente:</strong> Todos os anos, uma nova onda de milhões de alunos faz o Enem. O público se renova de forma automática!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Botão de Ação Final -->
+        <div class="afiliados-cta">
+            <p class="chamada-final">Garanta o seu exemplar agora, decodifique o verdadeiro DNA tecnológico da América Colonial à Primeira República e gabarite as provas do Enem e dos maiores Vestibulares!</p>
+            <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="botao-hotmart">
+                Quero me Afiliar na Hotmart e Começar a Vender
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+            <!-- Benefícios em Lista (Mais fácil de ler) -->
+            <div class="afiliados-beneficios">
+                <h3>🚀 Por que se afiliar ao nosso projeto?</h3>
+                <ul class="lista-beneficios">
+                    <li><strong>Comissão Agressiva:</strong> Você recebe 40% de comissão líquida por cada venda realizada.</li>
+                    <li><strong>Produto de Fácil Conversão:</strong> Ticket ideal para vendas rápidas no tráfego direto ou orgânico.</li>
+                    <li><strong>Gancho de Vendas Irrecusável:</strong> O e-book entrega o que nenhum cursinho tradicional ensina: o "DNA tecnológico" e o repertório interdisciplinar perfeito para tirar Nota 1000 na Redação e acertar as questões mais difíceis de Ciências Humanas.</li>
+                    <li><strong>Mercado Recorrente:</strong> Todos os anos, uma nova onda de milhões de alunos faz o Enem. O público se renova de forma automática!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Botão de Ação Final -->
+        <div class="afiliados-cta">
+            <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="botao-hotmart">
+                Quero me Afiliar na Hotmart e Começar a Vender
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+    <header class="header-afiliados">
+        <h1>Seja Afiliado do <span>Prisma Histórico</span></h1>
+        <p>Ajude estudantes a gabaritarem História no Enem e Vestibulares e ganhe por isso.</p>
+    </header>
+
+    <main class="container">
+        <!-- Vantagens -->
+        <section class="vantagens">
+            <h2>Por que se afiliar?</h2>
+            <ul>
+                <li><strong>Comissão Alta:</strong> Ganhe X% de comissão por cada venda realizada.</li>
+                <li><strong>Produto Validado:</strong> E-book com alta conversão e excelente aceitação.</li>
+                <li><strong>Material de Apoio:</strong> Acesso a criativos, copys e imagens para divulgação.</li>
+            </ul>
+        </section>
+
+        <!-- Chamada para Ação -->
+        <section class="cta-section">
+            <h3>Pronto para começar a lucrar?</h3>
+            <p>Clique no botão abaixo para se cadastrar na plataforma e pegar seu link de divulgação.</p>
+            <!-- Substitua o '#' pelo seu link de recrutamento da Kiwify/Hotmart -->
+            <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="btn-afiliado">Quero me Afiliar Agora</a>
+        </section>
+    </main>
+<!-- Botão Flutuante Voltar ao Início -->
+<button onclick="voltarAoInicio()" id="btnTopo" title="Voltar ao Início">▲</button>
+<script>
+    // Seleciona o botão pelo ID
+    const meuBotao = document.getElementById("btnTopo");
+
+    // Quando o usuário rolar a página 300px para baixo, o botão aparece
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            meuBotao.style.display = "block";
+        } else {
+            meuBotao.style.display = "none";
+        }
+    }
+
+    // Função que leva a página de volta ao topo suavemente
+    function voltarAoInicio() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+ <footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+      
+      <!-- COLUNA 1: LOGO E SOBRE -->
+      <div class="footer-col">
+        <h3 class="footer-logo">Prisma Histórico</h3>
+        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
+      </div>
+
+      <!-- COLUNA 2: LINKS RÁPIDOS -->
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+         
+          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 3: LEGAL -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- COLUNA 4: CONTATO -->
+      <div class="footer-col">
+        <h4>Contato e Suporte</h4>
+        <ul>
+          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
+        
+        </ul>
+        <div class="footer-selo">
+          <p>🔒 Compra 100% Segura</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <p>© 2026  Prisma Histórico | Todos os direitos reservados.</p>
+      
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
