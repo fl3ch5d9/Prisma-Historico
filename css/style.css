@@ -2213,27 +2213,15 @@ footer > div,
 
 /* cards index*/
 /* CONTAINER DOS CARDS */
-.prisma-conteudo, .grid-historico, .cards-grid {
+/* A MATRIZ DE TODOS OS CARAS */
+.grade-tecnologias-curiosidade {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important; /* 2 por linha no celular */
   gap: 12px !important;
-  align-items: stretch !important; /* estica todos pra mesma altura */
+  align-items: stretch !important; /* todos com a mesma altura */
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* CADA CARD */
-.prisma-conteudo .card, .grid-historico .card, .card-historico {
-  height: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  min-height: 280px !important;
-  box-sizing: border-box !important;
-}
-
-/* NO COMPUTADOR VOLTA 3 POR LINHA */
-@media (min-width: 769px) {
-  .prisma-conteudo, .grid-historico, .cards-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-  }
-}
+/* CADA CARD DENTRO DA MATRIZ */

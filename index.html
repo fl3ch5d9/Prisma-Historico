@@ -287,6 +287,30 @@ Aprender a história além da decoreba. Análises estratégicas, geopolítica e 
             </article>
 
         </section>
+
+        <style>
+            .item-tecnologia {
+  height: 100% !important;
+  min-height: 185px !important; /* trava a altura mínima */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+.item-tecnologia header {
+  margin-bottom: 8px !important;
+}
+
+/* NO COMPUTADOR - 3 POR LINHA, FICA LINDO */
+@media (min-width: 769px) {
+  .grade-tecnologias-curiosidade {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+  }
+}
+        </style>
         
         <footer>
             <p class="chamada-sumario-final">
