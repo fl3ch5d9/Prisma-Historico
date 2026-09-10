@@ -218,6 +218,14 @@ function fecharCheckout(){ document.getElementById('modalCheckout').style.displa
 
 
 <script src="../js/script.js"></script>
-
+<div class="btn-flutuante-mobile" style="display:none;">
+  <a href="SEU_LINK_DA_HOTMART" class="btn-checkout-final">🛒 Comprar e-book completo</a>
+</div>
+<script>
+// só mostra o flutuante no celular
+if(window.innerWidth <= 768){
+  document.querySelector('.btn-flutuante-mobile').style.display = 'flex';
+}
+</script>
 </body>
 </html>
