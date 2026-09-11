@@ -1192,6 +1192,15 @@ strong{ color: var(--titulo) !important; }
   .card{ max-width:95%; }
 }
 
+/* card img artigo ajuste*/
+.card img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 /*rolagem*/
 
 .card{
@@ -2279,4 +2288,12 @@ footer > div,
   max-height: 90vh !important;
   overflow-y: auto !important;
   margin: 20px auto !important;
+}
+
+/*correção artigo cards*/
+/* FIX DEFINITIVO - IMAGEM SEM CORTAR */
+.card-img {
+  height: 240px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
 }
