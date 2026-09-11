@@ -1077,241 +1077,6 @@ strong{ color: var(--titulo) !important; }
 }
 
 
-/*artigos*/
-
-/* FUNDO DA PÁGINA */
-.section.curiosidades {
-    background: #121212 !important;
-    padding-top: 130px !important;
-}
-
-.subtitulo-secao {
-    color: #FFFFFF !important;
-    font-size: 2.2rem;
-}
-.subtitulo-secao-menor {
-    color: #D9C5A5 !important;
-    margin-bottom: 2.5rem;
-}
-
-/* GRID */
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-/* CARD */
-.card {
-    background: #1E1E1E !important;
-    border: 1px solid #C9A86A !important;
-    border-radius: 8px !important;
-    overflow: hidden;
-}
-
-.card-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background: #121212;
-}
-
-.card-content {
-    padding: 1.5rem !important;
-}
-
-/* FORÇA O TEXTO QUE TÁ INLINE BRANCO */
-.card-content h3 {
-    color: #FFFFFF !important;
-    font-family: 'Playfair Display', serif !important;
-}
-.card-content p {
-    color: #F5F5F0 !important;
-}
-.card-content strong {
-    color: #FFFFFF !important;
-}
-
-@media (max-width: 900px) {
-    .grid-3 { grid-template-columns: 1fr; }
-}
-
-.section.curiosidades{
-  background:#121212;
-  padding-top:130px !important;
-}
-
-.subtitulo-secao, .subtitulo-secao-menor{
-  text-align:center !important;
-  width:100%;
-}
-.subtitulo-secao{ color:#FFF !important; font-size:2rem; }
-.subtitulo-secao-menor{ color:#D9C5A5 !important; margin-bottom:3rem; }
-
-/* GRID MENOR E CENTRALIZADO */
-.grid-3{
-  display:grid;
-  grid-template-columns: repeat(3, 340px);
-  justify-content:center;
-  gap:1.8rem;
-  max-width:1200px;
-  margin:0 auto;
-}
-
-.card{
-  background:#1E1E1E !important;
-  border:1px solid #C9A86A !important;
-  border-radius:10px !important;
-  overflow:hidden;
-  max-width:340px;
-}
-
-.card-img{
-  width:100%;
-  height:180px !important;
-  object-fit:cover;
-}
-
-.card-content{ padding:1.2rem !important; }
-.card-content h3{
-  color:#FFF !important;
-  font-size:18px !important;
-  line-height:1.3;
-}
-.card-content p{
-  color:#F5F5F0 !important;
-  font-size:13.5px !important;
-  line-height:1.6;
-}
-
-@media(max-width:1100px){
-  .grid-3{ grid-template-columns: repeat(2, 340px); }
-}
-@media(max-width:750px){
-  .grid-3{ grid-template-columns: 1fr; justify-items:center; }
-  .card{ max-width:95%; }
-}
-
-/* card img artigo ajuste*/
-.card img {
-  width: 300px;
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-
-/*rolagem*/
-
-.card{
-  background:#1E1E1E !important;
-  border:1px solid #C9A86A !important;
-  border-radius:10px !important;
-  max-width:340px;
-  height:460px;
-  display:flex;
-  flex-direction:column;
-}
-
-.card-img{
-  height:180px !important;
-  flex-shrink:0;
-}
-
-.card-content{
-  padding:1.2rem !important;
-  overflow-y:auto;
-  flex:1;
-}
-
-/* barra de rolagem discreta */
-.card-content::-webkit-scrollbar{ width:4px; }
-.card-content::-webkit-scrollbar-thumb{ background:#C9A86A; border-radius:10px; }
-.card-content::-webkit-scrollbar-track{ background:#121212; }
-
-
-
-/* TÍTULOS CENTRALIZADOS */
-.section.curiosidades .subtitulo-secao,
-.section.curiosidades .subtitulo-secao-menor{
-  text-align: center !important;
-  width: 100% !important;
-}
-.section.curiosidades .subtitulo-secao{
-  display: block;
-  margin: 0 auto 0.5rem auto !important;
-}
-.section.curiosidades .subtitulo-secao-menor{
-  display: block;
-  margin: 0 auto 3rem auto !important;
-}
-
-/* GRID CENTRALIZADO */
-.section.curiosidades .grid-3{
-  display: grid;
-  grid-template-columns: repeat(3, 320px);
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* DÁ ESPAÇO ENTRE A PRIMEIRA E SEGUNDA LINHA E DO FOOTER */
-.section.curiosidades .grid-3 + .grid-3{
-  margin-top: 1.5rem !important;
-}
-.section.curiosidades{
-  padding-bottom: 120px !important;
-}
-
-/* CARDS PERFEITOS - MENORES */
-.section.curiosidades .card{
-  width: 320px !important;
-  max-width: 320px !important;
-  height: 420px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  overflow: hidden !important;
-  border-radius: 10px !important;
-}
-
-.section.curiosidades .card-img{
-  width: 100% !important;
-  height: 160px !important;
-  object-fit: cover !important;
-  flex-shrink: 0 !important;
-}
-
-.section.curiosidades .card-content{
-  flex: 1 !important;
-  padding: 1rem !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-}
-
-/* corrige seu inline style que tava desconfigurando */
-.section.curiosidades .card-content h3{
-  font-size: 17px !important;
-  line-height: 1.3 !important;
-  text-align: left !important;
-}
-.section.curiosidades .card-content p{
-  font-size: 13px !important;
-  line-height: 1.6 !important;
-  text-align: left !important;
-}
-
-/* scroll fino e bonito */
-.section.curiosidades .card-content::-webkit-scrollbar{ width: 4px; }
-.section.curiosidades .card-content::-webkit-scrollbar-thumb{ background: #C9A86A; border-radius: 10px; }
-.section.curiosidades .card-content::-webkit-scrollbar-track{ background: transparent; }
-
-@media(max-width: 1100px){
-  .section.curiosidades .grid-3{ grid-template-columns: repeat(2, 320px); }
-}
-@media(max-width: 700px){
-  .section.curiosidades .grid-3{ grid-template-columns: 1fr; justify-items: center; }
-}
 
 /*curiosidades*/
 /* RESET INQUISIÇÃO - ÚNICO */
@@ -2291,9 +2056,25 @@ footer > div,
 }
 
 /*correção artigo cards*/
-/* FIX DEFINITIVO - IMAGEM SEM CORTAR */
-.card-img {
-  height: 240px !important;
-  object-fit: cover !important;
-  object-position: top center !important;
-}
+
+.section.curiosidades{ background:#121212 !important; padding-top:130px !important; padding-bottom:120px !important; }
+.section.curiosidades .subtitulo-secao, .section.curiosidades .subtitulo-secao-menor{ text-align:center !important; width:100% !important; display:block !important; }
+.subtitulo-secao{ color:#FFF !important; font-size:2.2rem !important; }
+.subtitulo-secao-menor{ color:#D9C5A5 !important; margin-bottom:3rem !important; }
+
+.section.curiosidades .grid-3{ display:grid; grid-template-columns:repeat(3,320px); justify-content:center; gap:1.5rem; max-width:1100px; margin:0 auto; }
+.section.curiosidades .grid-3 + .grid-3{ margin-top:1.5rem !important; }
+
+.section.curiosidades .card{ width:320px !important; height:420px !important; background:#1E1E1E !important; border:1px solid #C9A86A !important; border-radius:10px !important; display:flex !important; flex-direction:column !important; overflow:hidden !important; }
+
+.section.curiosidades .card-img{ width:100% !important; height:180px !important; min-height:180px !important; object-fit:contain !important; background:#121212 !important; display:block !important; flex-shrink:0 !important; }
+
+/* ROLAGEM NOS TEXTOS GIGANTES */
+.section.curiosidades .card-content{ flex:1 !important; padding:1rem !important; overflow-y:auto !important; overflow-x:hidden !important; }
+.section.curiosidades .card-content h3{ color:#FFF !important; font-size:17px !important; margin-bottom:12px !important; }
+.section.curiosidades .card-content p{ color:#F5F5F0 !important; font-size:13px !important; line-height:1.6 !important; }
+.section.curiosidades .card-content::-webkit-scrollbar{ width:4px; }
+.section.curiosidades .card-content::-webkit-scrollbar-thumb{ background:#C9A86A; border-radius:10px; }
+
+@media(max-width:1100px){ .section.curiosidades .grid-3{ grid-template-columns:repeat(2,320px); } }
+@media(max-width:700px){ .section.curiosidades .grid-3{ grid-template-columns:1fr; justify-items:center; } }
