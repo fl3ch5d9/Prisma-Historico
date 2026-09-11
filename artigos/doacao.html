@@ -58,33 +58,44 @@
   color: #000;
 }
 
-.pix-box{
-  background: #fff;
-  color: #000;
+.pix-box {
+  background: var(--carvao);       /* Substitui o branco pelo seu tom de carvão */
+  color: var(--branco);            /* Substitui o preto pelo seu tom de branco */
   padding: 20px;
   border-radius: 12px;
   margin: 20px 0;
+  border: 1px solid var(--carvao-escuro); /* Opcional: uma borda sutil para dar profundidade */
 }
 
-.chave-pix{
-  background: #f1f1f1;
+
+.chave-pix {
+  background: var(--carvao-escuro); /* Remove o cinza claro e aplica o seu fundo escuro */
+  color: var(--branco);             /* Força o e-mail a ficar com o texto branco e forte */
   padding: 12px;
   border-radius: 8px;
   font-weight: bold;
   word-break: break-all;
   margin: 15px 0;
-  border: 1px dashed #999;
+  border: 1px dashed var(--off-white); /* Deixa a borda tracejada sutil com o seu off-white */
+  text-align: center;               /* Centraliza o e-mail para ficar mais elegante */
 }
 
-.btn-copiar{
+.btn-copiar {
   width: 100%;
   padding: 12px;
-  background: #007bff;
-  color: white;
+   background: #FFC107; /* Amarelo vivo */
+  color: #121212;      /* Texto escuro para leitura */
+
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s ease; /* Transição suave para o efeito de passar o mouse */
+}
+
+/* Efeito ao passar o mouse para dar feedback ao usuário */
+.btn-copiar:hover {
+  background: var(--off-white);   /* Fica levemente acinzentado/off-white */
 }
 
 .btn-copiar:active{
