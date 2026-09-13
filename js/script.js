@@ -144,3 +144,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// simulados
+
+// --- PASSO 2: BANCO DE QUESTOES PRISMA ---
+(function(){
+  let questoesPrisma = [];
+
+  fetch('questoes.json')
+    .then(r => r.json())
+    .then(data => {
+      questoesPrisma = data;
+      renderPrisma(data);
+    })
+    .catch(()=> {
+      console.log("Crie o arquivo questoes.json na mesma pasta");
+    });
+
+  function renderPrisma(lista){
+    const container = document.getElementById('container-questoes');
+    if(!container) return;
+    container.innerHTML = '';
+    lista.forEach(q=>{
+      const div = document.createElement('div');
+      div.className='card-questao';
+      div.innerHTML = `
+        <span class="tema-questao">${q.id}. ${q.tema}</span>
+        <span class="nivel-questao ${q.nivel}">${q.nivel}</span>
+        <h3>${q.pergunta}</h3>
+        ${Object.entries(q.alternativas).map(([letra, txt])=> 
+          `<div class="alternativa" onclick="verificarPrisma(this,'${letra}','${q.gabarito}','${q.id}')"><b>${letra})</b> ${txt}</div>`
+        ).join('')}
+        <div class="comentario-questao" id="com-${q.id}" style="display:none"><b>GABARITO: ${q.gabarito}</b><br>${q.comentario}</div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  window.verificarPrisma = function(el, letra, gab, id){
+    const card = el.parentElement;
+    card.querySelectorAll('.alternativa').forEach(a=>a.style.pointerEvents='none');
+    if(letra===gab) el.classList.add('correta');
+    else {
+      el.classList.add('errada');
+      card.querySelectorAll('.alternativa').forEach(a=>{
+        if(a.textContent.trim().startsWith(gab+')')) a.classList.add('correta');
+      });
+    }
+    document.getElementById(`com-${id}`).style.display='block';
+  }
+
+  const busca = document.getElementById('busca');
+  if(busca){
+    busca.addEventListener('input', e=>{
+      const termo = e.target.value.toLowerCase();
+      const filtradas = questoesPrisma.filter(q=> 
+        q.tema.toLowerCase().includes(termo) || q.pergunta.toLowerCase().includes(termo)
+      );
+      renderPrisma(filtradas);
+    });
+  }
+})();
+// --- FIM PASSO 2 ---
+

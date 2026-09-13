@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "tema": "A Ecologia de Exploração e a Dialética do Espaço Colonial",
+    "nivel": "Fácil",
+    "pergunta": "O que caracteriza a ecologia de exploração?",
+    "alternativas": {
+      "A": "Extração predatória sem fixação - só feitoria",
+      "B": "Plantation com engenho",
+      "C": "Mineração de ouro",
+      "D": "Pecuária sertaneja"
+    },
+    "gabarito": "A",
+    "comentario": "Feitoria + escambo. Sem reprodução da vida, vulnerável aos franceses. Leva ao transplante agrário."
+  },
+  {
+    "id": 2,
+    "tema": "A Ecologia de Exploração e a Dialética do Espaço Colonial",
+    "nivel": "Médio",
+    "pergunta": "Qual a dialética do espaço colonial?",
+    "alternativas": {
+      "A": "Litoral linear controlado vs sertão areal indígena",
+      "B": "Senhor vs escravo",
+      "C": "Igreja vs Estado",
+      "D": "Porto vs Recife"
+    },
+    "gabarito": "A",
+    "comentario": "Portugal domina o mar, não o território."
+  },
+  {
+    "id": 3,
+    "tema": "A Ecologia de Exploração e a Dialética do Espaço Colonial",
+    "nivel": "Difícil",
+    "pergunta": "Por que esse modelo entra em crise?",
+    "alternativas": {
+      "A": "Acaba o pau-brasil",
+      "B": "Sem agricultura fixa não gera acumulação estável",
+      "C": "Índios somem",
+      "D": "Espanha proíbe"
+    },
+    "gabarito": "B",
+    "comentario": "Crise estrutural -> debate da ocupação -> São Vicente 1532."
+  }
+]

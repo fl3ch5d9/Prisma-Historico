@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulados - Prisma Histórico</title>
+<style>
+
+      *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow:auto!important;height:auto!important;background:var(--carvao-escuro)!important;color:var(--off-white)!important;font-family:Arial,sans-serif}
+  :root{
+    --carvao-escuro:#121212;
+    --carvao:#1E1E1E;
+    --branco:#FFFFFF;
+    --off-white:#F5F5F0;
+    --sepia:#D9C5A5;
+  }
+  header{background:var(--carvao)!important;border-bottom:1px solid #2a2a2a!important;padding:16px 24px;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center}
+  header a{color:var(--off-white)!important;text-decoration:none;margin-left:20px}
+  header a:hover{color:var(--sepia)!important}
+  .logo{color:var(--sepia)!important;font-weight:800;font-size:20px}
+  .prisma-wrapper{max-width:900px;margin:30px auto;padding:0 20px 40px 20px}
+  #busca-prisma{width:100%;padding:16px 20px;border-radius:12px;border:1px solid #2a2a2a;background:var(--carvao)!important;color:var(--branco)!important;font-size:16px}
+  #busca-prisma::placeholder{color:#888}
+  #lista-questoes{display:flex;flex-direction:column;gap:18px;margin-top:22px}
+  .card-questao{border:1px solid #2a2a2a;border-radius:14px;padding:22px;background:var(--carvao)!important;color:var(--off-white)}
+  .card-questao h3{color:var(--branco)!important;font-size:17px;margin:14px 0 0 0;line-height:1.4}
+  .card-questao button{width:100%;text-align:left;padding:12px 14px;border-radius:8px;border:1px solid #333;background:#121212!important;color:var(--off-white)!important;cursor:pointer;margin-top:8px}
+  .card-questao button:hover{border-color:var(--sepia)!important;color:var(--branco)!important}
+  .badge-tema{background:rgba(217,197,165,.15)!important;color:var(--sepia)!important;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;border:1px solid rgba(217,197,165,.3)!important;display:inline-block}
+  details summary{color:var(--sepia)!important;cursor:pointer;font-weight:bold;margin-top:14px}
+  .comentario-box{margin-top:10px;background:#121212!important;padding:14px;border-radius:8px;border:1px solid #2a2a2a;color:var(--off-white)}
+ </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Prisma Histórico</div>
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="questoes.html">Simulados</a>
+    <a href="#">Sobre</a>
+  </nav>
+</header>
+
+<div class="prisma-wrapper">
+  <input type="text" id="busca-prisma" placeholder="🔍 Buscar tema... ex: engenho, pombalino, mascates">
+  <div id="lista-questoes"><p style="color:#8a9bb0">Carregando questões...</p></div>
+</div>
+
+<script>
+let todasQuestoes = [];
+fetch('questoes.json')
+ .then(r=>r.json())
+ .then(dados=>{todasQuestoes=dados;renderPrisma(todasQuestoes);})
+ .catch(()=>{document.getElementById('lista-questoes').innerHTML='<p style=color:#fff>Erro: coloca o questoes.json dentro da pasta artigos/</p>'});
+
+function renderPrisma(lista){
+  const container=document.getElementById('lista-questoes');
+  container.innerHTML='';
+  lista.forEach(q=>{
+    const div=document.createElement('div');
+    div.className='card-questao';
+    div.innerHTML=`
+      <span class="badge-tema">${q.nivel} - ${q.tema}</span>
+      <h3>${q.id}. ${q.pergunta}</h3>
+      <div id="alts-${q.id}" style="margin-top:14px"></div>
+      <details><summary>Ver comentário gabaritado do Prisma</summary><div class="comentario-box">${q.comentario}</div></details>
+    `;
+    container.appendChild(div);
+    const altsDiv = document.getElementById(`alts-${q.id}`);
+    Object.entries(q.alternativas).forEach(([letra,txt])=>{
+      const btn=document.createElement('button');
+      btn.innerHTML=`<b>${letra})</b> ${txt}`;
+      btn.onclick=()=>{
+        btn.style.background = letra===q.gabarito ? '#1a3d2a' : '#3d1a1a';
+        btn.style.borderColor = letra===q.gabarito ? '#2ecc71' : '#e74c3c';
+      };
+      altsDiv.appendChild(btn);
+    });
+  });
+}
+document.getElementById('busca-prisma').addEventListener('input',e=>{
+  const t=e.target.value.toLowerCase();
+  renderPrisma(todasQuestoes.filter(q=>q.tema.toLowerCase().includes(t)||q.pergunta.toLowerCase().includes(t)));
+});
+</script>
+
+</body>
+</html>
