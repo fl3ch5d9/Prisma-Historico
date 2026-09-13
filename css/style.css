@@ -2006,21 +2006,10 @@ footer > div,
   gap: 16px !important;
   width: 100% !important;
   padding: 0 16px !important;
-  box-sizing: border-box !important;
 }
 
 .item-tecnologia {
   width: 100% !important;
-  min-width: 0 !important;
-  max-width: 100% !important;
-  grid-column: span 1 !important;
-}
-
-@media (min-width: 769px){
-  .grade-tecnologias-curiosidade {
-    grid-template-columns: repeat(3, 1fr) !important;
-    padding: 0 !important;
-  }
 }
 
 
