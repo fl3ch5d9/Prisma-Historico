@@ -2070,3 +2070,18 @@ footer > div,
 .alternativa.errada{background:#f5c6cb !important;border-color:#dc3545}
 .comentario-questao{margin-top:12px;padding:12px;background:#f8f9fa;border-left:4px solid #111;border-radius:0 6px 6px 0;font-size:14px;line-height:1.5}
 /* --- FIM PASSO 3 --- */
+/* FECHA PERFEITO NO CELULAR - MANTÉM O PC PERFEITO */
+@media screen and (max-width: 768px) {
+  .grade-tecnologias-curiosidade {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+
+  .grade-tecnologias-curiosidade .item-tecnologia {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
