@@ -2012,6 +2012,11 @@ footer > div,
   width: 100% !important;
 }
 
+@media (max-width: 768px) {
+  .grade-tecnologias-curiosidade {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* EBOOK NOVO */
 
