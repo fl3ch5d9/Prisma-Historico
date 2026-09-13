@@ -82,8 +82,10 @@
         <div class="coluna-esquerda-texto">
             <header class="topo-secao">
                 <h3 class="subtitulo-introducao">
-                    A ciência oculta por trás<br>da Construção de uma América Colonial
-                </h3>
+    <span class="linha-topo">A ciência oculta por trás</span>
+    <span class="linha-base">da Construção de uma América Colonial</span>
+</h3>
+
             </header>
 
             <article class="texto-manifesto">
@@ -163,54 +165,58 @@
   </article>
 </section>
 
-
-
-
-    <!-- SUA GRADE DE SUMÁRIOS ENTRA LOGO ABAIXO, TAMBÉM COMO UMA SEÇÃO SEMÂNTICA -->
-    <section class="grade-sumarios">
-        <!-- Card 1, Card 2, Card 3... -->
-    </section>
-
-
-
-  <!-- SEÇÃO CONTRASTE: SOLUÇÃO PARA ESTUDANTES -->
+<!--metodo prisma -->
 <div class="bloco-solucao-estudante">
     <div class="cabecalho-solucao">
         <span class="etiqueta-metodo">Método Prisma</span>
         <h2>Chega de perder tempo com o jeito errado.</h2>
-        <p>A preparação para exames de alto desempenho exige estratégia analítica, 
-          não decoreba de véspera.</p>
+        <p>A preparação para exames de alto desempenho exige estratégia analítica, não decoreba de véspera.</p>
     </div>
 
-    <!-- TABELA DE CONTRASTE SIMPLIFICADA -->
-    <div class="grade-contraste">
-    <!-- O Jeito Errado (A Dor) -->
-    <div class="caixa-contraste caixa-dor">
-        <h4>O Jeito Tradicional</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6; color: #4a5568; font-size: 0.95rem;">
-            <li style="margin-bottom: 10px; padding-left: 20px; text-indent: -20px;">• Decoreba exaustiva de datas, nomes de reis e tratados assinados que somem da mente após a prova.</li>
-            <li style="margin-bottom: 10px; padding-left: 20px; text-indent: -20px;">• Visão superficial e puramente burocrática dos acontecimentos, focada apenas em decretos e leis de papel.</li>
-            <li style="margin-bottom: 10px; padding-left: 20px; text-indent: -20px;">• Resumos prontos e rasos que travam o candidato na hora de responder às questões de segunda fase.</li>
-            <li style="margin-bottom: 0; padding-left: 20px; text-indent: -20px;">• Estudo passivo que não conecta a história com a geopolítica e a economia global.</li>
-        </ul>
-    </div>
+    <!-- Mudei de <section> para <div> para manter a árvore do HTML alinhada corretamente -->
+    <div class="secao-contraste">
+        <div class="grade-contraste">
+            <!-- Caixa do Jeito Tradicional -->
+            <div class="caixa-contraste caixa-dor">
+                <div class="topo-caixa">
+                    <span class="icon-caixa icon-dor">✕</span>
+                    <h4>O Jeito Tradicional</h4>
+                </div>
+                <ul>
+                    <li>Decoreba exaustiva de datas e tratados que somem da mente após a prova.</li>
+                    <li>Visão superficial e burocrática, focada apenas em decretos e leis de papel.</li>
+                    <li>Resumos rasos que travam o candidato na segunda fase.</li>
+                    <li>Estudo passivo que não conecta história com geopolítica e economia.</li>
+                </ul>
+            </div>
 
-    <!-- O Jeito Certo (A Sua Solução) -->
-    <div class="caixa-contraste caixa-alivio">
-        <h4>Abordagem Cirúrgica</h4>
-        <ul>
-            <li>Análise direta das engrenagens do poder.</li>
-            <li>Conexões lógicas entre os fatos históricos.</li>
-            <li>Leitura fluida, sofisticada e sem enrolação.</li>
-            <li>Domínio total da competência de interpretação.</li>
-        </ul>
-    </div>
-</div>
+            <!-- Caixa da Abordagem Cirúrgica -->
+            <div class="caixa-contraste caixa-alivio">
+                <div class="topo-caixa">
+                    <span class="icon-caixa icon-alivio">✓</span>
+                    <h4>Abordagem Cirúrgica</h4>
+                </div>
+                <ul>
+                    <li>Análise direta das engrenagens do poder.</li>
+                    <li>Conexões lógicas entre os fatos históricos.</li>
+                    <li>Leitura fluida, sofisticada e sem enrolação.</li>
+                    <li>Domínio total da competência de interpretação.</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+</div> <!-- ↵ ESTA DIV ESTAVA FALTANDO! Ela fecha o "bloco-solucao-estudante" e isola o layout do que vem abaixo -->
 
-<!-- CSS TOTALMENTE CASADO COM O BLOCO ACIMA -->
+
+<!--metodo prisma fim -->
 
 
-</div>
+
+
+
+
+   
+    
 
 
 
@@ -223,6 +229,12 @@
 <!-- ==========================================
      SEÇÃO DO SUMÁRIO INTERATIVO (COLÔNIA, IMPÉRIO, REPÚBLICA)
      ========================================== -->
+     <section class="grade-sumarios">
+        <!-- Card 1, Card 2, Card 3... -->
+    </section>
+
+
+
 <section class="secao-sumario-interativo">
     <div class="container-sumario">
         

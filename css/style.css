@@ -124,7 +124,7 @@ body {
 /* deixa a barrinha de rolagem bonitinha */
 .grade-tecnologias-curiosidade {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   max-width: 860px;
   margin: 40px auto;
@@ -2208,3 +2208,239 @@ footer > div,
 .alternativa.errada{background:#f5c6cb !important;border-color:#dc3545}
 .comentario-questao{margin-top:12px;padding:12px;background:#f8f9fa;border-left:4px solid #111;border-radius:0 6px 6px 0;font-size:14px;line-height:1.5}
 /* --- FIM PASSO 3 --- */
+
+
+
+/*metodo prisma index*/
+
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Solicitada */
+    --color-carvao-escuro: #121212;
+    --color-carvao: #1E1E1E;
+    --color-branco: #FFFFFF;
+    --color-off-white: #F5F5F0;
+    --color-sepia: #D9C5A5;
+    
+    /* Cores de Apoio e Efeitos */
+    --color-sepia-hover: #C6B291;
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset Técnico */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-carvao-escuro);
+    color: var(--color-branco);
+    font-family: 'Cinzel', 'Georgia', serif; /* Fontes que remetem ao tema histórico */
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA PRINCIPAL (LAYOUT)
+   ========================================================================== */
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.secao-introducao-ebook {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Divisão assimétrica elegante */
+    gap: 64px;
+    align-items: center;
+    width: 100%;
+}
+
+/* ==========================================================================
+   3. COLUNA DA ESQUERDA (TEXTO E MANIFESTO)
+   ========================================================================== */
+.coluna-esquerda-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+ 
+
+
+.texto-manifesto {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.paragrafo-introducao {
+    color: var(--color-off-white);
+    font-family: 'Inter', 'Helvetica Neue', sans-serif; /* Fonte sans-serif para melhor leitura do bloco */
+    font-size: 1.125rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.paragrafo-introducao strong {
+    color: var(--color-sepia);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   4. COLUNA DA DIREITA (CARD DE VENDA)
+   ========================================================================== */
+.coluna-direita-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    background-color: var(--color-carvao);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(217, 197, 165, 0.25); /* Aumentei de 0.1 para 0.25 para o ouro aparecer mais */
+    box-shadow: var(--shadow-card);
+    
+    /* Efeito 1: Adiciona o pulsar de ouro na borda */
+    animation: pulsarOuro 3s infinite ease-in-out;
+}
+
+.card-imagem-ebook {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 3 / 4; /* Proporção padrão de capa de livro */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-smooth);
+    
+    /* Necessário para o flash de luz correr apenas dentro da imagem */
+    position: relative; 
+}
+
+/* Efeito 2: O flash de luz correndo pela imagem do e-book */
+.card-imagem-ebook::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(217, 197, 165, 0.4) 50%, /* Flash cor ouro/sépia */
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: flashOuro 5s infinite ease-in-out;
+}
+
+/* Mantém o seu efeito de hover original */
+.coluna-direita-card:hover .card-imagem-ebook {
+    transform: translateY(-8px) scale(1.02);
+}
+
+
+/* ==========================================================================
+   LÓGICA DAS ANIMAÇÕES DO OURO (Cole no final do arquivo CSS)
+   ========================================================================== */
+
+/* Animação do pulsar de ouro nas bordas */
+@keyframes pulsarOuro {
+    0%, 100% {
+        box-shadow: var(--shadow-card),
+                    0 0 0 0px rgba(217, 197, 165, 0);
+    }
+    50% {
+        box-shadow: var(--shadow-card),
+                    0 0 20px 4px rgba(217, 197, 165, 0.3),   /* Aura do ouro */
+                    0 0 40px 8px rgba(217, 197, 165, 0.1);   /* Expansão do brilho */
+    }
+}
+
+/* Animação do flash correndo na imagem */
+@keyframes flashOuro {
+    0% { left: -150%; }
+    15% { left: 150%; } /* Passa rápido pela foto */
+    100% { left: 150%; } /* Aguarda o resto do tempo antes de repetir */
+}
+
+.card-imagem-ebook img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+/* Efeito Hover na Imagem */
+.coluna-direita-card:hover .card-imagem-ebook {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Botão de Ação Principal (CTA) */
+.prisma-botao-compra {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 32px;
+    background-color: var(--color-sepia);
+    color: var(--color-carvao-escuro);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(217, 197, 165, 0.3);
+    transition: var(--transition-smooth);
+    text-align: center;
+}
+
+/* Estados de Interação do Botão */
+.prisma-botao-compra:hover {
+    background-color: var(--color-sepia-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217, 197, 165, 0.4);
+}
+
+.prisma-botao-compra:active {
+    transform: translateY(0);
+}
+
+.prisma-botao-compra:focus {
+    outline: 3px solid var(--color-branco);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE (MOBILE FIRST / ADAPTAÇÕES)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .secao-introducao-ebook {
+        grid-template-columns: 1fr; /* Vira uma única coluna em tablets/smartphones */
+        gap: 48px;
+    }
+    
+    .conteudo-principal {
+        padding: 40px 20px;
+    }
+    
+    .coluna-direita-card {
+        padding: 32px;
+    }
+}
+
+/*cards 4*/
