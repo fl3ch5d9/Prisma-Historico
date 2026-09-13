@@ -1997,6 +1997,9 @@ footer > div,
 }
 
 /* cards index - CORRIGIDO PRA CELULAR */
+
+/* FORÇA 1 EM 1 NO CELULAR USANDO A CLASSE DO CARD */
+/* FINAL - CELULAR 1x1, PC 3x3 - SEM DUPLICAÇÃO */
 .grade-tecnologias-curiosidade {
   display: grid !important;
   grid-template-columns: 1fr !important;
@@ -2006,12 +2009,20 @@ footer > div,
   box-sizing: border-box !important;
 }
 
+.item-tecnologia {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  grid-column: span 1 !important;
+}
+
 @media (min-width: 769px){
   .grade-tecnologias-curiosidade {
     grid-template-columns: repeat(3, 1fr) !important;
     padding: 0 !important;
   }
 }
+
 
 /* EBOOK NOVO */
 
