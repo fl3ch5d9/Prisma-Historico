@@ -1996,17 +1996,21 @@ footer > div,
   }
 }
 
-/* cards index*/
-/* CONTAINER DOS CARDS */
-/* A MATRIZ DE TODOS OS CARAS */
+/* cards index - CORRIGIDO PRA CELULAR */
 .grade-tecnologias-curiosidade {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important; /* 2 por linha no celular */
-  gap: 12px !important;
-  align-items: stretch !important; /* todos com a mesma altura */
+  grid-template-columns: 1fr !important;
+  gap: 16px !important;
   width: 100% !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 769px){
+  .grade-tecnologias-curiosidade {
+    grid-template-columns: repeat(3, 1fr) !important;
+    padding: 0 !important;
+  }
 }
 
 /* EBOOK NOVO */
