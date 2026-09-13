@@ -311,9 +311,23 @@
         </section>
 
         <style>
-            .item-tecnologia {
-  height: 100% !important;
-  min-height: 185px !important; /* trava a altura mínima */
+/* === GRADE PRISMA - CORRIGIDA 100% === */
+.grade-tecnologias-curiosidade {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;
+  padding: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.item-tecnologia {
+  background: var(--carvao, #1E1E1E) !important;
+  border: 1px solid #2a2a2a !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  height: auto !important;
+  min-height: 185px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-start !important;
@@ -322,14 +336,40 @@
 }
 
 .item-tecnologia header {
-  margin-bottom: 8px !important;
+  margin-bottom: 10px !important;
 }
 
-/* NO COMPUTADOR - 3 POR LINHA, FICA LINDO */
-@media (min-width: 769px) {
+.item-tecnologia header strong {
+  color: var(--sepia, #D9C5A5) !important;
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+}
+
+.item-tecnologia p {
+  color: var(--off-white, #F5F5F0) !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  word-break: break-word !important;
+}
+
+/* === MOBILE - 1 POR LINHA, PERFEITO IGUAL PC === */
+@media (max-width: 768px) {
   .grade-tecnologias-curiosidade {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+  
+  .item-tecnologia {
+    min-height: auto !important;
+    width: 100% !important;
+  }
+}
+
+/* TABLET - 2 POR LINHA */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grade-tecnologias-curiosidade {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
         </style>
