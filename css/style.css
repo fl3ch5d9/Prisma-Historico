@@ -2450,7 +2450,7 @@ body {
    ========================================================================== */
 .grade-tecnologias-curiosidade {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Trava o layout em exatamente 4 colunas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
@@ -2458,42 +2458,62 @@ body {
 }
 
 .item-tecnologia {
-    background-color: #1E1E1E; /* --carvao */
+    background-color: #1E1E1E;
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     padding: 24px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    /* A ROLAGEM */
     height: 250px;
     overflow-y: auto;
-
-    /* O EFEITO HOVER */
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .item-tecnologia:hover {
     border-color: #D9C5A5;
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 8px #D9C5A5, inset 0 0 8px rgba(217, 197, 165, 0.3), 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Tipografia */
 .item-tecnologia header strong {
-    color: #D9C5A5; /* --sepia */
+    color: #D9C5A5;
     font-size: 18px;
     font-weight: 600;
 }
 
 .item-tecnologia p {
-    color: #F5F5F0; /* --off-white */
+    color: #F5F5F0;
     font-size: 15px;
     line-height: 1.6;
     margin: 0;
 }
-.item-tecnologia:hover {
-    border-color: #D9C5A5;
-    box-shadow: 0 0 8px #D9C5A5, inset 0 0 8px rgba(217, 197, 165, 0.3);
+
+/* --- RESPONSIVO --- */
+
+/* Tablet: 2 colunas */
+@media (max-width: 1024px) {
+    .grade-tecnologias-curiosidade {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 16px;
+    }
+}
+
+/* Celular: 1 coluna, sem rolagem interna */
+@media (max-width: 600px) {
+    .grade-tecnologias-curiosidade {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 16px;
+    }
+
+    .item-tecnologia {
+        height: auto; /* no celular fica feio ficar rolando dentro do card */
+        overflow-y: visible;
+        padding: 20px;
+    }
+
+    .item-tecnologia:hover {
+        transform: none; /* tira o pulinho que é estranho no touch */
+    }
 }
