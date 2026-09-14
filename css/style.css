@@ -2534,3 +2534,37 @@ body {
     border-radius: 10px;
 }
 .item-tecnologia::-webkit-scrollbar-thumb:hover{ background: #e8dcc0; }
+
+/*rolagem celular*/
+.item-tecnologia{
+    height: 250px !important;
+    overflow-y: auto !important;
+    scrollbar-width: thin;
+    scrollbar-color: #D9C5A5 #1E1E1E;
+}
+.item-tecnologia::-webkit-scrollbar{ width: 6px; }
+.item-tecnologia::-webkit-scrollbar-track{ background: #1E1E1E; }
+.item-tecnologia::-webkit-scrollbar-thumb{
+    background: #D9C5A5;
+    border-radius: 10px;
+}
+.item-tecnologia::-webkit-scrollbar-thumb:hover{ background: #e8dcc0; }
+
+
+/* FORÇA A ROLAGEM NO CELULAR */
+@media (max-width: 600px) {
+  .item-tecnologia {
+    height: 250px !important;
+    min-height: 250px !important;
+    overflow-y: scroll !important; /* scroll em vez de auto */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* faz a barrinha aparecer no celular */
+  .item-tecnologia::-webkit-scrollbar {
+    width: 6px !important;
+    display: block !important;
+  }
+}
+
+
