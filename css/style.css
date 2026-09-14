@@ -2677,3 +2677,19 @@ body {
     background: transparent!important;
   }
 }
+
+
+/*icones*/
+
+/* MENU SÉPIA PRISMA - SHOWMAN */
+/* MENU SÉPIA PRISMA */
+.prisma-menu-links li a{
+  color: #D9C5A5 !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.prisma-menu-links li a .material-icons{
+  color: #D9C5A5 !important;
+  font-size: 20px;
+}
