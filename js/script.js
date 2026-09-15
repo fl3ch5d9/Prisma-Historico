@@ -1,3 +1,35 @@
+function togglePrismaMenu(e){
+  if(e){ e.preventDefault(); e.stopPropagation(); }
+  const menu = document.querySelector('.prisma-menu-links');
+  const btn = document.querySelector('.prisma-menu-hamburguer');
+  if(menu && btn){
+    menu.classList.toggle('ativo');
+    btn.classList.toggle('ativo');
+    btn.setAttribute('aria-expanded', menu.classList.contains('ativo'));
+  }
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  const btn = document.querySelector('.prisma-menu-hamburguer');
+  const menu = document.querySelector('.prisma-menu-links');
+  if(!btn || !menu) return;
+  
+  btn.addEventListener('click', togglePrismaMenu);
+  
+  // fecha quando clica num link
+  document.querySelectorAll('.prisma-menu-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('ativo');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+});
+
+
+
+
+
+
 
 
 // botão quiz 
