@@ -231,9 +231,9 @@ window.togglePrismaMenu = function(event) {
     const menuLinks = document.querySelector('.prisma-menu-links');
     const botao = document.querySelector('.prisma-menu-hamburguer');
     if (menuLinks && botao) {
-        menuLinks.classList.toggle('active');
-        botao.classList.toggle('active');
-        const isOpen = menuLinks.classList.contains('active');
+        menuLinks.classList.toggle('ativo');
+        botao.classList.toggle('ativo');
+        const isOpen = menuLinks.classList.contains('ativo');
         botao.setAttribute('aria-expanded', isOpen);
     }
 }
