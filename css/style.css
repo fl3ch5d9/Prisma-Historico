@@ -2,21 +2,16 @@
 /* ==========================================================================
    1. RESET GERAL E CONFIGURAÇÕES BASE
    ========================================================================== */
-:root {
-  --carvao-escuro: #121212;
-  --carvao: #1E1E1E;
-  --branco: #FFFFFF;
-  --off-white: #F5F5F0;
-  --sepia: #D9C5A5;
-  --borda-gold: #C9A86A;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
     scroll-behavior: smooth;
+}
+
+main {
+  margin-top: 150px;
 }
 
 body {
@@ -33,8 +28,8 @@ body {
     display: block;
     width: 100%;
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 140px 20px 40px 20px; /* 140px em cima pra não colar no header */
+    margin: 0 auto; /* tirei o 50px */
+    padding: 180px 20px 40px 20px; /* aumentei de 140px pra 180px */
     box-sizing: border-box;
 }
 
@@ -361,14 +356,6 @@ body {
 /* ==========================================================================
    1. RESET GERAL E CONFIGURAÇÕES BASE
    ========================================================================== */
-:root{
---carvao-escuro:#121212;
---carvao:#1E1E1E;
---branco:#FFFFFF;
---off-white:#F5F5F0;
---sepia:#D9C5A5;
---borda-gold:#C9A86A;
-}
 
 body{ background:#121212; }
 
@@ -821,142 +808,6 @@ main {
 
 /*novo hamburguer*/
 
-/* Base do botão hambúrguer (Branco e escondido no computador) */
-/* ===== MENU PRISMA - VERSÃO FINAL CORRIGIDA ===== */
-.prisma-nav {
-    background-color: #36454F;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #2d2d2d;
-    box-sizing: border-box;
-}
-
-.prisma-logo {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-.prisma-logo span { border-bottom: 2px solid #ffffff; }
-
-.prisma-menu-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-.prisma-menu-links a {
-    color: #e0e0e0; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-.prisma-menu-links a:hover { color: #ffffff !important; }
-
-/* HAMBURGUER - SEMPRE BRANCO */
-.prisma-menu-hamburguer {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 5px;
-    padding: 10px;
-    z-index: 1001;
-}
-.prisma-barra {
-    width: 25px;
-    height: 3px;
-    background: #ffffff !important; /* TRAVESSÃO BRANCO FORÇADO */
-    display: block;
-    transition: 0.3s;
-}
-
-/* ===== DESKTOP ===== */
-@media (min-width: 769px) {
-  .prisma-menu-hamburguer { display: none !important; }
-  .prisma-menu-links {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
-    width: auto !important;
-    background: transparent !important;
-  }
-}
-
-/* ===== CELULAR ===== */
-@media (max-width: 768px) {
-    .prisma-menu-hamburguer { display: flex !important; }
-
-    .prisma-menu-links {
-    display: none !important;
-    flex-direction: column !important;
-    position: absolute !important;
-    top: 100% !important;
-    right: 0 !important;
-    background: #36454F !important;
-    padding: 20px !important;
-    width: 200px !important;
-    height: auto !important;
-    max-height: none !important;
-    gap: 15px !important;
-}
-    .prisma-menu-links.active,
-    .prisma-menu-links.active { 
-        display: flex !important; 
-    }
-
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(2){opacity:0}
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(2){opacity:0}
-    .prisma-menu-hamburguer.active .prisma-barra:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-}
-
-
-@media (max-width: 768px) {
-  .prisma-menu-links {
-    height: auto !important;
-    max-height: fit-content !important;
-    min-height: 0 !important;
-    bottom: auto !important;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .prisma-menu-links {
-    display: none !important;
-    flex-direction: column !important;
-    position: absolute !important;
-    top: 100% !important;
-    right: 0 !important;
-    background: #36454F !important;
-    padding: 20px !important;
-    width: 200px !important;
-    height: auto !important;
-    max-height: none !important;
-    gap: 15px !important;
-  }
-
-  .prisma-menu-links.active {
-    display: flex !important;
-  }
-}
-
 
 
 /* CORRIGE O CONTEÚDO QUE SAI DA TELA NO CELULAR */
@@ -1048,17 +899,7 @@ body, main, .conteudo-principal {
 
 
 /* PALETA OFICIAL PRISMA - OVERRIDE TOTAL */
-:root{
-  --abismo-1: #0C0D0A;
-  --abismo-2: #1A1812;
-  --titulo: #AE8A5A;
-  --detalhe-1: #947347;
-  --detalhe-2: #86653A;
-  --borda-1: #4A371C;
-  --borda-2: #684E2B;
-  --borda-3: #634E30;
-  --texto: #E8DCC5;
-}
+
 body, .conteudo-principal, .secao-sumario-interativo{
   background: var(--abismo-1) !important;
   color: var(--texto) !important;
@@ -1453,14 +1294,6 @@ strong{ color: var(--titulo) !important; }
 }
 
 /*quiz */
-:root{
-  --carvao-escuro: #121212;
-  --carvao: #1E1E1E;
-  --branco: #FFFFFF;
-  --off-white: #F5F5F0;
-  --sepia: #D9C5A5;
-  --borda-gold: #C9A86A;
-}
 
 .container{
   background: var(--carvao-escuro);
@@ -2216,19 +2049,6 @@ footer > div,
 /* ==========================================================================
    1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
    ========================================================================== */
-:root {
-    /* Paleta de Cores Solicitada */
-    --color-carvao-escuro: #121212;
-    --color-carvao: #1E1E1E;
-    --color-branco: #FFFFFF;
-    --color-off-white: #F5F5F0;
-    --color-sepia: #D9C5A5;
-    
-    /* Cores de Apoio e Efeitos */
-    --color-sepia-hover: #C6B291;
-    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
 
 /* Reset Técnico */
 *, *::before, *::after {
@@ -2683,13 +2503,224 @@ body {
 
 /* MENU SÉPIA PRISMA - SHOWMAN */
 /* MENU SÉPIA PRISMA */
-.prisma-menu-links li a{
-  color: #D9C5A5 !important;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* ==========================================================================
+   1. AS CORES OFICIAIS DO SEU SITE (PRISMA HISTÓRICO)
+   ========================================================================== */
+:root {
+  --carvao-escuro: #121212; /* fundo escuro do seu site */
+  --carvao: #1E1E1E;
+  --branco: #FFFFFF;        /* texto */
+  --off-white: #F5F5F0;
+  --sepia: #D9C5A5;         /* cor das suas letras e ícones */
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.prisma-menu-links li a .material-icons{
-  color: #D9C5A5 !important;
-  font-size: 20px;
+
+/* ==========================================================================
+   2. REGRAS PARA O HEADER FICAR 100% DE PONTA A PONTA
+   ========================================================================== */
+
+/* Faz a barra do cabeçalho esticar em toda a largura da tela */
+.prisma-header {
+  background-color: var(--carvao-escuro) !important;
+  background: var(--carvao-escuro) !important;
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* Distribui o espaço entre o lobinho, os links e o botão hambúrguer */
+.prisma-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 15px 4% !important; /* Afasta o conteúdo dos cantos da tela */
+  box-sizing: border-box !important;
+}
+
+/* Alinha o container do lobinho */
+.prisma-logo {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mantém o lobinho sem bordas estranhas e no tamanho certo */
+.prisma-logo img {
+  background: transparent !important;
+  background-color: transparent !important;
+  display: block !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  max-height: 75px !important;
+  object-fit: contain !important;
+}
+
+/* Coloca todos os links do menu lado a lado */
+.prisma-menu-links {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 24px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+/* Garante o seu texto em Sépia */
+.prisma-menu-links li a {
+  color: var(--sepia) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+}
+
+/* Garante os seus ícones em Sépia */
+.prisma-menu-links li a .material-icons {
+  color: var(--sepia) !important;
+  font-size: 20px !important;
+}
+
+
+/* header e main */
+/* Seu menu - ícone sepia / texto branco */
+.prisma-menu-links a{
+  color: #FFFFFF;
+}
+.prisma-menu-links a .material-icons{
+  color: #e7ab49;
+}
+
+/* CORREÇÃO CELULAR - Prisma Histórico */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap !important;
+    padding: 10px !important;
+  }
+  
+  /* O título grande PRISMA HISTÓRICO */
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    word-break: break-word !important;
+  }
+
+  /* O menu */
+  .prisma-menu-links {
+    gap: 10px !important;
+    font-size: 14px !important;
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    padding-bottom: 5px;
+  }
+
+  /* Esconde o sublinhado gigante se tiver */
+  .prisma-menu-links::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+/* novo FORÇA O HAMBURGUER A APARECER */
+/* HAMBURGUER - CORRIGIDO */
+/* HAMBURGUER UNIFICADO - CORRIGIDO */
+/* FINAL - HAMBURGUER BRANCO COM LETRA SEPIA COM ICONES PARA CELULAR  */
+/* BASE DO HEADER */
+.prisma-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* HAMBURGUER - SEMPRE BRANCO */
+.prisma-menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+  z-index: 10001;
+}
+.prisma-menu-hamburguer span {
+  width: 25px; height: 3px;
+  background: #fff;
+  display: block;
+  transition: 0.3s;
+}
+.prisma-menu-hamburguer.ativo span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
+.prisma-menu-hamburguer.ativo span:nth-child(2){ opacity:0; }
+.prisma-menu-hamburguer.ativo span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
+
+/* LINKS DESKTOP */
+.prisma-menu-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+/* MOBILE - VERSÃO FINAL CARVÃO */
+@media (max-width: 768px) {
+  .prisma-menu-hamburguer { 
+    display: flex !important; 
+    position: relative;
+    z-index: 10000;
+  }
+  
+  .prisma-menu-links {
+    display: none !important;
+  }
+
+  .prisma-menu-links.ativo {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: #1e1e1e !important; /* CARVÃO */
+    padding: 80px 25px 25px !important;
+    gap: 8px !important;
+    z-index: 9999 !important;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.5) !important;
+    margin: 0 !important;
+    list-style: none !important;
+  }
+
+  .prisma-menu-links.ativo li {
+    width: 100% !important;
+    list-style: none !important;
+  }
+
+  .prisma-menu-links.ativo a {
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 14px 12px !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    transition: 0.2s !important;
+  }
+
+  .prisma-menu-links.ativo a:hover {
+    background: #333 !important;
+  }
+
+  .prisma-menu-links.ativo a .material-icons {
+    display: inline-block !important;
+    color: #ffffff !important;
+    font-size: 22px !important;
+  }
 }

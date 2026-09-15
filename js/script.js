@@ -1,38 +1,54 @@
-// SELECIONA OS ELEMENTOS DO HEADER
+// HAMBURGUER
 function togglePrismaMenu(event) {
-    if (event) event.preventDefault();
-    
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     const menuLinks = document.querySelector('.prisma-menu-links');
     const botao = document.querySelector('.prisma-menu-hamburguer');
     
     if (menuLinks && botao) {
-        menuLinks.classList.toggle('active');
-        botao.classList.toggle('active'); // <- faltava isso para fazer o X
-        
-        const isExpanded = menuLinks.classList.contains('active'); // <- aqui era 'active' e tem que ser 'ativo'
+        menuLinks.classList.toggle('ativo');
+        botao.classList.toggle('ativo');
+        const isExpanded = menuLinks.classList.contains('ativo');
         botao.setAttribute('aria-expanded', isExpanded);
     }
 }
-// Fecha o menu automaticamente se o usuário clicar em qualquer link da lista
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.prisma-menu-links a');
     const menuLinks = document.querySelector('.prisma-menu-links');
     const botao = document.querySelector('.prisma-menu-hamburguer');
 
-    if (navLinks.length > 0) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (menuLinks && botao) {
-                    menuLinks.classList.remove('active');
-                    botao.classList.remove('active');
-                    botao.setAttribute('aria-expanded', 'false');
-                }
-            });
+    botao.addEventListener('click', togglePrismaMenu);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuLinks.classList.remove('ativo');
+            botao.classList.remove('ativo');
+            botao.setAttribute('aria-expanded', 'false');
         });
-    }
+    });
 });
 
-// js hamburguer novo 
+function togglePrismaMenu(e){
+  if(e){ e.preventDefault(); e.stopPropagation(); }
+  document.querySelector('.prisma-menu-hamburguer').classList.toggle('ativo');
+  document.querySelector('.prisma-menu-links').classList.toggle('ativo');
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+  const btn = document.querySelector('.prisma-menu-hamburguer');
+  if(btn) btn.addEventListener('click', togglePrismaMenu);
+});
+
+
+
+
+
+
+
+
+
 
 
 // botão quiz 
@@ -116,34 +132,6 @@ function copiarPix() {
 // novo hamburguer 
 
 // HEADER UNIFICADO - ÚNICA FUNÇÃO
-function togglePrismaMenu(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('active');
-        const isExpanded = menuLinks.classList.contains('active');
-        botao.setAttribute('aria-expanded', isExpanded);
-    }
-}
-
-// fecha ao clicar no link
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.prisma-menu-links a');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuLinks.classList.remove('active');
-            botao.setAttribute('aria-expanded', 'false');
-        });
-    });
-});
 
 
 // simulados

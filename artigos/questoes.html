@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
 <title>Simulados - Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+
 
       *{margin:0;padding:0;box-sizing:border-box}
   html,body{overflow:auto!important;height:auto!important;background:var(--carvao-escuro)!important;color:var(--off-white)!important;font-family:Arial,sans-serif}
@@ -34,14 +37,30 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">Prisma Histórico</div>
-  <nav>
-    <a href="../index.html">Início</a>
-    <a href="questoes.html">Simulados</a>
-    <a href="#">Sobre</a>
-  </nav>
-</header>
+   <nav class="prisma-nav">
+    <div class="prisma-logo">
+        <span>Prisma</span> Histórico
+    </div>
+    
+    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
+   <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+</ul>
+
+    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
+    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+    </button>
+</nav>
 
 <div class="prisma-wrapper">
   <input type="text" id="busca-prisma" placeholder="🔍 Buscar tema... ex: engenho, pombalino, mascates">
@@ -84,6 +103,77 @@ document.getElementById('busca-prisma').addEventListener('input',e=>{
   const t=e.target.value.toLowerCase();
   renderPrisma(todasQuestoes.filter(q=>q.tema.toLowerCase().includes(t)||q.pergunta.toLowerCase().includes(t)));
 });
+</script>
+       <!-- RODAPÉ PADRONIZADO -->
+    <footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+      
+      <!-- COLUNA 1: LOGO E SOBRE -->
+      <div class="footer-col">
+        <h3 class="footer-logo">Prisma Histórico</h3>
+        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
+      </div>
+
+      <!-- COLUNA 2: LINKS RÁPIDOS -->
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+         
+          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUNA 3: LEGAL -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidade.html">Política de Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- COLUNA 4: CONTATO -->
+      <div class="footer-col">
+        <h4>Contato e Suporte</h4>
+        <ul>
+          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
+        
+        </ul>
+        <div class="footer-selo">
+          <p>🔒 Compra 100% Segura</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+      <p>© 2026  Prisma Histórico | Todos os direitos reservados.</p>
+      
+    </div>
+
+  </div>
+</footer>
+    <script src="../js/script.js"></script>
+    <script>
+window.togglePrismaMenu = function(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log('CLICOU NO MENU');
+    const menuLinks = document.querySelector('.prisma-menu-links');
+    const botao = document.querySelector('.prisma-menu-hamburguer');
+    if (menuLinks && botao) {
+        menuLinks.classList.toggle('active');
+        botao.classList.toggle('active');
+        const isOpen = menuLinks.classList.contains('active');
+        botao.setAttribute('aria-expanded', isOpen);
+    }
+}
 </script>
 
 </body>

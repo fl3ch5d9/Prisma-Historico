@@ -28,42 +28,32 @@
   <link rel="stylesheet" href="css/style.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  
 
 
     
   
 </head>
 
-<body>
+
+
 
     <!-- CABEÇALHO UNIFICADO HAMBURGUER-->
-     <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-
-  
-
-<ul class="prisma-menu-links">
-    <li><a href="index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="artigos/sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos/artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="artigos/questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
+  <nav class="prisma-nav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+        <li><a href="index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="artigos/sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos/artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="artigos/questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+    </ul>
 </nav>
-
- 
-
-
 
   <!--introdução oceonografia-->
   <!-- INTRODUÇÃO ESTRATÉGICA DO SUMÁRIO -->
@@ -660,35 +650,7 @@ Enquanto hoje usamos satélite, o piloto de 1500 usava estrelas. O astrolábio n
 
     <script src="js/script.js"></script>
     
-    <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU'); // pra você ver no console se rodou
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('active');
-        botao.classList.toggle('active');
-        const isOpen = menuLinks.classList.contains('active');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.prisma-menu-links a');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuLinks?.classList.remove('active');
-            botao?.classList.remove('active');
-            botao?.setAttribute('aria-expanded', 'false');
-        });
-    });
-});
-</script>
+
 </body>
 </html>
