@@ -639,38 +639,96 @@ main {
 /*privacidade*/
 
 /* ==========================================================================
-   ESTILOS EXCLUSIVOS PARA O PRIVACIDADE.HTML (CLASSES IDENTICAS)
+   ESTILOS EXCLUSIVOS PARA O PRIVACIDADE.HTML
    ========================================================================== */
-
-/* Espaçamento superior da seção legal para evitar que o menu fixo cubra o texto */
+/* ==========================================================================
+   PRIVACIDADE - VERSÃO PREMIUM
+   ========================================================================== */
 .secao-texto-legal {
     background-color: #121212;
+    padding: 140px 20px 80px 20px;
 }
 
-.secao-texto-legal h1,
-.secao-texto-legal h2,
-.secao-texto-legal strong {
+.secao-texto-legal .container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #1E1E1E;
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid rgba(201, 168, 106, 0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.secao-texto-legal h1 {
     color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
 .data-atualizacao {
-    color: #D9C5A5;
-    border-bottom: 1px solid #C9A86A;
+    color: #C9A86A !important;
+    border-bottom: 1px solid rgba(201, 168, 106, 0.3) !important;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.secao-texto-legal h2 {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #C9A86A;
 }
 
 .secao-texto-legal p,
 .secao-texto-legal li {
     color: #F5F5F0;
+    line-height: 1.8;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.secao-texto-legal ul {
+    padding-left: 20px;
+}
+
+.secao-texto-legal li {
+    margin-bottom: 12px;
+}
+
+.secao-texto-legal li::marker {
+    color: #C9A86A;
+}
+
+.secao-texto-legal strong {
+    color: #FFFFFF;
+    font-weight: 700;
 }
 
 .secao-texto-legal a {
     color: #C9A86A;
+    text-decoration: none;
+    border-bottom: 1px dotted #C9A86A;
+    transition: 0.2s;
 }
 .secao-texto-legal a:hover {
     color: #D9C5A5;
-}/* Ajustes rápidos para telas menores de celular */
+    border-bottom-style: solid;
+}
 
-
+/* Celular */
+@media (max-width: 768px) {
+  .secao-texto-legal .container {
+    padding: 30px 20px;
+  }
+  .secao-texto-legal h1 {
+    font-size: 1.8rem;
+  }
+}
 /*termos*/
 
 /* ==========================================================================
@@ -678,33 +736,88 @@ main {
    ========================================================================== */
 
 /* Espaçamento superior para o cabeçalho não cobrir os Termos de Uso */
+/* ==========================================================================
+   PRIVACIDADE + TERMOS - VERSÃO PREMIUM
+   ========================================================================== */
 .secao-texto-legal {
     background-color: #121212;
+    padding: 140px 20px 80px 20px;
 }
 
 .secao-texto-legal .container {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
+    background: #1E1E1E;
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid rgba(201, 168, 106, 0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
-.secao-texto-legal h1,
-.secao-texto-legal h2,
-.secao-texto-legal strong {
+.secao-texto-legal h1 {
     color: #FFFFFF;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
 .data-atualizacao {
-    color: #D9C5A5;
-    border-bottom: 1px solid #C9A86A;
+    color: #C9A86A !important;
+    border-bottom: 1px solid rgba(201, 168, 106, 0.3) !important;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.secao-texto-legal h2 {
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #C9A86A;
 }
 
 .secao-texto-legal p,
 .secao-texto-legal li {
     color: #F5F5F0;
+    line-height: 1.8;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.secao-texto-legal ul {
+    padding-left: 20px;
+}
+
+.secao-texto-legal li {
+    margin-bottom: 12px;
+}
+
+.secao-texto-legal li::marker {
+    color: #C9A86A;
 }
 
 .secao-texto-legal a {
     color: #C9A86A;
+    text-decoration: none;
+    border-bottom: 1px dotted #C9A86A;
+    transition: 0.2s;
+}
+
+.secao-texto-legal a:hover {
+    color: #D9C5A5;
+    border-bottom-style: solid;
+}
+
+@media (max-width: 768px) {
+  .secao-texto-legal .container {
+    padding: 30px 20px;
+  }
+  .secao-texto-legal h1 {
+    font-size: 1.8rem;
+  }
 }
 /*footer*/
 /* Estilo para a caixa do logótipo */
@@ -2629,15 +2742,19 @@ body {
 
 /* novo FORÇA O HAMBURGUER A APARECER */
 /* HAMBURGUER - CORRIGIDO */
-/* HAMBURGUER UNIFICADO - CORRIGIDO */
-/* FINAL - HAMBURGUER BRANCO COM LETRA SEPIA COM ICONES PARA CELULAR  */
-/* BASE DO HEADER */
+/* BASE DO HEADER - CORRIGIDO */
 .prisma-nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  background: #111;
+  z-index: 10000;
+  box-sizing: border-box;
 }
 
 /* HAMBURGUER - SEMPRE BRANCO */
@@ -2649,14 +2766,18 @@ body {
   cursor: pointer;
   gap: 5px;
   padding: 10px;
-  z-index: 10001;
+  z-index: 10002;
 }
+
 .prisma-menu-hamburguer span {
-  width: 25px; height: 3px;
+  width: 25px; 
+  height: 3px;
   background: #fff;
   display: block;
   transition: 0.3s;
+  border-radius: 2px;
 }
+
 .prisma-menu-hamburguer.ativo span:nth-child(1){ transform: rotate(45deg) translate(5px, 6px); }
 .prisma-menu-hamburguer.ativo span:nth-child(2){ opacity:0; }
 .prisma-menu-hamburguer.ativo span:nth-child(3){ transform: rotate(-45deg) translate(5px, -6px); }
@@ -2664,16 +2785,26 @@ body {
 /* LINKS DESKTOP */
 .prisma-menu-links {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-/* MOBILE - VERSÃO FINAL CARVÃO */
+.prisma-menu-links a{
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
   .prisma-menu-hamburguer { 
     display: flex !important; 
-    position: relative;
-    z-index: 10000;
   }
   
   .prisma-menu-links {
@@ -2683,44 +2814,5 @@ body {
   .prisma-menu-links.ativo {
     display: flex !important;
     flex-direction: column !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 280px !important;
-    height: 100vh !important;
-    background: #1e1e1e !important; /* CARVÃO */
-    padding: 80px 25px 25px !important;
-    gap: 8px !important;
-    z-index: 9999 !important;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.5) !important;
-    margin: 0 !important;
-    list-style: none !important;
-  }
-
-  .prisma-menu-links.ativo li {
-    width: 100% !important;
-    list-style: none !important;
-  }
-
-  .prisma-menu-links.ativo a {
-    color: #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    padding: 14px 12px !important;
-    text-decoration: none !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    transition: 0.2s !important;
-  }
-
-  .prisma-menu-links.ativo a:hover {
-    background: #333 !important;
-  }
-
-  .prisma-menu-links.ativo a .material-icons {
-    display: inline-block !important;
-    color: #ffffff !important;
-    font-size: 22px !important;
   }
 }

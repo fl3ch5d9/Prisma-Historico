@@ -40,9 +40,11 @@
 
 
     <!-- CABEÇALHO UNIFICADO HAMBURGUER-->
-  <nav class="prisma-nav">
+ <nav class="prisma-nav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
     <ul class="prisma-menu-links">
         <li><a href="index.html"><span class="material-icons">home</span> Início</a></li>
         <li><a href="artigos/sobre.html"><span class="material-icons">info</span> Sobre</a></li>
@@ -54,7 +56,6 @@
         <li><a href="artigos/questoes.html"><span class="material-icons">school</span> Simulados</a></li>
     </ul>
 </nav>
-
   <!--introdução oceonografia-->
   <!-- INTRODUÇÃO ESTRATÉGICA DO SUMÁRIO -->
 <!-- O SEU HEADER DO SITE TERMINA AQUI -->
@@ -650,7 +651,12 @@ Enquanto hoje usamos satélite, o piloto de 1500 usava estrelas. O astrolábio n
 
     <script src="js/script.js"></script>
     
+<!--cookeis-->
 
-
+<!-- AVISO DE COOKIES SIMPLES -->
+<div id="aviso-cookies" style="position:fixed; bottom:20px; right:20px; width:300px; background:#1E1E1E; color:#FFFFFF; padding:20px; border-radius:12px; z-index:999999; box-shadow: 0 8px 30px rgba(0,0,0,0.6); border: 1px solid #333;">
+  <p style="margin:0 0 14px 0; font-size:14px; line-height:1.5; color:#F5F5F0;">🍪 Usamos <strong style="color:#eebc6c;">cookies</strong> para melhorar sua experiência.</p>
+  <button onclick="localStorage.setItem('cookiesAceitos','sim'); document.getElementById('aviso-cookies').style.display='none';" style="background:#eebc6c; color:#121212; border:none; padding:10px 15px; cursor:pointer; border-radius:8px; width:100%; font-weight:bold;">OK, entendi</button>
+</div>
 </body>
 </html>
