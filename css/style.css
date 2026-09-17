@@ -2802,11 +2802,12 @@ body {
 }
 
 /* MOBILE */
+
 @media (max-width: 768px) {
-  .prisma-menu-hamburguer { 
-    display: flex !important; 
+  .prisma-menu-hamburguer {
+    display: flex !important;
   }
-  
+
   .prisma-menu-links {
     display: none !important;
   }
@@ -2814,5 +2815,22 @@ body {
   .prisma-menu-links.ativo {
     display: flex !important;
     flex-direction: column !important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: auto;
+    max-height: 90vh;
+    background: #1e1e1e;
+    padding: 60px 20px 20px;
+    gap: 2px;
+    z-index: 10001;
+    border-radius: 0 0 0 12px;
+    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .prisma-menu-links.ativo a {
+    padding: 12px;
+    font-size: 15px;
   }
 }
