@@ -1291,121 +1291,118 @@ strong{ color: var(--titulo) !important; }
 
 
 /* FIX - DESGRUDA TUDO */
-.section-inquisicao{
-  padding-bottom: 80px !important;
+.section-inquisicao {
+  background: #121212 !important;
+  padding: 80px 0 100px 0;
 }
 
-.section-inquisicao .secao-curiosidades{
-  padding: 0 20px;
-  margin-bottom: 60px;
-}
-
-.section-inquisicao .secao-curiosidades .texto-intro{
-  display: block;
-  max-width: 800px;
-  margin: 20px auto 0 auto;
-  line-height: 1.8;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.section-inquisicao .container{
-  padding-bottom: 40px;
-}
-
-.cta-ebook{
-  margin-top: 70px !important;
-  margin-bottom: 80px !important;
-  padding: 50px 30px !important;
-}
-
-
-.section-inquisicao{
-  padding: 80px 0 100px 0 !important;
-}
-
-.section-inquisicao .container{
-  max-width: 1008px !important;
-  margin: 0 auto !important;
-  padding: 0 20px 60px 20px !important;
+.section-inquisicao .container {
+  max-width: 1008px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
   box-sizing: border-box;
 }
 
-.section-inquisicao .secao-curiosidades{
+.section-inquisicao .secao-curiosidades {
   text-align: center;
+  margin-bottom: 60px;
   padding: 0 20px;
-  margin-bottom: 50px;
 }
 
-.section-inquisicao .texto-intro{
+.section-inquisicao .secao-curiosidades .subtitulo-secao {
+  color: #FFFFFF;
+}
+
+.section-inquisicao .subtitulo-secao-menor {
+  color: #F5F5F0;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.section-inquisicao .texto-intro {
   max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
+  margin: 20px auto 0 auto;
   line-height: 1.8;
+  text-align: center;
+  color: #F5F5F0;
+  font-style: italic;
 }
 
-.section-inquisicao .titulo-categoria.inquisicao{
+.section-inquisicao .titulo-categoria.inquisicao {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 50px 0 20px 5px;
-  text-align: left;
+  gap: 12px;
+  margin: 60px 0 25px 5px;
+  color: #FFFFFF;
+  font-size: 22px;
 }
 
-.section-inquisicao .grid-3{
+.section-inquisicao .barra-vermelha {
+  width: 4px;
+  height: 24px;
+  background: #c0392b;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.section-inquisicao .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-bottom: 20px;
 }
 
-.section-inquisicao .barra-vermelha{
-  width: 4px;
-  height: 22px;
-  background: #c0392b;
-  display: inline-block;
-}
-
-.card-tortura{
-  background: var(--carvao);
-  border: 1px solid var(--borda-gold);
-  border-radius: 10px;
-  height: 200px;
+/* CARD INQUISIÇÃO - SÓ NESSA SEÇÃO */
+.section-inquisicao .card-tortura {
+  background: #1E1E1E !important;
+  border: 1px solid rgba(238, 188, 108, 0.25);
+  border-radius: 12px;
+  height: 220px;
   overflow: hidden;
+  transition: 0.3s;
 }
 
-.card-tortura .card-content{
+.section-inquisicao .card-tortura:hover {
+  border-color: #eebc6c;
+  transform: translateY(-3px);
+}
+
+.section-inquisicao .card-tortura .card-content {
   height: 100%;
-  overflow-y: scroll;
-  padding: 20px;
+  overflow-y: auto;
+  padding: 22px;
   text-align: left;
   line-height: 1.6;
 }
 
-.card-tortura .card-content h3{
+.section-inquisicao .card-tortura .card-content h3 {
+  color: #eebc6c;
   text-align: left;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
+  font-size: 17px;
 }
 
-.card-tortura .card-content p{
+.section-inquisicao .card-tortura .card-content p {
+  color: #F5F5F0;
   text-align: left;
   margin: 0;
+  font-size: 14.5px;
 }
 
-.cta-ebook{
-  margin: 80px auto !important;
-  padding: 50px 30px !important;
+.section-inquisicao .card-tortura .card-content strong {
+  color: #eebc6c;
+  font-weight: 700;
 }
 
-.section-inquisicao{
-  background: transparent !important;
-  background-color: transparent !important;
+@media (max-width: 768px) {
+  .section-inquisicao .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .section-inquisicao .card-tortura {
+    height: auto;
+    min-height: 180px;
+  }
 }
-
-.card-tortura{
-  background: #0a0f2c !important;
-}
-
 /*quiz */
 
 .container{
