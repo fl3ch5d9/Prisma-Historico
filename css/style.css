@@ -2922,3 +2922,17 @@ body {
     margin: 0 auto;
   }
 }
+
+@media(max-width: 900px){
+  .coluna-esquerda-texto{
+    padding: 0 18px;
+  }
+  .texto-manifesto p{
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    line-height: 1.7 !important;
+    hyphens: auto;
+    font-size: 17px;
+  }
+}
