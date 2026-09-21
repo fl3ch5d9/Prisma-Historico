@@ -2936,3 +2936,17 @@ body {
     font-size: 17px;
   }
 }
+
+@media(max-width: 768px){
+  .texto-manifesto p,
+  .prisma-texto p,
+  .coluna-esquerda-texto p{
+    text-align: left !important;
+    text-justify: none !important;
+    word-spacing: normal !important;
+    letter-spacing: 0 !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    line-height: 1.6 !important;
+  }
+}
