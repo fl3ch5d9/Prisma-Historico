@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  
+    
        <nav class="prisma-nav">
     <div class="prisma-logo">
         <span>Prisma</span> Histórico
@@ -25,14 +25,16 @@
     <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
     <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
     <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
 
+    </ul>
    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-    <span class="prisma-barra"></span>
-    <span class="prisma-barra"></span>
-    <span class="prisma-barra"></span>
-</button>
+           
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+        <span class="prisma-barra"></span>
+    </button>
 </nav>
+
 
 <!-- CONTEÚDO PRINCIPAL DO QUIZ -->
 <main class="container">
@@ -203,23 +205,18 @@
 
 
 <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
-</script>
+document.addEventListener('DOMContentLoaded', () => {
+  const botao = document.querySelector('.prisma-menu-hamburguer');
+  const menuLinks = document.querySelector('.prisma-menu-links');
 
+  botao.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menuLinks.classList.toggle('ativo');
+    botao.classList.toggle('ativo');
+    botao.setAttribute('aria-expanded', menuLinks.classList.contains('ativo'));
+  });
+});
+</script>
 
     
 

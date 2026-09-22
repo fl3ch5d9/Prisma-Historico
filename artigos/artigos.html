@@ -32,77 +32,330 @@
 
     <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
     <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
+        
         <span class="prisma-barra"></span>
         <span class="prisma-barra"></span>
         <span class="prisma-barra"></span>
     </button>
 </nav>
-<!--cards-->
+<!--aqui não mexer nave-->
+
 <style>
-  *{box-sizing:border-box}
-  body{margin:0; background:#121212; font-family: sans-serif;}
-  main{margin-top:60px;}
-  .grid-empresa{
-    display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(290px, 1fr));
-    gap:24px;
-    max-width:1200px;
-    margin:0 auto;
+/* Definição das suas variáveis de cores (coloque no topo do seu CSS ou no :root) */
+/* Definição das suas cores oficiais */
+/* ==========================================================================
+   1. SUAS CORES OFICIAIS (VARIÁVEIS)
+   ========================================================================== */
+:root {
+  --carvao-escuro: #121212; /* Fundo geral da página */
+  --carvao: #1E1E1E;        /* Fundo dos dois blocos */
+  --branco: #FFFFFF;        /* Títulos e foco principal */
+  --off-white: #F5F5F0;     /* Texto corrido (leitura confortável) */
+  --sepia: #eebc6c;         /* Ouro-Sépia para botões, tags e destaques */
+}
+
+/* Efeito de rolagem suave para os links da página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA MAIOR E ROBUSTA (LADO A LADO)
+   ========================================================================== */
+
+/* Container Principal: Esticado e com espaço generoso entre os blocos */
+.container-principal-prisma {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+  max-width: 1300px;
+  margin: 50px auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .container-principal-prisma {
+    grid-template-columns: 1fr;
   }
-  .card-empresa{
-    background:#1E1E1E;
-    border:1px solid rgba(217,197,165,0.12);
-    border-radius:16px;
-    overflow:hidden;
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .card-empresa:hover{
-    transform: translateY(-8px);
-    border-color:#D9C5A5;
-    box-shadow:0 20px 40px rgba(0,0,0,.5), 0 0 25px rgba(217,197,165,.12);
-  }
-  .card-empresa .img-wrap{ height:230px; background:#121212; overflow:hidden; }
-  .card-empresa img{
-    width:100%; height:100%; object-fit:cover; object-position:center top; display:block;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .card-empresa:hover img{ transform:scale(1.08); }
+}
+
+/* Estilo de base ampliado para as duas caixas (Introdução e EBook) */
+.bloco-prisma, .bloco-ebook-prisma {
+  background-color: var(--carvao);
+  padding: 50px;                    /* Mais espaço interno para dar imponência */
+  border-radius: 16px;              /* Bordas modernas e suaves */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra marcante no fundo escuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Faixa lateral esquerda exclusiva da Introdução */
+.bloco-prisma {
+  border-left: 6px solid var(--sepia);
+}
+
+/* Bordas e alinhamento central exclusivo do Bloco do EBook */
+.bloco-ebook-prisma {
+  border: 1px solid rgba(238, 188, 108, 0.25);
+  align-items: center;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO E TAMANHO DOS TEXTOS
+   ========================================================================== */
+
+/* Título Prisma Histórico Gigante */
+.titulo-prisma { 
+  font-size: 54px; 
+  font-weight: 800; 
+  color: var(--branco); 
+  margin: 0 0 25px 0; 
+  letter-spacing: -1px;
+}
+.titulo-prisma span { 
+  color: var(--sepia); 
+}
+
+/* Título do EBook Ampliado */
+.titulo-ebook {
+  font-size: 32px;
+  color: var(--branco);
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+/* Parágrafos da Introdução e do EBook (Letras grandes e fáceis de ler) */
+.introducao-prisma, .descricao-ebook { 
+  color: var(--off-white); 
+  font-size: 19px; 
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* Palavras marcadas com fundo sutil em Sépia */
+.destaque-sepia { 
+  color: var(--sepia); 
+  font-weight: 700;
+  background-color: rgba(238, 188, 108, 0.1);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Tag "Material Exclusivo" no topo do EBook */
+.tag-ebook {
+  background-color: rgba(238, 188, 108, 0.1);
+  color: var(--sepia);
+  border: 1px solid var(--sepia);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+}
+
+/* ==========================================================================
+   4. SEÇÃO DE PREÇOS (EBOOK)
+   ========================================================================== */
+.preco-container {
+  margin: 20px 0 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+.preco-antigo {
+  color: var(--off-white);
+  font-size: 16px;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.preco-atual {
+  color: var(--sepia);
+  font-size: 36px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   5. BOTÕES E CHAMADAS DE AÇÃO (LARGOS E ROBUSTOS)
+   ========================================================================== */
+.btn-prisma-hotmart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #E8C765, #C9A86A);
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: .95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(201,168,106,.4);
+  transition: all .2s ease;
+}
+.btn-prisma-hotmart:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,106,.6);
+}
+
+/*botão introdução*/
+
+.cta-sepia{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  background: #1a1a1a;
+  color: #E8C765;
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  border-radius: 12px;
+  border: 1px solid #C9A86A;
+  transition: all .2s ease;
+}
+.cta-sepia:hover{
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+}
+  /*introdução */
+body{ margin:0; background:var(--carvao-escuro); padding-top:75px; font-family:sans-serif; }
+.bloco-prisma{ width:calc(100% - 32px); margin:0 16px 24px 16px; padding-left:16px; border-left:4px solid var(--sepia); }
+.grid-empresa{ display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:24px; margin:0 16px 40px 16px; }
+.card-empresa{ background:var(--carvao); border:1px solid rgba(238,188,108,0.15); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; min-height:430px; }
+.card-empresa .img-wrap{ height:230px; background:var(--carvao-escuro); }
+.card-empresa img{ width:100%; height:100%; object-fit:cover; }
+.card-action{ padding:16px; margin-top:auto; }
+.btn-prisma-amazon{ display:flex; justify-content:center; align-items:center; height:44px; border:1px solid rgba(238,188,108,0.35); border-radius:10px; color:var(--sepia); text-decoration:none; font-weight:800; font-size:.75rem; }
+
 </style>
 
-<main style="background:#121212; padding:80px 20px 40px 20px;">
-  <div class="grid-empresa">
+<div class="container-principal-prisma">
+  
+  <!-- BLOCO 1: INTRODUÇÃO (LADO ESQUERDO) -->
+  <div class="bloco-prisma">
+    <h1 class="titulo-prisma"><span>Prisma</span> Histórico</h1>
+    
+    <p class="introducao-prisma">
+      Seja para dominar os concursos, gabaritar o Enem ou mergulhar no passado, estudar de verdade exige as <strong>ferramentas certas</strong>. 
+      No <strong>Prisma Histórico</strong>, nós facilitamos a sua jornada: garimpamos os melhores produtos e as ofertas mais vantajosas da <strong>Amazon, Shopee e Magalu</strong> para você economizar tempo e dinheiro.
+    </p>
 
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/confederacao_tamoios.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">1. Confederação dos Tamoios</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1554 - 1567</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Aliança dos Tupis com franceses contra portugueses no litoral.</div></article>
+    <p class="introducao-prisma">
+  Garanta o seu combo completo de utilidades: encontre <span class="destaque-sepia">livros raros</span>, <strong>livros de questões comentadas sobre toda História do Brasil</strong>, boxes temáticos, <strong>quadrinhos históricos</strong>, documentários, ilustrações e <strong>imagens históricas</strong> raras. Prepare seu ambiente com <strong>escrivaninhas para estudos</strong>, luminárias articuladas, <strong>estantes para livros</strong>, materiais de escritório premium, <strong>estojos de cores</strong>, blocos de anotações e <strong>mapas mentais</strong> focados em reter conteúdo. Reunimos também notebooks, computadores e celulares de alta performance com os menores preços para quem busca o topo nos <strong>vestibulares, concursos públicos e no Enem</strong>.
+</p>
 
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_guanabara.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">2. Guerra da Guanabara</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1560 - França Antártica</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Portugueses expulsam franceses da Baía de Guanabara.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/amador_bueno.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">3. Aclamação de Amador Bueno</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1641 - SP</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Paulistas tentam proclamar rei próprio em São Paulo.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/insurreicao_pernambucana.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">4. Insurreição Pernambucana</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1645 - 1654</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Luso-brasileiros expulsam holandeses de Pernambuco.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_barbaros.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">5. Guerra dos Bárbaros</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1651 - 1704</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Conflitos no sertão nordestino contra povos indígenas.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/revolta_beckman.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">6. Revolta de Beckman</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1684 - 1685 - MA</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Revolta contra o monopólio da Companhia de Comércio do Maranhão.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_palmares.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">7. Guerra dos Palmares</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1644 - 1694</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Destruição do Quilombo dos Palmares e morte de Zumbi.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_emboabas.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">8. Guerra dos Emboabas</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1707 - 1709 - MG</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Conflito entre paulistas e forasteiros pelo ouro.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_mascates.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">9. Guerra dos Mascates</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1710 - 1711 - PE</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Conflito entre senhores de Olinda e comerciantes do Recife.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/revolta_vila_rica.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">10. Revolta de Vila Rica</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1720 - MG</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Revolta de Filipe dos Santos contra as Casas de Fundição.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/guerra_guaranitica.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">11. Guerra Guaranítica</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1753 - 1756</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Índios das Missões contra o Tratado de Madri.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/inconfidencia_mineira.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">12. Inconfidência Mineira</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1789 - MG</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Conspiração separatista liderada por Tiradentes.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/conjuracao_baiana.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">13. Conjuração Baiana</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1798 - BA</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Revolta dos Alfaiates, com participação popular e negros.</div></article>
-
-    <article class="card-empresa"><div class="img-wrap"><img src="../img/revolucao_pernambucana.webp"></div><h3 style="color:#FFF; font-size:1.05rem; padding:16px 16px 0; margin:0;">14. Revolução Pernambucana</h3><span style="color:#D9C5A5; font-size:.8rem; padding:6px 16px 12px; display:block;">1817 - PE</span><div style="margin:0 16px 16px; color:#F5F5F0; opacity:.7; font-size:.86rem; line-height:1.5; height:65px; overflow-y:auto;">Movimento republicano e separatista em Pernambuco.</div></article>
-
+    <p class="chamada-acao-prisma">
+      <a href="#id-dos-seus-cards" class="cta-sepia">👉 Compare preços e compre agora com desconto!</a>
+    </p>
   </div>
+
+  <!-- BLOCO 2: VENDA DO EBOOK (LADO DIREITO) -->
+  <div class="bloco-ebook-prisma">
+    <div class="tag-ebook">Material Exclusivo</div>
+    <h2 class="titulo-ebook">E-Book Prisma Histórico</h2>
+    <p class="descricao-ebook">
+      O guia definitivo com mapas mentais, resumos práticos e os temas que mais caem em <strong>vestibulares e no Enem</strong>. Maximize seus estudos agora.
+    </p>
+    
+    <div class="preco-container">
+      <span class="preco-antigo">De R$ 149,90</span>
+      <span class="preco-atual">Por R$ 49,90</span>
+    </div>
+
+    <!-- COLOQUE SEU LINK DA HOTMART AQUI NO href="" -->
+    <a href="SEU_LINK_DA_HOTMART_AQUI" target="_blank" class="btn-prisma-hotmart">Baixar EBook Agora</a>
+  </div>
+
+</div>
+<!--cards-->
+
+<main style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; max-width:1300px; margin:0 auto; padding:20px; box-sizing:border-box;">
+
+  
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
+  <div class="grid-empresa">
+    <article class="card-empresa">
+      <div class="img-wrap"><img src=""></div>
+      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
+      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
+      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
+        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
+      </div>
+      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
+    </article>
+  </div>
+
 </main>
 
+ 
        <!-- RODAPÉ PADRONIZADO -->
     <footer class="footer">
   <div class="container">
