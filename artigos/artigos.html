@@ -1,447 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Artigos - Prisma Histórico</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prisma Histórico</title>
+<link rel="stylesheet" href="style.css">
+
+
+
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap');
+*{margin:0; padding:0; box-sizing:border-box;}
+body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif;}
+.topo{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:1px solid #E5B76940; font-size:0.8rem; letter-spacing:1px;}
+.logo{font-weight:700; color:#E5B769; line-height:0.9;}
+.logo span{font-weight:400; font-size:0.7rem; letter-spacing:3px;}
+.hero{background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200'); background-size:cover; background-position:center; text-align:center; padding:120px 20px 60px;}
+.hero h1{font-family:'Playfair Display', serif; font-size:4rem; color:#F5E6C8;}
+.hero p{color:#E5B769; margin:15px 0 30px;}
+.hero span{font-size:0.7rem; opacity:0.7; letter-spacing:2px;}
+.conteudo{max-width:1200px; margin:50px auto; display:flex; gap:50px; padding:0 20px;}
+.texto-principal{flex:2;}
+.ficha{flex:1; border:1px solid #E5B76960; padding:25px; border-radius:12px; height:fit-content; position:sticky; top:20px;}
+.tag{border:1px solid #E5B769; display:inline-block; padding:6px 14px; border-radius:20px; font-size:0.7rem; color:#E5B769; margin-bottom:20px;}
+.texto-principal h2{font-family:'Playfair Display', serif; font-size:2.2rem; line-height:1.1; margin-bottom:10px;}
+.texto-principal small{opacity:0.6;}
+.texto-principal p{margin:18px 0; line-height:1.7; opacity:0.9;}
+blockquote{border-left:3px solid #E5B769; padding-left:20px; margin:30px 0; font-style:italic; color:#E5B769; font-size:1.2rem;}
+blockquote cite{font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;}
+.ficha h4{color:#E5B769; margin-bottom:15px; font-size:0.9rem;}
+.ficha label{font-size:0.7rem; color:#E5B769; display:block; margin:15px 0 5px;}
+.box{background:#F5E6C8; color:#111; padding:10px 14px; border-radius:8px; font-size:0.85rem;}
+.cor-ref{margin-top:20px; border:1px solid #E5B76940; padding:15px; border-radius:8px;}
+.quadrado{width:60px; height:30px; background:#D9B25F; border-radius:4px; margin-top:10px;}
+.titulo-galeria{text-align:center; color:#E5B769; margin:40px 0 20px; letter-spacing:2px; font-size:0.8rem;}
+.galeria{display:flex; gap:15px;}
+.galeria div{flex:1;}
+.galeria img{width:100%; height:200px; object-fit:cover; border-radius:8px; border:1px solid #E5B76940;}
+.galeria span{font-size:0.7rem; opacity:0.6; display:block; margin-top:6px;}
+.leia{margin-top:30px;}
+.leia p{font-size:0.85rem; margin:10px 0; opacity:0.8; line-height:1.3;}
+footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-top:60px; font-size:0.7rem; opacity:0.5; letter-spacing:1px;}
+@media(max-width:900px){.conteudo{flex-direction:column;} .hero h1{font-size:2.5rem;} .topo nav{display:none;} .galeria{flex-direction:column;}}
+</style>
+
+
 
 
 
 </head>
 <body>
 
-    <!-- NAV PADRONIZADA (IGUAL CURIOSIDADES E SOBRE) -->
-       <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
+<header class="topo">
+  <div class="logo">PRISMA<br><span>HISTÓRICO</span></div>
+  <nav>EDIÇÃO 12 | HISTÓRIA | CONSERVAÇÃO | ARQUITETURA | SOBRE</nav>
+</header>
+
+<section class="hero">
+  <h1>Patrimônio é Cor Original</h1>
+  <p>A restauração da cor histórica na Ladeira Marília de Dirceu • Minas Gerais</p>
+  <span>ROLAR PARA LER</span>
+</section>
+
+<main class="conteudo">
+  <div class="texto-principal">
+    <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
+    <h2>Quando a tinta conta a história: a busca pela cor original de 1780</h2>
+    <small>Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
+    <hr>
+    <p>Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
+    <p>O projeto de restauro da residência à Ladeira Marília de Dirceu iniciou há um ano com uma pergunta simples, mas desafiadora: qual era a cor original desta casa, escondida sob 240 anos de repinturas?</p>
+    
+    <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite>— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
+
+    <p>Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
+
+    <h3 class="titulo-galeria">DETALHES DA CAMADA PICTÓRICA</h3>
+    <div class="galeria">
+      <div><img src="https://images.unsplash.com/photo-1517521841582-2b3aab303128?q=80&w=600"><span>Amostra 01 • Ocre Amarelo</span></div>
+      <div><img src="https://images.unsplash.com/photo-1505142468610-359e7bcbe29c?q=80&w=600"><span>Amostra 02 • Escala 5mm</span></div>
     </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
-</nav>
-
-
-<style>
-/* Definição das suas variáveis de cores (coloque no topo do seu CSS ou no :root) */
-/* Definição das suas cores oficiais */
-/* ==========================================================================
-   1. SUAS CORES OFICIAIS (VARIÁVEIS)
-   ========================================================================== */
-:root {
-  --carvao-escuro: #121212; /* Fundo geral da página */
-  --carvao: #1E1E1E;        /* Fundo dos dois blocos */
-  --branco: #FFFFFF;        /* Títulos e foco principal */
-  --off-white: #F5F5F0;     /* Texto corrido (leitura confortável) */
-  --sepia: #eebc6c;         /* Ouro-Sépia para botões, tags e destaques */
-}
-
-/* Efeito de rolagem suave para os links da página */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ==========================================================================
-   2. ESTRUTURA MAIOR E ROBUSTA (LADO A LADO)
-   ========================================================================== */
-
-/* Container Principal: Esticado e com espaço generoso entre os blocos */
-.container-principal-prisma {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 40px;
-  max-width: 1300px;
-  margin: 50px auto;
-  padding: 0 30px;
-  box-sizing: border-box;
-  align-items: stretch;
-}
-
-@media (max-width: 900px) {
-  .container-principal-prisma {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Estilo de base ampliado para as duas caixas (Introdução e EBook) */
-.bloco-prisma, .bloco-ebook-prisma {
-  background-color: var(--carvao);
-  padding: 50px;                    /* Mais espaço interno para dar imponência */
-  border-radius: 16px;              /* Bordas modernas e suaves */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra marcante no fundo escuro */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-/* Faixa lateral esquerda exclusiva da Introdução */
-.bloco-prisma {
-  border-left: 6px solid var(--sepia);
-}
-
-/* Bordas e alinhamento central exclusivo do Bloco do EBook */
-.bloco-ebook-prisma {
-  border: 1px solid rgba(238, 188, 108, 0.25);
-  align-items: center;
-  text-align: center;
-}
-
-/* ==========================================================================
-   3. ESTILIZAÇÃO E TAMANHO DOS TEXTOS
-   ========================================================================== */
-
-/* Título Prisma Histórico Gigante */
-.titulo-prisma { 
-  font-size: 54px; 
-  font-weight: 800; 
-  color: var(--branco); 
-  margin: 0 0 25px 0; 
-  letter-spacing: -1px;
-}
-.titulo-prisma span { 
-  color: var(--sepia); 
-}
-
-/* Título do EBook Ampliado */
-.titulo-ebook {
-  font-size: 32px;
-  color: var(--branco);
-  margin: 20px 0;
-  font-weight: 700;
-}
-
-/* Parágrafos da Introdução e do EBook (Letras grandes e fáceis de ler) */
-.introducao-prisma, .descricao-ebook { 
-  color: var(--off-white); 
-  font-size: 19px; 
-  line-height: 1.8;
-  margin-bottom: 22px;
-}
-
-/* Palavras marcadas com fundo sutil em Sépia */
-.destaque-sepia { 
-  color: var(--sepia); 
-  font-weight: 700;
-  background-color: rgba(238, 188, 108, 0.1);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-/* Tag "Material Exclusivo" no topo do EBook */
-.tag-ebook {
-  background-color: rgba(238, 188, 108, 0.1);
-  color: var(--sepia);
-  border: 1px solid var(--sepia);
-  font-size: 13px;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 50px;
-}
-
-/* ==========================================================================
-   4. SEÇÃO DE PREÇOS (EBOOK)
-   ========================================================================== */
-.preco-container {
-  margin: 20px 0 25px 0;
-  display: flex;
-  flex-direction: column;
-}
-.preco-antigo {
-  color: var(--off-white);
-  font-size: 16px;
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-.preco-atual {
-  color: var(--sepia);
-  font-size: 36px;
-  font-weight: 800;
-}
-
-/* ==========================================================================
-   5. BOTÕES E CHAMADAS DE AÇÃO (LARGOS E ROBUSTOS)
-   ========================================================================== */
-.btn-prisma-hotmart{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 100%;
-  padding: 15px;
-  background: linear-gradient(135deg, #E8C765, #C9A86A);
-  color: #1a1a1a;
-  font-weight: 800;
-  font-size: .95rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(201,168,106,.4);
-  transition: all .2s ease;
-}
-.btn-prisma-hotmart:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201,168,106,.6);
-}
-
-
-  /*introdução */
- body{ margin:0; background:var(--carvao-escuro); padding-top:75px; font-family:sans-serif; }
-.bloco-prisma{ width:calc(100% - 32px);; margin:0 16px 24px 16px; padding-left:16px; border-left:4px solid var(--sepia); }
-.grid-empresa{ display:grid; grid-template-columns:repeat(auto-fill, minmax(290px,1fr)); gap:24px; margin:0 16px 40px 16px; }
-.card-empresa{ background:var(--carvao); border:1px solid rgba(238,188,108,0.15); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; min-height:430px; }
-.card-empresa .img-wrap{ height:230px; background:var(--carvao-escuro); }
-.card-empresa img{ width:100%; height:100%; object-fit:cover; }
-.card-action{ padding:16px; margin-top:auto; }
-.btn-prisma-amazon{ display:flex; justify-content:center; align-items:center; height:44px; border:1px solid rgba(238,188,108,0.35); border-radius:10px; color:var(--sepia); text-decoration:none; font-weight:800; font-size:.75rem; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  grid-template-columns: 1fr;
-}
-</style>
-
-<div class="container-principal-prisma">
-  
-  <!-- BLOCO 1: INTRODUÇÃO (LADO ESQUERDO) -->
-  <div class="bloco-prisma">
-    <h1 class="titulo-prisma"><span>Prisma</span> Histórico</h1>
-    
-    <p class="introducao-prisma">
-      Seja para dominar os concursos, gabaritar o Enem ou mergulhar no passado, estudar de verdade exige as <strong>ferramentas certas</strong>. 
-      No <strong>Prisma Histórico</strong>, nós facilitamos a sua jornada: garimpamos os melhores produtos e as ofertas mais vantajosas da <strong>Amazon, Shopee e Magalu</strong> para você economizar tempo e dinheiro.
-    </p>
-
-    <p class="introducao-prisma">
-  Garanta o seu combo completo de utilidades: encontre <span class="destaque-sepia">livros raros</span>, <strong>livros de questões comentadas sobre toda História do Brasil</strong>, boxes temáticos, <strong>quadrinhos históricos</strong>, documentários, ilustrações e <strong>imagens históricas</strong> raras. Prepare seu ambiente com <strong>escrivaninhas para estudos</strong>, luminárias articuladas, <strong>estantes para livros</strong>, materiais de escritório premium, <strong>estojos de cores</strong>, blocos de anotações e <strong>mapas mentais</strong> focados em reter conteúdo. Reunimos também notebooks, computadores e celulares de alta performance com os menores preços para quem busca o topo nos <strong>vestibulares, concursos públicos e no Enem</strong>.
-</p>
-
-    <p class="chamada-acao-prisma">
-      <!-- Mude o #id-dos-seus-cards para o ID real que você já usa na sua seção de cards -->
-      <a href="#id-dos-seus-cards" class="cta-sepia">👉 Compare preços e compre agora com desconto!</a>
-    </p>
   </div>
 
-  <!-- BLOCO 2: VENDA DO EBOOK (LADO DIREITO) -->
- <!-- BLOCO 2: VENDA DO EBOOK (LADO DIREITO) -->
-  <div class="bloco-ebook-prisma">
-    <div class="tag-ebook">Material Exclusivo</div>
-    <h2 class="titulo-ebook">E-Book Prisma Histórico</h2>
-    <p class="descricao-ebook">
-      O guia definitivo com mapas mentais, resumos práticos e os temas que mais caem em <strong>vestibulares e no Enem</strong>. Maximize seus estudos agora.
-    </p>
-    
-    <div class="preco-container">
-  <span class="preco-antigo">De R$ 149,90</span>
-  <span class="preco-atual">Por R$ 49,90</span>
-</div>
-
-    <!-- COLOQUE SEU LINK DA HOTMART AQUI NO href="" -->
-    <a href="SEU_LINK_DA_HOTMART_AQUI" target="_blank" class="btn-ebook">Baixar EBook Agora</a>
-  </div>
-
-</div>
-<!--cards-->
-
-<style>
-main {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
-<main>
-  
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
-  <div class="grid-empresa">
-    <article class="card-empresa">
-      <div class="img-wrap"><img src=""></div>
-      <h3 style="color:var(--off-white); font-size:1.05rem; padding:16px 16px 0; margin:0;">História Geral do Brasil por Francisco Adolfo de Varnhagen</h3>
-      <span style="color:var(--sepia); font-size:.8rem; padding:6px 16px 12px; display:block;">Ganhe pontos nesta compra com o cartão Amazon</span>
-      <div style="margin:10px 16px 16px; color:var(--off-white); opacity:.8; font-size:.88rem; line-height:1.7; height:110px; overflow-y:auto; padding-right:10px; scrollbar-width:thin; scrollbar-color: var(--sepia) transparent;">
-        ou R$ 599,99 em até 11x de R$ 54,59 sem juros... História Geral do Brasil...
-      </div>
-      <div class="card-action"><a href="" class="btn-prisma-amazon">Ver na Amazon</a></div>
-    </article>
-  </div>
-
+  <aside class="ficha">
+    <h4>FICHA TÉCNICA DA COR</h4>
+    <label>PIGMENTO:</label><div class="box">Ocre Amarelo</div>
+    <label>ANO:</label><div class="box">1780 — Camada original identificada</div>
+    <label>RUA:</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
+    <label>MÉTODO:</label><div class="box">Estratigrafia + Microscopia óptica</div>
+    <label>ACABAMENTO:</label><div class="box">Cal mineral fosca, opacidade natural</div>
+    <div class="cor-ref"><p>COR REFERÊNCIA</p><div class="quadrado"></div></div>
+    <div class="leia">
+      <h4>LEIA TAMBÉM</h4>
+      <p>• O Azul de Anil no Brasil Colonial</p>
+      <p>• Técnicas de Reboco no Século XVIII</p>
+      <p>• Conservação de Madeira em Edifícios Históricos</p>
+    </div>
+  </aside>
 </main>
 
- 
-       <!-- RODAPÉ PADRONIZADO -->
-    <footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-         
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
-      </div>
-
-      <!-- COLUNA 3: LEGAL -->
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-          
-        </ul>
-      </div>
-
-      <!-- COLUNA 4: CONTATO -->
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      <p>© 2026  Prisma Histórico | Todos os direitos reservados.</p>
-      
-    </div>
-
-  </div>
-</footer>
-
-    <script src="../js/script.js"></script>
-
-    <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
-</script>
+<footer>PRISMA HISTÓRICO — REVISTA EDITORIAL DE PATRIMÔNIO CULTURAL<br>Edição 12 • 2024 • ISSN 2675-8890</footer>
 
 </body>
 </html>

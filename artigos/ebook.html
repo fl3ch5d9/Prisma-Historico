@@ -3,129 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prisma Histórico </title>
-<link rel="stylesheet" href="../css/style.css">
+<title>Prisma Histórico - E-book Completo</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+:root{--ouro:#eebc6c;--preto:#121212;--preto2:#1E1E1E;--creme:#F5F5F0;--borda:rgba(238,188,108,0.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 
-    
+/* NAV PADRÃO PRISMA */
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
+.prisma-barra{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(2){opacity:0}
+.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:8px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
+.prisma-menu-links.ativo{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,56px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:16px}
+.prisma-menu-links a:hover{color:var(--ouro);padding-left:16px}
+.prisma-menu-links a .material-icons{font-size:28px}
+
+/* HERO */
+.hero-ebook{padding:150px 5% 80px 5%;max-width:1250px;margin:auto}
+.hero-ebook h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,72px);line-height:0.9;letter-spacing:-0.02em}
+.hero-ebook h1 span{color:var(--ouro);font-style:italic;font-weight:500}
+.hero-ebook p{max-width:720px;margin:24px 0 40px 0;opacity:0.6;line-height:1.7;font-size:17px}
+.beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:50px}
+.card-beneficio{background:var(--preto2);border:1px solid var(--borda);padding:22px;border-radius:16px;font-size:14px;line-height:1.5}
+.card-beneficio b{color:var(--ouro);display:block;margin-bottom:4px;font-size:13px;letter-spacing:0.05em}
+
+/* BOTÃO */
+.prisma-btn-container{display:flex;justify-content:flex-start;margin-bottom:80px}
+.btn-checkout-final{display:inline-flex;align-items:center;gap:10px;background:var(--ouro);color:#000;font-weight:800;padding:18px 32px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;letter-spacing:0.05em;transition:0.3s;box-shadow:0 10px 30px rgba(238,188,108,0.25)}
+.btn-checkout-final:hover{background:#fff;transform:translateY(-3px)}
+
+/* MODAL */
+#modalCheckout{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px)}
+#modalCheckout.aberto{display:flex}
+.modal-content{position:relative;max-width:900px;width:100%;background:#111;border:1px solid var(--borda);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8)}
+.modal-grid{display:grid;grid-template-columns:1.2fr 0.8fr}
+@media(max-width:850px){.modal-grid{grid-template-columns:1fr}}
+.btn-fechar-modal{position:absolute;top:14px;right:14px;z-index:5;background:rgba(255,255,255,0.08);border:1px solid var(--borda);color:#fff;width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}
+.modal-produto{padding:38px;color:#fff}
+.modal-tag{background:var(--ouro);color:#000;font-size:10px;font-weight:800;letter-spacing:0.12em;padding:7px 12px;border-radius:100px}
+.modal-produto h2{font-family:'Cormorant Garamond';font-size:36px;margin:18px 0 6px}
+.modal-sub{color:var(--ouro);opacity:0.9;margin-bottom:26px}
+.modal-lista-beneficios{list-style:none;display:flex;flex-direction:column;gap:12px}
+.modal-lista-beneficios li{display:flex;gap:10px;color:#ccc;font-size:14.5px;line-height:1.4}
+.check-icon{color:var(--ouro);font-weight:800}
+.modal-pagamento{background:#171717;padding:38px;border-left:1px solid var(--borda);display:flex;flex-direction:column;justify-content:center;text-align:center}
+.preco-de{color:#666;text-decoration:line-through;font-size:13px}
+.preco-por{color:#fff;font-size:46px;font-weight:900;font-family:'Cormorant Garamond'}
+.preco-info{color:var(--ouro);font-size:12px;margin-bottom:22px;letter-spacing:0.05em}
+.titulo-pagamento{font-size:10px;color:#777;margin-bottom:10px;letter-spacing:0.15em}
+.icones-pagamento{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px}
+.tag-pagamento{background:#222;border:1px solid #2a2a2a;color:#ddd;padding:7px 12px;border-radius:100px;font-size:11px}
+.modal-seguranca{margin-top:16px;font-size:11px;color:#666;line-height:1.5}
+
+/* FOOTER */
+.footer{background:#0A0A0A;border-top:1px solid var(--borda);padding:60px 5% 30px 5%;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 0.8fr 0.8fr 1fr;gap:30px;max-width:1250px;margin:auto}
+@media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
+.footer-logo{font-family:'Cormorant Garamond';font-size:22px;margin-bottom:12px}
+.footer-col p, .footer-col li{font-size:13px;opacity:0.6;line-height:1.6;list-style:none}
+.footer-col h4{font-size:11px;letter-spacing:0.15em;margin-bottom:16px;color:var(--ouro)}
+.footer-col a{color:var(--creme);text-decoration:none}
+.footer-col a:hover{color:var(--ouro)}
+.link-destaque{color:var(--ouro)!important;font-weight:700}
+</style>
 </head>
 <body>
-  <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-  <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
 
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
     <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
         <span class="prisma-barra"></span>
         <span class="prisma-barra"></span>
         <span class="prisma-barra"></span>
     </button>
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+    </ul>
 </nav>
 
-
-
-<!--section ebook vendas-->
-<!-- BANNER PRINCIPAL (HERO EBOOK) -->
 <section class="hero-ebook">
     <div class="container">
         <h1>PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
-        <p>O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem, garanta já o seu e-book completo</strong>.</p>
+        <p>O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>. Garanta já o seu e-book completo.</p>
         
         <div class="beneficios">
-            <div class="card-beneficio">📖 <b>Páginas Ilustradas</b><br>Análise profunda, zero romantização</div>
-            <div class="card-beneficio">🗺️ <b>Mapas Mentais</b><br>Memorize estruturas inteiras</div>
-            <div class="card-beneficio">📊 <b>Diagramas e Imagens</b><br>Visualize o cotidiano colonial</div>
-            <div class="card-beneficio">📚 <b>Sumário Digital</b><br>Navegue por vários tópicos</div>
+            <div class="card-beneficio"><b>📖 PÁGINAS ILUSTRADAS</b>Análise profunda, zero romantização</div>
+            <div class="card-beneficio"><b>🗺️ MAPAS MENTAIS</b>Memorize estruturas inteiras</div>
+            <div class="card-beneficio"><b>📊 DIAGRAMAS E IMAGENS</b>Visualize o cotidiano colonial</div>
+            <div class="card-beneficio"><b>📚 SUMÁRIO DIGITAL</b>Navegue por vários tópicos</div>
+        </div>
+
+        <div class="prisma-btn-container">
+            <button type="button" class="btn-checkout-final" onclick="abrirCheckout()">🛒 Comprar e-book completo</button>
         </div>
     </div>
 </section>
-
-
-<!-- SEÇÃO DO SUMÁRIO INTERATIVO -->
-
-
-<div class="prisma-btn-container">
-    <!-- Botão com a sua classe original e efeitos controlados pelo CSS abaixo -->
-    <button type="button" class="btn-checkout-final" onclick="abrirCheckout()">
-        🛒 Comprar e-book completo
-    </button>
-</div>
-
-<!-- ======================================================= -->
-<!-- 2. MODAL DE CHECKOUT (MANTÉM AS SUAS CLASSES ORIGINAIS) -->
-<!-- ======================================================= -->
-<style>
-#modalCheckout{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px)}
-.modal-content{position:relative;max-width:900px;width:100%;background:#111 url('container:///mnt/data/portuguese_court_arrival.webp') center/cover no-repeat;border:1px solid #C9A86A;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.8)}
-.modal-content::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, #111 55%, rgba(17,17,17,.85) 100%);z-index:1}
-.modal-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:0}
-.btn-fechar-modal{position:absolute;top:15px;right:15px;z-index:3;background:transparent;border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;font-size:24px;cursor:pointer}
-.modal-produto{padding:40px;color:#fff}
-.modal-tag{background:#C9A86A;color:#000;font-size:11px;font-weight:800;letter-spacing:1px;padding:6px 10px;border-radius:4px}
-.modal-produto h2{font-family:serif;font-size:32px;margin:15px 0 5px}
-.modal-sub{color:#C9A86A;margin-bottom:25px}
-.modal-lista-beneficios{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
-.modal-lista-beneficios li{display:flex;gap:10px;color:#ccc;font-size:15px}
-.check-icon{color:#C9A86A;font-weight:bold}
-.modal-pagamento{background:#1A1A1A;padding:40px;border-left:1px solid #222;display:flex;flex-direction:column;justify-content:center;text-align:center}
-.preco-de{color:#666;text-decoration:line-through;font-size:14px;display:block}
-.preco-por{color:#fff;font-size:42px;font-weight:900;display:block}
-.preco-info{color:#C9A86A;font-size:13px;margin-bottom:20px}
-.titulo-pagamento{font-size:12px;color:#777;margin-bottom:10px;text-transform:uppercase}
-.icones-pagamento{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:25px}
-.tag-pagamento{background:#222;border:1px solid #333;color:#ddd;padding:6px 10px;border-radius:20px;font-size:12px}
-.btn-checkout-final{display:block;background:#C9A86A;color:#000;font-weight:900;padding:16px;border-radius:8px;text-decoration:none;transition:.2s}
-.btn-checkout-final:hover{background:#fff;transform:scale(1.02)}
-.modal-seguranca{margin-top:15px;font-size:11px;color:#666;line-height:1.4}
-
-@media(max-width:768px){.modal-grid{grid-template-columns:1fr}.modal-content::before{background:rgba(17,17,17,.95)}}
-
-/* CORREÇÃO - SEMPRE À ESQUERDA NO NOTEBOOK */
-@media (min-width: 769px) {
-  .hero, .hero h1, .hero p {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    max-width: 750px;
-  }
-  
-  .hero p {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  /* Os cards continuam em linha */
-  .cards-container {
-    justify-content: flex-start !important;
-  }
-}
-
-/* NO CELULAR CONTINUA COMO ESTÁ */
-@media (max-width: 768px) {
-  .hero {
-    text-align: left !important;
-    padding: 20px;
-  }
-}
-
-
-
-</style>
-
 
 <div id="modalCheckout" class="modal-overlay">
     <div class="modal-content">
@@ -133,17 +120,17 @@
         <div class="modal-grid">
             <div class="modal-produto">
                 <span class="modal-tag">EDIÇÃO HISTÓRICA COMPLETA</span>
-                <h2> Prisma Histórico</h2>
-                <p class="modal-sub"> Da Colonização à Primeira República</p>
+                <h2>Prisma Histórico</h2>
+                <p class="modal-sub">Da Colonização à Primeira República</p>
                 <ul class="modal-lista-beneficios">
-               <li><span class="check-icon">✓</span> + 130 páginas ilustradas sem romantização</li>
-<li><span class="check-icon">✓</span> Fuvest, ENEM e Vestibulares</li>
-<li><span class="check-icon">✓</span> Mapas, linha do tempo e imagens da Colônia à Primeira República</li>
-<li><span class="check-icon">✓</span> Conteúdo analítico, crítico-reflexivo e investigativo</li>
-<li><span class="check-icon">✓</span> Mapas mentais e infográficos didáticos</li>
-<li><span class="check-icon">✓</span> Análise de documentos oficiais históricos</li>
-<li><span class="check-icon">✓</span> Detalhes inéditos sobre engenharia náutica da época</li>
-
+                    <li><span class="check-icon">✓</span> +130 páginas ilustradas sem romantização</li>
+                    <li><span class="check-icon">✓</span> Fuvest, ENEM e Vestibulares</li>
+                    <li><span class="check-icon">✓</span> Mapas, linha do tempo e imagens da Colônia à Primeira República</li>
+                    <li><span class="check-icon">✓</span> Conteúdo analítico, crítico-reflexivo e investigativo</li>
+                    <li><span class="check-icon">✓</span> Mapas mentais e infográficos didáticos</li>
+                    <li><span class="check-icon">✓</span> Análise de documentos oficiais históricos</li>
+                    <li><span class="check-icon">✓</span> Detalhes inéditos sobre engenharia náutica da época</li>
+                </ul>
             </div>
             <div class="modal-pagamento">
                 <div class="preco-box">
@@ -159,9 +146,7 @@
                         <span class="tag-pagamento">📄 Boleto</span>
                     </div>
                 </div>
-                <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-checkout-final">
-                    🔒 GARANTIR MEU ACESSO AGORA
-                </a>
+                <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-checkout-final" style="justify-content:center;width:100%">🔒 GARANTIR MEU ACESSO AGORA</a>
                 <div class="modal-seguranca">
                     <p>🔒 Ambiente criptografado Hotmart</p>
                     <p>🛡️ 7 dias de garantia incondicional</p>
@@ -171,85 +156,44 @@
     </div>
 </div>
 
-<script>
-function fecharCheckout(){ document.getElementById('modalCheckout').style.display='none' }
-</script>
-
-
 <footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
+  <div class="footer-grid">
       <div class="footer-col">
         <h3 class="footer-logo">Prisma Histórico</h3>
         <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
       </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
       <div class="footer-col">
         <h4>Navegação</h4>
-        <ul>
-          
-         
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
+        <ul><li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li></ul>
       </div>
-
-      <!-- COLUNA 3: LEGAL -->
       <div class="footer-col">
         <h4>Legal</h4>
         <ul>
           <li><a href="privacidade.html">Política de Privacidade</a></li>
           <li><a href="termos.html">Termos de Uso</a></li>
-          
         </ul>
       </div>
-
-      <!-- COLUNA 4: CONTATO -->
       <div class="footer-col">
         <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
-        </div>
+        <ul><li><a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li></ul>
       </div>
+  </div>
+</footer>
 
-    </div>
-
-
-<script src="../js/script.js"></script>
-
-
-<div class="btn-flutuante-mobile" style="display:none;">
-  <a href="SEU_LINK_DA_HOTMART" class="btn-checkout-final">🛒 Comprar e-book completo</a>
-</div>
 <script>
-// só mostra o flutuante no celular
-if(window.innerWidth <= 768){
-  document.querySelector('.btn-flutuante-mobile').style.display = 'flex';
-}
-</script>
-<script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
+function abrirCheckout(){ document.getElementById('modalCheckout').classList.add('aberto'); document.body.style.overflow='hidden' }
+function fecharCheckout(){ document.getElementById('modalCheckout').classList.remove('aberto'); document.body.style.overflow='' }
+window.togglePrismaMenu = function(event){
+    if(event){event.preventDefault();event.stopPropagation()}
     const menuLinks = document.querySelector('.prisma-menu-links');
     const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
+    menuLinks.classList.toggle('ativo');
+    botao.classList.toggle('ativo');
+    const isOpen = menuLinks.classList.contains('ativo');
+    botao.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 }
+document.getElementById('modalCheckout').addEventListener('click', function(e){ if(e.target===this) fecharCheckout() });
 </script>
 
 </body>

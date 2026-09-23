@@ -3,262 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apoie - Prisma Histórico</title>
-<link rel="stylesheet" href="../css/style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Doe via PIX - Apoie o Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-  /*doacao*/
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:6px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,62px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:18px;transform:translateY(120%);transition:0.6s}
+.prisma-nav.menu-aberto .prisma-menu-links li a{transform:translateY(0)}
+.prisma-menu-links li a:hover{color:var(--ouro);padding-left:20px}
 
-.container{
-  margin-top: 60px !important;
-  margin-bottom: 60px !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+.hero-doacao{padding:150px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
+.tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}
+.hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:16px}
+.hero-doacao h1 span{color:var(--ouro);font-style:italic}
+.hero-doacao p{opacity:0.6;line-height:1.8;max-width:640px;margin:auto;font-size:15.5px}
 
+.box-doacao{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;max-width:960px;margin:30px auto 0 auto;padding:0 5%}
+.qr-card{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:30px;text-align:center}
+.qr-img{width:260px;height:260px;background:#fff;border-radius:12px;margin:0 auto 18px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px}
+.qr-card b{font-family:'Cormorant Garamond';font-size:24px;display:block;margin-bottom:6px}
+.qr-card span{opacity:0.5;font-size:12px}
+.pix-key-box{margin-top:22px;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.3);border-radius:10px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pix-key-box code{font-size:13px;color:var(--ouro);word-break:break-all}
+.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:10px 16px;border-radius:6px;font-weight:800;font-size:11px;letter-spacing:0.06em;cursor:pointer}
 
-.doacao-box{
-  max-width: 550px;
-  width: 100%;
-  background: #111;
-  color: #fff;
-  padding: 30px 25px;
-  border-radius: 16px;
-  text-align: center;
-  border: 1px solid #333;
-}
+.info-card{background:var(--preto2);border:1px solid var(--borda);border-left:4px solid var(--ouro);border-radius:14px;padding:32px}
+.info-card h2{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px}
+.info-card p{opacity:0.7;line-height:1.8;font-size:14.5px;margin-bottom:14px}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.valores button{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--creme);padding:14px;border-radius:10px;font-weight:800;cursor:pointer;transition:0.3s}
+.valores button:hover{border-color:var(--ouro);background:rgba(238,188,108,0.1);color:var(--ouro);transform:translateY(-2px)}
+.impacto{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.impacto div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;font-size:13px}
+.impacto div i{width:32px;height:32px;background:rgba(238,188,108,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro)}
 
-.doacao-box h2{
-  margin: 10px 0;
-}
-
-.doacao-box p{
-  color: #bbb;
-  line-height: 1.5;
-}
-
-.valores{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 25px 0;
-}
-
-.valor-btn{
-  padding: 14px;
-  border: 1px solid #c9a86a;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.2s;
-  background: #1a1a1a;
-}
-
-.valor-btn:hover{
-  background: #c9a86a;
-  color: #000;
-}
-
-.pix-box {
-  background: var(--carvao);       /* Substitui o branco pelo seu tom de carvão */
-  color: var(--branco);            /* Substitui o preto pelo seu tom de branco */
-  padding: 20px;
-  border-radius: 12px;
-  margin: 20px 0;
-  border: 1px solid var(--carvao-escuro); /* Opcional: uma borda sutil para dar profundidade */
-}
-
-
-.chave-pix {
-  background: var(--carvao-escuro); /* Remove o cinza claro e aplica o seu fundo escuro */
-  color: var(--branco);             /* Força o e-mail a ficar com o texto branco e forte */
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  word-break: break-all;
-  margin: 15px 0;
-  border: 1px dashed var(--off-white); /* Deixa a borda tracejada sutil com o seu off-white */
-  text-align: center;               /* Centraliza o e-mail para ficar mais elegante */
-}
-
-.btn-copiar {
-  width: 100%;
-  padding: 12px;
-   background: #FFC107; /* Amarelo vivo */
-  color: #121212;      /* Texto escuro para leitura */
-
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s ease; /* Transição suave para o efeito de passar o mouse */
-}
-
-/* Efeito ao passar o mouse para dar feedback ao usuário */
-.btn-copiar:hover {
-  background: var(--off-white);   /* Fica levemente acinzentado/off-white */
-}
-
-.btn-copiar:active{
-  transform: scale(0.98);
-}
-
-/* celular */
-@media (max-width: 600px){
-  .doacao-box{
-    padding: 20px 15px;
-  }
-}
+@media(max-width:900px){.box-doacao{grid-template-columns:1fr}.qr-img{width:220px;height:220px}}
 </style>
-
 </head>
 <body>
 
-  <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+    </ul>
 </nav>
 
+<header class="hero-doacao">
+    <span class="tag">💛 VOCÊ MANTÉM ESSE PROJETO VIVO</span>
+    <h1>Seu apoio é o <span>combustível</span> do Prisma</h1>
+    <p>Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.</p>
+</header>
 
-
-
-
-
-
-
-
-
-
-
-<main>
-    <div class="container">
-        <div class="doacao-box">
-            <span class="emoji">💛</span>
-            <h2>Apoie o Prisma Histórico</h2>
-            <p>Manter o blog gratuito, sem anúncios e com conteúdo de qualidade custa 
-              tempo e dinheiro. 
-            Se você gosta do nosso trabalho,
-             considere fazer uma doação. Qualquer valor ajuda muito! 🙏</p>
-
-            <div class="valores">
-                <div class="valor-btn">R$ 5</div>
-                <div class="valor-btn">R$ 10</div>
-                <div class="valor-btn">R$ 20</div>
-                <div class="valor-btn">R$ 50</div>
-            </div>
-
-            <div class="pix-box">
-                <h3>🔵 Chave PIX Direta</h3>
-                <p style="font-size: 15px; color: #555; margin-bottom: 15px; font-family:'Segoe UI',Arial,sans-serif;">Apoie o projeto sem formulários. Copie a chave e-mail abaixo:</p>
-                
-                <div class="chave-pix" id="chavePix">cronologia.prisma.historico@gmail.com</div>
-                
-                <button class="btn-copiar" id="btnCopiar" onclick="copiarPix()">📋 Copiar Chave PIX</button>
-                
-                <p id="msgCopiado" style="margin-top: 12px; color: #28a745; font-weight: bold; display: none; font-size: 14px; font-family:'Segoe UI',Arial,sans-serif;">✅ Chave copiada com sucesso!</p>
-            </div>
-
-            <p style="font-size: 0.9em; opacity: 0.7; color: #555;">Obrigado por acreditar na educação e na história do Brasil ❤️</p>
+<div class="box-doacao">
+    <div class="qr-card">
+        <div class="qr-img">COLOQUE SEU QR CODE AQUI<br>260x260</div>
+        <b>Escaneie o QR Code</b>
+        <span>Abra o app do seu banco e pague via PIX</span>
+        <div class="pix-key-box">
+            <code id="pixKey">cronologia.prisma.historico@gmail.com</code>
+            <button class="btn-copiar" onclick="copiarPix()">COPIAR</button>
         </div>
+        <p style="margin-top:12px;font-size:11px;opacity:0.4">Chave PIX - E-mail • Titular: Prisma Histórico</p>
     </div>
-</main>
 
+    <div class="info-card">
+        <h2>Por que doar?</h2>
+        <p>Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.</p>
+        <p>Quando você doa, você não paga hospedagem. Você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
 
-<!--footer-->
-<footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-          
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
-      </div>
-
-      <!-- COLUNA 3: LEGAL -->
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-          
-        </ul>
-      </div>
-
-      <!-- COLUNA 4: CONTATO -->
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
+        <div class="valores">
+            <button onclick="copiarValor(5)">R$ 5</button>
+            <button onclick="copiarValor(15)">R$ 15</button>
+            <button onclick="copiarValor(30)">R$ 30</button>
+            <button onclick="copiarValor(50)">R$ 50</button>
+            <button onclick="copiarValor(100)">R$ 100</button>
+            <button onclick="copiarValor(0)">Outro valor</button>
         </div>
-      </div>
 
+        <div class="impacto">
+            <div><i>🚀</i><span><b>Site sem anúncios:</b> rápido e limpo pra você estudar</span></div>
+            <div><i>📚</i><span><b>E-book sempre atualizado:</b> novas questões e revisões</span></div>
+            <div><i>⚡</i><span><b>Conteúdo novo:</b> mais artigos, curiosidades e simulados</span></div>
+        </div>
+
+        <p style="margin-top:20px;background:rgba(238,188,108,0.08);border:1px dashed rgba(238,188,108,0.25);padding:12px;border-radius:8px;text-align:center;color:var(--ouro);font-size:12px;font-weight:700">Qualquer valor já ajuda MUITO — de verdade 💛</p>
     </div>
+</div>
 
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      <p>© 2026 Prisma Histórico | Todos os direitos reservados.</p>
-      
-    </div>
+<footer style="text-align:center;padding:60px 5% 30px 5%;opacity:0.3;font-size:11px">© 2026 Prisma Histórico • Feito com propósito, não com decoreba</footer>
 
-  </div>
-</footer>
-
-<script src="../js/script.js"></script>
 <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
+const nav=document.getElementById('prismaNav');
+const btn=nav.querySelector('.prisma-menu-hamburguer');
+btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+function copiarPix(){
+  const key=document.getElementById('pixKey').innerText;
+  navigator.clipboard.writeText(key);
+  alert('Chave PIX copiada: '+key+' 💛');
+}
+function copiarValor(v){
+  if(v==0){alert('Digite o valor que quiser no seu banco usando a chave PIX copiada 💛'); copiarPix(); return;}
+  alert('Vlw demais! Doe R$ '+v+' usando a chave PIX que vou copiar agora 🙏'); copiarPix();
 }
 </script>
-
-
-
 </body>
 </html>

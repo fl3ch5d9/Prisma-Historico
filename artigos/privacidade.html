@@ -3,150 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidade - Prisma Histórico</title>
-<meta name="description" content="Conheça a Política de Privacidade do Prisma Histórico. Saiba como protegemos seus dados conforme a LGPD.">
-<link rel="stylesheet" href="../css/style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
+<title>Política de Privacidade | Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
+<style>
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;line-height:1.8}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:6px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,62px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:18px;transform:translateY(120%);transition:0.6s}
+.prisma-nav.menu-aberto .prisma-menu-links li a{transform:translateY(0)}
+.prisma-menu-links li a:hover{color:var(--ouro);padding-left:20px}
+.hero{padding:150px 5% 40px 5%;text-align:center;max-width:800px;margin:auto}
+.hero .tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:16px}
+.hero h1{font-family:'Cormorant Garamond';font-size:clamp(34px,5vw,52px);line-height:0.95}
+.hero p{opacity:0.5;margin-top:14px;font-size:13px}
+.container{max-width:820px;margin:0 auto;padding:20px 5% 80px 5%}
+.card{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;padding:32px;margin-bottom:18px}
+.card h2{font-family:'Cormorant Garamond';font-size:26px;color:var(--ouro);margin-bottom:10px}
+.card p, .card li{opacity:0.75;font-size:14.5px;margin-bottom:10px}
+.card ul{padding-left:18px}
+.card a{color:var(--ouro);text-decoration:underline}
+.box{background:rgba(238,188,108,0.07);border-left:3px solid var(--ouro);padding:16px;border-radius:8px;margin-top:16px}
+</style>
 </head>
 <body>
-
-  <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
-
-  
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="afiliados.html">Afiliados</a></li>
+        <li><a href="doacao.html">Doação</a></li>
+        <li><a href="ebook.html">E-book</a></li>
+    </ul>
 </nav>
-
-<!--container-->
-<section class="secao-texto-legal">
-    <div class="container">
-        <h1>Política de Privacidade</h1>
-        <p class="data-atualizacao"><strong>Última atualização:</strong> 04 de Agosto de 2026</p>
-        
-        <p>O <strong>Prisma Histórico</strong> se compromete com a privacidade e proteção dos dados dos usuários do nosso site, em conformidade com a Lei Geral de Proteção de Dados - LGPD, Lei 13.709/2018.</p>
-
-        <h2>1. Quais dados coletamos?</h2>
-        <p>Coletamos apenas dados necessários para o funcionamento e melhoria do site:</p>
-        <ul>
-            <li><strong>Dados de Navegação:</strong> IP, navegador, páginas acessadas, tempo de visita. Coletados via ferramentas de análise de forma anônima.</li>
-            <li><strong>Dados fornecidos por você:</strong> Nome e e-mail apenas quando você entra em contato conosco pelo e-mail.</li>
-            <li><strong>Doações via PIX:</strong> Não armazenamos nenhum dado bancário. O PIX é processado diretamente pelo seu banco.</li>
-        </ul>
-
-        <h2>2. Para que usamos seus dados?</h2>
-        <p>Utilizamos seus dados para melhorar sua experiência, gerar estatísticas de acesso, responder dúvidas e manter a segurança do site.</p>
-
-        <h2>3. Uso de Cookies e Google AdSense</h2>
-        <p>Utilizamos cookies para lembrar suas preferências e melhorar a navegação. Este site utiliza o <strong>Google AdSense</strong> para exibição de anúncios.</p>
-        <p>O Google, como fornecedor terceirizado, utiliza cookies (como o cookie DoubleClick DART) para exibir anúncios com base nas visitas anteriores do usuário a este e a outros sites na internet. Você pode desativar a publicidade personalizada acessando as <a href="https://adssettings.google.com" target="_blank">Configurações de anúncios do Google</a>.</p>
-        <p>Fornecedores terceirizados, incluindo o Google, usam cookies para veicular anúncios com base em visitas anteriores. Você pode desativar os cookies nas configurações do seu navegador a qualquer momento, porém isso pode afetar a navegação.</p>
-
-        <h2>4. Compartilhamento de Dados</h2>
-        <p><strong>Não vendemos, alugamos ou trocamos seus dados.</strong> Podemos usar ferramentas terceirizadas como Google Analytics e Google AdSense, que podem coletar dados de forma anônima para personalização de anúncios, sempre seguindo padrões de segurança. Para mais informações, consulte <a href="https://policies.google.com/technologies/ads" target="_blank">como o Google usa os dados</a>.</p>
-
-        <h2>5. Seus Direitos pela LGPD</h2>
-        <p>Você tem direito a: acesso, correção, exclusão, anonimização e portabilidade dos seus dados. Para exercer qualquer um desses direitos, entre em contato pelo e-mail abaixo.</p>
-
-        <h2>6. Contato</h2>
-        <p><strong>E-mail:</strong> <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></p>
-    </div>
-</section>
-
-<!--footer-->
-<footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-         
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
-      </div>
-
-      <!-- COLUNA 3: LEGAL -->
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-          
-        </ul>
-      </div>
-
-      <!-- COLUNA 4: CONTATO -->
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      <p>© 2026 Prisma Histórico | Todos os direitos reservados.</p>
-      
-    </div>
-
-  </div>
-</footer>
-
-
-<script src="../js/script.js"></script>
+<header class="hero">
+    <span class="tag">🔒 LGPD • DADOS SEGUROS</span>
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: 04 de Agosto de 2026</p>
+</header>
+<div class="container">
+<div class="card">
+<h2>1. Quais dados coletamos?</h2>
+<p>Coletamos apenas o necessário:</p>
+<ul>
+<li><b>Dados de Navegação:</b> IP, navegador, páginas acessadas, tempo de visita. Via Google Analytics, de forma anônima.</li>
+<li><b>Dados que você fornece:</b> Nome e e-mail quando entra em contato ou compra o e-book.</li>
+<li><b>Doações PIX:</b> Não armazenamos dados bancários. Processado direto pelo seu banco.</li>
+</ul>
+</div>
+<div class="card">
+<h2>2. Uso de Cookies e Google AdSense</h2>
+<p>Usamos cookies para melhorar sua experiência e lembrar preferências.</p>
+<p>Este site usa <b>Google AdSense</b>. O Google, como fornecedor terceirizado, usa cookies (como DoubleClick DART) para exibir anúncios baseados em visitas anteriores a este e outros sites. Você pode desativar em <a href="https://adssettings.google.com" target="_blank">Configurações de anúncios do Google</a>.</p>
+<p>Você pode desativar cookies no navegador a qualquer momento. Saiba mais em <a href="https://policies.google.com/technologies/ads" target="_blank">como o Google usa dados</a>.</p>
+</div>
+<div class="card">
+<h2>3. Para que usamos?</h2>
+<ul>
+<li>Melhorar conteúdo e navegação</li>
+<li>Responder dúvidas e entregar o e-book</li>
+<li>Gerar estatísticas anônimas</li>
+<li>Manter segurança contra fraudes</li>
+</ul>
+</div>
+<div class="card">
+<h2>4. Compartilhamento</h2>
+<p><b>Não vendemos, alugamos ou trocamos seus dados.</b> Compartilhamos apenas com Google Analytics/AdSense e Hotmart/Kiwify para pagamento seguro.</p>
+<div class="box"><p>Seu pagamento é 100% seguro na Hotmart, não temos acesso ao seu cartão.</p></div>
+</div>
+<div class="card">
+<h2>5. Seus Direitos - LGPD</h2>
+<p>Você tem direito a acesso, correção, exclusão, anonimização e portabilidade. É só enviar e-mail para <b>cronologia.prisma.historico@gmail.com</b> que respondemos em até 48h.</p>
+</div>
+<div class="card">
+<h2>6. Contato</h2>
+<p>Email: cronologia.prisma.historico@gmail.com<br>Projeto: Prisma Histórico © 2026</p>
+</div>
+</div>
 <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
+const nav=document.getElementById('prismaNav');const btn=nav.querySelector('.prisma-menu-hamburguer');
+btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
 </script>
-
-
-
 </body>
 </html>

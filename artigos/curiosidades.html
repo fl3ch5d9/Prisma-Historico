@@ -4,440 +4,160 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curiosidades - Prisma Histórico</title>
-<link rel="stylesheet" href="../css/style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
+<style>
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); --vermelho:#ff4d4d; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:6px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,62px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:18px;transform:translateY(120%);transition:0.6s}
+.prisma-nav.menu-aberto .prisma-menu-links li a{transform:translateY(0)}
+.prisma-menu-links li a:hover{color:var(--ouro);padding-left:20px}
 
-
+/* CURIOSIDADES LOKA */
+main{padding-top:110px}
+.container{max-width:1200px;margin:auto;padding:0 5%}
+.subtitulo-secao{font-family:'Cormorant Garamond';font-size:52px;line-height:1;margin-top:40px}
+.subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:13px;font-weight:800;margin:8px 0 40px 0;opacity:0.9}
+.titulo-categoria{font-family:'Cormorant Garamond';font-size:28px;margin:70px 0 22px 0;display:flex;align-items:center;gap:14px}
+.barra-laranja{width:4px;height:28px;background:var(--ouro);display:inline-block;border-radius:2px}
+.barra-vermelha{width:4px;height:28px;background:var(--vermelho);display:inline-block;border-radius:2px;box-shadow:0 0 12px var(--vermelho)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.card{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:0.35s;position:relative}
+.card:hover{transform:translateY(-6px);border-color:rgba(238,188,108,0.4)}
+.card-img{width:100%;height:170px;object-fit:cover;filter:grayscale(0.2) sepia(0.2) contrast(1.1)}
+.card-content{padding:20px}
+.card-content h3{font-family:'Cormorant Garamond';font-size:20px;margin-bottom:8px;color:var(--creme)}
+.card-content p{opacity:0.68;font-size:14.5px;line-height:1.6;font-weight:300}
+.card-ditado{background:linear-gradient(180deg,#1E1E1E,#181818);border-left:3px solid var(--ouro)}
+.card-tortura{background:#181111;border:1px solid rgba(255,77,77,0.18);border-left:3px solid var(--vermelho)}
+.texto-intro{opacity:0.6;font-style:italic;line-height:1.7;margin-bottom:20px;max-width:800px;border-left:2px solid var(--borda);padding-left:16px}
+.cta-ebook{background:linear-gradient(135deg,#1E1E1E, #121212);border:1px solid var(--borda);border-radius:16px;padding:42px;text-align:center}
+.cta-ebook h3{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:10px}
+.cta-ebook p{opacity:0.6;margin-bottom:20px}
+.btn-cta{background:var(--ouro);color:#121212;padding:16px 28px;border-radius:6px;text-decoration:none;font-weight:800;letter-spacing:0.08em;display:inline-block;transition:0.3s}
+.btn-cta:hover{background:#fff;transform:translateY(-2px)}
+.footer{border-top:1px solid var(--borda);padding:60px 5% 30px 5%;margin-top:80px;opacity:0.7}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px}
+.footer-logo{font-family:'Cormorant Garamond';font-size:24px}
+.footer-col h4{color:var(--ouro);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{color:var(--creme);text-decoration:none;font-size:13px;opacity:0.6}
+.footer-col a:hover{opacity:1;color:var(--ouro)}
+.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;font-size:12px;opacity:0.4}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.subtitulo-secao{font-size:36px}}
+</style>
 </head>
 <body>
   
-  <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
-</ul>
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+    </ul>
 </nav>
-
-
 
 <main>
   <section class="section curiosidades">
     <div class="container">
-
       <h2 class="subtitulo-secao">Curiosidades da Colonização</h2>
-      <p class="subtitulo-secao-menor">Da Colônia á Primeira República</p>
+      <p class="subtitulo-secao-menor">Da Colônia à Primeira República — o que os livros não te contam</p>
 
-      <!-- MEDICINA E DOENÇAS BIZARRAS -->
       <h3 class="titulo-categoria"><span class="barra-laranja"></span> Medicina e Doenças Bizarras</h3>
       <div class="grid-3">
-       
-        <article class="card">
-  <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-  <div class="card-content">
-    <h3>Fezes de cavalo na roupa</h3>
-    <p>Sem sabão? Sem problema. Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca. Era assim que a elite andava limpa.</p>
-  </div>
-</article>
-
-        </article>
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Tratamentos com mercúrio</h3>
-            <p>Pegou sífilis? O médico passava mercúrio na sua pele. O remédio era tão venenoso que matava mais que a doença. Isso era "ciência" no Brasil Colônia.</p>
-          </div>
-        </article>
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Sangrias para tudo</h3>
-            <p>Com febre? Te cortavam. Com dor de cabeça? Te cortavam. A solução pra tudo era abrir o braço e tirar o "sangue ruim" com sanguessuga.</p>
-          </div>
-        </article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Fezes de cavalo na roupa</h3><p>Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Tratamentos com mercúrio</h3><p>Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Sangrias para tudo</h3><p>Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
       </div>
       <div class="grid-3">
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Catar piolhos em público</h3>
-            <p>Era normal ver família inteira sentada na calçada, de tarde, se catando. Higiene era luxo e piolho era companhia.</p>
-          </div>
-        </article>
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Médicos improvisados</h3>
-            <p>Esquece CRM. Quem curava era barbeiro-cirurgião, benzedeira e curandeiro. Se sobrevivesse, era lucro.</p>
-          </div>
-        </article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Catar piolhos em público</h3><p>Era normal ver família inteira na calçada se catando. Higiene era luxo.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Médicos improvisados</h3><p>Quem curava era barbeiro-cirurgião e benzedeira. Se sobrevivesse, era lucro.</p></div></article>
+        <article class="card"><div class="card-content"><h3>Comer com as mãos</h3><p>Garfo era coisa de rei. Rico e pobre comiam com a mão mesmo.</p></div></article>
       </div>
 
-
-
-      <!-- COTIDIANO E ALIMENTAÇÃO -->
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Cotidiano e Alimentação</h3>
-      <div class="grid-3">
-        <article class="card">
-         <div class="card-content">
-            <h3>Comer com as mãos</h3>
-            <p>Garfo era coisa de rei. Rico, pobre e escravo comiam feijão e carne com a mão mesmo. Talher era pra ostentar.</p>
-          </div>
-          
-        </article>
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Cataratas de cuspe</h3>
-            <p>Casa de gente rica tinha "escarradeira" de porcelana na sala. Visita chegava e já cuspia ali no meio da conversa.</p>
-          </div>
-        </article>
-        <article class="card">
-          
-          <div class="card-content">
-            <h3>Casas sem ar fresco</h3>
-            <p>Mulher tinha que ficar trancada atrás do muxarabi. Resultado: casa escura, abafada e com cheiro de mofo e suor.</p>
-          </div>
-        </article>
-      </div>
-      <div class="grid-3">
-         
-        <article class="card">
-          <div class="card-content">
-            <h3>Infestações de bichos-de-pé</h3>
-            <p>Andar descalço era obrigatório. Resultado: todo mundo com o pé cheio de bicho-de-pé inflamado e infeccionado.</p>
-          </div>
-        </article>
-      </div>
-
-      <!-- HIGIENE E SANEAMENTO -->
       <h3 class="titulo-categoria"><span class="barra-laranja"></span> Higiene e Saneamento Absurdos</h3>
       <div class="grid-3">
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>O grito de "Água vai!"</h3>
-            <p>Precisava mijar? Jogava o penico pela janela. E rezava pra não acertar ninguém na rua. Era o sistema de esgoto oficial.</p>
-          </div>
-        </article>
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Os "Tigres"</h3>
-            <p>Escravizados carregavam tonéis de fezes nas costas pra jogar no mar. O líquido vazava e manchava o corpo e as roupas. Daí o apelido.</p>
-          </div>
-        </article>
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Casas sem banheiros</h3>
-            <p>Nem palácio tinha banheiro. Era penico. E quem esvaziava era o escravizado.</p>
-          </div>
-        </article>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Iluminação de óleo de baleia</h3>
-            <p>As ruas eram iluminadas com lampiões que queimavam gordura de baleia. A cidade inteira cheirava a peixe morto à noite.</p>
-          </div>
-        </article>
+        <article class="card"><div class="card-content"><h3>O grito de "Água vai!"</h3><p>Jogava o penico pela janela e rezava pra não acertar ninguém. Era o esgoto oficial.</p></div></article>
+        <article class="card"><div class="card-content"><h3>Os "Tigres"</h3><p>Escravizados carregavam tonéis de fezes nas costas. O líquido vazava e manchava tudo.</p></div></article>
+        <article class="card"><div class="card-content"><h3>Casas sem banheiros</h3><p>Nem palácio tinha banheiro. Era penico e quem esvaziava era o escravizado.</p></div></article>
       </div>
 
-      <!-- RELIGIÃO, LEIS E SOCIEDADE -->
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Religião, Crime e Sociedade</h3>
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Ditados que Nasceram na Colônia</h3>
       <div class="grid-3">
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Santo do Pau Oco</h3>
-            <p>Quer fugir do imposto do ouro? Esconde dentro de uma estátua de santo. Por isso até hoje chamamos hipócrita de "santo do pau oco".</p>
-          </div>
-        </article>
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Enterros dentro das igrejas</h3>
-            <p>Morto ia pra debaixo do piso da igreja. Na missa o cheiro era tão forte que queimavam erva pra disfarçar.</p>
-          </div>
-        </article>
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Torturas confessionais</h3>
-            <p>Pra arrancar confissão a Inquisição cortava a sola do pé e colocava perto do fogo. Justiça da época.</p>
-          </div>
-        </article>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-           
-          <div class="card-content">
-            <h3>Casamentos arranjados com crianças</h3>
-            <p>Menina de 12 anos casava com homem de 40. Era lei, era negócio e era "normal".</p>
-          </div>
-        </article>
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Como funcionava a Inquisição</h3>
-            <p>Tinha espião em tudo. Se suspeitassem que você era judeu secreto ou "pecador", te mandavam acorrentado pra Lisboa pra ser julgado.</p>
-          </div>
-        </article>
-        <article class="card">
-           <img src="../img/colonia-imp-pr.webp" alt="Descrição" class="card-img">
-          <div class="card-content">
-            <h3>Locais exclusivos para brancos</h3>
-            <p>Negro e indígena nem sonhava em entrar. A segregação era lei e estava em cada porta da cidade.</p>
-          </div>
-        </article>
+        <article class="card card-ditado"><div class="card-content"><h3>"Santo do pau oco"</h3><p><strong>Origem:</strong> Santos ocos pra esconder ouro do quinto.<br><strong>Hoje:</strong> Pessoa falsa.</p></div></article>
+        <article class="card card-ditado"><div class="card-content"><h3>"Lavar a égua"</h3><p><strong>Origem:</strong> Ouro achado ao lavar éguas no rio.<br><strong>Hoje:</strong> Se dar bem.</p></div></article>
+        <article class="card card-ditado"><div class="card-content"><h3>"Sem eira nem beira"</h3><p><strong>Origem:</strong> Casa de pobre sem telhado direito.<br><strong>Hoje:</strong> Na miséria.</p></div></article>
       </div>
 
-      <!-- DITADOS POPULARES -->
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Ditados Populares que Nasceram no Brasil Colônia</h3>
-      <div class="grid-3">
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-            <h3>"Santo do pau oco"</h3>
-            <p><strong>Origem:</strong> Santos ocos pra esconder ouro do "quinto".</p>
-            <p><strong>Hoje:</strong> Pessoa falsa e hipócrita.</p>
-          </div>
-        </article>
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-            <h3>"Lavar a égua"</h3>
-            <p><strong>Origem:</strong> Escravizados soltavam ouro no rio ao lavar éguas.</p>
-            <p><strong>Hoje:</strong> Se dar bem, levar vantagem.</p>
-          </div>
-        </article>
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-            <h3>"Sem eira nem beira"</h3>
-            <p><strong>Origem:</strong> Casas de pobre que nem telhado direito tinham.</p>
-            <p><strong>Hoje:</strong> Pessoa sem nada, na miséria.</p>
-          </div>
-        </article>
-      </div>
-
-      <div class="grid-3">
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-
-            <h3>"Quinto dos infernos"</h3>
-            <p><strong>Origem:</strong> Imposto de 20% sobre o ouro. Todo mundo odiava.</p>
-            <p><strong>Hoje:</strong> Lugar horrível e distante.</p>
-          </div>
-        </article>
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-            <h3>"Discutir a relação"</h3>
-            <p><strong>Origem:</strong> "Relação" era o nome do tribunal da colônia.</p>
-            <p><strong>Hoje:</strong> Brigar de casal.</p>
-          </div>
-        </article>
-        <article class="card card-ditado">
-           
-          <div class="card-content">
-            <h3>"Gato por lebre"</h3>
-            <p><strong>Origem:</strong> Taberna vendia carne de gato dizendo que era lebre.</p>
-            <p><strong>Hoje:</strong> Passar golpe, enganar.</p>
-          </div>
-        </article>
-      </div>
-
-      <!-- CTA -->
-      <div class="cta-ebook" style="margin-top: 60px; text-align: center;">
-        <h3>Todas essas curiosidades estão no e-book Prisma Histórico</h3>
-        <p>O e-book traz curiosidades exclusivas e uma análise política completa para garantir o seu sucesso na prova."</p>
+      <div class="cta-ebook" style="margin-top: 60px;">
+        <h3>Todas essas curiosidades estão no e-book Prisma</h3>
+        <p>Análise política completa pra garantir sua aprovação.</p>
         <a href="ebook.html" class="btn-cta">Quero o E-book Completo</a>
       </div>
-
     </div>
   </section>
 </main>
 
-<!-- SECTION ESPECIAL: MÉTODOS DA INQUISIÇÃO -->
-<section class="section section-inquisicao">
+<section class="section section-inquisicao" style="padding:80px 0;background:#0B0B0B;border-top:1px solid rgba(255,77,77,0.15)">
   <div class="container">
-
-   <div class="secao-curiosidades">
     <h2 class="subtitulo-secao">Os Métodos da Inquisição</h2>
-    <h3 class="subtitulo-secao-menor">Como o Santo Ofício extraía confissões no Brasil Colônia</h3>
-    <p class="texto-intro">"Na engrenagem do Império Português, o desterro colonial não estava livre da vigilância da fé. O Tribunal da Inquisição não possuía um edifício fixo na colônia, mas a sua autoridade fazia-se presente através do temido sistema de Visitações..."</p>
-</div>
+    <p class="texto-intro">"Na engrenagem do Império Português, o desterro colonial não estava livre da vigilância da fé. O Tribunal não tinha prédio na colônia, mas sua autoridade vinha nas Visitações..."</p>
 
-    <!-- TORTURA FÍSICA -->
-    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Os Métodos de Tortura Física</h3>
+    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Tortura Física</h3>
     <div class="grid-3">
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>O Potro / Cavalete</h3>
-          <p>O preso era amarrado deitado. Cordas nos braços e pernas eram ligadas a um eixo. Ao girar a manivela, as cordas esticavam os membros, deslocando ombros, cotovelos e joelhos com dores insuportáveis.</p>
-        </div>
-      </article>
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>A Polé / Strappado</h3>
-          <p>Mãos amarradas nas costas. O prisioneiro era içado por uma roldana e solto em queda brusca. O impacto deslocava os ombros. Se não confessasse, amarravam pesos de ferro nos pés para a próxima queda.</p>
-        </div>
-      </article>
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>Os Trinchantes / Arqueamento</h3>
-          <p>Pés e mãos amarrados juntos atrás das costas, forçando o corpo a se dobrar como um arco. Mantido por horas, causava cãibras violentas, sufocamento e dores intensas na coluna.</p>
-        </div>
-      </article>
+      <article class="card card-tortura"><div class="card-content"><h3>O Potro / Cavalete</h3><p>Cordas nos braços e pernas ligadas a um eixo. Girava e deslocava tudo.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3>A Polé</h3><p>Mãos nas costas, içado por roldana e solto em queda brusca. Ombros deslocavam.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3>Tormento do Fogo</h3><p>Pés untados com gordura e brasas perto. A pele fritava até confessar.</p></div></article>
     </div>
+
+    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Tortura Psicológica</h3>
     <div class="grid-3">
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>O Tormento do Fogo</h3>
-          <p>Os pés eram untados com gordura e presos em cepos. O carrasco aproximava brasas ou ferro fervendo da sola. A gordura fritava a pele até o réu confessar e listar vizinhos e parentes no Brasil.</p>
-        </div>
-      </article>
+      <article class="card card-tortura"><div class="card-content"><h3>Isolamento Absoluto</h3><p>Meses em cela escura, úmida, sem saber do crime.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3>Falsa Clemência</h3><p>Prometiam liberdade se entregasse vizinhos. A confissão só confirmava a culpa.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3>Tudo Documentado</h3><p>Escrivães anotavam gritos e ossos estalando. Está na Torre do Tombo, em Lisboa.</p></div></article>
     </div>
 
-    <!-- TORTURA PSICOLÓGICA -->
-    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Tortura Psicológica e Isolamento</h3>
-    <div class="grid-3">
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>Isolamento Absoluto</h3>
-          <p>Meses em celas escuras, úmidas e frias. Sem saber data, hora ou do crime. Sem falar com ninguém além de guardas e inquisidores.</p>
-        </div>
-      </article>
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>A Falsa Clemência</h3>
-          <p>Interrogatórios agressivos alternados com falsa empatia. Prometiam liberdade se confessasse e entregasse outros "hereges". A confissão apenas confirmava a culpa e a perda dos bens.</p>
-        </div>
-      </article>
+    <div class="cta-ebook" style="margin-top:60px;border-color:rgba(255,77,77,0.2)">
+      <h3>Quer saber como a Inquisição perseguiu brasileiros?</h3>
+      <p>No e-book mostro processos reais, com nomes e condenações.</p>
+      <a href="ebook.html" class="btn-cta" style="background:var(--vermelho);color:#fff">Ver Casos Reais no E-book</a>
     </div>
-
-    <!-- BUROCRACIA MACABRA -->
-    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Regras e Burocracia Macabra</h3>
-    <div class="grid-3">
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>Presença de Médicos</h3>
-          <p>Um médico e um cirurgião acompanhavam a tortura. Não para aliviar a dor, mas para monitorar o pulso e garantir que o preso não morresse antes de confessar. Se desmaiasse, voltava dias depois.</p>
-        </div>
-      </article>
-      <article class="card card-tortura">
-        <div class="card-content">
-          <h3>Tudo era Documentado</h3>
-          <p>Escrivães anotavam tudo: gritos, súplicas, orações e o momento que os ossos estalavam. Esses registros dos brasileiros enviados a Portugal sobrevivem hoje no Arquivo da Torre do Tombo, em Lisboa.</p>
-        </div>
-      </article>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-ebook" style="margin-top: 60px; text-align: center;">
-      <h3>Quer saber como a Inquisição perseguiu brasileiros famosos?</h3>
-      <p>No e-book eu mostro os processos reais, nomes e o que aconteceu com cada um.</p>
-      <a href="ebook.html" class="btn-cta">Ver Casos Reais no E-book</a>
-    </div>
-
   </div>
 </section>
-<!--footer-->
+
 <footer class="footer">
   <div class="container">
-
     <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-         
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
-      </div>
-
-      <!-- COLUNA 3: LEGAL -->
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-          
-        </ul>
-      </div>
-
-      <!-- COLUNA 4: CONTATO -->
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
-        </div>
-      </div>
-
+      <div class="footer-col"><h3 class="footer-logo">Prisma Histórico</h3><p>Material de História do Brasil feito por quem entende de prova. Direto, sem enrolação.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><ul><li><a href="ebook.html">Comprar E-book</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div>
+      <div class="footer-col"><h4>Contato</h4><ul><li><a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li></ul></div>
     </div>
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      <p>© 2026  Prisma Histórico | Todos os direitos reservados.</p>
-      
-    </div>
-
+    <div class="footer-bottom"><p>© 2026 Prisma Histórico | Todos os direitos reservados.</p></div>
   </div>
 </footer>
-<script src="../js/script.js"></script>
 
 <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
+const nav=document.getElementById('prismaNav');
+const btn=nav.querySelector('.prisma-menu-hamburguer');
+btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
 </script>
-
-
-
-
 </body>
 </html>
