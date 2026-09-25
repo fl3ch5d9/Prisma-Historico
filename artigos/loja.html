@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<title>Loja</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+
 <style>
 :root{--carvao:#121212;--carvao2:#1E1E1E;--off:#F5F5F0;--sepia:#eebc6c}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -25,23 +29,79 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
 .btn{display:block;text-align:center;background:var(--sepia);color:#121212;padding:12px;border-radius:8px;font-weight:800;font-size:12px;letter-spacing:.1em;text-decoration:none}
 .btn:hover{background:var(--off)}
 .badge-afiliado{max-width:1100px;margin:0 auto;padding:0 20px;font-size:10px;opacity:.4;letter-spacing:.1em}
+
+.prisma-nav{
+  position:fixed;top:0;left:0;width:100%;height:70px;
+  z-index:9999;display:flex;justify-content:space-between;
+  align-items:center;padding:0 5%;
+  background:#121212!important;
+  border-bottom:1px solid rgba(238,188,108,0.15);
+}
+.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.18em;color:#F5F5F0}
+.prisma-logo span{color:#eebc6c;font-weight:700}
+
+/* HAMBURGUER - TAMANHO CERTO DAS OUTRAS PAGINAS */
+.prisma-menu-hamburguer{
+  width:52px!important;height:52px!important;
+  border:1px solid #eebc6c!important;
+  background:#1E1E1E!important;
+  cursor:pointer;display:flex!important;
+  flex-direction:column;justify-content:center;align-items:center;gap:6px;
+  border-radius:50%;z-index:10002;
+}
+.prisma-menu-hamburguer span{
+  width:22px!important;height:2px!important;
+  background:#eebc6c!important;display:block;transition:.3s;
+}
+
+/* ANIMAÇÃO X */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* MENU */
+.prisma-menu-links{
+  position:fixed;top:0;left:0;width:100%;height:100vh;
+  background:#080808;list-style:none;display:flex;
+  flex-direction:column;justify-content:center;align-items:flex-start;
+  padding-left:10%;gap:12px;
+  transform:translateY(-100%);opacity:0;pointer-events:none;
+  transition:.6s cubic-bezier(.77,0,.175,1);z-index:10001;
+}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:22px!important; /* TAMANHO DAS OUTRAS PAGINAS */
+  color:#F5F5F0!important;text-decoration:none!important;
+  display:flex!important;align-items:center!important;gap:12px!important;
+}
+.prisma-menu-links li a .material-icons{font-size:18px!important;color:#eebc6c!important}
+
 </style>
 </head>
 <body>
 
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+       <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+<li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+<li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+<li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+<li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+<li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+<li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
 
-
-
+<li><a href="loja.html"><span class="material-icons">storefront</span> Loja</a></li>
     
-
-<div class="prisma-nav"><div class="prisma-logo"><span>Prisma</span> Histórico</div></div>
+    </ul>
+</nav>
 
 <div class="header">
   <h1>Loja <em>Prisma</em></h1>
   <p>Indicações que usamos para estudar - links afiliados</p>
-</div>
-
-<p class="badge-afiliado">AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
+</div><p class="badge-afiliado">AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
 
 <div class="loja">
 
@@ -80,5 +140,26 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
 
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const nav = document.getElementById('prismaNav');
+  if(!nav) return;
+  const btn = nav.querySelector('.prisma-menu-hamburguer');
+  const links = nav.querySelectorAll('.prisma-menu-links a');
+  
+  btn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    nav.classList.toggle('menu-aberto');
+    document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+  });
+
+  // fecha quando clica no link
+  links.forEach(a=>{
+    a.addEventListener('click',()=>{
+      nav.classList.remove('menu-aberto');
+      document.body.style.overflow = '';
+    });
+  });
+});
+</script>
 </body>
-</html>
