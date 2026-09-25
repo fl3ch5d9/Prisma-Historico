@@ -4,30 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-
-
-
-
-
-
-
-
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap');
 *{margin:0; padding:0; box-sizing:border-box;}
-body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif;}
-.topo{display:flex; justify-content:space-between; align-items:center; padding:18px 40px; border-bottom:1px solid #E5B76940; font-size:0.8rem; letter-spacing:1px;}
-.logo{font-weight:700; color:#E5B769; line-height:0.9;}
-.logo span{font-weight:400; font-size:0.7rem; letter-spacing:3px;}
+body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif; padding-top:70px}
 .hero{background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200'); background-size:cover; background-position:center; text-align:center; padding:120px 20px 60px;}
 .hero h1{font-family:'Playfair Display', serif; font-size:4rem; color:#F5E6C8;}
 .hero p{color:#E5B769; margin:15px 0 30px;}
 .hero span{font-size:0.7rem; opacity:0.7; letter-spacing:2px;}
 .conteudo{max-width:1200px; margin:50px auto; display:flex; gap:50px; padding:0 20px;}
 .texto-principal{flex:2;}
-.ficha{flex:1; border:1px solid #E5B76960; padding:25px; border-radius:12px; height:fit-content; position:sticky; top:20px;}
+.ficha{flex:1; border:1px solid #E5B76960; padding:25px; border-radius:12px; height:fit-content; position:sticky; top:90px;}
 .tag{border:1px solid #E5B769; display:inline-block; padding:6px 14px; border-radius:20px; font-size:0.7rem; color:#E5B769; margin-bottom:20px;}
 .texto-principal h2{font-family:'Playfair Display', serif; font-size:2.2rem; line-height:1.1; margin-bottom:10px;}
 .texto-principal small{opacity:0.6;}
@@ -44,23 +33,26 @@ blockquote cite{font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;}
 .galeria div{flex:1;}
 .galeria img{width:100%; height:200px; object-fit:cover; border-radius:8px; border:1px solid #E5B76940;}
 .galeria span{font-size:0.7rem; opacity:0.6; display:block; margin-top:6px;}
-.leia{margin-top:30px;}
-.leia p{font-size:0.85rem; margin:10px 0; opacity:0.8; line-height:1.3;}
-footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-top:60px; font-size:0.7rem; opacity:0.5; letter-spacing:1px;}
-@media(max-width:900px){.conteudo{flex-direction:column;} .hero h1{font-size:2.5rem;} .topo nav{display:none;} .galeria{flex-direction:column;}}
+footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-top:60px; font-size:0.7rem; opacity:0.5;}
+@media(max-width:900px){.conteudo{flex-direction:column;} .hero h1{font-size:2.5rem;} .galeria{flex-direction:column;}}
 </style>
-
-
-
-
-
 </head>
 <body>
 
-<header class="topo">
-  <div class="logo">PRISMA<br><span>HISTÓRICO</span></div>
-  <nav>EDIÇÃO 12 | HISTÓRIA | CONSERVAÇÃO | ARQUITETURA | SOBRE</nav>
-</header>
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <ul class="prisma-menu-links">
+        <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html" data-num="08"><span class="material-icons">school</span> Simulados</a></li>
+    </ul>
+</nav>
 
 <section class="hero">
   <h1>Patrimônio é Cor Original</h1>
@@ -73,39 +65,26 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
     <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
     <h2>Quando a tinta conta a história: a busca pela cor original de 1780</h2>
     <small>Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
-    <hr>
+    <hr><br>
     <p>Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
-    <p>O projeto de restauro da residência à Ladeira Marília de Dirceu iniciou há um ano com uma pergunta simples, mas desafiadora: qual era a cor original desta casa, escondida sob 240 anos de repinturas?</p>
-    
     <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite>— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
-
     <p>Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
-
-    <h3 class="titulo-galeria">DETALHES DA CAMADA PICTÓRICA</h3>
-    <div class="galeria">
-      <div><img src="https://images.unsplash.com/photo-1517521841582-2b3aab303128?q=80&w=600"><span>Amostra 01 • Ocre Amarelo</span></div>
-      <div><img src="https://images.unsplash.com/photo-1505142468610-359e7bcbe29c?q=80&w=600"><span>Amostra 02 • Escala 5mm</span></div>
-    </div>
   </div>
-
   <aside class="ficha">
     <h4>FICHA TÉCNICA DA COR</h4>
     <label>PIGMENTO:</label><div class="box">Ocre Amarelo</div>
     <label>ANO:</label><div class="box">1780 — Camada original identificada</div>
     <label>RUA:</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
-    <label>MÉTODO:</label><div class="box">Estratigrafia + Microscopia óptica</div>
-    <label>ACABAMENTO:</label><div class="box">Cal mineral fosca, opacidade natural</div>
-    <div class="cor-ref"><p>COR REFERÊNCIA</p><div class="quadrado"></div></div>
-    <div class="leia">
-      <h4>LEIA TAMBÉM</h4>
-      <p>• O Azul de Anil no Brasil Colonial</p>
-      <p>• Técnicas de Reboco no Século XVIII</p>
-      <p>• Conservação de Madeira em Edifícios Históricos</p>
-    </div>
   </aside>
 </main>
 
 <footer>PRISMA HISTÓRICO — REVISTA EDITORIAL DE PATRIMÔNIO CULTURAL<br>Edição 12 • 2024 • ISSN 2675-8890</footer>
 
+<script>
+const nav=document.getElementById('prismaNav');
+const btn=nav.querySelector('.prisma-menu-hamburguer');
+btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.querySelectorAll('.prisma-menu-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('menu-aberto');document.body.style.overflow=''}));
+</script>
 </body>
 </html>
