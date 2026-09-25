@@ -1,74 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz Nível Banca - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
-#quiz-app{ --carvao-escuro:#121212; --carvao:#1E1E1E; --sepia:#eebc6c; --off:#F5F5F0; --borda:#2a2a2a; max-width:800px; margin:0 auto; padding:0 16px 60px; font-family:Inter, sans-serif; }
-#quiz-app *{ box-sizing:border-box; }
-#quiz-app .q-header{ text-align:center; padding:50px 24px; background:var(--carvao); border:1px solid var(--borda); border-radius:20px; margin:24px 0; }
-#quiz-app .q-tag{ background:var(--sepia); color:var(--carvao-escuro); padding:8px 16px; border-radius:100px; font-weight:900; font-size:11px; letter-spacing:1px; }
-#quiz-app .q-header h1{ color:#fff; font-size:34px; margin:18px 0 10px; line-height:1.1; font-weight:900; }
-#quiz-app .q-header p{ color:var(--off); opacity:.7; }
-#quiz-app .q-progress{ width:100%; height:8px; background:var(--carvao); border-radius:100px; overflow:hidden; margin-bottom:28px; border:1px solid var(--borda); }
-#quiz-app .q-fill{ height:100%; width:0%; background:linear-gradient(90deg,var(--sepia),#f5d6a0); transition:.4s; }
-#quiz-app .q-card{ background:var(--carvao); border:1px solid var(--borda); border-radius:16px; padding:26px; margin-bottom:18px; }
-#quiz-app .q-card h3{ color:#fff; font-size:17px; line-height:1.5; margin:0 0 18px; }
-#quiz-app .q-card label{ display:flex; gap:12px; background:var(--carvao-escuro); border:1px solid var(--borda); padding:14px 16px; border-radius:12px; margin-bottom:10px; cursor:pointer; color:var(--off); transition:.2s; }
-#quiz-app .q-card label:hover{ border-color:var(--sepia); transform:translateX(4px); }
-#quiz-app .q-card label.sel{ background:var(--sepia) !important; color:var(--carvao-escuro) !important; border-color:var(--sepia) !important; font-weight:800; }
-#quiz-app .q-btn{ background:var(--sepia); color:var(--carvao-escuro); font-weight:900; font-size:16px; padding:18px 40px; border:none; border-radius:100px; cursor:pointer; transition:.2s; }
-#quiz-app .q-btn:hover{ transform:scale(1.03); filter:brightness(1.1); box-shadow:0 10px 30px rgba(238,188,108,.3); }
-#quiz-app .q-result{ display:none; background:var(--carvao); border:2px solid var(--sepia); border-radius:20px; padding:40px 32px; text-align:center; margin-top:32px; }
-#quiz-app .q-result.show{ display:block; animation:pop .4s ease; }
-@keyframes pop{ from{opacity:0;transform:translateY(12px) scale(.98)} to{opacity:1;transform:translateY(0) scale(1)} }
-#quiz-app .q-nota{ font-size:64px; font-weight:900; color:var(--sepia); margin:16px 0; }
+:root{--carvao-escuro:#121212;--carvao:#1E1E1E;--branco:#FFF;--off-white:#F5F5F0;--sepia:#eebc6c;}
+body{background:var(--carvao-escuro);margin:0;padding:20px;font-family:Georgia,serif;color:var(--off-white);}
+.header{text-align:center;max-width:700px;margin:auto;}
+.header h1{color:var(--sepia);font-style:italic;font-size:42px;}
+.quiz{max-width:700px;margin:20px auto;background:var(--carvao);border:1px solid var(--sepia);border-radius:12px;padding:30px;}
+.pergunta{display:none} .pergunta.ativa{display:block}
+h3{color:var(--sepia)} label{display:block;background:var(--carvao-escuro);border:1px solid #333;padding:14px;margin:10px 0;border-radius:8px;cursor:pointer} label:hover{border-color:var(--sepia)}
+button{background:var(--sepia);color:#121212;border:none;width:100%;padding:16px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:20px}
+#contador{color:var(--sepia);text-align:right;font-weight:bold;margin-bottom:10px}
 </style>
 </head>
 <body>
-<nav class="prisma-nav"><div class="prisma-logo"><span style="color:#eebc6c">Prisma</span> Histórico</div></nav>
+<div class="header"><h1>Prisma Histórico</h1><p>10 questões - 1 por vez</p></div>
+<div class="quiz">
+<div id="contador">QUESTÃO 1 DE 10</div>
 
-<div id="quiz-app">
-  <div class="q-header">
-    <span class="q-tag">TESTE NÍVEL BANCA - 80% REPROVA</span>
-    <h1>VOCÊ PASSARIA NO VESTIBULAR DE HOJE?</h1>
-    <p>Não é decoreba. É entender a engrenagem. Aceita o desafio?</p>
-  </div>
-  <div class="q-progress"><div class="q-fill" id="fill"></div></div>
-  <form id="qForm">
-    <div class="q-card"><h3>1. Crescimento do território no período colonial foi por:</h3><label><input type="radio" name="q1" value="e" hidden> Intervenção estatal direta</label><label><input type="radio" name="q1" value="c" hidden> Iniciativa privada de bandeirantes e missionários</label><label><input type="radio" name="q1" value="e" hidden> Só Igreja</label></div>
-    <div class="q-card"><h3>2. Plantation:</h3><label><input type="radio" name="q2" value="e" hidden> Pequena propriedade</label><label><input type="radio" name="q2" value="c" hidden> Latifúndio + Monocultura + Escravidão</label><label><input type="radio" name="q2" value="e" hidden> Indústria</label></div>
-    <div class="q-card"><h3>3. Cunhadismo:</h3><label><input type="radio" name="q3" value="e" hidden> Lei de proteção</label><label><input type="radio" name="q3" value="c" hidden> Aliança via casamento com filha de cacique</label><label><input type="radio" name="q3" value="e" hidden> Dança</label></div>
-    <div class="q-card"><h3>4. Biopolítica na Colônia:</h3><label><input type="radio" name="q4" value="e" hidden> Festas</label><label><input type="radio" name="q4" value="c" hidden> Aldeamentos, Senzalas e Casas de Fundição</label><label><input type="radio" name="q4" value="e" hidden> Pau-brasil</label></div>
-    <div class="q-card"><h3>5. Corte em 1808:</h3><label><input type="radio" name="q5" value="e" hidden> Calor</label><label><input type="radio" name="q5" value="c" hidden> Fugir de Napoleão</label><label><input type="radio" name="q5" value="e" hidden> Ouro</label></div>
-    <div class="q-card"><h3>6. República Velha:</h3><label><input type="radio" name="q6" value="e" hidden> Voto secreto</label><label><input type="radio" name="q6" value="c" hidden> Política dos Governadores e Coronelismo</label><label><input type="radio" name="q6" value="e" hidden> Indústria total</label></div>
-    <div class="q-card"><h3>7. Feijoada:</h3><label><input type="radio" name="q7" value="e" hidden> Chefs franceses</label><label><input type="radio" name="q7" value="c" hidden> Nasceu nas senzalas com sobras</label><label><input type="radio" name="q7" value="e" hidden> Prato oficial</label></div>
-    <div class="q-card"><h3>8. Mercantilismo:</h3><label><input type="radio" name="q8" value="e" hidden> Industrializar</label><label><input type="radio" name="q8" value="c" hidden> Exportar matéria-prima e importar caro</label><label><input type="radio" name="q8" value="e" hidden> Autossuficiência</label></div>
-    <div class="q-card"><h3>9. Canudos e Contestado:</h3><label><input type="radio" name="q9" value="e" hidden> República amada</label><label><input type="radio" name="q9" value="c" hidden> Estado esmagava quem tava fora da engrenagem</label><label><input type="radio" name="q9" value="e" hidden> Sem religião</label></div>
-    <div class="q-card"><h3>10. Crise de 1929:</h3><label><input type="radio" name="q10" value="e" hidden> Povo nas ruas</label><label><input type="radio" name="q10" value="c" hidden> Café despencou e quebrou a elite</label><label><input type="radio" name="q10" value="e" hidden> Vargas popular</label></div>
-    <div style="text-align:center; margin:32px 0;"><button type="button" onclick="corrigir()" class="q-btn">CORRIGIR MEU QUIZ →</button></div>
-  </form>
-  <div id="res" class="q-result"><h2 style="color:#fff">SEU RESULTADO</h2><div id="nota" class="q-nota"></div><p id="txt"></p><a href="ebook.html" class="q-btn" style="display:inline-block; text-decoration:none; margin-top:20px;">QUERO ZERAR NA PROVA →</a></div>
+<!-- QUESTAO 1 -->
+<div class="pergunta ativa" id="q1"><h3>01 - Engenharia do Império</h3><p>O que garantiu o domínio português?</p>
+<label><input type="radio" name="q1"> Igreja</label><label><input type="radio" name="q1"> Arquitetura Naval</label><label><input type="radio" name="q1"> Exército</label>
+<button onclick="proxima(2)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 2 -->
+<div class="pergunta" id="q2"><h3>02 - Volta do Mar</h3><p>Qual manobra subverteu os ventos?</p>
+<label><input type="radio" name="q2"> Volta do Mar</label><label><input type="radio" name="q2"> Cabotagem</label><label><input type="radio" name="q2"> Rota da Seda</label>
+<button onclick="proxima(3)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 3 -->
+<div class="pergunta" id="q3"><h3>03 - Ciência de Precisão</h3><p>Quais instrumentos davam precisão?</p>
+<label><input type="radio" name="q3"> Bússola</label><label><input type="radio" name="q3"> Balestilha e Astrolábio</label><label><input type="radio" name="q3"> Telescópio</label>
+<button onclick="proxima(4)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 4 -->
+<div class="pergunta" id="q4"><h3>04 - Tordesilhas</h3><p>Ano do Tratado de Tordesilhas?</p>
+<label><input type="radio" name="q4"> 1492</label><label><input type="radio" name="q4"> 1494</label><label><input type="radio" name="q4"> 1500</label>
+<button onclick="proxima(5)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 5 -->
+<div class="pergunta" id="q5"><h3>05 - Capitanias</h3><p>Por que as capitanias falharam?</p>
+<label><input type="radio" name="q5"> Falta de capital</label><label><input type="radio" name="q5"> Frio</label><label><input type="radio" name="q5"> Ordem do Rei</label>
+<button onclick="proxima(6)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 6 -->
+<div class="pergunta" id="q6"><h3>06 - Açúcar</h3><p>O que tornou o açúcar global?</p>
+<label><input type="radio" name="q6"> Escravidão + Engenho</label><label><input type="radio" name="q6"> Solo fértil</label><label><input type="radio" name="q6"> Igreja</label>
+<button onclick="proxima(7)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 7 -->
+<div class="pergunta" id="q7"><h3>07 - Diocleciano</h3><p>Quem dividiu Roma em 286 d.C.?</p>
+<label><input type="radio" name="q7"> Júlio César</label><label><input type="radio" name="q7"> Diocleciano</label><label><input type="radio" name="q7"> Constantino</label>
+<button onclick="proxima(8)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 8 -->
+<div class="pergunta" id="q8"><h3>08 - Cartografia</h3><p>O que era o Padrão Real?</p>
+<label><input type="radio" name="q8"> Mapa-mestre secreto</label><label><input type="radio" name="q8"> Navio</label><label><input type="radio" name="q8"> Moeda</label>
+<button onclick="proxima(9)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 9 -->
+<div class="pergunta" id="q9"><h3>09 - Inquisição</h3><p>Impacto da Inquisição?</p>
+<label><input type="radio" name="q9"> Controle ideológico</label><label><input type="radio" name="q9"> Fim da escravidão</label><label><input type="radio" name="q9"> Universidades</label>
+<button onclick="proxima(10)">CONFIRMAR →</button></div>
+
+<!-- QUESTAO 10 -->
+<div class="pergunta" id="q10"><h3>10 - Prisma Final</h3><p>História é dos vencedores ou dos prismas?</p>
+<label><input type="radio" name="q10"> Vencedores</label><label><input type="radio" name="q10"> Múltiplos Prismas</label><label><input type="radio" name="q10"> Nenhum</label>
+<button onclick="alert('10/10 CONCLUÍDO!')">REVELAR MEU PRISMA</button></div>
+
 </div>
-
 <script>
-document.querySelectorAll('#quiz-app label').forEach(l=>{
-  l.addEventListener('click', ()=>{
-    const name=l.querySelector('input').name;
-    document.querySelectorAll(`input[name="${name}"]`).forEach(i=>i.parentElement.classList.remove('sel'));
-    l.classList.add('sel'); l.querySelector('input').checked=true;
-    document.getElementById('fill').style.width=(document.querySelectorAll('#quiz-app input:checked').length/10*100)+'%';
-  });
-});
-function corrigir(){
-  let ac=0; for(let k=1;k<=10;k++){ const s=document.querySelector(`input[name="q${k}"]:checked`); if(s&&s.value==='c') ac++; }
-  if(document.querySelectorAll('#quiz-app input:checked').length<10){ alert('Responde as 10, mostrão!'); return; }
-  document.getElementById('nota').innerText=`${ac}/10`;
-  document.getElementById('txt').innerText=ac<=3?'Você está na decoreba. A banca te engole.':ac<=7?'Tá no caminho, mas ainda erra o que 80% erra.':'Mostrão! Você pensa como a banca.';
-  const b=document.getElementById('res'); b.classList.add('show'); b.scrollIntoView({behavior:'smooth'});
+function proxima(n){
+document.querySelectorAll('.pergunta').forEach(p=>p.classList.remove('ativa'));
+document.getElementById('q'+n).classList.add('ativa');
+document.getElementById('contador').innerText='QUESTÃO '+n+' DE 10';
+window.scrollTo(0,0);
 }
 </script>
 </body>

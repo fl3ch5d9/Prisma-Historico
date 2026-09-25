@@ -5,35 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prisma Histórico - A Ciência Oculta da Colonização</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;700&family=Material+Icons&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
 <style>
+
+
+
+
+
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;overflow-x:hidden}
 
 /* ===== NAV LOKA UNIFICADA ===== */
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;color:var(--creme);z-index:10001}
-.prisma-logo span{color:var(--ouro);font-weight:700}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%;transition:0.4s}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s cubic-bezier(0.77,0,0.175,1)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0;transform:scaleX(0)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:6px;transform:translateY(-100%);opacity:0;transition:all 0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
-.prisma-menu-links li{overflow:hidden}
-.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,62px);line-height:1.1;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:20px;transform:translateY(120%);transition:transform 0.8s cubic-bezier(0.77,0,0.175,1), color 0.3s, opacity 0.3s;opacity:0.65}
-.prisma-nav.menu-aberto.prisma-menu-links li a{transform:translateY(0)}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(1) a{transition-delay:0.1s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(2) a{transition-delay:0.15s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(3) a{transition-delay:0.2s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(4) a{transition-delay:0.25s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(5) a{transition-delay:0.3s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(6) a{transition-delay:0.35s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(7) a{transition-delay:0.4s}
-.prisma-nav.menu-aberto.prisma-menu-links li:nth-child(8) a{transition-delay:0.45s}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1;padding-left:24px}
-.prisma-menu-links li a::before{content:attr(data-num);font-family:'Inter';font-size:13px;letter-spacing:0.2em;color:var(--ouro)}
+/* NAV FIXA FINAL */
+.prisma-nav{
+  position:fixed;top:0;left:0;width:100%;height:70px;z-index:9999;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 5%;background:#121212;
+  border-bottom:1px solid rgba(238,188,108,0.15);
+}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;color:#F5F5F0}
+.prisma-logo span{color:#eebc6c;font-weight:700}
+.prisma-menu-hamburguer{
+  width:48px;height:48px;border:1px solid rgba(238,188,108,0.15);
+  background:transparent;cursor:pointer;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;gap:5px;border-radius:50%;z-index:10002
+}
+.prisma-menu-hamburguer span{width:18px;height:2px;background:#eebc6c;display:block;transition:.3s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{
+  position:fixed;top:0;left:0;width:100%;height:100vh;background:#080808;
+  list-style:none;display:flex;flex-direction:column;justify-content:center;
+  align-items:flex-start;padding-left:10%;gap:8px;
+  transform:translateY(-100%);opacity:0;pointer-events:none;transition:.5s ease;z-index:10001
+}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{
+  font-family:'Cormorant Garamond';font-size:28px;color:#F5F5F0;
+  text-decoration:none;display:flex;align-items:center;gap:12px;opacity:.8
+}
+.prisma-menu-links li a .material-icons{font-size:20px;opacity:.6}
+.prisma-menu-links li a:hover{color:#eebc6c;opacity:1}
+.prisma-menu-links li a::before{content:attr(data-num);font-family:'Inter';font-size:11px;color:#eebc6c;margin-right:4px}
+/* ===== NAV SIMPLES QUE FUNCIONA ===== */
+
+.prisma-logo{
+  font-family:'Cormorant Garamond';
+  font-size:26px;
+  letter-spacing:0.18em;
+  color:#F5F5F0;
+}
+.prisma-logo span{color:#eebc6c; font-weight:700}
+
+.prisma-menu-hamburguer{
+  width:48px; height:48px;
+  border:1px solid rgba(238,188,108,0.15);
+  background:transparent;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  border-radius:50%;
+  z-index:10002;
+}
+.prisma-menu-hamburguer span{
+  width:18px; height:2px;
+  background:#eebc6c;
+  display:block;
+  transition:0.3s;
+}
+
+/* X QUANDO ABRE */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){
+  transform:translateY(7px) rotate(45deg)
+}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg)
+}
+
+/* MENU TELA CHEIA */
+.prisma-menu-links{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100vh;
+  background:#0A0A0A;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding-left:10%;
+  gap:12px;
+  transform:translateY(-100%);
+  opacity:0;
+  pointer-events:none;
+  transition:0.6s ease;
+  z-index:10001;
+}
+.prisma-nav.menu-aberto .prisma-menu-links{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:all;
+}
+.prisma-menu-links li a{
+  font-family:'Cormorant Garamond';
+  font-size:32px;
+  color:#F5F5F0;
+  text-decoration:none;
+  display:flex;
+  gap:12px;
+  opacity:0.8;
+}
+.prisma-menu-links li a:hover{color:#eebc6c; opacity:1}
+.prisma-menu-links li a::before{
+  content:attr(data-num);
+  font-family:'Inter';
+  font-size:12px;
+  color:#eebc6c;
+  margin-top:8px;
+}
+
+
+
+
 
 /* CONTEUDO */
 .conteudo-principal{padding-top:90px}

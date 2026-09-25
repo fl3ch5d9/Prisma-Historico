@@ -3,149 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>termos</title>
+<title>Termos de Uso - Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  
 
 
+
+
+
+
+
+<style>
+:root{
+--bg:#0e0e0e;
+--card:#161616;
+--line:#222;
+--sepia:#c9a86a;
+--text:#d6d3c9;
+--text-muted:#8a8882;
+--white:#f2f0e9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased}
+nav{max-width:1100px;margin:0 auto;padding:22px 24px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-family:'IBM Plex Serif', serif;font-weight:600;color:var(--white);letter-spacing:-0.02em}
+.logo span{color:var(--sepia)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:var(--text-muted);text-decoration:none;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;transition:0.2s}
+nav a:hover{color:var(--white)}
+.wrap{max-width:720px;margin:0 auto;padding:80px 24px 120px}
+.eyebrow{color:var(--sepia);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:24px}
+h1{font-family:'IBM Plex Serif', serif;color:var(--white);font-size:44px;line-height:1.1;letter-spacing:-0.03em;font-weight:400;margin-bottom:16px}
+.sub{font-size:17px;color:var(--text-muted);line-height:1.6;margin-bottom:48px;max-width:520px}
+.meta{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);letter-spacing:0.05em;margin-bottom:56px}
+article h2{font-family:'IBM Plex Serif', serif;color:var(--white);font-size:20px;font-weight:600;margin:48px 0 14px;letter-spacing:-0.01em}
+article p{font-size:16.5px;line-height:1.85;color:var(--text);margin-bottom:18px}
+.divider{height:1px;background:var(--line);margin:64px 0}
+.contact{font-size:14px;color:var(--text-muted)}
+.contact b{color:var(--text);font-weight:500}
+.contact a{color:var(--sepia);text-decoration:none;border-bottom:1px solid rgba(201,168,106,0.3)}
+
+/* BOTÃO DOURADO */
+#btnTop{
+position:fixed;
+bottom:28px;
+right:28px;
+width:44px;
+height:44px;
+background:var(--sepia);
+color:#000;
+border:none;
+border-radius:50%;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+opacity:0;
+visibility:hidden;
+transform:translateY(20px);
+transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+z-index:1000;
+}
+#btnTop.show{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+#btnTop:hover{
+background:#e8bd7a;
+transform:translateY(-3px);
+box-shadow:0 8px 24px rgba(201,168,106,0.35);
+}
+@media(max-width:600px){h1{font-size:34px}.wrap{padding:48px 20px}#btnTop{bottom:20px;right:20px}}
+</style>
 </head>
 <body>
-
- 
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-       <nav class="prisma-nav">
-    <div class="prisma-logo">
-        <span>Prisma</span> Histórico
-    </div>
-    
-    <!-- É esta lista que o CSS deve mostrar/esconder no celular -->
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+<nav>
+<div class="logo"><span>PRISMA</span> HISTÓRICO</div>
+<ul>
+<li><a href="../index.html">Início</a></li>
+<li><a href="privacidade.html">Privacidade</a></li>
 </ul>
-
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-    </button>
 </nav>
 
-    
+<div class="wrap">
+<div class="eyebrow">Documento Legal</div>
+<h1>Termos de Uso</h1>
+<p class="sub">Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.</p>
 
+<div class="meta">
+<span>PRISMA HISTÓRICO</span>
+<span>ATUALIZADO EM 04.08.2026</span>
+</div>
 
-<section class="secao-texto-legal">
-    <div class="container">
-        <h1>Termos de Uso</h1>
-        <p class="data-atualizacao"><strong>Última atualização:</strong> 04 de Agosto de 2026</p>
-        
-        <p>Ao acessar o site <strong>Prisma Histórico</strong>, você concorda em cumprir estes termos de serviço.</p>
+<article>
+<h2>1. Aceitação</h2>
+<p>Ao acessar o Prisma Histórico, você concorda integralmente com estes termos. Caso discorde de qualquer condição, recomendamos não utilizar o site.</p>
+<h2>2. Objetivo</h2>
+<p>Nosso propósito é oferecer conteúdo educacional sobre história, por meio de artigos, análises, quizzes e indicações bibliográficas criteriosas.</p>
+<h2>3. Uso do Conteúdo</h2>
+<p>O conteúdo é destinado a uso pessoal e educacional. É vedada a reprodução integral, revenda ou distribuição sem autorização expressa.</p>
+<h2>4. Afiliados</h2>
+<p>Utilizamos links de afiliados, como Amazon. Quando você compra por meio deles, podemos receber uma comissão, sem qualquer custo adicional para você.</p>
+<h2>5. E-books</h2>
+<p>Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias conforme o Código de Defesa do Consumidor.</p>
+<h2>6. Responsabilidades</h2>
+<p>Apesar do rigor na pesquisa e curadoria, não garantimos que todo conteúdo esteja isento de erros ou desatualizações.</p>
+<h2>7. Alterações</h2>
+<p>Estes termos podem ser atualizados a qualquer momento para refletir melhorias legais e editoriais. A versão vigente estará sempre nesta página.</p>
+<h2>8. Contato</h2>
+<p>Para dúvidas ou solicitações, entre em contato pelo e-mail oficial do projeto.</p>
+</article>
 
-        <h2>1. Uso do Conteúdo</h2>
-        <p>Todo o conteúdo do Prisma Histórico é de uso educacional. É proibida a reprodução total ou venda do material sem autorização por escrito.</p>
-        <ul>
-            <li><strong>Permitido:</strong> Estudar, imprimir para uso pessoal, citar com os devidos créditos.</li>
-            <li><strong>Proibido:</strong> Vender, distribuir em massa, ou usar em cursinhos sem licença.</li>
-        </ul>
+<div class="divider"></div>
+<div class="contact">
+<b>Contato:</b> <a href="mailto:contato@prismahistorico.com.br">contato@prismahistorico.com.br</a><br>
+<span style="margin-top:8px;display:inline-block">© 2026 Prisma Histórico. Todos os direitos reservados.</span>
+</div>
+</div>
 
-        <h2>2. Sobre o E-book</h2>
-        <p>O e-book é um produto digital de uso pessoal e intransferível. O acesso é imediato após a confirmação de pagamento. Garantia de 7 dias.</p>
+<button id="btnTop" title="Voltar ao topo">↑</button>
 
-        <h2>3. Doações</h2>
-        <p>As doações via PIX são voluntárias e não geram nenhum produto ou serviço em troca. Servem apenas para manter o projeto gratuito.</p>
-
-        <h2>4. Limitação de Responsabilidade</h2>
-        <p>O Prisma Histórico não se responsabiliza por reprovação em concursos. Nosso papel é entregar o melhor conteúdo. O estudo depende de você.</p>
-
-        <h2>5. Contato</h2>
-        <p><strong>E-mail:</strong> <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></p>
-    </div>
-</section>
-<!--footer-->
-<footer class="footer">
-  <div class="container">
-
-    <div class="footer-grid">
-      
-      <!-- COLUNA 1: LOGO E SOBRE -->
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-
-      <!-- COLUNA 2: LINKS RÁPIDOS -->
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-          
-          <li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li>
-        </ul>
-      </div>
-
-      <!-- COLUNA 3: LEGAL -->
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-          
-        </ul>
-      </div>
-
-      <!-- COLUNA 4: CONTATO -->
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul>
-          <li>Email: <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li>
-        
-        </ul>
-        <div class="footer-selo">
-          <p>🔒 Compra 100% Segura</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-      <p>© 2026 Prisma Histórico | Todos os direitos reservados.</p>
-      
-    </div>
-
-  </div>
-</footer>
-
-
-
-<script src="../js/script.js"></script>
 <script>
-window.togglePrismaMenu = function(event) {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log('CLICOU NO MENU');
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    if (menuLinks && botao) {
-        menuLinks.classList.toggle('ativo');
-        botao.classList.toggle('ativo');
-        const isOpen = menuLinks.classList.contains('ativo');
-        botao.setAttribute('aria-expanded', isOpen);
-    }
-}
+const btnTop = document.getElementById("btnTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    btnTop.classList.add("show");
+  } else {
+    btnTop.classList.remove("show");
+  }
+});
+
+btnTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 </script>
 
-
-  
 </body>
 </html>

@@ -1,0 +1,14 @@
+/* ===== NAV UNIFICADA FINAL - NÃO MEXER ===== */
+.prisma-nav{position:fixed;top:0;left:0;width:100%;height:70px;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#121212;border-bottom:1px solid rgba(238,188,108,0.15)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:22px;letter-spacing:0.18em;color:#F5F5F0}.prisma-logo span{color:#eebc6c;font-weight:700}
+.prisma-menu-hamburguer{width:44px;height:44px;border:1px solid rgba(238,188,108,0.15);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;z-index:10002}
+.prisma-menu-hamburguer span{width:18px;height:1.5px;background:#eebc6c;display:block;transition:.3s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:100%;height:100vh;background:#080808;list-style:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-left:10%;gap:6px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:.5s ease;z-index:10001}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:20px!important;color:#F5F5F0;text-decoration:none;display:flex;align-items:center;gap:10px;opacity:.8}
+.prisma-menu-links li a .material-icons{font-size:16px!important}
+.prisma-menu-links li a:hover{color:#eebc6c;opacity:1}
+.prisma-menu-links li a::before{content:attr(data-num);font-family:'Inter';font-size:10px;color:#eebc6c}

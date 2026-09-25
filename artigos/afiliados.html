@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Afiliados - 40% de Comissão | Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+
+
+
+
+
+
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -58,19 +65,18 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <ul class="prisma-menu-links">
-        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
+        <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html" data-num="08"><span class="material-icons">school</span> Simulados</a></li>
     </ul>
 </nav>
-
 <header class="hero-afiliado">
     <span class="tag-lucro">🎯 OPORTUNIDADE QUENTE - NICHO EDUCAÇÃO</span>
     <h1>Lucre <span>40%</span> com um Produto que Vende Sozinho</h1>
@@ -131,5 +137,7 @@ const nav=document.getElementById('prismaNav');
 const btn=nav.querySelector('.prisma-menu-hamburguer');
 btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
 </script>
+
+
 </body>
 </html>
