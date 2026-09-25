@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--carvao:#121212;--carvao2:#1E1E1E;--off:#F5F5F0;--sepia:#eebc6c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;padding-top:70px}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;height:70px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#121212;border-bottom:1px solid rgba(238,188,108,.15);z-index:999}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:22px;letter-spacing:.18em}.prisma-logo span{color:var(--sepia);font-weight:700}
+.header{text-align:center;padding:50px 20px 30px;max-width:800px;margin:auto}
+.header h1{font-family:'Cormorant Garamond';font-style:italic;font-size:44px}
+.header h1 em{color:var(--sepia);font-style:italic}
+.header p{opacity:.6;margin-top:10px;font-size:14px}
+.loja{max-width:1100px;margin:0 auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--carvao2);border:1px solid rgba(238,188,108,.2);border-radius:14px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--sepia)}
+.card img{width:100%;height:180px;object-fit:cover;filter:sepia(.2)}
+.card-body{padding:18px}
+.card-body h3{font-family:'Cormorant Garamond';font-size:20px;color:var(--off);margin-bottom:6px}
+.card-body span{font-size:11px;letter-spacing:.15em;color:var(--sepia);font-weight:800}
+.card-body p{font-size:13px;opacity:.7;margin:10px 0 16px;line-height:1.4}
+.btn{display:block;text-align:center;background:var(--sepia);color:#121212;padding:12px;border-radius:8px;font-weight:800;font-size:12px;letter-spacing:.1em;text-decoration:none}
+.btn:hover{background:var(--off)}
+.badge-afiliado{max-width:1100px;margin:0 auto;padding:0 20px;font-size:10px;opacity:.4;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+
+
+
+    
+
+<div class="prisma-nav"><div class="prisma-logo"><span>Prisma</span> Histórico</div></div>
+
+<div class="header">
+  <h1>Loja <em>Prisma</em></h1>
+  <p>Indicações que usamos para estudar - links afiliados</p>
+</div>
+
+<p class="badge-afiliado">AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
+
+<div class="loja">
+
+  <!-- PRODUTO 1 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Livro">
+    <div class="card-body">
+      <span>LIVROS</span>
+      <h3>Box Brasil Pré-Colonial</h3>
+      <p>3 livros essenciais sobre Pau-Brasil e capitanias. Melhor avaliação na Amazon.</p>
+      <a class="btn" href="SEU LINK AFILIADO AMAZON AQUI" target="_blank">VER NA AMAZON</a>
+    </div>
+  </div>
+
+  <!-- PRODUTO 2 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d" alt="Curso">
+    <div class="card-body">
+      <span>CURSOS</span>
+      <h3>História para ENEM - Intensivo</h3>
+      <p>Curso completo que usamos como base para os simulados. 70% de aprovação.</p>
+      <a class="btn" href="SEU LINK HOTMART AQUI" target="_blank">VER CURSO</a>
+    </div>
+  </div>
+
+  <!-- PRODUTO 3 -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73" alt="Mapa">
+    <div class="card-body">
+      <span>MATERIAL</span>
+      <h3>Mapas Históricos Premium</h3>
+      <p>Mapas mentais e resumos para imprimir. Mesmo padrão do Prisma.</p>
+      <a class="btn" href="SEU LINK EDUZZ AQUI" target="_blank">BAIXAR AGORA</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

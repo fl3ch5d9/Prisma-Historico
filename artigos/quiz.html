@@ -1,118 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../css/style.css">
-
-
-
-
-
-
-
-
-
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-:root{--carvao-escuro:#121212;--carvao:#1E1E1E;--branco:#FFF;--off-white:#F5F5F0;--sepia:#eebc6c;}
-body{background:var(--carvao-escuro);margin:0;padding:20px;font-family:Georgia,serif;color:var(--off-white);}
-.header{text-align:center;max-width:700px;margin:auto;}
-.header h1{color:var(--sepia);font-style:italic;font-size:42px;}
-.quiz{max-width:700px;margin:20px auto;background:var(--carvao);border:1px solid var(--sepia);border-radius:12px;padding:30px;}
-.pergunta{display:none} .pergunta.ativa{display:block}
-h3{color:var(--sepia)} label{display:block;background:var(--carvao-escuro);border:1px solid #333;padding:14px;margin:10px 0;border-radius:8px;cursor:pointer} label:hover{border-color:var(--sepia)}
-button{background:var(--sepia);color:#121212;border:none;width:100%;padding:16px;border-radius:8px;font-weight:bold;cursor:pointer;margin-top:20px}
-#contador{color:var(--sepia);text-align:right;font-weight:bold;margin-bottom:10px}
+:root{--carvao-escuro:#121212;--carvao:#1E1E1E;--off-white:#F5F5F0;--sepia:#eebc6c;}
+*{margin:0;padding:0;box-sizing:border-box}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;height:70px;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#121212!important;border-bottom:1px solid rgba(238,188,108,0.15)}
+.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.18em;color:#F5F5F0}.prisma-logo span{color:#eebc6c;font-weight:700}
+/* HAMBURGUER FIXO - AGORA APARECE */
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid #eebc6c!important;background:#1E1E1E!important;cursor:pointer;display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%;z-index:10002}
+.prisma-menu-hamburguer span{width:22px;height:2px!important;background:#eebc6c!important;display:block;transition:.3s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:100%;height:100vh;background:#080808;list-style:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-left:10%;gap:10px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:.6s cubic-bezier(.77,0,.175,1);z-index:10001}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
+.prisma-menu-links li a{
+  font-family:'Cormorant Garamond',serif!important;
+  font-size:22px!important;
+  color:#F5F5F0!important;
+  text-decoration:none!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  letter-spacing:.05em;
+  font-weight:400;
+}
+.prisma-menu-links li a .material-icons{
+  font-size:18px!important;
+  color:#eebc6c!important;
+}
+body{padding-top:70px!important;background:#121212;color:var(--off-white);font-family:'Inter',sans-serif;line-height:1.6}
+.header{text-align:center;max-width:700px;margin:0 auto;padding:40px 20px 10px}
+.header h1{color:var(--off-white);font-family:'Cormorant Garamond';font-style:italic;font-size:42px;font-weight:400}
+.header h1::first-letter{color:var(--sepia)}
+.header p{color:var(--off-white);opacity:.6;font-size:13px;margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
+.quiz{max-width:560px;margin:20px auto;background:var(--carvao);border:1px solid rgba(238,188,108,0.25);border-radius:14px;padding:22px}
+#contador{color:var(--sepia);text-align:right;font-weight:800;font-size:11px;letter-spacing:.15em;margin-bottom:18px}
+.pergunta{display:none} .pergunta.ativa{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.pergunta h3{color:var(--sepia);font-family:'Cormorant Garamond';font-size:20px;margin-bottom:6px}
+.pergunta p{color:var(--off-white)!important;font-size:15px;opacity:.9;margin-bottom:18px;line-height:1.5}
+label{display:flex;align-items:center;background:#121212;border:1px solid #2a2a2a;padding:12px 14px;margin:10px 0;border-radius:10px;cursor:pointer;color:var(--off-white)!important;font-size:14px;transition:.2s}
+label:hover{border-color:var(--sepia);background:rgba(238,188,108,0.06)}
+label:has(input:checked){border-color:var(--sepia);background:rgba(238,188,108,0.12)}
+input{accent-color:var(--sepia);margin-right:10px;min-width:16px}
+button.confirmar{background:var(--sepia);color:#121212;border:none;width:100%;padding:14px;border-radius:8px;font-weight:800;letter-spacing:.1em;cursor:pointer;margin-top:20px;transition:.2s;font-size:13px}
+button.confirmar:hover{background:var(--off-white)}
 </style>
 </head>
 <body>
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
     <ul class="prisma-menu-links">
-        <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="questoes.html" data-num="08"><span class="material-icons">school</span> Simulados</a></li>
+        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="questoes.html"><span class="material-icons">school</span> Simulados</a></li>
     </ul>
 </nav>
 
-
-
-
-
-
-
-
-<div class="header"><h1>Prisma Histórico</h1><p>10 questões - 1 por vez</p></div>
-<div class="quiz">
-<div id="contador">QUESTÃO 1 DE 10</div>
-
-<!-- QUESTAO 1 -->
-<div class="pergunta ativa" id="q1"><h3>01 - Engenharia do Império</h3><p>O que garantiu o domínio português?</p>
-<label><input type="radio" name="q1"> Igreja</label><label><input type="radio" name="q1"> Arquitetura Naval</label><label><input type="radio" name="q1"> Exército</label>
-<button onclick="proxima(2)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 2 -->
-<div class="pergunta" id="q2"><h3>02 - Volta do Mar</h3><p>Qual manobra subverteu os ventos?</p>
-<label><input type="radio" name="q2"> Volta do Mar</label><label><input type="radio" name="q2"> Cabotagem</label><label><input type="radio" name="q2"> Rota da Seda</label>
-<button onclick="proxima(3)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 3 -->
-<div class="pergunta" id="q3"><h3>03 - Ciência de Precisão</h3><p>Quais instrumentos davam precisão?</p>
-<label><input type="radio" name="q3"> Bússola</label><label><input type="radio" name="q3"> Balestilha e Astrolábio</label><label><input type="radio" name="q3"> Telescópio</label>
-<button onclick="proxima(4)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 4 -->
-<div class="pergunta" id="q4"><h3>04 - Tordesilhas</h3><p>Ano do Tratado de Tordesilhas?</p>
-<label><input type="radio" name="q4"> 1492</label><label><input type="radio" name="q4"> 1494</label><label><input type="radio" name="q4"> 1500</label>
-<button onclick="proxima(5)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 5 -->
-<div class="pergunta" id="q5"><h3>05 - Capitanias</h3><p>Por que as capitanias falharam?</p>
-<label><input type="radio" name="q5"> Falta de capital</label><label><input type="radio" name="q5"> Frio</label><label><input type="radio" name="q5"> Ordem do Rei</label>
-<button onclick="proxima(6)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 6 -->
-<div class="pergunta" id="q6"><h3>06 - Açúcar</h3><p>O que tornou o açúcar global?</p>
-<label><input type="radio" name="q6"> Escravidão + Engenho</label><label><input type="radio" name="q6"> Solo fértil</label><label><input type="radio" name="q6"> Igreja</label>
-<button onclick="proxima(7)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 7 -->
-<div class="pergunta" id="q7"><h3>07 - Diocleciano</h3><p>Quem dividiu Roma em 286 d.C.?</p>
-<label><input type="radio" name="q7"> Júlio César</label><label><input type="radio" name="q7"> Diocleciano</label><label><input type="radio" name="q7"> Constantino</label>
-<button onclick="proxima(8)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 8 -->
-<div class="pergunta" id="q8"><h3>08 - Cartografia</h3><p>O que era o Padrão Real?</p>
-<label><input type="radio" name="q8"> Mapa-mestre secreto</label><label><input type="radio" name="q8"> Navio</label><label><input type="radio" name="q8"> Moeda</label>
-<button onclick="proxima(9)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 9 -->
-<div class="pergunta" id="q9"><h3>09 - Inquisição</h3><p>Impacto da Inquisição?</p>
-<label><input type="radio" name="q9"> Controle ideológico</label><label><input type="radio" name="q9"> Fim da escravidão</label><label><input type="radio" name="q9"> Universidades</label>
-<button onclick="proxima(10)">CONFIRMAR →</button></div>
-
-<!-- QUESTAO 10 -->
-<div class="pergunta" id="q10"><h3>10 - Prisma Final</h3><p>História é dos vencedores ou dos prismas?</p>
-<label><input type="radio" name="q10"> Vencedores</label><label><input type="radio" name="q10"> Múltiplos Prismas</label><label><input type="radio" name="q10"> Nenhum</label>
-<button onclick="alert('10/10 CONCLUÍDO!')">REVELAR MEU PRISMA</button></div>
-
+<div class="header">
+  <h1>Simulado</h1>
+  <p>Período Pré-Colonial</p>
+  <div id="contador">QUESTÃO 1 DE 15</div>
 </div>
+
+<div class="quiz">
+  <div class="pergunta ativa" id="q1">
+    <h3>Questão 1</h3>
+    <p>Sua pergunta aqui...</p>
+    <label><input type="radio" name="q1"> Alternativa A</label>
+    <label><input type="radio" name="q1"> Alternativa B</label>
+    <label><input type="radio" name="q1"> Alternativa C</label>
+    <button class="confirmar" onclick="proxima(2)">CONFIRMAR</button>
+  </div>
+</div>
+
 <script>
 function proxima(n){
-document.querySelectorAll('.pergunta').forEach(p=>p.classList.remove('ativa'));
-document.getElementById('q'+n).classList.add('ativa');
-document.getElementById('contador').innerText='QUESTÃO '+n+' DE 10';
-window.scrollTo(0,0);
+  document.querySelectorAll('.pergunta').forEach(p=>p.classList.remove('ativa'));
+  const prox = document.getElementById('q'+n);
+  if(prox) prox.classList.add('ativa');
+  document.getElementById('contador').innerText='QUESTÃO '+n+' DE 15';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
+document.addEventListener('DOMContentLoaded',()=>{
+  const nav=document.getElementById('prismaNav');
+  const btn=nav.querySelector('.prisma-menu-hamburguer');
+  btn.addEventListener('click',()=>{
+    nav.classList.toggle('menu-aberto');
+    document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+  });
+  nav.querySelectorAll('.prisma-menu-links a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      nav.classList.remove('menu-aberto');
+      document.body.style.overflow='';
+    });
+  });
+});
 </script>
 </body>
 </html>
