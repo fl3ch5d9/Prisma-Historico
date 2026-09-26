@@ -3,113 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+<title>Prisma Histórico - Quiz</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
 <style>
-:root{--carvao-escuro:#121212;--carvao:#1E1E1E;--off-white:#F5F5F0;--sepia:#eebc6c;}
-*{margin:0;padding:0;box-sizing:border-box}
-.prisma-nav{position:fixed;top:0;left:0;width:100%;height:70px;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#121212!important;border-bottom:1px solid rgba(238,188,108,0.15)}
-.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.18em;color:#F5F5F0}.prisma-logo span{color:#eebc6c;font-weight:700}
-/* HAMBURGUER FIXO - AGORA APARECE */
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid #eebc6c!important;background:#1E1E1E!important;cursor:pointer;display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%;z-index:10002}
-.prisma-menu-hamburguer span{width:22px;height:2px!important;background:#eebc6c!important;display:block;transition:.3s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:100%;height:100vh;background:#080808;list-style:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-left:10%;gap:10px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:.6s cubic-bezier(.77,0,.175,1);z-index:10001}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
-.prisma-menu-links li a{
-  font-family:'Cormorant Garamond',serif!important;
-  font-size:22px!important;
-  color:#F5F5F0!important;
-  text-decoration:none!important;
-  display:flex!important;
-  align-items:center!important;
-  gap:12px!important;
-  letter-spacing:.05em;
-  font-weight:400;
-}
-.prisma-menu-links li a .material-icons{
-  font-size:18px!important;
-  color:#eebc6c!important;
-}
-body{padding-top:70px!important;background:#121212;color:var(--off-white);font-family:'Inter',sans-serif;line-height:1.6}
-.header{text-align:center;max-width:700px;margin:0 auto;padding:40px 20px 10px}
-.header h1{color:var(--off-white);font-family:'Cormorant Garamond';font-style:italic;font-size:42px;font-weight:400}
-.header h1::first-letter{color:var(--sepia)}
-.header p{color:var(--off-white);opacity:.6;font-size:13px;margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
-.quiz{max-width:560px;margin:20px auto;background:var(--carvao);border:1px solid rgba(238,188,108,0.25);border-radius:14px;padding:22px}
-#contador{color:var(--sepia);text-align:right;font-weight:800;font-size:11px;letter-spacing:.15em;margin-bottom:18px}
-.pergunta{display:none} .pergunta.ativa{display:block;animation:fade .3s}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.pergunta h3{color:var(--sepia);font-family:'Cormorant Garamond';font-size:20px;margin-bottom:6px}
-.pergunta p{color:var(--off-white)!important;font-size:15px;opacity:.9;margin-bottom:18px;line-height:1.5}
-label{display:flex;align-items:center;background:#121212;border:1px solid #2a2a2a;padding:12px 14px;margin:10px 0;border-radius:10px;cursor:pointer;color:var(--off-white)!important;font-size:14px;transition:.2s}
-label:hover{border-color:var(--sepia);background:rgba(238,188,108,0.06)}
-label:has(input:checked){border-color:var(--sepia);background:rgba(238,188,108,0.12)}
-input{accent-color:var(--sepia);margin-right:10px;min-width:16px}
-button.confirmar{background:var(--sepia);color:#121212;border:none;width:100%;padding:14px;border-radius:8px;font-weight:800;letter-spacing:.1em;cursor:pointer;margin-top:20px;transition:.2s;font-size:13px}
-button.confirmar:hover{background:var(--off-white)}
+:root{--bg:#121212;--card:#1e1e1e;--gold:#d2b48c;--border:#2a2a2a;--ouro:#E5B769;--creme:#F5E6C8;--borda:rgba(255,255,255,0.08)}
+*{box-sizing:border-box}
+body{background:var(--bg)!important;margin:0;font-family:'Inter',sans-serif;color:#fff;padding-top:72px;overflow-x:hidden}
+.quiz-app{max-width:700px;margin:0 auto;padding:30px 20px 40px}
+.progress-wrap{height:4px;background:#222;border-radius:10px;margin-bottom:25px;overflow:hidden}
+.progress-bar{height:100%;background:var(--gold);width:0%;transition:.4s}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;color:#888;font-size:13px}
+.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px}
+.page-tag{background:#2c241e;color:var(--gold);border:1px solid #3e352d;font-size:11px;padding:4px 8px;border-radius:20px}
+.question{font-size:20px;line-height:1.4;margin:16px 0 24px;font-weight:600}
+.options{display:grid;gap:10px}
+.opt{padding:16px;background:#252525;border:1px solid var(--border);border-radius:10px;cursor:pointer;display:flex;gap:12px;transition:.2s}
+.opt:hover{border-color:#444;background:#2a2a2a}
+.opt.selected{border-color:var(--gold);background:#2c241e}
+.opt.correct{border-color:#2ecc71!important;background:#1a3322!important}
+.opt.wrong{border-color:#e74c3c!important;background:#3a1a1a!important}
+.opt b{color:var(--gold);min-width:20px}
+.actions{margin-top:24px;display:flex;justify-content:flex-end}
+.btn{padding:12px 24px;border-radius:8px;border:0;font-weight:700;cursor:pointer;background:var(--gold);color:#121212}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.result{text-align:center;padding:40px 20px}
+.result h2{font-size:32px;margin-bottom:10px}
+.result p{color:#888}
+
+/* HAMBURGUER GAVETA - CORRIGIDO COM ESPAÇO */
+.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
+.prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important}
+.prisma-logo span{color:var(--ouro)!important;font-weight:700!important}
+.prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid var(--borda)!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
+.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--ouro)!important;display:block!important;transition:0.25s ease!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)!important}
+.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;padding:100px 0 0 30px!important;gap:14px!important;transform:translateX(-100%)!important;transition:0.28s ease!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(238,188,108,0.15)!important}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+.prisma-menu-links li a{font-family:'Inter',sans-serif!important;font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:var(--creme)!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
+.prisma-menu-links li a:hover{color:var(--ouro)!important;opacity:1!important}
 </style>
 </head>
 <body>
-
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
-    <ul class="prisma-menu-links">
-        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-      
-    
-      </ul>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <button class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  <ul class="prisma-menu-links" id="menuLinks">
+    <li><a href="../index.html"><span class="material-icons">home</span>Início</a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span>Sobre</a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span>Afiliados</a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span>Artigos</a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span>Curiosidades</a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span>Quiz</a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span>E-book</a></li>
+    <li><a href="loja.html"><span class="material-icons">storefront</span>Loja</a></li>
+  </ul>
 </nav>
 
-<div class="header">
-  <h1>Simulado</h1>
-  <p>Período Pré-Colonial</p>
-  <div id="contador">QUESTÃO 1 DE 15</div>
-</div>
-
-<div class="quiz">
-  <div class="pergunta ativa" id="q1">
-    <h3>Questão 1</h3>
-    <p>Sua pergunta aqui...</p>
-    <label><input type="radio" name="q1"> Alternativa A</label>
-    <label><input type="radio" name="q1"> Alternativa B</label>
-    <label><input type="radio" name="q1"> Alternativa C</label>
-    <button class="confirmar" onclick="proxima(2)">CONFIRMAR</button>
-  </div>
+<div class="quiz-app">
+  <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  <div class="quiz-header"><span id="qCount">1 / 17</span><span id="scoreCount">0 acertos</span></div>
+  <div class="quiz-card" id="quizCard"></div>
 </div>
 
 <script>
-function proxima(n){
-  document.querySelectorAll('.pergunta').forEach(p=>p.classList.remove('ativa'));
-  const prox = document.getElementById('q'+n);
-  if(prox) prox.classList.add('ativa');
-  document.getElementById('contador').innerText='QUESTÃO '+n+' DE 15';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-document.addEventListener('DOMContentLoaded',()=>{
-  const nav=document.getElementById('prismaNav');
-  const btn=nav.querySelector('.prisma-menu-hamburguer');
-  btn.addEventListener('click',()=>{
-    nav.classList.toggle('menu-aberto');
-    document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
-  });
-  nav.querySelectorAll('.prisma-menu-links a').forEach(a=>{
-    a.addEventListener('click',()=>{
-      nav.classList.remove('menu-aberto');
-      document.body.style.overflow='';
-    });
-  });
-});
+const quizData = [
+  { id: 1, pagina: "75", pergunta: "O Alvará Régio de 4 de abril de 1755, emitido pelo Marquês de Pombal, trazia uma importante reconfiguração jurídica sobre o casamento interracial. O que ele estipulava?", alternativas: [{letra:"A",texto:"Perderiam seus cargos públicos e seriam exilados."},{letra:"B",texto:"Não sofreriam qualquer infâmia jurídica ou mácula de sangue, tornando-se credores da real atenção."},{letra:"C",texto:"Seriam obrigados a pagar imposto de miscigenação."},{letra:"D",texto:"Seriam subordinados às lideranças tribais."}], resposta_correta:"B"},
+  { id: 2, pagina: "75", pergunta: "Na Amazônia, a eficiência dos jesuítas gerou riquezas que transformaram os aldeamentos num:", alternativas: [{letra:"A",texto:"Quinto Real de Aluvião"},{letra:"B",texto:"Distrito Diamantino do Norte"},{letra:"C",texto:"Estado dentro do Estado e Igreja dentro da Igreja"},{letra:"D",texto:"Cativeiro Transatlântico"}], resposta_correta:"C"},
+  { id: 3, pagina: "109", pergunta: "O que foi a Primeira Revolta da Armada (1891)?", alternativas: [{letra:"A",texto:"Revolta de escravos na Bahia"},{letra:"B",texto:"Motim da Marinha contra Deodoro após ele fechar o Congresso"},{letra:"C",texto:"Revolta do Exército contra a Marinha"},{letra:"D",texto:"Conflito Brasil e Argentina"}], resposta_correta:"B"},
+  { id: 4, pagina: "109", pergunta: "O que foi a crise do 'Encilhamento'?", alternativas: [{letra:"A",texto:"Bolha financeira com inflação e desemprego"},{letra:"B",texto:"Seca que matou o gado"},{letra:"C",texto:"Greve dos fabricantes de sela"},{letra:"D",texto:"Operação da Marinha"}], resposta_correta:"A"},
+  { id: 5, pagina: "109", pergunta: "Quem liderou a Primeira Revolta da Armada?", alternativas: [{letra:"A",texto:"Saldanha da Gama"},{letra:"B",texto:"Custódio de Melo, exigindo renúncia de Deodoro"},{letra:"C",texto:"Floriano Peixoto"},{letra:"D",texto:"Lima Barreto"}], resposta_correta:"B"},
+  { id: 6, pagina: "113", pergunta: "Motivo central da Segunda Revolta da Armada (1893)?", alternativas: [{letra:"A",texto:"Floriano se recusou a convocar novas eleições"},{letra:"B",texto:"Aumento do café"},{letra:"C",texto:"Proibição do tupi-guarani"},{letra:"D",texto:"Disputa da ferrovia no Contestado"}], resposta_correta:"A"},
+  { id: 7, pagina: "113", pergunta: "Como Floriano venceu sem navios?", alternativas: [{letra:"A",texto:"Pediu ajuda a Portugal"},{letra:"B",texto:"Comprou frota mercenária, a Frota de Papagaio"},{letra:"C",texto:"Construiu navios em 30 dias"},{letra:"D",texto:"Usou aviões"}], resposta_correta:"B"},
+  { id: 8, pagina: "113", pergunta: "Papel dos EUA na Segunda Revolta?", alternativas: [{letra:"A",texto:"Apoiaram revoltosos"},{letra:"B",texto:"Navios americanos garantiram abertura do porto do Rio"},{letra:"C",texto:"Ficaram neutros"},{letra:"D",texto:"Bombardearam SC"}], resposta_correta:"B"},
+  { id: 9, pagina: "113", pergunta: "O que ocorreu em SC após a derrota rebelde?", alternativas: [{letra:"A",texto:"Anistia geral"},{letra:"B",texto:"Fuzilamento em Anhatomirim e Desterro virou Florianópolis"},{letra:"C",texto:"Ilha vendida"},{letra:"D",texto:"Construiu ferrovia"}], resposta_correta:"B"},
+  { id: 10, pagina: "114", pergunta: "Como Policarpo Quaresma é caracterizado no início?", alternativas: [{letra:"A",texto:"Político corrupto"},{letra:"B",texto:"Nacionalista ingênuo que defende tupi-guarani"},{letra:"C",texto:"Marinheiro revoltoso"},{letra:"D",texto:"Monge do Contestado"}], resposta_correta:"B"},
+  { id: 11, pagina: "114", pergunta: "Ponto de virada de Quaresma na Revolta?", alternativas: [{letra:"A",texto:"Fica rico"},{letra:"B",texto:"Vira carcereiro, vê torturas e se decepciona"},{letra:"C",texto:"Descobre ouro"},{letra:"D",texto:"Vira presidente"}], resposta_correta:"B"},
+  { id: 12, pagina: "114", pergunta: "Por que Quaresma é condenado à morte?", alternativas: [{letra:"A",texto:"Roubou cofre"},{letra:"B",texto:"Escreveu carta contra fuzilamentos"},{letra:"C",texto:"Liderou Armada"},{letra:"D",texto:"Recusou falar português"}], resposta_correta:"B"},
+  { id: 13, pagina: "114", pergunta: "Crítica de Lima Barreto via Quaresma?", alternativas: [{letra:"A",texto:"República trouxe liberdade"},{letra:"B",texto:"República trouxe ditadura violenta e corrupta"},{letra:"C",texto:"Monarquia deveria voltar"},{letra:"D",texto:"Marinha sempre certa"}], resposta_correta:"B"},
+  { id: 14, pagina: "117", pergunta: "O que foi a Guerra do Contestado?", alternativas: [{letra:"A",texto:"Conflito naval"},{letra:"B",texto:"Maior conflito messiânico entre PR e SC"},{letra:"C",texto:"Revolta de escravos"},{letra:"D",texto:"Guerra com Argentina"}], resposta_correta:"B"},
+  { id: 15, pagina: "117", pergunta: "Estopim socioeconômico do Contestado?", alternativas: [{letra:"A",texto:"Ferrovia de Farquhar que expulsou camponeses"},{letra:"B",texto:"Fechamento do Congresso"},{letra:"C",texto:"Frota de Papagaio"},{letra:"D",texto:"Tupi-guarani oficial"}], resposta_correta:"A"},
+  { id: 16, pagina: "117", pergunta: "Quem eram os monges e redutos?", alternativas: [{letra:"A",texto:"Soldados"},{letra:"B",texto:"Líderes religiosos e comunidades coletivas"},{letra:"C",texto:"Jesuítas na Amazônia"},{letra:"D",texto:"Políticos separatistas"}], resposta_correta:"B"},
+  { id: 17, pagina: "117", pergunta: "Inovação militar usada no Contestado?", alternativas: [{letra:"A",texto:"Tanques"},{letra:"B",texto:"Submarinos"},{letra:"C",texto:"Aviação militar"},{letra:"D",texto:"Frota de Papagaio"}], resposta_correta:"C"},
+];
+let atual=0,acertos=0,respondido=false;
+const card=document.getElementById('quizCard'),bar=document.getElementById('bar'),qCount=document.getElementById('qCount'),sCount=document.getElementById('scoreCount');
+function render(){const q=quizData[atual];respondido=false;bar.style.width=`${(atual/quizData.length)*100}%`;qCount.textContent=`${atual+1} / ${quizData.length}`;sCount.textContent=`${acertos} acertos`;card.innerHTML=`<span class="page-tag">P. ${q.pagina}</span><div class="question">${q.id}. ${q.pergunta}</div><div class="options">${q.alternativas.map(a=>`<div class="opt" data-l="${a.letra}"><b>${a.letra})</b><span>${a.texto}</span></div>`).join('')}</div><div class="actions"><button class="btn" id="nextBtn" disabled>Próxima</button></div>`;document.querySelectorAll('.opt').forEach(el=>{el.onclick=()=>{if(respondido)return;respondido=true;document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');const certa=q.resposta_correta;if(el.dataset.l===certa){acertos++;el.classList.add('correct')}else{el.classList.add('wrong');document.querySelector(`[data-l="${certa}"]`).classList.add('correct')}sCount.textContent=`${acertos} acertos`;document.getElementById('nextBtn').disabled=false}});document.getElementById('nextBtn').onclick=()=>{atual++;if(atual<quizData.length)render();else final()}}
+function final(){bar.style.width=`100%`;card.innerHTML=`<div class="result"><h2>${acertos}/${quizData.length}</h2><p>${acertos===quizData.length?'Brabo demais! 🔥 Você gabaritou!':acertos>10?'Mandou bem!':'Estuda mais as páginas e tenta de novo.'}</p><br><button class="btn" onclick="location.reload()">Refazer</button></div>`}
+render();
+const nav=document.getElementById('prismaNav'),btn=document.getElementById('btnMenu');
+btn.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',(e)=>{if(!e.target.closest('#prismaNav')&&nav.classList.contains('menu-aberto')){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
 </script>
 </body>
 </html>

@@ -15,6 +15,8 @@
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+
+/*hamburguer*/
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
 .prisma-logo span{color:var(--ouro);font-weight:700}
@@ -23,11 +25,13 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:6px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateY(0);opacity:1;pointer-events:all}
-.prisma-menu-links li a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,62px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:18px;transform:translateY(120%);transition:0.6s}
-.prisma-nav.menu-aberto .prisma-menu-links li a{transform:translateY(0)}
-.prisma-menu-links li a:hover{color:var(--ouro);padding-left:20px}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);opacity:1;transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
+
+
 
 .hero-doacao{padding:150px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
 .tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}

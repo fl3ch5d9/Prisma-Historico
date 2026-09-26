@@ -4,57 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap');
 *{margin:0; padding:0; box-sizing:border-box;}
-body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif; padding-top:70px}
-.hero{background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200'); background-size:cover; background-position:center; text-align:center; padding:120px 20px 60px;}
-.hero h1{font-family:'Playfair Display', serif; font-size:4rem; color:#F5E6C8;}
+:root{ --ouro:#E5B769; --creme:#F5E6C8; --borda:rgba(255,255,255,0.08); }
+body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif; padding-top:72px; overflow-x:hidden;}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10001}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.25s cubic-bezier(0.4,0,0.2,1)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.28s cubic-bezier(0.4,0,0.2,1);pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+.hero{background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200'); background-size:cover; background-position:center; text-align:center; padding:120px 20px 60px;}
+.hero h1{font-family:'Playfair Display', serif; font-size:4rem; color:#F5E6C8; line-height:0.9;}
 .hero p{color:#E5B769; margin:15px 0 30px;}
 .hero span{font-size:0.7rem; opacity:0.7; letter-spacing:2px;}
 .conteudo{max-width:1200px; margin:50px auto; display:flex; gap:50px; padding:0 20px;}
-.texto-principal{flex:2;}
-.ficha{flex:1; border:1px solid #E5B76960; padding:25px; border-radius:12px; height:fit-content; position:sticky; top:90px;}
+.texto-principal{flex:2;} .texto-principal h2{font-family:'Playfair Display', serif; font-size:2.2rem; margin-bottom:10px;} .texto-principal p{margin:18px 0; line-height:1.7; opacity:0.9;}
 .tag{border:1px solid #E5B769; display:inline-block; padding:6px 14px; border-radius:20px; font-size:0.7rem; color:#E5B769; margin-bottom:20px;}
-.texto-principal h2{font-family:'Playfair Display', serif; font-size:2.2rem; line-height:1.1; margin-bottom:10px;}
-.texto-principal small{opacity:0.6;}
-.texto-principal p{margin:18px 0; line-height:1.7; opacity:0.9;}
+.ficha{flex:1; border:1px solid #E5B76960; padding:25px; border-radius:12px; height:fit-content; position:sticky; top:90px; background:#1A1A1A;}
+.ficha h4{color:#E5B769; margin-bottom:15px;} .ficha label{font-size:0.7rem; color:#E5B769; display:block; margin:15px 0 5px;} .box{background:#F5E6C8; color:#111; padding:10px 14px; border-radius:8px; font-size:0.85rem;}
 blockquote{border-left:3px solid #E5B769; padding-left:20px; margin:30px 0; font-style:italic; color:#E5B769; font-size:1.2rem;}
-blockquote cite{font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;}
-.ficha h4{color:#E5B769; margin-bottom:15px; font-size:0.9rem;}
-.ficha label{font-size:0.7rem; color:#E5B769; display:block; margin:15px 0 5px;}
-.box{background:#F5E6C8; color:#111; padding:10px 14px; border-radius:8px; font-size:0.85rem;}
-.cor-ref{margin-top:20px; border:1px solid #E5B76940; padding:15px; border-radius:8px;}
-.quadrado{width:60px; height:30px; background:#D9B25F; border-radius:4px; margin-top:10px;}
-.titulo-galeria{text-align:center; color:#E5B769; margin:40px 0 20px; letter-spacing:2px; font-size:0.8rem;}
-.galeria{display:flex; gap:15px;}
-.galeria div{flex:1;}
-.galeria img{width:100%; height:200px; object-fit:cover; border-radius:8px; border:1px solid #E5B76940;}
-.galeria span{font-size:0.7rem; opacity:0.6; display:block; margin-top:6px;}
+.processo{max-width:1200px; margin:40px auto; padding:0 20px;}
+.galeria-cores{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:40px 0;}
+.galeria-cores .cor{text-align:center;} .galeria-cores .cor span{width:100%; aspect-ratio:1/1; max-width:110px; border-radius:12px; display:block; margin:0 auto; border:1px solid #ffffff15;}
+.galeria-cores .cor small{margin-top:12px; font-size:13px; display:block;}
+.bloco-horizontal{display:grid; grid-template-columns:1.2fr 0.8fr; gap:28px; background:#1E1E1E; border:1px solid #2A2A2A; border-radius:16px; padding:26px; align-items:start; margin:32px auto; max-width:1200px;}
+.texto-lado h2{font-family:Georgia, serif; color:#FFF; font-size:19px; text-transform:uppercase; margin-bottom:14px;} .texto-lado h2 span{color:#eebc6c;}
+.texto-rolagem-sepia{max-height:360px; overflow-y:auto; padding-right:14px; display:flex; flex-direction:column; gap:14px; scrollbar-width:thin; scrollbar-color:#eebc6c transparent;}
+.texto-rolagem-sepia p{font-family:Georgia, serif; color:#F5F5F0; font-size:14.5px; line-height:1.8;}
+.destaque-sepia{background:#2A2115; border-left:3px solid #eebc6c; padding:10px 14px; color:#F5E6C8; font-size:13px; border-radius:6px;}
+.imagem-lado{aspect-ratio:1/1; width:100%; border-radius:12px; overflow:hidden; background:#121212; border:1px solid #2A2A2A; position:sticky; top:90px;} .imagem-lado img{width:100%; height:100%; object-fit:cover;}
+.grade-juridica{display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:1200px; margin:40px auto; padding:0 20px;}
+.box-juridico-pro{background:#1E1E1E; border:1px solid #2A2A2A; border-radius:16px; overflow:hidden;}
+.box-juridico-pro .header-principio{display:flex; gap:12px; border-bottom:1px solid #2A2A2A; padding:18px 22px; background:#121212;}
+.box-juridico-pro .header-principio span{background:#1E1E1E; color:#eebc6c; border:1px solid #eebc6c; font-size:10px; letter-spacing:2px; padding:6px 10px; border-radius:4px; font-weight:700;}
+.box-juridico-pro .conteudo-legal{padding:22px; max-height:340px; overflow-y:auto; display:flex; flex-direction:column; gap:16px;}
+.artigo-destaque{background:#121212; border-left:4px solid #eebc6c; padding:14px 16px; border-radius:0 8px 8px 0;}
+.secao-artigo-prisma{max-width:780px; margin:60px auto; background:#1E1E1E; border:1px solid #2A2A2A; border-radius:20px; overflow:hidden;}
+.topo-artigo{padding:36px 40px 0 40px;} .tag-artigo{display:inline-block; color:#eebc6c; border:1px solid #eebc6c40; background:#eebc6c15; font-size:10px; letter-spacing:2.5px; padding:6px 12px; border-radius:100px; font-weight:700; margin-bottom:16px;}
+.topo-artigo h2{font-family:Georgia, serif; font-size:32px; color:#FFF;} .topo-artigo h2 em{color:#eebc6c; font-style:italic;}
+.corpo-artigo{padding:28px 40px 36px; max-height:420px; overflow-y:auto; display:flex; flex-direction:column; gap:20px;}
+.cta-ebook{background:#111; color:#fff; text-align:center; padding:60px 20px; margin-top:60px;}
+.cta-ebook .btn{display:inline-block; background:#E8C766; color:#111; padding:15px 30px; text-decoration:none; font-weight:bold; border-radius:5px; margin:20px 0;}
 footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-top:60px; font-size:0.7rem; opacity:0.5;}
-@media(max-width:900px){.conteudo{flex-direction:column;} .hero h1{font-size:2.5rem;} .galeria{flex-direction:column;}}
+::-webkit-scrollbar{width:5px;} ::-webkit-scrollbar-thumb{background:#eebc6c; border-radius:10px;} ::-webkit-scrollbar-track{background:transparent;}
+@media(max-width:900px){
+.conteudo, .grade-juridica, .bloco-horizontal{grid-template-columns:1fr; display:flex; flex-direction:column;}
+.hero h1{font-size:2.6rem;}
+.imagem-lado{position:relative; aspect-ratio:16/11;}
+.galeria-cores{grid-template-columns:repeat(2,1fr);}
+}
 </style>
 </head>
 <body>
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
     <ul class="prisma-menu-links">
-        <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
-          <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-      
-    
-      </ul>
+        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
+        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
+        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
+        <li><a href="loja.html"><span class="material-icons">storefront</span> Loja</a></li>
+    </ul>
 </nav>
 
 <section class="hero">
@@ -67,10 +90,10 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
   <div class="texto-principal">
     <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
     <h2>Quando a tinta conta a história: a busca pela cor original de 1780</h2>
-    <small>Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
-    <hr><br>
+    <small style="opacity:0.6">Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
+    <br><br><hr><br>
     <p>Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
-    <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite>— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
+    <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite style="font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;">— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
     <p>Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
   </div>
   <aside class="ficha">
@@ -80,583 +103,108 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
     <label>RUA:</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
   </aside>
 </main>
-<!-- CONTINUAÇÃO - COLE DEPOIS DO SEU </main> -->
+<main class="conteudo">
+  <div class="texto-principal">
+    <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
+    <h2>Quando a tinta conta a história: a busca pela cor original de 1780</h2>
+    <small style="opacity:0.6">Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
+    <br><br><hr><br>
+    <p>Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
+    <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite style="font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;">— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
+    <p>Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
+  </div>
+  <aside class="ficha">
+    <h4>FICHA TÉCNICA DA COR</h4>
+    <label>PIGMENTO:</label><div class="box">Ocre Amarelo</div>
+    <label>ANO:</label><div class="box">1780 — Camada original identificada</div>
+    <label>RUA:</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
+  </aside>
+</main>
 
 <section class="processo">
-  <div class="texto-principal">
+  <div class="texto-principal" style="max-width:780px; margin:auto;">
     <h3>O que a parede escondeu por 244 anos</h3>
-    <p>
-      A análise em laboratório não mostrou apenas uma cor. Mostrou uma técnica. O ocre amarelo de 1780 não era industrial — era extraído da própria serra do Espinhaço, misturado com cal virgem e fixado com óleo de linhaça. Uma fórmula que resistiu a chuvas, sol e abandono.
-    </p>
-    <p>
-      As 11 camadas superiores contavam o Brasil: branco republicano de 1890, azul pastel dos anos 50, o amarelo forte da década de 80. Cada uma, um governo, um gosto, uma tentativa de modernizar o que deveria ser preservado.
-    </p>
-    
+    <p>A análise em laboratório não mostrou apenas uma cor. Mostrou uma técnica. O ocre amarelo de 1780 não era industrial — era extraído da própria serra do Espinhaço, misturado com cal virgem e fixado com óleo de linhaça.</p>
     <div class="galeria-cores">
       <div class="cor"><span style="background:#E8C766"></span><small>1780 - Ocre Original</small></div>
       <div class="cor"><span style="background:#F5F5F0"></span><small>1890 - Branco República</small></div>
       <div class="cor"><span style="background:#A8C4D6"></span><small>1950 - Azul Pastel</small></div>
       <div class="cor"><span style="background:#E3A857"></span><small>1980 - Amarelo Vibrante</small></div>
     </div>
-
     <h3>A decisão: voltar ao início</h3>
-    <p>
-      Restaurar não é repintar. É escolher qual história você quer contar. A equipe optou por remover quimicamente as 11 camadas e devolver à Ladeira Marília de Dirceu a sua feição de 1780 — a mesma que Tomás Antônio Gonzaga via quando escrevia seus versos para Marília.
-    </p>
-    <blockquote>
-      “Não estamos pintando uma casa. Estamos devolvendo a Ouro Preto a luz que ela tinha no século XVIII.”
-    </blockquote>
+    <p>Restaurar não é repintar. É escolher qual história você quer contar. A equipe optou por remover quimicamente as 11 camadas e devolver à Ladeira Marília de Dirceu a sua feição de 1780.</p>
+    <blockquote>“Não estamos pintando uma casa. Estamos devolvendo a Ouro Preto a luz que ela tinha no século XVIII.”</blockquote>
   </div>
 </section>
-
-<section class="cta-ebook">
-  <h2>Quer aprender a fazer essa leitura nas paredes?</h2>
-  <p>No e-book Prisma Histórico Volume 01, eu te ensino o passo a passo da prospecção estratigráfica, com fotos reais, fichas e tabela de pigmentos coloniais.</p>
-  <a href="SEU-LINK-DA-HOTMART-AQUI" class="btn">QUERO O E-BOOK COMPLETO</a>
-  <small>De R$ 97 por R$ 39,90 • Acesso imediato</small>
-</section>
-
-<style>
-.processo { padding: 40px 5%; max-width: 1200px; margin: auto; }
-
-.galeria-cores {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin: 40px 0;
-  align-items: start;
-}
-
-.galeria-cores .cor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.galeria-cores .cor span {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 110px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.1);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  display: block;
-}
-
-.galeria-cores .cor small {
-  margin-top: 12px;
-  font-size: 13px;
-  line-height: 1.3;
-  min-height: 34px; /* isso trava o alinhamento */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* No celular fica 2 por linha */
-@media (max-width: 600px) {
-  .galeria-cores {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.cta-ebook { background: #111; color: #fff; text-align: center; padding: 60px 20px; margin-top: 60px; }
-.cta-ebook .btn { display: inline-block; background: #E8C766; color: #111; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 20px 0; }
-</style>
-
-<style>
-  .grade-juridica{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    max-width: 1200px;
-    margin: 40px auto;
-    align-items: start;
-  }
-  .box-juridico-pro {
-    background: #1E1E1E;
-    border: 1px solid #2A2A2A;
-    border-radius: 16px;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  .box-juridico-pro .header-principio {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-bottom: 1px solid #2A2A2A;
-    padding: 18px 22px;
-    background: #121212;
-  }
-  .box-juridico-pro .header-principio span {
-    background: #1E1E1E;
-    color: #eebc6c;
-    border: 1px solid #eebc6c;
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .box-juridico-pro .header-principio h3 {
-    margin: 0;
-    font-family: Georgia, serif;
-    font-size: 15px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    letter-spacing: 1px;
-    line-height: 1.3;
-  }
-  /* ROLAGEM AQUI */
-  .box-juridico-pro .conteudo-legal {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 22px;
-    max-height: 340px;
-    overflow-y: auto;
-    color: #F5F5F0;
-    font-size: 14.5px;
-    line-height: 1.8;
-  }
-  .box-juridico-pro .conteudo-legal p { font-family: Georgia, serif; margin: 0; color: #F5F5F0; }
-  .box-juridico-pro .artigo-destaque {
-    background: #121212;
-    border-left: 4px solid #eebc6c;
-    padding: 14px 16px;
-    border-radius: 0 8px 8px 0;
-    font-family: Georgia, serif;
-  }
-  .box-juridico-pro .artigo-destaque strong { color: #eebc6c; }
-  .box-juridico-pro .citacao {
-    background: rgba(238, 188, 108, 0.08);
-    border: 1px solid rgba(238, 188, 108, 0.15);
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 13px;
-    line-height: 1.7;
-    font-family: Georgia, serif;
-  }
-  /* Barra sépia */
-  .box-juridico-pro .conteudo-legal::-webkit-scrollbar{ width: 5px; }
-  .box-juridico-pro .conteudo-legal::-webkit-scrollbar-thumb{ background: #eebc6c; border-radius: 10px; }
-  .box-juridico-pro .conteudo-legal::-webkit-scrollbar-track{ background: transparent; }
-  .box-juridico-pro .conteudo-legal{ scrollbar-width: thin; scrollbar-color: #eebc6c transparent; }
-
-  @media (max-width: 900px){
-    .grade-juridica{ grid-template-columns: 1fr; }
-  }
-</style>
-
-<div class="grade-juridica">
-  
-  <div class="box-juridico-pro">
-    <div class="header-principio">
-      <span>ART. 170 • III</span>
-      <h3>Função Social da Propriedade</h3>
-    </div>
-    <div class="conteudo-legal">
-      <p>A ordem econômica, fundada na valorização do trabalho humano e na livre iniciativa, tem por fim assegurar a todos existência digna, conforme os ditames da justiça social.</p>
-      <div class="artigo-destaque">
-        <strong>III — função social da propriedade.</strong> O proprietário fica impedido de exercer seu direito de maneira ilimitada quando se trata de bem cultural protegido pelo Art. 216, §1º.
-      </div>
-      <div class="citacao">
-        Conforme Celso Antônio Pacheco Fiorillo (2004, p. 57): A Constituição não autoriza tratar o bem ambiental de forma ampla e irrestrita. Por sua natureza jurídica, ele não guarda compatibilidade absoluta com o direito de propriedade.
-      </div>
-    </div>
-  </div>
-
-  <div class="box-juridico-pro">
-    <div class="header-principio">
-      <span>ART. 215</span>
-      <h3>Fruição Coletiva</h3>
-    </div>
-    <div class="conteudo-legal">
-      <p>O Estado garantirá a todos o pleno exercício dos direitos culturais e acesso às fontes da cultura nacional, e apoiará a valorização e a difusão das manifestações culturais.</p>
-      <div class="citacao">
-        Segundo Marcos Paulo de Souza Miranda (2006, p. 31): O gozo público e a fruição coletiva dos bens culturais materiais concretizam-se no direito de visita e no direito de informação assegurados à comunidade.
-      </div>
-      <p>Quando você restaura a cor original, você está garantindo esse direito. É por isso que no Prisma Histórico a gente não inventa cor. A gente revela.</p>
-    </div>
-  </div>
-
-</div>
-
-<style>
-  .pagina-artigo {
-    background: #121212;
-    padding: 60px 20px;
-  }
-  .pagina-artigo .container-artigo {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  .bloco-horizontal {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 32px;
-    background: #1E1E1E;
-    border: 1px solid #2A2A2A;
-    border-radius: 16px;
-    padding: 32px;
-    align-items: center;
-  }
-  .bloco-horizontal.invertido {
-    grid-template-columns: 0.9fr 1.1fr;
-  }
-  .bloco-horizontal .texto-lado h2 {
-    font-family: Georgia, serif;
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 12px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .bloco-horizontal .texto-lado h2 span {
-    color: #eebc6c;
-    font-size: 12px;
-  }
-  .bloco-horizontal .texto-lado p {
-    font-family: Georgia, serif;
-    color: #F5F5F0;
-    font-size: 15px;
-    line-height: 1.9;
-    margin: 0 0 16px 0;
-    opacity: 0.9;
-  }
-  .bloco-horizontal .texto-lado .destaque-sepia {
-    background: rgba(238, 188, 108, 0.08);
-    border-left: 3px solid #eebc6c;
-    padding: 14px 18px;
-    border-radius: 0 8px 8px 0;
-    color: #F5F5F0;
-    font-family: Inter, sans-serif;
-    font-size: 13.5px;
-  }
-  .bloco-horizontal .texto-lado .destaque-sepia strong {
-    color: #eebc6c;
-  }
-  .bloco-horizontal .imagem-lado {
-    background: #121212;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #2A2A2A;
-    height: 100%;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .bloco-horizontal .imagem-lado img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  /* Mobile */
-  @media (max-width: 850px) {
-    .bloco-horizontal, .bloco-horizontal.invertido {
-      grid-template-columns: 1fr;
-    }
-    .bloco-horizontal.invertido .imagem-lado {
-      order: -1;
-    }
-  }
-</style>
-
-
-<style>
-  .bloco-horizontal {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 28px;
-    background: #1E1E1E;
-    border: 1px solid #2A2A2A;
-    border-radius: 16px;
-    padding: 26px;
-    align-items: start;
-  }
-  .texto-lado h2 {
-    font-family: Georgia, serif;
-    color: #FFFFFF;
-    font-size: 19px;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 0 0 14px 0;
-  }
-  .texto-lado h2 span { color: #eebc6c; }
-  .texto-lado > p {
-    font-family: Georgia, serif;
-    color: #F5F5F0;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0 0 12px 0;
-  }
-  .destaque-sepia {
-    background: #2A2115;
-    border-left: 3px solid #eebc6c;
-    padding: 10px 14px;
-    font-family: Georgia, serif;
-    color: #F5E6C8;
-    font-size: 13px;
-    border-radius: 6px;
-    margin: 12px 0 18px 0;
-  }
-
-  /* ROLAGEM PRA NÃO ESTICAR */
-  .texto-rolagem-sepia {
-    max-height: 360px;
-    overflow-y: auto;
-    padding-right: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .texto-rolagem-sepia p {
-    font-family: Georgia, serif;
-    color: #F5F5F0;
-    font-size: 14px;
-    line-height: 1.8;
-    margin: 0;
-  }
-  .texto-rolagem-sepia h3 {
-    font-family: Georgia, serif;
-    color: #eebc6c;
-    font-size: 15px;
-    text-transform: uppercase;
-    margin: 4px 0 0 0;
-  }
-  .texto-rolagem-sepia::-webkit-scrollbar { width: 5px; }
-  .texto-rolagem-sepia::-webkit-scrollbar-track { background: #121212; }
-  .texto-rolagem-sepia::-webkit-scrollbar-thumb { background: #eebc6c; border-radius: 10px; }
-  .texto-rolagem-sepia { scrollbar-width: thin; scrollbar-color: #eebc6c #121212; }
-
-  /* IMAGEM QUADRADA SEM ESTICAR */
-  .imagem-lado {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #121212;
-    border: 1px solid #2A2A2A;
-    position: sticky;
-    top: 20px;
-  }
-  .imagem-lado img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  @media (max-width: 850px) {
-    .bloco-horizontal { grid-template-columns: 1fr; }
-    .imagem-lado { aspect-ratio: 16/11; position: relative; }
-    .texto-rolagem-sepia { max-height: 300px; }
-  }
-</style>
 
 <div class="bloco-horizontal">
   <div class="texto-lado">
     <h2><span>●</span> Função Social da Propriedade</h2>
-    <p>A ordem econômica, fundada na valorização do trabalho humano e na livre iniciativa, tem por fim assegurar a todos existência digna, conforme os ditames da justiça social.</p>
-    <div class="destaque-sepia">
-      <strong>Art. 170 • III:</strong> A propriedade atenderá sua função social. Art. 216, §1º protege o patrimônio cultural.
-    </div>
-
-    <!-- TEXTO LONGO COM ROLAGEM -->
+    <div class="destaque-sepia"><strong>Art. 170 • III:</strong> A propriedade atenderá sua função social. Art. 216, §1º protege o patrimônio cultural.</div>
     <div class="texto-rolagem-sepia">
-      <h3>Características</h3>
-      <p>Sobrado colonial geminado de dois pavimentos. Fachada com vergas em arco abatido, portas e janelas em madeira com almofadas, cimalha corrida, e cobertura em telha capa e canal cerâmica. Alvenaria em pedra e taipa com reboco em cal. Implantação no alinhamento da rua, sem recuo, sobre calçamento em pé de moleque.</p>
-      
-      <h3>Período</h3>
-      <p>Ciclo do Ouro tardio e Imperial, entre final do século 18 e metade do século 19. Influência do barroco mineiro simplificado para uso civil. As torres ao fundo indicam entorno de igreja matriz, comum em núcleos tombados como Ouro Preto e Olinda.</p>
-
-      <h3>Cores</h3>
-      <p>Paleta original de pigmentos minerais. Amarelo ocre feito com óxido de ferro e caulim. Verde colonial nas esquadrias, obtido com verde de cromo e óleo de linhaça. Azul anil e vermelho com tauá ou almáguere nos cunhais e vergas. Tons terrosos, foscos, sem brilho acrílico.</p>
-
-      <h3>Como restaurar o original</h3>
-      <p>Primeiro é feita prospecção estratigráfica. Abrem se janelas pequenas na parede para revelar as camadas de tinta antigas até chegar no reboco original. Depois análise em laboratório para identificar pigmento e aglutinante. Para pintura, usar tinta a base de cal, não acrílica. A cal permite que a parede respire. Lixar e remover massa corrida moderna. Reconstituir reboco com argamassa de cal e areia. Aplicar cor na técnica de caiação com pigmento mineral diluído. Nas madeiras, remover esmalte sintético, tratar com cupinicida e repintar com tinta a óleo com acabamento fosco. Toda intervenção precisa de aprovação prévia do órgão de preservação.</p>
+      <p>Sobrado colonial geminado de dois pavimentos. Fachada com vergas em arco abatido, portas e janelas em madeira com almofadas, cimalha corrida, e cobertura em telha capa e canal cerâmica.</p>
+      <h3 style="color:#eebc6c; font-family:Georgia, serif; text-transform:uppercase; font-size:15px;">Como restaurar o original</h3>
+      <p>Primeiro é feita prospecção estratigráfica. Abrem se janelas pequenas na parede para revelar as camadas de tinta antigas até chegar no reboco original. Depois análise em laboratório para identificar pigmento e aglutinante. Para pintura, usar tinta a base de cal, não acrílica.</p>
     </div>
   </div>
-
   <div class="imagem-lado">
     <img src="../img/casa1.webp" alt="Casa Colonial Real">
   </div>
 </div>
 
-
-
-<style>
-  .pagina-artigo {
-    background: #121212;
-    padding: 60px 20px;
-  }
-  .pagina-artigo .container-artigo {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-  .bloco-horizontal {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 32px;
-    background: #1E1E1E;
-    border: 1px solid #2A2A2A;
-    border-radius: 16px;
-    padding: 32px;
-    align-items: start;
-  }
-  .bloco-horizontal.invertido {
-    grid-template-columns: 0.9fr 1.1fr;
-  }
-  .bloco-horizontal .texto-lado h2 {
-    font-family: Georgia, serif;
-    color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 16px 0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .bloco-horizontal .texto-lado h2 span {
-    color: #eebc6c;
-    font-size: 12px;
-  }
-  
-  /* ROLAGEM SÉPIA - TRAVA O CARD */
-  .texto-rolagem {
-    max-height: 280px;
-    overflow-y: auto;
-    padding-right: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .texto-rolagem p {
-    font-family: Georgia, serif;
-    color: #F5F5F0;
-    font-size: 15px;
-    line-height: 1.9;
-    margin: 0;
-    opacity: 0.9;
-  }
-  .texto-rolagem::-webkit-scrollbar { width: 6px; }
-  .texto-rolagem::-webkit-scrollbar-track { background: #121212; border-radius: 10px; }
-  .texto-rolagem::-webkit-scrollbar-thumb { background: #eebc6c; border-radius: 10px; }
-  .texto-rolagem::-webkit-scrollbar-thumb:hover { background: #d9a85a; }
-  .texto-rolagem { scrollbar-width: thin; scrollbar-color: #eebc6c #121212; }
-
-  .destaque-sepia {
-    background: rgba(238, 188, 108, 0.08);
-    border-left: 3px solid #eebc6c;
-    padding: 14px 18px;
-    border-radius: 0 8px 8px 0;
-    color: #F5F5F0;
-    font-family: Inter, sans-serif;
-    font-size: 13.5px;
-  }
-  .destaque-sepia strong { color: #eebc6c; }
-  
-  /* IMAGEM QUADRADA QUE NÃO ESTICA */
-  .bloco-horizontal .imagem-lado {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    background: #121212;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #2A2A2A;
-    position: sticky;
-    top: 20px;
-  }
-  .bloco-horizontal .imagem-lado img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  @media (max-width: 850px) {
-    .bloco-horizontal, .bloco-horizontal.invertido {
-      grid-template-columns: 1fr;
-    }
-    .bloco-horizontal .imagem-lado {
-      aspect-ratio: 16 / 11;
-      position: static;
-    }
-    .texto-rolagem { max-height: 320px; }
-  }
-</style>
-
-<div class="pagina-artigo">
-  <div class="container-artigo">
-
-    <!-- BLOCO 1: TEXTO ESQUERDA / IMAGEM DIREITA -->
-    <div class="bloco-horizontal">
-      <div class="texto-lado">
-        <h2><span>●</span> Função Social da Propriedade</h2>
-        <div class="texto-rolagem">
-          <p>A ordem econômica, fundada na valorização do trabalho humano e na livre iniciativa, tem por fim assegurar a todos existência digna, conforme os ditames da justiça social.</p>
-          <p>Conforme Celso Antônio Pacheco Fiorillo (2004, p. 57): A Constituição não autoriza tratar o bem ambiental de forma ampla e irrestrita. Por sua natureza jurídica, ele não guarda compatibilidade absoluta com o direito de propriedade.</p>
-          <p>O proprietário fica impedido de exercer seu direito de maneira ilimitada quando se trata de bem cultural protegido pela Constituição no Art. 216, §1º. É a base para toda restauração de cor original.</p>
-          <p>A proteção do patrimônio é competência comum da União, Estados e Municípios (Art. 23, III e IV). Isso significa que a cor original de uma fachada histórica não é escolha pessoal, é dever coletivo.</p>
-          <div class="destaque-sepia">
-            <strong>Art. 170 • III:</strong> A propriedade atenderá sua função social.
-          </div>
-        </div>
-      </div>
-      <div class="imagem-lado">
-        <img src="imagem-casa-historica.jpg" alt="Função Social - Casa Amarela Colonial">
-      </div>
+<div class="grade-juridica">
+  <div class="box-juridico-pro">
+    <div class="header-principio"><span>ART. 170 • III</span><h3 style="margin:0; font-family:Georgia, serif; font-size:15px; color:#FFF; text-transform:uppercase;">Função Social da Propriedade</h3></div>
+    <div class="conteudo-legal">
+      <p>A ordem econômica, fundada na valorização do trabalho humano e na livre iniciativa, tem por fim assegurar a todos existência digna, conforme os ditames da justiça social.</p>
+      <div class="artigo-destaque"><strong style="color:#eebc6c;">III — função social da propriedade.</strong> O proprietário fica impedido de exercer seu direito de maneira ilimitada quando se trata de bem cultural protegido pelo Art. 216, §1º.</div>
     </div>
-
-    <!-- BLOCO 2: IMAGEM ESQUERDA / TEXTO DIREITA - INVERTIDO -->
-    <div class="bloco-horizontal invertido">
-      <div class="imagem-lado">
-        <img src="imagem-fruicao.jpg" alt="Fruição Coletiva - Casa Azul Colonial">
-      </div>
-      <div class="texto-lado">
-        <h2><span>●</span> Fruição Coletiva</h2>
-        <div class="texto-rolagem">
-          <p>O Estado garantirá a todos o pleno exercício dos direitos culturais e acesso às fontes da cultura nacional, apoiando a valorização e difusão das manifestações culturais (Art. 215).</p>
-          <p>Segundo Marcos Paulo de Souza Miranda (2006, p. 31): O gozo público e a fruição coletiva dos bens culturais materiais concretizam-se no direito de visita e no direito de informação assegurados à comunidade.</p>
-          <p>Quando você restaura a cor original, você está garantindo esse direito de visita. A comunidade volta a enxergar a história como ela realmente era.</p>
-          <p>É por isso que no Prisma Histórico a gente não inventa cor. A gente revela.</p>
-          <div class="destaque-sepia">
-            <strong>Art. 215 • Miranda:</strong> Direito de visita e informação.
-          </div>
-        </div>
-      </div>
+  </div>
+  <div class="box-juridico-pro">
+    <div class="header-principio"><span>ART. 215</span><h3 style="margin:0; font-family:Georgia, serif; font-size:15px; color:#FFF; text-transform:uppercase;">Fruição Coletiva</h3></div>
+    <div class="conteudo-legal">
+      <p>O Estado garantirá a todos o pleno exercício dos direitos culturais e acesso às fontes da cultura nacional, e apoiará a valorização e a difusão das manifestações culturais.</p>
+      <p>Quando você restaura a cor original, você está garantindo esse direito. É por isso que no Prisma Histórico a gente não inventa cor. A gente revela.</p>
     </div>
-
   </div>
 </div>
+
+<div class="secao-artigo-prisma">
+  <div class="topo-artigo">
+    <div class="tag-artigo">Dossiê Prisma Histórico • 1920</div>
+    <h2>A fachada não é só tinta. <em>É documento.</em></h2>
+    <p style="color:#A0A0A0; font-family:Georgia, serif; font-style:italic; margin-top:10px;">Por que restaurar a cor original é um ato jurídico, não apenas estético.</p>
+    <div style="height:1px; background:linear-gradient(90deg, transparent, #eebc6c, transparent); opacity:0.3; margin:28px 0 0 0;"></div>
+  </div>
+  <div class="corpo-artigo">
+    <p>Quando você lixa uma parede de 1920 e passa um cinza moderno, você não está só mudando a cor. Você está apagando uma prova.</p>
+    <div style="border-left:3px solid #eebc6c; padding-left:18px; color:#F5E6C8; font-size:18px; font-family:Georgia, serif; font-style:italic;">"A cor original de uma fachada eclética é parte do seu DNA. Apagar é falsificar a história."</div>
+    <p>No <strong>Prisma Histórico</strong>, a gente parte de 3 princípios que você já viu nos boxes acima: <strong>Função Social da Propriedade e Fruição Coletiva.</strong></p>
+  </div>
+</div>
+
+<section class="cta-ebook">
+  <h2>Quer aprender a fazer essa leitura nas paredes?</h2>
+  <p>No e-book Prisma Histórico Volume 01, eu te ensino o passo a passo da prospecção estratigráfica.</p>
+  <a href="SEU-LINK-DA-HOTMART-AQUI" class="btn">QUERO O E-BOOK COMPLETO</a><br>
+  <small>De R$ 97 por R$ 39,90 • Acesso imediato</small>
+</section>
+
 <footer>PRISMA HISTÓRICO — REVISTA EDITORIAL DE PATRIMÔNIO CULTURAL<br>Edição 12 • 2024 • ISSN 2675-8890</footer>
 
 <script>
 const nav=document.getElementById('prismaNav');
-const btn=nav.querySelector('.prisma-menu-hamburguer');
-btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
-document.querySelectorAll('.prisma-menu-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('menu-aberto');document.body.style.overflow=''}));
+const btn=document.getElementById('btnMenu');
+btn.addEventListener('click',()=>{
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+});
+document.querySelectorAll('.prisma-menu-links a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    nav.classList.remove('menu-aberto');
+    document.body.style.overflow='';
+  });
+});
 </script>
 </body>
 </html>

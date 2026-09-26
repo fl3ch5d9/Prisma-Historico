@@ -7,45 +7,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
-
-
-
-
-
 <style>
 :root{--ouro:#eebc6c;--preto:#121212;--preto2:#1E1E1E;--creme:#F5F5F0;--borda:rgba(238,188,108,0.15)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;padding-top:78px!important}
 
-/* NAV PADRÃO PRISMA */
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em}
-.prisma-logo span{color:var(--ouro);font-weight:700}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
-.prisma-barra{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(2){opacity:0}
-.prisma-menu-hamburguer.ativo .prisma-barra:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;inset:0;width:100vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:center;padding:12% 8%;gap:8px;transform:translateY(-100%);opacity:0;transition:0.8s cubic-bezier(0.77,0,0.175,1);pointer-events:none}
-.prisma-menu-links.ativo{transform:translateY(0);opacity:1;pointer-events:all}
-.prisma-menu-links a{font-family:'Cormorant Garamond';font-size:clamp(32px,5vw,56px);color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:16px}
-.prisma-menu-links a:hover{color:var(--ouro);padding-left:16px}
-.prisma-menu-links a .material-icons{font-size:28px}
+/* NAV PADRÃO PRISMA - FINAL */
+.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
+.prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important}
+.prisma-logo span{color:var(--ouro)!important;font-weight:700!important}
+.prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid var(--borda)!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
+.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--ouro)!important;display:block!important;transition:0.25s ease!important;transform-origin:center!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s ease!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(238,188,108,0.15)!important;margin:0!important}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+.prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:var(--creme)!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
+.prisma-menu-links li a:hover{color:var(--ouro)!important;opacity:1!important}
 
 /* HERO */
-.hero-ebook{padding:150px 5% 80px 5%;max-width:1250px;margin:auto}
+.hero-ebook{padding:70px 5% 80px 5%;max-width:1250px;margin:auto}
 .hero-ebook h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,72px);line-height:0.9;letter-spacing:-0.02em}
 .hero-ebook h1 span{color:var(--ouro);font-style:italic;font-weight:500}
 .hero-ebook p{max-width:720px;margin:24px 0 40px 0;opacity:0.6;line-height:1.7;font-size:17px}
 .beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:50px}
 .card-beneficio{background:var(--preto2);border:1px solid var(--borda);padding:22px;border-radius:16px;font-size:14px;line-height:1.5}
 .card-beneficio b{color:var(--ouro);display:block;margin-bottom:4px;font-size:13px;letter-spacing:0.05em}
-
-/* BOTÃO */
 .prisma-btn-container{display:flex;justify-content:flex-start;margin-bottom:80px}
 .btn-checkout-final{display:inline-flex;align-items:center;gap:10px;background:var(--ouro);color:#000;font-weight:800;padding:18px 32px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;letter-spacing:0.05em;transition:0.3s;box-shadow:0 10px 30px rgba(238,188,108,0.25)}
 .btn-checkout-final:hover{background:#fff;transform:translateY(-3px)}
-
 /* MODAL */
 #modalCheckout{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px)}
 #modalCheckout.aberto{display:flex}
@@ -68,8 +59,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .icones-pagamento{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px}
 .tag-pagamento{background:#222;border:1px solid #2a2a2a;color:#ddd;padding:7px 12px;border-radius:100px;font-size:11px}
 .modal-seguranca{margin-top:16px;font-size:11px;color:#666;line-height:1.5}
-
-/* FOOTER */
 .footer{background:#0A0A0A;border-top:1px solid var(--borda);padding:60px 5% 30px 5%;margin-top:40px}
 .footer-grid{display:grid;grid-template-columns:1.5fr 0.8fr 0.8fr 1fr;gap:30px;max-width:1250px;margin:auto}
 @media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr}}
@@ -85,10 +74,8 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" onclick="togglePrismaMenu(event)" aria-label="Abrir menu" aria-expanded="false">
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
-        <span class="prisma-barra"></span>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
     </button>
     <ul class="prisma-menu-links">
         <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
@@ -98,34 +85,27 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
         <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
         <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
         <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-      
-    
-    
+        <li><a href="loja.html"><span class="material-icons">storefront</span> Loja</a></li>
     </ul>
 </nav>
 
 <section class="hero-ebook">
-    <div class="container">
-        <h1>PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
-        <p>O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>. Garanta já o seu e-book completo.</p>
-        
-        <div class="beneficios">
-            <div class="card-beneficio"><b>📖 PÁGINAS ILUSTRADAS</b>Análise profunda, zero romantização</div>
-            <div class="card-beneficio"><b>🗺️ MAPAS MENTAIS</b>Memorize estruturas inteiras</div>
-            <div class="card-beneficio"><b>📊 DIAGRAMAS E IMAGENS</b>Visualize o cotidiano colonial</div>
-            <div class="card-beneficio"><b>📚 SUMÁRIO DIGITAL</b>Navegue por vários tópicos</div>
-        </div>
-
-        <div class="prisma-btn-container">
-            <button type="button" class="btn-checkout-final" onclick="abrirCheckout()">🛒 Comprar e-book completo</button>
-        </div>
+    <h1>PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
+    <p>O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>.</p>
+    <div class="beneficios">
+        <div class="card-beneficio"><b>📖 PÁGINAS ILUSTRADAS</b>Análise profunda, zero romantização</div>
+        <div class="card-beneficio"><b>🗺️ MAPAS MENTAIS</b>Memorize estruturas inteiras</div>
+        <div class="card-beneficio"><b>📊 DIAGRAMAS E IMAGENS</b>Visualize o cotidiano colonial</div>
+        <div class="card-beneficio"><b>📚 SUMÁRIO DIGITAL</b>Navegue por vários tópicos</div>
+    </div>
+    <div class="prisma-btn-container">
+        <button type="button" class="btn-checkout-final" onclick="abrirCheckout()">🛒 Comprar e-book completo</button>
     </div>
 </section>
 
-<div id="modalCheckout" class="modal-overlay">
+<div id="modalCheckout">
     <div class="modal-content">
-        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()" aria-label="Fechar">&times;</button>
+        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()">&times;</button>
         <div class="modal-grid">
             <div class="modal-produto">
                 <span class="modal-tag">EDIÇÃO HISTÓRICA COMPLETA</span>
@@ -137,73 +117,44 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
                     <li><span class="check-icon">✓</span> Mapas, linha do tempo e imagens da Colônia à Primeira República</li>
                     <li><span class="check-icon">✓</span> Conteúdo analítico, crítico-reflexivo e investigativo</li>
                     <li><span class="check-icon">✓</span> Mapas mentais e infográficos didáticos</li>
-                    <li><span class="check-icon">✓</span> Análise de documentos oficiais históricos</li>
-                    <li><span class="check-icon">✓</span> Detalhes inéditos sobre engenharia náutica da época</li>
                 </ul>
             </div>
             <div class="modal-pagamento">
-                <div class="preco-box">
-                    <span class="preco-de">De R$ 149,90</span>
-                    <span class="preco-por">R$ 49,90</span>
-                    <p class="preco-info">Pagamento único • Acesso imediato</p>
-                </div>
-                <div class="formas-pagamento">
-                    <p class="titulo-pagamento">Checkout 100% seguro</p>
-                    <div class="icones-pagamento">
-                        <span class="tag-pagamento">⚡ Pix Instantâneo</span>
-                        <span class="tag-pagamento">💳 Cartão em até 12x</span>
-                        <span class="tag-pagamento">📄 Boleto</span>
-                    </div>
+                <span class="preco-de">De R$ 149,90</span>
+                <div class="preco-por">R$ 49,90</div>
+                <p class="preco-info">Pagamento único • Acesso imediato</p>
+                <p class="titulo-pagamento">Checkout 100% seguro</p>
+                <div class="icones-pagamento">
+                    <span class="tag-pagamento">⚡ Pix Instantâneo</span>
+                    <span class="tag-pagamento">💳 Cartão em até 12x</span>
+                    <span class="tag-pagamento">📄 Boleto</span>
                 </div>
                 <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-checkout-final" style="justify-content:center;width:100%">🔒 GARANTIR MEU ACESSO AGORA</a>
-                <div class="modal-seguranca">
-                    <p>🔒 Ambiente criptografado Hotmart</p>
-                    <p>🛡️ 7 dias de garantia incondicional</p>
-                </div>
+                <div class="modal-seguranca"><p>🔒 Ambiente criptografado Hotmart</p><p>🛡️ 7 dias de garantia</p></div>
             </div>
         </div>
     </div>
 </div>
 
-<footer class="footer">
-  <div class="footer-grid">
-      <div class="footer-col">
-        <h3 class="footer-logo">Prisma Histórico</h3>
-        <p>Material de História do Brasil feito por quem entende de prova. Conteúdo direto, sem enrolação, focado em aprovação.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul><li><a href="ebook.html" class="link-destaque">Comprar E-book</a></li></ul>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos.html">Termos de Uso</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contato e Suporte</h4>
-        <ul><li><a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li></ul>
-      </div>
-  </div>
-</footer>
-
 <script>
 function abrirCheckout(){ document.getElementById('modalCheckout').classList.add('aberto'); document.body.style.overflow='hidden' }
 function fecharCheckout(){ document.getElementById('modalCheckout').classList.remove('aberto'); document.body.style.overflow='' }
-window.togglePrismaMenu = function(event){
-    if(event){event.preventDefault();event.stopPropagation()}
-    const menuLinks = document.querySelector('.prisma-menu-links');
-    const botao = document.querySelector('.prisma-menu-hamburguer');
-    menuLinks.classList.toggle('ativo');
-    botao.classList.toggle('ativo');
-    const isOpen = menuLinks.classList.contains('ativo');
-    botao.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-}
-document.getElementById('modalCheckout').addEventListener('click', function(e){ if(e.target===this) fecharCheckout() });
+document.addEventListener('DOMContentLoaded',()=>{
+  const nav=document.getElementById('prismaNav');
+  const btn=document.getElementById('btnMenu');
+  btn.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    nav.classList.toggle('menu-aberto');
+    document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+  });
+  document.addEventListener('click',(e)=>{
+    if(!e.target.closest('#prismaNav')){
+      nav.classList.remove('menu-aberto');
+      if(!document.getElementById('modalCheckout').classList.contains('aberto')) document.body.style.overflow='';
+    }
+  });
+  document.getElementById('modalCheckout').addEventListener('click', function(e){ if(e.target===this) fecharCheckout() });
+});
 </script>
-
 </body>
 </html>
