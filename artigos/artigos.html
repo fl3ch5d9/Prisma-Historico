@@ -61,6 +61,65 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
 .imagem-lado{position:relative; aspect-ratio:16/11;}
 .galeria-cores{grid-template-columns:repeat(2,1fr);}
 }
+/* FIX MOBILE - CARD COM IMAGEM */
+.prisma-card, .card, .artigo-card{
+  overflow:visible!important;
+  height:auto!important;
+}
+.prisma-card img, .card img{
+  width:100%!important;
+  height:auto!important;
+  display:block!important;
+  border-radius:12px 12px 0 0!important;
+}
+@media(max-width:768px){
+  .conteudo-artigo, .wrap, .artigo-wrap{
+    padding-left:20px!important;
+    padding-right:20px!important;
+    word-break:break-word!important;
+  }
+}
+/* BOTAO SUBIR TOPO SEPIA ELEGANTE */
+.btn-topo-sepia{
+  position:fixed; bottom:28px; right:28px; z-index:9998;
+  width:52px; height:52px; border-radius:50%;
+  background: #1E1E1E; border:1px solid #eebc6c;
+  color:#eebc6c; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(238,188,108,0.1) inset;
+  opacity:0; visibility:hidden; transform:translateY(20px);
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.btn-topo-sepia.mostrar{opacity:1; visibility:visible; transform:translateY(0);}
+.btn-topo-sepia:hover{background:#eebc6c; color:#121212; transform:translateY(-3px); box-shadow:0 12px 32px rgba(238,188,108,0.25);}
+.btn-topo-sepia .material-icons{font-size:22px;}
+
+/* FIX DEFINITIVO - IMAGEM NÃO COME MAIS O ARTIGO */
+.bloco-horizontal{overflow:visible !important;}
+.imagem-lado{
+  aspect-ratio:auto !important;
+  height:auto !important;
+  position:relative !important;
+  top:auto !important;
+  line-height:0 !important;
+}
+.imagem-lado img{
+  width:100% !important;
+  height:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+
+@media(max-width:900px){
+  .bloco-horizontal{padding:16px !important; gap:16px !important;}
+  .imagem-lado{aspect-ratio:auto !important;}
+  .grade-juridica{margin-top:24px !important;}
+  .box-juridico-pro .header-principio{
+    position:static !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -86,23 +145,6 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
   <span>ROLAR PARA LER</span>
 </section>
 
-<main class="conteudo">
-  <div class="texto-principal">
-    <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
-    <h2>Quando a tinta conta a história: a busca pela cor original de 1780</h2>
-    <small style="opacity:0.6">Por Ana Ribeiro • 23 de setembro de 2024 • Leitura 6 min</small>
-    <br><br><hr><br>
-    <p>Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
-    <blockquote>“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite style="font-size:0.8rem; opacity:0.7; display:block; margin-top:10px;">— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
-    <p>Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
-  </div>
-  <aside class="ficha">
-    <h4>FICHA TÉCNICA DA COR</h4>
-    <label>PIGMENTO:</label><div class="box">Ocre Amarelo</div>
-    <label>ANO:</label><div class="box">1780 — Camada original identificada</div>
-    <label>RUA:</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
-  </aside>
-</main>
 <main class="conteudo">
   <div class="texto-principal">
     <div class="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
@@ -146,6 +188,7 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
       <h3 style="color:#eebc6c; font-family:Georgia, serif; text-transform:uppercase; font-size:15px;">Como restaurar o original</h3>
       <p>Primeiro é feita prospecção estratigráfica. Abrem se janelas pequenas na parede para revelar as camadas de tinta antigas até chegar no reboco original. Depois análise em laboratório para identificar pigmento e aglutinante. Para pintura, usar tinta a base de cal, não acrílica.</p>
     </div>
+  
   </div>
   <div class="imagem-lado">
     <img src="../img/casa1.webp" alt="Casa Colonial Real">
@@ -160,6 +203,8 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
       <div class="artigo-destaque"><strong style="color:#eebc6c;">III — função social da propriedade.</strong> O proprietário fica impedido de exercer seu direito de maneira ilimitada quando se trata de bem cultural protegido pelo Art. 216, §1º.</div>
     </div>
   </div>
+
+
   <div class="box-juridico-pro">
     <div class="header-principio"><span>ART. 215</span><h3 style="margin:0; font-family:Georgia, serif; font-size:15px; color:#FFF; text-transform:uppercase;">Fruição Coletiva</h3></div>
     <div class="conteudo-legal">
@@ -192,6 +237,10 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
 
 <footer>PRISMA HISTÓRICO — REVISTA EDITORIAL DE PATRIMÔNIO CULTURAL<br>Edição 12 • 2024 • ISSN 2675-8890</footer>
 
+<button id="btnTopo" class="btn-topo-sepia" aria-label="Voltar ao topo">
+  <span class="material-icons">arrow_upward</span>
+</button>
+
 <script>
 const nav=document.getElementById('prismaNav');
 const btn=document.getElementById('btnMenu');
@@ -204,6 +253,16 @@ document.querySelectorAll('.prisma-menu-links a').forEach(a=>{
     nav.classList.remove('menu-aberto');
     document.body.style.overflow='';
   });
+});
+
+// BOTAO TOPO SEPIA
+const btnTopo = document.getElementById('btnTopo');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 400){ btnTopo.classList.add('mostrar'); }
+  else{ btnTopo.classList.remove('mostrar'); }
+});
+btnTopo.addEventListener('click', ()=>{
+  window.scrollTo({top:0, behavior:'smooth'});
 });
 </script>
 </body>
