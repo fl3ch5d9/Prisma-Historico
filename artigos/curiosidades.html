@@ -5,13 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curiosidades - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../css/style.css">
-
-
-
-
-
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); --vermelho:#ff4d4d; }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,106 +12,105 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
 .prisma-logo span{color:var(--ouro);font-weight:700}
+.lang-switch{display:flex;gap:6px;z-index:10001}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);opacity:1;transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
-
-/* CURIOSIDADES LOKA */
 main{padding-top:110px}
 .container{max-width:1200px;margin:auto;padding:0 5%}
 .subtitulo-secao{font-family:'Cormorant Garamond';font-size:52px;line-height:1;margin-top:40px}
-.subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:13px;font-weight:800;margin:8px 0 40px 0;opacity:0.9}
+.subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:13px;font-weight:800;margin:8px 0 40px 0}
 .titulo-categoria{font-family:'Cormorant Garamond';font-size:28px;margin:70px 0 22px 0;display:flex;align-items:center;gap:14px}
 .barra-laranja{width:4px;height:28px;background:var(--ouro);display:inline-block;border-radius:2px}
 .barra-vermelha{width:4px;height:28px;background:var(--vermelho);display:inline-block;border-radius:2px;box-shadow:0 0 12px var(--vermelho)}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
-.card{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:0.35s;position:relative}
+.card{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:0.35s}
 .card:hover{transform:translateY(-6px);border-color:rgba(238,188,108,0.4)}
-.card-img{width:100%;height:170px;object-fit:cover;filter:grayscale(0.2) sepia(0.2) contrast(1.1)}
+.card-img{width:100%;height:170px;object-fit:cover;filter:grayscale(0.2) sepia(0.2)}
 .card-content{padding:20px}
-.card-content h3{font-family:'Cormorant Garamond';font-size:20px;margin-bottom:8px;color:var(--creme)}
-.card-content p{opacity:0.68;font-size:14.5px;line-height:1.6;font-weight:300}
+.card-content h3{font-family:'Cormorant Garamond';font-size:20px;margin-bottom:8px}
+.card-content p{opacity:0.68;font-size:14.5px;line-height:1.6}
 .card-ditado{background:linear-gradient(180deg,#1E1E1E,#181818);border-left:3px solid var(--ouro)}
 .card-tortura{background:#181111;border:1px solid rgba(255,77,77,0.18);border-left:3px solid var(--vermelho)}
 .texto-intro{opacity:0.6;font-style:italic;line-height:1.7;margin-bottom:20px;max-width:800px;border-left:2px solid var(--borda);padding-left:16px}
 .cta-ebook{background:linear-gradient(135deg,#1E1E1E, #121212);border:1px solid var(--borda);border-radius:16px;padding:42px;text-align:center}
 .cta-ebook h3{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:10px}
-.cta-ebook p{opacity:0.6;margin-bottom:20px}
-.btn-cta{background:var(--ouro);color:#121212;padding:16px 28px;border-radius:6px;text-decoration:none;font-weight:800;letter-spacing:0.08em;display:inline-block;transition:0.3s}
+.btn-cta{background:var(--ouro);color:#121212;padding:16px 28px;border-radius:6px;text-decoration:none;font-weight:800;display:inline-block}
 .btn-cta:hover{background:#fff;transform:translateY(-2px)}
 .footer{border-top:1px solid var(--borda);padding:60px 5% 30px 5%;margin-top:80px;opacity:0.7}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px}
-.footer-logo{font-family:'Cormorant Garamond';font-size:24px}
-.footer-col h4{color:var(--ouro);font-size:12px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:12px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col a{color:var(--creme);text-decoration:none;font-size:13px;opacity:0.6}
-.footer-col a:hover{opacity:1;color:var(--ouro)}
-.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);text-align:center;font-size:12px;opacity:0.4}
-@media(max-width:900px){.grid-3{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.subtitulo-secao{font-size:36px}}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr}.subtitulo-secao{font-size:36px}.footer-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-  
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-    <ul class="prisma-menu-links">
-        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-      
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      </div>
+      <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    </div>
+   <ul class="prisma-menu-links">
+       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
+<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
+<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
+<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
+<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
+<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
+<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
+<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
     
-      </ul>
+    </ul>
 </nav>
 
 <main>
   <section class="section curiosidades">
     <div class="container">
-      <h2 class="subtitulo-secao">Curiosidades da Colonização</h2>
-      <p class="subtitulo-secao-menor">Da Colônia à Primeira República — o que os livros não te contam</p>
+      <h2 class="subtitulo-secao" data-i18n="t_main">Curiosidades da Colonização</h2>
+      <p class="subtitulo-secao-menor" data-i18n="t_sub">Da Colônia à Primeira República — o que os livros não te contam</p>
 
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Medicina e Doenças Bizarras</h3>
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span> <span data-i18n="cat1">Medicina e Doenças Bizarras</span></h3>
       <div class="grid-3">
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Fezes de cavalo na roupa</h3><p>Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Tratamentos com mercúrio</h3><p>Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Sangrias para tudo</h3><p>Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-i18n="c1_t">Fezes de cavalo na roupa</h3><p data-i18n="c1_d">Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-i18n="c2_t">Tratamentos com mercúrio</h3><p data-i18n="c2_d">Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-i18n="c3_t">Sangrias para tudo</h3><p data-i18n="c3_d">Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
       </div>
       <div class="grid-3">
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Catar piolhos em público</h3><p>Era normal ver família inteira na calçada se catando. Higiene era luxo.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Médicos improvisados</h3><p>Quem curava era barbeiro-cirurgião e benzedeira. Se sobrevivesse, era lucro.</p></div></article>
-        <article class="card"><div class="card-content"><h3>Comer com as mãos</h3><p>Garfo era coisa de rei. Rico e pobre comiam com a mão mesmo.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-i18n="c4_t">Catar piolhos em público</h3><p data-i18n="c4_d">Era normal ver família inteira na calçada se catando. Higiene era luxo.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-i18n="c5_t">Médicos improvisados</h3><p data-i18n="c5_d">Quem curava era barbeiro-cirurgião e benzedeira. Se sobrevivesse, era lucro.</p></div></article>
+        <article class="card"><div class="card-content"><h3 data-i18n="c6_t">Comer com as mãos</h3><p data-i18n="c6_d">Garfo era coisa de rei. Rico e pobre comiam com a mão mesmo.</p></div></article>
       </div>
 
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Higiene e Saneamento Absurdos</h3>
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span> <span data-i18n="cat2">Higiene e Saneamento Absurdos</span></h3>
       <div class="grid-3">
-        <article class="card"><div class="card-content"><h3>O grito de "Água vai!"</h3><p>Jogava o penico pela janela e rezava pra não acertar ninguém. Era o esgoto oficial.</p></div></article>
-        <article class="card"><div class="card-content"><h3>Os "Tigres"</h3><p>Escravizados carregavam tonéis de fezes nas costas. O líquido vazava e manchava tudo.</p></div></article>
-        <article class="card"><div class="card-content"><h3>Casas sem banheiros</h3><p>Nem palácio tinha banheiro. Era penico e quem esvaziava era o escravizado.</p></div></article>
+        <article class="card"><div class="card-content"><h3 data-i18n="c7_t">O grito de "Água vai!"</h3><p data-i18n="c7_d">Jogava o penico pela janela e rezava pra não acertar ninguém. Era o esgoto oficial.</p></div></article>
+        <article class="card"><div class="card-content"><h3 data-i18n="c8_t">Os "Tigres"</h3><p data-i18n="c8_d">Escravizados carregavam tonéis de fezes nas costas. O líquido vazava e manchava tudo.</p></div></article>
+        <article class="card"><div class="card-content"><h3 data-i18n="c9_t">Casas sem banheiros</h3><p data-i18n="c9_d">Nem palácio tinha banheiro. Era penico e quem esvaziava era o escravizado.</p></div></article>
       </div>
 
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Ditados que Nasceram na Colônia</h3>
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span> <span data-i18n="cat3">Ditados que Nasceram na Colônia</span></h3>
       <div class="grid-3">
-        <article class="card card-ditado"><div class="card-content"><h3>"Santo do pau oco"</h3><p><strong>Origem:</strong> Santos ocos pra esconder ouro do quinto.<br><strong>Hoje:</strong> Pessoa falsa.</p></div></article>
-        <article class="card card-ditado"><div class="card-content"><h3>"Lavar a égua"</h3><p><strong>Origem:</strong> Ouro achado ao lavar éguas no rio.<br><strong>Hoje:</strong> Se dar bem.</p></div></article>
-        <article class="card card-ditado"><div class="card-content"><h3>"Sem eira nem beira"</h3><p><strong>Origem:</strong> Casa de pobre sem telhado direito.<br><strong>Hoje:</strong> Na miséria.</p></div></article>
+        <article class="card card-ditado"><div class="card-content"><h3 data-i18n="d1_t">"Santo do pau oco"</h3><p data-i18n="d1_d"><strong>Origem:</strong> Santos ocos pra esconder ouro do quinto.<br><strong>Hoje:</strong> Pessoa falsa.</p></div></article>
+        <article class="card card-ditado"><div class="card-content"><h3 data-i18n="d2_t">"Lavar a égua"</h3><p data-i18n="d2_d"><strong>Origem:</strong> Ouro achado ao lavar éguas no rio.<br><strong>Hoje:</strong> Se dar bem.</p></div></article>
+        <article class="card card-ditado"><div class="card-content"><h3 data-i18n="d3_t">"Sem eira nem beira"</h3><p data-i18n="d3_d"><strong>Origem:</strong> Casa de pobre sem telhado direito.<br><strong>Hoje:</strong> Na miséria.</p></div></article>
       </div>
 
       <div class="cta-ebook" style="margin-top: 60px;">
-        <h3>Todas essas curiosidades estão no e-book Prisma</h3>
-        <p>Análise política completa pra garantir sua aprovação.</p>
-        <a href="ebook.html" class="btn-cta">Quero o E-book Completo</a>
+        <h3 data-i18n="cta1_t">Todas essas curiosidades estão no e-book Prisma</h3>
+        <p data-i18n="cta1_p">Análise política completa pra garantir sua aprovação.</p>
+        <a href="ebook.html" class="btn-cta" data-i18n="cta1_btn">Quero o E-book Completo</a>
       </div>
     </div>
   </section>
@@ -126,47 +118,360 @@ main{padding-top:110px}
 
 <section class="section section-inquisicao" style="padding:80px 0;background:#0B0B0B;border-top:1px solid rgba(255,77,77,0.15)">
   <div class="container">
-    <h2 class="subtitulo-secao">Os Métodos da Inquisição</h2>
-    <p class="texto-intro">"Na engrenagem do Império Português, o desterro colonial não estava livre da vigilância da fé. O Tribunal não tinha prédio na colônia, mas sua autoridade vinha nas Visitações..."</p>
-
-    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Tortura Física</h3>
+    <h2 class="subtitulo-secao" data-i18n="inq_t">Os Métodos da Inquisição</h2>
+    <p class="texto-intro" data-i18n="inq_p">"Na engrenagem do Império Português, o desterro colonial não estava livre da vigilância da fé. O Tribunal não tinha prédio na colônia, mas sua autoridade vinha nas Visitações..."</p>
+    <h3 class="titulo-categoria"><span class="barra-vermelha"></span> <span data-i18n="inq_cat1">Tortura Física</span></h3>
     <div class="grid-3">
-      <article class="card card-tortura"><div class="card-content"><h3>O Potro / Cavalete</h3><p>Cordas nos braços e pernas ligadas a um eixo. Girava e deslocava tudo.</p></div></article>
-      <article class="card card-tortura"><div class="card-content"><h3>A Polé</h3><p>Mãos nas costas, içado por roldana e solto em queda brusca. Ombros deslocavam.</p></div></article>
-      <article class="card card-tortura"><div class="card-content"><h3>Tormento do Fogo</h3><p>Pés untados com gordura e brasas perto. A pele fritava até confessar.</p></div></article>
-    </div>
-
-    <h3 class="titulo-categoria inquisicao"><span class="barra-vermelha"></span> Tortura Psicológica</h3>
-    <div class="grid-3">
-      <article class="card card-tortura"><div class="card-content"><h3>Isolamento Absoluto</h3><p>Meses em cela escura, úmida, sem saber do crime.</p></div></article>
-      <article class="card card-tortura"><div class="card-content"><h3>Falsa Clemência</h3><p>Prometiam liberdade se entregasse vizinhos. A confissão só confirmava a culpa.</p></div></article>
-      <article class="card card-tortura"><div class="card-content"><h3>Tudo Documentado</h3><p>Escrivães anotavam gritos e ossos estalando. Está na Torre do Tombo, em Lisboa.</p></div></article>
-    </div>
-
-    <div class="cta-ebook" style="margin-top:60px;border-color:rgba(255,77,77,0.2)">
-      <h3>Quer saber como a Inquisição perseguiu brasileiros?</h3>
-      <p>No e-book mostro processos reais, com nomes e condenações.</p>
-      <a href="ebook.html" class="btn-cta" style="background:var(--vermelho);color:#fff">Ver Casos Reais no E-book</a>
+      <article class="card card-tortura"><div class="card-content"><h3 data-i18n="t1_t">O Potro / Cavalete</h3><p data-i18n="t1_d">Cordas nos braços e pernas ligadas a um eixo. Girava e deslocava tudo.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3 data-i18n="t2_t">A Polé</h3><p data-i18n="t2_d">Mãos nas costas, içado por roldana e solto em queda brusca. Ombros deslocavam.</p></div></article>
+      <article class="card card-tortura"><div class="card-content"><h3 data-i18n="t3_t">Tormento do Fogo</h3><p data-i18n="t3_d">Pés untados com gordura e brasas perto. A pele fritava até confessar.</p></div></article>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
+<script>
+const T={
+pt:{
+n_home:"Início",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artigos",n_cur:"Curiosidades",n_quiz:"Quiz",n_ebook:"E-book",n_store:"Loja",
+t_main:"Curiosidades da Colonização",t_sub:"Da Colônia à Primeira República — o que os livros não te contam",
+cat1:"Medicina e Doenças Bizarras",cat2:"Higiene e Saneamento Absurdos",cat3:"Ditados que Nasceram na Colônia",
+c1_t:"Fezes de cavalo na roupa",c1_d:"Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra 'clarear' sua camisa branca.",
+c2_t:"Tratamentos com mercúrio",c2_d:"Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.",
+c3_t:"Sangrias para tudo",c3_d:"Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o 'sangue ruim'.",
+c4_t:"Catar piolhos em público",c4_d:"Era normal ver família inteira na calçada se catando. Higiene era luxo.",
+c5_t:"Médicos improvisados",c5_d:"Quem curava era barbeiro-cirurgião e benzedeira. Se sobrevivesse, era lucro.",
+c6_t:"Comer com as mãos",c6_d:"Garfo era coisa de rei. Rico e pobre comiam com a mão mesmo.",
+c7_t:"O grito de 'Água vai!'",c7_d:"Jogava o penico pela janela e rezava pra não acertar ninguém. Era o esgoto oficial.",
+c8_t:"Os 'Tigres'",c8_d:"Escravizados carregavam tonéis de fezes nas costas. O líquido vazava e manchava tudo.",
+c9_t:"Casas sem banheiros",c9_d:"Nem palácio tinha banheiro. Era penico e quem esvaziava era o escravizado.",
+d1_t:"'Santo do pau oco'",d1_d:"<strong>Origem:</strong> Santos ocos pra esconder ouro do quinto.<br><strong>Hoje:</strong> Pessoa falsa.",
+d2_t:"'Lavar a égua'",d2_d:"<strong>Origem:</strong> Ouro achado ao lavar éguas no rio.<br><strong>Hoje:</strong> Se dar bem.",
+d3_t:"'Sem eira nem beira'",d3_d:"<strong>Origem:</strong> Casa de pobre sem telhado direito.<br><strong>Hoje:</strong> Na miséria.",
+cta1_t:"Todas essas curiosidades estão no e-book Prisma",cta1_p:"Análise política completa pra garantir sua aprovação.",cta1_btn:"Quero o E-book Completo",
+inq_t:"Os Métodos da Inquisição",inq_p:"'Na engrenagem do Império Português, o desterro colonial não estava livre da vigilância da fé. O Tribunal não tinha prédio na colônia, mas sua autoridade vinha nas Visitações...'",
+inq_cat1:"Tortura Física",t1_t:"O Potro / Cavalete",t1_d:"Cordas nos braços e pernas ligadas a um eixo. Girava e deslocava tudo.",t2_t:"A Polé",t2_d:"Mãos nas costas, içado por roldana e solto em queda brusca. Ombros deslocavam.",t3_t:"Tormento do Fogo",t3_d:"Pés untados com gordura e brasas perto. A pele fritava até confessar."
+},
+en:{
+n_home:"Home",n_about:"About",n_aff:"Affiliates",n_art:"Articles",n_cur:"Curiosities",n_quiz:"Quiz",n_ebook:"E-book",n_store:"Store",
+t_main:"Curiosities of Colonization",t_sub:"From Colony to First Republic — what textbooks don't tell you",
+cat1:"Bizarre Medicine & Diseases",cat2:"Absurd Hygiene & Sanitation",cat3:"Sayings Born in the Colony",
+c1_t:"Horse dung on clothes",c1_d:"No soap? Washerwomen mixed horse dung with fat to 'whiten' your white shirt.",
+c2_t:"Mercury treatments",c2_d:"Got syphilis? Doctor rubbed mercury on your skin. It killed more than the disease.",
+c3_t:"Bloodletting for everything",c3_d:"Fever? They cut you. Headache? They cut you. To remove 'bad blood'.",
+c4_t:"Lice picking in public",c4_d:"It was normal to see whole families picking lice on the sidewalk. Hygiene was luxury.",
+c5_t:"Improvised doctors",c5_d:"Healers were barber-surgeons and folk healers. If you survived, it was profit.",
+c6_t:"Eating with hands",c6_d:"Fork was for kings. Rich and poor ate with hands.",
+c7_t:"The shout 'Water coming!'",c7_d:"They threw the chamber pot out the window and prayed not to hit anyone. That was the official sewage.",
+c8_t:"The 'Tigers'",c8_d:"Enslaved people carried barrels of feces on their backs. Liquid leaked and stained everything.",
+c9_t:"Houses without bathrooms",c9_d:"Not even the palace had a bathroom. It was chamber pot and the enslaved emptied it.",
+d1_t:"'Hollow wood saint'",d1_d:"<strong>Origin:</strong> Hollow saints to hide gold from the fifth tax.<br><strong>Today:</strong> Fake person.",
+d2_t:"'Wash the mare'",d2_d:"<strong>Origin:</strong> Gold found when washing mares in the river.<br><strong>Today:</strong> To hit it big.",
+d3_t:"'Without eave nor trim'",d3_d:"<strong>Origin:</strong> Poor house without proper roof.<br><strong>Today:</strong> Broke.",
+cta1_t:"All these curiosities are in Prisma e-book",cta1_p:"Complete political analysis to guarantee your approval.",cta1_btn:"I Want The Complete E-book",
+inq_t:"Methods of the Inquisition",inq_p:"'In the machinery of the Portuguese Empire, colonial exile was not free from faith surveillance. The Tribunal had no building in the colony, but its authority came in Visitations...'",
+inq_cat1:"Physical Torture",t1_t:"The Rack",t1_d:"Ropes on arms and legs attached to an axle. Turned and dislocated everything.",t2_t:"The Pulley",t2_d:"Hands behind back, hoisted by pulley and dropped abruptly. Shoulders dislocated.",t3_t:"Fire Torment",t3_d:"Feet greased and coals nearby. Skin fried until confession."
+},
+es:{
+n_home:"Inicio",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artículos",n_cur:"Curiosidades",n_quiz:"Quiz",n_ebook:"E-book",n_store:"Tienda",
+t_main:"Curiosidades de la Colonización",t_sub:"De la Colonia a la Primera República — lo que los libros no te cuentan",
+cat1:"Medicina y Enfermedades Extrañas",cat2:"Higiene y Saneamiento Absurdos",cat3:"Dichos Nacidos en la Colonia",
+c1_t:"Heces de caballo en la ropa",c1_d:"¿Sin jabón? Lavanderas mezclaban heces de caballo con grasa para 'blanquear' tu camisa blanca.",
+c2_t:"Tratamientos con mercurio",c2_d:"¿Sífilis? El médico untaba mercurio en la piel. Mataba más que la enfermedad.",
+c3_t:"Sangrías para todo",c3_d:"¿Fiebre? Te cortaban. ¿Dolor de cabeza? Te cortaban. Era quitar la 'sangre mala'.",
+c4_t:"Sacarse piojos en público",c4_d:"Era normal ver familia entera en la vereda sacándose piojos. Higiene era lujo.",
+c5_t:"Médicos improvisados",c5_d:"Quien curaba era barbero-cirujano y curandera. Si sobrevivías, era ganancia.",
+c6_t:"Comer con las manos",c6_d:"Tenedor era cosa de rey. Rico y pobre comían con la mano.",
+c7_t:"El grito de '¡Agua va!'",c7_d:"Tiraba la bacinilla por la ventana y rezaba por no pegarle a nadie. Era el desagüe oficial.",
+c8_t:"Los 'Tigres'",c8_d:"Esclavizados cargaban toneles de heces en la espalda. El líquido se filtraba y manchaba todo.",
+c9_t:"Casas sin baños",c9_d:"Ni el palacio tenía baño. Era bacinilla y quien la vaciaba era el esclavizado.",
+d1_t:"'Santo de palo hueco'",d1_d:"<strong>Origen:</strong> Santos huecos para esconder oro del quinto.<br><strong>Hoy:</strong> Persona falsa.",
+d2_t:"'Lavar la yegua'",d2_d:"<strong>Origen:</strong> Oro hallado al lavar yeguas en el río.<br><strong>Hoy:</strong> Tener éxito.",
+d3_t:"'Sin alero ni borde'",d3_d:"<strong>Origen:</strong> Casa de pobre sin techo decente.<br><strong>Hoy:</strong> En la miseria.",
+cta1_t:"Todas estas curiosidades están en el e-book Prisma",cta1_p:"Análisis político completo para garantizar tu aprobación.",cta1_btn:"Quiero el E-book Completo",
+inq_t:"Los Métodos de la Inquisición",inq_p:"'En el engranaje del Imperio Portugués, el destierro colonial no estaba libre de la vigilancia de la fe. El Tribunal no tenía edificio en la colonia, pero su autoridad venía en Visitaciones...'",
+inq_cat1:"Tortura Física",t1_t:"El Potro",t1_d:"Cuerdas en brazos y piernas ligadas a un eje. Giraba y dislocaba todo.",t2_t:"La Polea",t2_d:"Manos atrás, izado por polea y soltado en caída brusca. Hombros dislocados.",t3_t:"Tormento del Fuego",t3_d:"Pies untados con grasa y brasas cerca. La piel se freía hasta confesar."
+},
+fr:{
+n_home:"Accueil",n_about:"À propos",n_aff:"Affiliés",n_art:"Articles",n_cur:"Curiosités",n_quiz:"Quiz",n_ebook:"E-book",n_store:"Boutique",
+t_main:"Curiosités de la Colonisation",t_sub:"De la Colonie à la Première République — ce que les livres ne vous disent pas",
+cat1:"Médecine et Maladies Bizarres",cat2:"Hygiène et Assainissement Absurdes",cat3:"Dictons Nés dans la Colonie",
+c1_t:"Crottin de cheval sur les vêtements",c1_d:"Pas de savon? Les lavandières mélangeaient crottin avec graisse pour 'blanchir' votre chemise.",
+c2_t:"Traitements au mercure",c2_d:"Syphilis? Le médecin frottait du mercure sur la peau. Ça tuait plus que la maladie.",
+c3_t:"Saignées pour tout",c3_d:"Fièvre? On vous coupait. Mal de tête? On vous coupait. Pour enlever le 'mauvais sang'.",
+c4_t:"Épouillage en public",c4_d:"C'était normal de voir famille entière sur le trottoir s'épouiller. Hygiène était luxe.",
+c5_t:"Médecins improvisés",c5_d:"Qui soignait était barbier-chirurgien et guérisseuse. Si vous surviviez, c'était profit.",
+c6_t:"Manger avec les mains",c6_d:"Fourchette était pour rois. Riches et pauvres mangeaient avec la main.",
+c7_t:"Le cri 'Eau va!'",c7_d:"On jetait le pot de chambre par la fenêtre et priait pour ne toucher personne. C'était l'égout officiel.",
+c8_t:"Les 'Tigres'",c8_d:"Esclaves portaient des tonneaux de fèces sur le dos. Le liquide fuyait et tachait tout.",
+c9_t:"Maisons sans toilettes",c9_d:"Même pas le palais avait toilette. C'était pot et c'était l'esclave qui vidait.",
+d1_t:"'Saint en bois creux'",d1_d:"<strong>Origine:</strong> Saints creux pour cacher l'or du cinquième.<br><strong>Aujourd'hui:</strong> Personne fausse.",
+d2_t:"'Laver la jument'",d2_d:"<strong>Origine:</strong> Or trouvé en lavant juments dans la rivière.<br><strong>Aujourd'hui:</strong> Réussir.",
+d3_t:"'Sans avant-toit ni bord'",d3_d:"<strong>Origine:</strong> Maison de pauvre sans toit correct.<br><strong>Aujourd'hui:</strong> Dans la misère.",
+cta1_t:"Toutes ces curiosités sont dans l'e-book Prisma",cta1_p:"Analyse politique complète pour garantir votre approbation.",cta1_btn:"Je Veux l'E-book Complet",
+inq_t:"Les Méthodes de l'Inquisition",inq_p:"'Dans l'engrenage de l'Empire Portugais, l'exil colonial n'était pas libre de la surveillance de la foi. Le Tribunal n'avait pas de bâtiment dans la colonie, mais son autorité venait dans les Visitations...'",
+inq_cat1:"Torture Physique",t1_t:"Le Chevalet",t1_d:"Cordes aux bras et jambes liées à un axe. Tournait et disloquait tout.",t2_t:"La Poulie",t2_d:"Mains derrière le dos, hissé par poulie et lâché en chute brusque. Épaules disloquées.",t3_t:"Tourment du Feu",t3_d:"Pieds graissés et braises proches. La peau fritait jusqu'à confession."
+}
+};
+function setLang(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+l).classList.add('active');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]) el.innerHTML=T[l][k];
+  });
+}
+setLang(localStorage.getItem('prisma_lang')||'pt');
+const nav=document.getElementById('prismaNav');
+nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+</script>
+
+<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
+  <style>
+   
+   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
+#prismaFooter {
+  --gold: #eebc6c;
+  --bg: #0A0A0A;
+  --card: #121212;
+  --text: #F5F5F0;
+  background: var(--bg);
+  border-top: 1px solid rgba(238,188,108,0.15);
+  margin-top: 80px;
+}
+
+#prismaFooter * { box-sizing: border-box; }
+
+#prismaFooter .footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 6% 0 6%;
+}
+
+#prismaFooter .footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+#prismaFooter .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  line-height: 0.9;
+}
+#prismaFooter .footer-logo span {
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+}
+
+#prismaFooter .footer-desc {
+  opacity: 0.45;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 320px;
+  color: var(--text);
+}
+
+#prismaFooter .footer-col h4 {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+#prismaFooter .footer-col a {
+  display: block;
+  color: var(--text);
+  opacity: 0.55;
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+#prismaFooter .footer-col a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+#prismaFooter .footer-news-card {
+  background: var(--card);
+  border: 1px solid rgba(238,188,108,0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+#prismaFooter .footer-news-card p {
+  opacity: 0.5;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+#prismaFooter .footer-news-card input {
+  background: #1E1E1E;
+  border: 1px solid rgba(238,188,108,0.18);
+  color: #fff;
+  padding: 13px 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border 0.2s;
+}
+#prismaFooter .footer-news-card input:focus {
+  border-color: var(--gold);
+}
+#prismaFooter .footer-news-card button {
+  background: var(--gold);
+  color: #121212;
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  transition: filter 0.2s;
+}
+#prismaFooter .footer-news-card button:hover {
+  filter: brightness(1.1);
+}
+
+#prismaFooter .footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+#prismaFooter .footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(238,188,108,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin: 0;
+  transition: all 0.2s;
+}
+#prismaFooter .footer-social a:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  background: rgba(238,188,108,0.08);
+}
+
+#prismaFooter .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  opacity: 0.35;
+  color: var(--text);
+}
+
+@media(max-width:1024px){
+  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
+  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
+}
+@media(max-width:650px){
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
+  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
+  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
+  #prismaFooter .footer-bottom{flex-direction:column}
+}
+   
+   </style>
+  <div class="footer-wrap">
     <div class="footer-grid">
-      <div class="footer-col"><h3 class="footer-logo">Prisma Histórico</h3><p>Material de História do Brasil feito por quem entende de prova. Direto, sem enrolação.</p></div>
-      <div class="footer-col"><h4>Navegação</h4><ul><li><a href="ebook.html">Comprar E-book</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li></ul></div>
-      <div class="footer-col"><h4>Contato</h4><ul><li><a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a></li></ul></div>
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_nav_t">Navegação</h4>
+        <a href="index.html" data-i18n="f_home">Início</a>
+        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
+        <a href="artigos.html" data-i18n="f_art">Artigos</a>
+        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
+        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_prod_t">Produtos</h4>
+        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
+        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
+        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
+        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_news_t">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
+          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Prisma Histórico | Todos os direitos reservados.</p></div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
+      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
   </div>
 </footer>
 
+<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
+
+
+
 <script>
-const nav=document.getElementById('prismaNav');
-const btn=nav.querySelector('.prisma-menu-hamburguer');
-btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+(function(){
+  const footerT={
+    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
+    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
+    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
+  };
+  function applyFooterLang(l){
+    const key = l && l.startsWith('pt')? 'pt' : l;
+    const dict = footerT[l] || footerT[key] || footerT.pt;
+    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
+    });
+  }
+  const originalSetLang = window.setLang;
+  window.setLang = function(l){
+    if(typeof originalSetLang==='function') originalSetLang(l);
+    applyFooterLang(l);
+  };
+  document.getElementById('lang')?.addEventListener('click', e=>{
+    const b=e.target.closest('button[data-l]'); if(!b) return;
+    applyFooterLang(b.dataset.l);
+  });
+  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
+  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+    const v=document.getElementById('prismaEmail').value.trim();
+    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+  });
+})();
 </script>
+
+
 </body>
 </html>

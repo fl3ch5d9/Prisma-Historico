@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turismo Colonial - Os Tesouros do Brasil que o Tempo Não Apagou | Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+:root{--ouro:#eebc6c;--preto:#121212;--preto2:#1E1E1E;--creme:#F5F5F0;--borda:rgba(238,188,108,0.15);--vermelho:#ff4d4d}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;line-height:1.7}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em}
+.prisma-logo span{color:var(--ouro);font-weight:700}
+.lang-switch{display:flex;gap:6px}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
+.lang-switch button.active{background:var(--ouro);color:#121212;font-weight:800}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.25s}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;padding:120px 5% 60px;background:linear-gradient(0deg,#121212 5%,rgba(18,18,18,0.6) 40%,rgba(18,18,18,0.2)), url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070') center/cover}
+.hero-content{max-width:1200px;margin:auto;width:100%}
+.tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}
+.hero h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,78px);line-height:0.9;letter-spacing:-0.02em;margin-bottom:20px}
+.hero h1 span{color:var(--ouro);font-style:italic}
+.hero p{max-width:600px;font-size:18px;opacity:0.7;line-height:1.6}
+.stats{display:flex;gap:30px;margin-top:30px}
+.stats b{font-family:'Cormorant Garamond';font-size:32px;color:var(--ouro);display:block;line-height:1}
+.stats span{font-size:11px;letter-spacing:0.1em;opacity:0.5;text-transform:uppercase}
+
+.container{max-width:1200px;margin:auto;padding:0 5%}
+.sec{padding:80px 0}
+.sec h2{font-family:'Cormorant Garamond';font-size:48px;line-height:1;margin-bottom:12px}
+.sec.sub{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:12px;font-weight:800;margin-bottom:40px}
+
+.grid-destinos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card-destino{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;overflow:hidden;transition:0.4s;position:relative}
+.card-destino:hover{transform:translateY(-8px);border-color:rgba(238,188,108,0.4)}
+.card-destino img{width:100%;height:220px;object-fit:cover;filter:sepia(0.2) contrast(1.1)}
+.badge-top{position:absolute;top:14px;left:14px;background:var(--ouro);color:#000;font-size:10px;font-weight:800;padding:6px 10px;border-radius:20px;letter-spacing:0.08em}
+.card-body{padding:22px}
+.card-body h3{font-family:'Cormorant Garamond';font-size:24px;margin-bottom:6px}
+.card-body.loc{font-size:11px;letter-spacing:0.1em;color:var(--ouro);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.card-body p{font-size:14px;opacity:0.65;line-height:1.6;margin-bottom:14px}
+.meta{display:flex;gap:12px;font-size:11px;opacity:0.5}
+.meta span{display:flex;align-items:center;gap:4px}
+.btn-map{background:rgba(255,255,255,0.06);border:1px solid var(--borda);color:var(--creme);padding:10px 14px;border-radius:8px;font-size:12px;text-decoration:none;display:inline-block;transition:0.3s}
+.btn-map:hover{background:var(--ouro);color:#000;border-color:var(--ouro)}
+
+.rota{background:#0B0B0B;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+.timeline{display:flex;flex-direction:column;gap:0;max-width:800px;margin:auto}
+.t-item{display:flex;gap:24px;padding:30px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.t-item:last-child{border:0}
+.t-num{font-family:'Cormorant Garamond';font-size:42px;color:var(--ouro);line-height:1;min-width:60px}
+.t-content h4{font-family:'Cormorant Garamond';font-size:22px;margin-bottom:6px}
+.t-content p{opacity:0.6;font-size:14.5px}
+
+.cta{background:linear-gradient(135deg,#1E1E1E,#121212);border:1px solid var(--borda);border-radius:20px;padding:50px;text-align:center;margin-top:60px}
+.cta h3{font-family:'Cormorant Garamond';font-size:38px;margin-bottom:12px}
+.cta p{opacity:0.6;margin-bottom:24px}
+.btn-cta{background:var(--ouro);color:#121212;padding:16px 32px;border-radius:100px;text-decoration:none;font-weight:800;display:inline-block;transition:0.3s}
+.btn-cta:hover{background:#fff;transform:translateY(-2px)}
+
+@media(max-width:900px){.grid-destinos{grid-template-columns:1fr}.hero{min-height:70vh}.stats{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      </div>
+      <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    </div>
+    <ul class="prisma-menu-links">
+       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
+<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
+<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
+<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
+<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
+<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
+<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
+<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
+    
+    </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <span class="tag" data-i18n="tag">🇧🇷 ROTEIRO UNESCO • 8 DESTINOS IMPERDÍVEIS</span>
+    <h1 data-i18n="h1">Onde o Brasil<br><span ainda respira</span><br>Colônia</h1>
+    <p data-i18n="sub">Não é turismo de praia. É viagem no tempo. Das minas de ouro às ruas de pedra onde escravizados, inquisidores e barões escreveram a história com sangue e ouro.</p>
+    <div class="stats">
+      <div><b>8</b><span data-i18n="st1">Cidades UNESCO</span></div>
+      <div><b>300+</b><span data-i18n="st2">Anos de História</span></div>
+      <div><b>4</b><span data-i18n="st3">Regiões do Brasil</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <h2 data-i18n="sec1_t">O Circuito do Ouro e da Fé</h2>
+    <p class="sub" data-i18n="sec1_s">De Minas às Praias - Roteiro que os gringos amam</p>
+
+    <div class="grid-destinos">
+      <article class="card-destino">
+        <span class="badge-top">TOP 1 • MINAS</span>
+        <img src="https://images.unsplash.com/photo-1544985361-b420d7a77043?q=80&w=800" alt="Ouro Preto">
+        <div class="card-body">
+          <h3 data-i18n="d1_t">Ouro Preto</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Minas Gerais</div>
+          <p data-i18n="d1_d">A capital do ouro. 23 igrejas barrocas cobertas de ouro roubado. Aleijadinho esculpiu profetas aqui. À noite, parece que ainda escuta o Tilintar das correntes.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 3 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO 1980</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=Ouro+Preto" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+
+      <article class="card-destino">
+        <span class="badge-top" style="background:#fff">BARROCO PURO</span>
+        <img src="https://images.unsplash.com/photo-1593996113604-aae39b42a0dd?q=80&w=800" alt="Congonhas">
+        <div class="card-body">
+          <h3 data-i18n="d2_t">Congonhas & Diamantina</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Minas Gerais</div>
+          <p data-i18n="d2_d">Os 12 Profetas de Aleijadinho em Congonhas são o maior tesouro barroco das Américas. Diamantina era onde os escravizados garimpavam diamantes descalços.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 2 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=Congonhas+Minas" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+
+      <article class="card-destino">
+        <img src="https://images.unsplash.com/photo-1551279880-e483a1d5d181?q=80&w=800" alt="Olinda">
+        <div class="card-body">
+          <h3 data-i18n="d3_t">Olinda</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Pernambuco</div>
+          <p data-i18n="d3_d">Holandeses queimaram, portugueses reconstruíram. Ladeira, igreja, frevo. Aqui o açúcar fez barões mais ricos que reis da Europa. Melhor pôr do sol colonial do Brasil.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 2 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO 1982</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=Olinda" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+
+      <article class="card-destino">
+        <span class="badge-top">PELOURINHO</span>
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800" alt="Salvador">
+        <div class="card-body">
+          <h3 data-i18n="d4_t">Salvador - Pelourinho</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Bahia</div>
+          <p data-i18n="d4_d">Primeira capital do Brasil. Onde o pelourinho (poste pra torturar escravizados) deu nome ao bairro mais colorido. Capoeira, acarajé e Inquisição na mesma rua.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 3 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO 1985</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=Pelourinho+Salvador" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+
+      <article class="card-destino">
+        <img src="https://images.unsplash.com/photo-1595204013736-496ff0d6d5a4?q=80&w=800" alt="Paraty">
+        <div class="card-body">
+          <h3 data-i18n="d5_t">Paraty</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Rio de Janeiro</div>
+          <p data-i18n="d5_d">O porto onde o ouro descia de Minas em lombos de mula. Caminho Velho da Estrada Real. Ruas alagam de propósito na maré cheia - sistema colonial de esgoto.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 2 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO 2019</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=Paraty" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+
+      <article class="card-destino">
+        <span class="badge-top" style="background:#000;color:#eebc6c;border:1px solid #eebc6c">JOIA SECRETA</span>
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=800" alt="São Luis">
+        <div class="card-body">
+          <h3 data-i18n="d6_t">São Luís & Alcântara</h3>
+          <div class="loc"><span class="material-icons" style="font-size:14px">place</span> Maranhão</div>
+          <p data-i18n="d6_d">Única cidade brasileira fundada por franceses. Azulejos portugueses cobrem 3.500 casarões. Alcântara é Pompeia brasileira - cidade fantasma colonial abandonada após fim da escravidão.</p>
+          <div class="meta"><span><span class="material-icons" style="font-size:14px">schedule</span> 3 dias</span><span><span class="material-icons" style="font-size:14px">star</span> UNESCO 1997</span></div>
+          <br><a class="btn-map" href="https://maps.google.com/?q=São+Luís+Maranhao" target="_blank" data-i18n="map">Ver no Mapa →</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="cta">
+      <h3 data-i18n="cta_t">Quer o roteiro completo de 15 dias?</h3>
+      <p data-i18n="cta_p">Mapa da Estrada Real, onde ficar, custos reais e os lugares que os guias não contam (incluindo Inquisição). Tá tudo no e-book.</p>
+      <a href="ebook.html" class="btn-cta" data-i18n="cta_btn">Baixar Roteiro Completo no E-book</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec rota">
+  <div class="container">
+    <h2 data-i18n="rota_t">Roteiro Prisma - 10 Dias</h2>
+    <p class="sub" data-i18n="rota_s">O caminho que eu faria com dólar na mão</p>
+    <div class="timeline">
+      <div class="t-item"><div class="t-num">01</div><div class="t-content"><h4 data-i18n="r1_t">Salvador (2 dias) - O Começo</h4><p data-i18n="r1_d">Chega pelo Pelourinho. Visita a Igreja de São Francisco com 1 tonelada de ouro. Jantar no Olodum. Entender por que o Brasil foi construído em cima de dor.</p></div></div>
+      <div class="t-item"><div class="t-num">02</div><div class="t-content"><h4 data-i18n="r2_t">Olinda & Recife (2 dias)</h4><p data-i18n="r2_d">Museu do Frevo + oficina de barro. Recife Holandês de Maurício de Nassau. Aqui o Brasil foi quase holandês.</p></div></div>
+      <div class="t-item"><div class="t-num">03</div><div class="t-content"><h4 data-i18n="r3_t">Ouro Preto & Congonhas (3 dias) - O Ouro</h4><p data-i18n="r3_d">Mina da Passagem (desce 120m debaixo da terra onde escravizados morriam). Aleijadinho com pés e mãos amputados esculpindo. Isso não tem em livro.</p></div></div>
+      <div class="t-item"><div class="t-num">04</div><div class="t-content"><h4 data-i18n="r4_t">Paraty & Estrada Real (3 dias) - A Fuga</h4><p data-i18n="r4_d">Fecha em Paraty. Barco + cachaça artesanal + Caminho Velho. Onde o ouro era contrabandeado.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<script>
+const T={
+pt:{
+n_home:"Início",n_about:"Sobre",n_ebook:"E-book",n_store:"Loja",
+tag:"🇧🇷 ROTEIRO UNESCO • 8 DESTINOS IMPERDÍVEIS",h1:"Onde o Brasil<br><span>ainda respira</span><br>Colônia",sub:"Não é turismo de praia. É viagem no tempo. Das minas de ouro às ruas de pedra onde escravizados, inquisidores e barões escreveram a história com sangue e ouro.",
+st1:"Cidades UNESCO",st2:"Anos de História",st3:"Regiões do Brasil",
+sec1_t:"O Circuito do Ouro e da Fé",sec1_s:"De Minas às Praias - Roteiro que os gringos amam",
+d1_t:"Ouro Preto",d1_d:"A capital do ouro. 23 igrejas barrocas cobertas de ouro roubado. Aleijadinho esculpiu profetas aqui. À noite, parece que ainda escuta o tilintar das correntes.",
+d2_t:"Congonhas & Diamantina",d2_d:"Os 12 Profetas de Aleijadinho em Congonhas são o maior tesouro barroco das Américas. Diamantina era onde os escravizados garimpavam diamantes descalços.",
+d3_t:"Olinda",d3_d:"Holandeses queimaram, portugueses reconstruíram. Ladeira, igreja, frevo. Aqui o açúcar fez barões mais ricos que reis da Europa. Melhor pôr do sol colonial do Brasil.",
+d4_t:"Salvador - Pelourinho",d4_d:"Primeira capital do Brasil. Onde o pelourinho (poste pra torturar escravizados) deu nome ao bairro mais colorido. Capoeira, acarajé e Inquisição na mesma rua.",
+d5_t:"Paraty",d5_d:"O porto onde o ouro descia de Minas em lombos de mula. Caminho Velho da Estrada Real. Ruas alagam de propósito na maré cheia - sistema colonial de esgoto.",
+d6_t:"São Luís & Alcântara",d6_d:"Única cidade brasileira fundada por franceses. Azulejos portugueses cobrem 3.500 casarões. Alcântara é Pompeia brasileira - cidade fantasma colonial abandonada após fim da escravidão.",
+map:"Ver no Mapa →",
+cta_t:"Quer o roteiro completo de 15 dias?",cta_p:"Mapa da Estrada Real, onde ficar, custos reais e os lugares que os guias não contam (incluindo Inquisição). Tá tudo no e-book.",cta_btn:"Baixar Roteiro Completo no E-book",
+rota_t:"Roteiro Prisma - 10 Dias",rota_s:"O caminho que eu faria com dólar na mão",
+r1_t:"Salvador (2 dias) - O Começo",r1_d:"Chega pelo Pelourinho. Visita a Igreja de São Francisco com 1 tonelada de ouro. Jantar no Olodum. Entender por que o Brasil foi construído em cima de dor.",
+r2_t:"Olinda & Recife (2 dias)",r2_d:"Museu do Frevo + oficina de barro. Recife Holandês de Maurício de Nassau. Aqui o Brasil foi quase holandês.",
+r3_t:"Ouro Preto & Congonhas (3 dias) - O Ouro",r3_d:"Mina da Passagem (desce 120m debaixo da terra onde escravizados morriam). Aleijadinho com pés e mãos amputados esculpindo. Isso não tem em livro.",
+r4_t:"Paraty & Estrada Real (3 dias) - A Fuga",r4_d:"Fecha em Paraty. Barco + cachaça artesanal + Caminho Velho. Onde o ouro era contrabandeado."
+},
+en:{
+n_home:"Home",n_about:"About",n_ebook:"E-book",n_store:"Store",
+tag:"🇧🇷 UNESCO ROUTE • 8 UNMISSABLE SPOTS",h1:"Where Brazil<br><span>still breathes</span><br>Colony",sub:"Not beach tourism. It's time travel. From gold mines to stone streets where enslaved people, inquisitors and barons wrote history with blood and gold.",
+st1:"UNESCO Cities",st2:"Years of History",st3:"Regions of Brazil",
+sec1_t:"The Gold and Faith Circuit",sec1_s:"From Minas to Beaches - Route gringos love",
+d1_t:"Ouro Preto",d1_d:"The gold capital. 23 baroque churches covered in stolen gold. Aleijadinho sculpted prophets here. At night, you can still hear chains rattling.",
+d2_t:"Congonhas & Diamantina",d2_d:"The 12 Prophets by Aleijadinho in Congonhas are the greatest baroque treasure of the Americas. Diamantina was where enslaved people mined diamonds barefoot.",
+d3_t:"Olinda",d3_d:"Dutch burned it, Portuguese rebuilt. Hills, churches, frevo. Here sugar made barons richer than European kings. Best colonial sunset in Brazil.",
+d4_t:"Salvador - Pelourinho",d4_d:"First capital of Brazil. Where the pillory (post to torture enslaved) gave name to the most colorful neighborhood. Capoeira, acarajé and Inquisition on same street.",
+d5_t:"Paraty",d5_d:"The port where gold came down from Minas on mule backs. Old Path of Royal Road. Streets flood on purpose at high tide - colonial sewage system.",
+d6_t:"São Luís & Alcântara",d6_d:"Only Brazilian city founded by French. Portuguese tiles cover 3,500 mansions. Alcântara is Brazilian Pompeii - ghost colonial city abandoned after slavery ended.",
+map:"View on Map →",
+cta_t:"Want the full 15-day itinerary?",cta_p:"Royal Road map, where to stay, real costs and places guides don't tell (including Inquisition). It's all in the e-book.",cta_btn:"Download Full Itinerary in E-book",
+rota_t:"Prisma Itinerary - 10 Days",rota_s:"The path I'd take with dollars in hand",
+r1_t:"Salvador (2 days) - The Beginning",r1_d:"Arrive via Pelourinho. Visit São Francisco Church with 1 ton of gold. Dinner at Olodum. Understand why Brazil was built on pain.",
+r2_t:"Olinda & Recife (2 days)",r2_d:"Frevo Museum + clay workshop. Dutch Recife of Maurice of Nassau. Here Brazil was almost Dutch.",
+r3_t:"Ouro Preto & Congonhas (3 days) - The Gold",r3_d:"Passagem Mine (go 120m underground where enslaved died). Aleijadinho with amputated feet and hands sculpting. Not in books.",
+r4_t:"Paraty & Royal Road (3 days) - The Escape",r4_d:"Ends in Paraty. Boat + craft cachaça + Old Path. Where gold was smuggled."
+},
+es:{
+n_home:"Inicio",n_about:"Sobre",n_ebook:"E-book",n_store:"Tienda",
+tag:"🇧🇷 RUTA UNESCO • 8 DESTINOS IMPERDIBLES",h1:"Donde Brasil<br><span>aún respira</span><br>Colonia",sub:"No es turismo de playa. Es viaje en el tiempo. De minas de oro a calles de piedra donde esclavizados, inquisidores y barones escribieron historia con sangre y oro.",
+st1:"Ciudades UNESCO",st2:"Años de Historia",st3:"Regiones de Brasil",
+sec1_t:"El Circuito del Oro y la Fe",sec1_s:"De Minas a Playas - Ruta que aman los extranjeros",
+d1_t:"Ouro Preto",d1_d:"La capital del oro. 23 iglesias barrocas cubiertas de oro robado. Aleijadinho esculpió profetas aquí. De noche, parece que aún escuchas cadenas.",
+d2_t:"Congonhas & Diamantina",d2_d:"Los 12 Profetas de Aleijadinho en Congonhas son el mayor tesoro barroco de Américas. Diamantina era donde esclavizados extraían diamantes descalzos.",
+d3_t:"Olinda",d3_d:"Holandeses quemaron, portugueses reconstruyeron. Ladera, iglesia, frevo. Aquí el azúcar hizo barones más ricos que reyes de Europa. Mejor atardecer colonial.",
+d4_t:"Salvador - Pelourinho",d4_d:"Primera capital de Brasil. Donde el picota (poste para torturar esclavizados) dio nombre al barrio más colorido. Capoeira, acarajé e Inquisición en misma calle.",
+d5_t:"Paraty",d5_d:"El puerto donde el oro bajaba de Minas en lomos de mula. Camino Viejo de Estrada Real. Calles se inundan a propósito en marea alta - sistema colonial de alcantarilla.",
+d6_t:"São Luís & Alcântara",d6_d:"Única ciudad brasileña fundada por franceses. Azulejos portugueses cubren 3.500 casonas. Alcântara es Pompeya brasileña - ciudad fantasma colonial abandonada tras fin de esclavitud.",
+map:"Ver en Mapa →",
+cta_t:"¿Quieres itinerario completo de 15 días?",cta_p:"Mapa de Estrada Real, dónde quedarse, costos reales y lugares que guías no cuentan (incluyendo Inquisición). Todo en el e-book.",cta_btn:"Descargar Itinerario Completo en E-book",
+rota_t:"Itinerario Prisma - 10 Días",rota_s:"El camino que haría con dólares en mano",
+r1_t:"Salvador (2 días) - El Inicio",r1_d:"Llega por Pelourinho. Visita Iglesia de São Francisco con 1 tonelada de oro. Cena en Olodum. Entender por qué Brasil fue construido sobre dolor.",
+r2_t:"Olinda & Recife (2 días)",r2_d:"Museo del Frevo + taller de barro. Recife Holandés de Mauricio de Nassau. Aquí Brasil fue casi holandés.",
+r3_t:"Ouro Preto & Congonhas (3 días) - El Oro",r3_d:"Mina da Passagem (baja 120m bajo tierra donde esclavizados morían). Aleijadinho con pies y manos amputados esculpiendo. Eso no está en libros.",
+r4_t:"Paraty & Estrada Real (3 días) - La Fuga",r4_d:"Cierra en Paraty. Barco + cachaza artesanal + Camino Viejo. Donde el oro era contrabandeado."
+},
+fr:{
+n_home:"Accueil",n_about:"À propos",n_ebook:"E-book",n_store:"Boutique",
+tag:"🇧🇷 ROUTE UNESCO • 8 LIEUX INCONTOURNABLES",h1:"Où le Brésil<br><span>respire encore</span><br>Colonie",sub:"Pas du tourisme de plage. C'est un voyage dans le temps. Des mines d'or aux rues pavées où esclaves, inquisiteurs et barons ont écrit l'histoire avec sang et or.",
+st1:"Villes UNESCO",st2:"Ans d'Histoire",st3:"Régions du Brésil",
+sec1_t:"Le Circuit de l'Or et de la Foi",sec1_s:"De Minas aux Plages - Itinéraire que les étrangers adorent",
+d1_t:"Ouro Preto",d1_d:"La capitale de l'or. 23 églises baroques couvertes d'or volé. Aleijadinho sculpta prophètes ici. La nuit, on dirait qu'on entend encore chaînes.",
+d2_t:"Congonhas & Diamantina",d2_d:"Les 12 Prophètes d'Aleijadinho à Congonhas sont le plus grand trésor baroque des Amériques. Diamantina où esclaves extrayaient diamants pieds nus.",
+d3_t:"Olinda",d3_d:"Hollandais brûlèrent, Portugais reconstruisirent. Colline, église, frevo. Ici sucre fit barons plus riches que rois d'Europe. Meilleur coucher soleil colonial.",
+d4_t:"Salvador - Pelourinho",d4_d:"Première capitale du Brésil. Où le pilori (poteau pour torturer esclaves) donna nom au quartier plus coloré. Capoeira, acarajé et Inquisition même rue.",
+d5_t:"Paraty",d5_d:"Le port où l'or descendait de Minas à dos de mule. Vieux Chemin de Route Royale. Rues inondent exprès à marée haute - système colonial d'égout.",
+d6_t:"São Luís & Alcântara",d6_d:"Seule ville brésilienne fondée par Français. Carreaux portugais couvrent 3.500 demeures. Alcântara est Pompéi brésilienne - ville fantôme coloniale abandonnée après fin esclavage.",
+map:"Voir sur Carte →",
+cta_t:"Vous voulez itinéraire complet 15 jours?",cta_p:"Carte de Route Royale, où dormir, coûts réels et lieux que guides ne disent pas (y compris Inquisition). Tout dans l'e-book.",cta_btn:"Télécharger Itinéraire Complet dans E-book",
+rota_t:"Itinéraire Prisma - 10 Jours",rota_s:"Le chemin que je ferais avec dollars en main",
+r1_t:"Salvador (2 jours) - Le Début",r1_d:"Arrivez par Pelourinho. Visitez Église São Francisco avec 1 tonne d'or. Dîner à Olodum. Comprendre pourquoi Brésil fut construit sur douleur.",
+r2_t:"Olinda & Recife (2 jours)",r2_d:"Musée Frevo + atelier argile. Recife Hollandais de Maurice de Nassau. Ici Brésil fut presque hollandais.",
+r3_t:"Ouro Preto & Congonhas (3 jours) - L'Or",r3_d:"Mine da Passagem (descend 120m sous terre où esclaves mouraient). Aleijadinho avec pieds et mains amputés sculptant. Pas dans livres.",
+r4_t:"Paraty & Route Royale (3 jours) - La Fuite",r4_d:"Finit à Paraty. Bateau + cachaça artisanale + Vieux Chemin. Où l'or était contrebande."
+}
+};
+function setLang(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+l).classList.add('active');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]) el.innerHTML=T[l][k];
+  });
+}
+setLang(localStorage.getItem('prisma_lang')||'pt');
+const nav=document.getElementById('prismaNav');
+nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+</script>
+
+<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
+  <style>
+   
+   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
+#prismaFooter {
+  --gold: #eebc6c;
+  --bg: #0A0A0A;
+  --card: #121212;
+  --text: #F5F5F0;
+  background: var(--bg);
+  border-top: 1px solid rgba(238,188,108,0.15);
+  margin-top: 80px;
+}
+
+#prismaFooter * { box-sizing: border-box; }
+
+#prismaFooter .footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 6% 0 6%;
+}
+
+#prismaFooter .footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+#prismaFooter .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  line-height: 0.9;
+}
+#prismaFooter .footer-logo span {
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+}
+
+#prismaFooter .footer-desc {
+  opacity: 0.45;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 320px;
+  color: var(--text);
+}
+
+#prismaFooter .footer-col h4 {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+#prismaFooter .footer-col a {
+  display: block;
+  color: var(--text);
+  opacity: 0.55;
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+#prismaFooter .footer-col a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+#prismaFooter .footer-news-card {
+  background: var(--card);
+  border: 1px solid rgba(238,188,108,0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+#prismaFooter .footer-news-card p {
+  opacity: 0.5;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+#prismaFooter .footer-news-card input {
+  background: #1E1E1E;
+  border: 1px solid rgba(238,188,108,0.18);
+  color: #fff;
+  padding: 13px 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border 0.2s;
+}
+#prismaFooter .footer-news-card input:focus {
+  border-color: var(--gold);
+}
+#prismaFooter .footer-news-card button {
+  background: var(--gold);
+  color: #121212;
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  transition: filter 0.2s;
+}
+#prismaFooter .footer-news-card button:hover {
+  filter: brightness(1.1);
+}
+
+#prismaFooter .footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+#prismaFooter .footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(238,188,108,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin: 0;
+  transition: all 0.2s;
+}
+#prismaFooter .footer-social a:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  background: rgba(238,188,108,0.08);
+}
+
+#prismaFooter .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  opacity: 0.35;
+  color: var(--text);
+}
+
+@media(max-width:1024px){
+  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
+  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
+}
+@media(max-width:650px){
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
+  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
+  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
+  #prismaFooter .footer-bottom{flex-direction:column}
+}
+   
+   </style>
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_nav_t">Navegação</h4>
+        <a href="index.html" data-i18n="f_home">Início</a>
+        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
+        <a href="artigos.html" data-i18n="f_art">Artigos</a>
+        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
+        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_prod_t">Produtos</h4>
+        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
+        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
+        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
+        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_news_t">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
+          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
+      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
+
+
+
+<script>
+(function(){
+  const footerT={
+    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
+    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
+    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
+  };
+  function applyFooterLang(l){
+    const key = l && l.startsWith('pt')? 'pt' : l;
+    const dict = footerT[l] || footerT[key] || footerT.pt;
+    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
+    });
+  }
+  const originalSetLang = window.setLang;
+  window.setLang = function(l){
+    if(typeof originalSetLang==='function') originalSetLang(l);
+    applyFooterLang(l);
+  };
+  document.getElementById('lang')?.addEventListener('click', e=>{
+    const b=e.target.closest('button[data-l]'); if(!b) return;
+    applyFooterLang(b.dataset.l);
+  });
+  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
+  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+    const v=document.getElementById('prismaEmail').value.trim();
+    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+  });
+})();
+</script>
+
+
+</body>
+</html>

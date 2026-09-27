@@ -1,98 +1,547 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Afiliados - 40% de Comissão | Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliados - 40% de Comissão | Prisma Histórico</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <style>
+
+:root { 
+  --ouro: #eebc6c; 
+  --preto: #121212; 
+  --creme: #F5F5F0; 
+  --preto2: #1E1E1E; 
+  --borda: rgba(238, 188, 108, 0.15); 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   NAVEGAÇÃO & MENU
+   ========================================================================== */
+.prisma-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: rgba(18, 18, 18, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.prisma-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  letter-spacing: 0.18em;
+  z-index: 10001;
+  color: var(--creme);
+  text-decoration: none;
+}
+
+.prisma-logo span {
+  color: var(--ouro);
+  font-weight: 700;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  z-index: 10001;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--creme);
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  transition: 0.3s;
+}
+
+.lang-switch button.active {
+  background: var(--ouro);
+  color: #121212;
+  border-color: var(--ouro);
+  font-weight: 800;
+}
+
+.prisma-menu-hamburguer {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--borda);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  z-index: 10001;
+  border-radius: 50%;
+}
+
+.prisma-menu-hamburguer span {
+  width: 20px;
+  height: 1.5px;
+  background: var(--ouro);
+  display: block;
+  transition: 0.4s;
+}
+
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2) {
+  opacity: 0;
+}
+
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.prisma-menu-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  max-width: 80vw;
+  height: 100vh;
+  background: #0A0A0A;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 120px 0 0 30px;
+  gap: 14px;
+  transform: translateX(-100%);
+  transition: 0.4s ease;
+  z-index: 10000;
+  border-right: 1px solid rgba(238, 188, 108, 0.15);
+}
+
+.prisma-nav.menu-aberto .prisma-menu-links {
+  transform: translateX(0);
+}
+
+.prisma-menu-links li a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--creme);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.prisma-menu-links li a:hover {
+  color: var(--ouro);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   CONTEÚDO HERO & AFILIADOS
+   ========================================================================== */
+.hero-afiliado {
+  padding: 150px 5% 60px 5%;
+  text-align: center;
+  background: radial-gradient(600px at 50% -10%, rgba(238,188,108,0.18), transparent), linear-gradient(180deg, #181818, #121212);
+}
+
+.tag-lucro {
+  display: inline-block;
+  background: rgba(238,188,108,0.12);
+  border: 1px solid rgba(238,188,108,0.25);
+  color: var(--ouro);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+}
+
+.hero-afiliado h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 0.95;
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero-afiliado h1 span {
+  color: var(--ouro);
+}
+
+.hero-afiliado .sub {
+  max-width: 640px;
+  margin: 18px auto 0 auto;
+  opacity: 0.6;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.comissao-box {
+  margin: 40px auto 0 auto;
+  max-width: 520px;
+  background: var(--preto2);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.comissao-box .pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--ouro);
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(238,188,108,0.4);
+}
+
+.comissao-box .info {
+  text-align: left;
+}
+
+.comissao-box .info b {
+  color: var(--creme);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.comissao-box .info span {
+  opacity: 0.6;
+  font-size: 12px;
+  line-height: 1.4;
+  display: block;
+}
+
+.secao-afiliados {
+  padding: 50px 5%;
+  background: #0E0E0E;
+  border-top: 1px solid var(--borda);
+}
+
+.afiliados-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.card-premium {
+  background: var(--preto2);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 20px;
+}
+
+.card-premium h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  margin-bottom: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.card-premium p {
+  opacity: 0.7;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.destaque-cientifico {
+  background: rgba(238,188,108,0.07);
+  border-left: 3px solid var(--ouro);
+  padding: 18px;
+  border-radius: 8px;
+  margin: 18px 0;
+}
+
+.lista-beneficios {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.lista-beneficios li {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.lista-beneficios li b {
+  color: var(--ouro);
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cta-final {
+  text-align: center;
+  padding: 50px 5%;
+  background: linear-gradient(180deg,#0E0E0E,#121212);
+  border-top: 1px solid var(--borda);
+}
+
+.btn-afiliado {
+  display: inline-block;
+  background: var(--ouro);
+  color:#121212;
+  padding: 20px 42px;
+  border-radius: 100px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  animation: pulsar 2s infinite;
+  box-shadow: 0 10px 30px rgba(238,188,108,0.3);
+  transition: 0.3s;
+}
+
+.btn-afiliado:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+@keyframes pulsar {
+  0% { box-shadow: 0 0 0 0 rgba(238,188,108,0.4); }
+  70% { box-shadow: 0 0 0 18px rgba(238,188,108,0); }
+  100% { box-shadow: 0 0 0 0 rgba(238,188,108,0); }
+}
+
+.obs-cta {
+  margin-top: 14px;
+  opacity: 0.4;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   RODAPÉ / FOOTER
+   ========================================================================== */
+#prismaFooter {
+  --gold: #eebc6c;
+  --bg: #0A0A0A;
+  --card: #121212;
+  --text: #F5F5F0;
+  background: var(--bg);
+  border-top: 1px solid rgba(238,188,108,0.15);
+  margin-top: 80px;
+  width: 100%;
+}
+
+#prismaFooter .footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 6% 0 6%;
+}
+
+#prismaFooter .footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+#prismaFooter .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  line-height: 0.9;
+}
+
+#prismaFooter .footer-logo span {
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+}
+
+#prismaFooter .footer-desc {
+  opacity: 0.45;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 320px;
+  color: var(--text);
+}
+
+#prismaFooter .footer-col h4 {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+#prismaFooter .footer-col a {
+  display: block;
+  color: var(--text);
+  opacity: 0.55;
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  transition: all 0.2s;
+}
+
+#prismaFooter .footer-col a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+#prismaFooter .footer-news-card {
+  background: var(--card);
+  border: 1px solid rgba(238,188,108,0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+
+#prismaFooter .footer-news-card p {
+  opacity: 0.5;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+#prismaFooter .footer-news-card input {
+  background: #1E1E1E;
+  border: 1px solid rgba(238,188,108,0.18);
+  color: #fff;
+  padding: 13px 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+#prismaFooter .footer-news-card button {
+  background: var(--gold);
+  color: #121212;
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+#prismaFooter .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  opacity: 0.35;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media(max-width:900px){
+  .lista-beneficios { grid-template-columns: 1fr; }
+  .comissao-box { flex-direction: column; text-align: center; }
+  .comissao-box .info { text-align: center; }
+}
+
+@media(max-width:1024px){
+  #prismaFooter .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; }
+}
+
+@media(max-width: 768px) {
+  #prismaFooter .footer-grid { grid-template-columns: 1fr !important; gap: 40px; }
+  .btn-afiliado { padding: 16px 28px; font-size: 13px; width: 100%; text-align: center; }
+}
 
 
 
 
-
-
-<style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
-
-
-/*hamburguer*/
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
-.prisma-logo span{color:var(--ouro);font-weight:700}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);opacity:1;transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
-
-
-.hero-afiliado{padding:150px 5% 60px 5%;text-align:center;background:radial-gradient(600px at 50% -10%, rgba(238,188,108,0.18), transparent), linear-gradient(180deg, #181818, #121212)}
-.tag-lucro{display:inline-block;background:rgba(238,188,108,0.12);border:1px solid rgba(238,188,108,0.25);color:var(--ouro);padding:8px 18px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:18px}
-.hero-afiliado h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,62px);line-height:0.95;max-width:800px;margin:auto}
-.hero-afiliado h1 span{color:var(--ouro)}
-.hero-afiliado .sub{max-width:640px;margin:18px auto 0 auto;opacity:0.6;line-height:1.7;font-size:16px}
-.comissao-box{margin:40px auto 0 auto;max-width:520px;background:var(--preto2);border:1px solid var(--borda);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-around;gap:20px}
-.comissao-box .pct{font-family:'Cormorant Garamond';font-size:72px;font-weight:700;color:var(--ouro);line-height:1;text-shadow:0 0 30px rgba(238,188,108,0.4)}
-.comissao-box .info{text-align:left}
-.comissao-box .info b{color:var(--creme);font-size:14px;display:block;margin-bottom:4px}
-.comissao-box .info span{opacity:0.6;font-size:12px;line-height:1.4;display:block}
-
-.secao-afiliados{padding:50px 5%;background:#0E0E0E;border-top:1px solid var(--borda)}
-.afiliados-container{max-width:900px;margin:auto}
-.card-premium{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;padding:32px;margin-bottom:20px}
-.card-premium h3{font-family:'Cormorant Garamond';font-size:26px;margin-bottom:14px;display:flex;gap:10px;align-items:center}
-.card-premium p{opacity:0.7;line-height:1.8;font-size:15px;margin-bottom:12px}
-.destaque-cientifico{background:rgba(238,188,108,0.07);border-left:3px solid var(--ouro);padding:18px;border-radius:8px;margin:18px 0}
-.lista-beneficios{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-.lista-beneficios li{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:16px;border-radius:10px;font-size:13.5px;line-height:1.5}
-.lista-beneficios li b{color:var(--ouro);display:block;margin-bottom:4px;font-size:12px;letter-spacing:0.06em;text-transform:uppercase}
-
-.cta-final{text-align:center;padding:50px 5%;background:linear-gradient(180deg,#0E0E0E,#121212);border-top:1px solid var(--borda)}
-.btn-afiliado{display:inline-block;background:var(--ouro);color:#121212;padding:20px 42px;border-radius:100px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;animation:pulsar 2s infinite;box-shadow:0 10px 30px rgba(238,188,108,0.3);transition:0.3s}
-.btn-afiliado:hover{background:#fff;transform:translateY(-3px)}
-@keyframes pulsar{0%{box-shadow:0 0 0 0 rgba(238,188,108,0.4)}70%{box-shadow:0 0 0 18px rgba(238,188,108,0)}100%{box-shadow:0 0 0 0 rgba(238,188,108,0)}}
-.obs-cta{margin-top:14px;opacity:0.4;font-size:12px}
-.footer{border-top:1px solid var(--borda);padding:50px 5% 30px 5%;opacity:0.6}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px;max-width:1200px;margin:auto}
-@media(max-width:900px){.lista-beneficios{grid-template-columns:1fr}.comissao-box{flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}}
-</style>
+    </style>
 </head>
 <body>
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      </div>
+      <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
     <ul class="prisma-menu-links">
-        <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-      
-    
+        <li><a href="../index.html"><span class="material-icons">home</span> <span data-i18n="nav_inicio">Início</span></a></li>
+        <li><a href="sobre.html"><span class="material-icons">info</span> <span data-i18n="nav_sobre">Sobre</span></a></li>
+        <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">Afiliados</span></a></li>
+        <li><a href="artigos.html"><span class="material-icons">article</span> <span data-i18n="nav_artigos">Artigos</span></a></li>
+        <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-book</span></a></li>
     </ul>
 </nav>
+
 <header class="hero-afiliado">
-    <span class="tag-lucro">🎯 OPORTUNIDADE QUENTE - NICHO EDUCAÇÃO</span>
-    <h1>Lucre <span>40%</span> com um Produto que Vende Sozinho</h1>
-    <p class="sub">Você promove um e-book que resolve a maior dor de quem faz ENEM: gabaritar História e Redação com repertório que nenhum cursinho tem.</p>
-    
+    <span class="tag-lucro" data-i18n="tag">🎯 OPORTUNIDADE QUENTE - NICHO EDUCAÇÃO</span>
+    <h1 data-i18n="h1">Lucre <span>40%</span> com um Produto que Vende Sozinho</h1>
+    <p class="sub" data-i18n="sub">Você promove um e-book que resolve a maior dor de quem faz ENEM: gabaritar História e Redação com repertório que nenhum cursinho tem.</p>
     <div class="comissao-box">
         <div class="pct">40%</div>
         <div class="info">
-            <b>Comissão Líquida por Venda</b>
-            <span>Ticket ideal para impulso • Conversão alta no orgânico e tráfego pago • Público que RENOVA todo ano</span>
+            <b data-i18n="comissao_t">Comissão Líquida por Venda</b>
+            <span data-i18n="comissao_d">Ticket ideal para impulso • Conversão alta no orgânico e tráfego pago • Público que RENOVA todo ano</span>
         </div>
     </div>
 </header>
@@ -100,48 +549,221 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 <section class="secao-afiliados">
     <div class="afiliados-container">
         <div class="card-premium">
-            <h3>📚 O Produto que o Mercado Implora</h3>
-            <p>O e-book <strong>"A Ciência Oculta da Colônia à República"</strong> não é mais um resumo chato. Ele mostra o DNA tecnológico do Brasil: engenharia náutica, astrolábio, balestilha, biopolítica.</p>
+            <h3 data-i18n="card1_t">📚 O Produto que o Mercado Implora</h3>
+            <p data-i18n="card1_p1">O e-book "A Ciência Oculta da Colônia à República" não é mais um resumo chato. Ele mostra o DNA tecnológico do Brasil: engenharia náutica, astrolábio, balestilha, biopolítica.</p>
             <div class="destaque-cientifico">
-                <p>O aluno sai do óbvio e ganha argumento pra <strong>Nota 1000 na Redação</strong> e pra acertar as questões mais difíceis de Humanas. É o diferencial que faz o pai pagar na hora.</p>
+                <p data-i18n="card1_p2">O aluno sai do óbvio e ganha argumento pra <strong>Nota 1000 na Redação</strong> e pra acertar as questões mais difíceis de Humanas. É o diferencial que faz o pai pagar na hora.</p>
             </div>
         </div>
-
         <div class="card-premium">
-            <h3>🚀 Por que Afiliados Estão Enlouquecendo?</h3>
+            <h3 data-i18n="card2_t">🚀 Por que Afiliados Estão Enlouquecendo?</h3>
             <ul class="lista-beneficios">
-                <li><b>💰 40% por venda</b>Margem agressiva, você lucra de verdade a cada clique.</li>
-                <li><b>🎯 Público Quente</b>Milhões de vestibulandos + pais desesperados por aprovação todo mês.</li>
-                <li><b>🧠 Gancho Irrecusável</b>Produto único, sem concorrência direta. Não é mais um resumo do YouTube.</li>
-                <li><b>♻️ Mercado Infinito</b>Nicho perene: todo ano entra 3 milhões de novos alunos no ENEM.</li>
-                <li><b>🎨 Criativos Prontos</b>Você recebe copys, imagens e vídeos pra anúncio.</li>
-                <li><b>⚡ Aprovação Imediata</b>Na Hotmart, sem burocracia. Pega o link e já vende.</li>
+                <li><b data-i18n="b1_t">💰 40% por venda</b><span data-i18n="b1_d">Margem agressiva, você lucra de verdade a cada clique.</span></li>
+                <li><b data-i18n="b2_t">🎯 Público Quente</b><span data-i18n="b2_d">Milhões de vestibulandos + pais desesperados por aprovação todo mês.</span></li>
+                <li><b data-i18n="b3_t">🧠 Gancho Irrecusável</b><span data-i18n="b3_d">Produto único, sem concorrência direta. Não é mais um resumo do YouTube.</span></li>
+                <li><b data-i18n="b4_t">♻️ Mercado Infinito</b><span data-i18n="b4_d">Nicho perene: todo ano entra 3 milhões de novos alunos no ENEM.</span></li>
+                <li><b data-i18n="b5_t">🎨 Criativos Prontos</b><span data-i18n="b5_d">Você recebe copys, imagens e vídeos pra anúncio.</span></li>
+                <li><b data-i18n="b6_t">⚡ Aprovação Imediata</b><span data-i18n="b6_d">Na Hotmart, sem burocracia. Pega o link e já vende.</span></li>
             </ul>
         </div>
     </div>
 </section>
 
 <div class="cta-final">
-    <h2 style="font-family:'Cormorant Garamond';font-size:38px;margin-bottom:12px">Pronto para vender amanhã?</h2>
-    <p style="opacity:0.6;margin-bottom:28px;max-width:600px;margin-inline:auto">O mercado de educação nunca entra em crise. Enquanto você pensa, outros afiliados estão faturando com o Prisma.</p>
-    <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="btn-afiliado">Quero Me Afiliar Agora e Ganhar 40%</a>
-    <p class="obs-cta">Leva 30 segundos • Aprovação automática na Hotmart</p>
+    <h2 style="font-family:'Cormorant Garamond';font-size:38px;margin-bottom:12px" data-i18n="cta_t">Pronto para vender amanhã?</h2>
+    <p style="opacity:0.6;margin-bottom:28px;max-width:600px;margin-inline:auto" data-i18n="cta_p">O mercado de educação nunca entra em crise. Enquanto você pensa, outros afiliados estão faturando com o Prisma.</p>
+    <a href="https://hotmart.com" target="_blank" class="btn-afiliado" data-i18n="cta_btn">Quero Me Afiliar Agora e Ganhar 40%</a>
+    <p class="obs-cta" data-i18n="cta_obs">Leva 30 segundos • Aprovação automática na Hotmart</p>
 </div>
 
-<footer class="footer">
-  <div class="footer-grid">
-      <div><h3 style="font-family:'Cormorant Garamond'">Prisma Histórico</h3><p style="font-size:13px;opacity:0.6;margin-top:8px">Abordagem analítica e cirúrgica da História, feita pra quem quer topo da lista.</p></div>
-      <div><h4 style="color:var(--ouro);font-size:11px;letter-spacing:0.1em">NAV</h4><br><a href="ebook.html" style="color:var(--creme);text-decoration:none;font-size:13px">Comprar E-book</a></div>
-      <div><h4 style="color:var(--ouro);font-size:11px">LEGAL</h4><br><a href="privacidade.html" style="color:var(--creme);text-decoration:none;font-size:13px">Privacidade</a></div>
-      <div><h4 style="color:var(--ouro);font-size:11px">CONTATO</h4><br><a href="mailto:cronologia.prisma.historico@gmail.com" style="color:var(--creme);text-decoration:none;font-size:13px">cronologia.prisma.historico@gmail.com</a></div>
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-social" style="display:flex;gap:10px;margin-top:22px">
+          <a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre o Projeto</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="quiz.html">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="ebook.html">📘 E-book Completo</a>
+        <a href="loja.html">🛒 Loja Oficial</a>
+        <a href="afiliados.html">🤝 Afiliados</a>
+        <a href="doacao.html">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html">🔒 Privacidade</a>
+        <a href="termos.html">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn">Entrar pro Clube →</button>
+          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0">Sem spam. Só história braba.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico</span>
+      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
   </div>
-  <p style="text-align:center;margin-top:40px;font-size:11px;opacity:0.3">© 2026 Prisma Histórico | Todos os direitos reservados.</p>
 </footer>
 
 <script>
-const nav=document.getElementById('prismaNav');
-const btn=nav.querySelector('.prisma-menu-hamburguer');
-btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+// DICIONÁRIOS COMPLETOS DE TRADUÇÃO (PT, EN, ES, FR)
+const translations = {
+  pt: {
+    nav_inicio:"Início",nav_sobre:"Sobre",nav_afiliados:"Afiliados",nav_artigos:"Artigos",nav_ebook:"E-book",
+    tag:"🎯 OPORTUNIDADE QUENTE - NICHO EDUCAÇÃO",
+    h1:"Lucre <span>40%</span> com um Produto que Vende Sozinho",
+    sub:"Você promove um e-book que resolve a maior dor de quem faz ENEM: gabaritar História e Redação com repertório que nenhum cursinho tem.",
+    comissao_t:"Comissão Líquida por Venda",
+    comissao_d:"Ticket ideal para impulso • Conversão alta no orgânico e tráfego pago • Público que RENOVA todo ano",
+    card1_t:"📚 O Produto que o Mercado Implora",
+    card1_p1:'O e-book "A Ciência Oculta da Colônia à República" não é mais um resumo chato. Ele mostra o DNA tecnológico do Brasil: engenharia náutica, astrolábio, balestilha, biopolítica.',
+    card1_p2:"O aluno sai do óbvio e ganha argumento pra <strong>Nota 1000 na Redação</strong> e pra acertar as questões mais difíceis de Humanas. É o diferencial que faz o pai pagar na hora.",
+    card2_t:"🚀 Por que Afiliados Estão Enlouquecendo?",
+    b1_t:"💰 40% por venda",b1_d:"Margem agressiva, você lucra de verdade a cada clique.",
+    b2_t:"🎯 Público Quente",b2_d:"Milhões de vestibulandos + pais desesperados por aprovação todo mês.",
+    b3_t:"🧠 Gancho Irrecusável",b3_d:"Produto único, sem concorrência direta. Não é mais um resumo do YouTube.",
+    b4_t:"♻️ Mercado Infinito",b4_d:"Nicho perene: todo ano entra 3 milhões de novos alunos no ENEM.",
+    b5_t:"🎨 Criativos Prontos",b5_d:"Você recebe copys, imagens e vídeos pra anúncio.",
+    b6_t:"⚡ Aprovação Imediata",b6_d:"Na Hotmart, sem burocracia. Pega o link e já vende.",
+    cta_t:"Pronto para vender amanhã?",
+    cta_p:"O mercado de educação nunca entra em crise. Enquanto você pensa, outros afiliados estão faturando com o Prisma.",
+    cta_btn:"Quero Me Afiliar Agora e Ganhar 40%",
+    cta_obs:"Leva 30 segundos • Aprovação automática na Hotmart"
+  },
+  en: {
+    nav_inicio:"Home",nav_sobre:"About",nav_afiliados:"Affiliates",nav_artigos:"Articles",nav_ebook:"E-book",
+    tag:"🎯 HOT OPPORTUNITY - EDUCATION NICHE",
+    h1:"Earn <span>40%</span> Commission with a Self-Selling Product",
+    sub:"Promote an e-book that solves the biggest pain point for college applicants: acing History and Essay sections with content no prep school offers.",
+    comissao_t:"Net Commission per Sale",
+    comissao_d:"Perfect impulse buy pricing • High organic and paid traffic conversion • Audience that RENEWS every year",
+    card1_t:"📚 The Product the Market Craves",
+    card1_p1:'The e-book "The Hidden Science from Colony to Republic" is not just another boring summary. It reveals Brazil\'s technological DNA: nautical engineering, astrolabe, biopolitics.',
+    card1_p2:"Students break away from the obvious, gaining arguments for a <strong>Top-Tier Essay</strong>. It's the edge that makes parents buy instantly.",
+    card2_t:"🚀 Why Affiliates Are Going Crazy",
+    b1_t:"💰 40% per sale",b1_d:"Aggressive margins, real profit with every single click.",
+    b2_t:"🎯 Hot Audience", b2_d:"Millions of college applicants + parents desperate for approval every month.",
+    b3_t:"🧠 Irresistible Hook",b3_d:"Unique product, zero direct competition. Not another basic YouTube summary.",
+    b4_t:"♻️ Infinite Market",b4_d:"Evergreen niche: 3 million new students enter the admissions cycle every year.",
+    b5_t:"🎨 Ready Creatives",b5_d:"You receive proven copy, images, and videos for your ads.",
+    b6_t:"⚡ Instant Approval",b6_d:"On Hotmart, no bureaucracy. Just grab your link and sell.",
+    cta_t:"Ready to start selling tomorrow?",
+    cta_p:"The education market never goes into crisis. While you hesitate, other affiliates are cashing in with Prisma.",
+    cta_btn:"Join the Affiliate Program & Get 40%",
+    cta_obs:"Takes 30 seconds • Automatic approval on Hotmart"
+  },
+  es: {
+    nav_inicio:"Inicio",nav_sobre:"Sobre nosotros",nav_afiliados:"Afiliados",nav_artigos:"Artículos",nav_ebook:"E-book",
+    tag:"🎯 OPORTUNIDAD RELEVANTE - NICHO DE EDUCACIÓN",
+    h1:"Gana un <span>40%</span> con un Producto que se Vende Solo",
+    sub:"Promocionas un libro electrónico que resuelve el mayor problema de los estudiantes: dominar Historia y Redacción con un contenido exclusivo.",
+    comissao_t:"Comisión Neta por Venta",
+    comissao_d:"Precio ideal para compras por impulso • Alta conversión orgánica y de pago • Audiencia que se RENUEVA cada año",
+    card1_t:"📚 El Producto que el Mercado Reclama",
+    card1_p1:'El libro electrónico "La Ciencia Oculta de la Colonia a la República" no es un resumen aburrido. Muestra el ADN tecnológico de Brasil: ingeniería náutica, astrolábio, biopolítica.',
+    card1_p2:"El alumno sale de lo común y obtiene argumentos para una <strong>Calificación Máxima en Redacción</strong>. Es el beneficio que hace que los padres paguen de inmediato.",
+    card2_t:"🚀 ¿Por qué los Afiliados se están Volviendo Locos?",
+    b1_t:"💰 40% por venta",b1_d:"Margen agresivo, obtienes ganancias reales con cada clic.",
+    b2_t:"🎯 Público Objetivo",b2_d:"Millones de estudiantes + padres desesperados por la aprobación de sus hijos cada mes.",
+    b3_t:"🧠 Gancho Irresistible",b3_d:"Producto único, sin competencia directa. No es un simple video resumen de YouTube.",
+    b4_t:"♻️ Mercado Infinito",b4_d:"Nicho perenne: cada año ingresan millones de nuevos estudiantes al ciclo escolar.",
+    b5_t:"🎨 Materiales Listos",b5_d:"Recibes textos de copy, imágenes y videos listos para tus anuncios.",
+    b6_t:"⚡ Aprobación Inmediata",b6_d:"En Hotmart, sin burocracia. Consigue tu enlace y empieza a vender.",
+    cta_t:"¿Listo para vender mañana mismo?",
+    cta_p:"El mercado de la educación nunca entra en crisis. Mientras lo piensas, otros afiliados están facturando con Prisma.",
+    cta_btn:"Quiero Afiliarme Ahora y Ganar el 40%",
+    cta_obs:"Toma 30 segundos • Aprobación automática en Hotmart"
+  },
+  fr: {
+    nav_inicio:"Accueil",nav_sobre:"À propos",nav_afiliados:"Affiliés",nav_artigos:"Articles",nav_ebook:"E-book",
+    tag:"🎯 OPPORTUNITÉ EN OR - NICHE ÉDUCATION",
+    h1:"Gagnez <span>40%</span> de Commission sur un Produit Facile à Vendre",
+    sub:"Faites la promotion d'un e-book qui résout le plus grand problème des étudiants : réussir l'Histoire et la Rédaction avec un contenu inédit.",
+    comissao_t:"Commission Nette par Vente",
+    comissao_d:"Prix idéal pour l'achat impulsif • Forte conversion organique et payante • Un public qui se RENOUVELLE chaque année",
+    card1_t:"📚 Le Produit que Le Marché Réclame",
+    card1_p1:'L\'e-book "La Science Occulte de la Colonie à la République" n\'est pas un résumé ennuyeux. Il révèle l\'ADN technologique du Brésil : ingénierie nautique, astrolabe, biopolitique.',
+    card1_p2:"L'étudiant sort des sentiers battus et obtient des arguments pour une <strong>Note Maximale en Rédaction</strong>. C'est l'atout qui pousse les parents à payer immédiatement.",
+    card2_t:"🚀 Pourquoi les Affiliés Deviennent Fous ?",
+    b1_t:"💰 40% par vente",b1_d:"Marge agressive, vous réalisez de vrais bénéfices à chaque clic.",
+    b2_t:"🎯 Public Cible Chaud",b2_d:"Des millions de candidats + des parents désespérés de voir leur enfant réussir chaque mois.",
+    b3_t:"🧠 Argument Irrésistible",b3_d:"Produit unique, sans concurrence directe. Ce n'est pas une simple vidéo de résumé YouTube.",
+    b4_t:"♻️ Marché Infini",b4_d:"Niche éternelle : chaque année, des millions de nouveaux étudiants entrent dans le cycle.",
+    b5_t:"🎨 Visuels Prêts",b5_d:"Vous recevez des textes de copy, des images et des vidéos pour vos publicités.",
+    b6_t:"⚡ Approbation Immédiate",b6_d:"Sur Hotmart, sans bureaucratie. Prenez votre lien et vendez.",
+    cta_t:"Prêt à vendre dès demain ?",
+    cta_p:"Le marché de l'éducation ne connaît pas la crise. Pendant que vous hésitez, d'autres affiliés génèrent des revenus avec Prisma.",
+    cta_btn:"Je Veux Devenir Affilié Maintenant et Gagner 40%",
+    cta_obs:"Prend 30 secondes • Approbation automatique sur Hotmart"
+  }
+};
+
+function setLang(lang){
+  localStorage.setItem('prisma_lang', lang);
+  
+  // Atualiza classe ativa visual nos botões de idioma
+  document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+  const el = document.getElementById('btn-' + lang); 
+  if(el) el.classList.add('active');
+  
+  // Altera os conteúdos em tempo real através dos atributos data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(e => {
+    const k = e.getAttribute('data-i18n'); 
+    if (translations[lang] && translations[lang][k]) {
+      e.innerHTML = translations[lang][k];
+    }
+  });
+}
+
+// Inicializa os seletores e escuta os cliques após o carregamento da árvore DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('prisma_lang') || 'pt'; 
+  setLang(saved);
+
+  const nav = document.getElementById('prismaNav');
+  const btnMenu = document.querySelector('.prisma-menu-hamburguer');
+
+  if (btnMenu && nav) {
+    // Controla o estado de abertura da gaveta lateral e bloqueia scroll do body
+    btnMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+      nav.classList.toggle('menu-aberto');
+      document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+    });
+    
+    // Força o fechamento ao clicar em qualquer item interno de navegação
+    document.querySelectorAll('.prisma-menu-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('menu-aberto');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Fecha a gaveta automaticamente ao clicar fora dela
+    document.addEventListener('click', (e) => {
+      if (nav.classList.contains('menu-aberto') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-aberto');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
 </script>
 
 

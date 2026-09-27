@@ -6,46 +6,40 @@
 <title>Termos de Uso - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
 <style>
-:root{
---bg:#0e0e0e;--card:#161616;--line:#222;--sepia:#c9a86a;--text:#d6d3c9;--text-muted:#8a8882;--white:#f2f0e9;
-}
+:root{--bg:#0e0e0e;--card:#161616;--line:#222;--sepia:#c9a86a;--text:#d6d3c9;--text-muted:#8a8882;--white:#f2f0e9}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; padding-top:78px!important}
-/* HEADER CORRIGIDO - 100% */
-/* HEADER CORRIGIDO - 100% FINAL */
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;padding-top:78px!important}
 .prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;background:rgba(14,14,14,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid #222!important}
 .prisma-nav-inner{width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important}
 .prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important;color:#f2f0e9!important}
 .prisma-logo span{color:#c9a86a!important;font-weight:700!important}
+.lang-switch{display:flex;gap:6px;z-index:10001}
+.lang-switch button{background:transparent;border:1px solid #333;color:var(--text);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
+.lang-switch button.active{background:var(--sepia);color:#000;border-color:var(--sepia);font-weight:800}
 .prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid #333!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
-.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:#c9a86a!important;display:block!important;transition:0.25s ease!important;transform-origin:center!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important;transform:scaleX(0)!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
-.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s ease!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(201,168,106,0.15)!important;margin:0!important}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important;box-shadow:10px 0 30px rgba(0,0,0,0.6)!important}
-.prisma-menu-links li a{font-family:'Inter',sans-serif!important;font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:#f2f0e9!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important;transition:0.2s!important}
-.prisma-menu-links li a:hover{color:#c9a86a!important;opacity:1!important;transform:translateX(4px)!important}
-
-
-
+.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:#c9a86a!important;display:block!important;transition:0.25s!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(201,168,106,0.15)!important}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+.prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:#f2f0e9!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
+.prisma-menu-links li a:hover{color:#c9a86a!important;opacity:1!important}
 .wrap{max-width:720px;margin:0 auto;padding:80px 24px 120px}
 .eyebrow{color:var(--sepia);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:24px}
-h1{font-family:'IBM Plex Serif', serif;color:var(--white);font-size:44px;line-height:1.1;letter-spacing:-0.03em;font-weight:400;margin-bottom:16px}
+h1{font-family:'IBM Plex Serif',serif;color:var(--white);font-size:44px;line-height:1.1;letter-spacing:-0.03em;font-weight:400;margin-bottom:16px}
 .sub{font-size:17px;color:var(--text-muted);line-height:1.6;margin-bottom:48px;max-width:520px}
 .meta{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);letter-spacing:0.05em;margin-bottom:56px}
-article h2{font-family:'IBM Plex Serif', serif;color:var(--white);font-size:20px;font-weight:600;margin:48px 0 14px;letter-spacing:-0.01em}
+article h2{font-family:'IBM Plex Serif',serif;color:var(--white);font-size:20px;font-weight:600;margin:48px 0 14px}
 article p{font-size:16.5px;line-height:1.85;color:var(--text);margin-bottom:18px}
 .divider{height:1px;background:var(--line);margin:64px 0}
 .contact{font-size:14px;color:var(--text-muted)}
 .contact b{color:var(--text);font-weight:500}
 .contact a{color:var(--sepia);text-decoration:none;border-bottom:1px solid rgba(201,168,106,0.3)}
-#btnTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--sepia);color:#000;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.4s cubic-bezier(0.16, 1, 0.3, 1);z-index:1000;}
-#btnTop.show{opacity:1;visibility:visible;transform:translateY(0);}
-#btnTop:hover{background:#e8bd7a;transform:translateY(-3px);box-shadow:0 8px 24px rgba(201,168,106,0.35);}
-@media(max-width:600px){h1{font-size:34px}.wrap{padding:48px 20px}#btnTop{bottom:20px;right:20px}}
+#btnTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--sepia);color:#000;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.4s;z-index:1000}
+#btnTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+@media(max-width:600px){h1{font-size:34px}.wrap{padding:48px 20px}}
 </style>
 </head>
 <body>
@@ -53,52 +47,369 @@ article p{font-size:16.5px;line-height:1.85;color:var(--text);margin-bottom:18px
 <nav class="prisma-nav" id="prismaNav">
   <div class="prisma-nav-inner">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      </div>
+      <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    </div>
   </div>
-  <ul class="prisma-menu-links">
-    <li><a href="../index.html" data-num="01"><span class="material-icons">home</span> Início</a></li>
-    <li><a href="sobre.html" data-num="02"><span class="material-icons">info</span> Sobre</a></li>
-    <li><a href="afiliados.html" data-num="03"><span class="material-icons">handshake</span> Afiliados</a></li>
-    <li><a href="artigos.html" data-num="04"><span class="material-icons">article</span> Artigos</a></li>
-    <li><a href="curiosidades.html" data-num="05"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-    <li><a href="quiz.html" data-num="06"><span class="material-icons">quiz</span> Quiz</a></li>
-    <li><a href="ebook.html" data-num="07"><span class="material-icons">menu_book</span> E-book</a></li>
-    <li><a href="loja.html" data-num="08"><span class="material-icons">storefront</span> Loja</a></li>
-  </ul>
+ <ul class="prisma-menu-links">
+       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
+<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
+<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
+<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
+<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
+<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
+<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
+<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
+    
+    </ul>
 </nav>
 
 <div class="wrap">
-<div class="eyebrow">Documento Legal</div>
-<h1>Termos de Uso</h1>
-<p class="sub">Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.</p>
-<div class="meta"><span>PRISMA HISTÓRICO</span><span>ATUALIZADO EM 04.08.2026</span></div>
+<div class="eyebrow" data-i18n="eyebrow">Documento Legal</div>
+<h1 data-i18n="h1">Termos de Uso</h1>
+<p class="sub" data-i18n="sub">Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.</p>
+<div class="meta"><span>PRISMA HISTÓRICO</span><span data-i18n="meta">ATUALIZADO EM 04.08.2026</span></div>
 <article>
-<h2>1. Aceitação</h2><p>Ao acessar o Prisma Histórico, você concorda integralmente com estes termos. Caso discorde de qualquer condição, recomendamos não utilizar o site.</p>
-<h2>2. Objetivo</h2><p>Nosso propósito é oferecer conteúdo educacional sobre história, por meio de artigos, análises, quizzes e indicações bibliográficas criteriosas.</p>
-<h2>3. Uso do Conteúdo</h2><p>O conteúdo é destinado a uso pessoal e educacional. É vedada a reprodução integral, revenda ou distribuição sem autorização expressa.</p>
-<h2>4. Afiliados</h2><p>Utilizamos links de afiliados, como Amazon. Quando você compra por meio deles, podemos receber uma comissão, sem qualquer custo adicional para você.</p>
-<h2>5. E-books</h2><p>Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias conforme o Código de Defesa do Consumidor.</p>
-<h2>6. Responsabilidades</h2><p>Apesar do rigor na pesquisa e curadoria, não garantimos que todo conteúdo esteja isento de erros ou desatualizações.</p>
-<h2>7. Alterações</h2><p>Estes termos podem ser atualizados a qualquer momento para refletir melhorias legais e editoriais. A versão vigente estará sempre nesta página.</p>
-<h2>8. Contato</h2><p>Para dúvidas ou solicitações, entre em contato pelo e-mail oficial do projeto.</p>
+<h2 data-i18n="t1">1. Aceitação</h2><p data-i18n="p1">Ao acessar o Prisma Histórico, você concorda integralmente com estes termos. Caso discorde de qualquer condição, recomendamos não utilizar o site.</p>
+<h2 data-i18n="t2">2. Objetivo</h2><p data-i18n="p2">Nosso propósito é oferecer conteúdo educacional sobre história, por meio de artigos, análises, quizzes e indicações bibliográficas criteriosas.</p>
+<h2 data-i18n="t3">3. Uso do Conteúdo</h2><p data-i18n="p3">O conteúdo é destinado a uso pessoal e educacional. É vedada a reprodução integral, revenda ou distribuição sem autorização expressa.</p>
+<h2 data-i18n="t4">4. Afiliados</h2><p data-i18n="p4">Utilizamos links de afiliados, como Amazon. Quando você compra por meio deles, podemos receber uma comissão, sem qualquer custo adicional para você.</p>
+<h2 data-i18n="t5">5. E-books</h2><p data-i18n="p5">Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias conforme o Código de Defesa do Consumidor (BR) e políticas de reembolso internacionais.</p>
+<h2 data-i18n="t6">6. Responsabilidades</h2><p data-i18n="p6">Apesar do rigor na pesquisa e curadoria, não garantimos que todo conteúdo esteja isento de erros ou desatualizações.</p>
+<h2 data-i18n="t7">7. Alterações</h2><p data-i18n="p7">Estes termos podem ser atualizados a qualquer momento para refletir melhorias legais e editoriais. A versão vigente estará sempre nesta página.</p>
+<h2 data-i18n="t8">8. Contato</h2><p data-i18n="p8">Para dúvidas ou solicitações, entre em contato pelo e-mail oficial do projeto.</p>
 </article>
 <div class="divider"></div>
-<div class="contact"><b>Contato:</b> <a href="mailto:contato@prismahistorico.com.br">contato@prismahistorico.com.br</a><br><span style="margin-top:8px;display:inline-block">© 2026 Prisma Histórico. Todos os direitos reservados.</span></div>
+<div class="contact"><b data-i18n="contact">Contato:</b> <a href="mailto:cronologia.prisma.historico@gmail.com">cronologia.prisma.historico@gmail.com</a><br><span style="margin-top:8px;display:inline-block">© 2026 Prisma Histórico. All rights reserved.</span></div>
 </div>
 
 <button id="btnTop" title="Voltar ao topo">↑</button>
 
 <script>
-const btnTop = document.getElementById("btnTop");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) { btnTop.classList.add("show"); } else { btnTop.classList.remove("show"); }
-});
-btnTop.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
-
-document.querySelector('.prisma-menu-hamburguer').addEventListener('click', function(){
-  document.getElementById('prismaNav').classList.toggle('menu-aberto');
-});
+const T={
+pt:{
+n_home:"Início",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artigos",n_ebook:"E-book",n_store:"Loja",
+eyebrow:"Documento Legal",h1:"Termos de Uso",sub:"Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.",meta:"ATUALIZADO EM 04.08.2026",
+t1:"1. Aceitação",p1:"Ao acessar o Prisma Histórico, você concorda integralmente com estes termos. Caso discorde de qualquer condição, recomendamos não utilizar o site.",
+t2:"2. Objetivo",p2:"Nosso propósito é oferecer conteúdo educacional sobre história, por meio de artigos, análises, quizzes e indicações bibliográficas criteriosas.",
+t3:"3. Uso do Conteúdo",p3:"O conteúdo é destinado a uso pessoal e educacional. É vedada a reprodução integral, revenda ou distribuição sem autorização expressa.",
+t4:"4. Afiliados",p4:"Utilizamos links de afiliados, como Amazon. Quando você compra por meio deles, podemos receber uma comissão, sem qualquer custo adicional para você.",
+t5:"5. E-books",p5:"Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias conforme o Código de Defesa do Consumidor.",
+t6:"6. Responsabilidades",p6:"Apesar do rigor na pesquisa e curadoria, não garantimos que todo conteúdo esteja isento de erros ou desatualizações.",
+t7:"7. Alterações",p7:"Estes termos podem ser atualizados a qualquer momento para refletir melhorias legais e editoriais. A versão vigente estará sempre nesta página.",
+t8:"8. Contato",p8:"Para dúvidas ou solicitações, entre em contato pelo e-mail oficial do projeto.",
+contact:"Contato:"
+},
+en:{
+n_home:"Home",n_about:"About",n_aff:"Affiliates",n_art:"Articles",n_ebook:"E-book",n_store:"Store",
+eyebrow:"Legal Document",h1:"Terms of Use",sub:"Transparency and responsibility to ensure a safe, educational and respectful experience.",meta:"UPDATED ON 08.04.2026",
+t1:"1. Acceptance",p1:"By accessing Prisma History, you fully agree to these terms. If you disagree with any condition, we recommend not using the site.",
+t2:"2. Purpose",p2:"Our purpose is to offer educational content about history, through articles, analysis, quizzes and careful bibliographic indications.",
+t3:"3. Content Use",p3:"Content is for personal and educational use. Full reproduction, resale or distribution without express authorization is prohibited.",
+t4:"4. Affiliates",p4:"We use affiliate links, such as Amazon.com/.co.uk/.es/.fr. When you buy through them, we may receive a commission at no extra cost to you.",
+t5:"5. E-books",p5:"Digital products for personal and non-transferable use, with 7-day guarantee according to consumer protection and international refund policies.",
+t6:"6. Responsibilities",p6:"Despite rigor in research and curation, we do not guarantee that all content is free from errors or outdated information.",
+t7:"7. Changes",p7:"These terms may be updated at any time to reflect legal and editorial improvements. The current version will always be on this page.",
+t8:"8. Contact",p8:"For questions or requests, contact us via the official project email.",
+contact:"Contact:"
+},
+es:{
+n_home:"Inicio",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artículos",n_ebook:"E-book",n_store:"Tienda",
+eyebrow:"Documento Legal",h1:"Términos de Uso",sub:"Transparencia y responsabilidad para garantizar una experiencia segura, educativa y respetuosa.",meta:"ACTUALIZADO EL 04.08.2026",
+t1:"1. Aceptación",p1:"Al acceder a Prisma Histórico, usted acepta integralmente estos términos. Si no está de acuerdo con alguna condición, recomendamos no usar el sitio.",
+t2:"2. Objetivo",p2:"Nuestro propósito es ofrecer contenido educativo sobre historia, a través de artículos, análisis, quizzes e indicaciones bibliográficas cuidadosas.",
+t3:"3. Uso del Contenido",p3:"El contenido es para uso personal y educativo. Se prohíbe reproducción integral, reventa o distribución sin autorización expresa.",
+t4:"4. Afiliados",p4:"Usamos enlaces de afiliados, como Amazon.es. Cuando compras a través de ellos, podemos recibir comisión sin costo adicional para ti.",
+t5:"5. E-books",p5:"Productos digitales de uso personal e intransferible, con garantía de 7 días según Código de Defensa del Consumidor y políticas internacionales.",
+t6:"6. Responsabilidades",p6:"A pesar del rigor en investigación y curaduría, no garantizamos que todo contenido esté exento de errores o desactualizaciones.",
+t7:"7. Cambios",p7:"Estos términos pueden actualizarse en cualquier momento para reflejar mejoras legales y editoriales. La versión vigente estará siempre en esta página.",
+t8:"8. Contacto",p8:"Para dudas o solicitudes, contacta por el email oficial del proyecto.",
+contact:"Contacto:"
+},
+fr:{
+n_home:"Accueil",n_about:"À propos",n_aff:"Affiliés",n_art:"Articles",n_ebook:"E-book",n_store:"Boutique",
+eyebrow:"Document Légal",h1:"Conditions d'Utilisation",sub:"Transparence et responsabilité pour garantir une expérience sûre, éducative et respectueuse.",meta:"MIS À JOUR LE 04.08.2026",
+t1:"1. Acceptation",p1:"En accédant à Prisma Historique, vous acceptez intégralement ces conditions. Si vous n'êtes pas d'accord, nous recommandons de ne pas utiliser le site.",
+t2:"2. Objectif",p2:"Notre objectif est d'offrir du contenu éducatif sur l'histoire, via articles, analyses, quiz et indications bibliographiques soignées.",
+t3:"3. Utilisation du Contenu",p3:"Le contenu est destiné à usage personnel et éducatif. Reproduction intégrale, revente ou distribution sans autorisation expresse est interdite.",
+t4:"4. Affiliés",p4:"Nous utilisons des liens affiliés, comme Amazon.fr. Quand vous achetez via eux, nous pouvons recevoir commission sans coût supplémentaire pour vous.",
+t5:"5. E-books",p5:"Produits numériques à usage personnel et non transférable, avec garantie 7 jours selon Code de la Consommation et politiques internationales.",
+t6:"6. Responsabilités",p6:"Malgré rigueur dans recherche et curation, nous ne garantissons pas que tout contenu soit exempt d'erreurs ou obsolète.",
+t7:"7. Modifications",p7:"Ces conditions peuvent être mises à jour à tout moment pour refléter améliorations légales et éditoriales. La version en vigueur sera toujours sur cette page.",
+t8:"8. Contact",p8:"Pour questions ou demandes, contactez-nous via l'email officiel du projet.",
+contact:"Contact:"
+}
+};
+function setLang(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+l).classList.add('active');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]) el.innerHTML=T[l][k];
+  });
+}
+setLang(localStorage.getItem('prisma_lang')||'pt');
+const nav=document.getElementById('prismaNav');
+nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{nav.classList.toggle('menu-aberto')});
+const btnTop=document.getElementById("btnTop");
+window.addEventListener("scroll",()=>{if(window.scrollY>400){btnTop.classList.add("show")}else{btnTop.classList.remove("show")}});
+btnTop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
 </script>
+
+
+<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
+  <style>
+   
+   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
+#prismaFooter {
+  --gold: #eebc6c;
+  --bg: #0A0A0A;
+  --card: #121212;
+  --text: #F5F5F0;
+  background: var(--bg);
+  border-top: 1px solid rgba(238,188,108,0.15);
+  margin-top: 80px;
+}
+
+#prismaFooter * { box-sizing: border-box; }
+
+#prismaFooter .footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 6% 0 6%;
+}
+
+#prismaFooter .footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+#prismaFooter .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  line-height: 0.9;
+}
+#prismaFooter .footer-logo span {
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+}
+
+#prismaFooter .footer-desc {
+  opacity: 0.45;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 320px;
+  color: var(--text);
+}
+
+#prismaFooter .footer-col h4 {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+#prismaFooter .footer-col a {
+  display: block;
+  color: var(--text);
+  opacity: 0.55;
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+#prismaFooter .footer-col a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+#prismaFooter .footer-news-card {
+  background: var(--card);
+  border: 1px solid rgba(238,188,108,0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+#prismaFooter .footer-news-card p {
+  opacity: 0.5;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+#prismaFooter .footer-news-card input {
+  background: #1E1E1E;
+  border: 1px solid rgba(238,188,108,0.18);
+  color: #fff;
+  padding: 13px 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border 0.2s;
+}
+#prismaFooter .footer-news-card input:focus {
+  border-color: var(--gold);
+}
+#prismaFooter .footer-news-card button {
+  background: var(--gold);
+  color: #121212;
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  transition: filter 0.2s;
+}
+#prismaFooter .footer-news-card button:hover {
+  filter: brightness(1.1);
+}
+
+#prismaFooter .footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+#prismaFooter .footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(238,188,108,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin: 0;
+  transition: all 0.2s;
+}
+#prismaFooter .footer-social a:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  background: rgba(238,188,108,0.08);
+}
+
+#prismaFooter .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  opacity: 0.35;
+  color: var(--text);
+}
+
+@media(max-width:1024px){
+  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
+  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
+}
+@media(max-width:650px){
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
+  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
+  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
+  #prismaFooter .footer-bottom{flex-direction:column}
+}
+   
+   </style>
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_nav_t">Navegação</h4>
+        <a href="index.html" data-i18n="f_home">Início</a>
+        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
+        <a href="artigos.html" data-i18n="f_art">Artigos</a>
+        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
+        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_prod_t">Produtos</h4>
+        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
+        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
+        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
+        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_news_t">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
+          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
+      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
+
+
+
+<script>
+(function(){
+  const footerT={
+    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
+    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
+    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
+  };
+  function applyFooterLang(l){
+    const key = l && l.startsWith('pt')? 'pt' : l;
+    const dict = footerT[l] || footerT[key] || footerT.pt;
+    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
+    });
+  }
+  const originalSetLang = window.setLang;
+  window.setLang = function(l){
+    if(typeof originalSetLang==='function') originalSetLang(l);
+    applyFooterLang(l);
+  };
+  document.getElementById('lang')?.addEventListener('click', e=>{
+    const b=e.target.closest('button[data-l]'); if(!b) return;
+    applyFooterLang(b.dataset.l);
+  });
+  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
+  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+    const v=document.getElementById('prismaEmail').value.trim();
+    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+  });
+})();
+</script>
+
 
 </body>
 </html>

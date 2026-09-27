@@ -6,32 +6,30 @@
 <title>Sobre - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;padding-top:78px!important}
-
-/* NAV PADRÃO PRISMA - FINAL */
 .prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
 .prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important}
 .prisma-logo span{color:var(--ouro)!important;font-weight:700!important}
+.lang-switch{display:flex;gap:6px;z-index:10001}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
 .prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid var(--borda)!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
-.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--ouro)!important;display:block!important;transition:0.25s ease!important;transform-origin:center!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
-.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s ease!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(238,188,108,0.15)!important;margin:0!important}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--ouro)!important;display:block!important;transition:0.25s!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid var(--borda)!important}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
 .prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:var(--creme)!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
 .prisma-menu-links li a:hover{color:var(--ouro)!important;opacity:1!important}
-
-/* MANIFESTO */
-.secao-manifesto{padding:80px 5% 80px 5%;background:var(--preto)}
-.secao-manifesto .container{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.bloco-manifesto{position:relative;background:linear-gradient(180deg,var(--preto2),#161616);border:1px solid var(--borda);border-radius:14px;padding:38px 32px;overflow:hidden}
+.secao-manifesto{padding:80px 5%;background:var(--preto)}
+.secao-manifesto.container{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.bloco-manifesto{position:relative;background:linear-gradient(180deg,var(--preto2),#161616);border:1px solid var(--borda);border-radius:14px;padding:38px 32px}
 .bloco-manifesto h2{font-family:'Cormorant Garamond';font-size:34px;line-height:1.1;margin-bottom:14px}
-.bloco-manifesto .sub-frase{color:var(--ouro);font-weight:800;letter-spacing:0.08em;margin-bottom:18px;text-transform:uppercase;font-size:12px;display:flex;align-items:center;gap:8px}
+.bloco-manifesto.sub-frase{color:var(--ouro);font-weight:800;letter-spacing:0.08em;margin-bottom:18px;text-transform:uppercase;font-size:12px}
 .bloco-manifesto p{opacity:0.72;line-height:1.8;font-weight:300;font-size:16.5px}
 .bloco-manifesto p strong{background:var(--ouro);color:var(--preto);padding:1px 6px;border-radius:3px}
 .section-doacao{padding:80px 5%;background:#0E0E0E;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
@@ -39,37 +37,46 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 .subtitulo-secao{font-family:'Cormorant Garamond';font-size:42px;margin-bottom:18px}
 .doacao-texto{opacity:0.75;line-height:1.9;font-size:16px}
 .btn-doacao{display:inline-block;background:var(--ouro);color:var(--preto);padding:18px 34px;text-decoration:none;font-weight:800;border-radius:6px}
-@media(max-width:900px){.secao-manifesto .container{grid-template-columns:1fr}}
+@media(max-width:900px){.secao-manifesto.container{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
+        <button onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      </div>
+      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+    </div>
     <ul class="prisma-menu-links">
-        <li><a href="../index.html"><span class="material-icons">home</span> Início</a></li>
-        <li><a href="sobre.html"><span class="material-icons">info</span> Sobre</a></li>
-        <li><a href="afiliados.html"><span class="material-icons">handshake</span> Afiliados</a></li>
-        <li><a href="artigos.html"><span class="material-icons">article</span> Artigos</a></li>
-        <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> Curiosidades</a></li>
-        <li><a href="quiz.html"><span class="material-icons">quiz</span> Quiz</a></li>
-        <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-book</a></li>
-        <li><a href="loja.html"><span class="material-icons">storefront</span> Loja</a></li>
+       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
+<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
+<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
+<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
+<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
+<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
+<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
+<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
+    
     </ul>
 </nav>
 
 <section class="secao-manifesto">
     <div class="container">
         <div class="bloco-manifesto">
-            <h2>📖 Por que o Prisma Existe</h2>
-            <p class="sub-frase">As bancas não cobram decoração. Elas cobram LÓGICA</p>
-            <p>O método tradicional falhou ao empurrar textos maçantes goela abaixo. O Prisma nasceu da minha própria dificuldade para quebrar a decoreba e entregar a engrenagem real dos acontecimentos históricos de forma cirúrgica.</p>
+            <h2 data-i18n="b1_t">📖 Por que o Prisma Existe</h2>
+            <p class="sub-frase" data-i18n="b1_sub">As bancas não cobram decoração. Elas cobram LÓGICA</p>
+            <p data-i18n="b1_p">O método tradicional falhou ao empurrar textos maçantes goela abaixo. O Prisma nasceu da minha própria dificuldade para quebrar a decoreba e entregar a engrenagem real dos acontecimentos históricos de forma cirúrgica.</p>
         </div>
         <div class="bloco-manifesto">
-            <h2>🎯 Resultado: 1000x Mais</h2>
-            <p class="sub-frase">Feito por estudante, para quem quer ser aprovado</p>
-            <p>Um projeto de estudo que foi desenvolvido para ajudar de maneira eficaz as dificuldades de compreender a História. Focar naquilo que realmente cai, com profundidade de nível superior traduzida para uma linguagem direta.</p>
+            <h2 data-i18n="b2_t">🎯 Resultado: 1000x Mais</h2>
+            <p class="sub-frase" data-i18n="b2_sub">Feito por estudante, para quem quer ser aprovado</p>
+            <p data-i18n="b2_p">Um projeto de estudo que foi desenvolvido para ajudar de maneira eficaz as dificuldades de compreender a História. Focar naquilo que realmente cai, com profundidade de nível superior traduzida para uma linguagem direta.</p>
         </div>
     </div>
 </section>
@@ -77,33 +84,301 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 <section class="section-doacao">
     <div class="container">
         <div class="doacao-box">
-            <h2 class="subtitulo-secao">Ajude na Manutenção do Site</h2>
-            <p class="doacao-texto">Atrás de cada página existem <strong>centenas de horas de estudo</strong>. Manter sem anúncios exige custo diário. Sua doação financia sua aprovação.</p>
-            <div style="margin-top:28px;text-align:center"><a href="doacao.html" class="btn-doacao">💰 Fazer Doação via PIX</a></div>
+            <h2 class="subtitulo-secao" data-i18n="don_t">Ajude na Manutenção do Site</h2>
+            <p class="doacao-texto" data-i18n="don_p">Atrás de cada página existem <strong>centenas de horas de estudo</strong>. Manter sem anúncios exige custo diário. Sua doação financia sua aprovação.</p>
+            <div style="margin-top:28px;text-align:center"><a href="doacao.html" class="btn-doacao" data-i18n="don_btn">💰 Fazer Doação via PIX / PayPal</a></div>
         </div>
     </div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const nav=document.getElementById('prismaNav');
-  const btn=document.getElementById('btnMenu');
-  btn.addEventListener('click',(e)=>{
-    e.stopPropagation();
-    nav.classList.toggle('menu-aberto');
-    document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+const T={
+pt:{
+n_home:"Início",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artigos",n_ebook:"E-book",n_store:"Loja",
+b1_t:"📖 Por que o Prisma Existe",b1_sub:"As bancas não cobram decoração. Elas cobram LÓGICA",b1_p:"O método tradicional falhou ao empurrar textos maçantes goela abaixo. O Prisma nasceu da minha própria dificuldade para quebrar a decoreba e entregar a engrenagem real dos acontecimentos históricos de forma cirúrgica.",
+b2_t:"🎯 Resultado: 1000x Mais",b2_sub:"Feito por estudante, para quem quer ser aprovado",b2_p:"Um projeto de estudo que foi desenvolvido para ajudar de maneira eficaz as dificuldades de compreender a História. Focar naquilo que realmente cai, com profundidade de nível superior traduzida para uma linguagem direta.",
+don_t:"Ajude na Manutenção do Site",don_p:"Atrás de cada página existem <strong>centenas de horas de estudo</strong>. Manter sem anúncios exige custo diário. Sua doação financia sua aprovação.",don_btn:"💰 Fazer Doação via PIX"
+},
+en:{
+n_home:"Home",n_about:"About",n_aff:"Affiliates",n_art:"Articles",n_ebook:"E-book",n_store:"Store",
+b1_t:"📖 Why Prisma Exists",b1_sub:"Exams don't charge decoration. They charge LOGIC",b1_p:"Traditional method failed pushing boring texts down our throats. Prisma was born from my own difficulty breaking rote learning and delivering the real machinery of historical events in a surgical way.",
+b2_t:"🎯 Result: 1000x More",b2_sub:"Made by student, for those who want to pass",b2_p:"A study project developed to effectively help difficulties understanding History. Focus on what really matters, with higher education depth translated into direct language.",
+don_t:"Help Maintain the Site",don_p:"Behind each page there are <strong>hundreds of hours of study</strong>. Keeping it ad-free has daily cost. Your donation funds your approval.",don_btn:"💰 Donate via PayPal"
+},
+es:{
+n_home:"Inicio",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artículos",n_ebook:"E-book",n_store:"Tienda",
+b1_t:"📖 Por qué Existe Prisma",b1_sub:"Los exámenes no cobran decoración. Cobran LÓGICA",b1_p:"El método tradicional falló al empujar textos aburridos garganta abajo. Prisma nació de mi propia dificultad para romper la memorización y entregar el engranaje real de los acontecimientos históricos de forma quirúrgica.",
+b2_t:"🎯 Resultado: 1000x Más",b2_sub:"Hecho por estudiante, para quien quiere ser aprobado",b2_p:"Un proyecto de estudio desarrollado para ayudar eficazmente las dificultades de comprender Historia. Enfocar en lo que realmente cae, con profundidad de nivel superior traducida a lenguaje directo.",
+don_t:"Ayuda en el Mantenimiento del Sitio",don_p:"Detrás de cada página hay <strong>cientos de horas de estudio</strong>. Mantener sin anuncios exige costo diario. Tu donación financia tu aprobación.",don_btn:"💰 Donar vía PayPal"
+},
+fr:{
+n_home:"Accueil",n_about:"À propos",n_aff:"Affiliés",n_art:"Articles",n_ebook:"E-book",n_store:"Boutique",
+b1_t:"📖 Pourquoi Prisma Existe",b1_sub:"Les examens ne facturent pas la déco. Ils facturent la LOGIQUE",b1_p:"La méthode traditionnelle a échoué en poussant des textes ennuyeux. Prisma est né de ma propre difficulté à casser le par cœur et livrer l'engrenage réel des événements historiques de façon chirurgicale.",
+b2_t:"🎯 Résultat: 1000x Plus",b2_sub:"Fait par étudiant, pour ceux qui veulent réussir",b2_p:"Un projet d'étude développé pour aider efficacement les difficultés à comprendre l'Histoire. Se concentrer sur ce qui tombe vraiment, avec profondeur universitaire traduite en langage direct.",
+don_t:"Aidez à Maintenir le Site",don_p:"Derrière chaque page il y a <strong>des centaines d'heures d'étude</strong>. Maintenir sans pubs exige coût quotidien. Votre don finance votre approbation.",don_btn:"💰 Faire un don via PayPal"
+}
+};
+function setLang(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+l).classList.add('active');
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(T[l][k]) el.innerHTML=T[l][k];
   });
-  document.querySelectorAll('.prisma-menu-links a').forEach(a=>a.addEventListener('click',()=>{
-    nav.classList.remove('menu-aberto');
-    document.body.style.overflow='';
-  }));
-  document.addEventListener('click',(e)=>{
-    if(!e.target.closest('#prismaNav')){
-      nav.classList.remove('menu-aberto');
-      document.body.style.overflow='';
-    }
-  });
-});
+}
+setLang(localStorage.getItem('prisma_lang')||'pt');
+const nav=document.getElementById('prismaNav'),btn=document.getElementById('btnMenu');
+btn.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',(e)=>{if(!e.target.closest('#prismaNav')){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
 </script>
+
+<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
+  <style>
+   
+   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
+#prismaFooter {
+  --gold: #eebc6c;
+  --bg: #0A0A0A;
+  --card: #121212;
+  --text: #F5F5F0;
+  background: var(--bg);
+  border-top: 1px solid rgba(238,188,108,0.15);
+  margin-top: 80px;
+}
+
+#prismaFooter * { box-sizing: border-box; }
+
+#prismaFooter .footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 6% 0 6%;
+}
+
+#prismaFooter .footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+#prismaFooter .footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  line-height: 0.9;
+}
+#prismaFooter .footer-logo span {
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+}
+
+#prismaFooter .footer-desc {
+  opacity: 0.45;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 18px;
+  max-width: 320px;
+  color: var(--text);
+}
+
+#prismaFooter .footer-col h4 {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  font-weight: 800;
+}
+
+#prismaFooter .footer-col a {
+  display: block;
+  color: var(--text);
+  opacity: 0.55;
+  text-decoration: none;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+  transition: all 0.2s ease;
+}
+#prismaFooter .footer-col a:hover {
+  opacity: 1;
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+#prismaFooter .footer-news-card {
+  background: var(--card);
+  border: 1px solid rgba(238,188,108,0.12);
+  border-radius: 14px;
+  padding: 22px;
+}
+#prismaFooter .footer-news-card p {
+  opacity: 0.5;
+  font-size: 12.5px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+#prismaFooter .footer-news-card input {
+  background: #1E1E1E;
+  border: 1px solid rgba(238,188,108,0.18);
+  color: #fff;
+  padding: 13px 14px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 13px;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border 0.2s;
+}
+#prismaFooter .footer-news-card input:focus {
+  border-color: var(--gold);
+}
+#prismaFooter .footer-news-card button {
+  background: var(--gold);
+  color: #121212;
+  border: 0;
+  padding: 13px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  width: 100%;
+  cursor: pointer;
+  font-size: 13px;
+  transition: filter 0.2s;
+}
+#prismaFooter .footer-news-card button:hover {
+  filter: brightness(1.1);
+}
+
+#prismaFooter .footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+#prismaFooter .footer-social a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(238,188,108,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin: 0;
+  transition: all 0.2s;
+}
+#prismaFooter .footer-social a:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  background: rgba(238,188,108,0.08);
+}
+
+#prismaFooter .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 60px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  opacity: 0.35;
+  color: var(--text);
+}
+
+@media(max-width:1024px){
+  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
+  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
+}
+@media(max-width:650px){
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
+  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
+  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
+  #prismaFooter .footer-bottom{flex-direction:column}
+}
+   
+   </style>
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_nav_t">Navegação</h4>
+        <a href="index.html" data-i18n="f_home">Início</a>
+        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
+        <a href="artigos.html" data-i18n="f_art">Artigos</a>
+        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
+        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_prod_t">Produtos</h4>
+        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
+        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
+        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
+        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="f_news_t">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
+          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
+      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
+
+
+
+<script>
+(function(){
+  const footerT={
+    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
+    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
+    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
+    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
+  };
+  function applyFooterLang(l){
+    const key = l && l.startsWith('pt')? 'pt' : l;
+    const dict = footerT[l] || footerT[key] || footerT.pt;
+    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
+    });
+  }
+  const originalSetLang = window.setLang;
+  window.setLang = function(l){
+    if(typeof originalSetLang==='function') originalSetLang(l);
+    applyFooterLang(l);
+  };
+  document.getElementById('lang')?.addEventListener('click', e=>{
+    const b=e.target.closest('button[data-l]'); if(!b) return;
+    applyFooterLang(b.dataset.l);
+  });
+  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
+  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+    const v=document.getElementById('prismaEmail').value.trim();
+    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+  });
+})();
+</script>
+
+
 </body>
 </html>
