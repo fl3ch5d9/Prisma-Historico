@@ -10,13 +10,16 @@
 <meta name="robots" content="index, follow">
 
 <!-- CONEXÃO CORRETA E BLINDADA PARA AS FONTES DO GOOGLE -->
-<link rel="preconnect" href="https://googleapis.com">
 <link rel="preconnect" href="https://gstatic.com" crossorigin>
 <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-<link href="https://googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://googleapis.com" rel="stylesheet">
+
 
 <!-- O SEU LINK DO CSS RELATIVO (PADRÃO SEGURO PARA O GIT E SERVIDORES) -->
 <link rel="stylesheet" href="css/style.css">
+<link href="https://googleapis.com" rel="stylesheet">
+
 
 <!-- =======================================================================
      ESPAÇO RESERVADO PARA O FUTURO DOMÍNIO
@@ -37,6 +40,7 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
 .right{display:flex;align-items:center;gap:16px}
 .lang button{background:transparent;border:1px solid #c4a77d;color:#c4a77d;padding:5px 10px;cursor:pointer;font-size:12px;border-radius:4px}
 .lang button.active{background:#c4a77d;color:#101010;font-weight:700}
+/*hamburguer */
 .hamb{background:transparent;border:none;display:flex;flex-direction:column;gap:5px;cursor:pointer}
 .hamb span{width:24px;height:2px;background:#c4a77d;display:block;transition:0.3s}
 .menu{width:100%;display:none;flex-direction:column;gap:12px;padding-top:20px;list-style:none}
@@ -103,6 +107,25 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
 @media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}}
 @media(max-width:992px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;text-align:center;gap:30px}.cover{order:-1;max-width:450px;margin:auto}.tec{grid-template-columns:1fr;gap:14px}}
 @media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr; gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 22px 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1}#prismaFooter .footer-bottom{flex-direction:column;text-align:center;gap:10px}#cookie-banner{width:90%;flex-direction:column;text-align:center}}
+
+/*icones*/
+.material-icons {
+  font-family: 'Material Icons' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  color: #c4a77d; /* Deixa o ícone dourado premium */
+}
+
+
 </style>
 </head>
 
@@ -135,16 +158,17 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
   </div>
   <!-- CORREÇÃO DA TAG: Mudado de div para ul para respeitar a herança de listas sem quebrar o layout móvel -->
   <ul class="menu" id="menu">
-    <li><a href="./index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i="m_inicio">INÍCIO</span></a></li>
-    <li><a href="artigos/sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i="m_sobre">SOBRE</span></a></li>
-    <li><a href="artigos/afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i="m_afiliados">AFILIADOS</span></a></li>
-    <li><a href="artigos/artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i="m_artigos">ARTIGOS</span></a></li>
-    <li><a href="artigos/curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
-    <li><a href="artigos/quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i="m_quiz">QUIZ</span></a></li>
-    <li><a href="artigos/ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i="m_ebook">E-BOOK</span></a></li>
-    <li><a href="artigos/loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i="m_loja">LOJA</span></a></li>
-    <li><a href="artigos/turismo.html" data-n="09" data-i="m_turismo"><span class="material-icons">public</span> <span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
-  </ul>
+  <li><a href="./index.html" data-n="01"><span class="material-icons">home</span> <span data-i="m_inicio">INÍCIO</span></a></li>
+  <li><a href="artigos/sobre.html" data-n="02"><span class="material-icons">info</span> <span data-i="m_sobre">SOBRE</span></a></li>
+  <li><a href="artigos/afiliados.html" data-n="03"><span class="material-icons">handshake</span> <span data-i="m_afiliados">AFILIADOS</span></a></li>
+  <li><a href="artigos/artigos.html" data-n="04"><span class="material-icons">article</span> <span data-i="m_artigos">ARTIGOS</span></a></li>
+  <li><a href="artigos/curiosidades.html" data-n="05"><span class="material-icons">lightbulb</span> <span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
+  <li><a href="artigos/quiz.html" data-n="06"><span class="material-icons">quiz</span> <span data-i="m_quiz">QUIZ</span></a></li>
+  <li><a href="artigos/ebook.html" data-n="07"><span class="material-icons">menu_book</span> <span data-i="m_ebook">E-BOOK</span></a></li>
+  <li><a href="artigos/loja.html" data-n="08"><span class="material-icons">store</span> <span data-i="m_loja">LOJA</span></a></li>
+  <li><a href="artigos/turismo.html" data-n="09"><span class="material-icons">public</span> <span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
+</ul>
+
 </nav>
 
 <main class="main">
@@ -213,21 +237,21 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="index.html" data-i18n="f_home">Início</a>
-        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important" data-i18n="f_tour">🌍 Turismo Colonial</a>
+        <a href="./index.html" data-i18n="f_home">Início</a>
+        <a href="artigos/sobre.html" data-i18n="f_about">Sobre o Projeto</a>
+        <a href="artigos/artigos.html" data-i18n="f_art">Artigos</a>
+        <a href="artigos/curiosidades.html" data-i18n="f_curios">Curiosidades</a>
+        <a href="artigos/quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
+        <a href="artigos/turismo.html" style="color:#eebc6c!important;opacity:1!important" data-i18n="f_tour">🌍 Turismo Colonial</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
+        <a href="artigos/ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
+        <a href="artigos/loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
+        <a href="artigos/afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
+        <a href="artigos/doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
+        <a href="artigos/privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
+        <a href="artigos/termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="f_news_t">Clube Prisma</h4>
@@ -337,19 +361,32 @@ var dict = {
   }
 };
 
-// ====== 3. MECANISMO DE ATUALIZAÇÃO ======
+// ====== 3. MECANISMO DE ATUALIZAÇÃO REFORÇADO ======
 function updateLanguage(lng) {
   if (lng === 'pt') lng = 'pt-BR';
   if (!dict[lng]) return;
   var langData = dict[lng];
+  
   document.querySelectorAll('[data-i]').forEach(function(el) {
     var key = el.getAttribute('data-i');
-    if (langData[key]) el.innerHTML = langData[key];
+    if (langData[key]) {
+      // SEGREDO DA CORREÇÃO: Se o elemento tiver um ícone dentro dele, não apaga o ícone!
+      var icone = el.querySelector('.material-icons');
+      if (icone) {
+        // Mantém o HTML do ícone intacto e atualiza apenas o texto que vem depois dele
+        el.innerHTML = icone.outerHTML + ' ' + langData[key];
+      } else {
+        // Se for um texto normal (como o h1 ou parágrafo), traduz normalmente
+        el.innerHTML = langData[key];
+      }
+    }
   });
+  
   document.querySelectorAll('#lang button').forEach(function(btn) {
     btn.classList.toggle('active', btn.getAttribute('data-l') === lng);
   });
 }
+
 
 // ====== 4. INTERAÇÃO E INICIALIZAÇÃO ======
 document.addEventListener("DOMContentLoaded", function() {

@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Artigos | Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Playfair+Display:wght@700&family=Inter:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link href="https://googleapis.com" rel="stylesheet">
+
+
 <style>
 *{margin:0; padding:0; box-sizing:border-box;}
 :root{ --ouro:#E5B769; --creme:#F5E6C8; --borda:rgba(255,255,255,0.08); }
@@ -17,13 +22,22 @@ body{background:#0E0E0E; color:#F5E6C8; font-family:'Inter', sans-serif; padding
 .lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.25s}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* CORREÇÃO: Espaço adicionado antes de .prisma-menu-hamburguer para ativar a rotação das linhas do botão */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
 .prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.28s;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+
+/* CORREÇÃO: Espaço adicionado antes de .prisma-menu-links para fazer a gaveta deslizar para a tela */
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+
 .prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
+
+
 .hero{background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1200'); background-size:cover; background-position:center; text-align:center; padding:120px 20px 60px;}
 .hero h1{font-family:'Playfair Display', serif; font-size:4rem; color:#F5E6C8; line-height:0.9;}
 .hero p{color:#E5B769; margin:15px 0 30px;}
@@ -61,6 +75,27 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
 .btn-topo-sepia{position:fixed; bottom:28px; right:28px; z-index:9998; width:52px; height:52px; border-radius:50%; background:#1E1E1E; border:1px solid #eebc6c; color:#eebc6c; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(20px); transition:0.35s;}
 .btn-topo-sepia.mostrar{opacity:1; visibility:visible; transform:translateY(0);}
 @media(max-width:900px){.conteudo,.grade-juridica,.bloco-horizontal{grid-template-columns:1fr; display:flex; flex-direction:column;}.hero h1{font-size:2.6rem;}.galeria-cores{grid-template-columns:repeat(2,1fr);}}
+
+/*icones*/
+.material-icons {
+  font-family: 'Material Icons' !important;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  color: #c4a77d !important; /* Cor dourada premium nos ícones */
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -75,18 +110,21 @@ footer{text-align:center; padding:30px; border-top:1px solid #ffffff15; margin-t
         <button onclick="setLang('fr')" id="btn-fr">FR</button>
       </div>
       <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
-    </div>
-    <ul class="prisma-menu-links">
-       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
-<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
-<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
-<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
-<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
-<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
-<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
-<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
-    
-    </ul>
+   
+   </div>
+
+     <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-i="m_inicio">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span><span data-i="m_sobre">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-i="m_afiliados">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span><span data-i="m_artigos">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-i="m_quiz">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-i="m_ebook">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span><span data-i="m_loja">LOJA</span></a></li>
+    <li><a href="turismo.html"><span class="material-icons">public</span><span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
+</ul>
+
 </nav>
 
 <section class="hero">
@@ -483,8 +521,12 @@ window.addEventListener('scroll',()=>{document.getElementById('btnTopo').classLi
     alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
   });
 })();
-</script>
 
+
+
+// ====== CONTROLE DO MENU HAMBÚRGUER (PASTA ARTIGOS) ======
+
+</script>
 
 </body>
 </html>
