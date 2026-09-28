@@ -4,47 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prisma Histórico - E-book Completo</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 :root{--ouro:#eebc6c;--preto:#121212;--preto2:#1E1E1E;--creme:#F5F5F0;--borda:rgba(238,188,108,0.15)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;padding-top:78px!important}
-.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
-.prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important}
-.prisma-logo span{color:var(--ouro)!important;font-weight:700!important}
-.lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
-
-/* CORRIGIDO hamburguer gaveta */
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em}.prisma-logo span{color:var(--ouro);font-weight:700}
+.lang-switch{display:flex;gap:4px;background:rgba(232,213,163,0.1);padding:4px;border-radius:30px;border:1px solid rgba(201,168,106,0.3);}
+.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;font-family:'Cinzel',serif;letter-spacing:1px;transition:0.3s}
+.lang-switch button.active{background:#c9a86a;color:#121212;font-weight:800}
+/*hamburguer*/
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%;position:relative;z-index:10002}
 .prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:16px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-/*hamburguer gaveta */
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a:hover{color:var(--ouro)}
+
 
 
 .hero-ebook{padding:70px 5% 80px 5%;max-width:1250px;margin:auto}
-.hero-ebook h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,72px);line-height:0.9;letter-spacing:-0.02em}
+.hero-ebook h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,72px);line-height:0.9}
 .hero-ebook h1 span{color:var(--ouro);font-style:italic;font-weight:500}
 .hero-ebook p{max-width:720px;margin:24px 0 40px 0;opacity:0.6;line-height:1.7;font-size:17px}
 .beneficios{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:50px}
 .card-beneficio{background:var(--preto2);border:1px solid var(--borda);padding:22px;border-radius:16px;font-size:14px;line-height:1.5}
 .card-beneficio b{color:var(--ouro);display:block;margin-bottom:4px;font-size:13px}
-.prisma-btn-container{display:flex;justify-content:flex-start;margin-bottom:80px}
 .btn-checkout-final{display:inline-flex;align-items:center;gap:10px;background:var(--ouro);color:#000;font-weight:800;padding:18px 32px;border-radius:100px;text-decoration:none;border:none;cursor:pointer;letter-spacing:0.05em;transition:0.3s;box-shadow:0 10px 30px rgba(238,188,108,0.25)}
 .btn-checkout-final:hover{background:#fff;transform:translateY(-3px)}
 #modalCheckout{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(10px)}
 #modalCheckout.aberto{display:flex}
-.modal-content{position:relative;max-width:900px;width:100%;background:#111;border:1px solid var(--borda);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8)}
+.modal-content{position:relative;max-width:950px;width:100%;background:#111;border:1px solid var(--borda);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.8)}
 .modal-grid{display:grid;grid-template-columns:1.2fr 0.8fr}
-@media(max-width:850px){.modal-grid{grid-template-columns:1fr}}
 .btn-fechar-modal{position:absolute;top:14px;right:14px;z-index:5;background:rgba(255,255,255,0.08);border:1px solid var(--borda);color:#fff;width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}
 .modal-produto{padding:38px;color:#fff}
 .modal-tag{background:var(--ouro);color:#000;font-size:10px;font-weight:800;letter-spacing:0.12em;padding:7px 12px;border-radius:100px}
@@ -56,139 +52,223 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 .modal-pagamento{background:#171717;padding:38px;border-left:1px solid var(--borda);display:flex;flex-direction:column;justify-content:center;text-align:center}
 .preco-de{color:#666;text-decoration:line-through;font-size:13px}
 .preco-por{color:#fff;font-size:46px;font-weight:900;font-family:'Cormorant Garamond'}
-.preco-info{color:var(--ouro);font-size:12px;margin-bottom:22px}
+.preco-info{color:var(--ouro);font-size:12px;margin-bottom:8px}
+.pais-info{font-size:11px;color:#888;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:6px}
 .titulo-pagamento{font-size:10px;color:#777;margin-bottom:10px;letter-spacing:0.15em}
 .icones-pagamento{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:26px}
 .tag-pagamento{background:#222;border:1px solid #2a2a2a;color:#ddd;padding:7px 12px;border-radius:100px;font-size:11px}
+.tag-pagamento.paypal{background:rgba(0,112,201,0.15);border-color:rgba(0,112,201,0.3);color:#7bb8ff}
+.tag-pagamento.pix{background:rgba(50,205,50,0.12);border-color:rgba(50,205,50,0.3);color:#8eff8e}
 .modal-seguranca{margin-top:16px;font-size:11px;color:#666;line-height:1.5}
+@media(max-width:850px){.modal-grid{grid-template-columns:1fr}.modal-pagamento{border-left:none;border-top:1px solid var(--borda);padding:28px 22px}.modal-produto{padding:28px 22px}.hero-ebook{padding:40px 5%}.beneficios{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.beneficios{grid-template-columns:1fr}.preco-por{font-size:38px}.btn-checkout-final{width:100%;justify-content:center}.prisma-logo{font-size:20px}#modalCheckout{padding:10px}}
 </style>
 </head>
 <body>
+
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
-      </div>
-      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="lang-switch">
+      <button data-lang="pt" id="btn-pt" class="active">PT-BR</button>
+      <button data-lang="en" id="btn-en">EN</button>
+      <button data-lang="es" id="btn-es">ES</button>
+      <button data-lang="fr" id="btn-fr">FR</button>
     </div>
-    <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-    </ul>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  </div>
+  <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="PARTNERS" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+  </ul>
 </nav>
+
 <section class="hero-ebook">
-    <h1 data-i18n="hero_h1">PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
-    <p data-i18n="hero_p">O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>.</p>
-    <div class="beneficios">
-        <div class="card-beneficio"><b data-i18n="b1_t">📖 PÁGINAS ILUSTRADAS</b><span data-i18n="b1_d">Análise profunda, zero romantização</span></div>
-        <div class="card-beneficio"><b data-i18n="b2_t">🗺️ MAPAS MENTAIS</b><span data-i18n="b2_d">Memorize estruturas inteiras</span></div>
-        <div class="card-beneficio"><b data-i18n="b3_t">📊 DIAGRAMAS E IMAGENS</b><span data-i18n="b3_d">Visualize o cotidiano colonial</span></div>
-        <div class="card-beneficio"><b data-i18n="b4_t">📚 SUMÁRIO DIGITAL</b><span data-i18n="b4_d">Navegue por vários tópicos</span></div>
-    </div>
-    <div class="prisma-btn-container">
-        <button type="button" class="btn-checkout-final" onclick="abrirCheckout()" data-i18n="btn_buy">🛒 Comprar e-book completo</button>
-    </div>
+  <h1 data-i18n="hero_h1">PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
+  <p data-i18n="hero_p">O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens e mapas mentais.</p>
+  <div class="beneficios">
+    <div class="card-beneficio"><b data-i18n="b1_t">📖 PÁGINAS ILUSTRADAS</b><span data-i18n="b1_d">Análise profunda, zero romantização</span></div>
+    <div class="card-beneficio"><b data-i18n="b2_t">🗺️ MAPAS MENTAIS</b><span data-i18n="b2_d">Memorize estruturas inteiras</span></div>
+    <div class="card-beneficio"><b data-i18n="b3_t">📊 DIAGRAMAS E IMAGENS</b><span data-i18n="b3_d">Visualize o cotidiano colonial</span></div>
+    <div class="card-beneficio"><b data-i18n="b4_t">📚 SUMÁRIO DIGITAL</b><span data-i18n="b4_d">Navegue por vários tópicos</span></div>
+  </div>
+  <button type="button" class="btn-checkout-final" onclick="abrirCheckout()" data-i18n="btn_buy">🛒 Comprar e-book completo</button>
 </section>
+
 <div id="modalCheckout">
-    <div class="modal-content">
-        <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()">&times;</button>
-        <div class="modal-grid">
-            <div class="modal-produto">
-                <span class="modal-tag" data-i18n="modal_tag">EDIÇÃO HISTÓRICA COMPLETA</span>
-                <h2 data-i18n="modal_h">Prisma Histórico</h2>
-                <p class="modal-sub" data-i18n="modal_sub">Da Colonização à Primeira República</p>
-                <ul class="modal-lista-beneficios">
-                    <li><span class="check-icon">✓</span> <span data-i18n="li1">+130 páginas ilustradas sem romantização</span></li>
-                    <li><span class="check-icon">✓</span> <span data-i18n="li2">Fuvest, ENEM e Vestibulares</span></li>
-                    <li><span class="check-icon">✓</span> <span data-i18n="li3">Mapas, linha do tempo e imagens da Colônia à Primeira República</span></li>
-                    <li><span class="check-icon">✓</span> <span data-i18n="li4">Conteúdo analítico, crítico-reflexivo e investigativo</span></li>
-                    <li><span class="check-icon">✓</span> <span data-i18n="li5">Mapas mentais e infográficos didáticos</span></li>
-                </ul>
-            </div>
-            <div class="modal-pagamento">
-                <span class="preco-de" data-i18n="price_from">De R$ 149,90</span>
-                <div class="preco-por" data-i18n="price_now">R$ 49,90</div>
-                <p class="preco-info" data-i18n="price_info">Pagamento único • Acesso imediato</p>
-                <p class="titulo-pagamento" data-i18n="secure_t">Checkout 100% seguro</p>
-                <div class="icones-pagamento">
-                    <span class="tag-pagamento" data-i18n="pay1">⚡ Pix Instantâneo</span>
-                    <span class="tag-pagamento" data-i18n="pay2">💳 Cartão em até 12x</span>
-                    <span class="tag-pagamento" data-i18n="pay3">📄 Boleto / PayPal</span>
-                </div>
-                <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-checkout-final" style="justify-content:center;width:100%" data-i18n="btn_final">🔒 GARANTIR MEU ACESSO AGORA</a>
-                <div class="modal-seguranca"><p data-i18n="sec1">🔒 Ambiente criptografado Hotmart</p><p data-i18n="sec2">🛡️ 7 dias de garantia</p></div>
-            </div>
+  <div class="modal-content">
+    <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()">&times;</button>
+    <div class="modal-grid">
+      <div class="modal-produto">
+        <span class="modal-tag" data-i18n="modal_tag">EDIÇÃO HISTÓRICA COMPLETA</span>
+        <h2 data-i18n="modal_h">Prisma Histórico</h2>
+        <p class="modal-sub" data-i18n="modal_sub">Da Colonização à Primeira República</p>
+        <ul class="modal-lista-beneficios">
+          <li><span class="check-icon">✓</span> <span data-i18n="li1">+130 páginas ilustradas sem romantização</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="li2">Da Colônia à Primeira República (1500-1930)</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="li3">Mapas, linha do tempo e imagens raras de arquivo</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="li4">Conteúdo analítico, crítico-reflexivo e investigativo</span></li>
+          <li><span class="check-icon">✓</span> <span data-i18n="li5">Mapas mentais, infográficos e cotidiano colonial</span></li>
+        </ul>
+      </div>
+      <div class="modal-pagamento">
+        <span class="preco-de" data-i18n="price_from">De R$ 149,90</span>
+        <div class="preco-por" id="precoPor">R$ 49,90</div>
+        <p class="preco-info" data-i18n="price_info">Pagamento único • Acesso imediato</p>
+        <p class="pais-info" id="paisInfo">🇧🇷 Pagamento para Brasil via Hotmart</p>
+        <p class="titulo-pagamento" data-i18n="secure_t">Checkout 100% seguro</p>
+        <div class="icones-pagamento" id="iconesPagamento"></div>
+        <a href="https://pay.hotmart.com/S107552304I" id="btnFinalLink" target="_blank" class="btn-checkout-final" style="justify-content:center;width:100%" data-i18n="btn_final">🔒 GARANTIR MEU ACESSO AGORA</a>
+        <div class="modal-seguranca">
+          <p id="sec1">🔒 Ambiente criptografado Hotmart</p>
+          <p id="sec2">🛡️ 7 dias de garantia</p>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
 <script>
 const T={
 pt:{
-hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>.",
-b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análise profunda, zero romantização",b2_t:"🗺️ MAPAS MENTAIS",b2_d:"Memorize estruturas inteiras",b3_t:"📊 DIAGRAMAS E IMAGENS",b3_d:"Visualize o cotidiano colonial",b4_t:"📚 SUMÁRIO DIGITAL",b4_d:"Navegue por vários tópicos",
-btn_buy:"🛒 Comprar e-book completo",
-modal_tag:"EDIÇÃO HISTÓRICA COMPLETA",modal_h:"Prisma Histórico",modal_sub:"Da Colonização à Primeira República",
-li1:"+130 páginas ilustradas sem romantização",li2:"Fuvest, ENEM e Vestibulares",li3:"Mapas, linha do tempo e imagens da Colônia à Primeira República",li4:"Conteúdo analítico, crítico-reflexivo e investigativo",li5:"Mapas mentais e infográficos didáticos",
-price_from:"De R$ 149,90",price_now:"R$ 49,90",price_info:"Pagamento único • Acesso imediato",secure_t:"Checkout 100% seguro",
-pay1:"⚡ Pix Instantâneo",pay2:"💳 Cartão em até 12x",pay3:"📄 Boleto / PayPal",btn_final:"🔒 GARANTIR MEU ACESSO AGORA",sec1:"🔒 Ambiente criptografado Hotmart",sec2:"🛡️ 7 dias de garantia"
+hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens e mapas mentais.",
+b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análise profunda, zero romantização",b2_t:"🗺️ MAPAS MENTAIS",b2_d:"Memorize estruturas inteiras",b3_t:"📊 DIAGRAMAS E IMAGENS",b3_d:"Visualize o cotidiano colonial",b4_t:"📚 SUMÁRIO DIGITAL",b4_d:"Navegue por vários tópicos",btn_buy:"🛒 Comprar e-book completo",
+modal_tag:"EDIÇÃO HISTÓRICA COMPLETA",modal_h:"Prisma Histórico",modal_sub:"Da Colonização à Primeira República",li1:"+130 páginas ilustradas sem romantização",li2:"Da Colônia à Primeira República (1500-1930)",li3:"Mapas, linha do tempo e imagens raras de arquivo",li4:"Conteúdo analítico, crítico-reflexivo e investigativo",li5:"Mapas mentais, infográficos e cotidiano colonial",price_from:"De R$ 149,90",price_info:"Pagamento único • Acesso imediato",secure_t:"Checkout 100% seguro via Hotmart",btn_final:"🔒 GARANTIR MEU ACESSO AGORA"
 },
 en:{
-hero_h1:"PRISMA HISTORY <br><span>+ Illustrated Pages</span>",hero_p:"The only material that dissects Brazilian Colonization, Empire and First Republic with diagrams, images, mind maps and questions from top exams like <strong>ENEM and Fuvest</strong>.",
-b1_t:"📖 ILLUSTRATED PAGES",b1_d:"Deep analysis, zero romanticization",b2_t:"🗺️ MIND MAPS",b2_d:"Memorize entire structures",b3_t:"📊 DIAGRAMS & IMAGES",b3_d:"Visualize colonial daily life",b4_t:"📚 DIGITAL INDEX",b4_d:"Navigate through topics",
-btn_buy:"🛒 Buy Complete E-book",
-modal_tag:"COMPLETE HISTORICAL EDITION",modal_h:"Prisma History",modal_sub:"From Colonization to First Republic",
-li1:"+130 illustrated pages without romanticization",li2:"ENEM, Fuvest and entrance exams",li3:"Maps, timeline and images from Colony to First Republic",li4:"Analytical, critical-reflective and investigative content",li5:"Mind maps and didactic infographics",
-price_from:"From $39.90",price_now:"$19.90",price_info:"One-time payment • Instant access",secure_t:"100% secure checkout",
-pay1:"⚡ Instant PayPal",pay2:"💳 Card up to 12x",pay3:"📄 PayPal / Card",btn_final:"🔒 GET MY ACCESS NOW",sec1:"🔒 Encrypted Hotmart environment",sec2:"🛡️ 7-day guarantee"
+hero_h1:"PRISMA HISTORY <br><span>+ Illustrated Pages</span>",hero_p:"The only material that dissects Colonization, Empire and First Republic with diagrams and mind maps.",
+b1_t:"📖 ILLUSTRATED PAGES",b1_d:"Deep analysis, zero romanticization",b2_t:"🗺️ MIND MAPS",b2_d:"Memorize entire structures",b3_t:"📊 DIAGRAMS & IMAGES",b3_d:"Visualize colonial daily life",b4_t:"📚 DIGITAL INDEX",b4_d:"Navigate through topics",btn_buy:"🛒 Buy Complete E-book",
+modal_tag:"COMPLETE HISTORICAL EDITION",modal_h:"Prisma History",modal_sub:"From Colonization to First Republic",li1:"+130 illustrated pages without romanticization",li2:"From Colony to First Republic (1500-1930)",li3:"Maps, timeline and rare archive images",li4:"Analytical, critical-reflective and investigative content",li5:"Mind maps, infographics and colonial daily life",price_from:"From $39.90",price_info:"One-time payment • Instant access",secure_t:"100% Secure via PayPal",btn_final:"🔒 GET MY ACCESS NOW"
 },
 es:{
-hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"El único material que desglosa la Colonización, Imperio y Primera República con diagramas, imágenes, mapas mentales y preguntas de exámenes como <strong>ENEM y Fuvest</strong>.",
-b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análisis profundo, cero romantización",b2_t:"🗺️ MAPAS MENTALES",b2_d:"Memoriza estructuras enteras",b3_t:"📊 DIAGRAMAS E IMÁGENES",b3_d:"Visualiza el cotidiano colonial",b4_t:"📚 ÍNDICE DIGITAL",b4_d:"Navega por varios temas",
-btn_buy:"🛒 Comprar e-book completo",
-modal_tag:"EDICIÓN HISTÓRICA COMPLETA",modal_h:"Prisma Histórico",modal_sub:"De la Colonización a la Primera República",
-li1:"+130 páginas ilustradas sin romantización",li2:"ENEM, Fuvest y Vestibulares",li3:"Mapas, línea de tiempo e imágenes de la Colonia a la Primera República",li4:"Contenido analítico, crítico-reflexivo e investigativo",li5:"Mapas mentales e infografías didácticas",
-price_from:"De 39,90€",price_now:"19,90€",price_info:"Pago único • Acceso inmediato",secure_t:"Checkout 100% seguro",
-pay1:"⚡ PayPal Instantáneo",pay2:"💳 Tarjeta hasta 12x",pay3:"📄 Boleto / PayPal",btn_final:"🔒 GARANTIZAR MI ACCESO AHORA",sec1:"🔒 Entorno encriptado Hotmart",sec2:"🛡️ 7 días de garantía"
+hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"El único material que desglosa la Colonización, Imperio y Primera República con diagramas y mapas mentales.",
+b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análisis profundo, cero romantización",b2_t:"🗺️ MAPAS MENTALES",b2_d:"Memoriza estructuras enteras",b3_t:"📊 DIAGRAMAS E IMÁGENES",b3_d:"Visualiza el cotidiano colonial",b4_t:"📚 ÍNDICE DIGITAL",b4_d:"Navega por varios temas",btn_buy:"🛒 Comprar e-book completo",
+modal_tag:"EDICIÓN HISTÓRICA COMPLETA",modal_h:"Prisma Histórico",modal_sub:"De la Colonización a la Primera República",li1:"+130 páginas ilustradas sin romantización",li2:"De la Colonia a la Primera República (1500-1930)",li3:"Mapas, línea de tiempo e imágenes raras de archivo",li4:"Contenido analítico, crítico-reflexivo e investigativo",li5:"Mapas mentales, infografías y vida cotidiana colonial",price_from:"De 39,90€",price_info:"Pago único • Acceso inmediato",secure_t:"Pago 100% seguro vía PayPal",btn_final:"🔒 GARANTIZAR MI ACCESO AHORA"
 },
 fr:{
-hero_h1:"PRISMA HISTORIQUE <br><span>+ Pages Illustrées</span>",hero_p:"Le seul matériel qui décortique la Colonisation, l'Empire et la Première République avec diagrammes, images, cartes mentales et questions d'examens comme <strong>ENEM et Fuvest</strong>.",
-b1_t:"📖 PAGES ILLUSTRÉES",b1_d:"Analyse profonde, zéro romantisation",b2_t:"🗺️ CARTES MENTALES",b2_d:"Mémorisez des structures entières",b3_t:"📊 DIAGRAMMES ET IMAGES",b3_d:"Visualisez le quotidien colonial",b4_t:"📚 SOMMAIRE NUMÉRIQUE",b4_d:"Naviguez par thèmes",
-btn_buy:"🛒 Acheter l'e-book complet",
-modal_tag:"ÉDITION HISTORIQUE COMPLÈTE",modal_h:"Prisma Historique",modal_sub:"De la Colonisation à la Première République",
-li1:"+130 pages illustrées sans romantisation",li2:"ENEM, Fuvest et concours",li3:"Cartes, frise chronologique et images de la Colonie à la Première République",li4:"Contenu analytique, critique-réflexif et investigatif",li5:"Cartes mentales et infographies didactiques",
-price_from:"De 39,90€",price_now:"19,90€",price_info:"Paiement unique • Accès immédiat",secure_t:"Checkout 100% sécurisé",
-pay1:"⚡ PayPal Instantané",pay2:"💳 Carte jusqu'à 12x",pay3:"📄 PayPal / Carte",btn_final:"🔒 GARANTIR MON ACCÈS MAINTENANT",sec1:"🔒 Environnement crypté Hotmart",sec2:"🛡️ Garantie 7 jours"
+hero_h1:"PRISMA HISTORIQUE <br><span>+ Pages Illustrées</span>",hero_p:"Le seul matériel qui décortique la Colonisation, l'Empire et la Première République avec diagrammes.",
+b1_t:"📖 PAGES ILLUSTRÉES",b1_d:"Analyse profonde, zéro romantisation",b2_t:"🗺️ CARTES MENTALES",b2_d:"Mémorisez des structures entières",b3_t:"📊 DIAGRAMMES ET IMAGES",b3_d:"Visualisez le quotidien colonial",b4_t:"📚 SOMMAIRE NUMÉRIQUE",b4_d:"Naviguez par thèmes",btn_buy:"🛒 Acheter l'e-book complet",
+modal_tag:"ÉDITION HISTORIQUE COMPLÈTE",modal_h:"Prisma Historique",modal_sub:"De la Colonisation à la Première République",li1:"+130 pages illustrées sans romantisation",li2:"De la Colonie à la Première République (1500-1930)",li3:"Cartes, frise chronologique et images rares d'archives",li4:"Contenu analytique, critique-réflexif et investigatif",li5:"Cartes mentales, infographies et vie quotidienne coloniale",price_from:"De 39,90€",price_info:"Paiement unique • Accès immédiat",secure_t:"Paiement 100% sécurisé via PayPal",btn_final:"🔒 GARANTIR MON ACCÈS"
 }
 };
+
+const CHECKOUTS = {
+  pt: { preco: "R$ 49,90", link: "https://pay.hotmart.com/S107552304I", pais: "🇧🇷 Pagamento para Brasil via Hotmart", tags: '<span class="tag-pagamento pix">⚡ Pix Instantâneo</span><span class="tag-pagamento">💳 Cartão em até 12x</span><span class="tag-pagamento">📄 Boleto</span>', sec1:"🔒 Ambiente criptografado Hotmart", sec2:"🛡️ 7 dias de garantia" },
+  en: { preco: "$19.90", link: "https://www.paypal.com/ncp/payment/XXXXXX_EN", pais: "🇺🇸 Payment for United States via PayPal", tags: '<span class="tag-pagamento paypal">💙 PayPal Checkout</span><span class="tag-pagamento">💳 Credit Card via PayPal</span>', sec1:"🔒 Encrypted PayPal environment", sec2:"🛡️ 7-day guarantee" },
+  es: { preco: "19,90€", link: "https://www.paypal.com/ncp/payment/XXXXXX_ES", pais: "🇪🇸 Pago para España vía PayPal", tags: '<span class="tag-pagamento paypal">💙 PayPal</span><span class="tag-pagamento">💳 Tarjeta vía PayPal</span>', sec1:"🔒 Entorno encriptado PayPal", sec2:"🛡️ Garantía 7 días" },
+  fr: { preco: "19,90€", link: "https://www.paypal.com/ncp/payment/XXXXXX_FR", pais: "🇫🇷 Paiement pour la France via PayPal", tags: '<span class="tag-pagamento paypal">💙 PayPal</span><span class="tag-pagamento">💳 Carte via PayPal</span>', sec1:"🔒 Environnement crypté PayPal", sec2:"🛡️ Garantie 7 jours" }
+};
+
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+l).classList.add('active');
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k=el.getAttribute('data-i18n');
-    if(T[l][k]) el.innerHTML=T[l][k];
+    if(T[l] && T[l][k]) el.innerHTML=T[l][k];
   });
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    const txt = el.getAttribute('data-'+l);
+    if(txt) el.textContent = txt;
+  });
+  const cfg = CHECKOUTS[l];
+  if(!cfg) return;
+  document.getElementById('precoPor').textContent = cfg.preco;
+  document.getElementById('btnFinalLink').href = cfg.link;
+  document.getElementById('paisInfo').textContent = cfg.pais;
+  document.getElementById('iconesPagamento').innerHTML = cfg.tags;
+  document.getElementById('sec1').textContent = cfg.sec1;
+  document.getElementById('sec2').textContent = cfg.sec2;
 }
-setLang(localStorage.getItem('prisma_lang')||'pt');
-function abrirCheckout(){ document.getElementById('modalCheckout').classList.add('aberto'); document.body.style.overflow='hidden' }
-function fecharCheckout(){ document.getElementById('modalCheckout').classList.remove('aberto'); document.body.style.overflow='' }
-const nav=document.getElementById('prismaNav');
-document.getElementById('btnMenu').addEventListener('click',(e)=>{
-  e.stopPropagation(); nav.classList.toggle('menu-aberto');
-  document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
+
+document.querySelectorAll('.lang-switch button').forEach(b=>{
+  b.addEventListener('click', ()=> setLang(b.dataset.lang));
 });
-document.getElementById('modalCheckout').addEventListener('click', function(e){ if(e.target===this) fecharCheckout() });
+
+setLang(localStorage.getItem('prisma_lang')||'pt');
+
+function abrirCheckout(){ document.getElementById('modalCheckout').classList.add('aberto'); document.body.style.overflow='hidden'; }
+function fecharCheckout(){ document.getElementById('modalCheckout').classList.remove('aberto'); document.body.style.overflow=''; }
+document.getElementById('modalCheckout').addEventListener('click', e=>{ if(e.target.id==='modalCheckout') fecharCheckout(); });
+document.getElementById('btnMenu').addEventListener('click', e=>{ e.stopPropagation(); document.getElementById('prismaNav').classList.toggle('menu-aberto'); });
 </script>
+
+<script>
+// --- JS GAVETA CORRIGIDO ---
+const nav = document.getElementById('prismaNav');
+const btnMenu = document.getElementById('btnMenu');
+const menuLinks = document.querySelector('.prisma-menu-links');
+
+function toggleMenu(e){
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+}
+
+function fecharMenu(){
+  nav.classList.remove('menu-aberto');
+  document.body.style.overflow = '';
+}
+
+btnMenu.addEventListener('click', toggleMenu);
+
+// Fecha clicando fora da gaveta
+document.addEventListener('click', (e)=>{
+  if(nav.classList.contains('menu-aberto') && !e.target.closest('.prisma-menu-links') && !e.target.closest('#btnMenu')){
+    fecharMenu();
+  }
+});
+
+// Fecha clicando em qualquer link da gaveta
+menuLinks.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click', fecharMenu);
+});
+
+// Fecha com ESC
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') fecharMenu();
+});
+
+
+</script>
+
+<script>
+
+    // --- JS GAVETA ---
+
+function toggleMenu(e){
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+}
+
+function fecharMenu(){
+  nav.classList.remove('menu-aberto');
+  document.body.style.overflow = '';
+}
+
+btnMenu.addEventListener('click', toggleMenu);
+
+document.addEventListener('click', (e)=>{
+  if(nav.classList.contains('menu-aberto') && !e.target.closest('.prisma-menu-links') && !e.target.closest('#btnMenu')){
+    fecharMenu();
+  }
+});
+
+menuLinks.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click', fecharMenu);
+});
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Escape') fecharMenu();
+});
+</script>
+
 </body>
 </html>

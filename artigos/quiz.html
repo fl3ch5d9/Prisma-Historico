@@ -51,7 +51,109 @@ body{background:var(--bg)!important;margin:0;font-family:'Inter',sans-serif;colo
 .prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
+
+/* CORRIGIDO - AGORA COM ESPAÇO */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+
+/*quiz jogo*/
+/* PERFEITO - IGUAL SUA FOTO */
+body{
+  background: #060708!important;
+  overflow-y: auto!important;
+  height: auto!important;
+}
+
+/* TOPO Belém | Aldeia | Diamantes... */
+.board,.trilha{
+  display: flex!important;
+  flex-direction: row!important;
+  gap: 8px!important;
+  justify-content: flex-start!important;
+  overflow-x: auto!important;
+  overflow-y: hidden!important;
+  padding: 12px!important;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.board::-webkit-scrollbar{ display:none; }
+
+.board.casa,.trilha div{
+  min-width: 75px!important;
+  height: 75px!important;
+  flex-shrink: 0!important;
+}
+
+/* CASA ATIVA - Igual Aldeia laranja da foto */
+.casa.ativa,.trilha.ativa{
+  border: 2px solid #ffcc66!important;
+  background: rgba(255,204,102,0.15)!important;
+}
+.casa.concluida{
+  border: 2px solid #4ade80!important;
+}
+
+/* BARRA Caso 2/10 e 1 pistas */
+.progresso-wrap{
+  max-width: 850px;
+  margin: 20px auto 10px auto;
+  display: flex;
+  justify-content: space-between;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* CARD NÃO SOME MAIS - ESSE É O SEGREDO */
+.card-pergunta,.caso-card{
+  max-width: 850px!important;
+  margin: 0 auto!important;
+  height: auto!important;
+  min-height: 400px!important;
+  overflow: visible!important;
+  background: #1e223a!important;
+  border-radius: 20px;
+}
+
+/* ALTERNATIVAS A) B) C) D) */
+.alt-btn{
+  width: 100%;
+  text-align: left;
+  padding: 16px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  cursor: pointer;
+}
+.alt-btn.ativa{
+  background: #ffcc66!important;
+  color: #000!important;
+  border-color: #ffcc66!important;
+}
+
+/* CELULAR - FICA PERFEITO TAMBÉM */
+@media(max-width: 768px){
+ .board,.trilha{
+    gap: 6px!important;
+    padding: 10px 8px!important;
+  }
+ .board.casa{
+    min-width: 68px!important;
+    height: 68px!important;
+  }
+ .card-pergunta{
+    margin: 0 12px!important;
+  }
+}
+
 </style>
+
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
@@ -83,13 +185,16 @@ body{background:var(--bg)!important;margin:0;font-family:'Inter',sans-serif;colo
   <div class="quiz-header"><span id="qCount">Caso 1 / 10</span><span id="scoreCount">0 pistas</span></div>
   <div class="quiz-card" id="quizCard"></div>
 </div>
+
 <script>
-const T_UI={
+  const T_UI={
 pt:{acertos:"pistas",proxima:"Investigar →",refazer:"Recomeçar Investigação",msg_win:"Caso Resolvido! 🔍 Você desvendou a Colônia!",msg_mid:"Bom detetive! Quase lá.",msg_low:"O mistério continua... Estude os arquivos."},
 en:{acertos:"clues",proxima:"Investigate →",refazer:"Restart",msg_win:"Case Solved! 🔍",msg_mid:"Good detective!",msg_low:"Study more."},
 es:{acertos:"pistas",proxima:"Investigar →",refazer:"Rehacer",msg_win:"¡Caso Resuelto! 🔍",msg_mid:"¡Buen trabajo!",msg_low:"Estudia más."},
 fr:{acertos:"indices",proxima:"Enquêter →",refazer:"Recommencer",msg_win:"Affaire Résolue! 🔍",msg_mid:"Bien joué!",msg_low:"Étudiez plus."}
 };
+// erro corrigido idiomas quiz
+
 const QUIZ={
 pt:[
   { pagina:"CASO 01 - O Alvará", pergunta:"1755, Belém do Pará. Um documento secreto do Marquês de Pombal chega. Casamentos entre brancos e indígenas estão sendo julgados como 'infâmia de sangue'. Como detetive, o que o Alvará Régio realmente determina?", dica:"Pista: Pombal queria povoar a Amazônia e acabar com o poder dos jesuítas.", alt:[["A","Que seriam exilados"],["B","Que NÃO sofreriam infâmia alguma e seriam protegidos pelo Rei"],["C","Que pagariam imposto"],["D","Que seriam escravizados"]], resp:"B", casa:"Belém" },
@@ -103,8 +208,48 @@ pt:[
   { pagina:"CASO 09", pergunta:"Qual a crítica de Lima Barreto em Policarpo Quaresma?", dica:"Vira carcereiro e se decepciona.", alt:[["A","República perfeita"],["B","República violenta e corrupta"],["C","Monarquia volta"],["D","Marinha certa"]], resp:"B", casa:"Arquivo" },
   { pagina:"CASO 10", pergunta:"1915. O que o Exército usou pela primeira vez no Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviação militar"],["D","Metralhadoras"]], resp:"C", casa:"CÉU" },
 ],
-en:[],es:[],fr:[]
+en:[
+  { pagina:"CASE 01 - The Decree", pergunta:"1755, Belem. A secret document from Pombal arrives. Mixed marriages were judged as 'blood infamy'. What does the Royal Decree really determine?", dica:"Clue: Pombal wanted to populate Amazon.", alt:[["A","They would be exiled"],["B","They would NOT suffer any infamy and would be protected by the King"],["C","They would pay tax"],["D","They would be enslaved"]], resp:"B", casa:"Belem" },
+  { pagina:"CASE 02", pergunta:"You investigate Jesuit villages. They became so rich they were called...", dica:"They had army, money and own lands.", alt:[["A","Royal Fifth"],["B","Captaincy"],["C","State within the State"],["D","Captivity"]], resp:"C", casa:"Village" },
+  { pagina:"CASE 03", pergunta:"Diamantino District, 1734. Why did Portugal isolate it with fences?", dica:"Diamond worth more than gold.", alt:[["A","Protect natives"],["B","Control price and avoid smuggling"],["C","War with Spain"],["D","Hide fake gold"]], resp:"B", casa:"Diamonds" },
+  { pagina:"CASE 04", pergunta:"Contestado, 1912. What did Farquhar's railway do?", dica:"Wood and land given to foreign company.", alt:[["A","Brought progress"],["B","Expelled caboclos, giving everything to Lumber"],["C","Built by slaves"],["D","Linked to USA"]], resp:"B", casa:"Railway" },
+  { pagina:"CASE 05", pergunta:"You find 'redutos'. Who led them?", dica:"Monks like Jose Maria.", alt:[["A","Officers"],["B","Holy monks, collective communities"],["C","Jesuits"],["D","Politicians"]], resp:"B", casa:"Redoubt" },
+  { pagina:"CASE 06", pergunta:"Rio, 1891. What was the 1st Armada Revolt?", dica:"Custodio de Melo.", alt:[["A","Slaves"],["B","Sailors against Deodoro"],["C","Army vs Navy"],["D","Argentina"]], resp:"B", casa:"Bay" },
+  { pagina:"CASE 07", pergunta:"1893. How did Floriano win without ships?", dica:"Cardboard Fleet.", alt:[["A","Portugal"],["B","Cardboard Fleet"],["C","30 days"],["D","Planes"]], resp:"B", casa:"Rio" },
+  { pagina:"CASE 08", pergunta:"Desterro, 1894. What happened in Anhatomirim?", dica:"Tribute to Floriano.", alt:[["A","Amnesty"],["B","Executions and became Florianopolis"],["C","Sold island"],["D","Coffee"]], resp:"B", casa:"Island" },
+  { pagina:"CASE 09", pergunta:"What is Lima Barreto's critique in Quaresma?", dica:"Becomes jailer and gets disappointed.", alt:[["A","Perfect Republic"],["B","Violent and corrupt Republic"],["C","Monarchy returns"],["D","Navy right"]], resp:"B", casa:"Archive" },
+  { pagina:"CASE 10", pergunta:"1915. What did the Army use for first time in Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanks"],["B","Submarines"],["C","Military aviation"],["D","Machine guns"]], resp:"C", casa:"SKY" },
+],
+es:[
+  { pagina:"CASO 01 - El Decreto", pergunta:"1755, Belem. Llega un documento secreto de Pombal. Matrimonios mixtos juzgados como 'infamia de sangre'. ¿Que determina el Decreto?", dica:"Pista: Pombal queria poblar Amazonia.", alt:[["A","Serian exiliados"],["B","NO sufririan infamia y serian protegidos por el Rey"],["C","Pagarian impuesto"],["D","Serian esclavizados"]], resp:"B", casa:"Belem" },
+  { pagina:"CASO 02", pergunta:"Investigas aldeas jesuitas. Tan ricas que las llamaban...", dica:"Tenian ejercito y tierras propias.", alt:[["A","Quinto Real"],["B","Capitania"],["C","Estado dentro del Estado"],["D","Cautiverio"]], resp:"C", casa:"Aldea" },
+  { pagina:"CASO 03", pergunta:"Distrito Diamantino, 1734. ¿Por que Portugal lo aislo?", dica:"Diamante valia mas que oro.", alt:[["A","Proteger indios"],["B","Controlar precio y evitar contrabando"],["C","Guerra con España"],["D","Esconder oro falso"]], resp:"B", casa:"Diamantes" },
+  { pagina:"CASO 04", pergunta:"Contestado, 1912. ¿Que hizo el ferrocarril de Farquhar?", dica:"Madera y tierras a extranjera.", alt:[["A","Trajo progreso"],["B","Expulso caboclos, dando todo a Lumber"],["C","Construida por esclavos"],["D","Ligo a EEUU"]], resp:"B", casa:"Ferrovia" },
+  { pagina:"CASO 05", pergunta:"Encuentras 'redutos'. ¿Quien lideraba?", dica:"Monjes como Jose Maria.", alt:[["A","Oficiales"],["B","Monjes beatos, comunidades colectivas"],["C","Jesuitas"],["D","Politicos"]], resp:"B", casa:"Reduto" },
+  { pagina:"CASO 06", pergunta:"Rio, 1891. ¿Que fue la 1ª Revuelta de la Armada?", dica:"Custodio de Melo.", alt:[["A","Esclavos"],["B","Marineros contra Deodoro"],["C","Ejercito vs Marina"],["D","Argentina"]], resp:"B", casa:"Bahia" },
+  { pagina:"CASO 07", pergunta:"1893. ¿Como gano Floriano sin barcos?", dica:"Flota de Carton.", alt:[["A","Portugal"],["B","Flota de Carton"],["C","30 dias"],["D","Aviones"]], resp:"B", casa:"Rio" },
+  { pagina:"CASO 08", pergunta:"Desterro, 1894. ¿Que paso en Anhatomirim?", dica:"Homenaje a Floriano.", alt:[["A","Amnistia"],["B","Fusilamientos y se volvio Florianopolis"],["C","Vendio isla"],["D","Cafe"]], resp:"B", casa:"Isla" },
+  { pagina:"CASO 09", pergunta:"¿Cual es la critica de Lima Barreto en Quaresma?", dica:"Se vuelve carcelero y se decepciona.", alt:[["A","Republica perfecta"],["B","Republica violenta y corrupta"],["C","Monarquia vuelve"],["D","Marina cierta"]], resp:"B", casa:"Archivo" },
+  { pagina:"CASO 10", pergunta:"1915. ¿Que uso el Ejercito por primera vez en Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviacion militar"],["D","Ametralladoras"]], resp:"C", casa:"CIELO" },
+],
+fr:[
+  { pagina:"CAS 01 - Le Decret", pergunta:"1755, Belem. Un document secret de Pombal arrive. Mariages mixtes juges comme 'infamie de sang'. Que dit le Decret?", dica:"Indice: Pombal voulait peupler l'Amazonie.", alt:[["A","Ils seraient exiles"],["B","Ils ne souffriraient d'aucune infamie et seraient proteges par le Roi"],["C","Ils paieraient impot"],["D","Ils seraient esclaves"]], resp:"B", casa:"Belem" },
+  { pagina:"CAS 02", pergunta:"Vous enquetez sur villages jesuites. Si riches qu'on les appelait...", dica:"Ils avaient armee et terres.", alt:[["A","Cinquieme Royal"],["B","Capitainerie"],["C","Etat dans l'Etat"],["D","Captivite"]], resp:"C", casa:"Village" },
+  { pagina:"CAS 03", pergunta:"District Diamantino, 1734. Pourquoi Portugal l'a isole?", dica:"Diamant valait plus que or.", alt:[["A","Proteger indigenes"],["B","Controler prix et eviter contrebande"],["C","Guerre avec Espagne"],["D","Cacher faux or"]], resp:"B", casa:"Diamants" },
+  { pagina:"CAS 04", pergunta:"Contestado, 1912. Que fit le chemin de fer de Farquhar?", dica:"Bois et terres a etrangere.", alt:[["A","A apporte progres"],["B","A expulse caboclos, donnant tout a Lumber"],["C","Construit par esclaves"],["D","Relie aux USA"]], resp:"B", casa:"Chemin" },
+  { pagina:"CAS 05", pergunta:"Vous trouvez 'redutos'. Qui les menait?", dica:"Moines comme Jose Maria.", alt:[["A","Officiers"],["B","Moines beatos, communautes collectives"],["C","Jesuites"],["D","Politiques"]], resp:"B", casa:"Redoute" },
+  { pagina:"CAS 06", pergunta:"Rio, 1891. C'etait quoi la 1ere Revolte de l'Armada?", dica:"Custodio de Melo.", alt:[["A","Esclaves"],["B","Marins contre Deodoro"],["C","Armee vs Marine"],["D","Argentine"]], resp:"B", casa:"Baie" },
+  { pagina:"CAS 07", pergunta:"1893. Comment Floriano sans navires a gagne?", dica:"Flotte en Carton.", alt:[["A","Portugal"],["B","Flotte en Carton"],["C","30 jours"],["D","Avions"]], resp:"B", casa:"Rio" },
+  { pagina:"CAS 08", pergunta:"Desterro, 1894. Que s'est-il passe a Anhatomirim?", dica:"Hommage a Floriano.", alt:[["A","Amnistie"],["B","Fusillades et devenu Florianopolis"],["C","Vendu ile"],["D","Cafe"]], resp:"B", casa:"Ile" },
+  { pagina:"CAS 09", pergunta:"Quelle est la critique de Lima Barreto dans Quaresma?", dica:"Devient geolier et decu.", alt:[["A","Republique parfaite"],["B","Republique violente et corrompue"],["C","Monarchie revient"],["D","Marine a raison"]], resp:"B", casa:"Archive" },
+  { pagina:"CAS 10", pergunta:"1915. Que l'Armee utilisa pour premiere fois au Contestado?", dica:"Santos-Dumont.", alt:[["A","Chars"],["B","Sous-marins"],["C","Aviation militaire"],["D","Mitrailleuses"]], resp:"C", casa:"CIEL" },
+]
 };
+
+
+
+
+//
 let lang = localStorage.getItem('prisma_lang')||'pt';
 let atual=0,acertos=0,respondido=false;
 const card=document.getElementById('quizCard'),bar=document.getElementById('bar'),qCount=document.getElementById('qCount'),sCount=document.getElementById('scoreCount'),tab=document.getElementById('tabuleiro');
@@ -156,8 +301,89 @@ btn.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('men
 
 // js diomas hamburguer
 
+// ==========================================================================
+// CONTROLO DO HAMBÚRGUER E IDIOMAS (BASEADO NO SEU CSS REAL)
+// ==========================================================================
+const navElemento = document.getElementById('prismaNav');
+const btnMenuElemento = document.getElementById('btnMenu');
+
+if (btnMenuElemento && navElemento) {
+    // Abre e fecha a gaveta adicionando a classe na NAV, exatamente como o seu CSS pede
+    btnMenuElemento.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navElemento.classList.toggle('menu-aberto');
+        document.body.style.overflow = navElemento.classList.contains('menu-aberto') ? 'hidden' : '';
+    });
+
+    // Fecha a gaveta automaticamente quando clica em qualquer link interno
+    document.querySelectorAll('.prisma-menu-links li a').forEach(link => {
+        link.addEventListener('click', () => {
+            navElemento.classList.remove('menu-aberto');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+// Intercepta a sua função setLang original para traduzir a gaveta em simultâneo
+if (typeof setLang === 'function') {
+    const originalSetLang = setLang;
+    setLang = function(l) {
+        originalSetLang(l);
+        
+        // Traduz os links da gaveta sem apagar os seus ícones do Material Design
+        const linksMenu = document.querySelectorAll('.prisma-menu-links li a');
+        const chavesTraducao = ['inicio', 'sobre', 'afiliados', 'artigos', 'curiosidades', 'quiz', 'ebook', 'loja', 'turismo'];
+        
+        linksMenu.forEach((link, index) => {
+            if (link && T_UI && T_UI[lang] && T_UI[lang][chavesTraducao[index]]) {
+                const iconeOriginal = link.querySelector('.material-icons');
+                const iconeHTML = iconeOriginal ? iconeOriginal.outerHTML : '';
+                link.innerHTML = iconeHTML + ' ' + T_UI[lang][chavesTraducao[index]];
+            }
+        });
+    };
+}
+</script>
+
+
+
+<script>
+// 1. HAMBURGUER - UMA VEZ SÓ
+const btnMenu = document.getElementById('btnMenu');
+
+btnMenu.onclick = (e) => {
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
+};
+
+document.querySelectorAll('.prisma-menu-links a').forEach(link => {
+  link.onclick = () => {
+    nav.classList.remove('menu-aberto');
+    document.body.style.overflow = '';
+  };
+});
+</script>
+
+
+<script>
+
+
+function getDados(){return QUIZ[lang]?.length?QUIZ[lang]:QUIZ.pt}
+function setLang(l){
+  lang=l; localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+l).classList.add('active');
+  atual=0; acertos=0; render();
+}
+
 
 
 </script>
+
+
+
+
+
 </body>
 </html>

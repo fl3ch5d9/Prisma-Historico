@@ -237,10 +237,78 @@ function traduzirFooterCompleto(dados) {
         linksFooter[3].innerText = dados.footLinkLoja;
     }
 }
+</script>
 
+<script>
+// 1. SEU HAMBURGUER ORIGINAL - NÃO MEXER
+const nav = document.getElementById('prismaNav');
+const btnHamburguer = nav.querySelector('.prisma-menu-hamburguer');
+btnHamburguer.addEventListener('click', () => {
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
+});
 
+// 2. LANG SWITCH ISOLADO
+(function(){
+  const dict = {
+    pt: { inicio:"INÍCIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
+    en: { inicio:"HOME", sobre:"ABOUT", afiliados:"AFFILIATES" },
+    es: { inicio:"INICIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
+    fr: { inicio:"ACCUEIL", sobre:"À PROPOS", afiliados:"AFFILIÉS" }
+  };
+  window.setLang = function(lang){
+    localStorage.setItem('prisma_lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(b=>b.classList.remove('active'));
+    let btn = document.getElementById('btn-'+lang);
+    if(btn) btn.classList.add('active');
+    // aqui você traduz pelo ID
+    for(let k in dict[lang]){
+      let el = document.getElementById('m_'+k);
+      if(el) el.textContent = dict[lang][k];
+    }
+  };
+  document.getElementById('btn-pt')?.addEventListener('click', ()=>setLang('pt'));
+  document.getElementById('btn-en')?.addEventListener('click', ()=>setLang('en'));
+  document.getElementById('btn-es')?.addEventListener('click', ()=>setLang('es'));
+  document.getElementById('btn-fr')?.addEventListener('click', ()=>setLang('fr'));
+  setLang(localStorage.getItem('prisma_lang')||'pt');
+})();
+</script>
 
+<script>
+// 1. SEU HAMBURGUER ORIGINAL - NÃO MEXER
+const nav = document.getElementById('prismaNav');
+const btnHamburguer = nav.querySelector('.prisma-menu-hamburguer');
+btnHamburguer.addEventListener('click', () => {
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
+});
 
+// 2. LANG SWITCH ISOLADO
+(function(){
+  const dict = {
+    pt: { inicio:"INÍCIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
+    en: { inicio:"HOME", sobre:"ABOUT", afiliados:"AFFILIATES" },
+    es: { inicio:"INICIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
+    fr: { inicio:"ACCUEIL", sobre:"À PROPOS", afiliados:"AFFILIÉS" }
+  };
+  window.setLang = function(lang){
+    localStorage.setItem('prisma_lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(b=>b.classList.remove('active'));
+    let btn = document.getElementById('btn-'+lang);
+    if(btn) btn.classList.add('active');
+    // aqui você traduz pelo ID
+    for(let k in dict[lang]){
+      let el = document.getElementById('m_'+k);
+      if(el) el.textContent = dict[lang][k];
+    }
+  };
+  document.getElementById('btn-pt')?.addEventListener('click', ()=>setLang('pt'));
+  document.getElementById('btn-en')?.addEventListener('click', ()=>setLang('en'));
+  document.getElementById('btn-es')?.addEventListener('click', ()=>setLang('es'));
+  document.getElementById('btn-fr')?.addEventListener('click', ()=>setLang('fr'));
+  setLang(localStorage.getItem('prisma_lang')||'pt');
+})();
 </script>
 
 </body>

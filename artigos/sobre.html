@@ -4,80 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;padding-top:78px!important}
-.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
+
+/* NAV */
+.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:14px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--borda)!important}
 .prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important}
 .prisma-logo span{color:var(--ouro)!important;font-weight:700!important}
-.lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
 
-/* CORRIGIDO hamburguer gaveta */
+/* LANG SWITCH COLONIAL */
+.lang-switch{display:flex;gap:4px;z-index:10001;background:rgba(232,213,163,0.1);padding:4px;border-radius:30px;border:1px solid rgba(201,168,106,0.3);}
+.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;font-family:'Cinzel',serif;letter-spacing:1px;transition:0.3s}
+.lang-switch button.active{background:#c9a86a;color:#121212;border-color:#c9a86a;font-weight:800;box-shadow:0 0 10px rgba(201,168,106,0.4);}
+
+/* HAMBURGUER */
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:16px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-/*hamburguer gaveta */
 
+/* MANIFESTO */
+.secao-manifesto{background:#0c0f1e;background-image:radial-gradient(900px 500px at 50% 0%, rgba(245,200,110,0.09) 0%, transparent 60%);padding:90px 5%;position:relative;}
+.container-manifesto{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+.tag-caso{font-family:'Cinzel',serif;background:rgba(245,200,110,0.1);border:1px solid rgba(245,200,110,0.35);color:#f5c86e;padding:7px 16px;border-radius:2px;font-size:10px;letter-spacing:3px;text-transform:uppercase;display:inline-block}
+.header-investigativo{text-align:center;max-width:740px;margin:0 auto 70px auto;}
+.header-investigativo h2{font-family:'Cinzel',serif;font-size:46px;line-height:1.15;color:#e8d5a3;margin:22px 0;font-weight:600}
+.header-investigativo h2 em{font-family:'Dancing Script',cursive;color:#f5c86e;font-style:normal;font-size:54px;font-weight:700;text-shadow:0 0 18px rgba(245,200,110,0.5);}
+.header-investigativo p{font-family:'Cormorant Garamond',serif;color:#b8bdcf;font-size:20px;line-height:1.7;font-style:italic;}
 
+/* GRID */
+.grid-investigacao{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:26px;}
 
+/* CARDS COM ROLAGEM */
+.card-historia{background:linear-gradient(180deg, rgba(245,230,195,0.96) 0%, rgba(232,213,163,0.94) 100%);border:1.5px solid #c9a86a;border-radius:3px;padding:28px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.5), inset 0 0 60px rgba(120,80,20,0.15);transition:0.3s;max-height:400px;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#2e7d5a rgba(46,125,90,0.1);}
+.card-historia:nth-child(2){transform:rotate(0.4deg);} .card-historia:nth-child(1){transform:rotate(-0.3deg);} .card-historia:nth-child(3){transform:rotate(-0.2deg);}
+.card-historia:hover{transform:rotate(0deg) translateY(-8px) scale(1.02);}
+.card-historia::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cor);}
+.card-historia::after{content:'✒';position:absolute;bottom:8px;right:12px;font-size:18px;opacity:0.15;}
+.destaque-colonia{--cor:#2e7d5a} .destaque-imperio{--cor:#a68a3c;scrollbar-color:#a68a3c rgba(166,138,60,0.15);} .destaque-republica{--cor:#3a5a8c;scrollbar-color:#3a5a8c rgba(58,90,140,0.15);}
+.card-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;border-bottom:1px dashed rgba(0,0,0,0.15);padding-bottom:12px;}
+.num-caso{font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:#6b5a3e;background:rgba(0,0,0,0.06);padding:4px 10px;border-radius:2px;}
+.icone{font-size:24px;filter:sepia(1);}
+.card-historia h3{font-family:'Cinzel',serif;color:#1a1a1a;font-size:22px;margin:0 0 4px 0;letter-spacing:1px;font-weight:700}
+.card-historia h4{font-family:'Dancing Script',cursive;color:var(--cor);font-size:20px;font-weight:700;margin:0 0 16px 0;}
+.card-historia p{font-family:'Cormorant Garamond',serif;color:#2b2416;font-size:17px;line-height:1.6;font-weight:500}
+.pista{margin-top:20px;background:rgba(0,0,0,0.06);border-left:3px solid var(--cor);padding:10px 12px;font-family:'Cormorant Garamond',serif;font-size:14.5px;color:#3a3222;font-style:italic;}
+.pista span:first-child{font-family:'Cinzel',serif;color:var(--cor);font-weight:700;font-size:9px;letter-spacing:1.5px;font-style:normal;}
 
-.secao-manifesto{padding:80px 5%;background:var(--preto)}
-.secao-manifesto .container{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.bloco-manifesto{position:relative;background:linear-gradient(180deg,var(--preto2),#161616);border:1px solid var(--borda);border-radius:14px;padding:38px 32px}
-.bloco-manifesto h2{font-family:'Cormorant Garamond';font-size:34px;line-height:1.1;margin-bottom:14px}
-.bloco-manifesto .sub-frase{color:var(--ouro);font-weight:800;letter-spacing:0.08em;margin-bottom:18px;text-transform:uppercase;font-size:12px}
-.bloco-manifesto p{opacity:0.72;line-height:1.8;font-weight:300;font-size:16.5px}
-.bloco-manifesto p strong{background:var(--ouro);color:var(--preto);padding:1px 6px;border-radius:3px}
-.section-doacao{padding:80px 5%;background:#0E0E0E;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
-.doacao-box{max-width:840px;margin:auto;background:var(--preto2);border:1px solid var(--borda);border-left:4px solid var(--ouro);padding:48px;border-radius:14px}
-.subtitulo-secao{font-family:'Cormorant Garamond';font-size:42px;margin-bottom:18px}
-.doacao-texto{opacity:0.75;line-height:1.9;font-size:16px}
-.btn-doacao{display:inline-block;background:var(--ouro);color:var(--preto);padding:18px 34px;text-decoration:none;font-weight:800;border-radius:6px}
-@media(max-width:900px){.secao-manifesto .container{grid-template-columns:1fr}}
+/* SCROLL VERDE */
+.card-historia::-webkit-scrollbar{width:8px}
+.card-historia::-webkit-scrollbar-track{background:rgba(46,125,90,0.1);border-radius:10px;margin:8px 0}
+.card-historia::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#2e7d5a 0%,#1f5a42 100%);border-radius:10px;border:1px solid rgba(232,213,163,0.5)}
+.destaque-imperio::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#a68a3c 0%,#7a652d 100%);}
+.destaque-republica::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#3a5a8c 0%,#2a4266 100%);}
+
+.frase-efeito{text-align:center;margin-top:80px;padding-top:40px;border-top:1px solid rgba(245,200,110,0.15);}
+.frase-efeito p{font-family:'Dancing Script',cursive;color:#e8d5a3;font-size:28px;margin:0;}
+.frase-efeito span{font-family:'Cinzel',serif;color:#6b708a;font-size:10px;letter-spacing:2px;margin-top:10px;display:block;}
+@media(max-width:768px){.header-investigativo h2{font-size:30px} .header-investigativo h2 em{font-size:36px}}
 </style>
 </head>
 <body>
+
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
-      </div>
-      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="lang-switch">
+      <button data-lang="pt" class="active">PT</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="fr">FR</button>
     </div>
-    <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-    </ul>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  </div>
+  <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="PARTNERS" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+  </ul>
 </nav>
-<section class="secao-manifesto"><div class="container"><div class="bloco-manifesto"><h2>📖 Por que o Prisma Existe</h2><p class="sub-frase">As bancas não cobram decoração. Elas cobram LÓGICA</p><p>O método tradicional falhou ao empurrar textos maçantes goela abaixo. O Prisma nasceu da minha própria dificuldade para quebrar a decoreba e entregar a engrenagem real dos acontecimentos históricos de forma cirúrgica.</p></div><div class="bloco-manifesto"><h2>🎯 Resultado: 1000x Mais</h2><p class="sub-frase">Feito por estudante, para quem quer ser aprovado</p><p>Um projeto de estudo que foi desenvolvido para ajudar de maneira eficaz as dificuldades de compreender a História. Focar naquilo que realmente cai, com profundidade de nível superior traduzida para uma linguagem direta.</p></div></div></section>
+
+<section class="secao-manifesto">
+<div class="container-manifesto">
+
+  <div class="header-investigativo">
+    <span class="tag-caso" data-pt="Dossiê Aberto • 1500 - 1930" data-en="Open File • 1500 - 1930" data-es="Expediente Abierto • 1500 - 1930" data-fr="Dossier Ouvert • 1500 - 1930">Dossiê Aberto • 1500 - 1930</span>
+    <h2>
+      <span data-pt="O Brasil não foi descoberto. Foi" data-en="Brazil was not discovered. It was" data-es="Brasil no fue descubierto. Fue" data-fr="Le Brésil n'a pas été découvert. Il a été">O Brasil não foi descoberto. Foi</span>
+      <em data-pt="investigado." data-en="investigated." data-es="investigado." data-fr="enquêté.">investigado.</em>
+    </h2>
+    <p data-pt="Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros. O Prisma é a lente do detetive sobre a história que te contaram pela metade."
+       data-en="Behind every official date there is a broken agreement, a burnt letter and a culprit who never made it into the books."
+       data-es="Detrás de cada fecha oficial hay un acuerdo roto, una carta quemada y un culpable que nunca entró en los libros."
+       data-fr="Derrière chaque date officielle, il y a un accord rompu, une lettre brûlée et un coupable qui n'est jamais entré dans les livres.">Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros.</p>
+  </div>
+
+  <div class="grid-investigacao">
+
+    <div class="card-historia destaque-colonia">
+      <div class="card-topo"><span class="num-caso">CASO 01</span><span class="icone">⚓</span></div>
+      <h3 data-pt="A Colônia" data-en="The Colony" data-es="La Colonia" data-fr="La Colonie">A Colônia</h3>
+      <h4 data-pt="O Labirinto do Ouro e da Fé" data-en="The Labyrinth of Gold and Faith" data-es="El Laberinto del Oro y la Fe" data-fr="Le Labyrinthe de l'Or et de la Foi">O Labirinto do Ouro e da Fé</h4>
+      <p data-pt="Caravelas que não traziam só especiarias. Aldeias jesuíticas mais ricas que Portugal. Escravidão, diamantes e uma Igreja que funcionava como um Estado dentro do Estado. Em 1759, os jesuítas foram expulsos porque tinham mais ouro que a própria Coroa. Foi o maior confisco de terras da história do Brasil."
+         data-en="Caravels that did not bring only spices. Jesuit villages richer than Portugal itself. Slavery, diamonds and a Church that worked as a State within the State. In 1759, the Jesuits were expelled because they had more gold than the Crown itself."
+         data-es="Carabelas que no traían solo especias. Aldeas jesuitas más ricas que Portugal. Esclavitud, diamantes y una Iglesia que funcionaba como un Estado dentro del Estado. En 1759, los jesuitas fueron expulsados porque tenían más oro que la propia Corona."
+         data-fr="Des caravelles qui n'apportaient pas que des épices. Des villages jésuites plus riches que le Portugal lui-même. Esclavage, diamants et une Église qui fonctionnait comme un État dans l'État.">Caravelas que não traziam só especiarias...</p>
+      <div class="pista"><span>🕵️ PISTA:</span> <span data-pt="Por que o Brasil ficou 300 anos proibido de ter universidades?" data-en="Why was Brazil forbidden to have universities for 300 years?" data-es="¿Por qué Brasil estuvo 300 años sin universidades?" data-fr="Pourquoi le Brésil est resté 300 ans sans universités ?">Por que o Brasil ficou 300 anos proibido de ter universidades?</span></div>
+    </div>
+
+    <div class="card-historia destaque-imperio">
+      <div class="card-topo"><span class="num-caso">CASO 02</span><span class="icone">👑</span></div>
+      <h3 data-pt="O Império" data-en="The Empire" data-es="El Imperio" data-fr="L'Empire">O Império</h3>
+      <h4 data-pt="O Golpe Chamado Independência" data-en="The Coup Called Independence" data-es="El Golpe Llamado Independencia" data-fr="Le Coup Appelé Indépendance">O Golpe Chamado Independência</h4>
+      <p data-pt="Um príncipe devedor que virou imperador da noite pro dia. Uma independência comprada por 2 milhões de libras e uma Constituição rasgada pelo próprio autor. D. Pedro I devia dinheiro para Londres e precisava de um país para pagar a conta. A independência custou mais que todo o ouro de Minas."
+         data-en="A debtor prince who became emperor overnight. An independence bought for 2 million pounds and a Constitution torn up by its own author. Dom Pedro I owed money to London and needed a country to pay the bill."
+         data-es="Un príncipe deudor que se volvió emperador de la noche a la mañana. Una independencia comprada por 2 millones de libras y una Constitución rasgada por su propio autor."
+         data-fr="Un prince débiteur devenu empereur du jour au lendemain. Une indépendance achetée pour 2 millions de livres et une Constitution déchirée par son propre auteur.">Um príncipe devedor que virou imperador...</p>
+      <div class="pista"><span>🕵️ PISTA:</span> <span data-pt="Quem realmente pagou o preço do 'Fico'?" data-en="Who really paid the price for the 'Fico'?" data-es="¿Quién pagó realmente el precio del 'Fico'?" data-fr="Qui a vraiment payé le prix du 'Fico' ?">Quem realmente pagou o preço do "Fico"?</span></div>
+    </div>
+
+    <div class="card-historia destaque-republica">
+      <div class="card-topo"><span class="num-caso">CASO 03</span><span class="icone">⚖️</span></div>
+      <h3 data-pt="Primeira República" data-en="First Republic" data-es="Primera República" data-fr="Première République">Primeira República</h3>
+      <h4 data-pt="A República da Espada e do Café" data-en="The Republic of Sword and Coffee" data-es="La República de la Espada y el Café" data-fr="La République de l'Épée et du Café">A República da Espada e do Café</h4>
+      <p data-pt="15 de novembro não foi proclamação, foi quartelada. Coronéis que compravam votos, presidentes que governavam de chapéu e um povo que assistiu a tudo bestializado. A primeira bandeira da República foi literalmente copiada dos EUA com 21 estrelas. O povo chamou de 'bestializado' porque não entendeu nada."
+         data-en="November 15th was not a proclamation, it was a barracks coup. Colonels who bought votes, presidents who ruled wearing hats and a people who watched everything bewildered. The first flag was literally copied from the USA."
+         data-es="El 15 de noviembre no fue proclamación, fue cuartelazo. Coroneles que compraban votos, presidentes que gobernaban con sombrero y un pueblo que lo vio todo bestializado. La primera bandera fue copiada de EE.UU."
+         data-fr="Le 15 novembre n'était pas une proclamation, c'était un coup de caserne. Des colonels qui achetaient des votes, des présidents qui gouvernaient avec un chapeau et un peuple qui regardait tout abasourdi.">15 de novembro não foi proclamação, foi quartelada...</p>
+      <div class="pista"><span>🕵️ PISTA:</span> <span data-pt="Por que a primeira bandeira da República era cópia dos EUA?" data-en="Why was the first flag of the Republic a copy of the USA?" data-es="¿Por qué la primera bandera era copia de EE.UU.?" data-fr="Pourquoi le premier drapeau était-il une copie des USA ?">Por que a primeira bandeira da República era cópia dos EUA?</span></div>
+    </div>
+
+  </div>
+
+  <div class="frase-efeito">
+    <p data-pt="“A história não é o que aconteceu. É o que sobreviveu ao arquivo.”" data-en="“History is not what happened. It is what survived the archive.”" data-es="“La historia no es lo que pasó. Es lo que sobrevivió al archivo.”" data-fr="“L'histoire n'est pas ce qui s'est passé. C'est ce qui a survécu aux archives.”">“A história não é o que aconteceu. É o que sobreviveu ao arquivo.”</p>
+    <span>— Arquivo Prisma, Estante 7</span>
+  </div>
+
+</div>
+</section>
+
 <script>
+// MENU GAVETA
 const nav=document.getElementById('prismaNav'),btn=document.getElementById('btnMenu');
 btn.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
 document.addEventListener('click',(e)=>{if(!e.target.closest('#prismaNav')){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
-function setLang(l){localStorage.setItem('prisma_lang',l);document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+l)?.classList.add('active')}
-setLang(localStorage.getItem('prisma_lang')||'pt');
+
+// IDIOMA ÚNICO - TODOS OS TEXTOS
+const langButtons = document.querySelectorAll('.lang-switch button');
+const translatable = document.querySelectorAll('[data-pt]');
+
+function setLang(lang){
+  localStorage.setItem('prisma-lang', lang);
+  langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  translatable.forEach(el => {
+    const txt = el.getAttribute('data-'+lang);
+    if(txt) el.textContent = txt;
+  });
+  document.documentElement.lang = lang;
+}
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+setLang(localStorage.getItem('prisma-lang') || 'pt');
 </script>
+
 </body>
 </html>
