@@ -114,5 +114,134 @@ btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.b
 </script>
 
 
+
+<script>
+// Bloco 1: Base de dados com as traduções completas para os 4 idiomas
+const traducoes = {
+    pt: {
+        inicio: "INÍCIO", sobre: "SOBRE", afiliados: "AFILIADOS", artigos: "ARTIGOS", 
+        curiosidades: "CURIOSIDADES", quiz: "QUIZ", ebook: "E-BOOK", loja: "LOJA", turismo: "TURISMO COLONIAL",
+        heroTitle: "Arquivos de <span>Conflito</span>",
+        heroSubtitle: "Do Brasil Colônia ao Império, com lógica cirúrgica",
+        cardTag: "1641 • AMADOR BUENO",
+        cardTitle: "Aclamação de <span style='color:var(--ouro)'>Amador Bueno</span>",
+        cardText: "Card com rolagem interna, mesma altura pra todos.",
+        btnComprar: "COMPRAR NA HOTMART",
+        footDesc: "Abordagem analítica da História do Brasil.",
+        footNav: "Navegação", footProd: "Produtos", footClub: "Clube",
+        footLinkInicio: "Início", footLinkArtigos: "Artigos", footLinkEbook: "E-book", footLinkLoja: "Loja"
+    },
+    en: {
+        inicio: "HOME", sobre: "ABOUT", afiliados: "AFFILIATES", artigos: "ARTICLES", 
+        curiosidades: "CURIOSITIES", quiz: "QUIZ", ebook: "E-BOOK", loja: "STORE", turismo: "COLONIAL TOURISM",
+        heroTitle: "Conflict <span>Archives</span>",
+        heroSubtitle: "From Colonial Brazil to Empire, with surgical logic",
+        cardTag: "1641 • AMADOR BUENO",
+        cardTitle: "Acclamation of <span style='color:var(--ouro)'>Amador Bueno</span>",
+        cardText: "Card with internal scroll, same height for everyone.",
+        btnComprar: "BUY ON HOTMART",
+        footDesc: "Analytical approach to the History of Brazil.",
+        footNav: "Navigation", footProd: "Products", footClub: "Club",
+        footLinkInicio: "Home", footLinkArtigos: "Articles", footLinkEbook: "E-book", footLinkLoja: "Store"
+    },
+    es: {
+        inicio: "INICIO", sobre: "ACERCA DE", afiliados: "AFILIADOS", artigos: "ARTÍCULOS", 
+        curiosidades: "CURIOSIDADES", quiz: "QUIZ", ebook: "E-BOOK", loja: "TIENDA", turismo: "TURISMO COLONIAL",
+        heroTitle: "Archivos de <span>Conflicto</span>",
+        heroSubtitle: "Del Brasil Colonia al Imperio, con lógica quirúrgica",
+        cardTag: "1641 • AMADOR BUENO",
+        cardTitle: "Aclamación de <span style='color:var(--ouro)'>Amador Bueno</span>",
+        cardText: "Tarjeta con desplazamiento interno, la misma altura para todos.",
+        btnComprar: "COMPRAR EN HOTMART",
+        footDesc: "Enfoque analítico de la Historia de Brasil.",
+        footNav: "Navegación", footProd: "Productos", footClub: "Club",
+        footLinkInicio: "Inicio", footLinkArtigos: "Artículos", footLinkEbook: "E-book", footLinkLoja: "Tienda"
+    },
+    fr: {
+        inicio: "ACCUEIL", sobre: "À PROPOS", afiliados: "AFFILIÉS", artigos: "ARTICLES", 
+        curiosidades: "CURIOSITÉS", quiz: "QUIZ", ebook: "E-BOOK", loja: "BOUTIQUE", turismo: "TOURISME COLONIAL",
+        heroTitle: "Archives de <span>Conflit</span>",
+        heroSubtitle: "Du Brésil Coloniale à l'Empire, com logique chirurgicale",
+        cardTag: "1641 • AMADOR BUENO",
+        cardTitle: "Acclamation de <span style='color:var(--ouro)'>Ador Bueno</span>",
+        cardText: "Carte avec défilement interne, même hauteur pour tout le monde.",
+        btnComprar: "ACHETER SUR HOTMART",
+        footDesc: "Approche analytique de l'Histoire du Brésil.",
+        footNav: "Navigation", footProd: "Produits", footClub: "Club",
+        footLinkInicio: "Accueil", footLinkArtigos: "Articles", footLinkEbook: "E-book", footLinkLoja: "Boutique"
+    }
+};
+// Bloco 2: Gestão dos cliques nos botões de idioma e tradução do topo/conteúdo
+const botoesIdioma = document.querySelectorAll('.lang-switch button');
+
+function alterarIdioma(lang) {
+    const dados = traducoes[lang];
+    if (!dados) return;
+
+    // 1. Traduz os links da Gaveta mantendo os ícones originais
+    const links = document.querySelectorAll('.prisma-menu-links li a');
+    const chavesLinks = ['inicio', 'sobre', 'afiliados', 'artigos', 'curiosidades', 'quiz', 'ebook', 'loja', 'turismo'];
+    links.forEach((link, index) => {
+        if (links[index] && dados[chavesLinks[index]]) {
+            const icone = link.querySelector('.material-icons').outerHTML;
+            link.innerHTML = `${icone} ${dados[chavesLinks[index]]}`;
+        }
+    });
+
+    // 2. Traduz o Hero
+    const heroTitle = document.querySelector('.hero h1');
+    const heroSubtitle = document.querySelector('.hero p');
+    if (heroTitle) heroTitle.innerHTML = dados.heroTitle;
+    if (heroSubtitle) heroSubtitle.innerText = dados.heroSubtitle;
+
+    // 3. Traduz o Card de Exemplo
+    const cardTag = document.querySelector('.card-sumario div:nth-child(1)');
+    const cardTitle = document.querySelector('.card-sumario-corpo h3');
+    const cardText = document.querySelector('.card-sumario-corpo p');
+    const cardBtn = document.querySelector('.btn-hotmart');
+    if (cardTag) cardTag.innerText = dados.cardTag;
+    if (cardTitle) cardTitle.innerHTML = dados.cardTitle;
+    if (cardText) cardText.innerText = dados.cardText;
+    if (cardBtn) cardBtn.innerText = dados.btnComprar;
+
+    // 4. Dispara a tradução do Bloco 3 para o rodapé
+    traduzirFooterCompleto(dados);
+}
+
+botoesIdioma.forEach(botao => {
+    botao.addEventListener('click', (e) => {
+        botoesIdioma.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        const idioma = e.target.id.replace('btn-', '');
+        alterarIdioma(idioma);
+    });
+});
+
+// Bloco 3: Função específica para mapear e traduzir as colunas e os links do Footer
+function traduzirFooterCompleto(dados) {
+    const footerDesc = document.querySelector('.footer-desc');
+    if (footerDesc) footerDesc.innerText = dados.footDesc;
+    
+    const colunasTitulosFooter = document.querySelectorAll('.footer-col h4');
+    if (colunasTitulosFooter.length >= 3) {
+        colunasTitulosFooter[0].innerText = dados.footNav;
+        colunasTitulosFooter[1].innerText = dados.footProd;
+        colunasTitulosFooter[2].innerText = dados.footClub;
+    }
+
+    const linksFooter = document.querySelectorAll('#prismaFooter .footer-col a');
+    if (linksFooter.length >= 4) {
+        linksFooter[0].innerText = dados.footLinkInicio;
+        linksFooter[1].innerText = dados.footLinkArtigos;
+        linksFooter[2].innerText = dados.footLinkEbook;
+        linksFooter[3].innerText = dados.footLinkLoja;
+    }
+}
+
+
+
+
+</script>
+
 </body>
 </html>
