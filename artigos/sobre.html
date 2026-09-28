@@ -16,16 +16,22 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 .lang-switch{display:flex;gap:6px;z-index:10001}
 .lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
 .lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
-.prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid var(--borda)!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
-.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--ouro)!important;display:block!important;transition:0.25s!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
-.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid var(--borda)!important}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
-.prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:var(--creme)!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
-.prisma-menu-links li a .material-icons{color:var(--ouro)!important;opacity:0.9!important}
-.prisma-menu-links li a:hover{color:var(--ouro)!important;opacity:1!important}
+
+/* CORRIGIDO hamburguer gaveta */
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+/*hamburguer gaveta */
+
+
+
+
 .secao-manifesto{padding:80px 5%;background:var(--preto)}
 .secao-manifesto .container{max-width:1100px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .bloco-manifesto{position:relative;background:linear-gradient(180deg,var(--preto2),#161616);border:1px solid var(--borda);border-radius:14px;padding:38px 32px}
