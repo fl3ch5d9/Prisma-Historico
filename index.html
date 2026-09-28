@@ -3,62 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- TAGS DE AUTORIDADE PARA SEO E PASSAR NA AUDITORIA DO GOOGLE -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- TAGS DE AUTORIDADE PARA SEO E GOOGLE ADSENSE -->
 <title>Prisma Histórico | E-book Oficial</title>
-<meta name="description" content="A ciência oculta por trás da construção do Brasil Colonial. Abordagem analítica e cirúrgica da História do Brasil.">
-<meta name="robots" content="index, follow">
-
-<!-- CONEXÃO CORRETA E BLINDADA PARA AS FONTES E ÍCONES DA GOOGLE -->
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-<link href="https://googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- O SEU LINK DO CSS RELATIVO -->
-<link rel="stylesheet" href="css/style.css">
-</head>
-
-<!-- =======================================================================
-     ESPAÇO RESERVADO PARA O FUTURO DOMÍNIO
-     Quando comprar o domínio, cole os códigos do AdSense e Analytics abaixo desta linha:
-     ======================================================================= -->
-
-</head>
-
-
-
-<link rel="stylesheet" href="css/style.css">
+<meta name="description" content="A ciência oculta por trás da construção do Brasil Colonial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:hidden}
-.nav{background:#101010;border-bottom:1px solid #c4a77d50;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;flex-wrap:wrap}
-.logo{font-family:'Cormorant Garamond',serif;letter-spacing:3px;color:#f5f5f5;font-size:22px}
-.logo b{color:#c4a77d}
-.right{display:flex;align-items:center;gap:16px}
-.lang button{background:transparent;border:1px solid #c4a77d;color:#c4a77d;padding:5px 10px;cursor:pointer;font-size:12px;border-radius:4px}
+.prisma-nav{background:#101010;border-bottom:1px solid #c4a77d50;position:sticky;top:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%}
+.prisma-logo{font-family:'Cormorant Garamond',serif;letter-spacing:3px;color:#f5f5f5;font-size:22px}
+.prisma-logo b{color:#c4a77d}
+.right{display:flex;align-items:center;gap:16px;z-index:10001}
+.lang button{background:transparent;border:1px solid #c4a77d;color:#c4a77d;padding:5px 10px;cursor:pointer;font-size:12px;border-radius:20px}
 .lang button.active{background:#c4a77d;color:#101010;font-weight:700}
-/*hamburguer */
-.hamb{background:transparent;border:none;display:flex;flex-direction:column;gap:5px;cursor:pointer}
-.hamb span{width:24px;height:2px;background:#c4a77d;display:block;transition:0.3s}
-.menu{width:100%;display:none;flex-direction:column;gap:12px;padding-top:20px;list-style:none}
-.nav.is-open .menu{display:flex !important}
-.menu a{color:#f5f5f5;text-decoration:none;letter-spacing:1px;font-size:13px;display:flex;align-items:center;gap:10px}
-.menu a:hover{color:#c4a77d}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid rgba(196,167,125,0.3);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:#c4a77d;display:block;transition:0.4s}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:78vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 30px 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:13px;letter-spacing:0.10em;text-transform:uppercase;color:#d8c9a8;text-decoration:none;display:flex;align-items:center;gap:14px}
+.prisma-menu-links li a.material-icons{color:#c4a77d;font-size:22px}
 .main{max-width:1200px;margin:auto;padding:20px}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:60px 0;align-items:center}
+.hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;padding:60px 0;align-items:center}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:46px;line-height:1.1;color:#c4a77d;margin-bottom:20px}
 .hero h1 span{color:#f5f5f5;display:block}
-.hero p{color:#ccc;line-height:1.7;margin-bottom:14px;font-size:15px}
-.btn{display:inline-block;background:#c4a77d;color:#101010;padding:14px 22px;text-decoration:none;font-weight:800;margin-top:10px;transition:0.2s}
-.btn:hover{background:#f5f5f5}
+.btn{display:inline-block;background:#c4a77d;color:#101010;padding:14px 22px;text-decoration:none;font-weight:800;margin-top:10px}
 .cover img{width:100%;border:1px solid #c4a77d50;border-radius:4px}
 .tec{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding:35px 0;border-top:1px solid #c4a77d30;border-bottom:1px solid #c4a77d30}
 .tec strong{color:#c4a77d;font-size:14px;display:block;margin-bottom:6px}
@@ -66,88 +39,39 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
 .sumario{padding:50px 0}
 .sumario-head{text-align:center;margin-bottom:25px}
 .sumario-head h2{font-family:'Cormorant Garamond',serif;color:#c4a77d;font-size:32px}
-.sumario-head p{color:#888;font-size:13px;margin-top:5px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{background:#1a1a1a;border:1px solid #c4a77d40;border-radius:6px;overflow:hidden}
-.card summary{list-style:none;padding:18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#f5f5f5;font-weight:700;user-select:none}
+.card summary{list-style:none;padding:18px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#f5f5f5;font-weight:700}
 .card summary::-webkit-details-marker{display:none}
-.plus{color:#c4a77d;font-size:1.2em;transition:transform 0.3s ease;line-height:1}
-.card[open] .plus{transform:rotate(45deg)}
-.card[open]{border-color:#c4a77d}
-.card .box{display:block !important;max-height:200px !important;overflow-y:auto !important;padding:0 18px 18px 18px;border-top:1px solid #c4a77d20;color:#ddd;font-size:13px;line-height:1.5;scrollbar-color:#8c7355 #1e1b18 !important;scrollbar-width:thin !important}
-.card .box ul{list-style:none;padding:0;margin:12px 0 0 0}
-.card .box li{padding:9px 0;border-bottom:1px solid #2a2a2a;color:#ddd;font-size:13px}
-.card .box li:last-child{border-bottom:none}
-::-webkit-scrollbar{width:6px !important;height:6px !important}
-::-webkit-scrollbar-track{background:#1e1b18 !important;border-radius:4px !important}
-::-webkit-scrollbar-thumb{background:#8c7355 !important;border-radius:4px !important;border:1px solid #1e1b18 !important}
-::-webkit-scrollbar-thumb:hover{background:#c4a77d !important}
-.card .box::-webkit-scrollbar{width:6px}
-.card .box::-webkit-scrollbar-track{background:#1e1b18}
-.card .box::-webkit-scrollbar-thumb{background-color:#8c7355;border-radius:3px}
-.card .box::-webkit-scrollbar-thumb:hover{background-color:#c4a77d}
+.plus{color:#c4a77d;transition:0.3s}
+.card[open].plus{transform:rotate(45deg)}
+.card.box{padding:0 18px 18px 18px;border-top:1px solid #c4a77d20;color:#ddd;font-size:13px;line-height:1.5}
+.card.box ul{list-style:none;margin:12px 0 0 0}
+.card.box li{padding:9px 0;border-bottom:1px solid #2a2a2a}
 #prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.15);margin-top:80px;width:100%;display:block}
 #prismaFooter *{box-sizing:border-box}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 22px 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:700;display:block}
-#prismaFooter .footer-desc{opacity:0.45;font-size:13.5px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text)}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;font-weight:800}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.55;text-decoration:none;font-size:13.5px;margin-bottom:14px;transition:all 0.2s ease}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.12);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.5;font-size:12.5px;margin-bottom:14px;line-height:1.6;color:var(--text)}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.18);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;transition:border 0.2s}
-#prismaFooter .footer-news-card input:focus{border-color:var(--gold)}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:800;width:100%;cursor:pointer;font-size:13px;transition:filter 0.2s}
-#prismaFooter .footer-news-card button:hover{filter:brightness(1.1)}
-#prismaFooter .footer-social{display:flex;gap:10px;margin-top:22px}
-#prismaFooter .footer-social a{width:38px;height:38px;border:1px solid rgba(238,188,108,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0.6;margin:0;transition:all 0.2s;text-decoration:none}
-#prismaFooter .footer-social a:hover{opacity:1;border-color:var(--gold);background:rgba(238,188,108,0.08)}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);margin-top:60px;padding:22px 0 0 0;display:flex;justify-content:space-between;gap:20px;font-size:11px;opacity:0.35;color:var(--text)}
-#cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid #c4a77d40;padding:14px 20px;display:none;justify-content:space-between;align-items:center;border-radius:8px;gap:20px;z-index:10000;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-#cookie-banner p{font-size:13px;color:#fff}
-#cookie-banner button{background:#c4a77d;color:#101010;border:none;padding:8px 14px;font-weight:800;cursor:pointer;border-radius:4px}
-@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}}
-@media(max-width:992px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;text-align:center;gap:30px}.cover{order:-1;max-width:450px;margin:auto}.tec{grid-template-columns:1fr;gap:14px}}
-@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr; gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 22px 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1}#prismaFooter .footer-bottom{flex-direction:column;text-align:center;gap:10px}#cookie-banner{width:90%;flex-direction:column;text-align:center}}
-
-/*icones*/
-.material-icons {
-  font-family: 'Material Icons' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  color: #c4a77d; /* Deixa o ícone dourado premium */
-}
-
-
+#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 22px 6%}
+#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9}
+#prismaFooter.footer-logo span{color:var(--gold);font-weight:700;display:block}
+#prismaFooter.footer-desc{opacity:0.45;font-size:13.5px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text)}
+#prismaFooter.footer-col h4{color:var(--gold);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;font-weight:800}
+#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.55;text-decoration:none;font-size:13.5px;margin-bottom:14px}
+#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.12);border-radius:14px;padding:22px}
+#prismaFooter.footer-news-card p{opacity:0.5;font-size:12.5px;margin-bottom:14px;line-height:1.6;color:var(--text)}
+#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.18);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none}
+#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:800;width:100%;cursor:pointer;font-size:13px}
+#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);margin-top:60px;padding:22px 0 0 0;display:flex;justify-content:space-between;gap:20px;font-size:11px;opacity:0.35;color:var(--text)}
+#cookie-banner{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1a1a1a;border:1px solid #c4a77d40;padding:14px 20px;display:none;justify-content:space-between;align-items:center;border-radius:8px;gap:20px;z-index:10000}
+@media(max-width:992px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr;text-align:center}.tec{grid-template-columns:1fr}}
+@media(max-width:650px){#prismaFooter.footer-grid{grid-template-columns:1fr;gap:32px}#prismaFooter.footer-bottom{flex-direction:column;text-align:center}}
+.material-icons{color:#c4a77d}
 </style>
 </head>
-
-</head>
-
-
-
-
-
-
-
-
 <body>
-
-<body>
-<nav class="nav" id="nav">
-  <div class="logo"><b>PRISMA</b> HISTÓRICO</div>
+<nav class="prisma-nav" id="prismaNav">
+  <div class="prisma-logo"><b>PRISMA</b> HISTÓRICO</div>
   <div class="right">
     <div class="lang" id="lang">
       <button data-l="pt-BR" class="active">PT</button>
@@ -155,307 +79,75 @@ body{background:#101010;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:
       <button data-l="es">ES</button>
       <button data-l="fr">FR</button>
     </div>
-    <button class="hamb" id="hamb">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="prisma-menu-hamburguer" id="hamb"><span></span><span></span><span></span></button>
   </div>
-  <!-- CORREÇÃO DA TAG: Mudado de div para ul para respeitar a herança de listas sem quebrar o layout móvel -->
-  <ul class="menu" id="menu">
-  <li><a href="./index.html" data-n="01"><span class="material-icons">home</span> <span data-i="m_inicio">INÍCIO</span></a></li>
-  <li><a href="artigos/sobre.html" data-n="02"><span class="material-icons">info</span> <span data-i="m_sobre">SOBRE</span></a></li>
-  <li><a href="artigos/afiliados.html" data-n="03"><span class="material-icons">handshake</span> <span data-i="m_afiliados">AFILIADOS</span></a></li>
-  <li><a href="artigos/artigos.html" data-n="04"><span class="material-icons">article</span> <span data-i="m_artigos">ARTIGOS</span></a></li>
-  <li><a href="artigos/curiosidades.html" data-n="05"><span class="material-icons">lightbulb</span> <span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
-  <li><a href="artigos/quiz.html" data-n="06"><span class="material-icons">quiz</span> <span data-i="m_quiz">QUIZ</span></a></li>
-  <li><a href="artigos/ebook.html" data-n="07"><span class="material-icons">menu_book</span> <span data-i="m_ebook">E-BOOK</span></a></li>
-  <li><a href="artigos/loja.html" data-n="08"><span class="material-icons">store</span> <span data-i="m_loja">LOJA</span></a></li>
-  <li><a href="artigos/turismo.html" data-n="09"><span class="material-icons">public</span> <span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
-</ul>
-
+  <ul class="prisma-menu-links" id="menu">
+    <li><a href="./index.html"><span class="material-icons">home</span> <span data-i="m_inicio">INÍCIO</span></a></li>
+    <li><a href="artigos/sobre.html"><span class="material-icons">info</span> <span data-i="m_sobre">SOBRE</span></a></li>
+    <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span> <span data-i="m_afiliados">AFILIADOS</span></a></li>
+    <li><a href="artigos/artigos.html"><span class="material-icons">article</span> <span data-i="m_artigos">ARTIGOS</span></a></li>
+    <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span> <span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
+    <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> <span data-i="m_quiz">QUIZ</span></a></li>
+    <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> <span data-i="m_ebook">E-BOOK</span></a></li>
+    <li><a href="artigos/loja.html"><span class="material-icons">store</span> <span data-i="m_loja">LOJA</span></a></li>
+    <li><a href="artigos/turismo.html"><span class="material-icons">public</span> <span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
+  </ul>
 </nav>
-
 <main class="main">
 <section class="hero">
   <div>
-    <h1><i data-i="linha_topo">A ciência oculta por trás</i><br><span data-i="linha_base">da Construção de uma América Colonial</span></h1>
-    <p data-i="t1">Mais do que datas e nomes esquecidos, a consolidação do território brasileiro foi o resultado de uma das mais sofisticadas operações de <b>engenharia náutica, inteligência hidrográfica e biopolítica</b> da história ocidental.</p>
-    <p data-i="t2">Portugal operou uma verdadeira engrenagem de <b>espionagem industrial e planejamento bélico</b> que subverteu os regimes de ventos do Atlântico.</p>
+    <h1><span data-i="linha_topo">A ciência oculta por trás</span><br><span data-i="linha_base">da Construção de uma América Colonial</span></h1>
+    <p data-i="t1">Mais do que datas e nomes esquecidos, a consolidação do território brasileiro foi o resultado de uma das mais sofisticadas operações de engenharia náutica.</p>
     <a class="btn" href="artigos/ebook.html" data-i="btn">GARANTIR MEU E-BOOK AGORA</a>
   </div>
   <div class="cover"><img src="img/prisma historico I.png" alt="capa"></div>
 </section>
-
-<section class="tec">
-  <article><strong data-i="tec1_t">Engenharia Náutica e Hidrografia:</strong><p data-i="tec1_p">Como a espionagem industrial lusa superou o fechamento do Levante.</p></article>
-  <article><strong data-i="tec2_t">Geografia do Espaço e Logística:</strong><p data-i="tec2_p">O nascimento do Caminho Novo e o circuito dos vaus terrestres.</p></article>
-  <article><strong data-i="tec3_t">A Tecno-Estrutura do Fogo:</strong><p data-i="tec3_p">As práticas primitivas de manejo ambiental e fissiparidade.</p></article>
-  <article><strong data-i="tec4_t">Onomástica e Cenografia:</strong><p data-i="tec4_p">O uso estratégico do calendário litúrgico e o choque eclesiástico.</p></article>
-  <article><strong data-i="tec5_t">Técnicas de Sobrevivência:</strong><p data-i="tec5_p">A violenta adaptação biológica à ausência de tração animal.</p></article>
-</section>
-
-<section class="sumario">
-  <div class="sumario-head">
-    <h2 data-i="sum_t">Conteúdo Programático</h2>
-    <p data-i="sum_s">Clique para expandir - com rolagem</p>
-  </div>
-  <div class="grid">
-    <details class="card">
-      <summary><span data-i="p_colonial">Período Colonial</span><span class="plus">+</span></summary>
-      <div class="box">
-        <ul>
-          <li data-i="t_col_1">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-          <li data-i="t_col_2">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-        </ul>
-      </div>
-    </details>
-    <details class="card">
-      <summary><span data-i="p_imperial">Brasil Imperial</span><span class="plus">+</span></summary>
-      <div class="box">
-        <ul>
-          <li data-i="t_imp_1">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-          <li data-i="t_imp_2">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-        </ul>
-      </div>
-    </details>
-    <details class="card">
-      <summary><span data-i="p_rep">Primeira República</span><span class="plus">+</span></summary>
-      <div class="box">
-        <ul>
-          <li data-i="t_rep_1">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-          <li data-i="t_rep_2">Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante. Engenharia Náutica e Hidrografia: Como a espionagem industrial lusa superou o fechamento do Levante.</li>
-        </ul>
-      </div>
-    </details>
-  </div>
-</section>
 </main>
-
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="./index.html" data-i18n="f_home">Início</a>
-        <a href="artigos/sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos/artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="artigos/curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="artigos/quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="artigos/turismo.html" style="color:#eebc6c!important;opacity:1!important" data-i18n="f_tour">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="artigos/ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="artigos/loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="artigos/afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="artigos/doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="artigos/privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="artigos/termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_news_t">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
-          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
-        </div>
-      </div>
+      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><a href="./index.html">Início</a><a href="artigos/sobre.html">Sobre</a></div>
+      <div class="footer-col"><h4>Produtos</h4><a href="artigos/ebook.html">E-book</a><a href="artigos/afiliados.html">Afiliados</a></div>
+      <div class="footer-col"><h4>Clube Prisma</h4><div class="footer-news-card"><input type="email" placeholder="seu melhor email"><button>Entrar →</button></div></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
-      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
+    <div class="footer-bottom"><span>© 2026 Prisma Histórico</span><span>Feito com ☕ em SP</span></div>
   </div>
 </footer>
-
-<div id="cookie-banner">
-  <p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p>
-  <button id="ck_btn" data-i="ck_btn">ACEITAR</button>
-</div>
-
-
+<div id="cookie-banner"><p>Usamos cookies.</p><button id="ck_btn">ACEITAR</button></div>
 <script>
-// ====== 1. CONTROLE DE COOKIES / LOCAL STORAGE ======
-function setCookie(n, v, d) {
-  var dt = new Date();
-  dt.setTime(dt.getTime() + (d * 24 * 60 * 60 * 1000));
-  document.cookie = n + "=" + v + ";expires=" + dt.toUTCString() + ";path=/;SameSite=Lax";
-  localStorage.setItem(n, v);
-}
-
-function getCookie(n) {
-  return localStorage.getItem(n) || null;
-}
-
-// ====== 2. DIALÉTICA DE TRADUÇÃO DOS IDIOMAS ======
-var dict = {
-  "pt-BR": {
-    m_inicio:"INÍCIO", m_sobre:"SOBRE", m_afiliados:"AFILIADOS", m_artigos:"ARTIGOS", m_curiosidades:"CURIOSIDADES", m_quiz:"QUIZ", m_ebook:"E-BOOK", m_loja:"LOJA", m_turismo:"TURISMO COLONIAL",
-    linha_topo:"A ciência oculta por trás", linha_base:"da Construção de uma América Colonial",
-    t1:"Mais do que datas e nomes esquecidos, a consolidação do território brasileiro foi o resultado de uma das mais sofisticadas operações de engenharia.",
-    t2:"Portugal operou uma verdadeira engrenagem de espionagem industrial.",
-    btn:"GARANTIR MEU E-BOOK AGORA", sum_t:"Conteúdo Programático", sum_s:"Clique para expandir - com rolagem",
-    p_colonial:"01. Período Colonial", p_imperial:"02. Brasil Imperial", p_rep:"03. Primeira República",
-    ck_txt:"Usamos cookies para salvar seu idioma e melhorar sua experiência.", ck_btn:"ACEITAR",
-    t_col_1: "Engenharia Náutica e Hidrografia...", t_col_2: "Engenharia Náutica e Hidrografia...",
-    t_imp_1: "Engenharia Náutica e Hidrografia...", t_imp_2: "Engenharia Náutica e Hidrografia...",
-    t_rep_1: "Engenharia Náutica e Hidrografia...", t_rep_2: "Engenharia Náutica e Hidrografia...",
-    tec1_t: "Engenharia Náutica e Hidrografia:", tec1_p: "Como a espionagem industrial lusa superou o fechamento do Levante.",
-    tec2_t: "Geografia do Espaço e Logística:", tec2_p: "O nascimento do Caminho Novo e o circuito dos vaus terrestres.",
-    tec3_t: "A Tecno-Estrutura do Fogo:", tec3_p: "As práticas primitivas de manejo ambiental e fissiparidade.",
-    tec4_t: "Onomástica e Cenografia:", tec4_p: "O uso estratégico do calendário litúrgico e o choque eclesiástico.",
-    tec5_t: "Técnicas de Sobrevivência:", tec5_p: "A violenta adaptação biológica à ausência de tração animal."
-  },
-  "en": {
-    m_inicio:"HOME", m_sobre:"ABOUT", m_afiliados:"AFFILIATES", m_artigos:"ARTICLES", m_curiosidades:"CURIOSITIES", m_quiz:"QUIZ", m_ebook:"E-BOOK", m_loja:"STORE", m_turismo:"COLONIAL TOURISM",
-    linha_topo:"The hidden science behind", linha_base:"the Construction of Colonial America",
-    t1:"More than forgotten dates, the consolidation of Brazilian territory was the result of a highly sophisticated operation.",
-    t2:"Portugal operated a machinery of industrial espionage.",
-    btn:"GET MY E-BOOK NOW", sum_t:"Programmatic Content", sum_s:"Click to expand - with scrolling",
-    p_colonial:"01. Colonial Period", p_imperial:"02. Imperial Brazil", p_rep:"03. First Republic",
-    ck_txt:"We use cookies to save your language.", ck_btn:"ACCEPT",
-    t_col_1: "Nautical Engineering and Hydrography...", t_col_2: "Nautical Engineering and Hydrography...",
-    t_imp_1: "Nautical Engineering and Hydrography...", t_imp_2: "Nautical Engineering and Hydrography...",
-    t_rep_1: "Nautical Engineering and Hydrography...", t_rep_2: "Nautical Engineering and Hydrography...",
-    tec1_t: "Nautical Engineering & Hydrography:", tec1_p: "How Portuguese industrial espionage overcame the closure of the Levant.",
-    tec2_t: "Spatial Geography & Logistics:", tec2_p: "The birth of the New Path and the overland ford circuits.",
-    tec3_t: "The Techno-Structure of Fire:", tec3_p: "Primitive practices of environmental management and fissiparity.",
-    tec4_t: "Onomastics & Scenography:", tec4_p: "The strategic use of the liturgical calendar and ecclesiastical shock.",
-    tec5_t: "Survival Techniques:", tec5_p: "Violent biological adaptation to the total absence of draft animals."
-  },
-  "es": {
-    m_inicio:"INICIO", m_sobre:"NOSOTROS", m_afiliados:"AFILIADOS", m_artigos:"ARTÍCULOS", m_curiosidades:"CURIOSIDADES", m_quiz:"QUIZ", m_ebook:"E-BOOK", m_loja:"TIENDA", m_turismo:"TURISMO COLONIAL",
-    linha_topo:"La ciencia oculta detrás", linha_base:"de la Construcción de una América Colonial",
-    t1:"Más que fechas y nombres olvidados, la consolidación del territorio brasileño fue el resultado de una de las operaciones más sofisticadas.",
-    t2:"Portugal operó una verdadera maquinaria de espionaje industrial.",
-    btn:"CONSEGUIR MI E-BOOK AHORA", sum_t:"Contenido Programático", sum_s:"Haz clic para expandir",
-    p_colonial:"01. Período Colonial", p_imperial:"02. Brasil Imperial", p_rep:"03. Primera República",
-    ck_txt:"Usamos cookies para guardar tu idioma.", ck_btn:"ACEPTAR",
-    t_col_1: "Ingeniería Náutica e Hidrografía...", t_col_2: "Ingeniería Náutica e Hidrografía...",
-    t_imp_1: "Ingeniería Náutica e Hidrografía...", t_imp_2: "Ingeniería Náutica e Hidrografía...",
-    t_rep_1: "Ingeniería Náutica e Hidrografía...", t_rep_2: "Ingeniería Náutica e Hidrografía...",
-    tec1_t: "Ingeniería Náutica e Hidrografía:", tec1_p: "Cómo el espionaje industrial portugués superó el cierre del Levante.",
-    tec2_t: "Geografía del Espacio y Logística:", tec2_p: "El nacimiento del Camino Novo y el circuito de los vados terrestres.",
-    tec3_t: "La Tecno-Estructura del Fuego:", tec3_p: "Prácticas primitivas de gestión ambiental y fisiparidad.",
-    tec4_t: "Onomástica y Escenografía:", tec4_p: "El uso estratégico del calendario litúrgico y el choque eclesiástico.",
-    tec5_t: "Técnicas de Supervivencia:", tec5_p: "Violenta adaptación biológica ante la ausencia total de tracción animal."
-  },
-  "fr": {
-    m_inicio:"ACCUEIL", m_sobre:"À PROPOS", m_afiliados:"AFFILIÉS", m_artigos:"ARTICLES", m_curiosidades:"CURIOSITÉS", m_quiz:"QUIZ", m_ebook:"E-BOOK", m_loja:"BOUTIQUE", m_turismo:"TOURISME COLONIAL",
-    linha_topo:"La science cachée derrière", linha_base:"la Construction d'une Amérique Coloniale",
-    t1:"La consolidation du territoire brésilien a été le resultado d'une des opérations les plus sophistiquées.",
-    t2:"Le Portugal a opéré une véritable machinerie d'espionnage industriel.",
-    btn:"OBTENIR MON E-BOOK MAINTENANT", sum_t:"Programme Pédagogique", sum_s:"Cliquez pour agrandir",
-    p_colonial:"01. Période Coloniale", p_imperial:"02. Brésil Impérial", p_rep:"03. Première République",
-    ck_txt:"Nous utilisons des cookies.", ck_btn:"ACCEPTER",
-    t_col_1: "Génie Nautique et Hydrographie...", t_col_2: "Génie Nautique et Hydrographie...",
-    t_imp_1: "Génie Nautique et Hydrographie...", t_imp_2: "Génie Nautique et Hydrographie...",
-    t_rep_1: "Génie Nautique et Hydrographie...", t_rep_2: "Génie Nautique et Hydrographie...",
-    tec1_t: "Génie Nautique et Hydrographie:", tec1_p: "Comment l'espionnage industriel portugais a surmonté la fermeture du Levant.",
-    tec2_t: "Géographie Spatiale & Logistique:", tec2_p: "La naissance du Nouveau Chemin et le circuit des gués terrestres.",
-    tec3_t: "La Techno-Structure du Feu:", tec3_p: "Pratiques primitives de gestion environnementale et de fission.",
-    tec4_t: "Onomastique & Scénographie:", tec4_p: "L'utilisation stratégique du calendrier liturgique et le choc ecclésiastique.",
-    tec5_t: "Techniques de Survie:", tec5_p: "Adaptation biologique violente en l'absence totale d'animaux de trait."
-  }
+const dict={
+"pt-BR":{m_inicio:"INÍCIO",m_sobre:"SOBRE",m_afiliados:"AFILIADOS",m_artigos:"ARTIGOS",m_curiosidades:"CURIOSIDADES",m_quiz:"QUIZ",m_ebook:"E-BOOK",m_loja:"LOJA",m_turismo:"TURISMO COLONIAL",linha_topo:"A ciência oculta por trás",linha_base:"da Construção de uma América Colonial",t1:"Mais do que datas e nomes esquecidos, a consolidação do território brasileiro foi o resultado de uma das mais sofisticadas operações de engenharia náutica.",btn:"GARANTIR MEU E-BOOK AGORA"},
+"en":{m_inicio:"HOME",m_sobre:"ABOUT",m_afiliados:"AFFILIATES",m_artigos:"ARTICLES",m_curiosidades:"CURIOSITIES",m_quiz:"QUIZ",m_ebook:"E-BOOK",m_loja:"STORE",m_turismo:"COLONIAL TOURISM",linha_topo:"The hidden science behind",linha_base:"the Construction of Colonial America",t1:"More than forgotten dates, the consolidation was a sophisticated operation.",btn:"GET MY E-BOOK NOW"},
+"es":{m_inicio:"INICIO",m_sobre:"NOSOTROS",m_afiliados:"AFILIADOS",m_artigos:"ARTÍCULOS",m_curiosidades:"CURIOSIDADES",m_quiz:"QUIZ",m_ebook:"E-BOOK",m_loja:"TIENDA",m_turismo:"TURISMO COLONIAL",linha_topo:"La ciencia oculta detrás",linha_base:"de la Construcción de una América Colonial",t1:"Más que fechas olvidadas, la consolidación fue una operación sofisticada.",btn:"CONSEGUIR MI E-BOOK AHORA"},
+"fr":{m_inicio:"ACCUEIL",m_sobre:"À PROPOS",m_afiliados:"AFFILIÉS",m_artigos:"ARTICLES",m_curiosidades:"CURIOSITÉS",m_quiz:"QUIZ",m_ebook:"E-BOOK",m_loja:"BOUTIQUE",m_turismo:"TOURISME COLONIAL",linha_topo:"La science cachée derrière",linha_base:"la Construction d'une Amérique Coloniale",t1:"La consolidation du territoire a été le résultat d'une opération sophistiquée.",btn:"OBTENIR MON E-BOOK MAINTENANT"}
 };
-
-// ====== 3. MECANISMO DE ATUALIZAÇÃO REFORÇADO ======
-function updateLanguage(lng) {
-  if (lng === 'pt') lng = 'pt-BR';
-  if (!dict[lng]) return;
-  var langData = dict[lng];
-  
-  document.querySelectorAll('[data-i]').forEach(function(el) {
-    var key = el.getAttribute('data-i');
-    if (langData[key]) {
-      // SEGREDO DA CORREÇÃO: Se o elemento tiver um ícone dentro dele, não apaga o ícone!
-      var icone = el.querySelector('.material-icons');
-      if (icone) {
-        // Mantém o HTML do ícone intacto e atualiza apenas o texto que vem depois dele
-        el.innerHTML = icone.outerHTML + ' ' + langData[key];
-      } else {
-        // Se for um texto normal (como o h1 ou parágrafo), traduz normalmente
-        el.innerHTML = langData[key];
-      }
+function updateLanguage(lng){
+  if(!dict[lng]) return;
+  document.querySelectorAll('[data-i]').forEach(el=>{
+    const k=el.getAttribute('data-i');
+    if(dict[lng][k]){
+      const ic=el.querySelector('.material-icons');
+      if(ic){ el.innerHTML=ic.outerHTML+' '+dict[lng][k]; }else{ el.textContent=dict[lng][k]; }
     }
   });
-  
-  document.querySelectorAll('#lang button').forEach(function(btn) {
-    btn.classList.toggle('active', btn.getAttribute('data-l') === lng);
-  });
+  document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('active', b.dataset.l===lng));
+  localStorage.setItem('site-lang', lng);
 }
-
-
-// ====== 4. INTERAÇÃO E INICIALIZAÇÃO ======
-document.addEventListener("DOMContentLoaded", function() {
-  var hamb = document.getElementById('hamb');
-  var nav = document.getElementById('nav');
-  if (hamb && nav) {
-    hamb.addEventListener('click', function(e) {
-      e.stopPropagation();
-      nav.classList.toggle('is-open');
-    });
-  }
-  document.querySelectorAll('#lang button').forEach(function(btn) {
-    btn.onclick = function() {
-      var selectedLang = btn.getAttribute('data-l');
-      setCookie('site-lang', selectedLang, 365);
-      updateLanguage(selectedLang);
-    };
+document.addEventListener("DOMContentLoaded",()=>{
+  const nav=document.getElementById('prismaNav');
+  const hamb=document.getElementById('hamb');
+  hamb.addEventListener('click',()=>{
+    nav.classList.toggle('menu-aberto');
+    document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
   });
-  var banner = document.getElementById('cookie-banner');
-  var cookieBtn = document.getElementById('ck_btn');
-  if (!getCookie('cookies-accepted') && banner) { banner.style.display = 'flex'; }
-  if (cookieBtn) {
-    cookieBtn.onclick = function() {
-      setCookie('cookies-accepted', 'true', 365);
-      if (banner) banner.style.display = 'none';
-    };
-  }
-  var savedLang = getCookie('site-lang') || 'pt-BR';
-  updateLanguage(savedLang);
+  document.querySelectorAll('#lang button').forEach(b=>b.addEventListener('click',()=>updateLanguage(b.dataset.l)));
+  const saved=localStorage.getItem('site-lang')||'pt-BR';
+  updateLanguage(saved);
+  const banner=document.getElementById('cookie-banner');
+  if(!localStorage.getItem('cookies-accepted')) banner.style.display='flex';
+  document.getElementById('ck_btn').onclick=()=>{localStorage.setItem('cookies-accepted','true'); banner.style.display='none';};
 });
-
-// ====== 5. GATILHO COMPLEMENTAR DO RODAPÉ (IIFE TRADUTOR) ======
-(function(){
-  const footerT={
-    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍  Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica",f_made:"Feito com ☕ e 4h de sono em São Paulo"},
-    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍  Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica",f_made:"Feito com ☕ e 4h de sono em São Paulo"},
-    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
-    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
-    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez des itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
-  };
-
-  function applyFooterLang(l){
-    const key = l && l.startsWith('pt')? 'pt' : l;
-    const dictF = footerT[l] || footerT[key] || footerT.pt;
-    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n'); if(dictF[k]) el.textContent=dictF[k];
-    });
-  }
-
-  const originalSetLang = window.setLang;
-  window.setLang = function(l){
-    if(typeof originalSetLang==='function') originalSetLang(l);
-    applyFooterLang(l);
-  };
-
-  applyFooterLang(localStorage.getItem('site-lang') || 'pt-BR');
-
-  document.getElementById('prismaBtn')?.addEventListener('click', function(){
-    const v=document.getElementById('prismaEmail').value.trim();
-    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-  });
-})();
 </script>
 </body>
 </html>
-
