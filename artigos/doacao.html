@@ -32,7 +32,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .box-doacao{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;max-width:960px;margin:30px auto 0 auto;padding:0 5%}
 .qr-card{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:30px;text-align:center}
 .qr-img{width:260px;height:260px;background:#fff;border-radius:12px;margin:0 auto 18px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px;overflow:hidden}
-.qr-img img{width:100%;height:100%;object-fit:contain}
 .pix-key-box{margin-top:22px;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.3);border-radius:10px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
 .pix-key-box code{font-size:13px;color:var(--ouro);word-break:break-all}
 .btn-copiar{background:var(--ouro);color:#121212;border:0;padding:10px 16px;border-radius:6px;font-weight:800;font-size:11px;cursor:pointer}
@@ -63,41 +62,37 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
       <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
     </div>
     <ul class="prisma-menu-links">
-       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
-<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
-<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
-<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
-<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
-<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
-<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
-<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
-    
+       <li><a href="../index.html"><span class="material-icons">home</span><span>INÍCIO</span></a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span><span>SOBRE</span></a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span><span>AFILIADOS</span></a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span><span>ARTIGOS</span></a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span>CURIOSIDADES</span></a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span><span>QUIZ</span></a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span><span>E-BOOK</span></a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span><span>LOJA</span></a></li>
+       <li><a href="turismo.html"><span class="material-icons">public</span><span>TURISMO COLONIAL</span></a></li>
     </ul>
 </nav>
-
 <header class="hero-doacao">
     <span class="tag" data-i18n="tag">💛 VOCÊ MANTÉM ESSE PROJETO VIVO</span>
     <h1 data-i18n="h1">Seu apoio é o <span>combustível</span> do Prisma</h1>
     <p data-i18n="sub">Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.</p>
 </header>
-
 <div class="box-doacao">
     <div class="qr-card" id="card-pix">
         <div class="qr-img" id="qrContainer">COLOQUE SEU QR CODE AQUI<br>260x260</div>
-        <b data-i18n="qr_t">Escaneie o QR Code</b>
-        <span data-i18n="qr_s">Abra o app do seu banco e pague via PIX</span>
+        <b data-i18n="qr_t">Escaneie o QR Code</b><br>
+        <span data-i18n="qr_s" style="opacity:0.6;font-size:13px">Abra o app do seu banco e pague via PIX</span>
         <div class="pix-key-box">
             <code id="pixKey">cronologia.prisma.historico@gmail.com</code>
             <button class="btn-copiar" onclick="copiarPix()" data-i18n="btn_copy">COPIAR</button>
         </div>
         <p style="margin-top:12px;font-size:11px;opacity:0.4" data-i18n="pix_obs">Chave PIX - E-mail • Titular: Prisma Histórico</p>
-
         <div id="paypalBox" style="display:none">
           <a href="https://www.paypal.com/donate/?hosted_button_id=SEU_ID_AQUI" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal - International</a>
           <p style="margin-top:12px;font-size:11px;opacity:0.4" data-i18n="paypal_obs">Secure donation via PayPal • Works worldwide</p>
         </div>
     </div>
-
     <div class="info-card">
         <h2 data-i18n="why_t">Por que doar?</h2>
         <p data-i18n="why_p1">Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.</p>
@@ -118,11 +113,9 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
         <p style="margin-top:20px;background:rgba(238,188,108,0.08);border:1px dashed rgba(238,188,108,0.25);padding:12px;border-radius:8px;text-align:center;color:var(--ouro);font-size:12px;font-weight:700" data-i18n="any">Qualquer valor já ajuda MUITO — de verdade 💛</p>
     </div>
 </div>
-
 <script>
 const T={
 pt:{
-n_home:"Início",n_aff:"Afiliados",n_art:"Artigos",n_cur:"Curiosidades",n_ebook:"E-book",n_store:"Loja",
 tag:"💛 VOCÊ MANTÉM ESSE PROJETO VIVO",h1:"Seu apoio é o <span>combustível</span> do Prisma",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",
 qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",
 paypal_btn:"Doar via PayPal - Internacional",paypal_obs:"Doação segura via PayPal • Funciona no mundo todo",
@@ -132,7 +125,6 @@ i1:"<b>Site sem anúncios:</b> rápido e limpo pra você estudar",i2:"<b>E-book 
 any:"Qualquer valor já ajuda MUITO — de verdade 💛"
 },
 en:{
-n_home:"Home",n_aff:"Affiliates",n_art:"Articles",n_cur:"Curiosities",n_ebook:"E-book",n_store:"Store",
 tag:"💛 YOU KEEP THIS PROJECT ALIVE",h1:"Your support is the <span>fuel</span> of Prisma",sub:"No annoying ads, no fluff. Every cent goes directly to keeping the site fast, the e-book updated and content reaching those who can't afford expensive courses.",
 qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"International donation • Prisma Histórico",
 paypal_btn:"Donate via PayPal - $5, $15, $30",paypal_obs:"Secure donation via PayPal • Works worldwide",
@@ -142,7 +134,6 @@ i1:"<b>Ad-free site:</b> fast and clean to study",i2:"<b>Always updated e-book:<
 any:"Any amount helps A LOT — for real 💛"
 },
 es:{
-n_home:"Inicio",n_aff:"Afiliados",n_art:"Artículos",n_cur:"Curiosidades",n_ebook:"E-book",n_store:"Tienda",
 tag:"💛 TÚ MANTIENES VIVO ESTE PROYECTO",h1:"Tu apoyo es el <span>combustible</span> de Prisma",sub:"Sin anuncios molestos, sin relleno. Cada centavo va directo a mantener el sitio rápido, el e-book actualizado y el contenido llegando a quien no puede pagar cursos caros.",
 qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal - funciona en todo el mundo",btn_copy:"COPIAR",pix_obs:"Donación internacional • Prisma Histórico",
 paypal_btn:"Donar vía PayPal - 5€, 15€, 30€",paypal_obs:"Donación segura vía PayPal • Funciona mundialmente",
@@ -152,7 +143,6 @@ i1:"<b>Sitio sin anuncios:</b> rápido y limpio para estudiar",i2:"<b>E-book sie
 any:"Cualquier valor ya ayuda MUCHO — de verdad 💛"
 },
 fr:{
-n_home:"Accueil",n_aff:"Affiliés",n_art:"Articles",n_cur:"Curiosités",n_ebook:"E-book",n_store:"Boutique",
 tag:"💛 VOUS MAINTENEZ CE PROJET EN VIE",h1:"Votre soutien est le <span>carburant</span> de Prisma",sub:"Pas de pubs ennuyeuses, pas de blabla. Chaque centime va directement à maintenir le site rapide, l'e-book à jour et le contenu pour ceux qui ne peuvent pas payer des cours chers.",
 qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal - fonctionne partout",btn_copy:"COPIER",pix_obs:"Don international • Prisma Histórico",
 paypal_btn:"Faire un don via PayPal - 5€, 15€, 30€",paypal_obs:"Don sécurisé via PayPal • Fonctionne mondialement",
@@ -170,22 +160,25 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
-  // mostra PIX só pra BR, PayPal pros gringos
   const qrC = document.getElementById('qrContainer');
   const paypalBox = document.getElementById('paypalBox');
+  const pixBox = document.querySelector('.pix-key-box');
   if(l==='pt'){
     qrC.innerHTML = 'COLOQUE SEU QR CODE AQUI<br>260x260';
     paypalBox.style.display='none';
-    qrC.parentElement.querySelector('.pix-key-box').style.display='flex';
+    pixBox.style.display='flex';
   }else{
     qrC.innerHTML = '<span style="font-size:60px">💛</span><br>Support Prisma';
     paypalBox.style.display='block';
-    qrC.parentElement.querySelector('.pix-key-box').style.display='none';
+    pixBox.style.display='none';
   }
 }
 setLang(localStorage.getItem('prisma_lang')||'pt');
 const nav=document.getElementById('prismaNav');
-nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+});
 function copiarPix(){
   const key=document.getElementById('pixKey').innerText;
   navigator.clipboard.writeText(key);
@@ -196,253 +189,5 @@ function copiarValor(v){
   alert('Vlw demais! Doe R$ '+v+' usando a chave PIX que vou copiar agora 🙏'); copiarPix();
 }
 </script>
-
-<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
-  <style>
-   
-   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
-#prismaFooter {
-  --gold: #eebc6c;
-  --bg: #0A0A0A;
-  --card: #121212;
-  --text: #F5F5F0;
-  background: var(--bg);
-  border-top: 1px solid rgba(238,188,108,0.15);
-  margin-top: 80px;
-}
-
-#prismaFooter * { box-sizing: border-box; }
-
-#prismaFooter .footer-wrap {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 70px 6% 0 6%;
-}
-
-#prismaFooter .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-#prismaFooter .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  letter-spacing: 0.18em;
-  color: var(--text);
-  line-height: 0.9;
-}
-#prismaFooter .footer-logo span {
-  color: var(--gold);
-  font-weight: 700;
-  display: block;
-}
-
-#prismaFooter .footer-desc {
-  opacity: 0.45;
-  font-size: 13.5px;
-  line-height: 1.8;
-  margin-top: 18px;
-  max-width: 320px;
-  color: var(--text);
-}
-
-#prismaFooter .footer-col h4 {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-  font-weight: 800;
-}
-
-#prismaFooter .footer-col a {
-  display: block;
-  color: var(--text);
-  opacity: 0.55;
-  text-decoration: none;
-  font-size: 13.5px;
-  margin-bottom: 14px;
-  transition: all 0.2s ease;
-}
-#prismaFooter .footer-col a:hover {
-  opacity: 1;
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-#prismaFooter .footer-news-card {
-  background: var(--card);
-  border: 1px solid rgba(238,188,108,0.12);
-  border-radius: 14px;
-  padding: 22px;
-}
-#prismaFooter .footer-news-card p {
-  opacity: 0.5;
-  font-size: 12.5px;
-  margin-bottom: 14px;
-  line-height: 1.6;
-  color: var(--text);
-}
-#prismaFooter .footer-news-card input {
-  background: #1E1E1E;
-  border: 1px solid rgba(238,188,108,0.18);
-  color: #fff;
-  padding: 13px 14px;
-  border-radius: 10px;
-  width: 100%;
-  font-size: 13px;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border 0.2s;
-}
-#prismaFooter .footer-news-card input:focus {
-  border-color: var(--gold);
-}
-#prismaFooter .footer-news-card button {
-  background: var(--gold);
-  color: #121212;
-  border: 0;
-  padding: 13px 18px;
-  border-radius: 10px;
-  font-weight: 800;
-  width: 100%;
-  cursor: pointer;
-  font-size: 13px;
-  transition: filter 0.2s;
-}
-#prismaFooter .footer-news-card button:hover {
-  filter: brightness(1.1);
-}
-
-#prismaFooter .footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-#prismaFooter .footer-social a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(238,188,108,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  margin: 0;
-  transition: all 0.2s;
-}
-#prismaFooter .footer-social a:hover {
-  opacity: 1;
-  border-color: var(--gold);
-  background: rgba(238,188,108,0.08);
-}
-
-#prismaFooter .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 60px;
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 11px;
-  opacity: 0.35;
-  color: var(--text);
-}
-
-@media(max-width:1024px){
-  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
-  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
-}
-@media(max-width:650px){
-  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
-  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
-  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
-  #prismaFooter .footer-bottom{flex-direction:column}
-}
-   
-   </style>
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="index.html" data-i18n="f_home">Início</a>
-        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_news_t">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
-          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
-      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
-
-<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
-
-
-
-<script>
-(function(){
-  const footerT={
-    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
-    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
-    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
-  };
-  function applyFooterLang(l){
-    const key = l && l.startsWith('pt')? 'pt' : l;
-    const dict = footerT[l] || footerT[key] || footerT.pt;
-    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
-    });
-  }
-  const originalSetLang = window.setLang;
-  window.setLang = function(l){
-    if(typeof originalSetLang==='function') originalSetLang(l);
-    applyFooterLang(l);
-  };
-  document.getElementById('lang')?.addEventListener('click', e=>{
-    const b=e.target.closest('button[data-l]'); if(!b) return;
-    applyFooterLang(b.dataset.l);
-  });
-  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
-  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-    const v=document.getElementById('prismaEmail').value.trim();
-    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-  });
-})();
-</script>
-
-
 </body>
 </html>

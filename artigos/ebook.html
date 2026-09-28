@@ -59,7 +59,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 </style>
 </head>
 <body>
-
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
     <div style="display:flex;align-items:center;gap:12px">
@@ -72,18 +71,17 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
       <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
     </div>
     <ul class="prisma-menu-links">
-       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
-<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
-<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
-<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
-<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
-<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
-<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
-<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
-    
+       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
     </ul>
 </nav>
-
 <section class="hero-ebook">
     <h1 data-i18n="hero_h1">PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span></h1>
     <p data-i18n="hero_p">O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>.</p>
@@ -97,7 +95,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
         <button type="button" class="btn-checkout-final" onclick="abrirCheckout()" data-i18n="btn_buy">🛒 Comprar e-book completo</button>
     </div>
 </section>
-
 <div id="modalCheckout">
     <div class="modal-content">
         <button type="button" class="btn-fechar-modal" onclick="fecharCheckout()">&times;</button>
@@ -130,11 +127,9 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
         </div>
     </div>
 </div>
-
 <script>
 const T={
 pt:{
-n_home:"Início",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artigos",n_ebook:"E-book",n_store:"Loja",
 hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"O único material que destrincha a Colonização, Império e Primeira República com diagramas, imagens, mapas mentais e questões de bancas como <strong>Fuvest e Enem</strong>.",
 b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análise profunda, zero romantização",b2_t:"🗺️ MAPAS MENTAIS",b2_d:"Memorize estruturas inteiras",b3_t:"📊 DIAGRAMAS E IMAGENS",b3_d:"Visualize o cotidiano colonial",b4_t:"📚 SUMÁRIO DIGITAL",b4_d:"Navegue por vários tópicos",
 btn_buy:"🛒 Comprar e-book completo",
@@ -144,7 +139,6 @@ price_from:"De R$ 149,90",price_now:"R$ 49,90",price_info:"Pagamento único • 
 pay1:"⚡ Pix Instantâneo",pay2:"💳 Cartão em até 12x",pay3:"📄 Boleto / PayPal",btn_final:"🔒 GARANTIR MEU ACESSO AGORA",sec1:"🔒 Ambiente criptografado Hotmart",sec2:"🛡️ 7 dias de garantia"
 },
 en:{
-n_home:"Home",n_about:"About",n_aff:"Affiliates",n_art:"Articles",n_ebook:"E-book",n_store:"Store",
 hero_h1:"PRISMA HISTORY <br><span>+ Illustrated Pages</span>",hero_p:"The only material that dissects Brazilian Colonization, Empire and First Republic with diagrams, images, mind maps and questions from top exams like <strong>ENEM and Fuvest</strong>.",
 b1_t:"📖 ILLUSTRATED PAGES",b1_d:"Deep analysis, zero romanticization",b2_t:"🗺️ MIND MAPS",b2_d:"Memorize entire structures",b3_t:"📊 DIAGRAMS & IMAGES",b3_d:"Visualize colonial daily life",b4_t:"📚 DIGITAL INDEX",b4_d:"Navigate through topics",
 btn_buy:"🛒 Buy Complete E-book",
@@ -154,7 +148,6 @@ price_from:"From $39.90",price_now:"$19.90",price_info:"One-time payment • Ins
 pay1:"⚡ Instant PayPal",pay2:"💳 Card up to 12x",pay3:"📄 PayPal / Card",btn_final:"🔒 GET MY ACCESS NOW",sec1:"🔒 Encrypted Hotmart environment",sec2:"🛡️ 7-day guarantee"
 },
 es:{
-n_home:"Inicio",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artículos",n_ebook:"E-book",n_store:"Tienda",
 hero_h1:"PRISMA HISTÓRICO <br><span>+ Páginas Ilustradas</span>",hero_p:"El único material que desglosa la Colonización, Imperio y Primera República con diagramas, imágenes, mapas mentales y preguntas de exámenes como <strong>ENEM y Fuvest</strong>.",
 b1_t:"📖 PÁGINAS ILUSTRADAS",b1_d:"Análisis profundo, cero romantización",b2_t:"🗺️ MAPAS MENTALES",b2_d:"Memoriza estructuras enteras",b3_t:"📊 DIAGRAMAS E IMÁGENES",b3_d:"Visualiza el cotidiano colonial",b4_t:"📚 ÍNDICE DIGITAL",b4_d:"Navega por varios temas",
 btn_buy:"🛒 Comprar e-book completo",
@@ -164,7 +157,6 @@ price_from:"De 39,90€",price_now:"19,90€",price_info:"Pago único • Acceso
 pay1:"⚡ PayPal Instantáneo",pay2:"💳 Tarjeta hasta 12x",pay3:"📄 Boleto / PayPal",btn_final:"🔒 GARANTIZAR MI ACCESO AHORA",sec1:"🔒 Entorno encriptado Hotmart",sec2:"🛡️ 7 días de garantía"
 },
 fr:{
-n_home:"Accueil",n_about:"À propos",n_aff:"Affiliés",n_art:"Articles",n_ebook:"E-book",n_store:"Boutique",
 hero_h1:"PRISMA HISTORIQUE <br><span>+ Pages Illustrées</span>",hero_p:"Le seul matériel qui décortique la Colonisation, l'Empire et la Première République avec diagrammes, images, cartes mentales et questions d'examens comme <strong>ENEM et Fuvest</strong>.",
 b1_t:"📖 PAGES ILLUSTRÉES",b1_d:"Analyse profonde, zéro romantisation",b2_t:"🗺️ CARTES MENTALES",b2_d:"Mémorisez des structures entières",b3_t:"📊 DIAGRAMMES ET IMAGES",b3_d:"Visualisez le quotidien colonial",b4_t:"📚 SOMMAIRE NUMÉRIQUE",b4_d:"Naviguez par thèmes",
 btn_buy:"🛒 Acheter l'e-book complet",
@@ -182,9 +174,6 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
-  // troca link da Hotmart pra moeda certa se tiver
-  const priceEl = document.querySelector('[data-i18n="price_now"]');
-  // você pode trocar o href do checkout por moeda depois
 }
 setLang(localStorage.getItem('prisma_lang')||'pt');
 function abrirCheckout(){ document.getElementById('modalCheckout').classList.add('aberto'); document.body.style.overflow='hidden' }
@@ -196,252 +185,5 @@ document.getElementById('btnMenu').addEventListener('click',(e)=>{
 });
 document.getElementById('modalCheckout').addEventListener('click', function(e){ if(e.target===this) fecharCheckout() });
 </script>
-<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
-  <style>
-   
-   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
-#prismaFooter {
-  --gold: #eebc6c;
-  --bg: #0A0A0A;
-  --card: #121212;
-  --text: #F5F5F0;
-  background: var(--bg);
-  border-top: 1px solid rgba(238,188,108,0.15);
-  margin-top: 80px;
-}
-
-#prismaFooter * { box-sizing: border-box; }
-
-#prismaFooter .footer-wrap {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 70px 6% 0 6%;
-}
-
-#prismaFooter .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-#prismaFooter .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  letter-spacing: 0.18em;
-  color: var(--text);
-  line-height: 0.9;
-}
-#prismaFooter .footer-logo span {
-  color: var(--gold);
-  font-weight: 700;
-  display: block;
-}
-
-#prismaFooter .footer-desc {
-  opacity: 0.45;
-  font-size: 13.5px;
-  line-height: 1.8;
-  margin-top: 18px;
-  max-width: 320px;
-  color: var(--text);
-}
-
-#prismaFooter .footer-col h4 {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-  font-weight: 800;
-}
-
-#prismaFooter .footer-col a {
-  display: block;
-  color: var(--text);
-  opacity: 0.55;
-  text-decoration: none;
-  font-size: 13.5px;
-  margin-bottom: 14px;
-  transition: all 0.2s ease;
-}
-#prismaFooter .footer-col a:hover {
-  opacity: 1;
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-#prismaFooter .footer-news-card {
-  background: var(--card);
-  border: 1px solid rgba(238,188,108,0.12);
-  border-radius: 14px;
-  padding: 22px;
-}
-#prismaFooter .footer-news-card p {
-  opacity: 0.5;
-  font-size: 12.5px;
-  margin-bottom: 14px;
-  line-height: 1.6;
-  color: var(--text);
-}
-#prismaFooter .footer-news-card input {
-  background: #1E1E1E;
-  border: 1px solid rgba(238,188,108,0.18);
-  color: #fff;
-  padding: 13px 14px;
-  border-radius: 10px;
-  width: 100%;
-  font-size: 13px;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border 0.2s;
-}
-#prismaFooter .footer-news-card input:focus {
-  border-color: var(--gold);
-}
-#prismaFooter .footer-news-card button {
-  background: var(--gold);
-  color: #121212;
-  border: 0;
-  padding: 13px 18px;
-  border-radius: 10px;
-  font-weight: 800;
-  width: 100%;
-  cursor: pointer;
-  font-size: 13px;
-  transition: filter 0.2s;
-}
-#prismaFooter .footer-news-card button:hover {
-  filter: brightness(1.1);
-}
-
-#prismaFooter .footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-#prismaFooter .footer-social a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(238,188,108,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  margin: 0;
-  transition: all 0.2s;
-}
-#prismaFooter .footer-social a:hover {
-  opacity: 1;
-  border-color: var(--gold);
-  background: rgba(238,188,108,0.08);
-}
-
-#prismaFooter .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 60px;
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 11px;
-  opacity: 0.35;
-  color: var(--text);
-}
-
-@media(max-width:1024px){
-  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
-  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
-}
-@media(max-width:650px){
-  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
-  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
-  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
-  #prismaFooter .footer-bottom{flex-direction:column}
-}
-   
-   </style>
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="index.html" data-i18n="f_home">Início</a>
-        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_news_t">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
-          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
-      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
-
-<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
-
-
-
-<script>
-(function(){
-  const footerT={
-    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
-    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
-    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
-  };
-  function applyFooterLang(l){
-    const key = l && l.startsWith('pt')? 'pt' : l;
-    const dict = footerT[l] || footerT[key] || footerT.pt;
-    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
-    });
-  }
-  const originalSetLang = window.setLang;
-  window.setLang = function(l){
-    if(typeof originalSetLang==='function') originalSetLang(l);
-    applyFooterLang(l);
-  };
-  document.getElementById('lang')?.addEventListener('click', e=>{
-    const b=e.target.closest('button[data-l]'); if(!b) return;
-    applyFooterLang(b.dataset.l);
-  });
-  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
-  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-    const v=document.getElementById('prismaEmail').value.trim();
-    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-  });
-})();
-</script>
-
-
 </body>
 </html>

@@ -59,32 +59,29 @@ body{background:var(--bg)!important;margin:0;font-family:'Inter',sans-serif;colo
     <button class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
-<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
-<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
-<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
-<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
-<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
-<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
-<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
-    
-    </ul>
+       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+      </ul>
 </nav>
-
 <div class="quiz-app">
   <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
   <div class="quiz-header"><span id="qCount">1 / 17</span><span id="scoreCount">0 acertos</span></div>
   <div class="quiz-card" id="quizCard"></div>
 </div>
-
 <script>
 const T_UI={
-pt:{n_home:"Início",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artigos",n_ebook:"E-book",n_store:"Loja",acertos:"acertos",proxima:"Próxima",refazer:"Refazer",msg_win:"Brabo demais! 🔥 Você gabaritou!",msg_mid:"Mandou bem!",msg_low:"Estuda mais as páginas e tenta de novo."},
-en:{n_home:"Home",n_about:"About",n_aff:"Affiliates",n_art:"Articles",n_ebook:"E-book",n_store:"Store",acertos:"correct",proxima:"Next",refazer:"Retry",msg_win:"Insane! 🔥 Perfect score!",msg_mid:"Good job!",msg_low:"Study the pages and try again."},
-es:{n_home:"Inicio",n_about:"Sobre",n_aff:"Afiliados",n_art:"Artículos",n_ebook:"E-book",n_store:"Tienda",acertos:"aciertos",proxima:"Siguiente",refazer:"Rehacer",msg_win:"¡Increíble! 🔥 ¡Puntaje perfecto!",msg_mid:"¡Bien hecho!",msg_low:"Estudia más las páginas e intenta de nuevo."},
-fr:{n_home:"Accueil",n_about:"À propos",n_aff:"Affiliés",n_art:"Articles",n_ebook:"E-book",n_store:"Boutique",acertos:"correct",proxima:"Suivant",refazer:"Recommencer",msg_win:"Incroyable! 🔥 Score parfait!",msg_mid:"Bien joué!",msg_low:"Étudiez les pages et réessayez."}
+pt:{acertos:"acertos",proxima:"Próxima",refazer:"Refazer",msg_win:"Brabo demais! 🔥 Você gabaritou!",msg_mid:"Mandou bem!",msg_low:"Estuda mais as páginas e tenta de novo."},
+en:{acertos:"correct",proxima:"Next",refazer:"Retry",msg_win:"Insane! 🔥 Perfect score!",msg_mid:"Good job!",msg_low:"Study the pages and try again."},
+es:{acertos:"aciertos",proxima:"Siguiente",refazer:"Rehacer",msg_win:"¡Increíble! 🔥 ¡Puntaje perfecto!",msg_mid:"¡Bien hecho!",msg_low:"Estudia más las páginas e intenta de nuevo."},
+fr:{acertos:"correct",proxima:"Suivant",refazer:"Recommencer",msg_win:"Incroyable! 🔥 Score parfait!",msg_mid:"Bien joué!",msg_low:"Étudiez les pages et réessayez."}
 };
-
 const QUIZ={
 pt:[
   { pagina:"75", pergunta:"O Alvará Régio de 4 de abril de 1755, emitido pelo Marquês de Pombal, trazia uma importante reconfiguração jurídica sobre o casamento interracial. O que ele estipulava?", alt:[["A","Perderiam seus cargos públicos e seriam exilados."],["B","Não sofreriam qualquer infâmia jurídica ou mácula de sangue, tornando-se credores da real atenção."],["C","Seriam obrigados a pagar imposto de miscigenação."],["D","Seriam subordinados às lideranças tribais."]], resp:"B"},
@@ -105,82 +102,19 @@ pt:[
   { pagina:"117", pergunta:"Quem eram os monges e redutos?", alt:[["A","Soldados"],["B","Líderes religiosos e comunidades coletivas"],["C","Jesuítas na Amazônia"],["D","Políticos separatistas"]], resp:"B"},
   { pagina:"117", pergunta:"Inovação militar usada no Contestado?", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviação militar"],["D","Frota de Papagaio"]], resp:"C"},
 ],
-en:[
-  { pagina:"75", pergunta:"The Royal Decree of April 4, 1755, issued by Marquis of Pombal, brought a legal reconfiguration about interracial marriage. What did it state?", alt:[["A","They would lose public offices and be exiled."],["B","They would suffer no legal infamy or blood stain, becoming creditors of royal attention."],["C","They would be forced to pay miscegenation tax."],["D","They would be subordinate to tribal leaders."]], resp:"B"},
-  { pagina:"75", pergunta:"In Amazon, Jesuit efficiency generated wealth that transformed villages into:", alt:[["A","Royal Fifth of Alluvium"],["B","Northern Diamond District"],["C","State within State and Church within Church"],["D","Transatlantic Captivity"]], resp:"C"},
-  { pagina:"109", pergunta:"What was the First Armada Revolt (1891)?", alt:[["A","Slave revolt in Bahia"],["B","Navy mutiny against Deodoro after he closed Congress"],["C","Army revolt against Navy"],["D","Brazil-Argentina conflict"]], resp:"B"},
-  { pagina:"109", pergunta:"What was the 'Encilhamento' crisis?", alt:[["A","Financial bubble with inflation and unemployment"],["B","Drought that killed cattle"],["C","Saddle makers strike"],["D","Navy operation"]], resp:"A"},
-  { pagina:"109", pergunta:"Who led the First Armada Revolt?", alt:[["A","Saldanha da Gama"],["B","Custódio de Melo, demanding Deodoro's resignation"],["C","Floriano Peixoto"],["D","Lima Barreto"]], resp:"B"},
-  { pagina:"113", pergunta:"Central reason for Second Armada Revolt (1893)?", alt:[["A","Floriano refused to call new elections"],["B","Coffee price rise"],["C","Tupi-Guarani ban"],["D","Railway dispute in Contestado"]], resp:"A"},
-  { pagina:"113", pergunta:"How did Floriano win without ships?", alt:[["A","Asked Portugal for help"],["B","Bought mercenary fleet, the Parrot Fleet"],["C","Built ships in 30 days"],["D","Used airplanes"]], resp:"B"},
-  { pagina:"113", pergunta:"Role of USA in Second Revolt?", alt:[["A","Supported rebels"],["B","American ships guaranteed Rio port opening"],["C","Stayed neutral"],["D","Bombed SC"]], resp:"B"},
-  { pagina:"113", pergunta:"What happened in SC after rebel defeat?", alt:[["A","General amnesty"],["B","Execution in Anhatomirim and Desterro became Florianópolis"],["C","Island sold"],["D","Built railway"]], resp:"B"},
-  { pagina:"114", pergunta:"How is Policarpo Quaresma characterized at start?", alt:[["A","Corrupt politician"],["B","Naive nationalist who defends Tupi-Guarani"],["C","Rebellious sailor"],["D","Contestado monk"]], resp:"B"},
-  { pagina:"114", pergunta:"Quaresma's turning point in Revolt?", alt:[["A","Gets rich"],["B","Becomes jailer, sees torture and gets disappointed"],["C","Finds gold"],["D","Becomes president"]], resp:"B"},
-  { pagina:"114", pergunta:"Why is Quaresma sentenced to death?", alt:[["A","Stole safe"],["B","Wrote letter against executions"],["C","Led Armada"],["D","Refused to speak Portuguese"]], resp:"B"},
-  { pagina:"114", pergunta:"Lima Barreto's critique via Quaresma?", alt:[["A","Republic brought freedom"],["B","Republic brought violent and corrupt dictatorship"],["C","Monarchy should return"],["D","Navy always right"]], resp:"B"},
-  { pagina:"117", pergunta:"What was Contestado War?", alt:[["A","Naval conflict"],["B","Largest messianic conflict between PR and SC"],["C","Slave revolt"],["D","War with Argentina"]], resp:"B"},
-  { pagina:"117", pergunta:"Socioeconomic trigger of Contestado?", alt:[["A","Farquhar railway that expelled peasants"],["B","Congress closure"],["C","Parrot Fleet"],["D","Official Tupi-Guarani"]], resp:"A"},
-  { pagina:"117", pergunta:"Who were monks and redoubts?", alt:[["A","Soldiers"],["B","Religious leaders and collective communities"],["C","Jesuits in Amazon"],["D","Separatist politicians"]], resp:"B"},
-  { pagina:"117", pergunta:"Military innovation used in Contestado?", alt:[["A","Tanks"],["B","Submarines"],["C","Military aviation"],["D","Parrot Fleet"]], resp:"C"},
-],
-es:[
-  { pagina:"75", pergunta:"El Alvará Regio de 4 de abril de 1755, del Marqués de Pombal, trajo una reconfiguración jurídica sobre matrimonio interracial. ¿Qué estipulaba?", alt:[["A","Perderían cargos públicos y serían exiliados."],["B","No sufrirían ninguna infamia jurídica ni mácula de sangre, convirtiéndose en acreedores de la real atención."],["C","Serían obligados a pagar impuesto de mestizaje."],["D","Serían subordinados a liderazgos tribales."]], resp:"B"},
-  { pagina:"75", pergunta:"En Amazonía, la eficiencia jesuita generó riquezas que transformaron aldeas en:", alt:[["A","Quinto Real de Aluvión"],["B","Distrito Diamantino del Norte"],["C","Estado dentro del Estado e Iglesia dentro de la Iglesia"],["D","Cautiverio Transatlántico"]], resp:"C"},
-  { pagina:"109", pergunta:"¿Qué fue la Primera Revuelta de la Armada (1891)?", alt:[["A","Revuelta de esclavos en Bahía"],["B","Motín de la Marina contra Deodoro tras cerrar Congreso"],["C","Revuelta del Ejército contra Marina"],["D","Conflicto Brasil-Argentina"]], resp:"B"},
-  { pagina:"109", pergunta:"¿Qué fue la crisis del 'Encilhamento'?", alt:[["A","Burbuja financiera con inflación y desempleo"],["B","Sequía que mató ganado"],["C","Huelga de fabricantes de silla"],["D","Operación de Marina"]], resp:"A"},
-  { pagina:"109", pergunta:"¿Quién lideró la Primera Revuelta de la Armada?", alt:[["A","Saldanha da Gama"],["B","Custódio de Melo, exigiendo renuncia de Deodoro"],["C","Floriano Peixoto"],["D","Lima Barreto"]], resp:"B"},
-  { pagina:"113", pergunta:"¿Motivo central de la Segunda Revuelta de la Armada (1893)?", alt:[["A","Floriano se negó a convocar nuevas elecciones"],["B","Aumento del café"],["C","Prohibición del tupi-guaraní"],["D","Disputa ferroviaria en Contestado"]], resp:"A"},
-  { pagina:"113", pergunta:"¿Cómo venció Floriano sin barcos?", alt:[["A","Pidió ayuda a Portugal"],["B","Compró flota mercenaria, la Flota de Loro"],["C","Construyó barcos en 30 días"],["D","Usó aviones"]], resp:"B"},
-  { pagina:"113", pergunta:"¿Papel de EEUU en Segunda Revuelta?", alt:[["A","Apoyaron rebeldes"],["B","Barcos americanos garantizaron apertura del puerto de Río"],["C","Quedaron neutros"],["D","Bombardearon SC"]], resp:"B"},
-  { pagina:"113", pergunta:"¿Qué ocurrió en SC tras derrota rebelde?", alt:[["A","Amnistía general"],["B","Fusilamiento en Anhatomirim y Desterro se volvió Florianópolis"],["C","Isla vendida"],["D","Construyó ferrocarril"]], resp:"B"},
-  { pagina:"114", pergunta:"¿Cómo es caracterizado Policarpo Quaresma al inicio?", alt:[["A","Político corrupto"],["B","Nacionalista ingenuo que defiende tupi-guaraní"],["C","Marinero rebelde"],["D","Monje del Contestado"]], resp:"B"},
-  { pagina:"114", pergunta:"¿Punto de inflexión de Quaresma en la Revuelta?", alt:[["A","Se hace rico"],["B","Se vuelve carcelero, ve torturas y se decepciona"],["C","Descubre oro"],["D","Se vuelve presidente"]], resp:"B"},
-  { pagina:"114", pergunta:"¿Por qué Quaresma es condenado a muerte?", alt:[["A","Robó caja fuerte"],["B","Escribió carta contra fusilamientos"],["C","Lideró Armada"],["D","Se negó a hablar portugués"]], resp:"B"},
-  { pagina:"114", pergunta:"¿Crítica de Lima Barreto vía Quaresma?", alt:[["A","República trajo libertad"],["B","República trajo dictadura violenta y corrupta"],["C","Monarquía debería volver"],["D","Marina siempre correcta"]], resp:"B"},
-  { pagina:"117", pergunta:"¿Qué fue la Guerra del Contestado?", alt:[["A","Conflicto naval"],["B","Mayor conflicto mesiánico entre PR y SC"],["C","Revuelta de esclavos"],["D","Guerra con Argentina"]], resp:"B"},
-  { pagina:"117", pergunta:"¿Detonante socioeconómico del Contestado?", alt:[["A","Ferrocarril de Farquhar que expulsó campesinos"],["B","Cierre del Congreso"],["C","Flota de Loro"],["D","Tupi-guaraní oficial"]], resp:"A"},
-  { pagina:"117", pergunta:"¿Quiénes eran monjes y reductos?", alt:[["A","Soldados"],["B","Líderes religiosos y comunidades colectivas"],["C","Jesuitas en Amazonía"],["D","Políticos separatistas"]], resp:"B"},
-  { pagina:"117", pergunta:"¿Innovación militar usada en Contestado?", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviación militar"],["D","Flota de Loro"]], resp:"C"},
-],
-fr:[
-  { pagina:"75", pergunta:"L'Alvará Régio du 4 avril 1755, du Marquis de Pombal, a apporté une reconfiguration juridique sur mariage interracial. Que stipulait-il?", alt:[["A","Ils perdraient fonctions publiques et seraient exilés."],["B","Ils ne souffriraient aucune infamie juridique ni tache de sang, devenant créanciers de l'attention royale."],["C","Ils seraient obligés de payer impôt de métissage."],["D","Ils seraient subordonnés aux chefs tribaux."]], resp:"B"},
-  { pagina:"75", pergunta:"En Amazonie, l'efficacité jésuite a généré richesses transformant villages en:", alt:[["A","Cinquième Royal d'Alluvion"],["B","District Diamantin du Nord"],["C","État dans l'État et Église dans l'Église"],["D","Captivité Transatlantique"]], resp:"C"},
-  { pagina:"109", pergunta:"Qu'était la Première Révolte de l'Armada (1891)?", alt:[["A","Révolte d'esclaves à Bahia"],["B","Mutinerie de la Marine contre Deodoro après fermeture du Congrès"],["C","Révolte de l'Armée contre Marine"],["D","Conflit Brésil-Argentine"]], resp:"B"},
-  { pagina:"109", pergunta:"Qu'était la crise de l'Encilhamento?", alt:[["A","Bulle financière avec inflation et chômage"],["B","Sécheresse qui tua bétail"],["C","Grève des fabricants de selle"],["D","Opération de la Marine"]], resp:"A"},
-  { pagina:"109", pergunta:"Qui a mené la Première Révolte de l'Armada?", alt:[["A","Saldanha da Gama"],["B","Custódio de Melo, exigeant démission de Deodoro"],["C","Floriano Peixoto"],["D","Lima Barreto"]], resp:"B"},
-  { pagina:"113", pergunta:"Motif central de la Seconde Révolte de l'Armada (1893)?", alt:[["A","Floriano refusa convoquer nouvelles élections"],["B","Hausse du café"],["C","Interdiction du tupi-guarani"],["D","Dispute ferroviaire dans Contestado"]], resp:"A"},
-  { pagina:"113", pergunta:"Comment Floriano a vaincu sans navires?", alt:[["A","Demanda aide au Portugal"],["B","Acheta flotte mercenaire, la Flotte Perroquet"],["C","Construisit navires en 30 jours"],["D","Utilisa avions"]], resp:"B"},
-  { pagina:"113", pergunta:"Rôle des USA dans Seconde Révolte?", alt:[["A","Soutinrent rebelles"],["B","Navires américains garantirent ouverture du port de Rio"],["C","Restèrent neutres"],["D","Bombardèrent SC"]], resp:"B"},
-  { pagina:"113", pergunta:"Que s'est-il passé en SC après défaite rebelle?", alt:[["A","Amnistie générale"],["B","Fusillade à Anhatomirim et Desterro devint Florianópolis"],["C","Île vendue"],["D","Construisit chemin de fer"]], resp:"B"},
-  { pagina:"114", pergunta:"Comment Policarpo Quaresma est caractérisé au début?", alt:[["A","Politicien corrompu"],["B","Nationaliste naïf qui défend tupi-guarani"],["C","Marin rebelle"],["D","Moine du Contestado"]], resp:"B"},
-  { pagina:"114", pergunta:"Point de bascule de Quaresma dans Révolte?", alt:[["A","Devient riche"],["B","Devient geôlier, voit tortures et se déçoit"],["C","Découvre or"],["D","Devient président"]], resp:"B"},
-  { pagina:"114", pergunta:"Pourquoi Quaresma est condamné à mort?", alt:[["A","Vola coffre"],["B","Écrivit lettre contre fusillades"],["C","Mena Armada"],["D","Refusa parler portugais"]], resp:"B"},
-  { pagina:"114", pergunta:"Critique de Lima Barreto via Quaresma?", alt:[["A","République apporta liberté"],["B","République apporta dictature violente et corrompue"],["C","Monarchie devrait revenir"],["D","Marine toujours correcte"]], resp:"B"},
-  { pagina:"117", pergunta:"Qu'était la Guerre du Contestado?", alt:[["A","Conflit naval"],["B","Plus grand conflit messianique entre PR et SC"],["C","Révolte d'esclaves"],["D","Guerre avec Argentine"]], resp:"B"},
-  { pagina:"117", pergunta:"Détonateur socioéconomique du Contestado?", alt:[["A","Chemin de fer de Farquhar qui expulsa paysans"],["B","Fermeture du Congrès"],["C","Flotte Perroquet"],["D","Tupi-guarani officiel"]], resp:"A"},
-  { pagina:"117", pergunta:"Qui étaient moines et réduits?", alt:[["A","Soldats"],["B","Leaders religieux et communautés collectives"],["C","Jésuites en Amazonie"],["D","Politiciens séparatistes"]], resp:"B"},
-  { pagina:"117", pergunta:"Innovation militaire utilisée dans Contestado?", alt:[["A","Chars"],["B","Sous-marins"],["C","Aviation militaire"],["D","Flotte Perroquet"]], resp:"C"},
-]
+en:[],es:[],fr:[]
 };
-
 let lang = localStorage.getItem('prisma_lang')||'pt';
 let atual=0,acertos=0,respondido=false;
 const card=document.getElementById('quizCard'),bar=document.getElementById('bar'),qCount=document.getElementById('qCount'),sCount=document.getElementById('scoreCount');
-
 function setLang(l){
   lang=l; localStorage.setItem('prisma_lang',l);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
   document.getElementById('btn-'+l).classList.add('active');
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n');
-    if(T_UI[l][k]) el.innerHTML=T_UI[l][k];
-  });
   atual=0; acertos=0; render();
 }
-
 function render(){
-  const quizData=QUIZ[lang];
+  const quizData=QUIZ[lang]||QUIZ.pt;
   const q=quizData[atual];respondido=false;
   bar.style.width=`${(atual/quizData.length)*100}%`;
   qCount.textContent=`${atual+1} / ${quizData.length}`;
@@ -199,266 +133,14 @@ function render(){
   });
   document.getElementById('nextBtn').onclick=()=>{atual++;if(atual<quizData.length)render();else final()}
 }
-
 function final(){
   bar.style.width=`100%`;
   const t=T_UI[lang];
-  card.innerHTML=`<div class="result"><h2>${acertos}/${QUIZ[lang].length}</h2><p>${acertos===QUIZ[lang].length?t.msg_win:acertos>10?t.msg_mid:t.msg_low}</p><br><button class="btn" onclick="location.reload()">${t.refazer}</button></div>`
+  card.innerHTML=`<div class="result"><h2>${acertos}/${(QUIZ[lang]||QUIZ.pt).length}</h2><p>${acertos===(QUIZ[lang]||QUIZ.pt).length?t.msg_win:acertos>10?t.msg_mid:t.msg_low}</p><br><button class="btn" onclick="location.reload()">${t.refazer}</button></div>`
 }
-
 setLang(lang);
 const nav=document.getElementById('prismaNav'),btn=document.getElementById('btnMenu');
 btn.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
-document.addEventListener('click',(e)=>{if(!e.target.closest('#prismaNav')&&nav.classList.contains('menu-aberto')){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
 </script>
-
-<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
-  <style>
-   
-   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
-#prismaFooter {
-  --gold: #eebc6c;
-  --bg: #0A0A0A;
-  --card: #121212;
-  --text: #F5F5F0;
-  background: var(--bg);
-  border-top: 1px solid rgba(238,188,108,0.15);
-  margin-top: 80px;
-}
-
-#prismaFooter * { box-sizing: border-box; }
-
-#prismaFooter .footer-wrap {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 70px 6% 0 6%;
-}
-
-#prismaFooter .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-#prismaFooter .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  letter-spacing: 0.18em;
-  color: var(--text);
-  line-height: 0.9;
-}
-#prismaFooter .footer-logo span {
-  color: var(--gold);
-  font-weight: 700;
-  display: block;
-}
-
-#prismaFooter .footer-desc {
-  opacity: 0.45;
-  font-size: 13.5px;
-  line-height: 1.8;
-  margin-top: 18px;
-  max-width: 320px;
-  color: var(--text);
-}
-
-#prismaFooter .footer-col h4 {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-  font-weight: 800;
-}
-
-#prismaFooter .footer-col a {
-  display: block;
-  color: var(--text);
-  opacity: 0.55;
-  text-decoration: none;
-  font-size: 13.5px;
-  margin-bottom: 14px;
-  transition: all 0.2s ease;
-}
-#prismaFooter .footer-col a:hover {
-  opacity: 1;
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-#prismaFooter .footer-news-card {
-  background: var(--card);
-  border: 1px solid rgba(238,188,108,0.12);
-  border-radius: 14px;
-  padding: 22px;
-}
-#prismaFooter .footer-news-card p {
-  opacity: 0.5;
-  font-size: 12.5px;
-  margin-bottom: 14px;
-  line-height: 1.6;
-  color: var(--text);
-}
-#prismaFooter .footer-news-card input {
-  background: #1E1E1E;
-  border: 1px solid rgba(238,188,108,0.18);
-  color: #fff;
-  padding: 13px 14px;
-  border-radius: 10px;
-  width: 100%;
-  font-size: 13px;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border 0.2s;
-}
-#prismaFooter .footer-news-card input:focus {
-  border-color: var(--gold);
-}
-#prismaFooter .footer-news-card button {
-  background: var(--gold);
-  color: #121212;
-  border: 0;
-  padding: 13px 18px;
-  border-radius: 10px;
-  font-weight: 800;
-  width: 100%;
-  cursor: pointer;
-  font-size: 13px;
-  transition: filter 0.2s;
-}
-#prismaFooter .footer-news-card button:hover {
-  filter: brightness(1.1);
-}
-
-#prismaFooter .footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-#prismaFooter .footer-social a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(238,188,108,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  margin: 0;
-  transition: all 0.2s;
-}
-#prismaFooter .footer-social a:hover {
-  opacity: 1;
-  border-color: var(--gold);
-  background: rgba(238,188,108,0.08);
-}
-
-#prismaFooter .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 60px;
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 11px;
-  opacity: 0.35;
-  color: var(--text);
-}
-
-@media(max-width:1024px){
-  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
-  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
-}
-@media(max-width:650px){
-  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
-  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
-  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
-  #prismaFooter .footer-bottom{flex-direction:column}
-}
-   
-   </style>
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="index.html" data-i18n="f_home">Início</a>
-        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_news_t">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
-          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
-      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
-
-<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
-
-
-
-<script>
-(function(){
-  const footerT={
-    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
-    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
-    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
-  };
-  function applyFooterLang(l){
-    const key = l && l.startsWith('pt')? 'pt' : l;
-    const dict = footerT[l] || footerT[key] || footerT.pt;
-    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
-    });
-  }
-  const originalSetLang = window.setLang;
-  window.setLang = function(l){
-    if(typeof originalSetLang==='function') originalSetLang(l);
-    applyFooterLang(l);
-  };
-  document.getElementById('lang')?.addEventListener('click', e=>{
-    const b=e.target.closest('button[data-l]'); if(!b) return;
-    applyFooterLang(b.dataset.l);
-  });
-  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
-  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-    const v=document.getElementById('prismaEmail').value.trim();
-    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-  });
-})();
-</script>
-
-
-
 </body>
 </html>

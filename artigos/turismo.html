@@ -25,7 +25,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
 .prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
 .hero{position:relative;min-height:85vh;display:flex;align-items:center;padding:120px 5% 60px;background:linear-gradient(0deg,#121212 5%,rgba(18,18,18,0.6) 40%,rgba(18,18,18,0.2)), url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070') center/cover}
 .hero-content{max-width:1200px;margin:auto;width:100%}
 .tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}
@@ -35,12 +34,10 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
 .stats{display:flex;gap:30px;margin-top:30px}
 .stats b{font-family:'Cormorant Garamond';font-size:32px;color:var(--ouro);display:block;line-height:1}
 .stats span{font-size:11px;letter-spacing:0.1em;opacity:0.5;text-transform:uppercase}
-
 .container{max-width:1200px;margin:auto;padding:0 5%}
 .sec{padding:80px 0}
 .sec h2{font-family:'Cormorant Garamond';font-size:48px;line-height:1;margin-bottom:12px}
 .sec.sub{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:12px;font-weight:800;margin-bottom:40px}
-
 .grid-destinos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card-destino{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;overflow:hidden;transition:0.4s;position:relative}
 .card-destino:hover{transform:translateY(-8px);border-color:rgba(238,188,108,0.4)}
@@ -54,7 +51,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
 .meta span{display:flex;align-items:center;gap:4px}
 .btn-map{background:rgba(255,255,255,0.06);border:1px solid var(--borda);color:var(--creme);padding:10px 14px;border-radius:8px;font-size:12px;text-decoration:none;display:inline-block;transition:0.3s}
 .btn-map:hover{background:var(--ouro);color:#000;border-color:var(--ouro)}
-
 .rota{background:#0B0B0B;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
 .timeline{display:flex;flex-direction:column;gap:0;max-width:800px;margin:auto}
 .t-item{display:flex;gap:24px;padding:30px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
@@ -62,13 +58,11 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
 .t-num{font-family:'Cormorant Garamond';font-size:42px;color:var(--ouro);line-height:1;min-width:60px}
 .t-content h4{font-family:'Cormorant Garamond';font-size:22px;margin-bottom:6px}
 .t-content p{opacity:0.6;font-size:14.5px}
-
 .cta{background:linear-gradient(135deg,#1E1E1E,#121212);border:1px solid var(--borda);border-radius:20px;padding:50px;text-align:center;margin-top:60px}
 .cta h3{font-family:'Cormorant Garamond';font-size:38px;margin-bottom:12px}
 .cta p{opacity:0.6;margin-bottom:24px}
 .btn-cta{background:var(--ouro);color:#121212;padding:16px 32px;border-radius:100px;text-decoration:none;font-weight:800;display:inline-block;transition:0.3s}
 .btn-cta:hover{background:#fff;transform:translateY(-2px)}
-
 @media(max-width:900px){.grid-destinos{grid-template-columns:1fr}.hero{min-height:70vh}.stats{flex-wrap:wrap}}
 </style>
 </head>
@@ -83,25 +77,25 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
         <button onclick="setLang('es')" id="btn-es">ES</button>
         <button onclick="setLang('fr')" id="btn-fr">FR</button>
       </div>
-      <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
     </div>
     <ul class="prisma-menu-links">
-       <li><a href="../index.html" data-n="01" data-i="m_inicio"><span class="material-icons">home</span> <span data-i18n="nav_inicio">INÍCIO</span></a></li>
-<li><a href="sobre.html" data-n="02" data-i="m_sobre"><span class="material-icons">info</span> <span data-i18n="nav_sobre">SOBRE</span></a></li>
-<li><a href="afiliados.html" data-n="03" data-i="m_afiliados"><span class="material-icons">handshake</span> <span data-i18n="nav_afiliados">AFILIADOS</span></a></li>
-<li><a href="artigos.html" data-n="04" data-i="m_artigos"><span class="material-icons">article</span> <span data-i18n="nav_artigos">ARTIGOS</span></a></li>
-<li><a href="curiosidades.html" data-n="05" data-i="m_curiosidades"><span class="material-icons">lightbulb</span> <span data-i18n="nav_curiosidades">CURIOSIDADES</span></a></li>
-<li><a href="quiz.html" data-n="06" data-i="m_quiz"><span class="material-icons">quiz</span> <span data-i18n="nav_quiz">QUIZ</span></a></li>
-<li><a href="ebook.html" data-n="07" data-i="m_ebook"><span class="material-icons">menu_book</span> <span data-i18n="nav_ebook">E-BOOK</span></a></li>
-<li><a href="loja.html" data-n="08" data-i="m_loja"><span class="material-icons">store</span> <span data-i18n="nav_loja">LOJA</span></a></li>
-    
+       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
     </ul>
 </nav>
 
 <section class="hero">
   <div class="hero-content">
     <span class="tag" data-i18n="tag">🇧🇷 ROTEIRO UNESCO • 8 DESTINOS IMPERDÍVEIS</span>
-    <h1 data-i18n="h1">Onde o Brasil<br><span ainda respira</span><br>Colônia</h1>
+    <h1 data-i18n="h1">Onde o Brasil<br><span>ainda respira</span><br>Colônia</h1>
     <p data-i18n="sub">Não é turismo de praia. É viagem no tempo. Das minas de ouro às ruas de pedra onde escravizados, inquisidores e barões escreveram a história com sangue e ouro.</p>
     <div class="stats">
       <div><b>8</b><span data-i18n="st1">Cidades UNESCO</span></div>
@@ -115,7 +109,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
   <div class="container">
     <h2 data-i18n="sec1_t">O Circuito do Ouro e da Fé</h2>
     <p class="sub" data-i18n="sec1_s">De Minas às Praias - Roteiro que os gringos amam</p>
-
     <div class="grid-destinos">
       <article class="card-destino">
         <span class="badge-top">TOP 1 • MINAS</span>
@@ -128,7 +121,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
           <br><a class="btn-map" href="https://maps.google.com/?q=Ouro+Preto" target="_blank" data-i18n="map">Ver no Mapa →</a>
         </div>
       </article>
-
       <article class="card-destino">
         <span class="badge-top" style="background:#fff">BARROCO PURO</span>
         <img src="https://images.unsplash.com/photo-1593996113604-aae39b42a0dd?q=80&w=800" alt="Congonhas">
@@ -140,7 +132,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
           <br><a class="btn-map" href="https://maps.google.com/?q=Congonhas+Minas" target="_blank" data-i18n="map">Ver no Mapa →</a>
         </div>
       </article>
-
       <article class="card-destino">
         <img src="https://images.unsplash.com/photo-1551279880-e483a1d5d181?q=80&w=800" alt="Olinda">
         <div class="card-body">
@@ -151,7 +142,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
           <br><a class="btn-map" href="https://maps.google.com/?q=Olinda" target="_blank" data-i18n="map">Ver no Mapa →</a>
         </div>
       </article>
-
       <article class="card-destino">
         <span class="badge-top">PELOURINHO</span>
         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800" alt="Salvador">
@@ -163,7 +153,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
           <br><a class="btn-map" href="https://maps.google.com/?q=Pelourinho+Salvador" target="_blank" data-i18n="map">Ver no Mapa →</a>
         </div>
       </article>
-
       <article class="card-destino">
         <img src="https://images.unsplash.com/photo-1595204013736-496ff0d6d5a4?q=80&w=800" alt="Paraty">
         <div class="card-body">
@@ -174,7 +163,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
           <br><a class="btn-map" href="https://maps.google.com/?q=Paraty" target="_blank" data-i18n="map">Ver no Mapa →</a>
         </div>
       </article>
-
       <article class="card-destino">
         <span class="badge-top" style="background:#000;color:#eebc6c;border:1px solid #eebc6c">JOIA SECRETA</span>
         <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=800" alt="São Luis">
@@ -187,7 +175,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
         </div>
       </article>
     </div>
-
     <div class="cta">
       <h3 data-i18n="cta_t">Quer o roteiro completo de 15 dias?</h3>
       <p data-i18n="cta_p">Mapa da Estrada Real, onde ficar, custos reais e os lugares que os guias não contam (incluindo Inquisição). Tá tudo no e-book.</p>
@@ -299,255 +286,11 @@ function setLang(l){
 }
 setLang(localStorage.getItem('prisma_lang')||'pt');
 const nav=document.getElementById('prismaNav');
-nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.getElementById('btnMenu').addEventListener('click',(e)=>{
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+});
 </script>
-
-<footer id="prismaFooter" style="background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.15);padding:0;margin-top:80px;width:100%;display:block;box-sizing:border-box">
-  <style>
-   
-   /* ===== PRISMA FOOTER - PROFISSIONAL ===== */
-#prismaFooter {
-  --gold: #eebc6c;
-  --bg: #0A0A0A;
-  --card: #121212;
-  --text: #F5F5F0;
-  background: var(--bg);
-  border-top: 1px solid rgba(238,188,108,0.15);
-  margin-top: 80px;
-}
-
-#prismaFooter * { box-sizing: border-box; }
-
-#prismaFooter .footer-wrap {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 70px 6% 0 6%;
-}
-
-#prismaFooter .footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr 0.8fr 1.1fr;
-  gap: 60px;
-  align-items: start;
-}
-
-#prismaFooter .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 30px;
-  letter-spacing: 0.18em;
-  color: var(--text);
-  line-height: 0.9;
-}
-#prismaFooter .footer-logo span {
-  color: var(--gold);
-  font-weight: 700;
-  display: block;
-}
-
-#prismaFooter .footer-desc {
-  opacity: 0.45;
-  font-size: 13.5px;
-  line-height: 1.8;
-  margin-top: 18px;
-  max-width: 320px;
-  color: var(--text);
-}
-
-#prismaFooter .footer-col h4 {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-  font-weight: 800;
-}
-
-#prismaFooter .footer-col a {
-  display: block;
-  color: var(--text);
-  opacity: 0.55;
-  text-decoration: none;
-  font-size: 13.5px;
-  margin-bottom: 14px;
-  transition: all 0.2s ease;
-}
-#prismaFooter .footer-col a:hover {
-  opacity: 1;
-  color: var(--gold);
-  transform: translateX(4px);
-}
-
-#prismaFooter .footer-news-card {
-  background: var(--card);
-  border: 1px solid rgba(238,188,108,0.12);
-  border-radius: 14px;
-  padding: 22px;
-}
-#prismaFooter .footer-news-card p {
-  opacity: 0.5;
-  font-size: 12.5px;
-  margin-bottom: 14px;
-  line-height: 1.6;
-  color: var(--text);
-}
-#prismaFooter .footer-news-card input {
-  background: #1E1E1E;
-  border: 1px solid rgba(238,188,108,0.18);
-  color: #fff;
-  padding: 13px 14px;
-  border-radius: 10px;
-  width: 100%;
-  font-size: 13px;
-  margin-bottom: 10px;
-  outline: none;
-  transition: border 0.2s;
-}
-#prismaFooter .footer-news-card input:focus {
-  border-color: var(--gold);
-}
-#prismaFooter .footer-news-card button {
-  background: var(--gold);
-  color: #121212;
-  border: 0;
-  padding: 13px 18px;
-  border-radius: 10px;
-  font-weight: 800;
-  width: 100%;
-  cursor: pointer;
-  font-size: 13px;
-  transition: filter 0.2s;
-}
-#prismaFooter .footer-news-card button:hover {
-  filter: brightness(1.1);
-}
-
-#prismaFooter .footer-social {
-  display: flex;
-  gap: 10px;
-  margin-top: 22px;
-}
-#prismaFooter .footer-social a {
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(238,188,108,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.6;
-  margin: 0;
-  transition: all 0.2s;
-}
-#prismaFooter .footer-social a:hover {
-  opacity: 1;
-  border-color: var(--gold);
-  background: rgba(238,188,108,0.08);
-}
-
-#prismaFooter .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  margin-top: 60px;
-  padding: 22px 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 11px;
-  opacity: 0.35;
-  color: var(--text);
-}
-
-@media(max-width:1024px){
-  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr; gap:40px}
-  #prismaFooter .footer-grid > div:last-child{grid-column:1/-1; max-width:400px}
-}
-@media(max-width:650px){
-  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
-  #prismaFooter .footer-wrap{padding:50px 5% 0 5%}
-  #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
-  #prismaFooter .footer-bottom{flex-direction:column}
-}
-   
-   </style>
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-i18n="f_desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-        <div class="footer-social"><a href="#">📷</a><a href="#">▶️</a><a href="mailto:cronologia.prisma.historico@gmail.com">✉️</a></div>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_nav_t">Navegação</h4>
-        <a href="index.html" data-i18n="f_home">Início</a>
-        <a href="sobre.html" data-i18n="f_about">Sobre o Projeto</a>
-        <a href="artigos.html" data-i18n="f_art">Artigos</a>
-        <a href="curiosidades.html" data-i18n="f_curios">Curiosidades</a>
-        <a href="quiz.html" data-i18n="f_quiz">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_prod_t">Produtos</h4>
-        <a href="ebook.html" data-i18n="f_ebook">📘 E-book Completo</a>
-        <a href="loja.html" data-i18n="f_store">🛒 Loja Oficial</a>
-        <a href="afiliados.html" data-i18n="f_aff">🤝 Afiliados</a>
-        <a href="doacao.html" data-i18n="f_donate">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html" data-i18n="f_priv">🔒 Privacidade</a>
-        <a href="termos.html" data-i18n="f_terms">📄 Termos de Uso</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-i18n="f_news_t">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-i18n="f_news_d">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-i18n="f_news_b">Entrar pro Clube →</button>
-          <p style="opacity:0.3;font-size:10.5px;margin:10px 0 0 0;color:#F5F5F0" data-i18n="f_news_s">Sem spam. Só história braba.</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico — <span data-i18n="f_desc2">Abordagem analítica</span></span>
-      <span data-i18n="f_made">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
-
-<div id="cookie-banner"><p data-i="ck_txt">Usamos cookies para salvar seu idioma e melhorar sua experiência.</p><button id="ck_btn" data-i="ck_btn">ACEITAR</button></div>
-
-
-
-<script>
-(function(){
-  const footerT={
-    pt:{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    "pt-BR":{f_desc:"Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica. Feito por estudante, para quem quer ser aprovado.",f_nav_t:"Navegação",f_home:"Início",f_about:"Sobre o Projeto",f_art:"Artigos",f_curios:"Curiosidades",f_quiz:"Quiz Histórico",f_tour:"🌍 Turismo Colonial",f_prod_t:"Produtos",f_ebook:"📘 E-book Completo",f_store:"🛒 Loja Oficial",f_aff:"🤝 Afiliados",f_donate:"💰 Doação PIX / PayPal",f_priv:"🔒 Privacidade",f_terms:"📄 Termos de Uso",f_news_t:"Clube Prisma",f_news_d:"Receba roteiros secretos e aulas que não vão pro site. Grátis.",f_news_b:"Entrar pro Clube →",f_news_s:"Sem spam. Só história braba.",f_desc2:"Abordagem analítica da História do Brasil",f_made:"Feito com ☕ e 4h de sono em São Paulo • LGPD • GDPR • CCPA"},
-    en:{f_desc:"Analytical approach to Brazilian History.",f_nav_t:"Navigation",f_home:"Home",f_about:"About",f_art:"Articles",f_curios:"Curiosities",f_quiz:"History Quiz",f_tour:"🌍 Colonial Tourism",f_prod_t:"Products",f_ebook:"📘 Full E-book",f_store:"🛒 Official Store",f_aff:"🤝 Affiliates",f_donate:"💰 Donate via PayPal",f_priv:"🔒 Privacy",f_terms:"📄 Terms",f_news_t:"Prisma Club",f_news_d:"Get secret itineraries. Free.",f_news_b:"Join Club →",f_news_s:"No spam.",f_desc2:"Analytical approach",f_made:"Made with ☕ in São Paulo"},
-    es:{f_desc:"Enfoque analítico de la Historia de Brasil.",f_nav_t:"Navegación",f_home:"Inicio",f_about:"Sobre",f_art:"Artículos",f_curios:"Curiosidades",f_quiz:"Quiz",f_tour:"🌍 Turismo Colonial",f_prod_t:"Productos",f_ebook:"📘 E-book",f_store:"🛒 Tienda",f_aff:"🤝 Afiliados",f_donate:"💰 Donar",f_priv:"🔒 Privacidad",f_terms:"📄 Términos",f_news_t:"Club Prisma",f_news_d:"Recibe itinerarios secretos. Gratis.",f_news_b:"Entrar →",f_news_s:"Sin spam.",f_desc2:"Enfoque analítico",f_made:"Hecho con ☕ en São Paulo"},
-    fr:{f_desc:"Approche analytique de l'Histoire du Brésil.",f_nav_t:"Navigation",f_home:"Accueil",f_about:"À propos",f_art:"Articles",f_curios:"Curiosités",f_quiz:"Quiz",f_tour:"🌍 Tourisme Colonial",f_prod_t:"Produits",f_ebook:"📘 E-book",f_store:"🛒 Boutique",f_aff:"🤝 Affiliés",f_donate:"💰 Faire un don",f_priv:"🔒 Confidentialité",f_terms:"📄 Conditions",f_news_t:"Club Prisma",f_news_d:"Recevez itinéraires secrets. Gratuit.",f_news_b:"Rejoindre →",f_news_s:"Pas de spam.",f_desc2:"Approche analytique",f_made:"Fait avec ☕ à São Paulo"}
-  };
-  function applyFooterLang(l){
-    const key = l && l.startsWith('pt')? 'pt' : l;
-    const dict = footerT[l] || footerT[key] || footerT.pt;
-    document.querySelectorAll('#prismaFooter [data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n'); if(dict[k]) el.textContent=dict[k];
-    });
-  }
-  const originalSetLang = window.setLang;
-  window.setLang = function(l){
-    if(typeof originalSetLang==='function') originalSetLang(l);
-    applyFooterLang(l);
-  };
-  document.getElementById('lang')?.addEventListener('click', e=>{
-    const b=e.target.closest('button[data-l]'); if(!b) return;
-    applyFooterLang(b.dataset.l);
-  });
-  applyFooterLang(localStorage.getItem('lang') || localStorage.getItem('prisma_lang') || 'pt-BR');
-  document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-    const v=document.getElementById('prismaEmail').value.trim();
-    if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-    alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-  });
-})();
-</script>
-
-
 </body>
 </html>
