@@ -16,18 +16,21 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
 .lang-switch{display:flex;gap:6px;z-index:10001}
 .lang-switch button{background:transparent;border:1px solid #333;color:var(--off);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
 .lang-switch button.active{background:var(--sepia);color:#121212;border-color:var(--sepia);font-weight:800}
-/*hamburguer gaveta */
-
 .prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid #333!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
 .prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:#eebc6c!important;display:block!important;transition:0.25s!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+
+/* CORRIGIDO AQUI - tirei o espaço */
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+
 .prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(238,188,108,0.15)!important}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+
+/* CORRIGIDO AQUI TAMBÉM */
+.prisma-nav .menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
+
 .prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:#F5F5F0!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
 .prisma-menu-links li a:hover{color:#eebc6c!important;opacity:1!important}
-
 .header{text-align:center;padding:40px 20px}
 .header h1{font-family:'Cormorant Garamond',serif;font-size:42px}
 .header h1 em{color:var(--sepia);font-style:italic}
@@ -38,14 +41,15 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
 .card img{width:100%;height:180px;object-fit:cover}
 .card-body{padding:20px}
 .card-body span{font-size:10px;letter-spacing:0.15em;color:var(--sepia)}
-.card-body h3{margin:8px 0;font-size:18px}
-.card-body p{font-size:14px;opacity:0.7;line-height:1.6}
+.card-body h3{margin:8px 0;font-size:18px; min-height:44px}
+.card-body p{font-size:14px;opacity:0.7;line-height:1.6; min-height:70px}
 .btn{display:block;margin-top:16px;text-align:center;background:var(--sepia);color:#000;padding:12px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:0.05em}
 .btn:hover{background:#fff}
 </style>
 </head>
 <body>
-<nav class="prisma-nav" id="prismaNav">
+
+  <nav class="prisma-nav" id="prismaNav">
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="lang-switch">
@@ -54,37 +58,40 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
       <button onclick="setLang('es')" id="btn-es">ES</button>
       <button onclick="setLang('fr')" id="btn-fr">FR</button>
     </div>
-    <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-       <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-    </ul>
+       <li><a href="../index.html">INÍCIO</a></li>
+       <li><a href="sobre.html">SOBRE</a></li>
+       <li><a href="afiliados.html">AFILIADOS</a></li>
+       <li><a href="artigos.html">ARTIGOS</a></li>
+       <li><a href="curiosidades.html">CURIOSIDADES</a></li>
+       <li><a href="quiz.html">QUIZ</a></li>
+       <li><a href="ebook.html">E-BOOK</a></li>
+       <li><a href="loja.html">LOJA</a></li>
+       <li><a href="turismo.html">TURISMO COLONIAL</a></li>
+  </ul>
 </nav>
+
 <div class="header">
   <h1 data-i18n="h1">Loja <em>Prisma</em></h1>
   <p data-i18n="sub">Indicações que usamos para estudar - links afiliados</p>
 </div>
 <p class="badge-afiliado" data-i18n="badge">AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
+
 <div class="loja">
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Livro">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600" alt="Writelytic">
     <div class="card-body">
-      <span data-i18n="cat1">LIVROS</span>
-      <h3 data-i18n="p1_t">Box Brasil Pré-Colonial</h3>
-      <p data-i18n="p1_d">3 livros essenciais sobre Pau-Brasil e capitanias.</p>
-      <a class="btn" href="https://amzn.to/SEU_ID_BR" target="_blank" data-i18n="p1_btn">VER NA AMAZON</a>
+      <span data-i18n="cat1">WRITELYTIC</span>
+      <h3 data-i18n="p1_t">Writelytic - IA para Escrita</h3>
+      <p data-i18n="p1_d">Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação com seu público.</p>
+      <a class="btn" id="link-writelytic" href="https://writelytic.com/es/#aff=cricardomoraes7738e1" target="_blank" data-i18n="p1_btn">ACESSAR CURSO</a>
     </div>
   </div>
+
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d" alt="Curso">
+    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600" alt="Curso">
     <div class="card-body">
       <span data-i18n="cat2">CURSOS</span>
       <h3 data-i18n="p2_t">História para ENEM - Intensivo</h3>
@@ -92,8 +99,9 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
       <a class="btn" href="https://hotmart.com/SEU_LINK" target="_blank" data-i18n="p2_btn">VER CURSO</a>
     </div>
   </div>
+
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73" alt="Mapa">
+    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600" alt="Mapa">
     <div class="card-body">
       <span data-i18n="cat3">MATERIAL</span>
       <h3 data-i18n="p3_t">Mapas Históricos Premium</h3>
@@ -102,13 +110,34 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
     </div>
   </div>
 </div>
+
 <script>
+// TRADUÇÕES - AGORA COM WRITELYTIC FIXO
 const T={
-pt:{h1:"Loja <em>Prisma</em>",sub:"Indicações que usamos para estudar - links afiliados",badge:"AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.",cat1:"LIVROS",p1_t:"Box Brasil Pré-Colonial",p1_d:"3 livros essenciais sobre Pau-Brasil e capitanias.",p1_btn:"VER NA AMAZON",cat2:"CURSOS",p2_t:"História para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para os simulados.",p2_btn:"VER CURSO",cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentais e resumos para imprimir.",p3_btn:"BAIXAR AGORA"},
-en:{h1:"<em>Prisma</em> Store",sub:"Our study recommendations - affiliate links",badge:"NOTICE: This site contains affiliate links. We may earn commission at no extra cost to you.",cat1:"BOOKS",p1_t:"Pre-Colonial Brazil Box",p1_d:"3 essential books on Brazilwood and captaincies.",p1_btn:"VIEW ON AMAZON.COM",cat2:"COURSES",p2_t:"History for Exams - Intensive",p2_d:"Complete course we use as basis for mock exams.",p2_btn:"VIEW COURSE",cat3:"MATERIAL",p3_t:"Premium Historical Maps",p3_d:"Mind maps and summaries to print.",p3_btn:"DOWNLOAD NOW"},
-es:{h1:"Tienda <em>Prisma</em>",sub:"Recomendaciones que usamos para estudiar - enlaces afiliados",badge:"AVISO: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra para ti.",cat1:"LIBROS",p1_t:"Box Brasil Precolonial",p1_d:"3 libros esenciales sobre Palo Brasil y capitanías.",p1_btn:"VER EN AMAZON.ES",cat2:"CURSOS",p2_t:"Historia para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para simulados.",p2_btn:"VER CURSO",cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentales y resúmenes para imprimir.",p3_btn:"DESCARGAR AHORA"},
-fr:{h1:"Boutique <em>Prisma</em>",sub:"Nos recommandations d'étude - liens affiliés",badge:"AVIS: Ce site contient des liens affiliés. Nous pouvons gagner une commission sans frais supplémentaires pour vous.",cat1:"LIVRES",p1_t:"Box Brésil Précolonial",p1_d:"3 livres essentiels sur le bois-brésil et les capitaineries.",p1_btn:"VOIR SUR AMAZON.FR",cat2:"COURS",p2_t:"Histoire pour Examens - Intensif",p2_d:"Cours complet que nous utilisons comme base pour les examens blancs.",p2_btn:"VOIR LE COURS",cat3:"MATÉRIEL",p3_t:"Cartes Historiques Premium",p3_d:"Cartes mentales et résumés à imprimer.",p3_btn:"TÉLÉCHARGER"}
+pt:{
+h1:"Loja <em>Prisma</em>",sub:"Indicações que usamos para estudar - links afiliados",badge:"AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.",
+cat1:"WRITELYTIC",p1_t:"Writelytic - IA para Escrita",p1_d:"Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação com seu público.",p1_btn:"ACESSAR CURSO",
+cat2:"CURSOS",p2_t:"História para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para os simulados.",p2_btn:"VER CURSO",
+cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentais e resumos para imprimir.",p3_btn:"BAIXAR AGORA"},
+en:{
+h1:"<em>Prisma</em> Store",sub:"Our study recommendations - affiliate links",badge:"NOTICE: This site contains affiliate links. We may earn commission at no extra cost to you.",
+cat1:"WRITELYTIC",p1_t:"Writelytic - AI Writing Tool",p1_d:"AI platform that generates high-quality texts for businesses and individuals, revolutionizing communication.",p1_btn:"ACCESS COURSE",
+cat2:"COURSES",p2_t:"History for Exams - Intensive",p2_d:"Complete course we use as basis for mock exams.",p2_btn:"VIEW COURSE",
+cat3:"MATERIAL",p3_t:"Premium Historical Maps",p3_d:"Mind maps and summaries to print.",p3_btn:"DOWNLOAD NOW"},
+es:{
+h1:"Tienda <em>Prisma</em>",sub:"Recomendaciones que usamos para estudiar - enlaces afiliados",badge:"AVISO: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra para ti.",
+cat1:"WRITELYTIC",p1_t:"Writelytic - IA para Escritura",p1_d:"Plataforma de IA que genera textos de alta calidad para empresas e individuos, revolucionando la comunicación.",p1_btn:"ACCEDER AL CURSO",
+cat2:"CURSOS",p2_t:"Historia para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para simulados.",p2_btn:"VER CURSO",
+cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentales y resúmenes para imprimir.",p3_btn:"DESCARGAR AHORA"},
+fr:{
+h1:"Boutique <em>Prisma</em>",sub:"Nos recommandations d'étude - liens affiliés",badge:"AVIS: Ce site contient des liens affiliés. Nous pouvons gagner une commission sans frais supplémentaires pour vous.",
+cat1:"WRITELYTIC",p1_t:"Writelytic - IA d'Écriture",p1_d:"Plateforme IA qui génère des textes de haute qualité pour les entreprises et les particuliers.",p1_btn:"ACCÉDER AU COURS",
+cat2:"COURS",p2_t:"Histoire pour Examens - Intensif",p2_d:"Cours complet que nous utilisons comme base pour les examens blancs.",p2_btn:"VOIR LE COURS",
+cat3:"MATÉRIEL",p3_t:"Cartes Historiques Premium",p3_d:"Cartes mentales et résumés à imprimer.",p3_btn:"TÉLÉCHARGER"}
 };
+
+const AFF_LINK = "https://writelytic.com/es/#aff=cricardomoraes7738e1";
+
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
@@ -117,13 +146,38 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
+  // SEMPRE força o link afiliado depois da tradução
+  const link = document.getElementById('link-writelytic');
+  if(link) link.href = AFF_LINK;
 }
-setLang(localStorage.getItem('prisma_lang')||'pt');
-const nav=document.getElementById('prismaNav');
-nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+
+document.addEventListener('DOMContentLoaded', () => {
+  setLang(localStorage.getItem('prisma_lang')||'pt');
+
+  const nav=document.getElementById('prismaNav');
+  const btn=document.getElementById('btnMenu');
+
+  btn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    nav.classList.toggle('menu-aberto');
+    document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
+  });
+
+  document.addEventListener('click', (e)=>{
+    if(nav.classList.contains('menu-aberto') &&!nav.contains(e.target)){
+      nav.classList.remove('menu-aberto');
+      document.body.style.overflow = '';
+    }
+  });
 });
 </script>
+// hamburguer
+
+<script>
+document.getElementById('btnMenu').onclick = function() {
+  document.getElementById('prismaNav').classList.toggle('menu-aberto');
+}
+</script>
+
 </body>
 </html>
