@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prisma Histórico - Arquivos de Conflito</title>
+<title>Prisma Histórico </title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta name='impact-site-verification' value='cb5f778a-3af3-41c7-bf55-77fe19eeea31'>
+
+<!-- Cole este link no <head> do seu HTML para carregar as fontes clássicas -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -124,15 +131,28 @@ body * {
 </header>
 
 
+
 <section class="ebook-intro">
   <div class="ebook-texto">
-    <span class="ebook-badge">LANÇAMENTO</span>
-    <h2>Guia Prisma Histórico</h2>
-    <p>O passado que a escola não contou. Um e-book direto, sem enrolação, que te mostra a história por trás dos monumentos, das ruas e dos mitos que criaram o Brasil.</p>
+    <div class="ebook-badge" 
+      data-pt="A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS"
+      data-en="NAVAL ENGINEERING: CARAVELS & NAUS"
+      data-es="INGENIERÍA NAVAL: CARABELAS Y NAOS"
+      data-fr="GÉNIE NAVAL: CARAVELLES ET NEFS">A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS</div>
+    
+    <h2><span class="ebook-h2-prefix" data-pt="A caravela foi a" data-en="The caravel was the" data-es="La carabela fue la" data-fr="La caravelle fut la">A caravela foi a</span> <span class="ebook-h2-italic" data-pt="grande inovação" data-en="great innovation" data-es="gran innovación" data-fr="grande innovation">grande inovação</span></h2>
+    
+    <p class="ebook-sub"
+      data-pt="Como o design das caravelas portuguesas do século XV transformou a navegação global e abriu caminho para a Era dos Descobrimentos"
+      data-en="How the design of 15th-century Portuguese caravels transformed global navigation and paved the way for the Age of Discovery"
+      data-es="Cómo el diseño de las carabelas portuguesas del siglo XV transformó la navegación global"
+      data-fr="Comment la conception des caravelles portugaises du XVe siècle a transformé la navigation mondiale">Como o design das caravelas portuguesas do século XV transformou a navegação global e abriu caminho para a Era dos Descobrimentos</p>
+    
     <ul>
-      <li><span class="material-icons">check</span> 12 capítulos ilustrados</li>
-      <li><span class="material-icons">check</span> Mapas e linhas do tempo</li>
-      <li><span class="material-icons">check</span> Leitura em 2 horas</li>
+      <li data-pt="Design revolucionário para navegação oceânica" data-en="Revolutionary design for oceanic navigation" data-es="Diseño revolucionario para navegación oceánica" data-fr="Design révolutionnaire pour la navigation océanique">Design revolucionário para navegação oceânica</li>
+      <li data-pt="Velas latinas que permitiam singrar contra o vento" data-en="Lateen sails that allowed sailing against the wind" data-es="Velas latinas que permitían ceñir contra el viento" data-fr="Voiles latines permettant de naviguer contre le vent">Velas latinas que permitiam singrar contra o vento</li>
+      <li data-pt="Casco leve e maior manobrabilidade em mar aberto" data-en="Light hull and greater maneuverability on open sea" data-es="Casco ligero y mayor maniobrabilidad en mar abierto" data-fr="Coque légère et meilleure maniabilité en haute mer">Casco leve e maior manobrabilidade em mar aberto</li>
+      <li data-pt="Fundamental nas viagens e nas descobertas além do horizonte" data-en="Fundamental in voyages and discoveries beyond the horizon" data-es="Fundamental en viajes y descubrimientos más allá del horizonte" data-fr="Fondamental dans les voyages et découvertes au-delà de l'horizon">Fundamental nas viagens e nas descobertas além do horizonte</li>
     </ul>
   </div>
 
@@ -140,154 +160,66 @@ body * {
     <div class="ebook-moldura">
       <img src="img/prisma historico I.png" alt="Capa do E-book Prisma">
     </div>
-    <a href="artigos/ebook.html" class="btn-ebook">COMPRAR E-BOOK</a>
+    <a href="artigos/ebook.html" class="btn-ebook" data-pt="COMPRAR E-BOOK" data-en="BUY E-BOOK" data-es="COMPRAR E-BOOK" data-fr="ACHETER L'E-BOOK">COMPRAR E-BOOK</a>
   </div>
 </section>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap');
+.ebook-intro *{box-sizing:border-box}
 .ebook-intro{
-  display:flex; gap:60px; align-items:center; justify-content:space-between;
-  background:#0A0A0A; border:1px solid rgba(238,188,108,0.15);
-  padding:60px 40px; max-width:1100px; margin:40px auto;
+  position:relative; display:flex; gap:80px; align-items:center; justify-content:space-between;
+  background: radial-gradient(120% 120% at 0% 0%, rgba(232,195,154,0.08) 0%, rgba(10,10,10,1) 60%), #0A0A0A;
+  padding:80px 50px; max-width:1180px; margin:40px auto; isolation:isolate;
 }
-.ebook-texto{flex:1}
+.ebook-intro::before{
+  content:""; position:absolute; inset:0; padding:1px;
+  background: linear-gradient(135deg, rgba(232,195,154,0.4) 0%, rgba(232,195,154,0.05) 25%, rgba(232,195,154,0.05) 75%, rgba(232,195,154,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none; filter: sepia(0.5);
+}
+.ebook-texto{flex:1.2; max-width:560px;}
 .ebook-badge{
-  display:inline-block; border:1px solid #eebc6c; color:#eebc6c;
-  font-size:11px; letter-spacing:0.2em; padding:6px 14px; border-radius:20px; margin-bottom:18px;
+  display:inline-flex; color:#E8C39A; line-height:1.2; white-space:nowrap;
+  font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.8px; text-transform:uppercase;
+  border:1px solid rgba(232,195,154,0.3); padding:12px 20px; border-radius:100px; margin-bottom:32px;
+  box-shadow: inset 0 0 0 1px rgba(232,195,154,0.08), 0 0 20px rgba(232,195,154,0.08);
 }
 .ebook-texto h2{
-  font-size:42px; color:#eebc6c; margin:0 0 18px 0; line-height:1.1;
-  font-weight:800;
+  font-family:'Cormorant Garamond',serif !important; font-size:58px !important; line-height:0.95 !important;
+  font-weight:300 !important; color:#F5F3F0 !important; margin:0 0 20px 0 !important; letter-spacing:-1.5px;
 }
-.ebook-texto p{color:#F5F5F0; opacity:0.8; font-size:16px; line-height:1.6; margin-bottom:22px}
-.ebook-texto ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px}
-.ebook-texto li{display:flex; align-items:center; gap:10px; color:#F5F5F0; font-size:14px}
-.ebook-texto li .material-icons{color:#eebc6c; font-size:18px}
-
-.ebook-imagem{flex:1; display:flex; flex-direction:column; align-items:center; gap:28px}
-.ebook-moldura{
-  width:320px; max-width:100%; padding:12px;
-  border:1px solid #eebc6c; background:linear-gradient(145deg, #141414, #0A0A0A);
-  box-shadow:0 0 40px rgba(238,188,108,0.15);
-}
-.ebook-moldura img{width:100%; display:block}
-
+.ebook-h2-italic{font-style:italic; color:#E8C39A; display:block;}
+.ebook-sub{font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; font-weight:300; color:#9A9996; margin:0 0 35px 0; max-width:480px;}
+.ebook-texto ul{list-style:none !important; padding:0 !important; margin:0 !important; display:flex; flex-direction:column; gap:22px;}
+.ebook-texto li{list-style:none !important; font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; font-weight:300; color:#E8E6E3; border-left:1px solid rgba(232,195,154,0.3); padding-left:18px;}
+.ebook-texto li::before, .ebook-texto li::after{display:none !important;}
+.ebook-imagem{display:flex; flex-direction:column; align-items:center; gap:24px;}
+.ebook-moldura{width:340px; background:#111; padding:14px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.ebook-moldura::before{content:""; position:absolute; inset:0; border:1px solid rgba(232,195,154,0.25); outline:1px solid rgba(232,195,154,0.08); outline-offset:-6px; pointer-events:none;}
+.ebook-moldura img{width:100%; display:block; filter: sepia(0.15) contrast(1.05) brightness(0.95);}
 .btn-ebook{
-  display:inline-block; padding:16px 42px;
-  background:transparent; border:1px solid #eebc6c; color:#eebc6c;
-  text-decoration:none; font-size:12px; letter-spacing:0.2em; text-transform:uppercase;
-  transition:0.3s; border-radius:50px;
+  display:block; width:340px; text-align:center; font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:#E8C39A; text-decoration:none; padding:18px 20px; border-radius:100px;
+  background: linear-gradient(180deg, rgba(232,195,154,0.12) 0%, rgba(232,195,154,0.04) 100%);
+  border:1px solid rgba(232,195,154,0.35); backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(232,195,154,0.2), 0 4px 20px rgba(0,0,0,0.4); transition: all 0.4s ease;
 }
-.btn-ebook:hover{background:#eebc6c; color:#0A0A0A; box-shadow:0 0 20px rgba(238,188,108,0.4)}
-
-@media(max-width:800px){
-  .ebook-intro{flex-direction:column; padding:36px 20px; gap:36px}
-  .ebook-texto h2{font-size:30px}
-  .ebook-moldura{width:240px}
-}
+.btn-ebook:hover{background: linear-gradient(180deg, rgba(232,195,154,0.20) 0%, rgba(232,195,154,0.08) 100%); border-color: rgba(232,195,154,0.6); color:#F5E6D3;}
+@media(max-width:900px){.ebook-intro{flex-direction:column; padding:40px 24px; gap:40px;} .ebook-badge{white-space:normal;} .ebook-texto h2{font-size:42px !important;} .ebook-moldura,.btn-ebook{width:100%;}}
 </style>
 
-<main class="conteudo">
-  <section style="flex:2">
-    <div class="grid-sumarios">
 
-      <article class="card-sumario">
-        <div class="card-top">1641 • AMADOR BUENO</div>
-        <div class="card-sumario-corpo">
-          <h3>Aclamação de <span>Amador Bueno</span></h3>
-          <p>Card com rolagem interna, mesma altura pra todos. Pode colocar texto gigante aqui que ele não estica o card, ele rola só aqui dentro. Lorem ipsum dolor sit amet consectetur...</p>
-        </div>
-        <div class="card-bottom">
-          <a href="SEU_LINK_HOTMART" class="btn-hotmart">COMPRAR NA HOTMART</a>
-        </div>
-      </article>
 
-      <article class="card-sumario">
-        <div class="card-top">1822 • INDEPENDÊNCIA</div>
-        <div class="card-sumario-corpo">
-          <h3>Grito do <span>Ipiranga</span></h3>
-          <p>Outro card com pouco texto. A altura continua igual.</p>
-        </div>
-        <div class="card-bottom">
-          <a href="SEU_LINK_HOTMART" class="btn-hotmart">COMPRAR NA HOTMART</a>
-        </div>
-      </article>
 
-      <article class="card-sumario">
-        <div class="card-top">1888 • ABOLIÇÃO</div>
-        <div class="card-sumario-corpo">
-          <h3>Lei <span>Áurea</span></h3>
-          <p>Card com rolagem interna, mesma altura pra todos.</p>
-        </div>
-        <div class="card-bottom">
-          <a href="SEU_LINK_HOTMART" class="btn-hotmart">COMPRAR NA HOTMART</a>
-        </div>
-      </article>
 
-    </div>
-  </section>
-</main>
 
-<style>
-:root{ --ouro:#eebc6c; --carvao:#0A0A0A; }
 
-.grid-sumarios{
-  display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap:22px;
-}
 
-.card-sumario{
-  height:380px; /* MESMA ALTURA */
-  display:flex;
-  flex-direction:column;
-  background:#0A0A0A;
-  border:1px solid rgba(238,188,108,0.18);
-  border-radius:16px;
-  overflow:hidden;
-}
 
-.card-top{
-  padding:14px 20px;
-  background:#121212;
-  border-bottom:1px solid #2A2A2A;
-  color:var(--ouro);
-  font-size:11px;
-  letter-spacing:0.08em;
-  font-weight:700;
-}
 
-.card-sumario-corpo{
-  flex:1;
-  padding:18px 20px;
-  overflow-y:auto; /* ROLAGEM INTERNA */
-}
 
-.card-sumario-corpo h3{
-  font-family:'Cormorant Garamond', serif;
-  font-size:24px; color:#F5F5F0; margin:0 0 10px 0;
-}
-.card-sumario-corpo h3 span{color:var(--ouro)}
-.card-sumario-corpo p{opacity:0.7; font-size:13px; line-height:1.7; color:#F5F5F0; margin:0}
 
-.card-bottom{
-  padding:16px 20px;
-  border-top:1px solid #2A2A2A;
-  background:rgba(255,255,255,0.02);
-  margin-top:auto;
-}
 
-.btn-hotmart{
-  display:block; width:100%; text-align:center;
-  padding:14px; background:#f5d5b8; color:#0A0A0A;
-  text-decoration:none; font-size:11px; font-weight:800;
-  letter-spacing:0.1em; border-radius:10px;
-}
-
-/* scroll fino dourado */
-.card-sumario-corpo::-webkit-scrollbar{width:4px}
-.card-sumario-corpo::-webkit-scrollbar-thumb{background:var(--ouro); border-radius:10px}
-</style>
 
 <!-- SECTION PDF GRÁTIS - COLE NO INDEX -->
 <section id="amostra-gratis-premium">
@@ -321,35 +253,6 @@ body * {
 .esq{left:0} .dir{right:0}
 </style>
 
-
-<script>
-const t = document.getElementById('track');
-
-document.getElementById('next').onclick=()=>{
-  const noFinal = t.scrollLeft + t.clientWidth >= t.scrollWidth - 20;
-  if(noFinal){
-    t.scrollTo({left:0, behavior:'smooth'}); // volta pro inicio
-  } else {
-    t.scrollBy({left:330, behavior:'smooth'});
-  }
-};
-
-document.getElementById('prev').onclick=()=>{
-  if(t.scrollLeft <= 10){
-    t.scrollTo({left:t.scrollWidth, behavior:'smooth'}); // vai pro final
-  } else {
-    t.scrollBy({left:-330, behavior:'smooth'});
-  }
-};
-
-// faz voltar sozinho se arrastar até o final com o dedo
-t.addEventListener('scroll', ()=>{
-  if(t.scrollLeft + t.clientWidth >= t.scrollWidth - 5){
-    // quando chegar bem no final, espera 1 seg e volta
-    // setTimeout(()=> t.scrollTo({left:0, behavior:'smooth'}), 800);
-  }
-});
-</script>
 
 
 
@@ -445,53 +348,57 @@ t.addEventListener('scroll', ()=>{
 @media(max-width:768px){.ebook-header h2{font-size:32px} .pagina.destaque{transform:scale(1)} .pagina.destaque:hover{transform:translateY(-6px)}}
 </style>
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
       
       <div class="footer-brand">
         <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc">Abordagem analítica, sofisticada e sem clichês da História do Brasil. Conteúdo autoral, fontes primárias e roteiros de turismo colonial.</p>
+        <p class="footer-desc"
+          data-pt="Abordagem analítica, sofisticada e sem clichês da História do Brasil. Conteúdo autoral, fontes primárias e roteiros de turismo colonial."
+          data-en="Analytical, sophisticated and cliché-free approach to Brazilian History. Original content, primary sources and colonial tourism itineraries."
+          data-es="Enfoque analítico, sofisticado y sin clichés de la Historia de Brasil. Contenido original, fuentes primarias y rutas de turismo colonial."
+          data-fr="Approche analytique, sophistiquée et sans clichés de l'Histoire du Brésil. Contenu original, sources primaires et itinéraires de tourisme colonial."
+        >Abordagem analítica, sofisticada e sem clichês da História do Brasil. Conteúdo autoral, fontes primárias e roteiros de turismo colonial.</p>
         <div class="footer-pay">
-          <span class="pay-badge"><span class="material-icons">payments</span> PayPal Seguro</span>
-          <span class="pay-badge"><span class="material-icons">verified_user</span> Compra Protegida</span>
+          <span class="pay-badge" data-pt="PayPal Seguro" data-en="Secure PayPal" data-es="PayPal Seguro" data-fr="PayPal Sécurisé"><span class="material-icons">payments</span> PayPal Seguro</span>
+          <span class="pay-badge" data-pt="Compra Protegida" data-en="Protected Purchase" data-es="Compra Protegida" data-fr="Achat Protégé"><span class="material-icons">verified_user</span> Compra Protegida</span>
         </div>
       </div>
 
       <div class="footer-col">
-        <h4>INSTITUCIONAL</h4>
-        <a href="artigos/privacidade.html"><span class="material-icons">shield</span> Privacidade</a>
-        <a href="artigos/termos.html"><span class="material-icons">gavel</span> Termos de Uso</a>
-        <a href="artigos/doacao.html"><span class="material-icons">volunteer_activism</span> Doação</a>
+        <h4 data-pt="INSTITUCIONAL" data-en="ABOUT" data-es="INSTITUCIONAL" data-fr="INSTITUTIONNEL">INSTITUCIONAL</h4>
+        <a href="artigos/privacidade.html" data-pt="Privacidade" data-en="Privacy" data-es="Privacidad" data-fr="Confidentialité"><span class="material-icons">shield</span> Privacidade</a>
+        <a href="artigos/termos.html" data-pt="Termos de Uso" data-en="Terms of Use" data-es="Términos de Uso" data-fr="Conditions d'utilisation"><span class="material-icons">gavel</span> Termos de Uso</a>
+        <a href="artigos/doacao.html" data-pt="Doação" data-en="Donation" data-es="Donación" data-fr="Don"><span class="material-icons">volunteer_activism</span> Doação</a>
         <a href="mailto:contato@prismahistorico.com"><span class="material-icons">mail</span> contato@prismahistorico.com</a>
       </div>
 
       <div class="footer-col">
-        <h4>CONTEÚDO</h4>
-        <a href="artigos/artigos.html"><span class="material-icons">auto_stories</span> Artigos</a>
-        <a href="artigos/patrimonio.html"><span class="material-icons">account_balance</span> Patrimônio Histórico</a>
-        <a href="artigos/turismo.html"><span class="material-icons">map</span> Turismo Colonial</a>
-        <a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-book</a>
+        <h4 data-pt="CONTEÚDO" data-en="CONTENT" data-es="CONTENIDO" data-fr="CONTENU">CONTEÚDO</h4>
+        <a href="artigos/artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles"><span class="material-icons">auto_stories</span> Artigos</a>
+        <a href="artigos/patrimonio.html" data-pt="Patrimônio Histórico" data-en="Historical Heritage" data-es="Patrimonio Histórico" data-fr="Patrimoine Historique"><span class="material-icons">account_balance</span> Patrimônio Histórico</a>
+        <a href="artigos/turismo.html" data-pt="Turismo Colonial" data-en="Colonial Tourism" data-es="Turismo Colonial" data-fr="Tourisme Colonial"><span class="material-icons">map</span> Turismo Colonial</a>
+        <a href="artigos/ebook.html" data-pt="E-book" data-en="E-book" data-es="E-book" data-fr="E-book"><span class="material-icons">menu_book</span> E-book</a>
       </div>
 
       <div class="footer-col">
-        <h4>LOJA & PARCEIROS</h4>
-        <a href="artigos/loja.html"><span class="material-icons">store</span> Loja Oficial</a>
-        <a href="artigos/afiliados.html"><span class="material-icons">handshake</span> Afiliados</a>
-        <a href="artigos/roteiros.html"><span class="material-icons">explore</span> Roteiros</a>
-        <a href="https://www.paypal.com" target="_blank"><span class="material-icons">credit_card</span> Pagar com PayPal</a>
+        <h4 data-pt="LOJA & PARCEIROS" data-en="STORE & PARTNERS" data-es="TIENDA Y SOCIOS" data-fr="BOUTIQUE & PARTENAIRES">LOJA & PARCEIROS</h4>
+        <a href="artigos/loja.html" data-pt="Loja Oficial" data-en="Official Store" data-es="Tienda Oficial" data-fr="Boutique Officielle"><span class="material-icons">store</span> Loja Oficial</a>
+        <a href="artigos/afiliados.html" data-pt="Afiliados" data-en="Affiliates" data-es="Afiliados" data-fr="Affiliés"><span class="material-icons">handshake</span> Afiliados</a>
+        <a href="artigos/roteiros.html" data-pt="Roteiros" data-en="Itineraries" data-es="Itinerarios" data-fr="Itinéraires"><span class="material-icons">explore</span> Roteiros</a>
+        <a href="https://www.paypal.com" target="_blank" data-pt="Pagar com PayPal" data-en="Pay with PayPal" data-es="Pagar con PayPal" data-fr="Payer avec PayPal"><span class="material-icons">credit_card</span> Pagar com PayPal</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
       <span>© 2026 Prisma Histórico • CNPJ 00.000.000/0001-00</span>
-      <span>Feito com ☕ em São Paulo • <span style="color:#eebc6c">Pagamento 100% seguro via Hotmart & PayPal</span></span>
+      <span data-pt="Feito com ☕ em São Paulo" data-en="Made with ☕ in São Paulo" data-es="Hecho con ☕ en São Paulo" data-fr="Fait avec ☕ à São Paulo">Feito com ☕ em São Paulo • <span style="color:#eebc6c" data-pt="Pagamento 100% seguro via Hotmart & PayPal" data-en="100% secure payment via Hotmart & PayPal" data-es="Pago 100% seguro vía Hotmart & PayPal" data-fr="Paiement 100% sécurisé via Hotmart & PayPal">Pagamento 100% seguro via Hotmart & PayPal</span></span>
     </div>
   </div>
 </footer>
+
 
 <style>
 #prismaFooter{background:#0A0A0A; border-top:1px solid rgba(238,188,108,0.15); padding:60px 24px 0 24px; margin-top:60px}
@@ -523,199 +430,11 @@ t.addEventListener('scroll', ()=>{
 }
 </style>
 
-<script>
-// SEU SCRIPT ORIGINAL QUE FUNCIONA - NÃO MUDEI NADA
-const nav=document.getElementById('prismaNav');
-const btn=nav.querySelector('.prisma-menu-hamburguer');
-btn.addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
-</script>
 
 
 
-<script>
-// Bloco 1: Base de dados com as traduções completas para os 4 idiomas
-const traducoes = {
-    pt: {
-        inicio: "INÍCIO", sobre: "SOBRE", afiliados: "AFILIADOS", artigos: "ARTIGOS", 
-        curiosidades: "CURIOSIDADES", quiz: "QUIZ", ebook: "E-BOOK", loja: "LOJA", turismo: "TURISMO COLONIAL",
-        heroTitle: "Arquivos de <span>Conflito</span>",
-        heroSubtitle: "Do Brasil Colônia ao Império, com lógica cirúrgica",
-        cardTag: "1641 • AMADOR BUENO",
-        cardTitle: "Aclamação de <span style='color:var(--ouro)'>Amador Bueno</span>",
-        cardText: "Card com rolagem interna, mesma altura pra todos.",
-        btnComprar: "COMPRAR NA HOTMART",
-        footDesc: "Abordagem analítica da História do Brasil.",
-        footNav: "Navegação", footProd: "Produtos", footClub: "Clube",
-        footLinkInicio: "Início", footLinkArtigos: "Artigos", footLinkEbook: "E-book", footLinkLoja: "Loja"
-    },
-    en: {
-        inicio: "HOME", sobre: "ABOUT", afiliados: "AFFILIATES", artigos: "ARTICLES", 
-        curiosidades: "CURIOSITIES", quiz: "QUIZ", ebook: "E-BOOK", loja: "STORE", turismo: "COLONIAL TOURISM",
-        heroTitle: "Conflict <span>Archives</span>",
-        heroSubtitle: "From Colonial Brazil to Empire, with surgical logic",
-        cardTag: "1641 • AMADOR BUENO",
-        cardTitle: "Acclamation of <span style='color:var(--ouro)'>Amador Bueno</span>",
-        cardText: "Card with internal scroll, same height for everyone.",
-        btnComprar: "BUY ON HOTMART",
-        footDesc: "Analytical approach to the History of Brazil.",
-        footNav: "Navigation", footProd: "Products", footClub: "Club",
-        footLinkInicio: "Home", footLinkArtigos: "Articles", footLinkEbook: "E-book", footLinkLoja: "Store"
-    },
-    es: {
-        inicio: "INICIO", sobre: "ACERCA DE", afiliados: "AFILIADOS", artigos: "ARTÍCULOS", 
-        curiosidades: "CURIOSIDADES", quiz: "QUIZ", ebook: "E-BOOK", loja: "TIENDA", turismo: "TURISMO COLONIAL",
-        heroTitle: "Archivos de <span>Conflicto</span>",
-        heroSubtitle: "Del Brasil Colonia al Imperio, con lógica quirúrgica",
-        cardTag: "1641 • AMADOR BUENO",
-        cardTitle: "Aclamación de <span style='color:var(--ouro)'>Amador Bueno</span>",
-        cardText: "Tarjeta con desplazamiento interno, la misma altura para todos.",
-        btnComprar: "COMPRAR EN HOTMART",
-        footDesc: "Enfoque analítico de la Historia de Brasil.",
-        footNav: "Navegación", footProd: "Productos", footClub: "Club",
-        footLinkInicio: "Inicio", footLinkArtigos: "Artículos", footLinkEbook: "E-book", footLinkLoja: "Tienda"
-    },
-    fr: {
-        inicio: "ACCUEIL", sobre: "À PROPOS", afiliados: "AFFILIÉS", artigos: "ARTICLES", 
-        curiosidades: "CURIOSITÉS", quiz: "QUIZ", ebook: "E-BOOK", loja: "BOUTIQUE", turismo: "TOURISME COLONIAL",
-        heroTitle: "Archives de <span>Conflit</span>",
-        heroSubtitle: "Du Brésil Coloniale à l'Empire, com logique chirurgicale",
-        cardTag: "1641 • AMADOR BUENO",
-        cardTitle: "Acclamation de <span style='color:var(--ouro)'>Ador Bueno</span>",
-        cardText: "Carte avec défilement interne, même hauteur pour tout le monde.",
-        btnComprar: "ACHETER SUR HOTMART",
-        footDesc: "Approche analytique de l'Histoire du Brésil.",
-        footNav: "Navigation", footProd: "Produits", footClub: "Club",
-        footLinkInicio: "Accueil", footLinkArtigos: "Articles", footLinkEbook: "E-book", footLinkLoja: "Boutique"
-    }
-};
-// Bloco 2: Gestão dos cliques nos botões de idioma e tradução do topo/conteúdo
-const botoesIdioma = document.querySelectorAll('.lang-switch button');
-
-function alterarIdioma(lang) {
-    const dados = traducoes[lang];
-    if (!dados) return;
-
-    // 1. Traduz os links da Gaveta mantendo os ícones originais
-    const links = document.querySelectorAll('.prisma-menu-links li a');
-    const chavesLinks = ['inicio', 'sobre', 'afiliados', 'artigos', 'curiosidades', 'quiz', 'ebook', 'loja', 'turismo'];
-    links.forEach((link, index) => {
-        if (links[index] && dados[chavesLinks[index]]) {
-            const icone = link.querySelector('.material-icons').outerHTML;
-            link.innerHTML = `${icone} ${dados[chavesLinks[index]]}`;
-        }
-    });
-
-    // 2. Traduz o Hero
-    const heroTitle = document.querySelector('.hero h1');
-    const heroSubtitle = document.querySelector('.hero p');
-    if (heroTitle) heroTitle.innerHTML = dados.heroTitle;
-    if (heroSubtitle) heroSubtitle.innerText = dados.heroSubtitle;
-
-    // 3. Traduz o Card de Exemplo
-    const cardTag = document.querySelector('.card-sumario div:nth-child(1)');
-    const cardTitle = document.querySelector('.card-sumario-corpo h3');
-    const cardText = document.querySelector('.card-sumario-corpo p');
-    const cardBtn = document.querySelector('.btn-hotmart');
-    if (cardTag) cardTag.innerText = dados.cardTag;
-    if (cardTitle) cardTitle.innerHTML = dados.cardTitle;
-    if (cardText) cardText.innerText = dados.cardText;
-    if (cardBtn) cardBtn.innerText = dados.btnComprar;
-
-    // 4. Dispara a tradução do Bloco 3 para o rodapé
-    traduzirFooterCompleto(dados);
-}
-
-botoesIdioma.forEach(botao => {
-    botao.addEventListener('click', (e) => {
-        botoesIdioma.forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        const idioma = e.target.id.replace('btn-', '');
-        alterarIdioma(idioma);
-    });
-});
-
-// Bloco 3: Função específica para mapear e traduzir as colunas e os links do Footer
-function traduzirFooterCompleto(dados) {
-    const footerDesc = document.querySelector('.footer-desc');
-    if (footerDesc) footerDesc.innerText = dados.footDesc;
-    
-    const colunasTitulosFooter = document.querySelectorAll('.footer-col h4');
-    if (colunasTitulosFooter.length >= 3) {
-        colunasTitulosFooter[0].innerText = dados.footNav;
-        colunasTitulosFooter[1].innerText = dados.footProd;
-        colunasTitulosFooter[2].innerText = dados.footClub;
-    }
-
-    const linksFooter = document.querySelectorAll('#prismaFooter .footer-col a');
-    if (linksFooter.length >= 4) {
-        linksFooter[0].innerText = dados.footLinkInicio;
-        linksFooter[1].innerText = dados.footLinkArtigos;
-        linksFooter[2].innerText = dados.footLinkEbook;
-        linksFooter[3].innerText = dados.footLinkLoja;
-    }
-}
-</script>
-
-<script>
-// 1. SEU HAMBURGUER ORIGINAL - NÃO MEXER
 
 
-// 2. LANG SWITCH ISOLADO
-(function(){
-  const dict = {
-    pt: { inicio:"INÍCIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
-    en: { inicio:"HOME", sobre:"ABOUT", afiliados:"AFFILIATES" },
-    es: { inicio:"INICIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
-    fr: { inicio:"ACCUEIL", sobre:"À PROPOS", afiliados:"AFFILIÉS" }
-  };
-  window.setLang = function(lang){
-    localStorage.setItem('prisma_lang', lang);
-    document.querySelectorAll('[data-lang]').forEach(b=>b.classList.remove('active'));
-    let btn = document.getElementById('btn-'+lang);
-    if(btn) btn.classList.add('active');
-    // aqui você traduz pelo ID
-    for(let k in dict[lang]){
-      let el = document.getElementById('m_'+k);
-      if(el) el.textContent = dict[lang][k];
-    }
-  };
-  document.getElementById('btn-pt')?.addEventListener('click', ()=>setLang('pt'));
-  document.getElementById('btn-en')?.addEventListener('click', ()=>setLang('en'));
-  document.getElementById('btn-es')?.addEventListener('click', ()=>setLang('es'));
-  document.getElementById('btn-fr')?.addEventListener('click', ()=>setLang('fr'));
-  setLang(localStorage.getItem('prisma_lang')||'pt');
-})();
-</script>
-
-<script>
-// 1. SEU HAMBURGUER ORIGINAL - NÃO MEXER
-
-// 2. LANG SWITCH ISOLADO
-(function(){
-  const dict = {
-    pt: { inicio:"INÍCIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
-    en: { inicio:"HOME", sobre:"ABOUT", afiliados:"AFFILIATES" },
-    es: { inicio:"INICIO", sobre:"SOBRE", afiliados:"AFILIADOS" },
-    fr: { inicio:"ACCUEIL", sobre:"À PROPOS", afiliados:"AFFILIÉS" }
-  };
-  window.setLang = function(lang){
-    localStorage.setItem('prisma_lang', lang);
-    document.querySelectorAll('[data-lang]').forEach(b=>b.classList.remove('active'));
-    let btn = document.getElementById('btn-'+lang);
-    if(btn) btn.classList.add('active');
-    // aqui você traduz pelo ID
-    for(let k in dict[lang]){
-      let el = document.getElementById('m_'+k);
-      if(el) el.textContent = dict[lang][k];
-    }
-  };
-  document.getElementById('btn-pt')?.addEventListener('click', ()=>setLang('pt'));
-  document.getElementById('btn-en')?.addEventListener('click', ()=>setLang('en'));
-  document.getElementById('btn-es')?.addEventListener('click', ()=>setLang('es'));
-  document.getElementById('btn-fr')?.addEventListener('click', ()=>setLang('fr'));
-  setLang(localStorage.getItem('prisma_lang')||'pt');
-})();
-</script>
 
 <div id="cookieBanner">
   <div class="cookie-icon"><span class="material-icons">cookie</span></div>
@@ -756,22 +475,117 @@ function traduzirFooterCompleto(dados) {
 }
 </style>
 
+
 <script>
-const banner = document.getElementById('cookieBanner');
-const aceita = localStorage.getItem('prismaCookies');
+const nav=document.getElementById('prismaNav');
+const btn=nav.querySelector('.prisma-menu-hamburguer');
+btn.addEventListener('click',()=>{
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+});
+</script>
 
-if(aceita){ banner.style.display='none'; }
+<script>
+const traducoes = {
+  pt: { inicio:"INÍCIO", sobre:"SOBRE", afiliados:"AFILIADOS", artigos:"ARTIGOS", curiosidades:"CURIOSIDADES", quiz:"QUIZ", ebook:"E-BOOK", loja:"LOJA", turismo:"TURISMO COLONIAL", heroTitle:"Arquivos de <span>Conflito</span>", heroSubtitle:"Do Brasil Colônia ao Império, com lógica cirúrgica", cardTag:"1641 • AMADOR BUENO", cardTitle:"Aclamação de <span style='color:var(--ouro)'>Amador Bueno</span>", cardText:"Card com rolagem interna, mesma altura pra todos.", btnComprar:"COMPRAR NA HOTMART", footDesc:"Abordagem analítica da História do Brasil.", footNav:"Navegação", footProd:"Produtos", footClub:"Clube", footLinkInicio:"Início", footLinkArtigos:"Artigos", footLinkEbook:"E-book", footLinkLoja:"Loja" },
+  en: { inicio:"HOME", sobre:"ABOUT", afiliados:"AFFILIATES", artigos:"ARTICLES", curiosidades:"CURIOSITIES", quiz:"QUIZ", ebook:"E-BOOK", loja:"STORE", turismo:"COLONIAL TOURISM", heroTitle:"Conflict <span>Archives</span>", heroSubtitle:"From Colonial Brazil to Empire, with surgical logic", cardTag:"1641 • AMADOR BUENO", cardTitle:"Acclamation of <span style='color:var(--ouro)'>Amador Bueno</span>", cardText:"Card with internal scroll, same height for everyone.", btnComprar:"BUY ON HOTMART", footDesc:"Analytical approach to the History of Brazil.", footNav:"Navigation", footProd:"Products", footClub:"Club", footLinkInicio:"Home", footLinkArtigos:"Articles", footLinkEbook:"E-book", footLinkLoja:"Store" },
+  es: { inicio:"INICIO", sobre:"ACERCA DE", afiliados:"AFILIADOS", artigos:"ARTÍCULOS", curiosidades:"CURIOSIDADES", quiz:"QUIZ", ebook:"E-BOOK", loja:"TIENDA", turismo:"TURISMO COLONIAL", heroTitle:"Archivos de <span>Conflicto</span>", heroSubtitle:"Del Brasil Colonia al Imperio, con lógica quirúrgica", cardTag:"1641 • AMADOR BUENO", cardTitle:"Aclamación de <span style='color:var(--ouro)'>Amador Bueno</span>", cardText:"Tarjeta con desplazamiento interno, la misma altura para todos.", btnComprar:"COMPRAR EN HOTMART", footDesc:"Enfoque analítico de la Historia de Brasil.", footNav:"Navegación", footProd:"Productos", footClub:"Club", footLinkInicio:"Inicio", footLinkArtigos:"Artículos", footLinkEbook:"E-book", footLinkLoja:"Tienda" },
+  fr: { inicio:"ACCUEIL", sobre:"À PROPOS", afiliados:"AFFILIÉS", artigos:"ARTICLES", curiosidades:"CURIOSITÉS", quiz:"QUIZ", ebook:"E-BOOK", loja:"BOUTIQUE", turismo:"TOURISME COLONIAL", heroTitle:"Archives de <span>Conflit</span>", heroSubtitle:"Du Brésil Coloniale à l'Empire, com logique chirurgicale", cardTag:"1641 • AMADOR BUENO", cardTitle:"Acclamation de <span style='color:var(--ouro)'>Ador Bueno</span>", cardText:"Carte avec défilement interne, même hauteur pour tout le monde.", btnComprar:"ACHETER SUR HOTMART", footDesc:"Approche analytique de l'Histoire du Brésil.", footNav:"Navigation", footProd:"Produits", footClub:"Club", footLinkInicio:"Accueil", footLinkArtigos:"Articles", footLinkEbook:"E-book", footLinkLoja:"Boutique" }
+};
 
-document.getElementById('cookieAceitar').onclick = () => {
-  localStorage.setItem('prismaCookies','aceito');
-  banner.style.display='none';
-  // aqui pode disparar seu pixel / analytics
-  console.log('Cookies aceitos');
-};
-document.getElementById('cookieRecusar').onclick = () => {
-  localStorage.setItem('prismaCookies','recusado');
-  banner.style.display='none';
-};
+function traduzirFooterCompleto(d){
+  try{
+    const fd=document.querySelector('.footer-desc'); if(fd) fd.innerText=d.footDesc;
+    const th=document.querySelectorAll('.footer-col h4');
+    if(th.length>=3){ th[0].innerText=d.footNav; th[1].innerText=d.footProd; th[2].innerText=d.footClub; }
+    const fl=document.querySelectorAll('#prismaFooter.footer-col a');
+    if(fl.length>=4){ fl[0].innerText=d.footLinkInicio; fl[1].innerText=d.footLinkArtigos; fl[2].innerText=d.footLinkEbook; fl[3].innerText=d.footLinkLoja; }
+  }catch(e){}
+}
+
+function alterarIdioma(lang){
+  const dados=traducoes[lang]; if(!dados) return;
+  localStorage.setItem('prisma_lang',lang);
+  try{
+    const links=document.querySelectorAll('.prisma-menu-links li a');
+    const chaves=['inicio','sobre','afiliados','artigos','curiosidades','quiz','ebook','loja','turismo'];
+    links.forEach((link,i)=>{
+      if(dados[chaves[i]]){
+        const iconeEl=link.querySelector('.material-icons');
+        const icone=iconeEl? iconeEl.outerHTML+' ' : '';
+        link.innerHTML=`${icone}${dados[chaves[i]]}`;
+      }
+    });
+    const ht=document.querySelector('.hero h1'); if(ht) ht.innerHTML=dados.heroTitle;
+    const hs=document.querySelector('.hero p'); if(hs) hs.innerText=dados.heroSubtitle;
+    const ct=document.querySelector('.card-sumario div:nth-child(1)'); if(ct) ct.innerText=dados.cardTag;
+    const ctt=document.querySelector('.card-sumario-corpo h3'); if(ctt) ctt.innerHTML=dados.cardTitle;
+    const ctx=document.querySelector('.card-sumario-corpo p'); if(ctx) ctx.innerText=dados.cardText;
+    const cb=document.querySelector('.btn-hotmart'); if(cb) cb.innerText=dados.btnComprar;
+    traduzirFooterCompleto(dados);
+  }catch(e){ console.log(e); }
+}
+
+const botoesIdioma=document.querySelectorAll('.lang-switch button');
+botoesIdioma.forEach(b=>{
+  b.addEventListener('click',e=>{
+    botoesIdioma.forEach(x=>x.classList.remove('active'));
+    e.target.classList.add('active');
+    alterarIdioma(e.target.id.replace('btn-',''));
+  });
+});
+alterarIdioma(localStorage.getItem('prisma_lang')||'pt');
+</script>
+
+<script>
+
+
+
+// FUNÇÃO PRINCIPAL QUE TROCA O IDIOMA engenharia nautica 
+function alterarIdioma(lang){
+  // 1. Salva o idioma escolhido no navegador pra lembrar depois
+  localStorage.setItem('prisma_lang', lang);
+
+  // 2. Procura TODOS os elementos que tem data-pt na página
+  //    (seu badge, seus h2, seus li, tudo)
+  document.querySelectorAll('[data-pt]').forEach(el => {
+    
+    // 3. Pega o valor do atributo correspondente ao idioma
+    //    Se lang = 'en', pega data-en
+    //    Se lang = 'es', pega data-es
+    const traducao = el.getAttribute('data-' + lang);
+    
+    // 4. Se existir tradução, troca o texto na tela
+    if(traducao){
+      el.innerText = traducao;
+    }
+  });
+}
+
+// CONFIGURA OS BOTÕES PT / EN / ES / FR
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.addEventListener('click', (e)=>{
+    // 5. Tira o 'active' de todos os botões
+    document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+    
+    // 6. Coloca 'active' só no que clicou (pra ficar dourado)
+    e.currentTarget.classList.add('active');
+    
+    // 7. Pega o idioma do id do botão: btn-en vira 'en'
+    const lang = e.currentTarget.id.replace('btn-','');
+    
+    // 8. Chama a função pra traduzir tudo
+    alterarIdioma(lang);
+  });
+});
+
+// AO CARREGAR A PÁGINA
+// 9. Vê se já tem idioma salvo, se não tiver usa 'pt'
+const idiomaSalvo = localStorage.getItem('prisma_lang') || 'pt';
+
+// 10. Já deixa o botão certo ativo e traduz automaticamente
+document.getElementById('btn-' + idiomaSalvo)?.classList.add('active');
+alterarIdioma(idiomaSalvo);
 </script>
 
 
