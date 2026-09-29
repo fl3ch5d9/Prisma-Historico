@@ -6,17 +6,16 @@
 <title>Doe - Apoie o Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
+:root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--preto2:#1E1E1E;--borda:rgba(238,188,108,0.15)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em}
 .prisma-logo span{color:var(--ouro);font-weight:700}
-.lang-switch{display:flex;gap:6px;z-index:10001}
+.lang-switch{display:flex;gap:6px}
 .lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
 .lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
-/* CORRIGIDO hamburguer gaveta */
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
@@ -25,30 +24,31 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-/*hamburguer gaveta */
 .hero-doacao{padding:150px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
 .tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}
 .hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:16px}
 .hero-doacao h1 span{color:var(--ouro);font-style:italic}
 .hero-doacao p{opacity:0.6;line-height:1.8;max-width:640px;margin:auto;font-size:15.5px}
-.box-doacao{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;max-width:960px;margin:30px auto 0 auto;padding:0 5%}
-.qr-card{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:30px;text-align:center}
-.qr-img{width:260px;height:260px;background:#fff;border-radius:12px;margin:0 auto 18px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px;overflow:hidden}
-.pix-key-box{margin-top:22px;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.3);border-radius:10px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-.pix-key-box code{font-size:13px;color:var(--ouro);word-break:break-all}
-.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:10px 16px;border-radius:6px;font-weight:800;font-size:11px;cursor:pointer}
-.info-card{background:var(--preto2);border:1px solid var(--borda);border-left:4px solid var(--ouro);border-radius:14px;padding:32px}
+.box-doacao{display:grid;grid-template-columns:400px 1fr;gap:22px;max-width:1100px;margin:30px auto 60px auto;padding:0 5%;align-items:stretch}
+.qr-card{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:24px;text-align:center;display:flex;flex-direction:column;height:100%}
+.qr-img{width:100%;max-width:240px;aspect-ratio:1/1;background:#fff;border-radius:12px;margin:0 auto 14px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px;overflow:hidden;flex-shrink:0}
+.qr-card b{display:block;font-size:14px;margin-top:4px}
+.qr-sub{display:block;opacity:0.6;font-size:13px;margin-top:4px}
+.pix-key-box{margin-top:auto;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.3);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:nowrap}
+.pix-key-box code{font-size:10.5px;color:var(--ouro);white-space:nowrap;flex:1;text-align:left}
+.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:8px 14px;border-radius:6px;font-weight:800;font-size:11px;cursor:pointer;flex-shrink:0}
+.btn-paypal{display:block;width:100%;background:#0070BA;color:#fff;padding:14px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin-top:12px;transition:0.3s}
+.btn-paypal:hover{background:#fff;color:#0070BA}
+.info-card{background:var(--preto2);border:1px solid var(--borda);border-left:4px solid var(--ouro);border-radius:14px;padding:28px;display:flex;flex-direction:column;height:100%}
 .info-card h2{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px}
 .info-card p{opacity:0.7;line-height:1.8;font-size:14.5px;margin-bottom:14px}
 .valores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
 .valores button{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--creme);padding:14px;border-radius:10px;font-weight:800;cursor:pointer;transition:0.3s}
 .valores button:hover{border-color:var(--ouro);background:rgba(238,188,108,0.1);color:var(--ouro);transform:translateY(-2px)}
-.impacto{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.impacto{display:flex;flex-direction:column;gap:10px;margin-top:auto}
 .impacto div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;font-size:13px}
-.impacto div i{width:32px;height:32px;background:rgba(238,188,108,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro)}
-.btn-paypal{display:block;width:100%;background:#0070BA;color:#fff;padding:16px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin-top:16px;transition:0.3s}
-.btn-paypal:hover{background:#fff;color:#0070BA}
-@media(max-width:900px){.box-doacao{grid-template-columns:1fr}}
+.impacto div i{width:32px;height:32px;background:rgba(238,188,108,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro);flex-shrink:0}
+@media(max-width:900px){.box-doacao{grid-template-columns:1fr}.qr-card,.info-card{height:auto}}
 </style>
 </head>
 <body>
@@ -77,82 +77,44 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
 </nav>
 <header class="hero-doacao">
     <span class="tag" data-i18n="tag">💛 VOCÊ MANTÉM ESSE PROJETO VIVO</span>
-    <h1 data-i18n="h1">Seu apoio é o <span>combustível</span> do Prisma</h1>
-    <p data-i18n="sub">Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.</p>
+    <h1 data-i18n="h1">Seu apoio é o <span>combustível</span> do Prisma Histórico</h1>
+    <p data-i18n="sub">Ao apoiar este projeto, você ajuda a manter uma plataforma independente...</p>
 </header>
 <div class="box-doacao">
-    <div class="qr-card" id="card-pix">
-        <div class="qr-img" id="qrContainer">COLOQUE SEU QR CODE AQUI<br>260x260</div>
-        <b data-i18n="qr_t">Escaneie o QR Code</b><br>
-        <span data-i18n="qr_s" style="opacity:0.6;font-size:13px">Abra o app do seu banco e pague via PIX</span>
-        <div class="pix-key-box">
+    <div class="qr-card">
+        <div class="qr-img" id="qrContainer">COLOQUE SEU QR<br>240x240</div>
+        <b data-i18n="qr_t">Escaneie o QR Code</b>
+        <span class="qr-sub" data-i18n="qr_s">Abra o app do seu banco e pague via PIX</span>
+        <div class="pix-key-box" id="pixBox">
             <code id="pixKey">cronologia.prisma.historico@gmail.com</code>
             <button class="btn-copiar" onclick="copiarPix()" data-i18n="btn_copy">COPIAR</button>
         </div>
+        <div id="paypalBox" style="display:none;width:100%;margin-top:auto">
+            <a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6&no_recurring=0&item_name=Your+donation+funds+independent+multilingual+knowledge+and+connects+readers+worldwide.+Thank+you+for+your+support%21%0A&currency_code=BRL" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal - International</a> </div>
         <p style="margin-top:12px;font-size:11px;opacity:0.4" data-i18n="pix_obs">Chave PIX - E-mail • Titular: Prisma Histórico</p>
-        <div id="paypalBox" style="display:none">
-          <a href="https://www.paypal.com/donate/?hosted_button_id=SEU_ID_AQUI" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal - International</a>
-          <p style="margin-top:12px;font-size:11px;opacity:0.4" data-i18n="paypal_obs">Secure donation via PayPal • Works worldwide</p>
-        </div>
     </div>
     <div class="info-card">
         <h2 data-i18n="why_t">Por que doar?</h2>
         <p data-i18n="why_p1">Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.</p>
-        <p data-i18n="why_p2">Quando você doa, você não paga hospedagem. Você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
+        <p data-i18n="why_p2">Quando você doa, você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
         <div class="valores">
-            <button onclick="copiarValor(5)" data-i18n="v5">R$ 5</button>
-            <button onclick="copiarValor(15)" data-i18n="v15">R$ 15</button>
-            <button onclick="copiarValor(30)" data-i18n="v30">R$ 30</button>
-            <button onclick="copiarValor(50)" data-i18n="v50">R$ 50</button>
-            <button onclick="copiarValor(100)" data-i18n="v100">R$ 100</button>
-            <button onclick="copiarValor(0)" data-i18n="v_other">Outro valor</button>
+            <button onclick="copiarValor(5)" data-i18n="v5">R$ 5</button><button onclick="copiarValor(15)" data-i18n="v15">R$ 15</button><button onclick="copiarValor(30)" data-i18n="v30">R$ 30</button>
+            <button onclick="copiarValor(50)" data-i18n="v50">R$ 50</button><button onclick="copiarValor(100)" data-i18n="v100">R$ 100</button><button onclick="copiarValor(0)" data-i18n="v_other">Outro valor</button>
         </div>
         <div class="impacto">
-            <div><i>🚀</i><span data-i18n="i1"><b>Site sem anúncios:</b> rápido e limpo pra você estudar</span></div>
-            <div><i>📚</i><span data-i18n="i2"><b>E-book sempre atualizado:</b> novas questões e revisões</span></div>
-            <div><i>⚡</i><span data-i18n="i3"><b>Conteúdo novo:</b> mais artigos, curiosidades e simulados</span></div>
+            <div><i>🚀</i><span data-i18n="i1"><b>Site sem anúncios:</b> rápido e limpo</span></div>
+            <div><i>📚</i><span data-i18n="i2"><b>E-book sempre atualizado</b></span></div>
+            <div><i>⚡</i><span data-i18n="i3"><b>Conteúdo novo:</b> mais artigos e simulados</span></div>
         </div>
         <p style="margin-top:20px;background:rgba(238,188,108,0.08);border:1px dashed rgba(238,188,108,0.25);padding:12px;border-radius:8px;text-align:center;color:var(--ouro);font-size:12px;font-weight:700" data-i18n="any">Qualquer valor já ajuda MUITO — de verdade 💛</p>
     </div>
 </div>
 <script>
 const T={
-pt:{
-tag:"💛 VOCÊ MANTÉM ESSE PROJETO VIVO",h1:"Seu apoio é o <span>combustível</span> do Prisma",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",
-qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",
-paypal_btn:"Doar via PayPal - Internacional",paypal_obs:"Doação segura via PayPal • Funciona no mundo todo",
-why_t:"Por que doar?",why_p1:"Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.",why_p2:"Quando você doa, você não paga hospedagem. Você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.",
-v5:"R$ 5",v15:"R$ 15",v30:"R$ 30",v50:"R$ 50",v100:"R$ 100",v_other:"Outro valor",
-i1:"<b>Site sem anúncios:</b> rápido e limpo pra você estudar",i2:"<b>E-book sempre atualizado:</b> novas questões e revisões",i3:"<b>Conteúdo novo:</b> mais artigos, curiosidades e simulados",
-any:"Qualquer valor já ajuda MUITO — de verdade 💛"
-},
-en:{
-tag:"💛 YOU KEEP THIS PROJECT ALIVE",h1:"Your support is the <span>fuel</span> of Prisma",sub:"No annoying ads, no fluff. Every cent goes directly to keeping the site fast, the e-book updated and content reaching those who can't afford expensive courses.",
-qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"International donation • Prisma Histórico",
-paypal_btn:"Donate via PayPal - $5, $15, $30",paypal_obs:"Secure donation via PayPal • Works worldwide",
-why_t:"Why donate?",why_p1:"Behind each article there are <strong>hundreds of hours of research, review and expensive hosting</strong> to give you the shortest path to approval.",why_p2:"When you donate, you don't pay hosting. You fund <strong>the continuity of an independent project</strong> fighting against rote learning.",
-v5:"$5",v15:"$15",v30:"$30",v50:"$50",v100:"$100",v_other:"Other",
-i1:"<b>Ad-free site:</b> fast and clean to study",i2:"<b>Always updated e-book:</b> new questions and revisions",i3:"<b>New content:</b> more articles, curiosities and quizzes",
-any:"Any amount helps A LOT — for real 💛"
-},
-es:{
-tag:"💛 TÚ MANTIENES VIVO ESTE PROYECTO",h1:"Tu apoyo es el <span>combustible</span> de Prisma",sub:"Sin anuncios molestos, sin relleno. Cada centavo va directo a mantener el sitio rápido, el e-book actualizado y el contenido llegando a quien no puede pagar cursos caros.",
-qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal - funciona en todo el mundo",btn_copy:"COPIAR",pix_obs:"Donación internacional • Prisma Histórico",
-paypal_btn:"Donar vía PayPal - 5€, 15€, 30€",paypal_obs:"Donación segura vía PayPal • Funciona mundialmente",
-why_t:"¿Por qué donar?",why_p1:"Detrás de cada artículo hay <strong>cientos de horas de selección de preguntas, revisión y hosting caro</strong> para darte el camino más corto hacia la aprobación.",why_p2:"Cuando donas, no pagas hosting. Financias <strong>la continuidad de un proyecto independiente</strong> que lucha contra la memorización.",
-v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Otro",
-i1:"<b>Sitio sin anuncios:</b> rápido y limpio para estudiar",i2:"<b>E-book siempre actualizado:</b> nuevas preguntas y revisiones",i3:"<b>Contenido nuevo:</b> más artículos, curiosidades y simulados",
-any:"Cualquier valor ya ayuda MUCHO — de verdad 💛"
-},
-fr:{
-tag:"💛 VOUS MAINTENEZ CE PROJET EN VIE",h1:"Votre soutien est le <span>carburant</span> de Prisma",sub:"Pas de pubs ennuyeuses, pas de blabla. Chaque centime va directement à maintenir le site rapide, l'e-book à jour et le contenu pour ceux qui ne peuvent pas payer des cours chers.",
-qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal - fonctionne partout",btn_copy:"COPIER",pix_obs:"Don international • Prisma Histórico",
-paypal_btn:"Faire un don via PayPal - 5€, 15€, 30€",paypal_obs:"Don sécurisé via PayPal • Fonctionne mondialement",
-why_t:"Pourquoi faire un don?",why_p1:"Derrière chaque article il y a <strong>des centaines d'heures de tri, révision et hébergement cher</strong> pour vous donner le chemin le plus court vers la réussite.",why_p2:"Quand vous donnez, vous ne payez pas l'hébergement. Vous financez <strong>la continuité d'un projet indépendant</strong> qui lutte contre le par cœur.",
-v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Autre",
-i1:"<b>Site sans pub:</b> rapide et propre pour étudier",i2:"<b>E-book toujours à jour:</b> nouvelles questions et révisions",i3:"<b>Nouveau contenu:</b> plus d'articles, curiosités et quiz",
-any:"N'importe quel montant aide ÉNORMÉMENT — vraiment 💛"
-}
+pt:{tag:"💛 VOCÊ MANTÉM ESSE PROJETO VIVO",h1:"Seu apoio é o <span>combustível</span> do Prisma Histórico",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",paypal_btn:"💛 Doar via PayPal - Internacional",why_t:"Por que doar?",why_p1:"Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.",why_p2:"Quando você doa, você não paga hospedagem. Você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.",v5:"R$ 5",v15:"R$ 15",v30:"R$ 30",v50:"R$ 50",v100:"R$ 100",v_other:"Outro valor",i1:"<b>Site sem anúncios:</b> rápido e limpo pra você estudar",i2:"<b>E-book sempre atualizado:</b> novas questões e revisões",i3:"<b>Conteúdo novo:</b> mais artigos, curiosidades e simulados",any:"Qualquer valor já ajuda MUITO — de verdade 💛"},
+en:{tag:"💛 YOU KEEP THIS PROJECT ALIVE",h1:"Your support is the <span>fuel</span> of Prisma Histórico",sub:"No annoying ads, no fluff. Every cent goes directly to keeping the site fast, the e-book updated and content reaching those who can't afford expensive courses.",qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"Secure donation via PayPal • Works worldwide",paypal_btn:"💛 Donate via PayPal",why_t:"Why donate?",why_p1:"Behind each article there are <strong>hundreds of hours of research, review and expensive hosting</strong> to give you the shortest path to approval.",why_p2:"When you donate, you don't pay hosting. You fund <strong>the continuity of an independent project</strong> fighting against rote learning.",v5:"$5",v15:"$15",v30:"$30",v50:"$50",v100:"$100",v_other:"Other amount",i1:"<b>Ad-free site:</b> fast and clean to study",i2:"<b>Always updated e-book:</b> new questions and revisions",i3:"<b>New content:</b> more articles, curiosities and quizzes",any:"Any amount helps A LOT — for real 💛"},
+es:{tag:"💛 TÚ MANTIENES VIVO ESTE PROYECTO",h1:"Tu apoyo es el <span>combustible</span> de Prisma Histórico",sub:"Sin anuncios molestos, sin relleno. Cada centavo va directo a mantener el sitio rápido, el e-book actualizado y el contenido llegando a quien no puede pagar cursos caros.",qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal - funciona en todo el mundo",btn_copy:"COPIAR",pix_obs:"Donación segura vía PayPal • Funciona mundialmente",paypal_btn:"💛 Donar vía PayPal",why_t:"¿Por qué donar?",why_p1:"Detrás de cada artículo hay <strong>cientos de horas de selección de preguntas, revisión y hosting caro</strong> para darte el camino más corto hacia la aprobación.",why_p2:"Cuando donas, no pagas hosting. Financias <strong>la continuidad de un proyecto independiente</strong> que lucha contra la memorización.",v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Otro valor",i1:"<b>Sitio sin anuncios:</b> rápido y limpio para estudiar",i2:"<b>E-book siempre actualizado:</b> nuevas preguntas y revisiones",i3:"<b>Contenido nuevo:</b> más artículos, curiosidades y simulados",any:"Cualquier valor ya ayuda MUCHO — de verdad 💛"},
+fr:{tag:"💛 VOUS MAINTENEZ CE PROJET EN VIE",h1:"Votre soutien est le <span>carburant</span> de Prisma Histórico",sub:"Pas de pubs ennuyeuses, pas de blabla. Chaque centime va directement à maintenir le site rapide, l'e-book à jour et le contenu pour ceux qui ne peuvent pas payer des cours chers.",qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal - fonctionne partout",btn_copy:"COPIER",pix_obs:"Don sécurisé via PayPal • Fonctionne mondialement",paypal_btn:"💛 Faire un don via PayPal",why_t:"Pourquoi faire un don?",why_p1:"Derrière chaque article il y a <strong>des centaines d'heures de tri, révision et hébergement cher</strong> pour vous donner le chemin le plus court vers la réussite.",why_p2:"Quand vous donnez, vous ne payez pas l'hébergement. Vous financez <strong>la continuité d'un projet indépendant</strong> qui lutte contre le par cœur.",v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Autre montant",i1:"<b>Site sans pub:</b> rapide et propre pour étudier",i2:"<b>E-book toujours à jour:</b> nouvelles questions et révisions",i3:"<b>Nouveau contenu:</b> plus d'articles, curiosités et quiz",any:"N'importe quel montant aide ÉNORMÉMENT — vraiment 💛"}
 };
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
@@ -162,17 +124,17 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
-  const qrC = document.getElementById('qrContainer');
-  const paypalBox = document.getElementById('paypalBox');
-  const pixBox = document.querySelector('.pix-key-box');
+  const qrC=document.getElementById('qrContainer');
+  const pixBox=document.getElementById('pixBox');
+  const paypalBox=document.getElementById('paypalBox');
   if(l==='pt'){
-    qrC.innerHTML = 'COLOQUE SEU QR CODE AQUI<br>260x260';
-    paypalBox.style.display='none';
+    qrC.innerHTML='COLOQUE SEU QR<br>240x240';
     pixBox.style.display='flex';
+    paypalBox.style.display='none';
   }else{
-    qrC.innerHTML = '<span style="font-size:60px">💛</span><br>Support Prisma';
-    paypalBox.style.display='block';
+    qrC.innerHTML='<span style="font-size:60px">💛</span><br>PayPal';
     pixBox.style.display='none';
+    paypalBox.style.display='block';
   }
 }
 setLang(localStorage.getItem('prisma_lang')||'pt');
