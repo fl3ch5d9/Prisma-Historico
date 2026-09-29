@@ -289,6 +289,116 @@ body * {
 .card-sumario-corpo::-webkit-scrollbar-thumb{background:var(--ouro); border-radius:10px}
 </style>
 
+<!-- SECTION PDF GRÁTIS - COLE NO INDEX -->
+<section id="amostra-gratis-premium">
+  <div class="ag-wrap">
+    <div class="ag-top">
+      <span class="ag-badge">● AMOSTRA OFICIAL LIBERADA</span>
+      <h2>Baixe <em>9 páginas reais</em> do eBook<br>no padrão premium</h2>
+      <p>Sem cadastro. Veja com seus próprios olhos a diagramação de luxo, as ilustrações históricas e a profundidade do conteúdo.</p>
+    </div>
+
+   <div class="ag-carrossel">
+  <button class="seta esq" id="prev">‹</button>
+  <div class="track" id="track">
+    <div class="item"><img src="img/28_20260929_025828_0027.png"><p>Pág 28</p></div>
+    <div class="item destaque"><img src="img/52_20260929_025829_0051.png"><p>Pág 52</p></div>
+    <div class="item"><img src="img/64_20260929_025829_0063.png"><p>Pág 64</p></div>
+    <div class="item"><img src="img/80_20260929_025830_0079.png"><p>Pág 80</p></div>
+  </div>
+  <button class="seta dir" id="next">›</button>
+</div>
+
+<style>
+.ag-carrossel{position:relative; padding:0 50px 60px 50px; margin-bottom:80px;}
+.track{display:flex; gap:20px; overflow-x:auto; scroll-behavior:smooth;}
+.track::-webkit-scrollbar{display:none;}
+.item{min-width:300px; background:#0f1d3a; border-radius:16px; overflow:hidden; border:1px solid #1e2f5a;}
+.item img{width:100%; display:block;}
+.item p{text-align:center; color:#ffae00; padding:12px 0; margin:0; font-weight:700;}
+.item.destaque{border:2px solid #ff7a00; box-shadow:0 0 20px #ff7a0055;}
+.seta{position:absolute; top:45%; background:#000; border:2px solid #ff7a00; color:#ff7a00; width:42px; height:42px; border-radius:50%; font-size:26px; cursor:pointer;}
+.esq{left:0} .dir{right:0}
+</style>
+
+
+<script>
+const t = document.getElementById('track');
+
+document.getElementById('next').onclick=()=>{
+  const noFinal = t.scrollLeft + t.clientWidth >= t.scrollWidth - 20;
+  if(noFinal){
+    t.scrollTo({left:0, behavior:'smooth'}); // volta pro inicio
+  } else {
+    t.scrollBy({left:330, behavior:'smooth'});
+  }
+};
+
+document.getElementById('prev').onclick=()=>{
+  if(t.scrollLeft <= 10){
+    t.scrollTo({left:t.scrollWidth, behavior:'smooth'}); // vai pro final
+  } else {
+    t.scrollBy({left:-330, behavior:'smooth'});
+  }
+};
+
+// faz voltar sozinho se arrastar até o final com o dedo
+t.addEventListener('scroll', ()=>{
+  if(t.scrollLeft + t.clientWidth >= t.scrollWidth - 5){
+    // quando chegar bem no final, espera 1 seg e volta
+    // setTimeout(()=> t.scrollTo({left:0, behavior:'smooth'}), 800);
+  }
+});
+</script>
+
+
+
+    <div class="ag-box">
+      <div class="ag-box-info">
+        <h3>📘 HISTÓRIA DO BRASIL - Amostra Grátis</h3>
+        <p>PDF com 11 páginas (capa + 9 páginas + CTA) • Alta resolução • Leitura no celular</p>
+        <div class="ag-lista">✓ Pág. 72 - Estatística do Ouro • ✓ Pág. 82 - Poder das Mulheres da Corte • ✓ Pág. 88 - Dia do Fico • ✓ Pág. 93 - Crise de 1831 • ✓ + 5 bônus</div>
+      </div>
+      <a href="" target="_blank" class="ag-btn">
+  <span>CLIQUE AQUI E BAIXE AS 9 PÁGINAS GRÁTIS</span>
+  <b>↓</b>
+</a>
+    </div>
+    <small class="ag-obs">Arquivo 100% gratuito. É pra você ver que o material não é resuminho de internet.</small>
+  </div>
+</section>
+
+<style>
+#amostra-gratis-premium{background:#080808; padding:90px 20px; font-family:Inter,system-ui,sans-serif; border-top:1px solid rgba(255,106,0,0.15); border-bottom:1px solid rgba(255,106,0,0.15)}
+.ag-wrap{max-width:1200px; margin:0 auto; text-align:center}
+.ag-badge{display:inline-block; color:#ff6a00; font-size:10px; font-weight:800; letter-spacing:0.3em; border:1px solid rgba(255,106,0,0.25); background:rgba(255,106,0,0.08); padding:8px 16px; border-radius:100px; margin-bottom:18px}
+#amostra-gratis-premium h2{color:#f5e6c8; font-size:48px; font-weight:900; line-height:0.95; letter-spacing:-0.03em; margin:0 0 14px}
+#amostra-gratis-premium h2 em{color:#ff6a00; font-family:Georgia,serif; font-style:italic; font-weight:400}
+.ag-top p{color:#fff; opacity:0.5; font-size:15px; max-width:600px; margin:0 auto 40px; line-height:1.6}
+
+.ag-preview{overflow-x:auto; padding:20px 0 40px; scrollbar-width:none}
+.ag-preview::-webkit-scrollbar{display:none}
+.ag-track{display:flex; gap:18px; justify-content:center; align-items:center; min-width:max-content; margin:0 auto}
+.ag-track img{width:240px; height:340px; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,0.1); opacity:0.7; transition:0.3s}
+.ag-track img.destaque{width:280px; height:400px; opacity:1; transform:translateY(-10px); border-color:#ff6a00; box-shadow:0 25px 70px rgba(0,0,0,0.8), 0 0 30px rgba(255,106,0,0.15)}
+
+.ag-box{max-width:860px; margin:0 auto; background:#121212; border:1px solid rgba(255,106,0,0.25); border-radius:18px; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left}
+.ag-box-info h3{color:#f5e6c8; font-size:15px; margin:0 0 4px}
+.ag-box-info p{color:#fff; opacity:0.5; font-size:12px; margin:0 0 8px}
+.ag-lista{color:#f5e6c8; font-size:11px; opacity:0.7; line-height:1.4}
+.ag-btn{background:#ff6a00; color:#000; text-decoration:none; font-weight:900; font-size:12px; display:flex; align-items:center; gap:14px; padding:6px 6px 6px 22px; border-radius:100px; white-space:nowrap; transition:0.3s}
+.ag-btn b{background:#000; color:#ff6a00; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px}
+.ag-btn:hover{transform:translateY(-2px); background:#ff7f26; box-shadow:0 15px 40px rgba(255,106,0,0.35)}
+.ag-obs{color:#fff; opacity:0.3; font-size:11px; margin-top:14px; display:block}
+
+@media(max-width:900px){
+  #amostra-gratis-premium h2{font-size:32px}
+  .ag-box{flex-direction:column; text-align:center}
+  .ag-track{justify-content:flex-start; padding-left:20px}
+}
+</style>
+<!-- FIM SECTION PDF GRÁTIS -->
+
 <section id="dentroEbook">
   <div class="ebook-header">
     <span>POR DENTRO DO MATERIAL</span>
