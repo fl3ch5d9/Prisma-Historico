@@ -18,15 +18,27 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;p
 .lang-switch button.active{background:#c9a86a;color:#121212;font-weight:800}
 
 /* GAVETA CORRIGIDA - NÃO ENGOLI MAIS O HAMBURGUER */
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%;position:relative;z-index:10002}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav .menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-menu-hamburguer{width:52px;height:52px;min-width:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%;position:relative;z-index:10002}
+.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s;transform-origin:center}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:16px;transform:translateX(-100%);transition:0.4s cubic-bezier(.77,0,.175,1);pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:300px;max-width:85vw;height:100vh;height:100dvh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 28px 40px 28px;gap:8px;transform:translateX(-100%);transition:0.45s cubic-bezier(.77,0,.175,1);pointer-events:none;z-index:10001;border-right:1px solid var(--borda);overflow-y:auto}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8;transition:0.3s}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1;transform:translateX(5px)}
+.prisma-menu-links li{width:100%}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8;transition:0.3s;padding:12px 10px;border-radius:10px;width:100%}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1;background:rgba(238,188,108,0.06);transform:translateX(5px)}
+@media(max-width:768px){
+  .prisma-nav{padding:12px 4%}
+  .prisma-logo{font-size:20px}
+  .lang-switch{transform:scale(0.9);transform-origin:right center}
+  .prisma-menu-links{width:88vw;max-width:320px;padding:90px 22px 30px 22px}
+  .prisma-menu-links li a{font-size:13px;padding:14px 12px}
+}
+@media(max-width:480px){
+  .prisma-menu-links{width:100vw;max-width:100vw;border-right:none}
+}
+
 
 .hero-ebook{padding:70px 5% 80px 5%;max-width:1250px;margin:auto}
 .hero-ebook h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,72px);line-height:0.9}
