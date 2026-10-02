@@ -4,51 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doe - Apoie o Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-:root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--preto2:#1E1E1E;--borda:rgba(238,188,108,0.15)}
+:root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--sepia:#d8c9a8;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em}
-.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em; font-weight:300;}
+.prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:6px}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
 .hero-doacao{padding:150px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
-.tag{color:var(--ouro);font-size:11px;letter-spacing:0.22em;font-weight:800;background:rgba(238,188,108,0.1);border:1px solid rgba(238,188,108,0.2);padding:8px 16px;border-radius:100px;display:inline-block;margin-bottom:20px}
-.hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:16px}
-.hero-doacao h1 span{color:var(--ouro);font-style:italic}
-.hero-doacao p{opacity:0.6;line-height:1.8;max-width:640px;margin:auto;font-size:15.5px}
-.box-doacao{display:grid;grid-template-columns:400px 1fr;gap:22px;max-width:1100px;margin:30px auto 60px auto;padding:0 5%;align-items:stretch}
-.qr-card{background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:24px;text-align:center;display:flex;flex-direction:column;height:100%}
-.qr-img{width:100%;max-width:240px;aspect-ratio:1/1;background:#fff;border-radius:12px;margin:0 auto 14px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:14px;overflow:hidden;flex-shrink:0}
-.qr-card b{display:block;font-size:14px;margin-top:4px}
-.qr-sub{display:block;opacity:0.6;font-size:13px;margin-top:4px}
-.pix-key-box{margin-top:auto;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.3);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:nowrap}
-.pix-key-box code{font-size:10.5px;color:var(--ouro);white-space:nowrap;flex:1;text-align:left}
-.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:8px 14px;border-radius:6px;font-weight:800;font-size:11px;cursor:pointer;flex-shrink:0}
-.btn-paypal{display:block;width:100%;background:#0070BA;color:#fff;padding:14px;border-radius:10px;text-align:center;text-decoration:none;font-weight:800;margin-top:12px;transition:0.3s}
-.btn-paypal:hover{background:#fff;color:#0070BA}
-.info-card{background:var(--preto2);border:1px solid var(--borda);border-left:4px solid var(--ouro);border-radius:14px;padding:28px;display:flex;flex-direction:column;height:100%}
-.info-card h2{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px}
-.info-card p{opacity:0.7;line-height:1.8;font-size:14.5px;margin-bottom:14px}
-.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
-.valores button{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--creme);padding:14px;border-radius:10px;font-weight:800;cursor:pointer;transition:0.3s}
-.valores button:hover{border-color:var(--ouro);background:rgba(238,188,108,0.1);color:var(--ouro);transform:translateY(-2px)}
+.tag{color:var(--ouro);font-size:9px;letter-spacing:0.24em;font-weight:300;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:22px; text-transform:uppercase;}
+.hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:18px; font-weight:300; letter-spacing:-0.02em;}
+.hero-doacao h1 span{color:var(--ouro);font-style:italic; font-weight:300;}
+.hero-doacao p{opacity:0.45;line-height:1.9;max-width:620px;margin:auto;font-size:14.5px; font-weight:200;}
+.box-doacao{display:grid;grid-template-columns:380px 1fr;gap:22px;max-width:1100px;margin:40px auto 60px auto;padding:0 5%;align-items:stretch}
+.qr-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;padding:28px;text-align:center;display:flex;flex-direction:column;height:100%}
+.qr-img{width:100%;max-width:240px;aspect-ratio:1/1;background:#F5F5F0;border-radius:14px;margin:0 auto 16px auto;display:flex;align-items:center;justify-content:center;color:#121212;font-weight:400;font-size:13px;overflow:hidden;flex-shrink:0; letter-spacing:0.04em;}
+.qr-card b{display:block;font-size:13px;margin-top:4px; font-weight:400; letter-spacing:0.04em;}
+.qr-sub{display:block;opacity:0.4;font-size:12px;margin-top:6px; font-weight:200;}
+.pix-key-box{margin-top:auto;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.22);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:nowrap}
+.pix-key-box code{font-size:10.5px;color:var(--ouro);white-space:nowrap;flex:1;text-align:left; font-weight:300;}
+.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:8px 16px;border-radius:100px;font-weight:400;font-size:10px;cursor:pointer;flex-shrink:0; letter-spacing:0.08em;}
+.btn-paypal{display:block;width:100%;background:transparent; border:1px solid var(--ouro); color:var(--ouro);padding:14px;border-radius:100px;text-align:center;text-decoration:none;font-weight:300; font-size:12px; letter-spacing:0.08em; margin-top:12px;transition:0.3s}
+.btn-paypal:hover{background:var(--ouro);color:#121212}
+.info-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-left:1px solid var(--ouro);border-radius:16px;padding:32px;display:flex;flex-direction:column;height:100%}
+.info-card h2{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px; font-weight:300; letter-spacing:-0.01em;}
+.info-card p{opacity:0.45;line-height:1.9;font-size:14px;margin-bottom:14px; font-weight:200;}
+.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
+.valores button{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:var(--sepia);padding:14px;border-radius:12px;font-weight:300;cursor:pointer;transition:0.3s; font-size:13px; letter-spacing:0.04em;}
+.valores button:hover{border-color:rgba(238,188,108,0.25);background:rgba(238,188,108,0.06);color:var(--ouro);transform:translateY(-1px)}
 .impacto{display:flex;flex-direction:column;gap:10px;margin-top:auto}
-.impacto div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.03);padding:12px;border-radius:10px;font-size:13px}
-.impacto div i{width:32px;height:32px;background:rgba(238,188,108,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro);flex-shrink:0}
+.impacto div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:12px;font-size:12.5px; font-weight:200;}
+.impacto div i{width:30px;height:30px;background:rgba(238,188,108,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro);flex-shrink:0; font-size:14px;}
+
+#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
+#prismaFooter.footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter.footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
+#prismaFooter.footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
+#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter.footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
+#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
+#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
 @media(max-width:900px){.box-doacao{grid-template-columns:1fr}.qr-card,.info-card{height:auto}}
+@media(max-width:1024px){#prismaFooter.footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter.footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
+@media(max-width:650px){#prismaFooter.footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter.footer-wrap{padding:50px 5% 0 5%}#prismaFooter.footer-grid > div:first-child{grid-column:1/-1}#prismaFooter.footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -64,21 +82,21 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
       <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
     </div>
     <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span><span>INÍCIO</span></a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span><span>SOBRE</span></a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span><span>AFILIADOS</span></a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span><span>ARTIGOS</span></a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span>CURIOSIDADES</span></a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span><span>QUIZ</span></a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span><span>E-BOOK</span></a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span><span>LOJA</span></a></li>
-       <li><a href="turismo.html"><span class="material-icons">public</span><span>TURISMO COLONIAL</span></a></li>
+       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+       <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
     </ul>
 </nav>
 <header class="hero-doacao">
-    <span class="tag" data-i18n="tag">💛 VOCÊ MANTÉM ESSE PROJETO VIVO</span>
+    <span class="tag" data-i18n="tag">Você mantém esse projeto vivo</span>
     <h1 data-i18n="h1">Seu apoio é o <span>combustível</span> do Prisma Histórico</h1>
-    <p data-i18n="sub">Ao apoiar este projeto, você ajuda a manter uma plataforma independente...</p>
+    <p data-i18n="sub">Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.</p>
 </header>
 <div class="box-doacao">
     <div class="qr-card">
@@ -90,31 +108,73 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
             <button class="btn-copiar" onclick="copiarPix()" data-i18n="btn_copy">COPIAR</button>
         </div>
         <div id="paypalBox" style="display:none;width:100%;margin-top:auto">
-            <a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6&no_recurring=0&item_name=Your+donation+funds+independent+multilingual+knowledge+and+connects+readers+worldwide.+Thank+you+for+your+support%21%0A&currency_code=BRL" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal - International</a> </div>
-        <p style="margin-top:12px;font-size:11px;opacity:0.4" data-i18n="pix_obs">Chave PIX - E-mail • Titular: Prisma Histórico</p>
+            <a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6&no_recurring=0&item_name=Your+donation+funds+independent+multilingual+knowledge+and+connects+readers+worldwide.+Thank+you+for+your+support%21%0A&currency_code=BRL" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal — International</a> </div>
+        <p style="margin-top:14px;font-size:10px;opacity:0.25; font-weight:200; letter-spacing:0.04em;" data-i18n="pix_obs">Chave PIX - E-mail • Titular: Prisma Histórico</p>
     </div>
     <div class="info-card">
         <h2 data-i18n="why_t">Por que doar?</h2>
-        <p data-i18n="why_p1">Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.</p>
-        <p data-i18n="why_p2">Quando você doa, você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
+        <p data-i18n="why_p1">Por trás de cada artigo tem <strong style="color:var(--ouro); font-weight:400;">centenas de horas de triagem</strong>, revisão e hospedagem pra te entregar o caminho mais curto até a aprovação.</p>
+        <p data-i18n="why_p2">Quando você doa, você financia a <strong style="color:var(--creme); font-weight:300;">continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
         <div class="valores">
-            <button onclick="copiarValor(5)" data-i18n="v5">R$ 5</button><button onclick="copiarValor(15)" data-i18n="v15">R$ 15</button><button onclick="copiarValor(30)" data-i18n="v30">R$ 30</button>
-            <button onclick="copiarValor(50)" data-i18n="v50">R$ 50</button><button onclick="copiarValor(100)" data-i18n="v100">R$ 100</button><button onclick="copiarValor(0)" data-i18n="v_other">Outro valor</button>
+            <button onclick="copiarValor(5)">R$ 5</button><button onclick="copiarValor(15)">R$ 15</button><button onclick="copiarValor(30)">R$ 30</button>
+            <button onclick="copiarValor(50)">R$ 50</button><button onclick="copiarValor(100)">R$ 100</button><button onclick="copiarValor(0)">Outro valor</button>
         </div>
         <div class="impacto">
-            <div><i>🚀</i><span data-i18n="i1"><b>Site sem anúncios:</b> rápido e limpo</span></div>
-            <div><i>📚</i><span data-i18n="i2"><b>E-book sempre atualizado</b></span></div>
-            <div><i>⚡</i><span data-i18n="i3"><b>Conteúdo novo:</b> mais artigos e simulados</span></div>
+            <div><i>◐</i><span><b style="font-weight:400;">Site sem anúncios:</b> rápido e limpo</span></div>
+            <div><i>◑</i><span><b style="font-weight:400;">E-book sempre atualizado</b></span></div>
+            <div><i>◒</i><span><b style="font-weight:400;">Conteúdo novo:</b> mais artigos e simulados</span></div>
         </div>
-        <p style="margin-top:20px;background:rgba(238,188,108,0.08);border:1px dashed rgba(238,188,108,0.25);padding:12px;border-radius:8px;text-align:center;color:var(--ouro);font-size:12px;font-weight:700" data-i18n="any">Qualquer valor já ajuda MUITO — de verdade 💛</p>
+        <p style="margin-top:22px;background:rgba(238,188,108,0.05);border:1px dashed rgba(238,188,108,0.18);padding:14px;border-radius:10px;text-align:center;color:var(--ouro);font-size:11px;font-weight:300; letter-spacing:0.04em;" data-i18n="any">Qualquer valor já ajuda MUITO — de verdade</p>
     </div>
 </div>
+
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="../index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="ebook.html">📘 E-book</a>
+        <a href="loja.html">🛒 Loja</a>
+        <a href="afiliados.html">🤝 Afiliados</a>
+        <a href="doacao.html">💰 Doação</a>
+        <a href="privacidade.html">🔒 Privacidade</a>
+        <a href="termos.html">📄 Termos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn">Entrar pro Clube →</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico</span>
+      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
 <script>
 const T={
-pt:{tag:"💛 VOCÊ MANTÉM ESSE PROJETO VIVO",h1:"Seu apoio é o <span>combustível</span> do Prisma Histórico",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",paypal_btn:"💛 Doar via PayPal - Internacional",why_t:"Por que doar?",why_p1:"Por trás de cada artigo tem <strong>centenas de horas de triagem de questões, revisão e hospedagem cara</strong> pra te entregar o caminho mais curto até a aprovação.",why_p2:"Quando você doa, você não paga hospedagem. Você financia a <strong>continuidade de um projeto independente</strong> que luta contra a decoreba.",v5:"R$ 5",v15:"R$ 15",v30:"R$ 30",v50:"R$ 50",v100:"R$ 100",v_other:"Outro valor",i1:"<b>Site sem anúncios:</b> rápido e limpo pra você estudar",i2:"<b>E-book sempre atualizado:</b> novas questões e revisões",i3:"<b>Conteúdo novo:</b> mais artigos, curiosidades e simulados",any:"Qualquer valor já ajuda MUITO — de verdade 💛"},
-en:{tag:"💛 YOU KEEP THIS PROJECT ALIVE",h1:"Your support is the <span>fuel</span> of Prisma Histórico",sub:"No annoying ads, no fluff. Every cent goes directly to keeping the site fast, the e-book updated and content reaching those who can't afford expensive courses.",qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"Secure donation via PayPal • Works worldwide",paypal_btn:"💛 Donate via PayPal",why_t:"Why donate?",why_p1:"Behind each article there are <strong>hundreds of hours of research, review and expensive hosting</strong> to give you the shortest path to approval.",why_p2:"When you donate, you don't pay hosting. You fund <strong>the continuity of an independent project</strong> fighting against rote learning.",v5:"$5",v15:"$15",v30:"$30",v50:"$50",v100:"$100",v_other:"Other amount",i1:"<b>Ad-free site:</b> fast and clean to study",i2:"<b>Always updated e-book:</b> new questions and revisions",i3:"<b>New content:</b> more articles, curiosities and quizzes",any:"Any amount helps A LOT — for real 💛"},
-es:{tag:"💛 TÚ MANTIENES VIVO ESTE PROYECTO",h1:"Tu apoyo es el <span>combustible</span> de Prisma Histórico",sub:"Sin anuncios molestos, sin relleno. Cada centavo va directo a mantener el sitio rápido, el e-book actualizado y el contenido llegando a quien no puede pagar cursos caros.",qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal - funciona en todo el mundo",btn_copy:"COPIAR",pix_obs:"Donación segura vía PayPal • Funciona mundialmente",paypal_btn:"💛 Donar vía PayPal",why_t:"¿Por qué donar?",why_p1:"Detrás de cada artículo hay <strong>cientos de horas de selección de preguntas, revisión y hosting caro</strong> para darte el camino más corto hacia la aprobación.",why_p2:"Cuando donas, no pagas hosting. Financias <strong>la continuidad de un proyecto independiente</strong> que lucha contra la memorización.",v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Otro valor",i1:"<b>Sitio sin anuncios:</b> rápido y limpio para estudiar",i2:"<b>E-book siempre actualizado:</b> nuevas preguntas y revisiones",i3:"<b>Contenido nuevo:</b> más artículos, curiosidades y simulados",any:"Cualquier valor ya ayuda MUCHO — de verdad 💛"},
-fr:{tag:"💛 VOUS MAINTENEZ CE PROJET EN VIE",h1:"Votre soutien est le <span>carburant</span> de Prisma Histórico",sub:"Pas de pubs ennuyeuses, pas de blabla. Chaque centime va directement à maintenir le site rapide, l'e-book à jour et le contenu pour ceux qui ne peuvent pas payer des cours chers.",qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal - fonctionne partout",btn_copy:"COPIER",pix_obs:"Don sécurisé via PayPal • Fonctionne mondialement",paypal_btn:"💛 Faire un don via PayPal",why_t:"Pourquoi faire un don?",why_p1:"Derrière chaque article il y a <strong>des centaines d'heures de tri, révision et hébergement cher</strong> pour vous donner le chemin le plus court vers la réussite.",why_p2:"Quand vous donnez, vous ne payez pas l'hébergement. Vous financez <strong>la continuité d'un projet indépendant</strong> qui lutte contre le par cœur.",v5:"5€",v15:"15€",v30:"30€",v50:"50€",v100:"100€",v_other:"Autre montant",i1:"<b>Site sans pub:</b> rapide et propre pour étudier",i2:"<b>E-book toujours à jour:</b> nouvelles questions et révisions",i3:"<b>Nouveau contenu:</b> plus d'articles, curiosités et quiz",any:"N'importe quel montant aide ÉNORMÉMENT — vraiment 💛"}
+pt:{tag:"Você mantém esse projeto vivo",h1:"Seu apoio é o <span>combustível</span> do Prisma Histórico",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",paypal_btn:"Doar via PayPal — Internacional",why_t:"Por que doar?",why_p1:"Por trás de cada artigo tem <strong style='color:var(--ouro); font-weight:400;'>centenas de horas de triagem</strong>, revisão e hospedagem pra te entregar o caminho mais curto até a aprovação.",why_p2:"Quando você doa, você financia a <strong style='color:var(--creme); font-weight:300;'>continuidade de um projeto independente</strong> que luta contra a decoreba.",any:"Qualquer valor já ajuda MUITO — de verdade"},
+en:{tag:"You keep this project alive",h1:"Your support is the <span>fuel</span> of Prisma Histórico",sub:"No annoying ads. Every cent goes directly to keeping the site fast and the e-book updated.",qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"Secure donation via PayPal • Works worldwide",paypal_btn:"Donate via PayPal",why_t:"Why donate?",why_p1:"Behind each article there are <strong>hundreds of hours of research</strong> to give you the shortest path.",why_p2:"When you donate, you fund <strong>the continuity of an independent project</strong>.",any:"Any amount helps A LOT — for real"},
+es:{tag:"Tú mantienes vivo este proyecto",h1:"Tu apoyo es el <span>combustible</span> de Prisma Histórico",sub:"Sin anuncios molestos. Cada centavo va directo a mantener el sitio rápido.",qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal",btn_copy:"COPIAR",pix_obs:"Donación segura vía PayPal",paypal_btn:"Donar vía PayPal",why_t:"¿Por qué donar?",why_p1:"Detrás de cada artículo hay <strong>cientos de horas de selección</strong>.",why_p2:"Cuando donas, financias <strong>la continuidad de un proyecto independiente</strong>.",any:"Cualquier valor ya ayuda MUCHO — de verdad"},
+fr:{tag:"Vous maintenez ce projet en vie",h1:"Votre soutien est le <span>carburant</span> de Prisma Histórico",sub:"Pas de pubs. Chaque centime va directement à maintenir le site rapide.",qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal",btn_copy:"COPIER",pix_obs:"Don sécurisé via PayPal",paypal_btn:"Faire un don via PayPal",why_t:"Pourquoi faire un don?",why_p1:"Derrière chaque article il y a <strong>des centaines d'heures de tri</strong>.",why_p2:"Vous financez <strong>la continuité d'un projet indépendant</strong>.",any:"N'importe quel montant aide ÉNORMÉMENT"}
 };
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
@@ -132,7 +192,7 @@ function setLang(l){
     pixBox.style.display='flex';
     paypalBox.style.display='none';
   }else{
-    qrC.innerHTML='<span style="font-size:60px">💛</span><br>PayPal';
+    qrC.innerHTML='<span style="font-size:50px; font-weight:200;">—</span><br>PayPal';
     pixBox.style.display='none';
     paypalBox.style.display='block';
   }
@@ -146,12 +206,17 @@ nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
 function copiarPix(){
   const key=document.getElementById('pixKey').innerText;
   navigator.clipboard.writeText(key);
-  alert('Chave PIX copiada: '+key+' 💛');
+  alert('Chave PIX copiada: '+key);
 }
 function copiarValor(v){
-  if(v==0){alert('Digite o valor que quiser no seu banco usando a chave PIX copiada 💛'); copiarPix(); return;}
+  if(v==0){alert('Digite o valor que quiser no seu banco usando a chave PIX copiada'); copiarPix(); return;}
   alert('Vlw demais! Doe R$ '+v+' usando a chave PIX que vou copiar agora 🙏'); copiarPix();
 }
+document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+  const v=document.getElementById('prismaEmail').value.trim();
+  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+});
 </script>
 </body>
 </html>

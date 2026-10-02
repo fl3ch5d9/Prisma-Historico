@@ -4,82 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Afiliados - 40% de Comissão | Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); --sepia:#d8c9a8; }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:300; -webkit-font-smoothing: antialiased;}
 
-/* NAV IGUAL DA PRINT */
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001;line-height:0.9}
-.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001;line-height:0.9; font-weight:300;}
+.prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:6px;align-items:center;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px;letter-spacing:0.08em}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px;letter-spacing:0.08em; font-weight:300;}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-/* CORREÇÃO DO X */
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-
-/* GAVETA IGUAL DA PRINT */
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:78vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:110px 30px 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.15)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:78vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:110px 30px 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s ease;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.12)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-family:'Inter';font-size:13px;letter-spacing:0.10em;text-transform:uppercase;color:#d8c9a8;text-decoration:none;display:flex;align-items:center;gap:14px;opacity:0.9}
-.prisma-menu-links li a .material-icons{color:var(--ouro);font-size:22px;opacity:0.9}
-.prisma-menu-links li a:hover{color:var(--ouro)}
+.prisma-menu-links li a{font-family:'Inter';font-size:12px; font-weight:200; letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:14px;opacity:0.8}
+.prisma-menu-links li a .material-icons{color:var(--ouro);font-size:20px;opacity:0.9; font-weight:200;}
+.prisma-menu-links li a:hover{color:var(--ouro); opacity:1;}
 
-.hero-afiliado{padding:150px 5% 60px 5%;text-align:center;background:radial-gradient(600px at 50% -10%, rgba(238,188,108,0.18), transparent), linear-gradient(180deg, #181818, #121212)}
-.tag-lucro{display:inline-block;background:rgba(238,188,108,0.12);border:1px solid rgba(238,188,108,0.25);color:var(--ouro);padding:8px 18px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:0.18em;margin-bottom:18px}
-.hero-afiliado h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,62px);line-height:0.95;max-width:800px;margin:auto}
-.hero-afiliado h1 span{color:var(--ouro)}
-.hero-afiliado .sub{max-width:640px;margin:18px auto 0 auto;opacity:0.6;line-height:1.7;font-size:16px}
-.comissao-box{margin:40px auto 0 auto;max-width:520px;background:var(--preto2);border:1px solid var(--borda);border-radius:16px;padding:24px;display:flex;align-items:center;justify-content:space-around;gap:20px}
-.comissao-box .pct{font-family:'Cormorant Garamond';font-size:72px;font-weight:700;color:var(--ouro);line-height:1;text-shadow:0 0 30px rgba(238,188,108,0.4)}
+.hero-afiliado{padding:150px 5% 70px 5%;text-align:center;background:radial-gradient(600px at 50% -10%, rgba(238,188,108,0.12), transparent), linear-gradient(180deg, #181818, #121212)}
+.tag-lucro{display:inline-block;background:rgba(238,188,108,0.08);border:1px solid rgba(238,188,108,0.18);color:var(--ouro);padding:8px 18px;border-radius:100px;font-size:10px;font-weight:300;letter-spacing:0.22em;margin-bottom:22px; text-transform:uppercase;}
+.hero-afiliado h1{font-family:'Cormorant Garamond';font-size:clamp(38px,5vw,64px);line-height:0.95;max-width:800px;margin:auto; font-weight:300; letter-spacing:-0.02em;}
+.hero-afiliado h1 span{color:var(--ouro); font-weight:400;}
+.hero-afiliado .sub{max-width:620px;margin:22px auto 0 auto;opacity:0.5;line-height:1.9;font-size:15px; font-weight:200; letter-spacing:0.02em;}
+.comissao-box{margin:44px auto 0 auto;max-width:520px;background:var(--preto2);border:1px solid var(--borda);border-radius:18px;padding:28px;display:flex;align-items:center;justify-content:space-around;gap:20px}
+.comissao-box .pct{font-family:'Cormorant Garamond';font-size:76px;font-weight:300;color:var(--ouro);line-height:1; letter-spacing:-0.03em;}
 .comissao-box .info{text-align:left}
-.comissao-box .info b{color:var(--creme);font-size:14px;display:block;margin-bottom:4px}
-.comissao-box .info span{opacity:0.6;font-size:12px;line-height:1.4;display:block}
-.secao-afiliados{padding:50px 5%;background:#0E0E0E;border-top:1px solid var(--borda)}
-.afiliados-container{max-width:900px;margin:auto}
-.card-premium{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;padding:32px;margin-bottom:20px}
-.card-premium h3{font-family:'Cormorant Garamond';font-size:26px;margin-bottom:14px;display:flex;gap:10px;align-items:center}
-.card-premium p{opacity:0.7;line-height:1.8;font-size:15px;margin-bottom:12px}
-.destaque-cientifico{background:rgba(238,188,108,0.07);border-left:3px solid var(--ouro);padding:18px;border-radius:8px;margin:18px 0}
-.lista-beneficios{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-.lista-beneficios li{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:16px;border-radius:10px;font-size:13.5px;line-height:1.5}
-.lista-beneficios li b{color:var(--ouro);display:block;margin-bottom:4px;font-size:12px;letter-spacing:0.06em;text-transform:uppercase}
-.cta-final{text-align:center;padding:50px 5%;background:linear-gradient(180deg,#0E0E0E,#121212);border-top:1px solid var(--borda)}
-.btn-afiliado{display:inline-block;background:var(--ouro);color:#121212;padding:20px 42px;border-radius:100px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;animation:pulsar 2s infinite;box-shadow:0 10px 30px rgba(238,188,108,0.3);transition:0.3s}
-.btn-afiliado:hover{background:#fff;transform:translateY(-3px)}
-@keyframes pulsar{0%{box-shadow:0 0 0 0 rgba(238,188,108,0.4)}70%{box-shadow:0 0 0 18px rgba(238,188,108,0)}100%{box-shadow:0 0 0 0 rgba(238,188,108,0)}}
-.obs-cta{margin-top:14px;opacity:0.4;font-size:12px}
+.comissao-box .info b{color:var(--creme);font-size:13px;display:block;margin-bottom:6px; font-weight:400; letter-spacing:0.04em;}
+.comissao-box .info span{opacity:0.45;font-size:12px;line-height:1.6;display:block; font-weight:200;}
 
-/* FOOTER ARRUMADO */
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.15);margin-top:80px}
+.secao-afiliados{padding:60px 5%;background:#0E0E0E;border-top:1px solid var(--borda)}
+.afiliados-container{max-width:900px;margin:auto}
+.card-premium{background:var(--preto2);border:1px solid var(--borda);border-radius:16px;padding:36px;margin-bottom:22px}
+.card-premium h3{font-family:'Cormorant Garamond';font-size:28px;margin-bottom:16px;display:flex;gap:12px;align-items:center; font-weight:300; letter-spacing:-0.01em;}
+.card-premium p{opacity:0.55;line-height:1.9;font-size:15px;margin-bottom:12px; font-weight:200;}
+.destaque-cientifico{background:rgba(238,188,108,0.05);border-left:1px solid var(--ouro);padding:20px;border-radius:0 10px 10px 0;margin:20px 0}
+.destaque-cientifico p{font-weight:200; font-style: italic;}
+.lista-beneficios{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.lista-beneficios li{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);padding:18px;border-radius:12px;font-size:13px;line-height:1.6; font-weight:200;}
+.lista-beneficios li b{color:var(--ouro);display:block;margin-bottom:6px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase; font-weight:400;}
+.cta-final{text-align:center;padding:70px 5%;background:linear-gradient(180deg,#0E0E0E,#121212);border-top:1px solid var(--borda)}
+.cta-final h2{font-family:'Cormorant Garamond'; font-weight:300; letter-spacing:-0.02em;}
+.cta-final p{font-weight:200; opacity:0.5;}
+.btn-afiliado{display:inline-block;background:var(--ouro);color:#121212;padding:20px 42px;border-radius:100px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;box-shadow:0 10px 30px rgba(238,188,108,0.2);transition:0.3s; font-size:12px;}
+.btn-afiliado:hover{background:#fff;transform:translateY(-2px)}
+.obs-cta{margin-top:16px;opacity:0.3;font-size:11px; font-weight:200; letter-spacing:0.06em;}
+
+#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
 #prismaFooter *{box-sizing:border-box}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
 #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:700;display:block}
-#prismaFooter .footer-desc{opacity:0.45;font-size:13.5px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text)}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;font-weight:800}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.55;text-decoration:none;font-size:13.5px;margin-bottom:14px;transition:all 0.2s}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.4;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.45;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
 #prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.12);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.5;font-size:12.5px;margin-bottom:14px;line-height:1.6;color:var(--text)}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.18);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:800;width:100%;cursor:pointer;font-size:13px}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:11px;opacity:0.35;color:var(--text)}
+#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.4;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
+#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
+#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.3;color:var(--text); font-weight:200; letter-spacing:0.06em;}
 @media(max-width:900px){.lista-beneficios{grid-template-columns:1fr}.comissao-box{flex-direction:column}}
 @media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
 @media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
-
 <nav class="prisma-nav" id="prismaNav">
     <div class="prisma-logo"><span>Prisma</span> Histórico</div>
     <div style="display:flex;align-items:center;gap:12px">
@@ -103,50 +100,46 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
         <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
     </ul>
 </nav>
-
 <header class="hero-afiliado">
-    <span class="tag-lucro">🎯 OPORTUNIDADE QUENTE - NICHO EDUCAÇÃO</span>
+    <span class="tag-lucro">Oportunidade quente — Nicho educação</span>
     <h1>Lucre <span>40%</span> com um Produto que Vende Sozinho</h1>
     <p class="sub">Você promove um e-book que resolve a maior dor de quem faz ENEM: gabaritar História e Redação com repertório que nenhum cursinho tem.</p>
     <div class="comissao-box">
         <div class="pct">40%</div>
         <div class="info">
             <b>Comissão Líquida por Venda</b>
-            <span>Ticket ideal para impulso • Conversão alta no orgânico e tráfego pago • Público que RENOVA todo ano</span>
+            <span>Ticket ideal para impulso • Conversão alta no orgânico e tráfego pago • Público que renova todo ano</span>
         </div>
     </div>
 </header>
-
 <section class="secao-afiliados">
     <div class="afiliados-container">
         <div class="card-premium">
             <h3>📚 O Produto que o Mercado Implora</h3>
             <p>O e-book "A Ciência Oculta da Colônia à República" não é mais um resumo chato. Ele mostra o DNA tecnológico do Brasil: engenharia náutica, astrolábio, balestilha, biopolítica.</p>
             <div class="destaque-cientifico">
-                <p>O aluno sai do óbvio e ganha argumento pra <strong>Nota 1000 na Redação</strong> e pra acertar as questões mais difíceis de Humanas. É o diferencial que faz o pai pagar na hora.</p>
+                <p>O aluno sai do óbvio e ganha argumento pra <strong style="color:var(--ouro); font-weight:400;">Nota 1000 na Redação</strong> e pra acertar as questões mais difíceis de Humanas. É o diferencial que faz o pai pagar na hora.</p>
             </div>
         </div>
         <div class="card-premium">
             <h3>🚀 Por que Afiliados Estão Enlouquecendo?</h3>
             <ul class="lista-beneficios">
-                <li><b>💰 40% por venda</b><span>Margem agressiva, você lucra de verdade a cada clique.</span></li>
-                <li><b>🎯 Público Quente</b><span>Milhões de vestibulandos + pais desesperados por aprovação todo mês.</span></li>
-                <li><b>🧠 Gancho Irrecusável</b><span>Produto único, sem concorrência direta. Não é mais um resumo do YouTube.</span></li>
-                <li><b>♻️ Mercado Infinito</b><span>Nicho perene: todo ano entra 3 milhões de novos alunos no ENEM.</span></li>
-                <li><b>🎨 Criativos Prontos</b><span>Você recebe copys, imagens e vídeos pra anúncio.</span></li>
-                <li><b>⚡ Aprovação Imediata</b><span>Na Hotmart, sem burocracia. Pega o link e já vende.</span></li>
+                <li><b>40% por venda</b><span>Margem agressiva, você lucra de verdade a cada clique.</span></li>
+                <li><b>Público quente</b><span>Milhões de vestibulandos + pais desesperados por aprovação todo mês.</span></li>
+                <li><b>Gancho irrecusável</b><span>Produto único, sem concorrência direta. Não é mais um resumo do YouTube.</span></li>
+                <li><b>Mercado infinito</b><span>Nicho perene: todo ano entra 3 milhões de novos alunos no ENEM.</span></li>
+                <li><b>Criativos prontos</b><span>Você recebe copys, imagens e vídeos pra anúncio.</span></li>
+                <li><b>Aprovação imediata</b><span>Na Hotmart, sem burocracia. Pega o link e já vende.</span></li>
             </ul>
         </div>
     </div>
 </section>
-
 <div class="cta-final">
     <h2 style="font-family:'Cormorant Garamond';font-size:38px;margin-bottom:12px">Pronto para vender amanhã?</h2>
-    <p style="opacity:0.6;margin-bottom:28px;max-width:600px;margin-inline:auto">O mercado de educação nunca entra em crise. Enquanto você pensa, outros afiliados estão faturando com o Prisma.</p>
-    <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="btn-afiliado">Quero Me Afiliar Agora e Ganhar 40%</a>
+    <p style="margin-bottom:32px;max-width:600px;margin-inline:auto">O mercado de educação nunca entra em crise. Enquanto você pensa, outros afiliados estão faturando com o Prisma.</p>
+    <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="btn-afiliado">Quero me afiliar e ganhar 40% →</a>
     <p class="obs-cta">Leva 30 segundos • Aprovação automática na Hotmart</p>
 </div>
-
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
@@ -161,7 +154,7 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
         <a href="artigos.html">Artigos</a>
         <a href="curiosidades.html">Curiosidades</a>
         <a href="quiz.html">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:1!important">🌍 Turismo Colonial</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.9!important">🌍 Turismo Colonial</a>
       </div>
       <div class="footer-col">
         <h4>Produtos</h4>
@@ -187,7 +180,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
     </div>
   </div>
 </footer>
-
 <script>
 function setLang(lang){localStorage.setItem('prisma_lang', lang); document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active')); const el=document.getElementById('btn-'+lang); if(el) el.classList.add('active');}
 const nav=document.getElementById('prismaNav');

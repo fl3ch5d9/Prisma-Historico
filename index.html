@@ -3,739 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prisma Histórico </title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Prisma Histórico | Brasil Colônia ao Império</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<meta name='impact-site-verification' value='cb5f778a-3af3-41c7-bf55-77fe19eeea31'>
-
-<!-- Cole este link no <head> do seu HTML para carregar as fontes clássicas -->
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
-
+<link rel="stylesheet" href="css/footer.css">
 <style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); }
+:root{--carvao-body:#0D0D0B;--carvao-card:#171410;--carvao-card-2:#1E1A16;--sepia-titulo:#D9C5A0;--sepia-texto:#A99B85;--branco-cal:#F2EDE3;--ouro-minas:#D4AF37;--borda:rgba(212,175,55,0.14)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
-
-/* SEU NAV 100% ORIGINAL QUE FUNCIONA */
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10002;line-height:0.9;user-select:none}
-.prisma-logo span{color:var(--ouro);font-weight:700}
-.lang-switch{display:flex;gap:6px;align-items:center;z-index:10002;position:relative}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:7px 11px;border-radius:20px;cursor:pointer;font-size:11px;letter-spacing:0.08em;transition:0.25s;min-width:42px;min-height:38px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800;box-shadow:0 2px 10px rgba(238,188,108,0.25)}
-.lang-switch button:active{transform:scale(0.96)}
-.prisma-menu-hamburguer{width:52px;height:52px;min-width:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%;position:relative;transition:0.25s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.prisma-menu-hamburguer:hover{border-color:var(--ouro);background:rgba(238,188,108,0.06)}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s cubic-bezier(.77,0,.175,1);transform-origin:center}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0;transform:scaleX(0)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:340px;max-width:85vw;height:100vh;height:100dvh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;justify-content:flex-start;padding:110px 30px 40px 30px;gap:6px;transform:translateX(-100%);transition:0.45s cubic-bezier(.77,0,.175,1);pointer-events:none;z-index:10001;border-right:1px solid rgba(238,188,108,0.15);overflow-y:auto;overscroll-behavior:contain}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all;box-shadow:20px 0 60px rgba(0,0,0,0.6)}
-.prisma-menu-links li{width:100%}
-.prisma-menu-links li a{font-family:'Inter',sans-serif;font-size:13px;letter-spacing:0.10em;text-transform:uppercase;color:#d8c9a8;text-decoration:none;display:flex;align-items:center;gap:14px;opacity:0.9;padding:14px 14px;border-radius:12px;transition:0.25s;width:100%}
-.prisma-menu-links li a .material-icons{color:var(--ouro);font-size:22px;opacity:0.9}
-.prisma-menu-links li a:hover{color:var(--ouro);background:rgba(238,188,108,0.08);transform:translateX(4px)}
-.prisma-menu-links li a:active{transform:translateX(4px) scale(0.98)}
-@media(max-width:900px){
-  .prisma-nav{padding:14px 4%}
-  .prisma-logo{font-size:22px}
-  .lang-switch{gap:4px}
-  .lang-switch button{padding:6px 9px;min-width:38px;min-height:36px;font-size:10px}
-  .prisma-menu-hamburguer{width:48px;height:48px;min-width:48px}
-}
-@media(max-width:768px){
-  .prisma-nav{padding:12px 4%}
-  .prisma-logo{font-size:20px;letter-spacing:0.12em}
-  .prisma-menu-links{width:88vw;max-width:360px;padding:95px 22px 30px 22px;gap:4px}
-  .prisma-menu-links li a{font-size:13px;padding:15px 14px}
-}
-@media(max-width:480px){
-  .prisma-nav{padding:10px 3.5%}
-  .prisma-logo{font-size:18px}
-  .lang-switch button{padding:6px 8px;min-width:36px}
-  .prisma-menu-links{width:100vw;max-width:100vw;border-right:none;padding:85px 18px 30px 18px}
-}
-
-/* CONTEUDO INDEX */
-.hero{padding:160px 5% 70px 5%;text-align:center;background:radial-gradient(600px at 50% -10%, rgba(238,188,108,0.18), transparent), linear-gradient(180deg, #181818, #121212)}
-.hero h1{font-family:'Cormorant Garamond';font-size:clamp(40px,6vw,72px);line-height:0.9}
-.hero h1 span{color:var(--ouro)}
-.conteudo{max-width:1200px;margin:50px auto;display:flex;gap:50px;padding:0 5%}
-.grid-sumarios{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:30px}
-.card-sumario{background:#1E1E1E;border:1px solid #2A2A2A;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;height:420px}
-.card-sumario-corpo{padding:18px 22px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:12px}
-.btn-hotmart{flex:1;background:var(--ouro);color:#111;text-align:center;padding:12px;border-radius:8px;font-weight:800;font-size:12px;text-decoration:none}
-
-/* FOOTER SEU ORIGINAL */
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.15);margin-top:80px}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:700;display:block}
-#prismaFooter .footer-desc{opacity:0.45;font-size:13.5px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text)}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;font-weight:800}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.55;text-decoration:none;font-size:13.5px;margin-bottom:14px}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;font-size:11px;opacity:0.35;color:var(--text)}
-
-/*scroll pagina solta celular */
-html, body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  max-width: 100vw !important;
-  position: relative;
-}
-
-* {
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-img, section, div {
-  max-width: 100vw;
-}
-
-/* TRAVA DE SCROLL LATERAL - FINAL */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100% !important;
-  width: 100% !important;
-  position: relative;
-  touch-action: pan-y;
-}
-body * {
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-/* quem geralmente causa isso */
-.hero, .hero-ebook, .prisma-nav, section, .card, .beneficios {
-  width: 100% !important;
-  max-width: 100% !important;
-  left: 0 !important;
-  right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
+html,body{overflow-x:hidden;width:100%;background:var(--carvao-body);color:var(--branco-cal);font-family:'Inter',sans-serif;font-weight:300}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-titulo);letter-spacing:0.04em}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(13,13,11,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;white-space:nowrap}
+.prisma-logo span{color:var(--ouro-minas);font-weight:700}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-switch{display:flex;gap:5px}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia-texto);padding:6px 9px;border-radius:20px;cursor:pointer;font-size:10px;min-width:36px;min-height:34px}
+.lang-switch button.active{background:var(--ouro-minas);color:#0D0D0B;font-weight:700;border-color:var(--ouro-minas)}
+.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
+.prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro-minas);display:block;transition:0.35s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s cubic-bezier(0.4,0,0.2,1);pointer-events:none;z-index:10000;border-right:1px solid var(--borda);overflow-y:auto;box-shadow:10px 0 40px rgba(0,0,0,0.6)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia-texto);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif}
+.prisma-menu-links li a .material-icons{color:var(--ouro-minas);font-size:20px}
+.prisma-menu-links li a:hover{background:rgba(212,175,55,0.08);color:var(--branco-cal)}
+.hero{padding:140px 5% 70px;text-align:center;background:radial-gradient(700px at 50% -10%, rgba(212,175,55,0.09), transparent)}
+.hero h1{font-size:clamp(36px,9vw,78px);line-height:0.9}
+.hero h1 .ouro{color:var(--ouro-minas);font-style:italic;font-weight:300}
+.hero p{color:var(--sepia-texto);margin-top:16px;font-size:13px;letter-spacing:0.08em;opacity:0.8}
+.ebook-intro{display:flex;flex-wrap:wrap;gap:50px;align-items:center;justify-content:space-between;background:var(--carvao-card);padding:60px 32px;max-width:1180px;margin:30px auto;border:1px solid var(--borda)}
+.ebook-badge{color:var(--ouro-minas);font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.2em;border:1px solid var(--borda);padding:10px 16px;border-radius:100px;margin-bottom:24px;display:inline-flex}
+.ebook-texto{flex:1.2;min-width:280px;max-width:560px}
+.ebook-texto h2{font-size:46px;line-height:0.95;margin-bottom:18px}
+.ebook-texto h2 em{font-style:italic;color:var(--ouro-minas)}
+.ebook-sub{font-size:13px;line-height:1.7;color:var(--sepia-texto);margin-bottom:28px}
+.ebook-texto ul{list-style:none;display:flex;flex-direction:column;gap:18px}
+.ebook-texto li{font-size:14px;color:var(--branco-cal);border-left:1px solid var(--borda);padding-left:16px}
+.ebook-imagem{width:100%;max-width:340px;margin:0 auto}
+.ebook-moldura{background:#0D0D0B;padding:12px;border-radius:4px;border:1px solid var(--borda)}
+.ebook-moldura img{width:100%;display:block}
+.btn-ebook{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;color:var(--sepia-titulo);text-decoration:none;padding:16px 20px;border-radius:100px;border:1px solid var(--borda);margin-top:18px;transition:0.3s}
+.btn-ebook:hover{background:var(--ouro-minas);color:#0D0D0B}
+#amostra-gratis-premium{background:var(--carvao-card-2);padding:80px 16px;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);text-align:center}
+.ag-wrap{max-width:1200px;margin:0 auto}
+.ag-badge{display:inline-block;color:var(--ouro-minas);font-family:'Cinzel';font-size:8px;letter-spacing:0.2em;border:1px solid var(--borda);background:rgba(212,175,55,0.06);padding:8px 14px;border-radius:100px;margin-bottom:18px}
+#amostra-gratis-premium h2{font-size:clamp(28px,7vw,48px);font-weight:300;line-height:1.05;margin-bottom:16px}
+#amostra-gratis-premium h2 em{color:var(--ouro-minas);font-style:italic;font-weight:300;font-family:'Cormorant Garamond'}
+.ag-desc{color:var(--sepia-texto);font-size:13px;max-width:700px;margin:0 auto;line-height:1.6}
+.ag-carrossel{position:relative;padding:0 40px;margin:32px 0}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.item{min-width:270px;max-width:300px;flex-shrink:0;background:var(--carvao-card);border-radius:10px;overflow:hidden;border:1px solid var(--borda);transition:0.3s}
+.item:hover{transform:translateY(-4px);border-color:var(--ouro-minas)}
+.item img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.item p{text-align:center;color:var(--sepia-texto);padding:12px 0;background:#0D0D0B;font-family:'Cinzel';font-size:10px;letter-spacing:0.1em}
+.item.destaque{border:1.5px solid var(--ouro-minas)}
+.seta{position:absolute;top:50%;transform:translateY(-50%);background:var(--carvao-card);border:1px solid var(--borda);color:var(--ouro-minas);width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.esq{left:0}.dir{right:0}
+.ag-box{max-width:860px;margin:0 auto;background:var(--carvao-card);border:1px solid var(--borda);border-radius:14px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;text-align:left}
+.ag-box h3{font-family:'Cinzel';font-size:12px;color:var(--branco-cal);margin-bottom:4px}
+.ag-box p{font-size:11px;color:var(--sepia-texto)}
+.ag-btn{background:var(--ouro-minas);color:#0D0D0B;text-decoration:none;font-family:'Cinzel';font-weight:700;font-size:10px;display:flex;align-items:center;gap:10px;padding:5px 5px 5px 16px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.ag-btn b{background:#0D0D0B;color:var(--ouro-minas);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.ag-obs{display:block;max-width:860px;margin:14px auto 0;color:var(--sepia-texto);opacity:0.5;font-size:10px}
+#dentroEbook{background:var(--carvao-card);padding:80px 16px;text-align:center;border-top:1px solid var(--borda)}
+.ebook-header span{color:var(--ouro-minas);font-family:'Cinzel';font-size:9px;letter-spacing:0.22em}
+.ebook-header h2{font-size:38px;margin:12px 0}
+.ebook-header h2 i{color:var(--ouro-minas);font-style:italic;font-weight:300}
+.ebook-header p{color:var(--sepia-texto);max-width:500px;margin:0 auto 40px;font-size:13px}
+.ebook-paginas{display:flex;gap:18px;justify-content:center;max-width:1100px;margin:0 auto 40px;flex-wrap:wrap}
+.pagina{width:290px;background:#0D0D0B;border-radius:10px;border:1px solid var(--borda);padding:8px;transition:0.3s}
+.pagina:hover{border-color:var(--ouro-minas);transform:translateY(-5px)}
+.pagina img{width:100%;height:380px;object-fit:cover;border-radius:6px}
+.pagina label{display:block;margin-top:12px;color:var(--sepia-titulo);font-family:'Cinzel';font-size:9px;letter-spacing:0.15em;text-transform:uppercase}
+.pagina.destaque{border-color:rgba(212,175,55,0.4)}
+.btn-ouro{background:var(--ouro-minas);color:#0D0D0B;padding:14px 28px;border-radius:40px;font-family:'Cinzel';font-size:10px;font-weight:700;letter-spacing:0.15em;text-decoration:none;display:inline-block;transition:0.3s}
+.btn-ouro:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(212,175,55,0.25)}
+#cookieBanner{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:94%;max-width:900px;z-index:99999;background:var(--carvao-card-2);border:1px solid var(--borda);border-radius:14px;padding:16px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.cookie-icon{width:36px;height:36px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center}
+.cookie-icon .material-icons{color:var(--ouro-minas);font-size:20px}
+.cookie-texto{flex:1;min-width:180px}
+.cookie-texto strong{color:var(--sepia-titulo);font-family:'Cinzel';font-size:11px;letter-spacing:0.08em}
+.cookie-texto p{color:var(--sepia-texto);font-size:11px;margin-top:4px}
+.cookie-texto a{color:var(--ouro-minas)}
+.cookie-acoes{display:flex;gap:8px}
+#cookieAceitar{background:var(--ouro-minas);color:#0D0D0B;border:none;padding:10px 20px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;cursor:pointer}
+#cookieRecusar{background:transparent;color:var(--sepia-texto);border:1px solid var(--borda);padding:10px 16px;border-radius:30px;font-family:'Cinzel';font-size:9px;cursor:pointer}
+@media(min-width:900px){.ebook-intro{padding:80px 50px}.ebook-texto h2{font-size:58px}.ag-carrossel{padding:0 50px}.ag-box{padding:22px 26px}.ag-box h3{font-size:14px}.pagina{width:300px}.pagina img{height:400px}}
 </style>
 </head>
 <body>
-
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button id="btn-pt" class="active">PT</button>
-        <button id="btn-en">EN</button>
-        <button id="btn-es">ES</button>
-        <button id="btn-fr">FR</button>
-      </div>
-      <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
-    </div>
-    <ul class="prisma-menu-links">
-        <li><a href="index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="artigos/doacao.html"><span class="material-icons">volunteer_activism</span><span>DOAÇÃO</span></a></li>
-        <li><a href="artigos/sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-        <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-        <li><a href="artigos/artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-        <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-        <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-        <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-        <li><a href="artigos/loja.html"><span class="material-icons">store</span> LOJA</a></li>
-        <li><a href="artigos/turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-    </ul>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div class="nav-right">
+    <div class="lang-switch"><button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button></div>
+    <button type="button" class="prisma-menu-hamburguer" id="hambBtn"><span></span><span></span><span></span></button>
+  </div>
+  <ul class="prisma-menu-links" id="menuLinks">
+    <li><a href="index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="artigos/doacao.html"><span class="material-icons">volunteer_activism</span><span data-pt-BR="DOAÇÃO" data-en="DONATION" data-es="DONACIÓN" data-fr="DON">DOAÇÃO</span></a></li>
+    <li><a href="artigos/sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos/artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+    <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+    <li><a href="artigos/loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="artigos/turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+  </ul>
 </nav>
 
 <header class="hero">
-    <h1>Arquivos de <span>Conflito</span></h1>
-    <p style="opacity:0.6;margin-top:16px">Do Brasil Colônia ao Império, com lógica cirúrgica</p>
+  <h1><span data-pt-BR="Arquivos de" data-en="Archives of" data-es="Archivos de" data-fr="Archives de">Arquivos de</span> <span class="ouro" data-pt-BR="Conflito" data-en="Conflict" data-es="Conflicto" data-fr="Conflit">Conflito</span></h1>
+  <p data-pt-BR="Do Brasil Colônia ao Império, com lógica cirúrgica" data-en="From Colonial Brazil to Empire, with surgical logic" data-es="Del Brasil Colonial al Imperio, con lógica quirúrgica" data-fr="Du Brésil Colonial à l'Empire, avec une logique chirurgicale">Do Brasil Colônia ao Império, com lógica cirúrgica</p>
 </header>
-
-
 
 <section class="ebook-intro">
   <div class="ebook-texto">
-    <div class="ebook-badge" 
-      data-pt="A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS"
-      data-en="NAVAL ENGINEERING: CARAVELS & NAUS"
-      data-es="INGENIERÍA NAVAL: CARABELAS Y NAOS"
-      data-fr="GÉNIE NAVAL: CARAVELLES ET NEFS">A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS</div>
-    
-    <h2><span class="ebook-h2-prefix" data-pt="A caravela foi a" data-en="The caravel was the" data-es="La carabela fue la" data-fr="La caravelle fut la">A caravela foi a</span> <span class="ebook-h2-italic" data-pt="grande inovação" data-en="great innovation" data-es="gran innovación" data-fr="grande innovation">grande inovação</span></h2>
-    
-    <p class="ebook-sub"
-      data-pt="Como o design das caravelas portuguesas do século XV transformou a navegação global e abriu caminho para a Era dos Descobrimentos"
-      data-en="How the design of 15th-century Portuguese caravels transformed global navigation and paved the way for the Age of Discovery"
-      data-es="Cómo el diseño de las carabelas portuguesas del siglo XV transformó la navegación global"
-      data-fr="Comment la conception des caravelles portugaises du XVe siècle a transformé la navigation mondiale">Como o design das caravelas portuguesas do século XV transformou a navegação global e abriu caminho para a Era dos Descobrimentos</p>
-    
+    <div class="ebook-badge" data-pt-BR="A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS" data-en="NAVAL ENGINEERING: CARAVELS & NAUS" data-es="INGENIERÍA NAVAL: CARABELAS Y NAOS" data-fr="GÉNIE NAVAL: CARAVELLES ET NEFS">A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS</div>
+    <h2><span data-pt-BR="A caravela foi a" data-en="The caravel was the" data-es="La carabela fue la" data-fr="La caravelle fut la">A caravela foi a</span> <em data-pt-BR="grande inovação" data-en="great innovation" data-es="gran innovación" data-fr="grande innovation">grande inovação</em></h2>
+    <p class="ebook-sub" data-pt-BR="Como o design das caravelas portuguesas do século XV transformou a navegação global" data-en="How 15th-century Portuguese caravels transformed global navigation" data-es="Cómo el diseño de las carabelas transformó la navegación global" data-fr="Comment la conception des caravelles a transformé la navigation mondiale">Como o design das caravelas portuguesas do século XV transformou a navegação global</p>
     <ul>
-      <li data-pt="Design revolucionário para navegação oceânica" data-en="Revolutionary design for oceanic navigation" data-es="Diseño revolucionario para navegación oceánica" data-fr="Design révolutionnaire pour la navigation océanique">Design revolucionário para navegação oceânica</li>
-      <li data-pt="Velas latinas que permitiam singrar contra o vento" data-en="Lateen sails that allowed sailing against the wind" data-es="Velas latinas que permitían ceñir contra el viento" data-fr="Voiles latines permettant de naviguer contre le vent">Velas latinas que permitiam singrar contra o vento</li>
-      <li data-pt="Casco leve e maior manobrabilidade em mar aberto" data-en="Light hull and greater maneuverability on open sea" data-es="Casco ligero y mayor maniobrabilidad en mar abierto" data-fr="Coque légère et meilleure maniabilité en haute mer">Casco leve e maior manobrabilidade em mar aberto</li>
-      <li data-pt="Fundamental nas viagens e nas descobertas além do horizonte" data-en="Fundamental in voyages and discoveries beyond the horizon" data-es="Fundamental en viajes y descubrimientos más allá del horizonte" data-fr="Fondamental dans les voyages et découvertes au-delà de l'horizon">Fundamental nas viagens e nas descobertas além do horizonte</li>
+      <li data-pt-BR="Design revolucionário para navegação oceânica" data-en="Revolutionary design for oceanic navigation" data-es="Diseño revolucionario para navegación oceánica" data-fr="Design révolutionnaire pour la navigation océanique">Design revolucionário para navegação oceânica</li>
+      <li data-pt-BR="Velas latinas que permitiam singrar contra o vento" data-en="Lateen sails that allowed sailing against the wind" data-es="Velas latinas que permitían ceñir contra el viento" data-fr="Voiles latines permettant de naviguer contre le vent">Velas latinas que permitiam singrar contra o vento</li>
+      <li data-pt-BR="Casco leve e maior manobrabilidade em mar aberto" data-en="Light hull and greater maneuverability on open sea" data-es="Casco ligero y mayor maniobrabilidad en mar abierto" data-fr="Coque légère et meilleure maniabilité en haute mer">Casco leve e maior manobrabilidade em mar aberto</li>
     </ul>
   </div>
-
-  <div class="ebook-imagem">
-    <div class="ebook-moldura">
-      <img src="img/prisma historico I.png" alt="Capa do E-book Prisma">
-    </div>
-    <a href="artigos/ebook.html" class="btn-ebook" data-pt="COMPRAR E-BOOK" data-en="BUY E-BOOK" data-es="COMPRAR E-BOOK" data-fr="ACHETER L'E-BOOK">COMPRAR E-BOOK</a>
-  </div>
+  <div class="ebook-imagem"><div class="ebook-moldura"><img src="img/prisma historico I.png" alt="Capa"></div><a href="artigos/ebook.html" class="btn-ebook" data-pt-BR="COMPRAR E-BOOK" data-en="BUY E-BOOK" data-es="COMPRAR E-BOOK" data-fr="ACHETER L'E-BOOK">COMPRAR E-BOOK</a></div>
 </section>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap');
-.ebook-intro *{box-sizing:border-box}
-.ebook-intro{
-  position:relative; display:flex; gap:80px; align-items:center; justify-content:space-between;
-  background: radial-gradient(120% 120% at 0% 0%, rgba(232,195,154,0.08) 0%, rgba(10,10,10,1) 60%), #0A0A0A;
-  padding:80px 50px; max-width:1180px; margin:40px auto; isolation:isolate;
-}
-.ebook-intro::before{
-  content:""; position:absolute; inset:0; padding:1px;
-  background: linear-gradient(135deg, rgba(232,195,154,0.4) 0%, rgba(232,195,154,0.05) 25%, rgba(232,195,154,0.05) 75%, rgba(232,195,154,0.3) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events:none; filter: sepia(0.5);
-}
-.ebook-texto{flex:1.2; max-width:560px;}
-.ebook-badge{
-  display:inline-flex; color:#E8C39A; line-height:1.2; white-space:nowrap;
-  font-family:'Inter',sans-serif; font-size:10px; letter-spacing:1.8px; text-transform:uppercase;
-  border:1px solid rgba(232,195,154,0.3); padding:12px 20px; border-radius:100px; margin-bottom:32px;
-  box-shadow: inset 0 0 0 1px rgba(232,195,154,0.08), 0 0 20px rgba(232,195,154,0.08);
-}
-.ebook-texto h2{
-  font-family:'Cormorant Garamond',serif !important; font-size:58px !important; line-height:0.95 !important;
-  font-weight:300 !important; color:#F5F3F0 !important; margin:0 0 20px 0 !important; letter-spacing:-1.5px;
-}
-.ebook-h2-italic{font-style:italic; color:#E8C39A; display:block;}
-.ebook-sub{font-family:'Inter',sans-serif; font-size:14px; line-height:1.6; font-weight:300; color:#9A9996; margin:0 0 35px 0; max-width:480px;}
-.ebook-texto ul{list-style:none !important; padding:0 !important; margin:0 !important; display:flex; flex-direction:column; gap:22px;}
-.ebook-texto li{list-style:none !important; font-family:'Inter',sans-serif; font-size:15px; line-height:1.4; font-weight:300; color:#E8E6E3; border-left:1px solid rgba(232,195,154,0.3); padding-left:18px;}
-.ebook-texto li::before, .ebook-texto li::after{display:none !important;}
-.ebook-imagem{display:flex; flex-direction:column; align-items:center; gap:24px;}
-.ebook-moldura{width:340px; background:#111; padding:14px; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.6);}
-.ebook-moldura::before{content:""; position:absolute; inset:0; border:1px solid rgba(232,195,154,0.25); outline:1px solid rgba(232,195,154,0.08); outline-offset:-6px; pointer-events:none;}
-.ebook-moldura img{width:100%; display:block; filter: sepia(0.15) contrast(1.05) brightness(0.95);}
-.btn-ebook{
-  display:block; width:340px; text-align:center; font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:#E8C39A; text-decoration:none; padding:18px 20px; border-radius:100px;
-  background: linear-gradient(180deg, rgba(232,195,154,0.12) 0%, rgba(232,195,154,0.04) 100%);
-  border:1px solid rgba(232,195,154,0.35); backdrop-filter: blur(8px);
-  box-shadow: inset 0 1px 0 rgba(232,195,154,0.2), 0 4px 20px rgba(0,0,0,0.4); transition: all 0.4s ease;
-}
-.btn-ebook:hover{background: linear-gradient(180deg, rgba(232,195,154,0.20) 0%, rgba(232,195,154,0.08) 100%); border-color: rgba(232,195,154,0.6); color:#F5E6D3;}
-@media(max-width:900px){.ebook-intro{flex-direction:column; padding:40px 24px; gap:40px;} .ebook-badge{white-space:normal;} .ebook-texto h2{font-size:42px !important;} .ebook-moldura,.btn-ebook{width:100%;}}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- carrocel SECTION PDF GRÁTIS - COLE NO INDEX -->
 
 <section id="amostra-gratis-premium">
   <div class="ag-wrap">
-    <div class="ag-top">
-      <span class="ag-badge" data-i18n="badge">● AMOSTRA OFICIAL LIBERADA</span>
-      <h2 data-i18n="title">Baixe <em>três páginas reais</em> do e-book<br>no padrão premium</h2>
-      <p data-i18n="desc">Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: uma diagramação de tirar o fôlego, artes históricas exclusivas e a profundidade que sua aprovação exige.</p>
-    </div>
-
-    <div class="ag-carrossel">
-      <button class="seta esq" id="prev">‹</button>
-      <div class="track" id="track">
-        <div class="item"><img src="img/28_20260929_025828_0027.png"><p>Pág 28</p></div>
-        <div class="item destaque"><img src="img/52_20260929_025829_0051.png"><p>Pág 52</p></div>
-        <div class="item"><img src="img/64_20260929_025829_0063.png"><p>Pág 64</p></div>
+    <span class="ag-badge" data-pt-BR="● AMOSTRA OFICIAL LIBERADA" data-en="● OFFICIAL SAMPLE RELEASED" data-es="● MUESTRA OFICIAL LIBERADA" data-fr="● ÉCHANTILLON OFFICIEL DISPONIBLE">● AMOSTRA OFICIAL LIBERADA</span>
+    <h2 data-pt-BR="Baixe <em>três páginas reais</em> do e-book<br>no padrão premium" data-en="Download <em>three real pages</em> of the e-book<br>in premium standard" data-es="Descarga <em>tres páginas reales</em> del e-book<br>en estándar premium" data-fr="Téléchargez <em>trois vraies pages</em> de l'e-book<br>en qualité premium">Baixe <em>três páginas reais</em> do e-book<br>no padrão premium</h2>
+    <p class="ag-desc" data-pt-BR="Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: diagramação premium, artes exclusivas e profundidade analítica." data-en="Immediate access, no commitment. Dive into the PRISMA experience: premium layout, exclusive artworks and analytical depth." data-es="Acceso inmediato y sin compromiso. Sumérgete en la experiencia PRISMA: maquetación premium, artes exclusivos y profundidad analítica." data-fr="Accès immédiat et sans engagement. Plongez dans l'expérience PRISMA : mise en page premium, œuvres exclusives et profondeur analytique.">Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: diagramação premium, artes exclusivas e profundidade analítica.</p>
+    <div class="ag-carrossel"><button class="seta esq" id="prev">‹</button><div class="track" id="track"><div class="item"><img src="img/28_20260929_025828_0027.png" alt=""><p>Pág 28</p></div><div class="item destaque"><img src="img/52_20260929_025829_0051.png" alt=""><p>Pág 52</p></div><div class="item"><img src="img/64_20260929_025829_0063.png" alt=""><p>Pág 64</p></div></div><button class="seta dir" id="next">›</button></div>
+    <div class="ag-box">
+      <div>
+        <h3 data-pt-BR="📘 HISTÓRIA DO BRASIL - Amostra Grátis" data-en="📘 BRAZILIAN HISTORY - Free Sample" data-es="📘 HISTORIA DE BRASIL - Muestra Gratis" data-fr="📘 HISTOIRE DU BRÉSIL - Échantillon Gratuit">📘 HISTÓRIA DO BRASIL - Amostra Grátis</h3>
+        <p data-pt-BR="PDF com três páginas • Alta resolução • Leitura no celular" data-en="3-page PDF • High resolution • Mobile friendly" data-es="PDF de tres páginas • Alta resolución • Lectura en móvil" data-fr="PDF de trois pages • Haute résolution • Lecture sur mobile">PDF com três páginas • Alta resolução • Leitura no celular</p>
       </div>
-      <button class="seta dir" id="next">›</button>
+      <a href="https://drive.google.com/uc?export=download&id=1s6WXqCDNAYQHHx8JQluOG3UiBYhOKz8V" target="_blank" class="ag-btn"><span data-pt-BR="BAIXAR GRÁTIS" data-en="DOWNLOAD FREE" data-es="DESCARGAR GRATIS" data-fr="TÉLÉCHARGER GRATUIT">BAIXAR GRÁTIS</span><b>↓</b></a>
     </div>
+    <small class="ag-obs" data-pt-BR="Sem cadastro. Veja com seus próprios olhos a diagramação de luxo." data-en="No sign-up needed. See the luxury layout with your own eyes." data-es="Sin registro. Ve con tus propios ojos la maquetación de lujo." data-fr="Sans inscription. Voyez de vos propres yeux la mise en page de luxe.">Sem cadastro. Veja com seus próprios olhos a diagramação de luxo.</small>
   </div>
-
-<style>
-/* PALETA NOVA: CARVÃO + SÉPIA - SEM AZUL */
-#amostra-gratis-premium{background:#141414; padding-bottom:20px;}
-.ag-wrap{max-width:1200px; margin:0 auto; padding:50px 20px; text-align:center;}
-.ag-badge{background:#e8c39e22; color:#e8c39e; padding:7px 16px; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:1.2px; border:1px solid #e8c39e33;}
-#amostra-gratis-premium h2{color:#f5f5f0; font-size:34px; margin:18px 0; font-weight:800; line-height:1.2;}
-#amostra-gratis-premium h2 em{color:#e8c39e; font-style:normal;} /* TITULO SÉPIA */
-#amostra-gratis-premium p{color:#d0d0d0; max-width:620px; margin:0 auto 35px; font-size:16px; line-height:1.6;} /* TEXTO BRANCO */
-
-.ag-carrossel{position:relative; padding:0 50px; margin-bottom:80px;}
-.track{display:flex; gap:22px; overflow-x:auto; scroll-behavior:smooth; scrollbar-width:none;}
-.track::-webkit-scrollbar{display:none;}
-.item{min-width:300px; max-width:340px; flex-shrink:0; background:#232323; border-radius:16px; overflow:hidden; border:1px solid #2f2f2f; transition:transform.3s, border-color.3s;}
-.item:hover{transform:translateY(-6px); border-color:#e8c39e55;}
-.item img{width:100%; display:block; filter:sepia(10%) contrast(105%);}
-.item p{text-align:center; color:#e8c39e; padding:13px 0; margin:0; font-weight:700; background:#1c1c1c; letter-spacing:0.5px;}
-.item.destaque{border:2px solid #e8c39e; box-shadow:0 0 25px #e8c39e33;}
-
-.seta{position:absolute; top:50%; transform:translateY(-50%); background:#232323; border:1px solid #e8c39e; color:#e8c39e; width:44px; height:44px; border-radius:50%; font-size:28px; cursor:pointer; z-index:10; line-height:1; transition:.2s;}
-.seta:hover{background:#e8c39e; color:#141414;}
-.esq{left:0}.dir{right:0}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-<div class="ag-box">
-      <div class="ag-box-info">
-        <h3 data-i18n="box_title">📘 HISTÓRIA DO BRASIL - Amostra Grátis</h3>
-        <p data-i18n="box_sub">PDF com três páginas • Alta resolução • Leitura no celular</p>
-        <div class="ag-lista" data-i18n="box_lista">✓ Pág.6 - O Monopólio Marítimo e a Quebra de Confiança • ✓ Pág. 7 - A Inteligência de Estado Joanina, a Guerra de Atrito das Rotas e o Achamento Estratégico do Atlântico Sul • ✓ Pág. 8 - A Armada de Cabral: O Caráter Dual da Frota e a Intencionalidade do Desvio •</div>
-      </div>
-      <a href="https://drive.google.com/uc?export=download&id=1s6WXqCDNAYQHHx8JQluOG3UiBYhOKz8V" target="_blank" class="ag-btn">
-        <span data-i18n="btn">CLIQUE AQUI E BAIXE TRÊS PÁGINAS GRÁTIS</span>
-        <b>↓</b>
-      </a>
-    </div>
-    <small class="ag-obs" data-i18n="obs">Sem cadastro. Veja com seus próprios olhos a diagramação de luxo.</small>
 </section>
-
-<style>
-.ag-obs{
-  display:block !important;
-  width:100% !important;
-  max-width:860px;
-  margin:18px auto 0 auto !important;
-  text-align:center !important;
-  color:#fff;
-  opacity:0.4;
-  font-size:11px;
-}
-/*small*/
-
-#amostra-gratis-premium{background:#080808; padding:90px 20px; font-family:Inter,system-ui,sans-serif; border-top:1px solid rgba(232,195,158,0.15); border-bottom:1px solid rgba(232,195,158,0.15)}
-.ag-wrap{max-width:1200px; margin:0 auto; text-align:center}
-.ag-badge{display:inline-block; color:#e8c39e; font-size:10px; font-weight:800; letter-spacing:0.3em; border:1px solid rgba(232,195,158,0.25); background:rgba(232,195,158,0.08); padding:8px 16px; border-radius:100px; margin-bottom:18px}
-#amostra-gratis-premium h2{color:#f5f5f0; font-size:48px; font-weight:900; line-height:0.95; letter-spacing:-0.03em; margin:0 0 14px}
-#amostra-gratis-premium h2 em{color:#e8c39e; font-family:Georgia,serif; font-style:italic; font-weight:400}
-.ag-top p{color:#d0d0d0; opacity:0.8; font-size:15px; max-width:600px; margin:0 auto 40px; line-height:1.6}
-
-.ag-preview{overflow-x:auto; padding:20px 0 40px; scrollbar-width:none}
-.ag-preview::-webkit-scrollbar{display:none}
-.ag-track{display:flex; gap:18px; justify-content:center; align-items:center; min-width:max-content; margin:0 auto}
-.ag-track img{width:240px; height:340px; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,0.08); opacity:0.7; transition:0.3s}
-.ag-track img.destaque{width:280px; height:400px; opacity:1; transform:translateY(-10px); border-color:#e8c39e; box-shadow:0 25px 70px rgba(0,0,0,0.8), 0 0 30px rgba(232,195,158,0.15)}
-
-.ag-box{max-width:860px; margin:0 auto; background:#1a1a1a; border:1px solid rgba(232,195,158,0.20); border-radius:18px; padding:22px 26px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left}
-.ag-box-info h3{color:#e8c39e; font-size:15px; margin:0 0 4px}
-.ag-box-info p{color:#fff; opacity:0.6; font-size:12px; margin:0 0 8px}
-.ag-lista{color:#f5f5f0; font-size:11px; opacity:0.7; line-height:1.4}
-.ag-btn{background:#e8c39e; color:#141414; text-decoration:none; font-weight:900; font-size:12px; display:flex; align-items:center; gap:14px; padding:6px 6px 6px 22px; border-radius:100px; white-space:nowrap; transition:0.3s}
-.ag-btn b{background:#141414; color:#e8c39e; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px}
-.ag-btn:hover{transform:translateY(-2px); background:#f0d1ad; box-shadow:0 15px 40px rgba(232,195,158,0.25)}
-.ag-obs{color:#fff; opacity:0.4; font-size:11px; margin-top:14px; display:block}
-
-@media(max-width:900px){
-  #amostra-gratis-premium h2{font-size:32px}
- .ag-box{flex-direction:column; text-align:center}
- .ag-track{justify-content:flex-start; padding-left:20px}
-}
-</style>
-
 
 <section id="dentroEbook">
   <div class="ebook-header">
-    <span data-pt="POR DENTRO DO MATERIAL" data-en="INSIDE THE MATERIAL" data-es="DENTRO DEL MATERIAL" data-fr="À L'INTÉRIEUR DU MATÉRIEL">POR DENTRO DO MATERIAL</span>
-    <h2><span data-pt="Veja o que você vai" data-en="See what you will" data-es="Mira lo que vas a" data-fr="Voyez ce que vous allez">Veja o que você vai</span> <i data-pt="receber" data-en="receive" data-es="recibir" data-fr="recevoir">receber</i></h2>
-    <p data-pt="Um material 100% ilustrado, denso e direto ao ponto, criado para leitores exigentes e investigadores analíticos da História." data-en="A 100% illustrated material, dense and straight to the point, created for demanding readers and analytical investigators of History." data-es="Un material 100% ilustrado, denso y directo al grano, creado para lectores exigentes e investigadores analíticos de la Historia." data-fr="Un matériel 100% illustré, dense et direct, créé pour les lecteurs exigeants et les investigateurs analytiques de l'Histoire.">Um material 100% ilustrado, denso e direto ao ponto, criado para leitores exigentes e investigadores analíticos da História.</p>
+    <span data-pt-BR="POR DENTRO DO MATERIAL" data-en="INSIDE THE MATERIAL" data-es="DENTRO DEL MATERIAL" data-fr="À L'INTÉRIEUR DU MATÉRIEL">POR DENTRO DO MATERIAL</span>
+    <h2><span data-pt-BR="Veja o que você vai" data-en="See what you will" data-es="Mira lo que vas a" data-fr="Voyez ce que vous allez">Veja o que você vai</span> <i data-pt-BR="receber" data-en="receive" data-es="recibir" data-fr="recevoir">receber</i></h2>
+    <p data-pt-BR="Um material 100% ilustrado, denso e direto ao ponto" data-en="A 100% illustrated material, dense and straight to the point" data-es="Un material 100% ilustrado, denso y directo" data-fr="Un matériel 100% illustré, dense et direct">Um material 100% ilustrado, denso e direto ao ponto</p>
   </div>
   <div class="ebook-paginas">
-    <div class="pagina">
-      <img src="img/nautico pau-brasil.webp" alt="Página 1 Ebook Prisma">
-      <label data-pt="Tecnologia Marítima" data-en="Maritime Technology" data-es="Tecnología Marítima" data-fr="Technologie Maritime">Tecnologia Marítima</label>
-    </div>
-    <div class="pagina destaque">
-      <img src="img/don-careca.webp" alt="Página 2 Ebook Prisma">
-      <label data-pt="Dia do Fico" data-en="Dia do Fico" data-es="Día do Fico" data-fr="Jour du Fico">Dia do Fico</label>
-    </div>
-    <div class="pagina">
-      <img src="img/canudos.webp" alt="Página 3 Ebook Prisma">
-      <label data-pt="Canudos" data-en="Canudos" data-es="Canudos" data-fr="Canudos">Canudos</label>
-    </div>
+    <div class="pagina"><img src="img/nautico pau-brasil.webp" alt=""><label data-pt-BR="Tecnologia Marítima" data-en="Maritime Technology" data-es="Tecnología Marítima" data-fr="Technologie Maritime">Tecnologia Marítima</label></div>
+    <div class="pagina destaque"><img src="img/don-careca.webp" alt=""><label>Dia do Fico</label></div>
+    <div class="pagina"><img src="img/canudos.webp" alt=""><label>Canudos</label></div>
   </div>
-  <a href="artigos/ebook.html" class="btn-ouro" data-pt="QUERO ACESSAR O EBOOK COMPLETO" data-en="I WANT FULL EBOOK ACCESS" data-es="QUIERO ACCEDER AL E-BOOK COMPLETO" data-fr="JE VEUX ACCÉDER À L'E-BOOK COMPLET">QUERO ACESSAR O EBOOK COMPLETO</a>
+  <a href="artigos/ebook.html" class="btn-ouro" data-pt-BR="QUERO ACESSAR O EBOOK COMPLETO" data-en="I WANT FULL EBOOK ACCESS" data-es="QUIERO ACCEDER AL E-BOOK COMPLETO" data-fr="JE VEUX ACCÉDER À L'E-BOOK COMPLET">QUERO ACESSAR O EBOOK COMPLETO</a>
 </section>
-<style>
-#dentroEbook{background:#0A0A0A; padding:90px 20px; text-align:center; border-top:1px solid rgba(238,188,108,0.1)}
-.ebook-header span{color:#eebc6c; font-size:11px; letter-spacing:0.2em; font-weight:800}
-.ebook-header h2{color:#f5e6c8; font-size:42px; margin:12px 0; line-height:1.1}
-.ebook-header h2 i{color:#eebc6c; font-family:serif; font-weight:400; font-style:italic}
-.ebook-header p{color:#F5F5F0; opacity:0.6; max-width:500px; margin:0 auto 50px; font-size:14px; line-height:1.6}
-.ebook-paginas{display:flex; gap:24px; justify-content:center; align-items:center; max-width:1100px; margin:0 auto 50px; flex-wrap:wrap}
-.pagina{width:300px; background:#121212; border-radius:12px; border:1px solid rgba(255,255,255,0.08); padding:10px; transition:0.3s}
-.pagina img{width:100%; height:400px; object-fit:cover; border-radius:8px; background:#1a1a1a}
-.pagina label{display:block; margin-top:12px; color:#f5e6c8; font-size:11px; letter-spacing:0.1em; font-weight:700; text-transform:uppercase}
-.pagina:hover{transform:translateY(-6px); border-color:rgba(238,188,108,0.3)}
-.pagina.destaque{transform:scale(1.05); border-color:rgba(238,188,108,0.35); box-shadow:0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(238,188,108,0.1)}
-.pagina.destaque:hover{transform:scale(1.05) translateY(-6px)}
-.btn-ouro{background:#eebc6c; color:#0A0A0A; padding:16px 32px; border-radius:40px; font-size:12px; font-weight:800; letter-spacing:0.1em; text-decoration:none; display:inline-block; transition:0.25s}
-.btn-ouro:hover{box-shadow:0 0 25px rgba(238,188,108,0.4); transform:translateY(-2px)}
-@media(max-width:768px){.ebook-header h2{font-size:32px} .pagina.destaque{transform:scale(1)} .pagina.destaque:hover{transform:translateY(-6px)}}
-</style>
-<script>
-function aplicarTraducao(lang){localStorage.setItem('prisma_lang',lang);document.querySelectorAll('[data-pt]').forEach(function(el){var trad=el.getAttribute('data-'+lang);if(trad){el.textContent=trad;}});}
-document.querySelectorAll('.lang-switch button').forEach(function(btn){btn.addEventListener('click',function(e){document.querySelectorAll('.lang-switch button').forEach(function(b){b.classList.remove('active');});e.currentTarget.classList.add('active');aplicarTraducao(e.currentTarget.id.replace('btn-',''));});});
-var idiomaSalvo=localStorage.getItem('prisma_lang')||'pt';var btnSalvo=document.getElementById('btn-'+idiomaSalvo);if(btnSalvo){btnSalvo.classList.add('active');}aplicarTraducao(idiomaSalvo);
-</script>
 
-<footer id="prismaFooter">
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      
-      <div class="footer-brand">
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc"
-          data-pt="Abordagem analítica, sofisticada e sem clichês da História do Brasil. Conteúdo autoral, fontes primárias e roteiros de turismo colonial."
-          data-en="Analytical, sophisticated and cliché-free approach to Brazilian History. Original content, primary sources and colonial tourism itineraries."
-          data-es="Enfoque analítico, sofisticado y sin clichés de la Historia de Brasil. Contenido original, fuentes primarias y rutas de turismo colonial."
-          data-fr="Approche analytique, sophistiquée et sans clichés de l'Histoire du Brésil. Contenu original, sources primaires et itinéraires de tourisme colonial."
-        >Abordagem analítica, sofisticada e sem clichês da História do Brasil. Conteúdo autoral, fontes primárias e roteiros de turismo colonial.</p>
-        <div class="footer-pay">
-          <span class="pay-badge" data-pt="PayPal Seguro" data-en="Secure PayPal" data-es="PayPal Seguro" data-fr="PayPal Sécurisé"><span class="material-icons">payments</span> PayPal Seguro</span>
-          <span class="pay-badge" data-pt="Compra Protegida" data-en="Protected Purchase" data-es="Compra Protegida" data-fr="Achat Protégé"><span class="material-icons">verified_user</span> Compra Protegida</span>
-        </div>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-pt="INSTITUCIONAL" data-en="ABOUT" data-es="INSTITUCIONAL" data-fr="INSTITUTIONNEL">INSTITUCIONAL</h4>
-        <a href="artigos/privacidade.html" data-pt="Privacidade" data-en="Privacy" data-es="Privacidad" data-fr="Confidentialité"><span class="material-icons">shield</span> Privacidade</a>
-        <a href="artigos/termos.html" data-pt="Termos de Uso" data-en="Terms of Use" data-es="Términos de Uso" data-fr="Conditions d'utilisation"><span class="material-icons">gavel</span> Termos de Uso</a>
-        <a href="artigos/doacao.html" data-pt="Doação" data-en="Donation" data-es="Donación" data-fr="Don"><span class="material-icons">volunteer_activism</span> Doação</a>
-        <a href="mailto:contato@prismahistorico.com"><span class="material-icons">mail</span> contato@prismahistorico.com</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-pt="CONTEÚDO" data-en="CONTENT" data-es="CONTENIDO" data-fr="CONTENU">CONTEÚDO</h4>
-        <a href="artigos/artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles"><span class="material-icons">auto_stories</span> Artigos</a>
-        <a href="artigos/patrimonio.html" data-pt="Patrimônio Histórico" data-en="Historical Heritage" data-es="Patrimonio Histórico" data-fr="Patrimoine Historique"><span class="material-icons">account_balance</span> Patrimônio Histórico</a>
-        <a href="artigos/turismo.html" data-pt="Turismo Colonial" data-en="Colonial Tourism" data-es="Turismo Colonial" data-fr="Tourisme Colonial"><span class="material-icons">map</span> Turismo Colonial</a>
-        <a href="artigos/ebook.html" data-pt="E-book" data-en="E-book" data-es="E-book" data-fr="E-book"><span class="material-icons">menu_book</span> E-book</a>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-pt="LOJA & PARCEIROS" data-en="STORE & PARTNERS" data-es="TIENDA Y SOCIOS" data-fr="BOUTIQUE & PARTENAIRES">LOJA & PARCEIROS</h4>
-        <a href="artigos/loja.html" data-pt="Loja Oficial" data-en="Official Store" data-es="Tienda Oficial" data-fr="Boutique Officielle"><span class="material-icons">store</span> Loja Oficial</a>
-        <a href="artigos/afiliados.html" data-pt="Afiliados" data-en="Affiliates" data-es="Afiliados" data-fr="Affiliés"><span class="material-icons">handshake</span> Afiliados</a>
-        <a href="artigos/roteiros.html" data-pt="Roteiros" data-en="Itineraries" data-es="Itinerarios" data-fr="Itinéraires"><span class="material-icons">explore</span> Roteiros</a>
-        <a href="https://www.paypal.com" target="_blank" data-pt="Pagar com PayPal" data-en="Pay with PayPal" data-es="Pagar con PayPal" data-fr="Payer avec PayPal"><span class="material-icons">credit_card</span> Pagar com PayPal</a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico • CNPJ 00.000.000/0001-00</span>
-      <span data-pt="Feito com ☕ em São Paulo" data-en="Made with ☕ in São Paulo" data-es="Hecho con ☕ en São Paulo" data-fr="Fait avec ☕ à São Paulo">Feito com ☕ em São Paulo • <span style="color:#eebc6c" data-pt="Pagamento 100% seguro via Hotmart & PayPal" data-en="100% secure payment via Hotmart & PayPal" data-es="Pago 100% seguro vía Hotmart & PayPal" data-fr="Paiement 100% sécurisé via Hotmart & PayPal">Pagamento 100% seguro via Hotmart & PayPal</span></span>
-    </div>
-  </div>
-</footer>
-
-
-<style>
-/* FOOTER - TRAVADO PARA TODOS OS IDIOMAS */
-
-#prismaFooter{
-  width:100%;
-  background:#080808;
-  border-top:1px solid rgba(238,188,108,0.12);
-  padding:60px 5% 30px 5%;
-  box-sizing:border-box;
-}
-#prismaFooter .footer-wrap{
-  max-width:1250px;
-  margin:0 auto;
-}
-#prismaFooter .footer-grid{
-  display:grid;
-  grid-template-columns:1.5fr 0.9fr 1fr 1fr;
-  gap:40px 32px;
-  align-items:start;
-}
-.footer-brand .footer-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:26px;
-  letter-spacing:0.12em;
-  margin-bottom:14px;
-}
-.footer-brand .footer-logo span{color:#eebc6c;font-weight:700}
-.footer-brand .footer-desc{
-  color:#d8c9a8;
-  opacity:0.65;
-  font-size:13.5px;
-  line-height:1.6;
-  margin-bottom:18px;
-  max-width:380px;
-}
-.footer-pay{display:flex;flex-wrap:wrap;gap:8px}
-.pay-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  border:1px solid rgba(238,188,108,0.18);
-  padding:6px 12px;border-radius:100px;
-  font-size:10px;letter-spacing:0.08em;
-  color:#d8c9a8;opacity:0.8;
-}
-.pay-badge .material-icons{font-size:14px;color:#eebc6c}
-
-.footer-col h4{
-  color:#eebc6c;
-  font-size:10.5px;
-  letter-spacing:0.18em;
-  font-weight:800;
-  margin-bottom:20px;
-  min-height:28px;
-  display:flex;
-  align-items:flex-end;
-  line-height:1.2;
-}
-.footer-col a{
-  display:flex;align-items:center;gap:9px;
-  color:#d8c9a8;
-  opacity:0.75;
-  font-size:13.5px;
-  line-height:1.4;
-  text-decoration:none;
-  margin-bottom:13px;
-  transition:0.2s;
-}
-.footer-col a .material-icons{font-size:18px;color:#eebc6c;opacity:0.8;flex-shrink:0}
-.footer-col a.email{white-space:nowrap}
-.footer-col a:hover{color:#eebc6c;opacity:1;transform:translateX(2px)}
-#prismaFooter .footer-bottom{
-  margin-top:50px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,0.06);
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-  font-size:11px;color:#666;
-}
-
-@media(max-width:1100px){
-  #prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:30px}
-  .footer-brand{grid-column:1 / -1;max-width:600px;margin-bottom:10px}
-}
-@media(max-width:700px){
-  #prismaFooter{padding:40px 6% 25px 6%}
-  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
-  .footer-brand{grid-column:1 / -1}
-  .footer-col h4{min-height:auto;margin-bottom:14px}
-}
-@media(max-width:480px){
-  #prismaFooter .footer-grid{grid-template-columns:1fr}
-  #prismaFooter .footer-bottom{flex-direction:column;text-align:left}
-}
-</style>
-
-
-
-
-
-
-
-
-
+<footer id="prismaFooter"><div class="footer-wrap"><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil.</p><div class="footer-bottom"><span>© 2026 Prisma Histórico</span></div></div></footer>
 
 <div id="cookieBanner">
   <div class="cookie-icon"><span class="material-icons">cookie</span></div>
   <div class="cookie-texto">
-    <strong>Cookies & Privacidade</strong>
-    <p>Usamos cookies para melhorar sua experiência, analisar tráfego e personalizar conteúdo. Ao continuar, você concorda com nossa <a href="artigos/privacidade.html">Política de Privacidade</a> e <a href="artigos/termos.html">Termos</a>.</p>
+    <strong data-pt-BR="Cookies & Privacidade" data-en="Cookies & Privacy" data-es="Cookies & Privacidad" data-fr="Cookies & Confidentialité">Cookies & Privacidade</strong>
+    <p><span data-pt-BR="Usamos cookies para melhorar sua experiência." data-en="We use cookies to improve your experience." data-es="Usamos cookies para mejorar tu experiencia." data-fr="Nous utilisons des cookies pour améliorer votre expérience.">Usamos cookies para melhorar sua experiência.</span> <a href="artigos/privacidade.html" data-pt-BR="Política" data-en="Policy" data-es="Política" data-fr="Politique">Política</a></p>
   </div>
   <div class="cookie-acoes">
-    <button id="cookieRecusar">Recusar</button>
-    <button id="cookieAceitar">Aceitar</button>
+    <button id="cookieRecusar" data-pt-BR="Recusar" data-en="Decline" data-es="Rechazar" data-fr="Refuser">Recusar</button>
+    <button id="cookieAceitar" data-pt-BR="Aceitar" data-en="Accept" data-es="Aceptar" data-fr="Accepter">Aceitar</button>
   </div>
 </div>
 
-<style>
-#cookieBanner{
-  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
-  width:90%; max-width:900px; z-index:9999;
-  background:#121212; border:1px solid rgba(238,188,108,0.22);
-  border-radius:16px; padding:18px 20px;
-  display:flex; align-items:center; gap:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
-}
-.cookie-icon{width:42px; height:42px; border-radius:50%; background:rgba(238,188,108,0.12); display:flex; align-items:center; justify-content:center; flex-shrink:0}
-.cookie-icon .material-icons{color:#eebc6c; font-size:22px}
-.cookie-texto{flex:1}
-.cookie-texto strong{color:#f5e6c8; font-size:13px; letter-spacing:0.06em}
-.cookie-texto p{color:#F5F5F0; opacity:0.7; font-size:12.5px; line-height:1.5; margin:4px 0 0 0}
-.cookie-texto a{color:#eebc6c; text-decoration:underline}
-.cookie-acoes{display:flex; gap:10px; flex-shrink:0}
-#cookieAceitar{background:#eebc6c; color:#0A0A0A; border:1px solid #eebc6c; padding:10px 22px; border-radius:30px; font-size:11px; font-weight:800; letter-spacing:0.1em; cursor:pointer; transition:0.25s}
-#cookieAceitar:hover{box-shadow:0 0 18px rgba(238,188,108,0.4)}
-#cookieRecusar{background:transparent; color:#F5F5F0; border:1px solid rgba(255,255,255,0.15); padding:10px 18px; border-radius:30px; font-size:11px; font-weight:700; letter-spacing:0.1em; cursor:pointer; opacity:0.7; transition:0.25s}
-#cookieRecusar:hover{opacity:1; border-color:rgba(255,255,255,0.3)}
-
-@media(max-width:700px){
-  #cookieBanner{flex-direction:column; align-items:flex-start; bottom:12px}
-  .cookie-acoes{width:100%} .cookie-acoes button{flex:1}
-}
-</style>
-
-
 <script>
+// GAVETA 100% CELULAR
+const nav=document.getElementById('prismaNav');
+const hamb=document.getElementById('hambBtn');
+hamb.addEventListener('click',e=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&nav.classList.contains('menu-aberto')){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
+document.getElementById('menuLinks').querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{nav.classList.remove('menu-aberto');document.body.style.overflow='';});});
 
-// COOKIE BANNER - LÓGICA COMPLETA
-(function(){
-  const banner = document.getElementById('cookieBanner');
-  const btnAceitar = document.getElementById('cookieAceitar');
-  const btnRecusar = document.getElementById('cookieRecusar');
-
-  // 1. Verifica se já aceitou/recusou antes
-  const escolha = localStorage.getItem('prisma_cookies');
-  if(escolha){
-    banner.style.display = 'none';
-    return; // já escolheu, não mostra mais
-  }
-
-  // 2. Mostra com animação
-  banner.style.display = 'flex';
-  
-  // 3. Clicou em Aceitar
-  btnAceitar.addEventListener('click', ()=>{
-    localStorage.setItem('prisma_cookies', 'aceito');
-    localStorage.setItem('prisma_cookies_data', new Date().toISOString());
-    banner.style.transform = 'translateX(-50%) translateY(150%)';
-    banner.style.transition = '0.4s ease';
-    setTimeout(()=> banner.style.display = 'none', 400);
-    
-    // Aqui tu pode ativar Google Analytics, Pixel etc
-    console.log('Cookies aceitos - pode ativar Analytics');
-  });
-
-  // 4. Clicou em Recusar
-  btnRecusar.addEventListener('click', ()=>{
-    localStorage.setItem('prisma_cookies', 'recusado');
-    banner.style.transform = 'translateX(-50%) translateY(150%)';
-    banner.style.transition = '0.4s ease';
-    setTimeout(()=> banner.style.display = 'none', 400);
-    
-    console.log('Cookies recusados');
-  });
-})();
-
-
-
-
-
-
-</script>
-
-<script>
-const nav = document.getElementById('prismaNav');
-const btnHamb = nav.querySelector('.prisma-menu-hamburguer');
-btnHamb.addEventListener('click',()=>{
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
-});
-
-// TRADUÇÃO ÚNICA - SEM DUPLICAÇÃO
-const traducoes = {
-  pt: {
-    badge: "● AMOSTRA OFICIAL LIBERADA",
-    title: "Baixe <em>três páginas reais</em> do e-book<br>no padrão premium",
-    desc: "Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: uma diagramação de tirar o fôlego, artes históricas exclusivas e a profundidade que sua aprovação exige.",
-    box_title: "📘 HISTÓRIA DO BRASIL - Amostra Grátis",
-    box_sub: "PDF com três páginas • Alta resolução • Leitura no celular",
-    box_lista: "✓ Pág.6 - O Monopólio Marítimo • ✓ Pág.7 - Inteligência Joanina • ✓ Pág.8 - Armada de Cabral",
-    btn: "CLIQUE AQUI E BAIXE TRÊS PÁGINAS GRÁTIS",
-    obs: "Sem cadastro. Veja com seus próprios olhos a diagramação de luxo."
-  },
-  en: {
-    badge: "● OFFICIAL SAMPLE RELEASED",
-    title: "Download <em>three real pages</em> of the e-book<br>in premium standard",
-    desc: "Immediate access, no commitment. Dive into the PRISMA experience: breathtaking layout, exclusive historical artworks and the depth your approval demands.",
-    box_title: "📘 BRAZILIAN HISTORY - Free Sample",
-    box_sub: "3-page PDF • High resolution • Mobile friendly",
-    box_lista: "✓ P.6 - Maritime Monopoly • ✓ P.7 - Joanine Intelligence • ✓ P.8 - Cabral's Fleet",
-    btn: "CLICK HERE TO DOWNLOAD 3 FREE PAGES",
-    obs: "No sign-up needed. See the luxury layout with your own eyes."
-  },
-  es: {
-    badge: "● MUESTRA OFICIAL LIBERADA",
-    title: "Descarga <em>tres páginas reales</em> del e-book<br>en estándar premium",
-    desc: "Acceso inmediato y sin compromiso. Sumérgete en la experiencia PRISMA: una maquetación impresionante, artes históricos exclusivos y la profundidad que tu aprobación exige.",
-    box_title: "📘 HISTORIA DE BRASIL - Muestra Gratis",
-    box_sub: "PDF de tres páginas • Alta resolución • Lectura en móvil",
-    box_lista: "✓ Pág.6 - Monopolio Marítimo • ✓ Pág.7 - Inteligencia Joanina • ✓ Pág.8 - Armada de Cabral",
-    btn: "HAZ CLIC AQUÍ Y DESCARGA 3 PÁGINAS GRATIS",
-    obs: "Sin registro. Ve con tus propios ojos la maquetación de lujo."
-  },
-  fr: {
-    badge: "● ÉCHANTILLON OFFICIEL DISPONIBLE",
-    title: "Téléchargez <em>trois vraies pages</em> de l'e-book<br>en qualité premium",
-    desc: "Accès immédiat et sans engagement. Plongez dans l'expérience PRISMA : une mise en page à couper le souffle, des œuvres historiques exclusives et la profondeur qu'exige votre réussite.",
-    box_title: "📘 HISTOIRE DU BRÉSIL - Échantillon Gratuit",
-    box_sub: "PDF de trois pages • Haute résolution • Lecture sur mobile",
-    box_lista: "✓ P.6 - Monopole Maritime • ✓ P.7 - Intelligence Johannique • ✓ P.8 - Flotte de Cabral",
-    btn: "CLIQUEZ ICI ET TÉLÉCHARGEZ 3 PAGES GRATUITES",
-    obs: "Sans inscription. Voyez de vos propres yeux la mise en page de luxe."
-  }
-};
-
+// IDIOMAS PT-BR MÃE + COOKIE COM DATA
 function aplicarTraducao(lang){
-  const t = traducoes[lang] || traducoes.pt;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const key = el.getAttribute('data-i18n');
-    if(t[key]){
-      // title tem <em> e <br>, precisa ser innerHTML
-      if(key === 'title') el.innerHTML = t[key];
-      else el.innerHTML = t[key];
-    }
+  localStorage.setItem('prisma_lang',lang);
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-pt-BR]').forEach(el=>{
+    const txt=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
+    if(txt) el.innerHTML=txt;
   });
-  // Tradução do data-pt também
-  document.querySelectorAll('[data-pt]').forEach(el=>{
-    const trad = el.getAttribute('data-' + lang);
-    if(trad) el.innerText = trad;
-  });
-  localStorage.setItem('prisma_lang', lang);
 }
-
 document.querySelectorAll('.lang-switch button').forEach(b=>{
-  b.addEventListener('click', (e)=>{
+  b.addEventListener('click',e=>{
     document.querySelectorAll('.lang-switch button').forEach(x=>x.classList.remove('active'));
     e.currentTarget.classList.add('active');
-    const lang = e.currentTarget.id.replace('btn-','');
-    aplicarTraducao(lang);
+    aplicarTraducao(e.currentTarget.id.replace('btn-',''));
   });
 });
-
-// Carrossel
-const track = document.getElementById('track');
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-if(track && prev && next){
-  const getScroll = () => track.querySelector('.item').offsetWidth + 22;
-  next.addEventListener('click', () => track.scrollBy({ left: getScroll(), behavior: 'smooth' }));
-  prev.addEventListener('click', () => track.scrollBy({ left: -getScroll(), behavior: 'smooth' }));
-}
-
-// Inicial
-const salvo = localStorage.getItem('prisma_lang') || 'pt';
+const salvo=localStorage.getItem('prisma_lang')||'pt-BR';
 document.getElementById('btn-'+salvo)?.classList.add('active');
 aplicarTraducao(salvo);
+
+// CARROSSEL
+const track=document.getElementById('track');
+const prev=document.getElementById('prev');
+const next=document.getElementById('next');
+if(track&&prev&&next){
+  const getScroll=()=>track.querySelector('.item').offsetWidth+16;
+  next.addEventListener('click',()=>track.scrollBy({left:getScroll(),behavior:'smooth'}));
+  prev.addEventListener('click',()=>track.scrollBy({left:-getScroll(),behavior:'smooth'}));
+}
+
+// COOKIE COM DATA E IDIOMA
+const banner=document.getElementById('cookieBanner');
+if(localStorage.getItem('prisma_cookies')) banner.style.display='none';
+document.getElementById('cookieAceitar')?.addEventListener('click',()=>{localStorage.setItem('prisma_cookies','aceito-'+new Date().toISOString());banner.style.display='none';});
+document.getElementById('cookieRecusar')?.addEventListener('click',()=>{localStorage.setItem('prisma_cookies','recusado-'+new Date().toISOString());banner.style.display='none';});
 </script>
 </body>
 </html>

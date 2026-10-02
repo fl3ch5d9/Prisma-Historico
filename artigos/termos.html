@@ -4,71 +4,79 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Termos de Uso - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=IBM+Plex+Serif:wght@400;600&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0e0e0e;--card:#161616;--line:rgba(255,255,255,0.08);--sepia:#E5B769;--text:#d6d3c9;--muted:#8a8882;--white:#f2f0e9}
+:root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--sepia:#d8c9a8;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12);}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;padding-top:78px!important; -webkit-font-smoothing:antialiased}
-.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;background:rgba(14,14,14,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid var(--line)!important}
-.prisma-nav-inner{width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important}
-.prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10002!important;color:var(--white)!important}
-.prisma-logo span{color:var(--sepia)!important;font-weight:700!important}
-.lang-switch{display:flex;gap:6px;z-index:10002}
-.lang-switch button{background:transparent;border:1px solid #333;color:var(--text);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px;transition:.2s}
-.lang-switch button.active{background:var(--sepia);color:#000;border-color:var(--sepia);font-weight:800}
-.prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid #333!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10002!important;border-radius:50%!important}
-.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:var(--sepia)!important;display:block!important;transition:0.25s!important}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;line-height:1.8;font-weight:200;-webkit-font-smoothing:antialiased;padding-top:78px;}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10002;font-weight:300;}
+.prisma-logo span{color:var(--ouro);font-weight:400}
+.lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda);}
+.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s;font-weight:200;}
+.lang-switch button.active{background:var(--ouro);color:#121212;font-weight:400}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s;transform-origin:center}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7;font-weight:200;}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
-/* CORRIGIDO - COM ESPAÇO */
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
-
-.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:transform 0.32s cubic-bezier(.4,0,.2,1)!important;pointer-events:none!important;z-index:10001!important;border-right:1px solid rgba(229,183,105,0.15)!important}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
-
-.prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:var(--white)!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.7!important;transition:.2s}
-.prisma-menu-links li a:hover{color:var(--sepia)!important;opacity:1!important}
-
-/* TERMOS */
-.wrap{max-width:760px;margin:0 auto;padding:80px 24px 120px}
-.eyebrow{color:var(--sepia);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:20px;font-weight:700;display:flex;align-items:center;gap:10px}
-.eyebrow:before{content:'';width:28px;height:1px;background:var(--sepia);display:inline-block}
-h1{font-family:'Cormorant Garamond',serif;color:var(--white);font-size:54px;line-height:0.95;letter-spacing:-0.02em;font-weight:700;margin-bottom:18px}
-.sub{font-size:18px;color:var(--muted);line-height:1.6;margin-bottom:48px;max-width:560px;font-weight:400}
-.meta{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:64px}
-article{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px}
-article h2{font-family:'IBM Plex Serif',serif;color:var(--white);font-size:19px;font-weight:600;margin:42px 0 12px;letter-spacing:-0.01em}
+/* TERMOS FINO */
+.wrap{max-width:760px;margin:0 auto;padding:60px 24px 100px 24px}
+.eyebrow{color:var(--ouro);font-size:9px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:20px;font-weight:300;display:flex;align-items:center;gap:10px;opacity:0.7;}
+.eyebrow:before{content:'';width:28px;height:1px;background:var(--ouro);display:inline-block;opacity:0.4}
+h1{font-family:'Cormorant Garamond',serif;color:var(--creme);font-size:54px;line-height:0.95;letter-spacing:-0.02em;font-weight:300;margin-bottom:18px}
+.sub{font-size:14.5px;color:var(--sepia);line-height:1.8;margin-bottom:36px;max-width:560px;font-weight:200;opacity:0.5}
+.meta{border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:16px 0;display:flex;justify-content:space-between;font-size:10px;color:var(--sepia);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:40px;font-weight:200;opacity:0.4}
+article{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:36px;transition:0.3s;}
+article:hover{border-color:rgba(238,188,108,0.08);}
+article h2{font-family:'Cormorant Garamond',serif;color:var(--ouro);font-size:19px;font-weight:400;margin:36px 0 12px;letter-spacing:-0.01em}
 article h2:first-child{margin-top:0}
-article p{font-size:16.5px;line-height:1.9;color:var(--text);margin-bottom:18px;opacity:0.9}
-article p strong{color:var(--white)}
-.divider{height:1px;background:var(--line);margin:48px 0}
-.contact{font-size:14px;color:var(--muted);line-height:1.7}
-.contact b{color:var(--white);font-weight:600}
-.contact a{color:var(--sepia);text-decoration:none;border-bottom:1px solid rgba(229,183,105,0.25);transition:.2s}
-.contact a:hover{border-color:var(--sepia)}
-#btnTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--sepia);color:#000;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.4s;z-index:1000;font-weight:700}
+article p{font-size:13.5px;line-height:1.9;color:var(--creme);margin-bottom:18px;opacity:0.55;font-weight:200;}
+article p strong{color:var(--creme);font-weight:400;opacity:0.9}
+.divider{height:1px;background:rgba(255,255,255,0.06);margin:36px 0}
+.contact{font-size:13px;color:var(--sepia);line-height:1.7;font-weight:200;opacity:0.5}
+.contact b{color:var(--creme);font-weight:400}
+.contact a{color:var(--ouro);text-decoration:none;border-bottom:1px solid rgba(238,188,108,0.15);transition:.2s}
+.contact a:hover{border-color:var(--ouro)}
+#btnTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--ouro);color:#000;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.4s;z-index:1000;font-weight:300}
 #btnTop.show{opacity:1;visibility:visible;transform:translateY(0)}
-@media(max-width:600px){h1{font-size:38px}.wrap{padding:48px 20px} article{padding:28px 20px}}
+@media(max-width:600px){h1{font-size:38px}.wrap{padding:40px 5%} article{padding:28px 20px}}
+
+#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9;font-weight:300;}
+#prismaFooter.footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter.footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text);font-weight:200;}
+#prismaFooter.footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200;}
+#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter.footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text);font-weight:200;}
+#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;font-weight:200;}
+#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em;}
+#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text);font-weight:200;letter-spacing:0.06em;}
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
-  <div class="prisma-nav-inner">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
-      </div>
-      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="lang-switch">
+      <button data-lang="pt" id="btn-pt" class="active">PT</button>
+      <button data-lang="en" id="btn-en">EN</button>
+      <button data-lang="es" id="btn-es">ES</button>
+      <button data-lang="fr" id="btn-fr">FR</button>
     </div>
+    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
     <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
     <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
     <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
@@ -76,7 +84,7 @@ article p strong{color:var(--white)}
     <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
     <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
     <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-    <li><a href="turismo.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
   </ul>
 </nav>
 <div class="wrap">
@@ -98,31 +106,51 @@ article p strong{color:var(--white)}
 </article>
 </div>
 <button id="btnTop" title="Voltar ao topo">↑</button>
+
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="sobre.html">Sobre</a><a href="artigos.html">Artigos</a><a href="curiosidades.html">Curiosidades</a><a href="quiz.html">Quiz</a><a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a></div>
+      <div class="footer-col"><h4>Produtos</h4><a href="ebook.html">📘 E-book</a><a href="loja.html">🛒 Loja</a><a href="afiliados.html">🤝 Afiliados</a><a href="doacao.html">💰 Doação</a><a href="privacidade.html">🔒 Privacidade</a><a href="termos.html">📄 Termos de Uso</a></div>
+      <div class="footer-col"><h4>Clube Prisma</h4><div class="footer-news-card"><p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p><input type="email" id="prismaEmail" placeholder="seu melhor email"><button id="prismaBtn">Entrar pro Clube →</button></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Prisma Histórico</span><span>Feito com ☕ e 4h de sono em São Paulo</span></div>
+  </div>
+</footer>
+
 <script>
 const T={
-pt:{eyebrow:"Documento Legal",h1:"Termos de Uso",sub:"Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.",meta:"ATUALIZADO EM 04.08.2026",t1:"1. Aceitação",p1:"Ao acessar o Prisma Histórico, você concorda integralmente com estes termos.",t2:"2. Objetivo",p2:"Nosso propósito é oferecer conteúdo educacional sobre história.",t3:"3. Uso do Conteúdo",p3:"O conteúdo é destinado a uso pessoal e educacional.",t4:"4. Afiliados",p4:"Utilizamos links de afiliados, como Amazon.",t5:"5. E-books",p5:"Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias.",t6:"6. Responsabilidades",p6:"Apesar do rigor, não garantimos que todo conteúdo esteja isento de erros.",t7:"7. Alterações",p7:"Estes termos podem ser atualizados a qualquer momento.",t8:"8. Contato",p8:"Para dúvidas, entre em contato pelo e-mail oficial.",contact:"Contato:"},
+pt:{eyebrow:"Documento Legal",h1:"Termos de Uso",sub:"Transparência e responsabilidade para garantir uma experiência segura, educacional e respeitosa.",meta:"ATUALIZADO EM 04.08.2026",t1:"1. Aceitação",p1:"Ao acessar o Prisma Histórico, você concorda integralmente com estes termos. Caso discorde de qualquer condição, recomendamos não utilizar o site.",t2:"2. Objetivo",p2:"Nosso propósito é oferecer conteúdo educacional sobre história, por meio de artigos, análises, quizzes e indicações bibliográficas criteriosas.",t3:"3. Uso do Conteúdo",p3:"O conteúdo é destinado a uso pessoal e educacional. É vedada a reprodução integral, revenda ou distribuição sem autorização expressa.",t4:"4. Afiliados",p4:"Utilizamos links de afiliados, como Amazon. Quando você compra por meio deles, podemos receber uma comissão, sem qualquer custo adicional para você.",t5:"5. E-books",p5:"Produtos digitais de uso pessoal e intransferível, com garantia de 7 dias conforme o Código de Defesa do Consumidor (BR) e políticas de reembolso internacionais.",t6:"6. Responsabilidades",p6:"Apesar do rigor na pesquisa e curadoria, não garantimos que todo conteúdo esteja isento de erros ou desatualizações.",t7:"7. Alterações",p7:"Estes termos podem ser atualizados a qualquer momento para refletir melhorias legais e editoriais. A versão vigente estará sempre nesta página.",t8:"8. Contato",p8:"Para dúvidas ou solicitações, entre em contato pelo e-mail oficial do projeto.",contact:"Contato:"},
 en:{eyebrow:"Legal Document",h1:"Terms of Use",sub:"Transparency and responsibility to ensure a safe, educational experience.",meta:"UPDATED ON 08.04.2026",t1:"1. Acceptance",p1:"By accessing Prisma History, you fully agree to these terms.",t2:"2. Purpose",p2:"Our purpose is to offer educational content about history.",t3:"3. Content Use",p3:"Content is for personal and educational use.",t4:"4. Affiliates",p4:"We use affiliate links, such as Amazon.",t5:"5. E-books",p5:"Digital products for personal and non-transferable use.",t6:"6. Responsibilities",p6:"Despite rigor, we do not guarantee content is error-free.",t7:"7. Changes",p7:"These terms may be updated at any time.",t8:"8. Contact",p8:"For questions, contact us via official email.",contact:"Contact:"},
 es:{eyebrow:"Documento Legal",h1:"Términos de Uso",sub:"Transparencia y responsabilidad para una experiencia segura.",meta:"ACTUALIZADO EL 04.08.2026",t1:"1. Aceptación",p1:"Al acceder a Prisma Histórico, usted acepta estos términos.",t2:"2. Objetivo",p2:"Ofrecer contenido educativo sobre historia.",t3:"3. Uso del Contenido",p3:"Contenido para uso personal y educativo.",t4:"4. Afiliados",p4:"Usamos enlaces de afiliados, como Amazon.",t5:"5. E-books",p5:"Productos digitales de uso personal e intransferible.",t6:"6. Responsabilidades",p6:"No garantizamos que todo contenido esté exento de errores.",t7:"7. Cambios",p7:"Estos términos pueden actualizarse en cualquier momento.",t8:"8. Contacto",p8:"Para dudas, contacta por email oficial.",contact:"Contacto:"},
 fr:{eyebrow:"Document Légal",h1:"Conditions d'Utilisation",sub:"Transparence et responsabilité pour une expérience sûre.",meta:"MIS À JOUR LE 04.08.2026",t1:"1. Acceptation",p1:"En accédant à Prisma Historique, vous acceptez ces conditions.",t2:"2. Objectif",p2:"Offrir du contenu éducatif sur l'histoire.",t3:"3. Utilisation",p3:"Contenu à usage personnel et éducatif.",t4:"4. Affiliés",p4:"Nous utilisons des liens affiliés, comme Amazon.",t5:"5. E-books",p5:"Produits numériques à usage personnel.",t6:"6. Responsabilités",p6:"Nous ne garantissons pas que tout contenu soit exempt d'erreurs.",t7:"7. Modifications",p7:"Ces conditions peuvent être mises à jour.",t8:"8. Contact",p8:"Pour questions, contactez-nous par email officiel.",contact:"Contact:"}
 };
 function setLang(l){
-  localStorage.setItem('prisma_lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+l)?.classList.add('active');
+  localStorage.setItem('prisma_lang',l);localStorage.setItem('prisma-lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    const txt=el.getAttribute('data-'+l);
+    if(txt) el.textContent=txt;
+  });
 }
-setLang(localStorage.getItem('prisma_lang')||'pt');
-const nav=document.getElementById('prismaNav');
-document.getElementById('btnMenu').addEventListener('click',(e)=>{
-  e.stopPropagation();
-  nav.classList.toggle('menu-aberto');
-});
+const nav=document.getElementById('prismaNav');const btnMenu=document.getElementById('btnMenu');
+btnMenu.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
+document.addEventListener('click',(e)=>{if(nav.classList.contains('menu-aberto')&&!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
+document.querySelectorAll('.lang-switch button').forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
+setLang(localStorage.getItem('prisma_lang')||localStorage.getItem('prisma-lang')||'pt');
 const btnTop=document.getElementById("btnTop");
 window.addEventListener("scroll",()=>{btnTop.classList.toggle("show",window.scrollY>400)});
 btnTop.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});
+document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+  const v=document.getElementById('prismaEmail').value.trim();
+  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
+});
 </script>
 </body>
 </html>

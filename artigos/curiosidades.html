@@ -4,51 +4,65 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curiosidades - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;600;800&family=Material+Icons&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --preto2:#1E1E1E; --borda:rgba(238,188,108,0.15); --vermelho:#ff4d4d; }
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --sepia:#d8c9a8; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); --vermelho:#ff4d4d; }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001}
-.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001; font-weight:300;}
+.prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:800}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1.5px;background:var(--ouro);display:block;transition:0.4s}
-/* CORRIGIDO COM ESPAÇO */
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:280px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:100px 0 0 30px;gap:14px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--creme);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.8}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+
 main{padding-top:110px}
 .container{max-width:1200px;margin:auto;padding:0 5%}
-.subtitulo-secao{font-family:'Cormorant Garamond';font-size:52px;line-height:1;margin-top:40px}
-.subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.15em;text-transform:uppercase;font-size:13px;font-weight:800;margin:8px 0 40px 0}
-.titulo-categoria{font-family:'Cormorant Garamond';font-size:28px;margin:70px 0 22px 0;display:flex;align-items:center;gap:14px}
-.barra-laranja{width:4px;height:28px;background:var(--ouro);display:inline-block;border-radius:2px}
-.barra-vermelha{width:4px;height:28px;background:var(--vermelho);display:inline-block;border-radius:2px;box-shadow:0 0 12px var(--vermelho)}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
-.card{background:var(--preto2);border:1px solid var(--borda);border-radius:14px;overflow:hidden;transition:0.35s}
-.card:hover{transform:translateY(-6px);border-color:rgba(238,188,108,0.4)}
-.card-img{width:100%;height:170px;object-fit:cover;filter:grayscale(0.2) sepia(0.2)}
-.card-content{padding:20px}
-.card-content h3{font-family:'Cormorant Garamond';font-size:20px;margin-bottom:8px}
-.card-content p{opacity:0.68;font-size:14.5px;line-height:1.6}
-.card-ditado{background:linear-gradient(180deg,#1E1E1E,#181818);border-left:3px solid var(--ouro)}
-.card-tortura{background:#181111;border:1px solid rgba(255,77,77,0.18);border-left:3px solid var(--vermelho)}
-.texto-intro{opacity:0.6;font-style:italic;line-height:1.7;margin-bottom:20px;max-width:800px;border-left:2px solid var(--borda);padding-left:16px}
-.cta-ebook{background:linear-gradient(135deg,#1E1E1E, #121212);border:1px solid var(--borda);border-radius:16px;padding:42px;text-align:center}
-.cta-ebook h3{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:10px}
-.btn-cta{background:var(--ouro);color:#121212;padding:16px 28px;border-radius:6px;text-decoration:none;font-weight:800;display:inline-block}
+.subtitulo-secao{font-family:'Cormorant Garamond';font-size:clamp(38px,5vw,56px);line-height:0.95;margin-top:40px; font-weight:300; letter-spacing:-0.02em;}
+.subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.22em;text-transform:uppercase;font-size:10px;font-weight:300;margin:12px 0 50px 0; opacity:0.6;}
+.titulo-categoria{font-family:'Cormorant Garamond';font-size:26px;margin:70px 0 24px 0;display:flex;align-items:center;gap:14px; font-weight:300; letter-spacing:-0.01em;}
+.barra-laranja{width:2px;height:22px;background:var(--ouro);display:inline-block;border-radius:2px}
+.barra-vermelha{width:2px;height:22px;background:var(--vermelho);display:inline-block;border-radius:2px;box-shadow:0 0 12px rgba(255,77,77,0.4)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
+.card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;transition:0.35s}
+.card:hover{transform:translateY(-4px);border-color:rgba(238,188,108,0.18)}
+.card-img{width:100%;height:170px;object-fit:cover;filter:grayscale(0.3) sepia(0.15) brightness(0.85); opacity:0.9;}
+.card-content{padding:22px}
+.card-content h3{font-family:'Cormorant Garamond';font-size:19px;margin-bottom:8px; font-weight:400; letter-spacing:-0.01em;}
+.card-content p{opacity:0.45;font-size:13.5px;line-height:1.7; font-weight:200;}
+.texto-intro{opacity:0.4;font-style:italic;line-height:1.8;margin-bottom:24px;max-width:800px;border-left:1px solid var(--borda);padding-left:18px; font-weight:200; font-size:14px;}
+.cta-ebook{background:linear-gradient(180deg,#1A1A1A, #121212);border:1px solid var(--borda);border-radius:18px;padding:48px;text-align:center; margin-top:60px;}
+.cta-ebook h3{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:12px; font-weight:300;}
+.cta-ebook p{opacity:0.45; font-weight:200; margin-bottom:20px;}
+.btn-cta{background:var(--ouro);color:#121212;padding:16px 32px;border-radius:100px;text-decoration:none;font-weight:400;display:inline-block; font-size:12px; letter-spacing:0.12em; transition:0.3s;}
 .btn-cta:hover{background:#fff;transform:translateY(-2px)}
-.footer{border-top:1px solid var(--borda);padding:60px 5% 30px 5%;margin-top:80px;opacity:0.7}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:30px}
-@media(max-width:900px){.grid-3{grid-template-columns:1fr}.subtitulo-secao{font-size:36px}.footer-grid{grid-template-columns:1fr 1fr}}
+
+#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
+#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
+#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
+@media(max-width:900px){.grid-3{grid-template-columns:1fr}.subtitulo-secao{font-size:36px}}
+@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
+@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
@@ -64,16 +78,15 @@ main{padding-top:110px}
       <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
     </div>
    <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span><span data-i="m_inicio">INÍCIO</span></a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span><span data-i="m_sobre">SOBRE</span></a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-i="m_afiliados">AFILIADOS</span></a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span><span data-i="m_artigos">ARTIGOS</span></a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-i="m_curiosidades">CURIOSIDADES</span></a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-i="m_quiz">QUIZ</span></a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-i="m_ebook">E-BOOK</span></a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span><span data-i="m_loja">LOJA</span></a></li>
-    <li><a href="turismo.html"><span class="material-icons">public</span><span data-i="m_turismo">TURISMO COLONIAL</span></a></li>
-
+    <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
  </ul>
 </nav>
 <main>
@@ -81,32 +94,88 @@ main{padding-top:110px}
     <div class="container">
       <h2 class="subtitulo-secao">Curiosidades da Colonização</h2>
       <p class="subtitulo-secao-menor">Da Colônia à Primeira República — o que os livros não te contam</p>
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> <span>Medicina e Doenças Bizarras</span></h3>
+      <p class="texto-intro">Histórias que ficaram escondidas nos arquivos da Torre do Tombo e nos porões dos engenhos. Sem decoreba, só o Brasil real.</p>
+      
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Medicina e Doenças Bizarras</h3>
       <div class="grid-3">
         <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Fezes de cavalo na roupa</h3><p>Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
         <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Tratamentos com mercúrio</h3><p>Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
         <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Sangrias para tudo</h3><p>Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
       </div>
+
+      <h3 class="titulo-categoria"><span class="barra-vermelha"></span> Ditados e Torturas</h3>
+      <div class="grid-3">
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Origem do "sem eira nem beira"</h3><p>Quem não tinha ornamento no telhado era pobre. Daí o ditado.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>O tronco</h3><p>Instrumento de tortura em praça pública. Ficava dias ao sol.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>A máscara de flandres</h3><p>Escravizados que trabalhavam na mineração usavam máscara de ferro pra não engolir ouro.</p></div></article>
+      </div>
+
+      <div class="cta-ebook">
+        <h3>Quer 127 curiosidades assim no seu repertório?</h3>
+        <p>O e-book tem todas com fonte histórica pra você usar no ENEM e nunca mais esquecer.</p>
+        <a href="ebook.html" class="btn-cta">QUERO O E-BOOK COMPLETO →</a>
+      </div>
     </div>
   </section>
 </main>
+
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="../index.html">Início</a>
+        <a href="sobre.html">Sobre o Projeto</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="quiz.html">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="ebook.html">📘 E-book Completo</a>
+        <a href="loja.html">🛒 Loja Oficial</a>
+        <a href="afiliados.html">🤝 Afiliados</a>
+        <a href="doacao.html">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html">🔒 Privacidade</a>
+        <a href="termos.html">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn">Entrar pro Clube →</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico</span>
+      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-const T={
-pt:{t_main:"Curiosidades da Colonização"},
-en:{t_main:"Curiosities of Colonization"},
-es:{t_main:"Curiosidades de la Colonización"},
-fr:{t_main:"Curiosités de la Colonisation"}
-};
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+l).classList.add('active');
+  const el=document.getElementById('btn-'+l); if(el) el.classList.add('active');
 }
 setLang(localStorage.getItem('prisma_lang')||'pt');
 const nav=document.getElementById('prismaNav');
 nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
   nav.classList.toggle('menu-aberto');
   document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+});
+document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+  const v=document.getElementById('prismaEmail').value.trim();
+  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
 });
 </script>
 </body>

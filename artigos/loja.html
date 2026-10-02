@@ -4,52 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Loja - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
-:root{--carvao:#121212;--carvao2:#1E1E1E;--off:#F5F5F0;--sepia:#eebc6c}
+:root{--carvao:#121212;--carvao2:#1A1A1A;--off:#F5F5F0;--sepia:#eebc6c;--sepia2:#d8c9a8;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;padding-top:78px!important}
-.prisma-nav{position:fixed!important;top:0!important;left:0!important;width:100%!important;z-index:9999!important;display:flex!important;justify-content:space-between!important;align-items:center!important;padding:18px 5%!important;background:rgba(18,18,18,0.92)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid #222!important}
-.prisma-logo{font-family:'Cormorant Garamond',serif!important;font-size:26px!important;letter-spacing:0.18em!important;z-index:10001!important;color:#F5F5F0!important}
-.prisma-logo span{color:#eebc6c!important;font-weight:700!important}
+body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; font-weight:200; padding-top:78px; -webkit-font-smoothing:antialiased;}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10001;color:var(--off); font-weight:300;}
+.prisma-logo span{color:var(--sepia);font-weight:400}
 .lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid #333;color:var(--off);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px}
-.lang-switch button.active{background:var(--sepia);color:#121212;border-color:var(--sepia);font-weight:800}
-.prisma-menu-hamburguer{width:52px!important;height:52px!important;border:1px solid #333!important;background:transparent!important;cursor:pointer!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:6px!important;z-index:10001!important;border-radius:50%!important}
-.prisma-menu-hamburguer span{width:20px!important;height:1.5px!important;background:#eebc6c!important;display:block!important;transition:0.25s!important}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--off);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
+.lang-switch button.active{background:var(--sepia);color:#121212;border-color:var(--sepia);font-weight:400}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--sepia);display:block;transition:0.25s}
+/* CORRIGIDO - SEM ESPAÇO */
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.28s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia2);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
+.prisma-menu-links li a:hover{color:var(--sepia);opacity:1}
 
-/* CORRIGIDO AQUI - tirei o espaço */
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7.5px) rotate(45deg)!important}
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0!important}
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)!important}
+.header{text-align:center;padding:60px 20px 20px 20px}
+.header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px); font-weight:300; letter-spacing:-0.02em;}
+.header h1 em{color:var(--sepia);font-style:italic; font-weight:300;}
+.header p{opacity:0.4; font-weight:200; font-size:14px; margin-top:12px; letter-spacing:0.04em;}
+.badge-afiliado{text-align:center;font-size:10px;letter-spacing:0.12em;opacity:0.25;padding:14px; font-weight:200; max-width:800px; margin:auto;}
 
-.prisma-menu-links{position:fixed!important;top:0!important;left:0!important;width:280px!important;max-width:80vw!important;height:100vh!important;background:#0A0A0A!important;list-style:none!important;display:flex!important;flex-direction:column!important;padding:100px 0 0 30px!important;gap:18px!important;transform:translateX(-100%)!important;transition:0.28s!important;pointer-events:none!important;z-index:10000!important;border-right:1px solid rgba(238,188,108,0.15)!important}
+.loja{max-width:1100px;margin:20px auto 60px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{background:var(--carvao2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;overflow:hidden;transition:0.35s}
+.card:hover{transform:translateY(-4px);border-color:rgba(238,188,108,0.18); box-shadow:0 12px 30px rgba(0,0,0,0.4);}
+.card img{width:100%;height:190px;object-fit:cover; filter:grayscale(0.2) sepia(0.15) brightness(0.9); opacity:0.9;}
+.card-body{padding:24px}
+.card-body span{font-size:9px;letter-spacing:0.18em;color:var(--sepia); font-weight:300; text-transform:uppercase; opacity:0.7;}
+.card-body h3{margin:10px 0 10px 0;font-size:18px; min-height:44px; font-family:'Cormorant Garamond'; font-weight:400; letter-spacing:-0.01em; line-height:1.2;}
+.card-body p{font-size:13px;opacity:0.45;line-height:1.7; min-height:70px; font-weight:200;}
+.btn{display:block;margin-top:18px;text-align:center;background:var(--sepia);color:#121212;padding:13px;border-radius:100px;text-decoration:none;font-weight:400;font-size:11px;letter-spacing:0.12em; transition:0.3s; text-transform:uppercase;}
+.btn:hover{background:#fff; transform:translateY(-1px);}
 
-/* CORRIGIDO AQUI TAMBÉM */
-.prisma-nav .menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important}
-
-.prisma-menu-links li a{font-size:13px!important;letter-spacing:0.08em!important;text-transform:uppercase!important;color:#F5F5F0!important;text-decoration:none!important;display:flex!important;align-items:center!important;gap:12px!important;opacity:0.8!important}
-.prisma-menu-links li a:hover{color:#eebc6c!important;opacity:1!important}
-.header{text-align:center;padding:40px 20px}
-.header h1{font-family:'Cormorant Garamond',serif;font-size:42px}
-.header h1 em{color:var(--sepia);font-style:italic}
-.badge-afiliado{text-align:center;font-size:11px;letter-spacing:0.1em;opacity:0.6;padding:10px}
-.loja{max-width:1100px;margin:0 auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:var(--carvao2);border:1px solid #222;border-radius:12px;overflow:hidden;transition:0.3s}
-.card:hover{transform:translateY(-4px);border-color:var(--sepia)}
-.card img{width:100%;height:180px;object-fit:cover}
-.card-body{padding:20px}
-.card-body span{font-size:10px;letter-spacing:0.15em;color:var(--sepia)}
-.card-body h3{margin:8px 0;font-size:18px; min-height:44px}
-.card-body p{font-size:14px;opacity:0.7;line-height:1.6; min-height:70px}
-.btn{display:block;margin-top:16px;text-align:center;background:var(--sepia);color:#000;padding:12px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:0.05em}
-.btn:hover{background:#fff}
+#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
+#prismaFooter.footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter.footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
+#prismaFooter.footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
+#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter.footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
+#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
+#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
+@media(max-width:1024px){#prismaFooter.footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter.footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
+@media(max-width:650px){#prismaFooter.footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter.footer-wrap{padding:50px 5% 0 5%}#prismaFooter.footer-grid > div:first-child{grid-column:1/-1}#prismaFooter.footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
 
-  <nav class="prisma-nav" id="prismaNav">
+<nav class="prisma-nav" id="prismaNav">
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="lang-switch">
@@ -61,83 +75,103 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif;pa
     <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-       <li><a href="../index.html">INÍCIO</a></li>
-       <li><a href="sobre.html">SOBRE</a></li>
-       <li><a href="afiliados.html">AFILIADOS</a></li>
-       <li><a href="artigos.html">ARTIGOS</a></li>
-       <li><a href="curiosidades.html">CURIOSIDADES</a></li>
-       <li><a href="quiz.html">QUIZ</a></li>
-       <li><a href="ebook.html">E-BOOK</a></li>
-       <li><a href="loja.html">LOJA</a></li>
-       <li><a href="turismo.html">TURISMO COLONIAL</a></li>
+       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
+       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
+       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
+       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
+       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
+       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
+       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
+       <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
   </ul>
 </nav>
 
 <div class="header">
   <h1 data-i18n="h1">Loja <em>Prisma</em></h1>
-  <p data-i18n="sub">Indicações que usamos para estudar - links afiliados</p>
+  <p data-i18n="sub">Indicações que usamos para estudar — curadoria sépia</p>
 </div>
-<p class="badge-afiliado" data-i18n="badge">AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
+<p class="badge-afiliado" data-i18n="badge">Aviso: este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
 
 <div class="loja">
   <div class="card">
     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600" alt="Writelytic">
     <div class="card-body">
-      <span data-i18n="cat1">WRITELYTIC</span>
-      <h3 data-i18n="p1_t">Writelytic - IA para Escrita</h3>
-      <p data-i18n="p1_d">Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação com seu público.</p>
-      <a class="btn" id="link-writelytic" href="https://writelytic.com/es/#aff=cricardomoraes7738e1" target="_blank" data-i18n="p1_btn">ACESSAR CURSO</a>
+      <span data-i18n="cat1">Writelytic • IA</span>
+      <h3 data-i18n="p1_t">Writelytic — IA para Escrita</h3>
+      <p data-i18n="p1_d">Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação.</p>
+      <a class="btn" id="link-writelytic" href="https://writelytic.com/es/#aff=cricardomoraes7738e1" target="_blank">Acessar curso →</a>
     </div>
   </div>
-
   <div class="card">
     <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600" alt="Curso">
     <div class="card-body">
-      <span data-i18n="cat2">CURSOS</span>
-      <h3 data-i18n="p2_t"></h3>
-      <p data-i18n="p2_d">Curso completo que usamos como base para os simulados.</p>
-      <a class="btn" href="" target="_blank" data-i18n="p2_btn">VER CURSO</a>
+      <span data-i18n="cat2">Cursos • ENEM</span>
+      <h3 data-i18n="p2_t">História para ENEM — Intensivo</h3>
+      <p data-i18n="p2_d">Curso completo que usamos como base para os simulados e repertório nota 1000.</p>
+      <a class="btn" href="#" target="_blank">Ver curso →</a>
     </div>
   </div>
-
   <div class="card">
     <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600" alt="Mapa">
     <div class="card-body">
-      <span data-i18n="cat3">MATERIAL</span>
+      <span data-i18n="cat3">Material • Mapas</span>
       <h3 data-i18n="p3_t">Mapas Históricos Premium</h3>
-      <p data-i18n="p3_d">Mapas mentais e resumos para imprimir.</p>
-      <a class="btn" href="https://eduzz.com/SEU_LINK" target="_blank" data-i18n="p3_btn">BAIXAR AGORA</a>
+      <p data-i18n="p3_d">Mapas mentais e resumos para imprimir. Visual, sépia, pronto pra parede.</p>
+      <a class="btn" href="#" target="_blank">Baixar agora →</a>
     </div>
   </div>
 </div>
 
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="../index.html">Início</a>
+        <a href="sobre.html">Sobre o Projeto</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="curiosidades.html">Curiosidades</a>
+        <a href="quiz.html">Quiz Histórico</a>
+        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="ebook.html">📘 E-book Completo</a>
+        <a href="loja.html">🛒 Loja Oficial</a>
+        <a href="afiliados.html">🤝 Afiliados</a>
+        <a href="doacao.html">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html">🔒 Privacidade</a>
+        <a href="termos.html">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4>Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn">Entrar pro Clube →</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Prisma Histórico</span>
+      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-// TRADUÇÕES - AGORA COM WRITELYTIC FIXO
 const T={
-pt:{
-h1:"Loja <em>Prisma</em>",sub:"Indicações que usamos para estudar - links afiliados",badge:"AVISO: Este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.",
-cat1:"WRITELYTIC",p1_t:"Writelytic - IA para Escrita",p1_d:"Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação com seu público.",p1_btn:"ACESSAR CURSO",
-cat2:"CURSOS",p2_t:"História para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para os simulados.",p2_btn:"VER CURSO",
-cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentais e resumos para imprimir.",p3_btn:"BAIXAR AGORA"},
-en:{
-h1:"<em>Prisma</em> Store",sub:"Our study recommendations - affiliate links",badge:"NOTICE: This site contains affiliate links. We may earn commission at no extra cost to you.",
-cat1:"WRITELYTIC",p1_t:"Writelytic - AI Writing Tool",p1_d:"AI platform that generates high-quality texts for businesses and individuals, revolutionizing communication.",p1_btn:"ACCESS COURSE",
-cat2:"COURSES",p2_t:"History for Exams - Intensive",p2_d:"Complete course we use as basis for mock exams.",p2_btn:"VIEW COURSE",
-cat3:"MATERIAL",p3_t:"Premium Historical Maps",p3_d:"Mind maps and summaries to print.",p3_btn:"DOWNLOAD NOW"},
-es:{
-h1:"Tienda <em>Prisma</em>",sub:"Recomendaciones que usamos para estudiar - enlaces afiliados",badge:"AVISO: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra para ti.",
-cat1:"WRITELYTIC",p1_t:"Writelytic - IA para Escritura",p1_d:"Plataforma de IA que genera textos de alta calidad para empresas e individuos, revolucionando la comunicación.",p1_btn:"ACCEDER AL CURSO",
-cat2:"CURSOS",p2_t:"Historia para ENEM - Intensivo",p2_d:"Curso completo que usamos como base para simulados.",p2_btn:"VER CURSO",
-cat3:"MATERIAL",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentales y resúmenes para imprimir.",p3_btn:"DESCARGAR AHORA"},
-fr:{
-h1:"Boutique <em>Prisma</em>",sub:"Nos recommandations d'étude - liens affiliés",badge:"AVIS: Ce site contient des liens affiliés. Nous pouvons gagner une commission sans frais supplémentaires pour vous.",
-cat1:"WRITELYTIC",p1_t:"Writelytic - IA d'Écriture",p1_d:"Plateforme IA qui génère des textes de haute qualité pour les entreprises et les particuliers.",p1_btn:"ACCÉDER AU COURS",
-cat2:"COURS",p2_t:"Histoire pour Examens - Intensif",p2_d:"Cours complet que nous utilisons comme base pour les examens blancs.",p2_btn:"VOIR LE COURS",
-cat3:"MATÉRIEL",p3_t:"Cartes Historiques Premium",p3_d:"Cartes mentales et résumés à imprimer.",p3_btn:"TÉLÉCHARGER"}
+pt:{h1:"Loja <em>Prisma</em>",sub:"Indicações que usamos para estudar — curadoria sépia",badge:"Aviso: este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA para Escrita",p1_d:"Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação.",cat2:"Cursos • ENEM",p2_t:"História para ENEM — Intensivo",p2_d:"Curso completo que usamos como base para os simulados e repertório nota 1000.",cat3:"Material • Mapas",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentais e resumos para imprimir. Visual, sépia, pronto pra parede."},
+en:{h1:"<em>Prisma</em> Store",sub:"Our study recommendations — sepia curation",badge:"Notice: This site contains affiliate links. We may earn commission at no extra cost to you.",cat1:"Writelytic • AI",p1_t:"Writelytic — AI Writing Tool",p1_d:"AI platform that generates high-quality texts for businesses and individuals.",cat2:"Courses • Exam",p2_t:"History for Exams — Intensive",p2_d:"Complete course we use as basis for mock exams.",cat3:"Material • Maps",p3_t:"Premium Historical Maps",p3_d:"Mind maps and summaries to print. Visual, sepia."},
+es:{h1:"Tienda <em>Prisma</em>",sub:"Recomendaciones que usamos para estudiar — curaduría sepia",badge:"Aviso: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA para Escritura",p1_d:"Plataforma de IA que genera textos de alta calidad.",cat2:"Cursos • ENEM",p2_t:"Historia para ENEM — Intensivo",p2_d:"Curso completo que usamos como base para simulados.",cat3:"Material • Mapas",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentales y resúmenes para imprimir. Visual, sepia."},
+fr:{h1:"Boutique <em>Prisma</em>",sub:"Nos recommandations — curation sépia",badge:"Avis: Ce site contient des liens affiliés. Nous pouvons gagner une commission.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA d'Écriture",p1_d:"Plateforme IA qui génère des textes de haute qualité.",cat2:"Cours • Examen",p2_t:"Histoire pour Examens — Intensif",p2_d:"Cours complet que nous utilisons comme base.",cat3:"Matériel • Cartes",p3_t:"Cartes Historiques Premium",p3_d:"Cartes mentales et résumés à imprimer. Visuel, sépia."}
 };
-
 const AFF_LINK = "https://writelytic.com/es/#aff=cricardomoraes7738e1";
-
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
@@ -146,38 +180,24 @@ function setLang(l){
     const k=el.getAttribute('data-i18n');
     if(T[l][k]) el.innerHTML=T[l][k];
   });
-  // SEMPRE força o link afiliado depois da tradução
   const link = document.getElementById('link-writelytic');
   if(link) link.href = AFF_LINK;
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   setLang(localStorage.getItem('prisma_lang')||'pt');
-
   const nav=document.getElementById('prismaNav');
   const btn=document.getElementById('btnMenu');
-
   btn.addEventListener('click', (e)=>{
     e.stopPropagation();
     nav.classList.toggle('menu-aberto');
     document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
   });
-
-  document.addEventListener('click', (e)=>{
-    if(nav.classList.contains('menu-aberto') &&!nav.contains(e.target)){
-      nav.classList.remove('menu-aberto');
-      document.body.style.overflow = '';
-    }
-  });
+});
+document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+  const v=document.getElementById('prismaEmail').value.trim();
+  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
 });
 </script>
-// hamburguer
-
-<script>
-document.getElementById('btnMenu').onclick = function() {
-  document.getElementById('prismaNav').classList.toggle('menu-aberto');
-}
-</script>
-
 </body>
 </html>
