@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-book Prisma Histórico</title>
+<title data-pt-BR="E-book Prisma Histórico" data-en="E-book Prisma Histórico" data-es="E-book Prisma Histórico" data-fr="E-book Prisma Histórico">E-book Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
-
 <style>
 :root{--ouro:#eebc6c;--sepia:#d8c9a8;--creme:#F5F5F0;--preto:#121212;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:200;-webkit-font-smoothing:antialiased;padding-top:78px;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10002;font-weight:300;} .prisma-logo span{color:var(--ouro);font-weight:400}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10002;font-weight:300;}.prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda);}
 .lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s;font-weight:200;}
 .lang-switch button.active{background:var(--ouro);color:#121212;font-weight:400}
@@ -25,8 +23,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7;font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
-/* HERO EBOOK */
 .hero-ebook{max-width:1250px;margin:0 auto;padding:50px 5% 30px 5%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;}
 .hero-ebook-text .tag{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ouro);background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;font-weight:300;display:inline-block;margin-bottom:16px;}
 .hero-ebook-text h1{font-family:'Cormorant Garamond';font-size:clamp(38px,5.5vw,62px);line-height:0.9;font-weight:300;letter-spacing:-0.02em;}
@@ -38,8 +34,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .capa-ebook::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 300px at 50% 0%, rgba(238,188,108,0.12), transparent 60%);}
 .capa-ebook b{font-family:'Cormorant Garamond';font-size:28px;font-weight:400;letter-spacing:-0.01em;z-index:1;text-align:center;}
 .capa-ebook i{font-size:10px;letter-spacing:0.2em;color:var(--ouro);z-index:1;margin-top:10px;font-style:normal;text-transform:uppercase;font-weight:300;opacity:0.7;}
-
-/* LIVROS */
 .livros-wrap{max-width:1250px;margin:60px auto 0 auto;padding:0 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 .livro-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;height:680px;transition:0.35s;}
 .livro-card:hover{border-color:rgba(238,188,108,0.15);transform:translateY(-4px);}
@@ -47,12 +41,10 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .livro-head-left b{font-family:'Cormorant Garamond';font-size:18px;font-weight:400;color:var(--creme);display:block;line-height:1.1;}
 .livro-head-left span{font-size:10px;letter-spacing:0.16em;color:var(--ouro);text-transform:uppercase;font-weight:300;opacity:0.6;margin-top:6px;display:block;}
 .livro-tag{font-size:9px;letter-spacing:0.14em;border:1px solid rgba(238,188,108,0.18);background:rgba(238,188,108,0.06);color:var(--ouro);padding:6px 12px;border-radius:100px;font-weight:300;white-space:nowrap;}
-.livro-scroll{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(238,188,108,0.18) transparent;}
-.livro-scroll::-webkit-scrollbar{width:3px}.livro-scroll::-webkit-scrollbar-thumb{background:rgba(238,188,108,0.18);border-radius:10px;}
-.livro-item{padding:12px 14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:10px;transition:0.2s;}
-.livro-item:hover{border-color:rgba(238,188,108,0.12);background:rgba(238,188,108,0.04);}
+.livro-scroll{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;gap:10px;}
+.livro-item{padding:12px 14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:10px;}
 .livro-item i{font-size:9px;color:var(--ouro);letter-spacing:0.12em;font-style:normal;font-weight:300;text-transform:uppercase;opacity:0.5;display:block;margin-bottom:4px;}
-.livro-item p{font-size:12px;line-height:1.5;font-weight:200;opacity:0.55;color:var(--creme);} .livro-item p strong{font-weight:400;color:var(--sepia);opacity:0.9;}
+.livro-item p{font-size:12px;line-height:1.5;font-weight:200;opacity:0.55;color:var(--creme);}.livro-item p strong{font-weight:400;color:var(--sepia);opacity:0.9;}
 .destaque-livro{background:rgba(238,188,108,0.06);border-left:1px solid var(--ouro);padding:10px 12px;border-radius:0 8px 8px 0;font-size:11px;font-weight:200;color:var(--sepia);line-height:1.5;margin:4px 0;}
 .livro-footer{padding:16px 18px;border-top:1px solid rgba(255,255,255,0.05);background:#151515;display:flex;flex-direction:column;gap:10px;}
 .preco{display:flex;justify-content:space-between;align-items:center;}
@@ -62,30 +54,31 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .btn-buy:hover{background:#fff;transform:translateY(-1px);}
 .btn-buy.bundle{background:#fff;color:#121212;}
 .btn-buy.sec{background:transparent;border:1px solid rgba(238,188,108,0.18);color:var(--ouro);}
-
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
 #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9;font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text);font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text);font-weight:200;}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9;font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--ouro);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0;font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200;}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:#F5F5F0;font-weight:200;}
 #prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text);font-weight:200;letter-spacing:0.06em;}
+#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:700;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:#F5F5F0;font-weight:200;letter-spacing:0.06em;}
 @media(max-width:1000px){.hero-ebook{grid-template-columns:1fr}.livros-wrap{grid-template-columns:1fr}.livro-card{height:540px}}
+@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
+@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
-  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div class="prisma-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="lang-switch">
-      <button data-lang="pt" id="btn-pt" class="active">PT</button>
+      <button data-lang="pt-BR" id="btn-pt-BR" class="active">PT</button>
       <button data-lang="en" id="btn-en">EN</button>
       <button data-lang="es" id="btn-es">ES</button>
       <button data-lang="fr" id="btn-fr">FR</button>
@@ -93,144 +86,137 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
     <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> <span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
   </ul>
 </nav>
-
 <div class="hero-ebook">
   <div class="hero-ebook-text">
-    <span class="tag" data-pt="Coleção completa • 3 livros • PDF + Áudio" data-en="Complete collection • 3 books • PDF + Audio" data-es="Colección completa • 3 libros • PDF + Audio" data-fr="Collection complète • 3 livres • PDF + Audio">Coleção completa • 3 livros • PDF + Áudio</span>
-    <h1 data-pt="A História que <em>não te contaram</em>" data-en="The History <em>they didn't tell you</em>" data-es="La Historia que <em>no te contaron</em>" data-fr="L'Histoire qu'<em>on ne t'a pas racontée</em>">A História que <em>não te contaram</em></h1>
-    <p data-pt="Sem decoreba. 3 livros investigativos com mapas raros, documentos secretos e roteiros coloniais de São Roque a Ouro Preto. Lógica cirúrgica, não achismo." data-en="No rote learning. 3 investigative books with rare maps, secret documents and colonial routes." data-es="Sin memorización. 3 libros investigativos con mapas raros y documentos secretos." data-fr="Pas de par cœur. 3 livres d'enquête avec cartes rares et documents secrets.">Sem decoreba. 3 livros investigativos com mapas raros, documentos secretos e roteiros coloniais de São Roque a Ouro Preto. Lógica cirúrgica, não achismo.</p>
+    <span class="tag" data-pt-BR="Coleção completa • 3 livros • PDF + Áudio" data-en="Complete collection • 3 books • PDF + Audio" data-es="Colección completa • 3 libros • PDF + Audio" data-fr="Collection complète • 3 livres • PDF + Audio">Coleção completa • 3 livros • PDF + Áudio</span>
+    <h1 data-pt-BR="A História que não te contaram" data-en="The History they didn't tell you" data-es="La Historia que no te contaron" data-fr="L'Histoire qu'on ne t'a pas racontée">A História que <em>não te contaram</em></h1>
+    <p data-pt-BR="Sem decoreba. 3 livros investigativos com mapas raros, documentos secretos e roteiros coloniais de São Roque a Ouro Preto. Lógica cirúrgica, não achismo." data-en="No rote learning. 3 investigative books with rare maps, secret documents and colonial routes." data-es="Sin memorización. 3 libros investigativos con mapas raros y documentos secretos." data-fr="Pas de par cœur. 3 livres d'enquête avec cartes rares et documents secrets.">Sem decoreba. 3 livros investigativos com mapas raros, documentos secretos e roteiros coloniais de São Roque a Ouro Preto. Lógica cirúrgica, não achismo.</p>
     <div class="ebook-stats">
       <span>📄 312 páginas</span><span>🗺 47 mapas</span><span>🎧 Áudio 3h</span><span>🌍 PT/EN/ES/FR</span>
     </div>
-    <a href="#livros" class="btn-buy" style="max-width:260px;" data-pt="Ver livros abaixo ↓" data-en="See books below ↓" data-es="Ver libros abajo ↓" data-fr="Voir livres ci-dessous ↓">Ver livros abaixo ↓</a>
+    <a href="#livros" class="btn-buy" style="max-width:260px;" data-pt-BR="Ver livros abaixo ↓" data-en="See books below ↓" data-es="Ver libros abajo ↓" data-fr="Voir livres ci-dessous ↓">Ver livros abaixo ↓</a>
   </div>
   <div class="capa-ebook">
     <b>Prisma Histórico</b>
-    <i data-pt="Coleção Investigativa" data-en="Investigative Collection" data-es="Colección Investigativa" data-fr="Collection d'Enquête">Coleção Investigativa</i>
-    <div style="margin-top:24px; width:80%; height:1px; background:rgba(238,188,108,0.15);"></div>
-    <span style="font-size:10px; opacity:0.3; margin-top:14px; font-weight:200; letter-spacing:0.12em; z-index:1;">1500 • 1930 • ARQUIVO SECRETO</span>
+    <i data-pt-BR="Coleção Investigativa" data-en="Investigative Collection" data-es="Colección Investigativa" data-fr="Collection d'Enquête">Coleção Investigativa</i>
   </div>
 </div>
-
 <div id="livros" class="livros-wrap">
-  <!-- LIVRO 1 - NOVO -->
   <div class="livro-card">
     <div class="livro-head">
       <div class="livro-head-left">
-        <b data-pt="Detetive da Colônia" data-en="Colony Detective" data-es="Detective de la Colonia" data-fr="Détective de la Colonie">Detetive da Colônia</b>
-        <span data-pt="Volume I • 1500-1808" data-en="Volume I • 1500-1808" data-es="Volumen I • 1500-1808" data-fr="Volume I • 1500-1808">Volume I • 1500-1808</span>
+        <b data-pt-BR="Detetive da Colônia" data-en="Colony Detective" data-es="Detective de la Colonia" data-fr="Détective de la Colonie">Detetive da Colônia</b>
+        <span data-pt-BR="Volume I • 1500-1808" data-en="Volume I • 1500-1808" data-es="Volumen I • 1500-1808" data-fr="Volume I • 1500-1808">Volume I • 1500-1808</span>
       </div>
       <div class="livro-tag">PDF + MAPAS</div>
     </div>
     <div class="livro-scroll">
-      <div class="livro-item"><i>01 • Fundação</i><p><strong>Capitanias que deram certo:</strong> por que Brasil não quebrou como América espanhola</p></div>
-      <div class="livro-item"><i>02 • Engenho</i><p><strong>Trapiche e moenda:</strong> engenharia do açúcar e escravidão</p></div>
-      <div class="livro-item"><i>03 • Igreja</i><p><strong>Jesuítas expulsos em 1759:</strong> tinham mais ouro que a Coroa</p></div>
-      <div class="destaque-livro" data-pt="+ Mapa mental da administração colonial completo com tributos" data-en="+ Full colonial administration mind map" data-es="+ Mapa mental completo de la administración colonial" data-fr="+ Carte mentale complète de l'administration coloniale">+ Mapa mental da administração colonial completo com tributos</div>
-      <div class="livro-item"><i>04 • Ouro</i><p><strong>Minas financiou Lisboa e Londres:</strong> quinto e contrabando</p></div>
-      <div class="livro-item"><i>05 • Roteiro</i><p><strong>São Roque a Ouro Preto:</strong> onde pisar no ouro original</p></div>
+      <div class="livro-item"><i>01 • Fundação</i><p><strong>Capitanias que deram certo:</strong> por que Brasil não quebrou</p></div>
+      <div class="destaque-livro" data-pt-BR="+ Mapa mental da administração colonial completo com tributos" data-en="+ Full colonial administration mind map" data-es="+ Mapa mental completo" data-fr="+ Carte mentale complète">+ Mapa mental da administração colonial completo com tributos</div>
     </div>
     <div class="livro-footer">
       <div class="preco"><span class="de">R$ 97,00</span><span class="por" data-preco1>R$ 19,90</span></div>
-      <a href="https://pay.hotmart.com/S107552304I?off=7k2l9a" target="_blank" class="btn-buy sec" data-link1 data-pt="Comprar Vol I →" data-en="Buy Vol I →" data-es="Comprar Vol I →" data-fr="Acheter Vol I →">Comprar Vol I →</a>
+      <a href="https://pay.hotmart.com/S107552304I?off=7k2l9a" target="_blank" class="btn-buy sec" data-link1 data-pt-BR="Comprar Vol I →" data-en="Buy Vol I →" data-es="Comprar Vol I →" data-fr="Acheter Vol I →">Comprar Vol I →</a>
     </div>
   </div>
-
-  <!-- LIVRO 2 - NOVO -->
   <div class="livro-card">
     <div class="livro-head">
       <div class="livro-head-left">
-        <b data-pt="O Golpe do Império" data-en="The Empire Coup" data-es="El Golpe del Imperio" data-fr="Le Coup de l'Empire">O Golpe do Império</b>
-        <span data-pt="Volume II • 1808-1889" data-en="Volume II • 1808-1889" data-es="Volumen II • 1808-1889" data-fr="Volume II • 1808-1889">Volume II • 1808-1889</span>
+        <b data-pt-BR="O Golpe do Império" data-en="The Empire Coup" data-es="El Golpe del Imperio" data-fr="Le Coup de l'Empire">O Golpe do Império</b>
+        <span data-pt-BR="Volume II • 1808-1889" data-en="Volume II • 1808-1889" data-es="Volumen II • 1808-1889" data-fr="Volume II • 1808-1889">Volume II • 1808-1889</span>
       </div>
       <div class="livro-tag">EN / ES</div>
     </div>
     <div class="livro-scroll">
-      <div class="livro-item"><i>01 • Fuga</i><p><strong>1808 Família Real foge:</strong> por que veio pro Brasil e não pra África</p></div>
-      <div class="livro-item"><i>02 • Independência comprada</i><p><strong>2 milhões de libras:</strong> Dom Pedro devia pra Londres</p></div>
-      <div class="livro-item"><i>03 • Regência caótica</i><p><strong>Balaiada, Sabinada:</strong> anarquia que quase acabou com o Brasil</p></div>
-      <div class="destaque-livro">+ Timeline 1822-1889 com todas as leis, guerras e crises econômicas</div>
-      <div class="livro-item"><i>04 • Guerra do Paraguai</i><p><strong>Maior guerra da América do Sul:</strong> segredos escondidos</p></div>
-      <div class="livro-item"><i>05 • Abolição</i><p><strong>Lei Áurea:</strong> Princesa Isabel assinou mas e depois?</p></div>
+      <div class="livro-item"><i>01 • Fuga</i><p><strong>1808 Família Real foge:</strong> por que veio pro Brasil</p></div>
+      <div class="destaque-livro">+ Timeline 1822-1889 com todas as leis, guerras e crises</div>
     </div>
     <div class="livro-footer">
       <div class="preco"><span class="de">$29.90</span><span class="por" data-preco2>$14.90</span></div>
-      <a href="https://www.paypal.com/ncp/payment/XXXXXX_EN" target="_blank" class="btn-buy sec" data-link2 data-pt="Comprar Vol II →" data-en="Buy Vol II →" data-es="Comprar Vol II →" data-fr="Acheter Vol II →">Comprar Vol II →</a>
+      <a href="#" target="_blank" class="btn-buy sec" data-link2 data-pt-BR="Comprar Vol II →" data-en="Buy Vol II →" data-es="Comprar Vol II →" data-fr="Acheter Vol II →">Comprar Vol II →</a>
     </div>
   </div>
-
-  <!-- LIVRO 3 - BUNDLE - MUDO TUDO -->
   <div class="livro-card" style="border-color:rgba(238,188,108,0.18);">
     <div class="livro-head" style="background:rgba(238,188,108,0.06);">
       <div class="livro-head-left">
-        <b data-pt="República Bestializada" data-en="Bewildered Republic" data-es="República Bestializada" data-fr="République Abasourdie">República Bestializada</b>
-        <span data-pt="Bundle • 3 livros • Melhor oferta" data-en="Bundle • 3 books • Best deal" data-es="Bundle • 3 libros • Mejor oferta" data-fr="Bundle • 3 livres • Meilleure offre">Bundle • 3 livros • Melhor oferta</span>
+        <b data-pt-BR="República Bestializada" data-en="Bewildered Republic" data-es="República Bestializada" data-fr="République Abasourdie">República Bestializada</b>
+        <span data-pt-BR="Bundle • 3 livros • Melhor oferta" data-en="Bundle • 3 books • Best deal" data-es="Bundle • 3 libros • Mejor oferta" data-fr="Bundle • 3 livres • Meilleure offre">Bundle • 3 livros • Melhor oferta</span>
       </div>
       <div class="livro-tag" style="background:var(--ouro);color:#121212;">-60% OFF</div>
     </div>
     <div class="livro-scroll">
       <div class="livro-item"><i>01 • 1889</i><p><strong>Golpe sem povo:</strong> Deodoro proclama e ninguém entende</p></div>
-      <div class="livro-item"><i>02 • Espada</i><p><strong>Floriano massacra:</strong> Revolta da Armada e Florianópolis</p></div>
-      <div class="livro-item"><i>03 • Café com Leite</i><p><strong>SP e MG revezando:</strong> coronelismo e voto de cabresto</p></div>
-      <div class="destaque-livro" data-pt="+ Infográfico governadores + roteiros secretos + áudios + mapas raros" data-en="+ Governors infographic + secret routes + audios + rare maps" data-es="+ Infografía gobernadores + rutas secretas + audios" data-fr="+ Infographie gouverneurs + itinéraires secrets + audios">+ Infográfico governadores + roteiros secretos + áudios + mapas raros</div>
-      <div class="livro-item"><i>04 • Revoltas</i><p><strong>Canudos, Vacina, Chibata:</strong> povo que a República matou</p></div>
-      <div class="livro-item"><i>05 • 1930</i><p><strong>Vargas chega:</strong> fim da República Velha</p></div>
+      <div class="destaque-livro" data-pt-BR="+ Infográfico governadores + roteiros secretos + áudios + mapas raros" data-en="+ Governors infographic + secret routes + audios" data-es="+ Infografía gobernadores" data-fr="+ Infographie gouverneurs">+ Infográfico governadores + roteiros secretos + áudios + mapas raros</div>
     </div>
     <div class="livro-footer" style="background:rgba(238,188,108,0.06);">
       <div class="preco"><span class="de">R$ 297,00</span><span class="por" data-preco-bundle>R$ 49,90</span></div>
-      <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-buy bundle" data-link-bundle data-pt="🔒 Garantir os 3 Livros →" data-en="🔒 Get All 3 Books →" data-es="🔒 Obtener los 3 Libros →" data-fr="🔒 Obtenir les 3 Livres →">🔒 Garantir os 3 Livros →</a>
-      <span style="font-size:9px; color:var(--ouro); text-align:center; font-weight:300;" data-pt="7 dias garantia • PDF + Áudio + Mapas" data-en="7-day guarantee • PDF + Audio + Maps" data-es="7 días garantía • PDF + Audio + Mapas" data-fr="Garantie 7 jours • PDF + Audio + Cartes">7 dias garantia • PDF + Áudio + Mapas</span>
+      <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-buy bundle" data-link-bundle data-pt-BR="🔒 Garantir os 3 Livros →" data-en="🔒 Get All 3 Books →" data-es="🔒 Obtener los 3 Libros →" data-fr="🔒 Obtenir les 3 Livres →">🔒 Garantir os 3 Livros →</a>
     </div>
   </div>
 </div>
-
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p></div>
-      <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="sobre.html">Sobre</a><a href="artigos.html">Artigos</a><a href="quiz.html">Quiz</a><a href="turismo-colonial.html">🌍 Turismo Colonial</a></div>
-      <div class="footer-col"><h4>Produtos</h4><a href="ebook.html">📘 E-book</a><a href="loja.html">🛒 Loja</a><a href="afiliados.html">🤝 Afiliados</a><a href="doacao.html">💰 Doação</a></div>
-      <div class="footer-col"><h4>Clube Prisma</h4><div class="footer-news-card"><p>Receba roteiros secretos. Grátis.</p><input type="email" id="prismaEmail" placeholder="seu melhor email"><button id="prismaBtn">Entrar pro Clube →</button></div></div>
+      <div>
+        <div class="footer-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
+        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
+        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="quiz.html" data-pt-BR="Quiz" data-en="Quiz" data-es="Quiz" data-fr="Quiz">Quiz</a>
+        <a href="turismo-colonial.html" data-pt-BR="🌍 Turismo Colonial" data-en="🌍 Colonial Tourism" data-es="🌍 Turismo Colonial" data-fr="🌍 Tourisme Colonial">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html" data-pt-BR="📘 E-book" data-en="📘 E-book" data-es="📘 E-book" data-fr="📘 E-book">📘 E-book</a>
+        <a href="loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
+        <a href="afiliados.html" data-pt-BR="🤝 Afiliados" data-en="🤝 Affiliates" data-es="🤝 Afiliados" data-fr="🤝 Affiliés">🤝 Afiliados</a>
+        <a href="doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-pt-BR="Receba roteiros secretos. Grátis." data-en="Get secret itineraries. Free." data-es="Recibe itinerarios secretos. Gratis." data-fr="Recevez des itinéraires secrets. Gratuit.">Receba roteiros secretos. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-pt-BR="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Prisma Histórico</span><span>Feito com ☕ e 4h de sono em São Paulo</span></div>
+    <div class="footer-bottom">
+      <span>© <span id="anoAtual">2026</span> Prisma Histórico</span>
+      <span id="dataLocalizada" data-pt-BR="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
   </div>
 </footer>
-
 <script>
-const T_EBOOK={
-pt:{preco1:"R$ 19,90", preco2:"R$ 24,90", bundle:"R$ 49,90", link1:"https://pay.hotmart.com/S107552304I?off=7k2l9a", link2:"https://pay.hotmart.com/S107552304I?off=8k3l0b", bundleLink:"https://pay.hotmart.com/S107552304I"},
-en:{preco1:"$9.90", preco2:"$14.90", bundle:"$19.90", link1:"https://www.paypal.com/ncp/payment/VOL1_EN", link2:"https://www.paypal.com/ncp/payment/VOL2_EN", bundleLink:"https://www.paypal.com/ncp/payment/BUNDLE_EN"},
-es:{preco1:"9,90€", preco2:"14,90€", bundle:"19,90€", link1:"https://www.paypal.com/ncp/payment/VOL1_ES", link2:"https://www.paypal.com/ncp/payment/VOL2_ES", bundleLink:"https://www.paypal.com/ncp/payment/BUNDLE_ES"},
-fr:{preco1:"9,90€", preco2:"14,90€", bundle:"19,90€", link1:"https://www.paypal.com/ncp/payment/VOL1_FR", link2:"https://www.paypal.com/ncp/payment/VOL2_FR", bundleLink:"https://www.paypal.com/ncp/payment/BUNDLE_FR"}
-};
-const nav=document.getElementById('prismaNav');const btnMenu=document.getElementById('btnMenu');
-btnMenu.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
+const nav=document.getElementById('prismaNav');
+document.getElementById('btnMenu').addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
 document.addEventListener('click',(e)=>{if(nav.classList.contains('menu-aberto')&&!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
-function setLang(l){
-  localStorage.setItem('prisma_lang',l);localStorage.setItem('prisma-lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
-  document.querySelectorAll('[data-pt]').forEach(el=>{const txt=el.getAttribute('data-'+l);if(txt) el.textContent=txt;});
-  const cfg=T_EBOOK[l]||T_EBOOK.en;
-  document.querySelectorAll('[data-preco1]').forEach(el=>el.textContent=cfg.preco1);
-  document.querySelectorAll('[data-preco2]').forEach(el=>el.textContent=cfg.preco2);
-  document.querySelectorAll('[data-preco-bundle]').forEach(el=>el.textContent=cfg.bundle);
-  document.querySelectorAll('[data-link1]').forEach(el=>el.href=cfg.link1);
-  document.querySelectorAll('[data-link2]').forEach(el=>el.href=cfg.link2);
-  document.querySelectorAll('[data-link-bundle]').forEach(el=>el.href=cfg.bundleLink);
+function aplicarTraducao(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  var b=document.getElementById('btn-'+l);if(b)b.classList.add('active');
+  document.querySelectorAll('[data-pt-BR]').forEach(function(e){
+    var t=e.getAttribute('data-'+l)||e.getAttribute('data-pt-BR');
+    if(!t)return;e.textContent=t
+  });
 }
-document.querySelectorAll('.lang-switch button').forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
-setLang(localStorage.getItem('prisma_lang')||localStorage.getItem('prisma-lang')||'pt');
+document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){aplicarTraducao(b.id.replace('btn-',''))})});
+aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
 </script>
 </body>
 </html>

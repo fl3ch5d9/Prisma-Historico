@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Curiosidades - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-
-
+<title data-pt-BR="Curiosidades - Prisma Histórico" data-en="Curiosities - Prisma Histórico" data-es="Curiosidades - Prisma Histórico" data-fr="Curiosités - Prisma Histórico">Curiosidades - Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
+
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --sepia:#d8c9a8; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); --vermelho:#ff4d4d; }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased;}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased; padding-top:72px;}
+
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001; font-weight:300;}
 .prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em; min-width:38px; min-height:34px;}
 .lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
+
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
-main{padding-top:110px}
+main{padding-top:40px}
 .container{max-width:1200px;margin:auto;padding:0 5%}
 .subtitulo-secao{font-family:'Cormorant Garamond';font-size:clamp(38px,5vw,56px);line-height:0.95;margin-top:40px; font-weight:300; letter-spacing:-0.02em;}
 .subtitulo-secao-menor{color:var(--ouro);letter-spacing:0.22em;text-transform:uppercase;font-size:10px;font-weight:300;margin:12px 0 50px 0; opacity:0.6;}
@@ -48,74 +51,78 @@ main{padding-top:110px}
 .btn-cta{background:var(--ouro);color:#121212;padding:16px 32px;border-radius:100px;text-decoration:none;font-weight:400;display:inline-block; font-size:12px; letter-spacing:0.12em; transition:0.3s;}
 .btn-cta:hover{background:#fff;transform:translateY(-2px)}
 
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
 #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9; font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--ouro);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0; font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:#F5F5F0; font-weight:200;}
 #prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
+#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:700;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:#F5F5F0; font-weight:200; letter-spacing:0.06em;}
+
 @media(max-width:900px){.grid-3{grid-template-columns:1fr}.subtitulo-secao{font-size:36px}}
 @media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
 @media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
+
+
+
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+    <div class="prisma-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
     <div style="display:flex;align-items:center;gap:12px">
       <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
+        <button id="btn-pt-BR" class="active">PT</button>
+        <button id="btn-en">EN</button>
+        <button id="btn-es">ES</button>
+        <button id="btn-fr">FR</button>
       </div>
-      <button type="button" class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
     </div>
    <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
  </ul>
 </nav>
 <main>
   <section class="section curiosidades">
     <div class="container">
-      <h2 class="subtitulo-secao">Curiosidades da Colonização</h2>
-      <p class="subtitulo-secao-menor">Da Colônia à Primeira República — o que os livros não te contam</p>
-      <p class="texto-intro">Histórias que ficaram escondidas nos arquivos da Torre do Tombo e nos porões dos engenhos. Sem decoreba, só o Brasil real.</p>
-      
-      <h3 class="titulo-categoria"><span class="barra-laranja"></span> Medicina e Doenças Bizarras</h3>
+      <h2 class="subtitulo-secao" data-pt-BR="Curiosidades da Colonização" data-en="Curiosities of Colonization" data-es="Curiosidades de la Colonización" data-fr="Curiosités de la Colonisation">Curiosidades da Colonização</h2>
+      <p class="subtitulo-secao-menor" data-pt-BR="Da Colônia à Primeira República — o que os livros não te contam" data-en="From Colony to First Republic — what books don't tell you" data-es="De la Colonia a la Primera República — lo que los libros no cuentan" data-fr="De la Colonie à la Première République — ce que les livres ne disent pas">Da Colônia à Primeira República — o que os livros não te contam</p>
+      <p class="texto-intro" data-pt-BR="Histórias que ficaram escondidas nos arquivos da Torre do Tombo e nos porões dos engenhos. Sem decoreba, só o Brasil real." data-en="Stories hidden in the Torre do Tombo archives and plantation cellars. No memorization, just real Brazil." data-es="Historias escondidas en los archivos de la Torre do Tombo y los sótanos de los ingenios. Sin memorización, solo Brasil real." data-fr="Histoires cachées dans les archives de la Torre do Tombo et les caves des plantations. Pas de par cœur, juste le vrai Brésil.">Histórias que ficaram escondidas nos arquivos da Torre do Tombo e nos porões dos engenhos. Sem decoreba, só o Brasil real.</p>
+
+      <h3 class="titulo-categoria"><span class="barra-laranja"></span><span data-pt-BR="Medicina e Doenças Bizarras" data-en="Medicine and Bizarre Diseases" data-es="Medicina y Enfermedades Extrañas" data-fr="Médecine et Maladies Bizarres">Medicina e Doenças Bizarras</span></h3>
       <div class="grid-3">
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Fezes de cavalo na roupa</h3><p>Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Tratamentos com mercúrio</h3><p>Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Sangrias para tudo</h3><p>Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="Fezes de cavalo na roupa" data-en="Horse feces on clothes" data-es="Heces de caballo en la ropa" data-fr="Crottin de cheval sur les vêtements">Fezes de cavalo na roupa</h3><p data-pt-BR="Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra 'clarear' sua camisa branca." data-en="No soap? Washerwomen mixed horse feces with fat to 'bleach' your white shirt." data-es="¿Sin jabón? Las lavanderas mezclaban heces de caballo con grasa para 'blanquear' tu camisa." data-fr="Pas de savon? Les lavandières mélangeaient du crottin de cheval avec de la graisse pour 'blanchir' votre chemise.">Sem sabão? Lavadeiras misturavam fezes de cavalo com gordura pra "clarear" sua camisa branca.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="Tratamentos com mercúrio" data-en="Mercury treatments" data-es="Tratamientos con mercurio" data-fr="Traitements au mercure">Tratamentos com mercúrio</h3><p data-pt-BR="Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença." data-en="Got syphilis? The doctor rubbed mercury on your skin. It killed more than the disease." data-es="¿Sífilis? El médico frotaba mercurio en la piel. Mataba más que la enfermedad." data-fr="Syphilis? Le médecin frottait du mercure sur la peau. Ça tuait plus que la maladie.">Pegou sífilis? O médico passava mercúrio na pele. Matava mais que a doença.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="Sangrias para tudo" data-en="Bloodletting for everything" data-es="Sangrías para todo" data-fr="Saignées pour tout">Sangrias para tudo</h3><p data-pt-BR="Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o 'sangue ruim'." data-en="Fever? They cut you. Headache? They cut you. It was about removing 'bad blood'." data-es="¿Fiebre? Te cortaban. ¿Dolor de cabeza? Te cortaban. Era quitar la 'sangre mala'." data-fr="Fièvre? On vous coupait. Mal de tête? On vous coupait. Il fallait enlever le 'mauvais sang'.">Com febre? Te cortavam. Com dor de cabeça? Te cortavam. Era tirar o "sangue ruim".</p></div></article>
       </div>
 
-      <h3 class="titulo-categoria"><span class="barra-vermelha"></span> Ditados e Torturas</h3>
+      <h3 class="titulo-categoria"><span class="barra-vermelha"></span><span data-pt-BR="Ditados e Torturas" data-en="Sayings and Tortures" data-es="Dichos y Torturas" data-fr="Dictons et Tortures">Ditados e Torturas</span></h3>
       <div class="grid-3">
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>Origem do "sem eira nem beira"</h3><p>Quem não tinha ornamento no telhado era pobre. Daí o ditado.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>O tronco</h3><p>Instrumento de tortura em praça pública. Ficava dias ao sol.</p></div></article>
-        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3>A máscara de flandres</h3><p>Escravizados que trabalhavam na mineração usavam máscara de ferro pra não engolir ouro.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="Origem do 'sem eira nem beira'" data-en="Origin of 'no eaves nor trim'" data-es="Origen del 'sin alero ni borde'" data-fr="Origine du 'sans auvent ni bordure'">Origem do "sem eira nem beira"</h3><p data-pt-BR="Quem não tinha ornamento no telhado era pobre. Daí o ditado." data-en="Those without roof ornaments were poor. Hence the saying." data-es="Quien no tenía adorno en el techo era pobre. De ahí el dicho." data-fr="Ceux sans ornements sur le toit étaient pauvres. D'où le dicton.">Quem não tinha ornamento no telhado era pobre. Daí o ditado.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="O tronco" data-en="The stocks" data-es="El cepo" data-fr="Le carcan">O tronco</h3><p data-pt-BR="Instrumento de tortura em praça pública. Ficava dias ao sol." data-en="Torture instrument in public square. Days under the sun." data-es="Instrumento de tortura en plaza pública. Días al sol." data-fr="Instrument de torture sur la place publique. Des jours au soleil.">Instrumento de tortura em praça pública. Ficava dias ao sol.</p></div></article>
+        <article class="card"><img src="../img/colonia-imp-pr.webp" class="card-img"><div class="card-content"><h3 data-pt-BR="A máscara de flandres" data-en="The Flanders mask" data-es="La máscara de Flandes" data-fr="Le masque de Flandre">A máscara de flandres</h3><p data-pt-BR="Escravizados que trabalhavam na mineração usavam máscara de ferro pra não engolir ouro." data-en="Enslaved miners wore iron masks to not swallow gold." data-es="Esclavizados en la minería usaban máscara de hierro para no tragar oro." data-fr="Les esclaves mineurs portaient un masque de fer pour ne pas avaler d'or.">Escravizados que trabalhavam na mineração usavam máscara de ferro pra não engolir ouro.</p></div></article>
       </div>
 
       <div class="cta-ebook">
-        <h3>Quer 127 curiosidades assim no seu repertório?</h3>
-        <p>O e-book tem todas com fonte histórica pra você usar no ENEM e nunca mais esquecer.</p>
-        <a href="ebook.html" class="btn-cta">QUERO O E-BOOK COMPLETO →</a>
+        <h3 data-pt-BR="Quer 127 curiosidades assim no seu repertório?" data-en="Want 127 curiosities like this in your repertoire?" data-es="¿Quieres 127 curiosidades así en tu repertorio?" data-fr="Vous voulez 127 curiosités comme ça dans votre répertoire?">Quer 127 curiosidades assim no seu repertório?</h3>
+        <p data-pt-BR="O e-book tem todas com fonte histórica pra você usar no ENEM e nunca mais esquecer." data-en="The e-book has them all with historical sources to use in exams and never forget." data-es="El e-book las tiene todas con fuente histórica para usar en exámenes y nunca olvidar." data-fr="L'e-book les a toutes avec sources historiques pour les examens et ne jamais oublier.">O e-book tem todas com fonte histórica pra você usar no ENEM e nunca mais esquecer.</p>
+        <a href="ebook.html" class="btn-cta" data-pt-BR="QUERO O E-BOOK COMPLETO →" data-en="I WANT THE FULL E-BOOK →" data-es="QUIERO EL E-BOOK COMPLETO →" data-fr="JE VEUX L'E-BOOK COMPLET →">QUERO O E-BOOK COMPLETO →</a>
       </div>
     </div>
   </section>
@@ -125,55 +132,62 @@ main{padding-top:110px}
   <div class="footer-wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <div class="footer-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
+        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From gold mines to colonial tourism, breaking memorization with surgical logic." data-es="Enfoque analítico de la Historia de Brasil. De las minas de oro al turismo colonial." data-fr="Approche analytique de l'Histoire du Brésil. Des mines d'or au tourisme colonial.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
       </div>
       <div class="footer-col">
-        <h4>Navegação</h4>
-        <a href="../index.html">Início</a>
-        <a href="sobre.html">Sobre o Projeto</a>
-        <a href="artigos.html">Artigos</a>
-        <a href="curiosidades.html">Curiosidades</a>
-        <a href="quiz.html">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
+        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt-BR="Sobre o Projeto" data-en="About the Project" data-es="Sobre el Proyecto" data-fr="À propos du Projet">Sobre o Projeto</a>
+        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a>
+        <a href="quiz.html" data-pt-BR="Quiz Histórico" data-en="History Quiz" data-es="Quiz Histórico" data-fr="Quiz Historique">Quiz Histórico</a>
+        <a href="turismo-colonial.html" data-pt-BR="🌍 Turismo Colonial" data-en="🌍 Colonial Tourism" data-es="🌍 Turismo Colonial" data-fr="🌍 Tourisme Colonial" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
       </div>
       <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="ebook.html">📘 E-book Completo</a>
-        <a href="loja.html">🛒 Loja Oficial</a>
-        <a href="afiliados.html">🤝 Afiliados</a>
-        <a href="doacao.html">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html">🔒 Privacidade</a>
-        <a href="termos.html">📄 Termos de Uso</a>
+        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html" data-pt-BR="📘 E-book Completo" data-en="📘 Complete E-book" data-es="📘 E-book Completo" data-fr="📘 E-book Complet">📘 E-book Completo</a>
+        <a href="loja.html" data-pt-BR="🛒 Loja Oficial" data-en="🛒 Official Shop" data-es="🛒 Tienda Oficial" data-fr="🛒 Boutique Officielle">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-pt-BR="🤝 Afiliados" data-en="🤝 Affiliates" data-es="🤝 Afiliados" data-fr="🤝 Affiliés">🤝 Afiliados</a>
+        <a href="doacao.html" data-pt-BR="💰 Doação PIX / PayPal" data-en="💰 Donation PIX / PayPal" data-es="💰 Donación PIX / PayPal" data-fr="💰 Don PIX / PayPal">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
+        <a href="termos.html" data-pt-BR="📄 Termos de Uso" data-en="📄 Terms of Use" data-es="📄 Términos de Uso" data-fr="📄 Conditions d'Utilisation">📄 Termos de Uso</a>
       </div>
       <div class="footer-col">
-        <h4>Clube Prisma</h4>
+        <h4 data-pt-BR="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
         <div class="footer-news-card">
-          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <p data-pt-BR="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret itineraries and lessons not on the site. Free." data-es="Recibe itinerarios secretos y clases que no están en el sitio. Gratis." data-fr="Recevez des itinéraires secrets et des cours hors site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
           <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn">Entrar pro Clube →</button>
+          <button id="prismaBtn" data-pt-BR="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico</span>
-      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+      <span>© <span id="anoAtual">2026</span> <span data-pt-BR="Prisma Histórico" data-en="Prisma Histórico" data-es="Prisma Histórico" data-fr="Prisma Histórico">Prisma Histórico</span></span>
+      <span data-pt-BR="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
     </div>
   </div>
 </footer>
 
 <script>
-function setLang(l){
-  localStorage.setItem('prisma_lang',l);
+function aplicarTraducao(lang){
+  localStorage.setItem('prisma_lang',lang);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  const el=document.getElementById('btn-'+l); if(el) el.classList.add('active');
+  var btn=document.getElementById('btn-'+lang); if(btn) btn.classList.add('active');
+  document.querySelectorAll('[data-pt-BR]').forEach(function(el){
+    var t=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
+    if(!t) return; el.textContent=t;
+  });
+  var map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
+  var tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
+  try{var f=new Intl.DateTimeFormat(map[lang],{dateStyle:'long',timeZone:tz[lang]});var el=document.getElementById('dataLocalizada'); if(el) el.textContent=f.format(new Date());}catch(e){}
+  var ano=document.getElementById('anoAtual'); if(ano) ano.textContent=new Date().getFullYear();
 }
-setLang(localStorage.getItem('prisma_lang')||'pt');
 const nav=document.getElementById('prismaNav');
-nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
-});
+document.getElementById('btnMenu').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
+document.querySelectorAll('.lang-switch button').forEach(function(btn){btn.addEventListener('click',function(){aplicarTraducao(btn.id.replace('btn-',''));});});
+aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
 document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
   const v=document.getElementById('prismaEmail').value.trim();
   if(!v.includes('@')){ alert('Email inválido mano!'); return; }

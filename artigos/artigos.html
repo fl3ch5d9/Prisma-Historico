@@ -1,351 +1,139 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artigos | Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-
-<style>
-*{margin:0; padding:0; box-sizing:border-box;}
-:root{ --ouro:#eebc6c; --creme:#F5F5F0; --sepia:#d8c9a8; --borda:rgba(238,188,108,0.12); --preto:#121212; --preto2:#1A1A1A; }
-body{background:#0E0E0E; color:var(--creme); font-family:'Inter', sans-serif; font-weight:200; padding-top:72px; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
-
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10001; font-weight:300;}
-.prisma-logo span{color:var(--ouro);font-weight:400}
-.lang-switch{display:flex;gap:6px;align-items:center;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px;letter-spacing:0.08em; font-weight:200;}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.25s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.28s;pointer-events:none;z-index:10000;border-right:1px solid rgba(238,188,108,0.12)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-.prisma-menu-links li a .material-icons{font-size:20px; color:var(--ouro)!important;}
-
-.hero{background: linear-gradient(rgba(14,14,14,0.4), rgba(14,14,14,0.92)), url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1400'); background-size:cover; background-position:center; text-align:center; padding:130px 20px 70px;}
-.hero h1{font-family:'Cormorant Garamond', serif; font-size:clamp(42px,5vw,68px); color:var(--creme); line-height:0.9; font-weight:300; letter-spacing:-0.02em;}
-.hero p{color:var(--ouro); margin:18px 0 30px; font-weight:200; letter-spacing:0.06em; opacity:0.8;}
-.hero span{font-size:9px; opacity:0.4; letter-spacing:0.3em; font-weight:200; text-transform:uppercase;}
-
-.conteudo{max-width:1200px; margin:60px auto; display:flex; gap:50px; padding:0 5%;}
-.texto-principal{flex:2;}
-.texto-principal h2{font-family:'Cormorant Garamond', serif; font-size:clamp(28px,3vw,38px); margin-bottom:14px; font-weight:300; line-height:1.1; letter-spacing:-0.01em;}
-.texto-principal p{margin:20px 0; line-height:1.9; opacity:0.6; font-weight:200; font-size:15px;}
-.tag{border:1px solid rgba(238,188,108,0.18); background:rgba(238,188,108,0.06); display:inline-block; padding:7px 16px; border-radius:100px; font-size:9px; color:var(--ouro); margin-bottom:22px; letter-spacing:0.2em; font-weight:300;}
-.ficha{flex:1; border:1px solid var(--borda); padding:28px; border-radius:16px; height:fit-content; position:sticky; top:90px; background:var(--preto2);}
-.ficha h4{color:var(--ouro); margin-bottom:18px; font-size:10px; letter-spacing:0.22em; font-weight:400;}
-.ficha label{font-size:9px; color:var(--ouro); display:block; margin:18px 0 6px; letter-spacing:0.18em; opacity:0.7; font-weight:300;}
-.box{background:rgba(245,245,240,0.06); border:1px solid rgba(255,255,255,0.06); color:var(--sepia); padding:12px 14px; border-radius:10px; font-size:13px; font-weight:200;}
-blockquote{border-left:1px solid var(--ouro); padding-left:22px; margin:36px 0; font-style:italic; color:var(--sepia); font-size:19px; font-family:'Cormorant Garamond'; font-weight:300; line-height:1.5; opacity:0.8;}
-
-.processo{max-width:1200px; margin:40px auto; padding:0 5%;}
-.galeria-cores{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin:44px 0;}
-.galeria-cores .cor{text-align:center;}
-.galeria-cores .cor span{width:100%; aspect-ratio:1/1; max-width:110px; border-radius:14px; display:block; margin:0 auto; border:1px solid rgba(255,255,255,0.06);}
-.galeria-cores .cor small{margin-top:12px; font-size:11px; display:block; font-weight:200; opacity:0.5; letter-spacing:0.04em;}
-
-.bloco-horizontal{display:grid; grid-template-columns:1.2fr 0.8fr; gap:28px; background:var(--preto2); border:1px solid rgba(255,255,255,0.06); border-radius:18px; padding:30px; align-items:start; margin:40px auto; max-width:1200px;}
-.texto-lado h2{font-family:'Cormorant Garamond', serif; color:#FFF; font-size:18px; text-transform:uppercase; margin-bottom:16px; font-weight:300; letter-spacing:0.08em;}
-.texto-lado h2 span{color:var(--ouro);}
-.texto-rolagem-sepia{max-height:360px; overflow-y:auto; padding-right:14px; display:flex; flex-direction:column; gap:16px;}
-.texto-rolagem-sepia p{font-family:'Inter', sans-serif; color:var(--creme); font-size:14px; line-height:1.9; font-weight:200; opacity:0.6;}
-.destaque-sepia{background:rgba(238,188,108,0.06); border-left:1px solid var(--ouro); padding:14px 16px; color:var(--sepia); font-size:12.5px; border-radius:0 8px 8px 0; font-weight:200;}
-.imagem-lado{width:100%; border-radius:14px; overflow:hidden; background:#121212; border:1px solid rgba(255,255,255,0.06); line-height:0;}
-.imagem-lado img{width:100%; height:auto; object-fit:cover; display:block; opacity:0.9;}
-
-.cta-ebook{background:#0A0A0A; border-top:1px solid var(--borda); border-bottom:1px solid var(--borda); color:#fff; text-align:center; padding:70px 20px; margin-top:70px;}
-.cta-ebook h2{font-family:'Cormorant Garamond'; font-weight:300; font-size:34px;}
-.cta-ebook p{font-weight:200; opacity:0.5; margin:14px auto; max-width:600px;}
-.cta-ebook .btn{display:inline-block; background:var(--ouro); color:#121212; padding:16px 36px; text-decoration:none; font-weight:400; border-radius:100px; margin:22px 0; font-size:12px; letter-spacing:0.12em; transition:0.3s;}
-.cta-ebook .btn:hover{background:#fff; transform:translateY(-2px);}
-
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:0}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
-
-.btn-topo-sepia{position:fixed; bottom:28px; right:28px; z-index:9998; width:48px; height:48px; border-radius:50%; background:#1E1E1E; border:1px solid rgba(238,188,108,0.25); color:var(--ouro); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(20px); transition:0.35s;}
-.btn-topo-sepia.mostrar{opacity:1; visibility:visible; transform:translateY(0);}
-
-@media(max-width:900px){.conteudo,.bloco-horizontal{grid-template-columns:1fr; display:flex; flex-direction:column;}.hero h1{font-size:2.6rem;}.galeria-cores{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
-@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artigos | Prisma Histórico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--ouro:#eebc6c;--creme:#F5F5F0;--sepia:#d8c9a8;--borda:rgba(238,188,108,.12);--preto:#121212;--preto2:#1A1A1A}
+    body{background:#0E0E0E;color:var(--creme);font-family:'Inter',sans-serif;font-weight:200;padding-top:72px;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+   .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+   .prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.18em;z-index:10001;font-weight:300}
+   .prisma-logo span{color:var(--ouro);font-weight:400}
+   .lang-switch{display:flex;gap:6px;align-items:center;z-index:10001}
+   .lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px;min-width:38px;min-height:34px}
+   .lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
+   .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+   .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:.25s}
+    /* HAMBURGUER CORRIGIDO COM ESPAÇO */
+   .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+   .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+   .prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+   .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:.28s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+   .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+   .prisma-menu-links li a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:.7;font-weight:200}
+   .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+   .hero{background:linear-gradient(rgba(14,14,14,.4),rgba(14,14,14,.92)),url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=1400');background-size:cover;background-position:center;text-align:center;padding:130px 20px 70px}
+   .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,68px);color:var(--creme);line-height:.9;font-weight:300}
+   .hero p{color:var(--ouro);margin:18px 0 30px;font-weight:200;letter-spacing:.06em;opacity:.8}
+   .hero span{font-size:9px;opacity:.4;letter-spacing:.3em;font-weight:200;text-transform:uppercase}
+   .conteudo{max-width:1200px;margin:60px auto;display:flex;gap:50px;padding:0 5%;align-items:flex-start}
+   .texto-principal{flex:1.8;min-width:0}
+   .texto-principal h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,38px);margin-bottom:14px;font-weight:300;line-height:1.1}
+   .texto-principal p{margin:20px 0;line-height:1.9;opacity:.6;font-weight:200;font-size:15px}
+   .tag{border:1px solid rgba(238,188,108,.18);background:rgba(238,188,108,.06);display:inline-block;padding:7px 16px;border-radius:100px;font-size:9px;color:var(--ouro);margin-bottom:22px;letter-spacing:.2em}
+   .ficha{flex:0 0 340px;border:1px solid var(--borda);padding:28px;border-radius:16px;height:fit-content;position:sticky;top:90px;background:var(--preto2)}
+   .ficha h4{color:var(--ouro);margin-bottom:18px;font-size:10px;letter-spacing:.22em;font-weight:400}
+   .ficha label{font-size:9px;color:var(--ouro);display:block;margin:18px 0 6px;letter-spacing:.18em;opacity:.7;font-weight:300}
+   .box{background:rgba(245,245,240,.06);border:1px solid rgba(255,255,255,.06);color:var(--sepia);padding:12px 14px;border-radius:10px;font-size:13px;font-weight:200;word-break:break-word}
+    blockquote{border-left:1px solid var(--ouro);padding-left:22px;margin:36px 0;font-style:italic;color:var(--sepia);font-size:19px;font-family:'Cormorant Garamond';font-weight:300;line-height:1.5;opacity:.8}
+   .btn-topo{position:fixed;bottom:28px;right:28px;z-index:9998;width:48px;height:48px;border-radius:50%;background:#1E1E1E;border:1px solid rgba(238,188,108,.25);color:var(--ouro);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.35s}
+   .btn-topo.mostrar{opacity:1;visibility:visible;transform:translateY(0)}
+    /* FOOTER CORRIGIDO COM ESPAÇO */
+    #prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,.14);padding:70px 5% 26px}
+    #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;width:100%}
+    #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.85fr 0.95fr 1.15fr;gap:52px}
+    #prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:.18em;color:#F5F5F0;line-height:.85;font-weight:300}
+    #prismaFooter .footer-logo span{color:var(--ouro);display:block;font-weight:400}
+    #prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia);margin-top:18px;max-width:310px;font-weight:300;opacity:.8}
+    #prismaFooter .footer-col h4{font-size:10px;letter-spacing:.24em;color:var(--ouro);margin-bottom:20px;font-weight:600;text-transform:uppercase}
+    #prismaFooter .footer-col a{font-size:13px;color:var(--sepia);text-decoration:none;display:block;margin-bottom:13px;font-weight:300;opacity:.75;transition:.2s}
+    #prismaFooter .footer-col a:hover{color:var(--ouro);opacity:1;transform:translateX(4px)}
+    #prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,.12);border-radius:16px;padding:22px}
+    #prismaFooter .footer-news-card p{font-size:12px;color:var(--sepia);line-height:1.6;margin-bottom:14px;font-weight:300}
+    #prismaFooter .footer-news-card input{width:100%;background:#0E0E0E;border:1px solid rgba(238,188,108,.15);border-radius:10px;padding:12px 14px;color:#fff;outline:0;font-size:13px}
+    #prismaFooter .footer-news-card button{width:100%;margin-top:12px;background:var(--ouro);color:#121212;border:0;border-radius:100px;padding:12px;font-weight:700;cursor:pointer;font-size:12px}
+    #prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:54px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    #prismaFooter .footer-bottom span{font-size:10.5px;color:var(--sepia);opacity:.4;font-weight:300;letter-spacing:.04em}
+    @media(max-width:1024px){
+      #prismaFooter.footer-grid{grid-template-columns:1fr 1fr 1fr;gap:36px}
+      #prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:420px}
+     .conteudo{flex-direction:column;gap:28px}
+     .ficha{flex:1;width:100%;position:relative;top:0}
+    }
+    @media(max-width:600px){
+      #prismaFooter{padding:44px 5% 20px}
+      #prismaFooter .footer-grid{grid-template-columns:1fr;gap:28px}
+      #prismaFooter .footer-bottom{flex-direction:column;text-align:center}
+     .conteudo{padding:0 4%;margin:30px auto}
+     .hero{padding:110px 16px 50px}
+     .hero h1{font-size:32px!important}
+    }
+  </style>
 </head>
 <body>
-
-<nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <nav class="prisma-nav" id="prismaNav">
+    <div class="prisma-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> Histórico</div>
     <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
-      </div>
+      <div class="lang-switch"><button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button></div>
       <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
-   </div>
-     <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-</ul>
-</nav>
-
-<section class="hero">
-  <h1 data-i18n="hero_h1">Patrimônio é Cor Original</h1>
-  <p data-i18n="hero_p">A restauração da cor histórica na Ladeira Marília de Dirceu • Minas Gerais</p>
-  <span data-i18n="hero_scroll">rolar para ler — arquivo 1780</span>
-</section>
-
-<main class="conteudo">
-  <div class="texto-principal">
-    <div class="tag" data-i18n="tag">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
-    <h2 data-i18n="t1">Quando a tinta conta a história: a busca pela cor original de 1780</h2>
-    <small style="opacity:0.3; font-weight:200; letter-spacing:0.04em;" data-i18n="meta">Por Ana Ribeiro • 23 de setembro de 2024 • 6 min</small>
-    <br><br><hr style="border:0; border-top:1px solid rgba(238,188,108,0.12);"><br>
-    <p data-i18n="p1">Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas. Não só na arquitetura colonial, mas na própria pintura das fachadas, onde séculos de cal, pigmento e clima se sobrepõem em véus quase imperceptíveis.</p>
-    <blockquote data-i18n="quote1">“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”<br><cite style="font-size:0.8rem; opacity:0.5; display:block; margin-top:12px; font-family:'Inter'; font-weight:200;">— Equipe de Restauro Prisma Histórico, 2024</cite></blockquote>
-    <p data-i18n="p2">Utilizando microamostragem e análise estratigráfica, a equipe identificou 12 camadas de tinta. A mais antiga, datada da década de 1780, revelou um pigmento à base de ocre amarelo.</p>
-  </div>
-  <aside class="ficha">
-    <h4 data-i18n="ficha_t">FICHA TÉCNICA DA COR</h4>
-    <label data-i18n="f_pig">PIGMENTO</label><div class="box">Ocre Amarelo / Yellow Ochre</div>
-    <label data-i18n="f_year">ANO</label><div class="box" data-i18n="f_year_v">1780 — Camada original</div>
-    <label data-i18n="f_street">RUA</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
-  </aside>
-</main>
-
-<section class="processo">
-  <div class="texto-principal" style="max-width:780px; margin:auto;">
-    <h3 style="font-family:'Cormorant Garamond'; font-weight:300; font-size:28px; margin-bottom:16px;">O que a parede escondeu por 244 anos</h3>
-    <p data-i18n="p3">A análise em laboratório não mostrou apenas uma cor. Mostrou uma técnica. O ocre amarelo de 1780 não era industrial — era extraído da própria serra do Espinhaço, misturado com cal virgem e fixado com óleo de linhaça.</p>
-    <div class="galeria-cores">
-      <div class="cor"><span style="background:#E8C766"></span><small>1780 - Ocre Original</small></div>
-      <div class="cor"><span style="background:#F5F5F0"></span><small>1890 - Branco República</small></div>
-      <div class="cor"><span style="background:#A8C4D6"></span><small>1950 - Azul Pastel</small></div>
-      <div class="cor"><span style="background:#E3A857"></span><small>1980 - Amarelo Vibrante</small></div>
     </div>
-    <h3 style="font-family:'Cormorant Garamond'; font-weight:300; font-size:28px; margin-bottom:16px;">A decisão: voltar ao início</h3>
-    <p>Restaurar não é repintar. É escolher qual história você quer contar. A equipe optou por remover quimicamente as 11 camadas e devolver à Ladeira Marília de Dirceu a sua feição de 1780.</p>
-    <blockquote>“Não estamos pintando uma casa. Estamos devolvendo a Ouro Preto a luz que ela tinha no século XVIII.”</blockquote>
-  </div>
-</section>
-
-<div class="bloco-horizontal">
-  <div class="texto-lado">
-    <h2><span>●</span> Função Social da Propriedade</h2>
-    <div class="destaque-sepia"><strong style="color:var(--ouro); font-weight:400;">Art. 170 • III:</strong> A propriedade atenderá sua função social. Art. 216, §1º protege o patrimônio cultural.</div>
-    <div class="texto-rolagem-sepia">
-      <p>Sobrado colonial geminado de dois pavimentos. Fachada com vergas em arco abatido, portas e janelas em madeira com almofadas, cimalha corrida, e cobertura em telha capa e canal cerâmica.</p>
-      <h3 style="color:var(--ouro); font-family:'Cormorant Garamond'; text-transform:uppercase; font-size:13px; font-weight:400; letter-spacing:0.1em;">Como restaurar o original</h3>
-      <p>Primeiro é feita prospecção estratigráfica. Abrem se janelas pequenas na parede para revelar as camadas de tinta antigas até chegar no reboco original. Depois análise em laboratório para identificar pigmento e aglutinante. Para pintura, usar tinta a base de cal, não acrílica.</p>
+    <ul class="prisma-menu-links">
+      <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+      <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+      <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+      <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+      <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+      <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+      <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+      <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+      <li><a href="turismo-colonial.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <h1 data-pt-BR="Patrimônio é Cor Original" data-en="Heritage is Original Color" data-es="Patrimonio es Color Original" data-fr="Le patrimoine est couleur originale">Patrimônio é Cor Original</h1>
+    <p data-pt-BR="A restauração da cor histórica na Ladeira Marília de Dirceu • Minas Gerais" data-en="Restoring historic color at Ladeira Marília de Dirceu • Minas Gerais" data-es="La restauración del color histórico en Ladeira Marília de Dirceu" data-fr="Restauration de la couleur historique à Ladeira Marília de Dirceu">A restauração da cor histórica na Ladeira Marília de Dirceu • Minas Gerais</p>
+    <span data-pt-BR="rolar para ler — arquivo 1780" data-en="scroll to read — archive 1780" data-es="desplaza para leer — archivo 1780" data-fr="faire défiler — archive 1780">rolar para ler — arquivo 1780</span>
+  </section>
+  <main class="conteudo">
+    <div class="texto-principal">
+      <div class="tag" data-pt-BR="REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO" data-en="REPORT • CONSERVATION & HERITAGE" data-es="REPORTAJE • CONSERVACIÓN Y PATRIMONIO" data-fr="REPORTAGE • CONSERVATION ET PATRIMOINE">REPORTAGEM • CONSERVAÇÃO E PATRIMÔNIO</div>
+      <h2 data-pt-BR="Quando a tinta conta a história: a busca pela cor original de 1780" data-en="When paint tells the story: searching for the original color from 1780" data-es="Cuando la pintura cuenta la historia: búsqueda del color original de 1780" data-fr="Quand la peinture raconte l'histoire: recherche de la couleur originale de 1780">Quando a tinta conta a história: a busca pela cor original de 1780</h2>
+      <small style="opacity:.3;font-weight:200" data-pt-BR="Por Ana Ribeiro • 23 de setembro de 2024 • 6 min" data-en="By Ana Ribeiro • Sep 23, 2024 • 6 min" data-es="Por Ana Ribeiro • 23 sept 2024 • 6 min" data-fr="Par Ana Ribeiro • 23 sept 2024 • 6 min">Por Ana Ribeiro • 23 de setembro de 2024 • 6 min</small><br><br><hr style="border:0;border-top:1px solid rgba(238,188,108,.12)"><br>
+      <p data-pt-BR="Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas." data-en="In Ouro Preto's stone streets, time accumulates in layers." data-es="En las calles de piedra de Ouro Preto, el tiempo se acumula en capas." data-fr="Dans les rues pavées d'Ouro Preto, le temps s'accumule en couches.">Nas ruas de pedra de Ouro Preto, o tempo se acumula em camadas.</p>
+      <blockquote data-pt-BR="“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”" data-en="“ The original color is material memory. Removing it erases decades of hands, climate and history.”" data-es="“ El color original es memoria material. Quitarlo es borrar décadas de historia.”" data-fr="“ La couleur originale est mémoire matérielle. La retirer efface des décennies d'histoire.”">“ A cor original é memória material. Removê-la é apagar décadas de mãos, clima e história registrada na parede.”</blockquote>
     </div>
-  </div>
-  <div class="imagem-lado"><img src="../img/casa1.webp" alt="Casa Colonial"></div>
-</div>
-
-<section class="cta-ebook">
-  <h2>Quer aprender a fazer essa leitura nas paredes?</h2>
-  <p>No e-book Prisma Histórico Volume 01, eu te ensino o passo a passo da prospecção estratigráfica.</p>
-  <a href="ebook.html" class="btn">QUERO O E-BOOK COMPLETO →</a><br>
-  <small style="opacity:0.3; font-weight:200;">De R$ 97 por R$ 39,90 • Acesso imediato</small>
-</section>
-
-<button class="btn-topo-sepia" id="btnTopo"><span class="material-icons">arrow_upward</span></button>
-
-<footer id="prismaFooter">
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <a href="../index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="artigos.html">Artigos</a>
-        <a href="curiosidades.html">Curiosidades</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="ebook.html">📘 E-book</a>
-        <a href="loja.html">🛒 Loja</a>
-        <a href="afiliados.html">🤝 Afiliados</a>
-        <a href="doacao.html">💰 Doação</a>
-        <a href="privacidade.html">🔒 Privacidade</a>
-        <a href="termos.html">📄 Termos</a>
-      </div>
-      <div class="footer-col">
-        <h4>Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn">Entrar pro Clube →</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico</span>
-      <span>Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
-<style>
-/* FOOTER CORRIGIDO DEFINITIVO */
-#prismaFooter {
-  background: #0F0E0C;
-  border-top: 1px solid var(--borda);
-  padding: 60px 5% 30px;
-  font-family: 'Inter', sans-serif;
-}
-#prismaFooter .footer-wrap {
-  max-width: 1180px;
-  margin: 0 auto;
-}
-#prismaFooter .footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-#prismaFooter .footer-logo {
-  font-family: 'Cinzel', serif;
-  font-size: 22px;
-  letter-spacing: 0.22em;
-  color: var(--creme);
-}
-#prismaFooter .footer-logo span {
-  color: var(--ouro);
-  font-weight: 700;
-}
-#prismaFooter .footer-desc {
-  font-weight: 200;
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--sepia);
-  margin-top: 16px;
-  max-width: 320px;
-}
-#prismaFooter .footer-col h4 {
-  font-family: 'Cinzel', serif;
-  font-weight: 400;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--sepia-titulo);
-  margin-bottom: 18px;
-  text-transform: uppercase;
-}
-#prismaFooter .footer-col a {
-  font-weight: 200;
-  font-size: 12px;
-  color: var(--sepia);
-  text-decoration: none;
-  display: block;
-  margin-bottom: 11px;
-}
-#prismaFooter .footer-col a:hover {
-  color: var(--creme);
-}
-#prismaFooter .footer-news-card {
-  background: var(--card);
-  border: 1px solid var(--borda);
-  border-radius: 14px;
-  padding: 20px;
-}
-#prismaFooter .footer-news-card p {
-  font-size: 11px;
-  color: var(--sepia);
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-#prismaFooter .footer-news-card input {
-  width: 100%;
-  background: #0D0D0B;
-  border: 1px solid var(--borda);
-  border-radius: 8px;
-  padding: 10px 12px;
-  color: var(--creme);
-  outline: none;
-}
-#prismaFooter .footer-news-card button {
-  width: 100%;
-  margin-top: 10px;
-  background: var(--ouro);
-  color: #0D0D0B;
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  font-weight: 700;
-  cursor: pointer;
-}
-#prismaFooter .footer-bottom {
-  border-top: 1px solid rgba(212,175,55,0.08);
-  margin-top: 40px;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-#prismaFooter .footer-bottom span {
-  font-weight: 200;
-  font-size: 10px;
-  color: var(--sepia);
-  opacity: 0.6;
-}
-@media (max-width: 900px) {
-  #prismaFooter .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  #prismaFooter .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-  #prismaFooter .footer-bottom { flex-direction: column; text-align: center; }
-}
-</style>
-<script>
-function setLang(lang){
-  localStorage.setItem('prisma_lang',lang);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  const el=document.getElementById('btn-'+lang); if(el) el.classList.add('active');
-}
-const nav=document.getElementById('prismaNav');
-document.getElementById('btnMenu').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
-document.getElementById('btnTopo').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-window.addEventListener('scroll',()=>{document.getElementById('btnTopo').classList.toggle('mostrar',window.scrollY>400)});
-document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-  const v=document.getElementById('prismaEmail').value.trim();
-  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-});
-setLang(localStorage.getItem('prisma_lang')||'pt');
-</script>
+    <aside class="ficha">
+      <h4 data-pt-BR="FICHA TÉCNICA DA COR" data-en="COLOR TECHNICAL SHEET" data-es="FICHA TÉCNICA DEL COLOR" data-fr="FICHE TECHNIQUE COULEUR">FICHA TÉCNICA DA COR</h4>
+      <label data-pt-BR="PIGMENTO" data-en="PIGMENT" data-es="PIGMENTO" data-fr="PIGMENT">PIGMENTO</label><div class="box" data-pt-BR="Ocre Amarelo / Yellow Ochre" data-en="Yellow Ochre" data-es="Ocre Amarillo" data-fr="Ocre Jaune">Ocre Amarelo / Yellow Ochre</div>
+      <label data-pt-BR="ANO" data-en="YEAR" data-es="AÑO" data-fr="ANNÉE">ANO</label><div class="box" data-pt-BR="1780 — Camada original" data-en="1780 — Original layer" data-es="1780 — Capa original" data-fr="1780 — Couche originale">1780 — Camada original</div>
+      <label data-pt-BR="RUA" data-en="STREET" data-es="CALLE" data-fr="RUE">RUA</label><div class="box">Ladeira Marília de Dirceu, 42 • Ouro Preto / MG</div>
+    </aside>
+  </main>
+  <button class="btn-topo" id="btnTopo"><span class="material-icons">arrow_upward</span></button>
+  <footer id="prismaFooter">
+    <div class="footer-wrap"><div class="footer-grid"><div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p></div><div class="footer-col"><h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4><a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a><a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a><a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a><a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a><a href="quiz.html" data-pt-BR="Quiz" data-en="Quiz" data-es="Quiz" data-fr="Quiz">Quiz</a></div><div class="footer-col"><h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4><a href="ebook.html">📘 E-book</a><a href="loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a><a href="afiliados.html" data-pt-BR="🤝 Afiliados 40%" data-en="🤝 Affiliates 40%" data-es="🤝 Afiliados 40%" data-fr="🤝 Affiliés 40%">🤝 Afiliados 40%</a><a href="doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação</a><a href="privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a><a href="termos.html" data-pt-BR="📄 Termos" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos</a></div><div class="footer-col"><h4 data-pt-BR="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4><div class="footer-news-card"><p data-pt-BR="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret itineraries and lessons not on the site. Free." data-es="Recibe itinerarios secretos y clases que no están en el sitio. Gratis." data-fr="Recevez des itinéraires secrets et des cours hors site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p><input type="email" id="prismaEmail" placeholder="seu melhor email"><button id="prismaBtn" data-pt-BR="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button></div></div></div><div class="footer-bottom"><span>© <span id="anoAtual">2026</span> Prisma Histórico</span><span id="dataLocalizada"></span></div></div>
+  </footer>
+  <script>
+    function aplicarTraducao(l){
+      localStorage.setItem('prisma_lang',l);
+      document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+      var b=document.getElementById('btn-'+l);if(b)b.classList.add('active');
+      document.querySelectorAll('[data-pt-BR]').forEach(function(e){var t=e.getAttribute('data-'+l)||e.getAttribute('data-pt-BR');if(!t)return;e.textContent=t});
+      var m={'pt-BR':'pt-BR',en:'en-US',es:'es-ES',fr:'fr-FR'},z={'pt-BR':'America/Sao_Paulo',en:'America/New_York',es:'Europe/Madrid',fr:'Europe/Paris'};
+      try{var f=new Intl.DateTimeFormat(m[l],{dateStyle:'long',timeZone:z[l]});document.getElementById('dataLocalizada').textContent=f.format(new Date())}catch(e){}
+      document.getElementById('anoAtual').textContent=new Date().getFullYear()
+    }
+    const nav=document.getElementById('prismaNav');
+    document.getElementById('btnMenu').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+    document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
+    document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){aplicarTraducao(b.id.replace('btn-',''))})});
+    document.getElementById('btnTopo').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll',()=>{document.getElementById('btnTopo').classList.toggle('mostrar',window.scrollY>400)});
+    aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
+  </script>
 </body>
 </html>

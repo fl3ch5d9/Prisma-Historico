@@ -1,168 +1,146 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prisma Histórico - Detetive da Colônia</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-
-
-
-
-
+<title data-pt-BR="Quiz - Prisma Histórico" data-en="Quiz - Prisma Histórico" data-es="Quiz - Prisma Histórico" data-fr="Quiz - Prisma Histórico">Quiz - Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-:root{--bg:#121212;--card:#1A1A1A;--gold:#eebc6c;--sepia:#d8c9a8;--creme:#F5F5F0;--borda:rgba(238,188,108,0.12)}
-*{box-sizing:border-box; margin:0; padding:0;}
-body{background:var(--bg); font-family:'Inter',sans-serif; color:#fff; padding-top:80px; font-weight:200;}
+:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --sepia:#d8c9a8; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); --vermelho:#ff4d4d; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased; padding-top:72px;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10002; font-weight:300;}.prisma-logo span{color:var(--gold);font-weight:400}
-.lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda);}
-.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s; font-weight:200;}
-.lang-switch button.active{background:var(--gold);color:#121212;font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--gold);display:block;transition:0.4s;transform-origin:center}
-/* CORRIGIDO COM ESPAÇO */
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001; font-weight:300;}
+.prisma-logo span{color:var(--ouro);font-weight:400}
+.lang-switch{display:flex;gap:6px;z-index:10001}
+.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; min-width:38px; min-height:34px;}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;opacity:0;z-index:10001;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important;opacity:1!important}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
-.prisma-menu-links li a:hover{color:var(--gold);opacity:1}
-.quiz-app{max-width:850px;margin:0 auto;padding:20px 5% 40px 5%}
-.tabuleiro{width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:12px;display:flex;gap:8px;justify-content:flex-start;margin-bottom:22px;overflow-x:auto; scrollbar-width:none;}
-.casa{min-width:72px;height:72px;border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;color:#666;position:relative;background:#151515;transition:.3s; flex-shrink:0;}
-.casa.ativa{border-color:var(--gold);background:rgba(238,188,108,0.12);color:var(--gold)}
-.casa.concluida{background:rgba(74,222,128,0.08);border-color:rgba(74,222,128,0.3);color:#4ade80}
-.progress-wrap{height:2px;background:rgba(255,255,255,0.06);border-radius:10px;margin-bottom:25px;overflow:hidden}
-.progress-bar{height:100%;background:var(--gold);width:0%;transition:.4s}
-.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;color:#666;font-size:12px;}
-.quiz-card{background:var(--card);border:1px solid rgba(255,255,255,0.05);border-radius:20px;padding:28px}
-.page-tag{background:rgba(238,188,108,0.08);border:1px solid rgba(238,188,108,0.15);color:var(--gold);font-size:9px;padding:6px 12px;border-radius:100px;letter-spacing:0.14em;text-transform:uppercase;}
-.question{font-size:19px;line-height:1.5;margin:16px 0 12px;font-family:'Cormorant Garamond',serif;}
-.dica{font-size:12.5px;color:var(--sepia);background:rgba(238,188,108,0.05);border-left:1px solid var(--gold);padding:10px 14px;margin-bottom:18px;border-radius:0 10px 10px 0;}
-.options{display:grid;gap:10px}
-.opt{padding:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:12px;cursor:pointer;display:flex;gap:12px;transition:.2s; font-size:13.5px;}
-.opt:hover{border-color:rgba(238,188,108,0.18)}
-.opt.selected{border-color:var(--gold);background:rgba(238,188,108,0.08)}
-.opt.correct{border-color:#4ade80!important;background:rgba(74,222,128,0.1)!important}
-.opt.wrong{border-color:#ff6b6b!important;background:rgba(255,107,107,0.08)!important}
-.opt b{color:var(--gold);min-width:20px;}
-.actions{margin-top:24px;display:flex;justify-content:space-between;align-items:center}
-.btn{padding:12px 24px;border-radius:100px;border:0;font-weight:400;cursor:pointer;background:var(--gold);color:#121212; font-size:12px;}
-.btn:disabled{opacity:.3}
-.result{text-align:center;padding:40px 20px}
-.result h2{font-size:42px;margin-bottom:10px;font-family:'Cormorant Garamond',serif;}
-#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px;padding:70px 6% 30px 6%}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.2fr;gap:60px}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:28px;letter-spacing:0.18em;font-weight:300;color:var(--creme)}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400}
-#prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia);margin-top:16px;max-width:300px;opacity:0.7}
-#prismaFooter .footer-col h4{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
-#prismaFooter .footer-col a{display:block;margin-bottom:12px;font-size:13px;color:var(--sepia);text-decoration:none}
-#prismaFooter .footer-col a:hover{color:var(--gold)}
-#prismaFooter .footer-news-card{background:#141414;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:22px}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:24px 0 0 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-#prismaFooter .footer-bottom span{font-size:10px;letter-spacing:0.1em;color:var(--sepia);opacity:0.35;text-transform:uppercase}
+.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+.container{max-width:900px;margin:auto;padding:0 5%}
+.quiz-hero{text-align:center;padding:80px 5% 40px}
+.quiz-hero h1{font-family:'Cormorant Garamond';font-size:clamp(42px,5vw,62px);font-weight:300;line-height:.9}
+.quiz-hero p{color:var(--ouro);margin-top:16px;letter-spacing:.12em;font-size:11px;text-transform:uppercase;opacity:.7}
+.quiz-box{background:var(--preto2);border:1px solid var(--borda);border-radius:20px;padding:36px;margin-top:20px}
+.quiz-box h2{font-family:'Cormorant Garamond';font-size:28px;font-weight:300;margin-bottom:22px}
+.opcao{border:1px solid rgba(255,255,255,.08);background:#1E1E1E;border-radius:12px;padding:16px 18px;margin-bottom:12px;cursor:pointer;transition:.2s;font-size:14px}
+.opcao:hover{border-color:var(--ouro);color:var(--ouro)}
+.progress{height:2px;background:rgba(238,188,108,.15);margin:30px 0;border-radius:10px;overflow:hidden}
+.progress span{display:block;height:100%;width:40%;background:var(--ouro)}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9; font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--ouro);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0; font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:#F5F5F0; font-weight:200;}
+#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
+#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:700;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:#F5F5F0; font-weight:200; letter-spacing:0.06em;}
+@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
+@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
-  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-  <div style="display:flex;align-items:center;gap:12px">
-    <div class="lang-switch">
-      <button data-lang="pt" class="active">PT</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="es">ES</button>
-      <button data-lang="fr">FR</button>
+    <div class="prisma-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="lang-switch">
+        <button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button>
+      </div>
+      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
     </div>
-    <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
-  </div>
-  <ul class="prisma-menu-links">
-      <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-      <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
-      <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="PARTNERS" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
-      <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
-      <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
-      <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
-      <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
-      <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
-      <li><a href="turismo-colonial.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
-  </ul>
+   <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+ </ul>
 </nav>
-
-<div class="quiz-app">
-  <div id="tabuleiro" class="tabuleiro"></div>
-  <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
-  <div class="quiz-header"><span id="qCount">Caso 1 / 10</span><span id="scoreCount">0 pistas</span></div>
-  <div class="quiz-card" id="quizCard"></div>
+<div class="quiz-hero">
+  <h1 data-pt-BR="Teste sua memória colonial" data-en="Test your colonial memory" data-es="Pon a prueba tu memoria colonial" data-fr="Testez votre mémoire coloniale">Teste sua memória colonial</h1>
+  <p data-pt-BR="10 perguntas • 3 minutos • sem decoreba" data-en="10 questions • 3 minutes • no memorization" data-es="10 preguntas • 3 minutos • sin memorización" data-fr="10 questions • 3 minutes • sans par cœur">10 perguntas • 3 minutos • sem decoreba</p>
 </div>
-
+<div class="container">
+  <div class="quiz-box">
+    <div class="progress"><span></span></div>
+    <h2 data-pt-BR="1. Por que usavam fezes de cavalo para lavar roupa?" data-en="1. Why did they use horse feces to wash clothes?" data-es="1. ¿Por qué usaban heces de caballo para lavar ropa?" data-fr="1. Pourquoi utilisait-on du crottin de cheval pour laver le linge?">1. Por que usavam fezes de cavalo para lavar roupa?</h2>
+    <div class="opcao" data-pt-BR="A) Porque não tinham sabão e a amônia clareava" data-en="A) Because they had no soap and ammonia bleached" data-es="A) Porque no tenían jabón y el amoníaco blanqueaba" data-fr="A) Parce qu'il n'y avait pas de savon et l'ammoniaque blanchissait">A) Porque não tinham sabão e a amônia clareava</div>
+    <div class="opcao" data-pt-BR="B) Era ritual religioso" data-en="B) It was a religious ritual" data-es="B) Era ritual religioso" data-fr="B) C'était un rituel religieux">B) Era ritual religioso</div>
+    <div class="opcao" data-pt-BR="C) Para espantar insetos" data-en="C) To repel insects" data-es="C) Para espantar insectos" data-fr="C) Pour repousser les insectes">C) Para espantar insetos</div>
+  </div>
+</div>
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc" data-pt="Desvendando camadas da história com rigor, estética e narrativa." data-en="Unveiling layers of history with rigor, aesthetics and narrative." data-es="Desvelando capas de la historia con rigor y estética." data-fr="Dévoilant les couches de l'histoire avec rigueur et esthétique.">Desvendando camadas da história com rigor, estética e narrativa.</p>
+        <div class="footer-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
+        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
       </div>
       <div class="footer-col">
-        <h4 data-pt="Mapa" data-en="Map" data-es="Mapa" data-fr="Carte">Mapa</h4>
-        <a href="sobre.html" data-pt="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
-        <a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
-        <a href="ebook.html" data-pt="E-book" data-en="E-book" data-es="E-book" data-fr="E-book">E-book</a>
+        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
+        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a>
+        <a href="quiz.html" data-pt-BR="Quiz Histórico" data-en="History Quiz" data-es="Quiz Histórico" data-fr="Quiz Historique">Quiz Histórico</a>
       </div>
       <div class="footer-col">
-        <h4 data-pt="Explorar" data-en="Explore" data-es="Explorar" data-fr="Explorer">Explorar</h4>
-        <a href="quiz.html" data-pt="Quiz" data-en="Quiz" data-es="Quiz" data-fr="Quiz">Quiz</a>
-        <a href="loja.html" data-pt="Loja" data-en="Shop" data-es="Tienda" data-fr="Boutique">Loja</a>
-        <a href="doe.html" data-pt="Doe" data-en="Donate" data-es="Donar" data-fr="Faire un don">Doe</a>
+        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html">📘 E-book</a>
+        <a href="loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
+        <a href="afiliados.html" data-pt-BR="🤝 Afiliados 40%" data-en="🤝 Affiliates 40%" data-es="🤝 Afiliados 40%" data-fr="🤝 Affiliés 40%">🤝 Afiliados 40%</a>
+        <a href="doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação</a>
+        <a href="privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
+        <a href="termos.html" data-pt-BR="📄 Termos" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos</a>
       </div>
-      <div class="footer-news-card">
-        <h4 data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma" style="color:var(--gold);font-size:10px;letter-spacing:0.2em;margin-bottom:10px">Clube Prisma</h4>
-        <p data-pt="Receba roteiros secretos. Grátis." data-en="Get secret guides. Free." data-es="Recibe guías secretas. Gratis." data-fr="Recevez des guides secrets. Gratuit.">Receba roteiros secretos. Grátis.</p>
-        <input type="email" id="prismaEmail" placeholder="seu melhor email">
-        <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join Club →" data-es="Entrar al Club →" data-fr="Rejoindre →">Entrar pro Clube →</button>
+      <div class="footer-col">
+        <h4 data-pt-BR="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-pt-BR="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret itineraries and lessons not on the site. Free." data-es="Recibe itinerarios secretos y clases que no están en el sitio. Gratis." data-fr="Recevez des itinéraires secrets et des cours hors site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-pt-BR="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="ano"></span> Prisma Histórico</span>
-      <span data-pt="Feito com ☕ em SP" data-en="Made with ☕ in SP" data-es="Hecho con ☕ en SP" data-fr="Fait avec ☕ à SP">Feito com ☕ em SP</span>
+      <span>© <span id="anoAtual">2026</span> Prisma Histórico</span>
+      <span id="dataLocalizada" data-pt-BR="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
     </div>
   </div>
 </footer>
-
 <script>
-const T_UI={pt:{acertos:"pistas",proxima:"Investigar →",refazer:"Recomeçar Investigação",msg_win:"Caso Resolvido! 🔍 Você desvendou a Colônia!",msg_mid:"Bom detetive! Quase lá.",msg_low:"O mistério continua... Estude os arquivos."},en:{acertos:"clues",proxima:"Investigate →",refazer:"Restart",msg_win:"Case Solved! 🔍",msg_mid:"Good detective!",msg_low:"Study more."},es:{acertos:"pistas",proxima:"Investigar →",refazer:"Rehacer",msg_win:"¡Caso Resuelto! 🔍",msg_mid:"¡Buen trabajo!",msg_low:"Estudia más."},fr:{acertos:"indices",proxima:"Enquêter →",refazer:"Recommencer",msg_win:"Affaire Résolue! 🔍",msg_mid:"Bien joué!",msg_low:"Étudiez plus."}};
-const QUIZ={pt:[{ pagina:"CASO 01 - O Alvará", pergunta:"1755, Belém do Pará. Um documento secreto do Marquês de Pombal chega. Casamentos entre brancos e indígenas estão sendo julgados como 'infâmia de sangue'. Como detetive, o que o Alvará Régio realmente determina?", dica:"Pista: Pombal queria povoar a Amazônia e acabar com o poder dos jesuítas.", alt:[["A","Que seriam exilados"],["B","Que NÃO sofreriam infâmia alguma e seriam protegidos pelo Rei"],["C","Que pagariam imposto"],["D","Que seriam escravizados"]], resp:"B", casa:"Belém" },{ pagina:"CASO 02", pergunta:"Você investiga os aldeamentos jesuíticos. Eles ficaram tão ricos que os colonos os chamavam de...", dica:"Tinham exército, dinheiro e terras próprios.", alt:[["A","Quinto Real"],["B","Capitania"],["C","Estado dentro do Estado"],["D","Cativeiro"]], resp:"C", casa:"Aldeia" },{ pagina:"CASO 03", pergunta:"Distrito Diamantino, 1734. Por que Portugal isolou a região com cercas e passaportes?", dica:"Diamante valia mais que ouro.", alt:[["A","Proteger índios"],["B","Controlar preço e evitar contrabando"],["C","Guerra com Espanha"],["D","Esconder ouro falso"]], resp:"B", casa:"Diamantes" },{ pagina:"CASO 04", pergunta:"Contestado, 1912. O que a ferrovia de Percival Farquhar fez?", dica:"Madeira e terras dadas para estrangeira.", alt:[["A","Trouxe progresso"],["B","Expulsou caboclos, dando tudo para a Lumber"],["C","Construída por escravos"],["D","Ligou aos EUA"]], resp:"B", casa:"Ferrovia" },{ pagina:"CASO 05", pergunta:"Você encontra 'redutos'. Quem liderava?", dica:"Monges como José Maria.", alt:[["A","Oficiais"],["B","Monges beatos, comunidades coletivas"],["C","Jesuítas"],["D","Políticos"]], resp:"B", casa:"Reduto" },{ pagina:"CASO 06", pergunta:"Rio, 1891. O que foi a 1ª Revolta da Armada?", dica:"Custódio de Melo.", alt:[["A","Escravos"],["B","Marinheiros contra Deodoro"],["C","Exército vs Marinha"],["D","Argentina"]], resp:"B", casa:"Baía" },{ pagina:"CASO 07", pergunta:"1893. Como Floriano sem navios venceu?", dica:"Frota de Papelão.", alt:[["A","Portugal"],["B","Frota de Papelão"],["C","30 dias"],["D","Aviões"]], resp:"B", casa:"Rio" },{ pagina:"CASO 08", pergunta:"Desterro, 1894. O que aconteceu em Anhatomirim?", dica:"Homenagem a Floriano.", alt:[["A","Anistia"],["B","Fuzilamentos e virou Florianópolis"],["C","Vendeu ilha"],["D","Café"]], resp:"B", casa:"Ilha" },{ pagina:"CASO 09", pergunta:"Qual a crítica de Lima Barreto em Policarpo Quaresma?", dica:"Vira carcereiro e se decepciona.", alt:[["A","República perfeita"],["B","República violenta e corrupta"],["C","Monarquia volta"],["D","Marinha certa"]], resp:"B", casa:"Arquivo" },{ pagina:"CASO 10", pergunta:"1915. O que o Exército usou pela primeira vez no Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviação militar"],["D","Metralhadoras"]], resp:"C", casa:"CÉU" },],en:[{ pagina:"CASE 01", pergunta:"1755, Belem. A secret document from Pombal arrives. Mixed marriages were judged as 'blood infamy'. What does the Royal Decree determine?", dica:"Clue: Pombal wanted to populate Amazon.", alt:[["A","They would be exiled"],["B","They would NOT suffer any infamy and would be protected by the King"],["C","They would pay tax"],["D","They would be enslaved"]], resp:"B", casa:"Belem" },{ pagina:"CASE 02", pergunta:"You investigate Jesuit villages. They became so rich they were called...", dica:"They had army, money and own lands.", alt:[["A","Royal Fifth"],["B","Captaincy"],["C","State within the State"],["D","Captivity"]], resp:"C", casa:"Village" },{ pagina:"CASE 03", pergunta:"Diamantino District, 1734. Why did Portugal isolate it with fences?", dica:"Diamond worth more than gold.", alt:[["A","Protect natives"],["B","Control price and avoid smuggling"],["C","War with Spain"],["D","Hide fake gold"]], resp:"B", casa:"Diamonds" },{ pagina:"CASE 04", pergunta:"Contestado, 1912. What did Farquhar's railway do?", dica:"Wood and land given to foreign company.", alt:[["A","Brought progress"],["B","Expelled caboclos, giving everything to Lumber"],["C","Built by slaves"],["D","Linked to USA"]], resp:"B", casa:"Railway" },{ pagina:"CASE 05", pergunta:"You find 'redutos'. Who led them?", dica:"Monks like Jose Maria.", alt:[["A","Officers"],["B","Holy monks, collective communities"],["C","Jesuits"],["D","Politicians"]], resp:"B", casa:"Redoubt" },{ pagina:"CASE 06", pergunta:"Rio, 1891. What was the 1st Armada Revolt?", dica:"Custodio de Melo.", alt:[["A","Slaves"],["B","Sailors against Deodoro"],["C","Army vs Navy"],["D","Argentina"]], resp:"B", casa:"Bay" },{ pagina:"CASE 07", pergunta:"1893. How did Floriano win without ships?", dica:"Cardboard Fleet.", alt:[["A","Portugal"],["B","Cardboard Fleet"],["C","30 days"],["D","Planes"]], resp:"B", casa:"Rio" },{ pagina:"CASE 08", pergunta:"Desterro, 1894. What happened in Anhatomirim?", dica:"Tribute to Floriano.", alt:[["A","Amnesty"],["B","Executions and became Florianopolis"],["C","Sold island"],["D","Coffee"]], resp:"B", casa:"Island" },{ pagina:"CASE 09", pergunta:"What is Lima Barreto's critique in Quaresma?", dica:"Becomes jailer and gets disappointed.", alt:[["A","Perfect Republic"],["B","Violent and corrupt Republic"],["C","Monarchy returns"],["D","Navy right"]], resp:"B", casa:"Archive" },{ pagina:"CASE 10", pergunta:"1915. What did the Army use for first time in Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanks"],["B","Submarines"],["C","Military aviation"],["D","Machine guns"]], resp:"C", casa:"SKY" },],es:[{ pagina:"CASO 01", pergunta:"1755, Belem. Llega un documento secreto de Pombal. Matrimonios mixtos juzgados como 'infamia de sangre'. ¿Que determina el Decreto?", dica:"Pista: Pombal queria poblar Amazonia.", alt:[["A","Serian exiliados"],["B","NO sufririan infamia y serian protegidos por el Rey"],["C","Pagarian impuesto"],["D","Serian esclavizados"]], resp:"B", casa:"Belem" },{ pagina:"CASO 02", pergunta:"Investigas aldeas jesuitas. Tan ricas que las llamaban...", dica:"Tenian ejercito y tierras propias.", alt:[["A","Quinto Real"],["B","Capitania"],["C","Estado dentro del Estado"],["D","Cautiverio"]], resp:"C", casa:"Aldea" },{ pagina:"CASO 03", pergunta:"Distrito Diamantino, 1734. ¿Por que Portugal lo aislo?", dica:"Diamante valia mas que oro.", alt:[["A","Proteger indios"],["B","Controlar precio y evitar contrabando"],["C","Guerra con España"],["D","Esconder oro falso"]], resp:"B", casa:"Diamantes" },{ pagina:"CASO 04", pergunta:"Contestado, 1912. ¿Que hizo el ferrocarril de Farquhar?", dica:"Madera y tierras a extranjera.", alt:[["A","Trajo progreso"],["B","Expulso caboclos, dando todo a Lumber"],["C","Construida por esclavos"],["D","Ligo a EEUU"]], resp:"B", casa:"Ferrovia" },{ pagina:"CASO 05", pergunta:"Encuentras 'redutos'. ¿Quien lideraba?", dica:"Monjes como Jose Maria.", alt:[["A","Oficiales"],["B","Monjes beatos, comunidades colectivas"],["C","Jesuitas"],["D","Politicos"]], resp:"B", casa:"Reduto" },{ pagina:"CASO 06", pergunta:"Rio, 1891. ¿Que fue la 1ª Revuelta de la Armada?", dica:"Custodio de Melo.", alt:[["A","Esclavos"],["B","Marineros contra Deodoro"],["C","Ejercito vs Marina"],["D","Argentina"]], resp:"B", casa:"Bahia" },{ pagina:"CASO 07", pergunta:"1893. ¿Como gano Floriano sin barcos?", dica:"Flota de Carton.", alt:[["A","Portugal"],["B","Flota de Carton"],["C","30 dias"],["D","Aviones"]], resp:"B", casa:"Rio" },{ pagina:"CASO 08", pergunta:"Desterro, 1894. ¿Que paso en Anhatomirim?", dica:"Homenaje a Floriano.", alt:[["A","Amnistia"],["B","Fusilamientos y se volvio Florianopolis"],["C","Vendio isla"],["D","Cafe"]], resp:"B", casa:"Isla" },{ pagina:"CASO 09", pergunta:"¿Cual es la critica de Lima Barreto en Quaresma?", dica:"Se vuelve carcelero y se decepciona.", alt:[["A","Republica perfecta"],["B","Republica violenta y corrupta"],["C","Monarquia vuelve"],["D","Marina cierta"]], resp:"B", casa:"Archivo" },{ pagina:"CASO 10", pergunta:"1915. ¿Que uso el Ejercito por primera vez en Contestado?", dica:"Santos-Dumont.", alt:[["A","Tanques"],["B","Submarinos"],["C","Aviacion militar"],["D","Ametralladoras"]], resp:"C", casa:"CIELO" },],fr:[{ pagina:"CAS 01", pergunta:"1755, Belem. Un document secret de Pombal arrive. Mariages mixtes juges comme 'infamie de sang'. Que dit le Decret?", dica:"Indice: Pombal voulait peupler l'Amazonie.", alt:[["A","Ils seraient exiles"],["B","Ils ne souffriraient d'aucune infamie et seraient proteges par le Roi"],["C","Ils paieraient impot"],["D","Ils seraient esclaves"]], resp:"B", casa:"Belem" },{ pagina:"CAS 02", pergunta:"Vous enquetez sur villages jesuites. Si riches qu'on les appelait...", dica:"Ils avaient armee et terres.", alt:[["A","Cinquieme Royal"],["B","Capitainerie"],["C","Etat dans l'Etat"],["D","Captivite"]], resp:"C", casa:"Village" },{ pagina:"CAS 03", pergunta:"District Diamantino, 1734. Pourquoi Portugal l'a isole?", dica:"Diamant valait plus que or.", alt:[["A","Proteger indigenes"],["B","Controler prix et eviter contrebande"],["C","Guerre avec Espagne"],["D","Cacher faux or"]], resp:"B", casa:"Diamants" },{ pagina:"CAS 04", pergunta:"Contestado, 1912. Que fit le chemin de fer de Farquhar?", dica:"Bois et terres a etrangere.", alt:[["A","A apporte progres"],["B","A expulse caboclos, donnant tout a Lumber"],["C","Construit par esclaves"],["D","Relie aux USA"]], resp:"B", casa:"Chemin" },{ pagina:"CAS 05", pergunta:"Vous trouvez 'redutos'. Qui les menait?", dica:"Moines comme Jose Maria.", alt:[["A","Officiers"],["B","Moines beatos, communautes collectives"],["C","Jesuites"],["D","Politiques"]], resp:"B", casa:"Redoute" },{ pagina:"CAS 06", pergunta:"Rio, 1891. C'etait quoi la 1ere Revolte de l'Armada?", dica:"Custodio de Melo.", alt:[["A","Esclaves"],["B","Marins contre Deodoro"],["C","Armee vs Marine"],["D","Argentine"]], resp:"B", casa:"Baie" },{ pagina:"CAS 07", pergunta:"1893. Comment Floriano sans navires a gagne?", dica:"Flotte en Carton.", alt:[["A","Portugal"],["B","Flotte en Carton"],["C","30 jours"],["D","Avions"]], resp:"B", casa:"Rio" },{ pagina:"CAS 08", pergunta:"Desterro, 1894. Que s'est-il passe a Anhatomirim?", dica:"Hommage a Floriano.", alt:[["A","Amnistie"],["B","Fusillades et devenu Florianopolis"],["C","Vendu ile"],["D","Cafe"]], resp:"B", casa:"Ile" },{ pagina:"CAS 09", pergunta:"Quelle est la critique de Lima Barreto dans Quaresma?", dica:"Devient geolier et decu.", alt:[["A","Republique parfaite"],["B","Republique violente et corrompue"],["C","Monarchie revient"],["D","Marine a raison"]], resp:"B", casa:"Archive" },{ pagina:"CAS 10", pergunta:"1915. Que l'Armee utilisa pour premiere fois au Contestado?", dica:"Santos-Dumont.", alt:[["A","Chars"],["B","Sous-marins"],["C","Aviation militaire"],["D","Mitrailleuses"]], resp:"C", casa:"CIEL" },]};
-let lang = localStorage.getItem('prisma_lang')||'pt';
-let atual=0,acertos=0,respondido=false;
-const card=document.getElementById('quizCard'),bar=document.getElementById('bar'),qCount=document.getElementById('qCount'),sCount=document.getElementById('scoreCount'),tab=document.getElementById('tabuleiro');
-function getDados(){ return QUIZ[lang] || QUIZ.pt; }
-function renderTabuleiro(){ const dados=getDados(); tab.innerHTML=dados.map((q,i)=>{let cls=i<atual?'concluida':i==atual?'ativa':'';let peao=i==atual?'🕵️':i<atual?'✓':'';return `<div class="casa ${cls}"><span style="position:absolute;top:-8px;right:-4px">${peao}</span>${q.casa}</div>`}).join(''); }
-function setLang(l){
-  lang=l; localStorage.setItem('prisma_lang',l); localStorage.setItem('prisma-lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
-  document.querySelectorAll('[data-pt]').forEach(el=>{ const txt=el.getAttribute('data-'+l); if(txt) el.textContent=txt; });
-  document.getElementById('ano').textContent=new Date().getFullYear();
-  atual=0; acertos=0; render();
+function aplicarTraducao(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
+  var b=document.getElementById('btn-'+l);if(b)b.classList.add('active');
+  document.querySelectorAll('[data-pt-BR]').forEach(function(e){
+    var t=e.getAttribute('data-'+l)||e.getAttribute('data-pt-BR');
+    if(!t)return;e.textContent=t
+  });
 }
-function render(){
-  const quizData=getDados(); const q=quizData[atual]; respondido=false; renderTabuleiro();
-  bar.style.width=`${(atual/quizData.length)*100}%`;
-  qCount.textContent=`Caso ${atual+1} / ${quizData.length}`;
-  sCount.textContent=`${acertos} ${T_UI[lang].acertos}`;
-  card.innerHTML=`<span class="page-tag">${q.pagina}</span><div class="question">${q.pergunta}</div><div class="dica">💡 ${q.dica}</div><div class="options">${q.alt.map(a=>`<div class="opt" data-l="${a[0]}"><b>${a[0]})</b><span>${a[1]}</span></div>`).join('')}</div><div class="actions"><span style="font-size:11px;color:#555">Casa ${atual+1}: ${q.casa}</span><button class="btn" id="nextBtn" disabled>${T_UI[lang].proxima}</button></div>`;
-  document.querySelectorAll('.opt').forEach(el=>{ el.onclick=()=>{ if(respondido) return; respondido=true; document.querySelectorAll('.opt').forEach(o=>o.classList.remove('selected')); el.classList.add('selected'); const certa=q.resp; if(el.dataset.l===certa){acertos++;el.classList.add('correct')}else{el.classList.add('wrong');document.querySelector(`[data-l="${certa}"]`)?.classList.add('correct')} sCount.textContent=`${acertos} ${T_UI[lang].acertos}`; document.getElementById('nextBtn').disabled=false } });
-  document.getElementById('nextBtn').onclick=()=>{atual++; if(atual<quizData.length) render(); else final()}
-}
-function final(){ bar.style.width=`100%`; renderTabuleiro(); const t=T_UI[lang]; card.innerHTML=`<div class="result"><h2>${acertos}/10</h2><p>${acertos==10?t.msg_win:acertos>6?t.msg_mid:t.msg_low}</p><br><button class="btn" onclick="location.reload()">${t.refazer}</button></div>` }
-const nav=document.getElementById('prismaNav'); const btnMenu=document.getElementById('btnMenu');
-btnMenu.addEventListener('click',(e)=>{ e.stopPropagation(); nav.classList.toggle('menu-aberto'); document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''; });
-document.addEventListener('click',(e)=>{ if(nav.classList.contains('menu-aberto') &&!e.target.closest('#prismaNav')){ nav.classList.remove('menu-aberto'); document.body.style.overflow=''; } });
-document.querySelectorAll('.lang-switch button').forEach(b=>{ b.addEventListener('click',()=>setLang(b.dataset.lang)); });
-document.querySelectorAll('.prisma-menu-links a').forEach(link=>{ link.addEventListener('click',()=>{ nav.classList.remove('menu-aberto'); document.body.style.overflow=''; }); });
-setLang(localStorage.getItem('prisma_lang')||'pt');
+const nav=document.getElementById('prismaNav');
+document.getElementById('btnMenu').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
+document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){aplicarTraducao(b.id.replace('btn-',''))})});
+aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
 </script>
 </body>
 </html>
