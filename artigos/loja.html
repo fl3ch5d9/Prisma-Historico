@@ -6,64 +6,52 @@
 <title>Loja - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
-
 <style>
 :root{--carvao:#121212;--carvao2:#1A1A1A;--off:#F5F5F0;--sepia:#eebc6c;--sepia2:#d8c9a8;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; font-weight:200; padding-top:78px; -webkit-font-smoothing:antialiased;}
+body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; font-weight:200; padding-top:78px;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10001;color:var(--off); font-weight:300;}
-.prisma-logo span{color:var(--sepia);font-weight:400}
-.lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--off);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
-.lang-switch button.active{background:var(--sepia);color:#121212;border-color:var(--sepia);font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--sepia);display:block;transition:0.25s}
-/* CORRIGIDO - SEM ESPAÇO */
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10002;color:var(--off)} 
+.prisma-logo span{color:var(--sepia)}
+.lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda)}
+.lang-switch button{background:transparent;border:0;color:var(--off);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px}
+.lang-switch button.active{background:var(--sepia);color:#121212}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--sepia);display:block;transition:0.4s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.28s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia2);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;opacity:0;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important;opacity:1!important}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia2);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7}
 .prisma-menu-links li a:hover{color:var(--sepia);opacity:1}
-
 .header{text-align:center;padding:60px 20px 20px 20px}
-.header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,52px); font-weight:300; letter-spacing:-0.02em;}
-.header h1 em{color:var(--sepia);font-style:italic; font-weight:300;}
-.header p{opacity:0.4; font-weight:200; font-size:14px; margin-top:12px; letter-spacing:0.04em;}
-.badge-afiliado{text-align:center;font-size:10px;letter-spacing:0.12em;opacity:0.25;padding:14px; font-weight:200; max-width:800px; margin:auto;}
-
+.header h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,52px);font-weight:300}
+.header h1 em{color:var(--sepia);font-style:italic}
+.header p{opacity:0.4;font-size:14px;margin-top:12px}
+.badge-afiliado{text-align:center;font-size:10px;letter-spacing:0.12em;opacity:0.25;padding:14px;max-width:800px;margin:auto}
 .loja{max-width:1100px;margin:20px auto 60px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
 .card{background:var(--carvao2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;overflow:hidden;transition:0.35s}
-.card:hover{transform:translateY(-4px);border-color:rgba(238,188,108,0.18); box-shadow:0 12px 30px rgba(0,0,0,0.4);}
-.card img{width:100%;height:190px;object-fit:cover; filter:grayscale(0.2) sepia(0.15) brightness(0.9); opacity:0.9;}
+.card:hover{transform:translateY(-4px);border-color:rgba(238,188,108,0.18)}
+.card img{width:100%;height:190px;object-fit:cover;filter:grayscale(0.2) sepia(0.15) brightness(0.9)}
 .card-body{padding:24px}
-.card-body span{font-size:9px;letter-spacing:0.18em;color:var(--sepia); font-weight:300; text-transform:uppercase; opacity:0.7;}
-.card-body h3{margin:10px 0 10px 0;font-size:18px; min-height:44px; font-family:'Cormorant Garamond'; font-weight:400; letter-spacing:-0.01em; line-height:1.2;}
-.card-body p{font-size:13px;opacity:0.45;line-height:1.7; min-height:70px; font-weight:200;}
-.btn{display:block;margin-top:18px;text-align:center;background:var(--sepia);color:#121212;padding:13px;border-radius:100px;text-decoration:none;font-weight:400;font-size:11px;letter-spacing:0.12em; transition:0.3s; text-transform:uppercase;}
-.btn:hover{background:#fff; transform:translateY(-1px);}
-
-
-
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
-@media(max-width:900px){.tur-grid{grid-template-columns:1fr}.mapa-card,.roteiros{height:auto}.roteiros{max-height:600px}}
-
-
+.card-body span{font-size:9px;letter-spacing:0.18em;color:var(--sepia);text-transform:uppercase}
+.card-body h3{margin:10px 0;font-size:18px;font-family:'Cormorant Garamond';font-weight:400;min-height:44px}
+.card-body p{font-size:13px;opacity:0.45;line-height:1.7;min-height:70px}
+.btn{display:block;margin-top:18px;text-align:center;background:var(--sepia);color:#121212;padding:13px;border-radius:100px;text-decoration:none;font-size:11px;letter-spacing:0.12em;text-transform:uppercase}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px;padding:70px 6% 30px 6%}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.2fr;gap:60px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:28px;letter-spacing:0.18em;color:var(--off)}
+#prismaFooter .footer-logo span{color:var(--sepia)}
+#prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia2);margin-top:16px;max-width:320px;opacity:0.6}
+#prismaFooter .footer-col h4{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sepia);margin-bottom:22px}
+#prismaFooter .footer-col a{display:block;margin-bottom:12px;font-size:13px;color:var(--sepia2);text-decoration:none}
+#prismaFooter .footer-col a:hover{color:var(--sepia)}
+#prismaFooter .footer-news-card{background:#141414;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:22px}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:24px 0 0 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--sepia2);opacity:0.35;text-transform:uppercase}
+@media(max-width:900px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){#prismaFooter .footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -72,58 +60,56 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; f
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="lang-switch">
-      <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-      <button onclick="setLang('en')" id="btn-en">EN</button>
-      <button onclick="setLang('es')" id="btn-es">ES</button>
-      <button onclick="setLang('fr')" id="btn-fr">FR</button>
+      <button data-lang="pt" class="active">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="fr">FR</button>
     </div>
     <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-       <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="PARTNERS" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
   </ul>
 </nav>
 
 <div class="header">
-  <h1 data-i18n="h1">Loja <em>Prisma</em></h1>
-  <p data-i18n="sub">Indicações que usamos para estudar — curadoria sépia</p>
+  <h1 data-pt="Loja <em>Prisma</em>" data-en="<em>Prisma</em> Store" data-es="Tienda <em>Prisma</em>" data-fr="Boutique <em>Prisma</em>">Loja <em>Prisma</em></h1>
+  <p data-pt="Indicações que usamos para estudar — curadoria sépia" data-en="Our study recommendations — sepia curation" data-es="Recomendaciones que usamos para estudiar — curaduría sepia" data-fr="Nos recommandations — curation sépia">Indicações que usamos para estudar — curadoria sépia</p>
 </div>
-<p class="badge-afiliado" data-i18n="badge">Aviso: este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.</p>
+
+<p class="badge-afiliado" data-pt="Aviso: este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você." data-en="Notice: This site contains affiliate links. We may earn commission at no extra cost to you." data-es="Aviso: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra." data-fr="Avis: Ce site contient des liens affiliés. Nous pouvons gagner une commission.">Aviso: este site contém links de afiliados.</p>
 
 <div class="loja">
   <div class="card">
     <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600" alt="Writelytic">
     <div class="card-body">
-      <span data-i18n="cat1">Writelytic • IA</span>
-      <h3 data-i18n="p1_t">Writelytic — IA para Escrita</h3>
-      <p data-i18n="p1_d">Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação.</p>
-      <a class="btn" id="link-writelytic" href="https://writelytic.com/es/#aff=cricardomoraes7738e1" target="_blank">Acessar curso →</a>
+      <span data-pt="Writelytic • IA" data-en="Writelytic • AI" data-es="Writelytic • IA" data-fr="Writelytic • IA">Writelytic • IA</span>
+      <h3 data-pt="Writelytic — IA para Escrita" data-en="Writelytic — AI Writing Tool" data-es="Writelytic — IA para Escritura" data-fr="Writelytic — IA d'Écriture">Writelytic — IA para Escrita</h3>
+      <p data-pt="Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos." data-en="AI platform that generates high-quality texts for businesses." data-es="Plataforma de IA que genera textos de alta calidad." data-fr="Plateforme IA qui génère des textes de haute qualité.">Plataforma de IA que gera textos...</p>
+      <a class="btn" href="https://writelytic.com/es/#aff=cricardomoraes7738e1" target="_blank" data-pt="Acessar curso →" data-en="Access now →" data-es="Acceder ahora →" data-fr="Accéder →">Acessar curso →</a>
     </div>
   </div>
   <div class="card">
     <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600" alt="Curso">
     <div class="card-body">
-      <span data-i18n="cat2">Cursos • ENEM</span>
-      <h3 data-i18n="p2_t">História para ENEM — Intensivo</h3>
-      <p data-i18n="p2_d">Curso completo que usamos como base para os simulados e repertório nota 1000.</p>
-      <a class="btn" href="#" target="_blank">Ver curso →</a>
+      <span data-pt="Cursos • ENEM" data-en="Courses • Exam" data-es="Cursos • ENEM" data-fr="Cours • Examen">Cursos • ENEM</span>
+      <h3 data-pt="História para ENEM — Intensivo" data-en="History for Exams — Intensive" data-es="Historia para ENEM — Intensivo" data-fr="Histoire pour Examens — Intensif">História para ENEM — Intensivo</h3>
+      <p data-pt="Curso completo que usamos como base para os simulados e repertório nota 1000." data-en="Complete course we use as basis for mock exams." data-es="Curso completo que usamos como base para simulados." data-fr="Cours complet que nous utilisons comme base.">Curso completo...</p>
+      <a class="btn" href="#" data-pt="Ver curso →" data-en="View course →" data-es="Ver curso →" data-fr="Voir le cours →">Ver curso →</a>
     </div>
   </div>
   <div class="card">
     <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600" alt="Mapa">
     <div class="card-body">
-      <span data-i18n="cat3">Material • Mapas</span>
-      <h3 data-i18n="p3_t">Mapas Históricos Premium</h3>
-      <p data-i18n="p3_d">Mapas mentais e resumos para imprimir. Visual, sépia, pronto pra parede.</p>
-      <a class="btn" href="#" target="_blank">Baixar agora →</a>
+      <span data-pt="Material • Mapas" data-en="Material • Maps" data-es="Material • Mapas" data-fr="Matériel • Cartes">Material • Mapas</span>
+      <h3 data-pt="Mapas Históricos Premium" data-en="Premium Historical Maps" data-es="Mapas Históricos Premium" data-fr="Cartes Historiques Premium">Mapas Históricos Premium</h3>
+      <p data-pt="Mapas mentais e resumos para imprimir. Visual, sépia, pronto pra parede." data-en="Mind maps and summaries to print. Visual, sepia." data-es="Mapas mentales y resúmenes para imprimir." data-fr="Cartes mentales et résumés à imprimer.">Mapas mentais...</p>
+      <a class="btn" href="#" data-pt="Baixar agora →" data-en="Download now →" data-es="Descargar ahora →" data-fr="Télécharger →">Baixar agora →</a>
     </div>
   </div>
 </div>
@@ -133,76 +119,56 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; f
     <div class="footer-grid">
       <div>
         <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+        <p class="footer-desc" data-pt="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From gold mines to colonial tourism." data-es="Enfoque analítico de la Historia de Brasil. De minas de oro a turismo colonial." data-fr="Approche analytique de l'Histoire du Brésil. Des mines d'or au tourisme colonial.">Abordagem analítica da História do Brasil...</p>
       </div>
       <div class="footer-col">
-        <h4>Navegação</h4>
-        <a href="../index.html">Início</a>
-        <a href="sobre.html">Sobre o Projeto</a>
-        <a href="artigos.html">Artigos</a>
-        <a href="curiosidades.html">Curiosidades</a>
-        <a href="quiz.html">Quiz Histórico</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
+        <h4 data-pt="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt="Sobre o Projeto" data-en="About the Project" data-es="Sobre el Proyecto" data-fr="À propos du Projet">Sobre o Projeto</a>
+        <a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="quiz.html" data-pt="Quiz Histórico" data-en="History Quiz" data-es="Quiz Histórico" data-fr="Quiz Historique">Quiz Histórico</a>
+        <a href="turismo-colonial.html" data-pt="🌍 Turismo Colonial" data-en="🌍 Colonial Tourism" data-es="🌍 Turismo Colonial" data-fr="🌍 Tourisme Colonial">🌍 Turismo Colonial</a>
       </div>
       <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="ebook.html">📘 E-book Completo</a>
-        <a href="loja.html">🛒 Loja Oficial</a>
-        <a href="afiliados.html">🤝 Afiliados</a>
-        <a href="doacao.html">💰 Doação PIX / PayPal</a>
-        <a href="privacidade.html">🔒 Privacidade</a>
-        <a href="termos.html">📄 Termos de Uso</a>
+        <h4 data-pt="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html" data-pt="📘 E-book Completo" data-en="📘 Complete E-book" data-es="📘 E-book Completo" data-fr="📘 E-book Complet">📘 E-book Completo</a>
+        <a href="loja.html" data-pt="🛒 Loja Oficial" data-en="🛒 Official Shop" data-es="🛒 Tienda Oficial" data-fr="🛒 Boutique Officielle">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-pt="🤝 Afiliados" data-en="🤝 Partners" data-es="🤝 Afiliados" data-fr="🤝 Affiliés">🤝 Afiliados</a>
+        <a href="doe.html" data-pt="💰 Doação PIX / PayPal" data-en="💰 Donation PIX / PayPal" data-es="💰 Donación PIX / PayPal" data-fr="💰 Don PayPal">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-pt="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
+        <a href="termos.html" data-pt="📄 Termos de Uso" data-en="📄 Terms of Use" data-es="📄 Términos de Uso" data-fr="📄 Conditions d'Utilisation">📄 Termos de Uso</a>
       </div>
       <div class="footer-col">
-        <h4>Clube Prisma</h4>
+        <h4 data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
         <div class="footer-news-card">
-          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <p data-pt="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret guides and lessons not on the site. Free." data-es="Recibe guías secretas y clases que no van al sitio. Gratis." data-fr="Recevez des guides secrets et des leçons pas sur le site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
           <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn">Entrar pro Clube →</button>
+          <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join Club →" data-es="Entrar al Club →" data-fr="Rejoindre →">Entrar pro Clube →</button>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico</span>
-      <span>Feito com ☕ e 4h de sono em São Paulo</span>
+      <span>© <span id="ano"></span> <span data-pt="Prisma Histórico" data-en="Prisma Histórico" data-es="Prisma Histórico" data-fr="Prisma Histórico">Prisma Histórico</span></span>
+      <span data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
     </div>
   </div>
 </footer>
 
 <script>
-const T={
-pt:{h1:"Loja <em>Prisma</em>",sub:"Indicações que usamos para estudar — curadoria sépia",badge:"Aviso: este site contém links de afiliados. Podemos ganhar comissão sem custo extra para você.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA para Escrita",p1_d:"Plataforma de IA que gera textos de alta qualidade para empresas e indivíduos, revolucionando a comunicação.",cat2:"Cursos • ENEM",p2_t:"História para ENEM — Intensivo",p2_d:"Curso completo que usamos como base para os simulados e repertório nota 1000.",cat3:"Material • Mapas",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentais e resumos para imprimir. Visual, sépia, pronto pra parede."},
-en:{h1:"<em>Prisma</em> Store",sub:"Our study recommendations — sepia curation",badge:"Notice: This site contains affiliate links. We may earn commission at no extra cost to you.",cat1:"Writelytic • AI",p1_t:"Writelytic — AI Writing Tool",p1_d:"AI platform that generates high-quality texts for businesses and individuals.",cat2:"Courses • Exam",p2_t:"History for Exams — Intensive",p2_d:"Complete course we use as basis for mock exams.",cat3:"Material • Maps",p3_t:"Premium Historical Maps",p3_d:"Mind maps and summaries to print. Visual, sepia."},
-es:{h1:"Tienda <em>Prisma</em>",sub:"Recomendaciones que usamos para estudiar — curaduría sepia",badge:"Aviso: Este sitio contiene enlaces de afiliados. Podemos ganar comisión sin costo extra.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA para Escritura",p1_d:"Plataforma de IA que genera textos de alta calidad.",cat2:"Cursos • ENEM",p2_t:"Historia para ENEM — Intensivo",p2_d:"Curso completo que usamos como base para simulados.",cat3:"Material • Mapas",p3_t:"Mapas Históricos Premium",p3_d:"Mapas mentales y resúmenes para imprimir. Visual, sepia."},
-fr:{h1:"Boutique <em>Prisma</em>",sub:"Nos recommandations — curation sépia",badge:"Avis: Ce site contient des liens affiliés. Nous pouvons gagner une commission.",cat1:"Writelytic • IA",p1_t:"Writelytic — IA d'Écriture",p1_d:"Plateforme IA qui génère des textes de haute qualité.",cat2:"Cours • Examen",p2_t:"Histoire pour Examens — Intensif",p2_d:"Cours complet que nous utilisons comme base.",cat3:"Matériel • Cartes",p3_t:"Cartes Historiques Premium",p3_d:"Cartes mentales et résumés à imprimer. Visuel, sépia."}
-};
-const AFF_LINK = "https://writelytic.com/es/#aff=cricardomoraes7738e1";
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+l).classList.add('active');
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n');
-    if(T[l][k]) el.innerHTML=T[l][k];
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    const t=el.getAttribute('data-'+l);
+    if(t) el.innerHTML=t;
   });
-  const link = document.getElementById('link-writelytic');
-  if(link) link.href = AFF_LINK;
+  document.getElementById('ano').textContent=new Date().getFullYear();
 }
-document.addEventListener('DOMContentLoaded', () => {
-  setLang(localStorage.getItem('prisma_lang')||'pt');
-  const nav=document.getElementById('prismaNav');
-  const btn=document.getElementById('btnMenu');
-  btn.addEventListener('click', (e)=>{
-    e.stopPropagation();
-    nav.classList.toggle('menu-aberto');
-    document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
-  });
-});
-document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-  const v=document.getElementById('prismaEmail').value.trim();
-  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-});
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+const nav=document.getElementById('prismaNav'), btnMenu=document.getElementById('btnMenu');
+btnMenu.addEventListener('click',e=>{ e.stopPropagation(); nav.classList.toggle('menu-aberto'); document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''; });
+document.addEventListener('click',e=>{ if(!e.target.closest('#prismaNav')){ nav.classList.remove('menu-aberto'); document.body.style.overflow=''; }});
+setLang(localStorage.getItem('prisma_lang')||'pt');
 </script>
 </body>
 </html>
