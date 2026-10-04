@@ -91,38 +91,42 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
 .cookie-acoes{display:flex;gap:8px}
 #cookieAceitar{background:var(--ouro-minas);color:#0D0D0B;border:none;padding:10px 20px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;cursor:pointer}
 #cookieRecusar{background:transparent;color:var(--sepia-texto);border:1px solid var(--borda);padding:10px 16px;border-radius:30px;font-family:'Cinzel';font-size:9px;cursor:pointer}
-@media(min-width:900px){.ebook-intro{padding:80px 50px}.ebook-texto h2{font-size:58px}.ag-carrossel{padding:0 50px}.ag-box{padding:22px 26px}.ag-box h3{font-size:14px}.pagina{width:300px}.pagina img{height:400px}}
-
-
-/**/
-/* === CELULAR E TABLET - SÓ ISSO === */
-@media(max-width:1024px){
-  .prisma-nav{padding:12px 4%}
-  .header-investigativo h2{font-size:36px}
-  .header-investigativo h2 em{font-size:40px}
-  .grid-investigacao{grid-template-columns:1fr 1fr; gap:18px}
+/* ===== MEDIA QUERY PRISMA - PADRÃO OURO ===== */
+/* ===== MEDIA QUERY INDEX - CORRIGIDO ===== */
+@media(max-width: 900px){
+  .ebook-intro{flex-direction:column; padding:40px 20px}
+  .ebook-texto h2{font-size:34px}
+  #prismaFooter > div:first-child{grid-template-columns:1fr 1fr !important; gap:30px}
+  .hero{padding:120px 4% 50px}
+  .ag-carrossel{padding:0 20px}
 }
 
-@media(max-width:768px){
-  body{padding-top:68px}
-  .prisma-logo{font-size:22px}
-  .header-investigativo{margin-bottom:40px}
-  .header-investigativo h2{font-size:28px; line-height:1.2}
-  .header-investigativo h2 em{font-size:32px}
-  .grid-investigacao{grid-template-columns:1fr}
-  .card-historia{padding:22px; max-height:none}
-  #prismaFooter .footer-grid{grid-template-columns:1fr; gap:32px}
-  #prismaFooter .footer-wrap{padding:40px 5% 0 5%}
-  #prismaFooter .footer-bottom{flex-direction:column; text-align:center}
+@media(max-width: 600px){
+  .prisma-nav{padding:10px 4%}
+  .prisma-logo{font-size:18px}
+  .prisma-menu-links{width:100%; max-width:100vw}
+  .ebook-paginas{flex-direction:column; align-items:center}
+  .pagina{width:100%; max-width:340px}
+  .ag-box{flex-direction:column; text-align:center}
+  #prismaFooter > div:first-child{grid-template-columns:1fr !important}
+  #cookieBanner{bottom:0; width:100%; border-radius:14px 14px 0 0; left:0; transform:none}
 }
+/* ANTES (tá cortando) */
+footer#prismaFooter{ ... width:94%; ... }
 
-@media(max-width:480px){
-  .lang-switch button{padding:5px 8px; font-size:9px}
-  .header-investigativo h2{font-size:24px}
-  .secao-manifesto{padding:60px 5%}
+/* AGORA - corrige o corte da foto */
+#prismaFooter{
+  width:100% !important;
+  max-width:100vw !important;
+  overflow-x:hidden;
+  box-sizing:border-box;
 }
-
-
+#prismaFooter > div:first-child{
+  max-width:1180px;
+  margin:0 auto;
+  width:100%;
+  box-sizing:border-box;
+}
 </style>
 </head>
 <body>

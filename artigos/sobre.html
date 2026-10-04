@@ -5,64 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sobre - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="/css/style.css">
 <style>
 :root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --sepia:#d8c9a8; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; padding-top:78px; -webkit-font-smoothing:antialiased;}
-
-/* NAV - CORRIGIDO */
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; padding-top:78px;}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0.18em;z-index:10002; font-weight:300;}
 .prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda);}
-.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s; font-weight:200;}
+.lang-switch button{background:transparent;border:0;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em}
 .lang-switch button.active{background:var(--ouro);color:#121212;font-weight:400;}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s; transform-origin:center;}
-/* HAMBURGUER CORRIGIDO - SEM ESPAÇO ERRADO */
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
-.prisma-nav .menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
-/* MANIFESTO - PADRÃO FINO */
-.secao-manifesto{background:#0c0f1e;background-image:radial-gradient(900px 500px at 50% 0%, rgba(238,188,108,0.08) 0%, transparent 60%);padding:90px 5%;position:relative;}
-.container-manifesto{max-width:1100px;margin:0 auto;position:relative;z-index:2;}
-.tag-caso{font-family:'Inter',serif;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);color:var(--ouro);padding:7px 16px;border-radius:100px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;display:inline-block; font-weight:300;}
-.header-investigativo{text-align:center;max-width:740px;margin:0 auto 70px auto;}
-.header-investigativo h2{font-family:'Cormorant Garamond',serif;font-size:46px;line-height:1.15;color:var(--creme);margin:22px 0;font-weight:300; letter-spacing:-0.02em;}
-.header-investigativo h2 em{font-family:'Cormorant Garamond',serif;color:var(--ouro);font-style:italic;font-size:52px;font-weight:300;}
-.header-investigativo p{font-family:'Inter',sans-serif;color:var(--sepia);font-size:16px;line-height:1.8; font-weight:200; opacity:0.6; font-style:italic;}
-.grid-investigacao{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px;}
-.card-historia{background:var(--preto2); border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:28px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.4);transition:0.3s;max-height:400px;overflow-y:auto;scrollbar-width:thin; scrollbar-color:rgba(238,188,108,0.2) transparent;}
-.card-historia:hover{transform:translateY(-4px); border-color:rgba(238,188,108,0.15);}
-.card-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px;}
-.num-caso{font-size:9px;letter-spacing:0.2em;color:var(--ouro);background:rgba(238,188,108,0.06);padding:4px 10px;border-radius:100px; font-weight:300;}
-.card-historia h3{font-family:'Cormorant Garamond',serif;color:var(--creme);font-size:22px;margin:0 0 4px 0; font-weight:400; letter-spacing:-0.01em;}
-.card-historia h4{font-family:'Cormorant Garamond',serif;color:var(--ouro);font-size:18px;font-weight:300;margin:0 0 16px 0; font-style:italic; opacity:0.8;}
-.card-historia p{font-family:'Inter',sans-serif;color:var(--creme);font-size:14px;line-height:1.8; font-weight:200; opacity:0.6;}
-.pista{margin-top:20px;background:rgba(238,188,108,0.04);border-left:1px solid var(--ouro);padding:10px 14px; font-size:12.5px;color:var(--sepia); font-weight:200; border-radius:0 8px 8px 0;}
-.pista span:first-child{color:var(--ouro);font-weight:400;font-size:9px;letter-spacing:0.15em; text-transform:uppercase;}
-
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
+.secao-manifesto{background:#0c0f1e;background-image:radial-gradient(900px 500px at 50% 0%, rgba(238,188,108,0.08) 0%, transparent 60%);padding:90px 5%}
+.container-manifesto{max-width:1100px;margin:0 auto}
+.tag-caso{background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);color:var(--ouro);padding:7px 16px;border-radius:100px;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;display:inline-block}
+.header-investigativo{text-align:center;max-width:740px;margin:0 auto 70px auto}
+.header-investigativo h2{font-family:'Cormorant Garamond';font-size:46px;line-height:1.15;margin:22px 0;font-weight:300}
+.header-investigativo h2 em{color:var(--ouro);font-style:italic;font-size:52px}
+.header-investigativo p{color:var(--sepia);font-size:16px;line-height:1.8;opacity:0.6;font-style:italic}
+.grid-investigacao{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px}
+.card-historia{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:28px;transition:0.3s}
+.card-historia:hover{transform:translateY(-4px);border-color:rgba(238,188,108,0.15)}
+.card-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:12px}
+.num-caso{font-size:9px;letter-spacing:0.2em;color:var(--ouro);background:rgba(238,188,108,0.06);padding:4px 10px;border-radius:100px}
+.card-historia h3{font-family:'Cormorant Garamond';font-size:22px;margin-bottom:4px}
+.card-historia h4{font-family:'Cormorant Garamond';color:var(--ouro);font-size:18px;font-weight:300;font-style:italic;opacity:0.8;margin-bottom:16px}
+.card-historia p{font-size:14px;line-height:1.8;opacity:0.6}
+.pista{margin-top:20px;background:rgba(238,188,108,0.04);border-left:1px solid var(--ouro);padding:10px 14px;font-size:12.5px;color:var(--sepia);border-radius:0 8px 8px 0}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
-@media(max-width:768px){.header-investigativo h2{font-size:32px} .header-investigativo h2 em{font-size:38px} .grid-investigacao{grid-template-columns:1fr}}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:30px;letter-spacing:0.18em;line-height:0.9}
+#prismaFooter .footer-logo span{color:var(--ouro);display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px}
+#prismaFooter .footer-col a{display:block;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;color:var(--creme)}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro)}
+#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px}
+#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none}
+#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25}
+
+
+/* media query*/
+/* ===== MEDIA QUERY PRISMA - PADRÃO OURO ===== */
+
+/* 1. MOBILE FIRST - até 600px (celular) */
+@media(max-width: 600px){
+  .prisma-nav{padding:12px 4%}
+  .prisma-logo{font-size:20px}
+  .lang-switch button{padding:5px 8px;font-size:9px}
+  
+  .header-investigativo h2{font-size:28px !important}
+  .header-investigativo h2 em{font-size:32px !important}
+  
+  .loja, .grid-investigacao{grid-template-columns:1fr !important}
+  
+  /* FOOTER MOBILE - ISSO QUE TAVA BUGANDO NA FOTO */
+  #prismaFooter .footer-grid{grid-template-columns:1fr !important; gap:32px}
+  #prismaFooter .footer-bottom{flex-direction:column; text-align:center}
+}
+
+/* 2. TABLET - 601px até 900px */
+@media(min-width:601px) and (max-width:900px){
+  .loja, .grid-investigacao{grid-template-columns:repeat(2,1fr)}
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:40px}
+}
+
+/* 3. PC PEQUENO - 901px até 1200px */
+@media(min-width:901px) and (max-width:1200px){
+  #prismaFooter .footer-grid{grid-template-columns:1.2fr 0.8fr 0.8fr 1fr; gap:30px}
+}
+
+/* 4. PC GRANDE - acima de 1201px */
+@media(min-width:1201px){
+  .loja{grid-template-columns:repeat(3,1fr)}
+  #prismaFooter .footer-wrap{padding:80px 4% 0 4%}
+}
+
+/* FIX ZOOM 125% NO WINDOWS - que é o que tá na tua foto */
+@media screen and (min-resolution: 120dpi){
+  body{zoom:0.9}
+}
+
+
+
 </style>
 </head>
 <body>
@@ -71,10 +108,7 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="lang-switch">
-      <button data-lang="pt" id="btn-pt" class="active">PT</button>
-      <button data-lang="en" id="btn-en">EN</button>
-      <button data-lang="es" id="btn-es">ES</button>
-      <button data-lang="fr" id="btn-fr">FR</button>
+      <button data-lang="pt" class="active">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="fr">FR</button>
     </div>
     <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
@@ -91,39 +125,37 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
   </ul>
 </nav>
 
-
-
 <section class="secao-manifesto">
 <div class="container-manifesto">
   <div class="header-investigativo">
     <span class="tag-caso" data-pt="Dossiê Aberto • 1500 - 1930" data-en="Open File • 1500 - 1930" data-es="Expediente Abierto • 1500 - 1930" data-fr="Dossier Ouvert • 1500 - 1930">Dossiê Aberto • 1500 - 1930</span>
     <h2>
       <span data-pt="O Brasil não foi descoberto. Foi" data-en="Brazil was not discovered. It was" data-es="Brasil no fue descubierto. Fue" data-fr="Le Brésil n'a pas été découvert. Il a été">O Brasil não foi descoberto. Foi</span>
-      <em data-pt="investigado." data-en="investigated." data-es="investigado." data-fr="enquêté.">investigado.</em>
+      <em data-pt="investigado." data-en="investigated." data-es="investigado." data-fr="enquêté.">investigated.</em>
     </h2>
-    <p data-pt="Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros." data-en="Behind every official date there is a broken agreement, a burnt letter and a culprit who never made it into the books." data-es="Detrás de cada fecha oficial hay un acuerdo roto." data-fr="Derrière chaque date officielle, il y a un accord rompu.">Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros.</p>
+    <p data-pt="Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros." data-en="Behind every official date there is a broken agreement, a burnt letter and a culprit who never made it into the books." data-es="Detrás de cada fecha oficial hay un acuerdo roto, una carta quemada y un culpable que nunca entró en los libros." data-fr="Derrière chaque date officielle, il y a un accord rompu, une lettre brûlée et un coupable jamais entré dans les livres.">Por trás de cada data oficial existe um acordo quebrado, uma carta queimada e um culpado que nunca entrou nos livros.</p>
   </div>
   <div class="grid-investigacao">
     <div class="card-historia">
       <div class="card-topo"><span class="num-caso">CASO 01</span><span>⚓</span></div>
       <h3 data-pt="A Colônia" data-en="The Colony" data-es="La Colonia" data-fr="La Colonie">A Colônia</h3>
-      <h4 data-pt="O Labirinto do Ouro e da Fé" data-en="The Labyrinth of Gold and Faith" data-es="El Laberinto del Oro" data-fr="Le Labyrinthe de l'Or">O Labirinto do Ouro e da Fé</h4>
-      <p data-pt="Caravelas que não traziam só especiarias. Aldeias jesuíticas mais ricas que Portugal. Em 1759, os jesuítas foram expulsos porque tinham mais ouro que a própria Coroa." data-en="Caravels that did not bring only spices. Jesuit villages richer than Portugal." data-es="Carabelas que no traían solo especias." data-fr="Des caravelles qui n'apportaient pas que des épices.">Caravelas que não traziam só especiarias. Aldeias jesuíticas mais ricas que Portugal. Em 1759, os jesuítas foram expulsos porque tinham mais ouro que a própria Coroa.</p>
-      <div class="pista"><span>Pista:</span> <span data-pt="Por que o Brasil ficou 300 anos proibido de ter universidades?" data-en="Why was Brazil forbidden to have universities for 300 years?" data-es="¿Por qué Brasil estuvo 300 años sin universidades?" data-fr="Pourquoi le Brésil est resté 300 ans sans universités?">Por que o Brasil ficou 300 anos proibido de ter universidades?</span></div>
+      <h4 data-pt="O Labirinto do Ouro e da Fé" data-en="The Labyrinth of Gold and Faith" data-es="El Laberinto del Oro y la Fe" data-fr="Le Labyrinthe de l'Or et de la Foi">O Labirinto do Ouro e da Fé</h4>
+      <p data-pt="Caravelas que não traziam só especiarias. Aldeias jesuíticas mais ricas que Portugal. Em 1759, os jesuítas foram expulsos porque tinham mais ouro que a própria Coroa." data-en="Caravels that brought more than spices. Jesuit villages richer than Portugal. In 1759, Jesuits were expelled because they had more gold than the Crown." data-es="Carabelas que no traían solo especias. Aldeas jesuitas más ricas que Portugal." data-fr="Des caravelles qui n'apportaient pas que des épices. Villages jésuites plus riches que le Portugal.">Caravelas que não traziam só especiarias. Aldeias jesuíticas mais ricas que Portugal. Em 1759, os jesuítas foram expulsos porque tinham mais ouro que a própria Coroa.</p>
+      <div class="pista"><span data-pt="Pista:" data-en="Clue:" data-es="Pista:" data-fr="Indice:">Pista:</span> <span data-pt="Por que o Brasil ficou 300 anos proibido de ter universidades?" data-en="Why was Brazil forbidden to have universities for 300 years?" data-es="¿Por qué Brasil estuvo 300 años prohibido de tener universidades?" data-fr="Pourquoi le Brésil est resté 300 ans sans universités?">Por que o Brasil ficou 300 anos proibido de ter universidades?</span></div>
     </div>
     <div class="card-historia">
       <div class="card-topo"><span class="num-caso">CASO 02</span><span>👑</span></div>
       <h3 data-pt="O Império" data-en="The Empire" data-es="El Imperio" data-fr="L'Empire">O Império</h3>
       <h4 data-pt="O Golpe Chamado Independência" data-en="The Coup Called Independence" data-es="El Golpe Llamado Independencia" data-fr="Le Coup Appelé Indépendance">O Golpe Chamado Independência</h4>
-      <p data-pt="Um príncipe devedor que virou imperador da noite pro dia. Uma independência comprada por 2 milhões de libras e uma Constituição rasgada pelo próprio autor." data-en="A debtor prince who became emperor overnight. An independence bought for 2 million pounds." data-es="Un príncipe deudor que se volvió emperador de la noche a la mañana." data-fr="Un prince débiteur devenu empereur du jour au lendemain.">Um príncipe devedor que virou imperador da noite pro dia. Uma independência comprada por 2 milhões de libras e uma Constituição rasgada pelo próprio autor.</p>
-      <div class="pista"><span>Pista:</span> <span data-pt="Quem realmente pagou o preço do 'Fico'?" data-en="Who really paid the price for the 'Fico'?" data-es="¿Quién pagó realmente el precio del 'Fico'?" data-fr="Qui a vraiment payé le prix du 'Fico'?">Quem realmente pagou o preço do "Fico"?</span></div>
+      <p data-pt="Um príncipe devedor que virou imperador da noite pro dia. Uma independência comprada por 2 milhões de libras e uma Constituição rasgada pelo próprio autor." data-en="A debtor prince turned emperor overnight. Independence bought for 2 million pounds and a Constitution torn by its own author." data-es="Un príncipe deudor que se volvió emperador de la noche a la mañana." data-fr="Un prince débiteur devenu empereur du jour au lendemain.">Um príncipe devedor que virou imperador da noite pro dia. Uma independência comprada por 2 milhões de libras e uma Constituição rasgada pelo próprio autor.</p>
+      <div class="pista"><span data-pt="Pista:" data-en="Clue:" data-es="Pista:" data-fr="Indice:">Pista:</span> <span data-pt="Quem realmente pagou o preço do 'Fico'?" data-en="Who really paid the price for the 'Fico'?" data-es="¿Quién pagó realmente el precio del 'Fico'?" data-fr="Qui a vraiment payé le prix du 'Fico'?">Quem realmente pagou o preço do "Fico"?</span></div>
     </div>
     <div class="card-historia">
       <div class="card-topo"><span class="num-caso">CASO 03</span><span>⚖️</span></div>
       <h3 data-pt="Primeira República" data-en="First Republic" data-es="Primera República" data-fr="Première République">Primeira República</h3>
       <h4 data-pt="A República da Espada e do Café" data-en="The Republic of Sword and Coffee" data-es="La República de la Espada y el Café" data-fr="La République de l'Épée et du Café">A República da Espada e do Café</h4>
-      <p data-pt="15 de novembro não foi proclamação, foi quartelada. Coronéis que compravam votos, presidentes que governavam de chapéu e um povo que assistiu a tudo bestializado." data-en="November 15th was not a proclamation, it was a barracks coup." data-es="El 15 de noviembre no fue proclamación, fue cuartelazo." data-fr="Le 15 novembre n'était pas une proclamation, c'était un coup de caserne.">15 de novembro não foi proclamação, foi quartelada. Coronéis que compravam votos, presidentes que governavam de chapéu e um povo que assistiu a tudo bestializado.</p>
-      <div class="pista"><span>Pista:</span> <span data-pt="Por que a primeira bandeira da República era cópia dos EUA?" data-en="Why was the first flag of the Republic a copy of the USA?" data-es="¿Por qué la primera bandera era copia de EE.UU.?" data-fr="Pourquoi le premier drapeau était-il une copie des USA?">Por que a primeira bandeira da República era cópia dos EUA?</span></div>
+      <p data-pt="15 de novembro não foi proclamação, foi quartelada. Coronéis que compravam votos, presidentes que governavam de chapéu e um povo que assistiu a tudo bestializado." data-en="Nov 15th was not a proclamation, it was a barracks coup. Colonels buying votes." data-es="El 15 de noviembre no fue proclamación, fue cuartelazo." data-fr="Le 15 novembre n'était pas une proclamation, c'était un coup de caserne.">15 de novembro não foi proclamação, foi quartelada. Coronéis que compravam votos, presidentes que governavam de chapéu e um povo que assistiu a tudo bestializado.</p>
+      <div class="pista"><span data-pt="Pista:" data-en="Clue:" data-es="Pista:" data-fr="Indice:">Pista:</span> <span data-pt="Por que a primeira bandeira da República era cópia dos EUA?" data-en="Why was the first flag of the Republic a copy of the USA?" data-es="¿Por qué la primera bandera era copia de EE.UU.?" data-fr="Pourquoi le premier drapeau était une copie des USA?">Por que a primeira bandeira da República era cópia dos EUA?</span></div>
     </div>
   </div>
 </div>
@@ -132,71 +164,63 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p></div>
-      <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="sobre.html">Sobre</a><a href="artigos.html">Artigos</a><a href="quiz.html">Quiz</a><a href="turismo-colonial.html">🌍 Turismo Colonial</a></div>
-      <div class="footer-col"><h4>Produtos</h4><a href="ebook.html">📘 E-book</a><a href="loja.html">🛒 Loja</a><a href="afiliados.html">🤝 Afiliados</a><a href="doacao.html">💰 Doação</a></div>
-      <div class="footer-col"><h4>Clube Prisma</h4><div class="footer-news-card"><p>Receba roteiros secretos. Grátis.</p><input type="email" id="prismaEmail" placeholder="seu melhor email"><button id="prismaBtn">Entrar pro Clube →</button></div></div>
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-pt="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From gold mines to colonial tourism." data-es="Enfoque analítico de la Historia de Brasil. De minas de oro a turismo colonial." data-fr="Approche analytique de l'Histoire du Brésil. Des mines d'or au tourisme colonial.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt="Sobre o Projeto" data-en="About the Project" data-es="Sobre el Proyecto" data-fr="À propos">Sobre o Projeto</a>
+        <a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="quiz.html" data-pt="Quiz Histórico" data-en="History Quiz" data-es="Quiz Histórico" data-fr="Quiz Historique">Quiz Histórico</a>
+        <a href="turismo-colonial.html" data-pt="🌍 Turismo Colonial" data-en="🌍 Colonial Tourism" data-es="🌍 Turismo Colonial" data-fr="🌍 Tourisme Colonial">🌍 Turismo Colonial</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html" data-pt="📘 E-book Completo" data-en="📘 Complete E-book" data-es="📘 E-book Completo" data-fr="📘 E-book Complet">📘 E-book Completo</a>
+        <a href="loja.html" data-pt="🛒 Loja Oficial" data-en="🛒 Official Shop" data-es="🛒 Tienda Oficial" data-fr="🛒 Boutique">🛒 Loja Oficial</a>
+        <a href="afiliados.html" data-pt="🤝 Afiliados" data-en="🤝 Partners" data-es="🤝 Afiliados" data-fr="🤝 Affiliés">🤝 Afiliados</a>
+        <a href="doe.html" data-pt="💰 Doação PIX / PayPal" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação PIX / PayPal</a>
+        <a href="privacidade.html" data-pt="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
+        <a href="termos.html" data-pt="📄 Termos de Uso" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos de Uso</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-pt="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret guides not on site. Free." data-es="Recibe guías secretas que no van al sitio. Gratis." data-fr="Recevez des guides secrets pas sur le site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join Club →" data-es="Entrar al Club →" data-fr="Rejoindre →">Entrar pro Clube →</button>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Prisma Histórico</span><span>Feito com ☕ e 4h de sono em São Paulo</span></div>
+    <div class="footer-bottom">
+      <span>© <span id="ano"></span> <span data-pt="Prisma Histórico" data-en="Prisma Histórico" data-es="Prisma Histórico" data-fr="Prisma Histórico">Prisma Histórico</span></span>
+      <span data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
   </div>
 </footer>
 
 <script>
-// HAMBURGUER 100% CORRIGIDO - FUNCIONA EM QUALQUER LUGAR
-const nav = document.getElementById('prismaNav');
-const btnMenu = document.getElementById('btnMenu');
-
-btnMenu.addEventListener('click', (e) => {
-  e.stopPropagation();
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow = nav.classList.contains('menu-aberto') ? 'hidden' : '';
-});
-
-// FECHA AO CLICAR FORA
-document.addEventListener('click', (e) => {
-  if (nav.classList.contains('menu-aberto') && !nav.contains(e.target)) {
-    nav.classList.remove('menu-aberto');
-    document.body.style.overflow = '';
-  }
-});
-
-// FECHA AO CLICAR NO LINK
-document.querySelectorAll('.prisma-menu-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('menu-aberto');
-    document.body.style.overflow = '';
+const nav=document.getElementById('prismaNav'), btnMenu=document.getElementById('btnMenu');
+btnMenu.addEventListener('click',e=>{e.stopPropagation(); nav.classList.toggle('menu-aberto'); document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',e=>{ if(!e.target.closest('#prismaNav')){ nav.classList.remove('menu-aberto'); document.body.style.overflow=''; }});
+function setLang(l){
+  localStorage.setItem('prisma_lang',l);
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    const t=el.getAttribute('data-'+l);
+    if(t) el.innerHTML=t;
   });
-});
-
-// IDIOMAS 100% CORRIGIDO - TROCA TUDO
-const langButtons = document.querySelectorAll('.lang-switch button');
-const translatable = document.querySelectorAll('[data-pt]');
-
-function setLang(lang){
-  localStorage.setItem('prisma_lang', lang);
-  localStorage.setItem('prisma-lang', lang);
-  langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
-  translatable.forEach(el => {
-    const txt = el.getAttribute('data-'+lang);
-    if(txt) el.innerHTML = txt;
-  });
-  document.documentElement.lang = lang;
+  document.getElementById('ano').textContent=new Date().getFullYear();
 }
-
-langButtons.forEach(btn => {
-  btn.addEventListener('click', () => setLang(btn.dataset.lang));
-});
-
-// INICIA COM IDIOMA SALVO
-setLang(localStorage.getItem('prisma_lang') || localStorage.getItem('prisma-lang') || 'pt');
-
-// EMAIL
-document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+setLang(localStorage.getItem('prisma_lang')||'pt');
+document.getElementById('prismaBtn')?.addEventListener('click',()=>{
   const v=document.getElementById('prismaEmail').value.trim();
-  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
+  if(!v.includes('@')){ alert('Email inválido tchê!'); return; }
   alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
 });
 </script>
-
 </body>
 </html>

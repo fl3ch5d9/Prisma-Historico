@@ -10,40 +10,57 @@
 >
 
 <style>
+
 :root{--ouro:#D4AF37;--preto:#0D0D0B;--card:#171410;--creme:#F2EDE3;--sepia-titulo:#D9C5A0;--sepia:#A99B85;--borda:rgba(212,175,55,0.14)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:200}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:200; overflow-x:hidden}
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(13,13,11,0.97);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em}.prisma-logo span{color:var(--ouro);font-weight:700}
 .lang-switch{display:flex;gap:5px}.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia);padding:6px 9px;border-radius:20px;cursor:pointer;font-size:10px;min-width:36px;min-height:34px}
 .lang-switch button.active{background:var(--ouro);color:#0D0D0B;font-weight:700;border-color:var(--ouro)}
-.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
+.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer;z-index:10002}
 .prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro);display:block;transition:0.35s}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+/* CORRIGIDO COM ESPAÇO */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif}
 .hero-afiliado{padding:150px 5% 70px;text-align:center;background:radial-gradient(600px at 50% -10%, rgba(212,175,55,0.12), transparent)}
 .comissao-box{margin:44px auto 0;max-width:520px;background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:28px;display:flex;align-items:center;justify-content:space-around;gap:20px}
 
-/* FOOTER CORRIGIDO - COM ESPAÇO */
-#prismaFooter{background:#0F0E0C;border-top:1px solid var(--borda);padding:60px 5% 30px}
-#prismaFooter.footer-wrap{max-width:1180px;margin:0 auto}
-#prismaFooter.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-#prismaFooter.footer-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme)}
-#prismaFooter.footer-logo span{color:var(--ouro);font-weight:700}
-#prismaFooter.footer-desc{font-weight:200;font-size:12px;line-height:1.7;color:var(--sepia);margin-top:16px;max-width:280px}
-#prismaFooter.footer-col h4{font-family:'Cinzel',serif;font-weight:400;font-size:10px;letter-spacing:0.2em;color:var(--sepia-titulo);margin-bottom:18px}
-#prismaFooter.footer-col a{font-weight:200;font-size:12px;color:var(--sepia);text-decoration:none;display:block;margin-bottom:10px;transition:0.2s}
-#prismaFooter.footer-col a:hover{color:var(--creme);padding-left:2px}
-#prismaFooter.footer-news-card{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:20px}
-#prismaFooter.footer-bottom{border-top:1px solid rgba(212,175,55,0.08);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-#prismaFooter.footer-bottom span{font-weight:200;font-size:10px;color:var(--sepia);opacity:0.6}
-@media(max-width:900px){#prismaFooter.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){#prismaFooter.footer-grid{grid-template-columns:1fr;gap:28px}#prismaFooter.footer-bottom{flex-direction:column;text-align:center}}
+/* FOOTER CORRIGIDO COM ESPAÇO */
+#prismaFooter{background:#0F0E0C;border-top:1px solid var(--borda);padding:60px 5% 30px; width:100%}
+#prismaFooter .footer-wrap{max-width:1180px;margin:0 auto; width:100%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+#prismaFooter .footer-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme)}
+#prismaFooter .footer-logo span{color:var(--ouro);font-weight:700}
+#prismaFooter .footer-desc{font-weight:200;font-size:12px;line-height:1.7;color:var(--sepia);margin-top:16px;max-width:280px}
+#prismaFooter .footer-col h4{font-family:'Cinzel',serif;font-weight:400;font-size:10px;letter-spacing:0.2em;color:var(--sepia-titulo);margin-bottom:18px}
+#prismaFooter .footer-col a{font-weight:200;font-size:12px;color:var(--sepia);text-decoration:none;display:block;margin-bottom:10px}
+#prismaFooter .footer-news-card{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:20px}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(212,175,55,0.08);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+#prismaFooter .footer-bottom span{font-weight:200;font-size:10px;color:var(--sepia);opacity:0.6}
+
+/* MEDIA QUERY AFILIADOS - SÓ 2 */
+@media(max-width:900px){
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
+  .comissao-box{flex-direction:column; text-align:center}
+}
+@media(max-width:600px){
+  .prisma-logo{font-size:18px}
+  #prismaFooter .footer-grid{grid-template-columns:1fr; gap:28px}
+  #prismaFooter .footer-bottom{flex-direction:column; text-align:center}
+  .prisma-menu-links{width:100%; max-width:100vw}
+}
+
+
+
 </style>
+
+
+
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
@@ -77,19 +94,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 </footer>
 
 
-<style>
-
-#prismaFooter .footer-wrap{max-width:1180px;margin:0 auto}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-#prismaFooter .footer-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme)}
-#prismaFooter .footer-logo span{color:var(--ouro);font-weight:700}
-#prismaFooter .footer-desc{font-size:12px;line-height:1.7;color:var(--sepia);margin-top:16px;max-width:280px}
-#prismaFooter .footer-col h4{font-family:'Cinzel',serif;font-size:10px;letter-spacing:0.2em;color:var(--sepia-titulo);margin-bottom:18px}
-#prismaFooter .footer-col a{display:block;margin-bottom:10px;font-size:12px;color:var(--sepia);text-decoration:none}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:20px}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(212,175,55,0.08);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-#prismaFooter .footer-bottom span{font-size:10px;color:var(--sepia);opacity:0.6}
-</style>
 
 
 
