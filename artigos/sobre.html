@@ -20,11 +20,11 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s; transform-origin:center;}
 /* HAMBURGUER CORRIGIDO - SEM ESPAÇO ERRADO */
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav .menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-nav .menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
@@ -89,6 +89,8 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
     <li><a href="turismo-colonial.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
   </ul>
 </nav>
+
+
 
 <section class="secao-manifesto">
 <div class="container-manifesto">

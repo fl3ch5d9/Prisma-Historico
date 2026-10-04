@@ -17,11 +17,11 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
 .lang-switch button.active{background:var(--ouro);color:#121212;font-weight:400}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s;transform-origin:center}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7;font-weight:200;}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
@@ -43,24 +43,25 @@ article p strong{color:var(--creme);font-weight:400;opacity:0.9}
 .contact b{color:var(--creme);font-weight:400}
 .contact a{color:var(--ouro);text-decoration:none;border-bottom:1px solid rgba(238,188,108,0.15);transition:.2s}
 .contact a:hover{border-color:var(--ouro)}
+
 #btnTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--ouro);color:#000;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;visibility:hidden;transform:translateY(20px);transition:all 0.4s;z-index:1000;font-weight:300}
 #btnTop.show{opacity:1;visibility:visible;transform:translateY(0)}
 @media(max-width:600px){h1{font-size:38px}.wrap{padding:40px 5%} article{padding:28px 20px}}
 
 #prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
-#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9;font-weight:300;}
-#prismaFooter.footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter.footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text);font-weight:200;}
-#prismaFooter.footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200;}
-#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter.footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text);font-weight:200;}
-#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;font-weight:200;}
-#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em;}
-#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text);font-weight:200;letter-spacing:0.06em;}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9;font-weight:300;}
+#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text);font-weight:200;}
+#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
+#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200;}
+#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
+#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text);font-weight:200;}
+#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;font-weight:200;}
+#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em;}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text);font-weight:200;letter-spacing:0.06em;}
 </style>
 </head>
 <body>

@@ -6,7 +6,7 @@
 <title>Prisma Histórico | Brasil Colônia ao Império</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="/css/style.css">
 <style>
 :root{--carvao-body:#0D0D0B;--carvao-card:#171410;--carvao-card-2:#1E1A16;--sepia-titulo:#D9C5A0;--sepia-texto:#A99B85;--branco-cal:#F2EDE3;--ouro-minas:#D4AF37;--borda:rgba(212,175,55,0.14)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -92,6 +92,37 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
 #cookieAceitar{background:var(--ouro-minas);color:#0D0D0B;border:none;padding:10px 20px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;cursor:pointer}
 #cookieRecusar{background:transparent;color:var(--sepia-texto);border:1px solid var(--borda);padding:10px 16px;border-radius:30px;font-family:'Cinzel';font-size:9px;cursor:pointer}
 @media(min-width:900px){.ebook-intro{padding:80px 50px}.ebook-texto h2{font-size:58px}.ag-carrossel{padding:0 50px}.ag-box{padding:22px 26px}.ag-box h3{font-size:14px}.pagina{width:300px}.pagina img{height:400px}}
+
+
+/**/
+/* === CELULAR E TABLET - SÓ ISSO === */
+@media(max-width:1024px){
+  .prisma-nav{padding:12px 4%}
+  .header-investigativo h2{font-size:36px}
+  .header-investigativo h2 em{font-size:40px}
+  .grid-investigacao{grid-template-columns:1fr 1fr; gap:18px}
+}
+
+@media(max-width:768px){
+  body{padding-top:68px}
+  .prisma-logo{font-size:22px}
+  .header-investigativo{margin-bottom:40px}
+  .header-investigativo h2{font-size:28px; line-height:1.2}
+  .header-investigativo h2 em{font-size:32px}
+  .grid-investigacao{grid-template-columns:1fr}
+  .card-historia{padding:22px; max-height:none}
+  #prismaFooter .footer-grid{grid-template-columns:1fr; gap:32px}
+  #prismaFooter .footer-wrap{padding:40px 5% 0 5%}
+  #prismaFooter .footer-bottom{flex-direction:column; text-align:center}
+}
+
+@media(max-width:480px){
+  .lang-switch button{padding:5px 8px; font-size:9px}
+  .header-investigativo h2{font-size:24px}
+  .secao-manifesto{padding:60px 5%}
+}
+
+
 </style>
 </head>
 <body>
@@ -165,7 +196,42 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
   <a href="artigos/ebook.html" class="btn-ouro" data-pt-BR="QUERO ACESSAR O EBOOK COMPLETO" data-en="I WANT FULL EBOOK ACCESS" data-es="QUIERO ACCEDER AL E-BOOK COMPLETO" data-fr="JE VEUX ACCÉDER À L'E-BOOK COMPLET">QUERO ACESSAR O EBOOK COMPLETO</a>
 </section>
 
-<footer id="prismaFooter"><div class="footer-wrap"><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil.</p><div class="footer-bottom"><span>© 2026 Prisma Histórico</span></div></div></footer>
+<!-- FOOTER GLOBAL ÚNICO -->
+<footer id="prismaFooter" style="background:#0F0E0C;border-top:1px solid rgba(212,175,55,0.14);padding:60px 5% 30px">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;margin-bottom:16px"><span style="color:#D4AF37;font-weight:700">Prisma</span> <span style="color:#F2EDE3">Histórico</span></div>
+      <p style="color:#A99B85;font-size:12px;line-height:1.7;max-width:280px" data-pt-BR="Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From Colonial Brazil to Empire, with surgical logic." data-es="Enfoque analítico de la Historia de Brasil. Del Brasil Colonial al Imperio, con lógica quirúrgica." data-fr="Approche analytique de l'Histoire du Brésil. Du Brésil Colonial à l'Empire, avec une logique chirurgicale.">Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica.</p>
+    </div>
+    <div>
+      <h4 style="font-family:'Cinzel';font-size:10px;letter-spacing:0.2em;color:#D9C5A0;margin-bottom:18px" data-pt-BR="NAVEGAR" data-en="NAVIGATE" data-es="NAVEGAR" data-fr="NAVIGUER">NAVEGAR</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+        <li><a href="index.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</a></li>
+        <li><a href="artigos/artigos.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</a></li>
+        <li><a href="artigos/ebook.html" style="color:#A99B85;font-size:12px;text-decoration:none">E-BOOK</a></li>
+        <li><a href="artigos/quiz.html" style="color:#A99B85;font-size:12px;text-decoration:none">QUIZ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Cinzel';font-size:10px;letter-spacing:0.2em;color:#D9C5A0;margin-bottom:18px" data-pt-BR="SUPORTE" data-en="SUPPORT" data-es="SOPORTE" data-fr="SUPPORT">SUPORTE</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
+        <li><a href="artigos/sobre.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a></li>
+        <li><a href="artigos/afiliados.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="Afiliados" data-en="Affiliates" data-es="Afiliados" data-fr="Affiliés">Afiliados</a></li>
+        <li><a href="artigos/doacao.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="Doação" data-en="Donation" data-es="Donación" data-fr="Don">Doação</a></li>
+        <li><a href="artigos/privacidade.html" style="color:#A99B85;font-size:12px;text-decoration:none" data-pt-BR="Privacidade" data-en="Privacy" data-es="Privacidad" data-fr="Confidentialité">Privacidade</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:'Cinzel';font-size:10px;letter-spacing:0.2em;color:#D9C5A0;margin-bottom:18px">E-BOOK</h4>
+      <p style="color:#A99B85;font-size:11px;line-height:1.6;margin-bottom:14px" data-pt-BR="120 páginas premium com mapas exclusivos." data-en="120 premium pages with exclusive maps." data-es="120 páginas premium con mapas exclusivos." data-fr="120 pages premium avec cartes exclusives.">120 páginas premium com mapas exclusivos.</p>
+      <a href="artigos/ebook.html" style="background:#D4AF37;color:#0D0D0B;padding:10px 18px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;text-decoration:none;display:inline-block" data-pt-BR="COMPRAR AGORA - R$69,90" data-en="BUY NOW - $19.90" data-es="COMPRAR AHORA - €19,90" data-fr="ACHETER MAINTENANT - 19,90€">COMPRAR AGORA - R$69,90</a>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(212,175,55,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <span style="color:#A99B85;font-size:10px;opacity:0.6">© <span id="anoAtual">2026</span> Prisma Histórico • <span data-pt-BR="Todos os direitos reservados" data-en="All rights reserved" data-es="Todos los derechos reservados" data-fr="Tous droits réservés">Todos os direitos reservados</span></span>
+    <span id="dataLocalizada" style="color:#A99B85;font-size:10px;opacity:0.6"></span>
+  </div>
+</footer>
 
 <div id="cookieBanner">
   <div class="cookie-icon"><span class="material-icons">cookie</span></div>
@@ -180,14 +246,12 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
 </div>
 
 <script>
-// GAVETA 100% CELULAR
 const nav=document.getElementById('prismaNav');
 const hamb=document.getElementById('hambBtn');
 hamb.addEventListener('click',e=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&nav.classList.contains('menu-aberto')){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
 document.getElementById('menuLinks').querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{nav.classList.remove('menu-aberto');document.body.style.overflow='';});});
 
-// IDIOMAS PT-BR MÃE + COOKIE COM DATA
 function aplicarTraducao(lang){
   localStorage.setItem('prisma_lang',lang);
   document.documentElement.lang=lang;
@@ -195,6 +259,15 @@ function aplicarTraducao(lang){
     const txt=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
     if(txt) el.innerHTML=txt;
   });
+  atualizarDataFooter(lang);
+}
+function atualizarDataFooter(lang){
+  const agora=new Date();
+  document.getElementById('anoAtual').textContent=agora.getFullYear();
+  const localeMap={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
+  const timeZoneMap={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
+  const fmt=new Intl.DateTimeFormat(localeMap[lang]||'pt-BR',{dateStyle:'long',timeZone:timeZoneMap[lang]||'America/Sao_Paulo'});
+  document.getElementById('dataLocalizada').textContent=fmt.format(agora);
 }
 document.querySelectorAll('.lang-switch button').forEach(b=>{
   b.addEventListener('click',e=>{
@@ -207,7 +280,6 @@ const salvo=localStorage.getItem('prisma_lang')||'pt-BR';
 document.getElementById('btn-'+salvo)?.classList.add('active');
 aplicarTraducao(salvo);
 
-// CARROSSEL
 const track=document.getElementById('track');
 const prev=document.getElementById('prev');
 const next=document.getElementById('next');
@@ -216,8 +288,6 @@ if(track&&prev&&next){
   next.addEventListener('click',()=>track.scrollBy({left:getScroll(),behavior:'smooth'}));
   prev.addEventListener('click',()=>track.scrollBy({left:-getScroll(),behavior:'smooth'}));
 }
-
-// COOKIE COM DATA E IDIOMA
 const banner=document.getElementById('cookieBanner');
 if(localStorage.getItem('prisma_cookies')) banner.style.display='none';
 document.getElementById('cookieAceitar')?.addEventListener('click',()=>{localStorage.setItem('prisma_cookies','aceito-'+new Date().toISOString());banner.style.display='none';});

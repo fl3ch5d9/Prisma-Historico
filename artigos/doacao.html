@@ -3,220 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doe - Apoie o Prisma Histórico</title>
+<title>Doe - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+
 <style>
 :root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--sepia:#d8c9a8;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased;}
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em; font-weight:300;}
-.prisma-logo span{color:var(--ouro);font-weight:400}
-.lang-switch{display:flex;gap:6px}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; font-weight:200; letter-spacing:0.08em;}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
-.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
+body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:200;padding-top:78px}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;font-weight:300;z-index:10002}.prisma-logo span{color:var(--ouro)}
+.lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda)}
+.lang-switch button{background:transparent;border:0;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em}
+.lang-switch button.active{background:var(--ouro);color:#121212}
+.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
+.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s;transform-origin:center}
+/* CORRIGIDO COM ESPAÇO */
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;opacity:0;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important;opacity:1!important}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
-.hero-doacao{padding:150px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
-.tag{color:var(--ouro);font-size:9px;letter-spacing:0.24em;font-weight:300;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:22px; text-transform:uppercase;}
-.hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:18px; font-weight:300; letter-spacing:-0.02em;}
-.hero-doacao h1 span{color:var(--ouro);font-style:italic; font-weight:300;}
-.hero-doacao p{opacity:0.45;line-height:1.9;max-width:620px;margin:auto;font-size:14.5px; font-weight:200;}
-.box-doacao{display:grid;grid-template-columns:380px 1fr;gap:22px;max-width:1100px;margin:40px auto 60px auto;padding:0 5%;align-items:stretch}
-.qr-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;padding:28px;text-align:center;display:flex;flex-direction:column;height:100%}
-.qr-img{width:100%;max-width:240px;aspect-ratio:1/1;background:#F5F5F0;border-radius:14px;margin:0 auto 16px auto;display:flex;align-items:center;justify-content:center;color:#121212;font-weight:400;font-size:13px;overflow:hidden;flex-shrink:0; letter-spacing:0.04em;}
-.qr-card b{display:block;font-size:13px;margin-top:4px; font-weight:400; letter-spacing:0.04em;}
-.qr-sub{display:block;opacity:0.4;font-size:12px;margin-top:6px; font-weight:200;}
-.pix-key-box{margin-top:auto;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.22);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:nowrap}
-.pix-key-box code{font-size:10.5px;color:var(--ouro);white-space:nowrap;flex:1;text-align:left; font-weight:300;}
-.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:8px 16px;border-radius:100px;font-weight:400;font-size:10px;cursor:pointer;flex-shrink:0; letter-spacing:0.08em;}
-.btn-paypal{display:block;width:100%;background:transparent; border:1px solid var(--ouro); color:var(--ouro);padding:14px;border-radius:100px;text-align:center;text-decoration:none;font-weight:300; font-size:12px; letter-spacing:0.08em; margin-top:12px;transition:0.3s}
-.btn-paypal:hover{background:var(--ouro);color:#121212}
-.info-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-left:1px solid var(--ouro);border-radius:16px;padding:32px;display:flex;flex-direction:column;height:100%}
-.info-card h2{font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px; font-weight:300; letter-spacing:-0.01em;}
-.info-card p{opacity:0.45;line-height:1.9;font-size:14px;margin-bottom:14px; font-weight:200;}
-.valores{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0}
-.valores button{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:var(--sepia);padding:14px;border-radius:12px;font-weight:300;cursor:pointer;transition:0.3s; font-size:13px; letter-spacing:0.04em;}
-.valores button:hover{border-color:rgba(238,188,108,0.25);background:rgba(238,188,108,0.06);color:var(--ouro);transform:translateY(-1px)}
-.impacto{display:flex;flex-direction:column;gap:10px;margin-top:auto}
-.impacto div{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:12px;font-size:12.5px; font-weight:200;}
-.impacto div i{width:30px;height:30px;background:rgba(238,188,108,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ouro);flex-shrink:0; font-size:14px;}
+.hero-doacao{padding:90px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
+.tag{color:var(--ouro);font-size:9px;letter-spacing:0.24em;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:22px;text-transform:uppercase}
+.hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:18px;font-weight:300}
+.hero-doacao h1 span{color:var(--ouro);font-style:italic}
+.hero-doacao p{opacity:0.45;line-height:1.9;max-width:620px;margin:auto;font-size:14.5px}
+.box-doacao{display:grid;grid-template-columns:380px 1fr;gap:22px;max-width:1100px;margin:40px auto 60px auto;padding:0 5%}
+.qr-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;padding:28px;text-align:center;display:flex;flex-direction:column}
+.qr-img{width:100%;max-width:240px;aspect-ratio:1/1;background:#F5F5F0;border-radius:14px;margin:0 auto 16px auto;display:flex;align-items:center;justify-content:center;color:#121212;font-size:13px}
+.pix-key-box{margin-top:auto;background:#0E0E0E;border:1px dashed rgba(238,188,108,0.22);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pix-key-box code{font-size:10.5px;color:var(--ouro);flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis}
+.btn-copiar{background:var(--ouro);color:#121212;border:0;padding:8px 16px;border-radius:100px;font-size:10px;cursor:pointer}
+.btn-paypal{display:block;width:100%;background:transparent;border:1px solid var(--ouro);color:var(--ouro);padding:14px;border-radius:100px;text-align:center;text-decoration:none;font-size:12px;margin-top:12px}
+.info-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-left:1px solid var(--ouro);border-radius:16px;padding:32px}
+.valores{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:10px!important;margin:24px 0!important;width:100%!important}
+.valores button{width:100%;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:var(--sepia);border-radius:12px;cursor:pointer;font-size:13px}
+.valores button:hover{border-color:var(--ouro);color:var(--ouro);background:rgba(238,188,108,0.08)}
 
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
-#prismaFooter.footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter.footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter.footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter.footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter.footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter.footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter.footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter.footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter.footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter.footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
-#prismaFooter.footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter.footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
-@media(max-width:900px){.box-doacao{grid-template-columns:1fr}.qr-card,.info-card{height:auto}}
-@media(max-width:1024px){#prismaFooter.footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter.footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
-@media(max-width:650px){#prismaFooter.footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter.footer-wrap{padding:50px 5% 0 5%}#prismaFooter.footer-grid > div:first-child{grid-column:1/-1}#prismaFooter.footer-bottom{flex-direction:column}}
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px;padding:70px 6% 30px 6%}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.2fr;gap:60px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:28px;letter-spacing:0.18em;font-weight:300;color:var(--creme)}
+#prismaFooter .footer-logo span{color:var(--ouro)}
+#prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia);margin-top:16px;max-width:300px;opacity:0.6}
+#prismaFooter .footer-col h4{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ouro);margin-bottom:22px;opacity:0.8}
+#prismaFooter .footer-col a{display:block;margin-bottom:12px;font-size:13px;color:var(--sepia);text-decoration:none;transition:0.2s}
+#prismaFooter .footer-col a:hover{color:var(--ouro);transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:#141414;border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:22px}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:24px 0 0 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+#prismaFooter .footer-bottom span{font-size:10px;letter-spacing:0.1em;color:var(--sepia);opacity:0.35;text-transform:uppercase}
+@media(max-width:900px){.box-doacao{grid-template-columns:1fr}#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media(max-width:600px){#prismaFooter .footer-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')" id="btn-pt" class="active">PT</button>
-        <button onclick="setLang('en')" id="btn-en">EN</button>
-        <button onclick="setLang('es')" id="btn-es">ES</button>
-        <button onclick="setLang('fr')" id="btn-fr">FR</button>
-      </div>
-      <button class="prisma-menu-hamburguer"><span></span><span></span><span></span></button>
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div class="lang-switch">
+      <button data-lang="pt" class="active">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="fr">FR</button>
     </div>
-    <ul class="prisma-menu-links">
-       <li><a href="../index.html"><span class="material-icons">home</span> INÍCIO</a></li>
-       <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-       <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-       <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-       <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
-       <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-       <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-       <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-       <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
-    </ul>
+    <button class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
+  </div>
+  <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span> <span data-pt="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span> <span data-pt="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="doe.html"><span class="material-icons">favorite</span> <span data-pt="DOE" data-en="DONATE" data-es="DONAR" data-fr="FAIRE UN DON">DOE</span></a></li>
+  </ul>
 </nav>
+
 <header class="hero-doacao">
-    <span class="tag" data-i18n="tag">Você mantém esse projeto vivo</span>
-    <h1 data-i18n="h1">Seu apoio é o <span>combustível</span> do Prisma Histórico</h1>
-    <p data-i18n="sub">Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.</p>
+  <span class="tag" data-pt="Você mantém esse projeto vivo" data-en="You keep this project alive" data-es="Tú mantienes vivo este proyecto" data-fr="Vous maintenez ce projet en vie">Você mantém esse projeto vivo</span>
+  <h1 data-pt="Seu apoio é o <span>combustível</span> do Prisma" data-en="Your support is the <span>fuel</span> of Prisma" data-es="Tu apoyo es el <span>combustible</span> del Prisma" data-fr="Votre soutien est le <span>carburant</span> du Prisma">Seu apoio é o <span>combustível</span> do Prisma</h1>
+  <p data-pt="Sem anúncios chatos, sem enrolação. 100% independente." data-en="No annoying ads, no fluff. 100% independent." data-es="Sin anuncios molestos. 100% independiente." data-fr="Sans pubs ennuyeuses. 100% indépendant.">Sem anúncios chatos, sem enrolação.</p>
 </header>
+
 <div class="box-doacao">
-    <div class="qr-card">
-        <div class="qr-img" id="qrContainer">COLOQUE SEU QR<br>240x240</div>
-        <b data-i18n="qr_t">Escaneie o QR Code</b>
-        <span class="qr-sub" data-i18n="qr_s">Abra o app do seu banco e pague via PIX</span>
-        <div class="pix-key-box" id="pixBox">
-            <code id="pixKey">cronologia.prisma.historico@gmail.com</code>
-            <button class="btn-copiar" onclick="copiarPix()" data-i18n="btn_copy">COPIAR</button>
-        </div>
-        <div id="paypalBox" style="display:none;width:100%;margin-top:auto">
-            <a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6&no_recurring=0&item_name=Your+donation+funds+independent+multilingual+knowledge+and+connects+readers+worldwide.+Thank+you+for+your+support%21%0A&currency_code=BRL" target="_blank" class="btn-paypal" data-i18n="paypal_btn">Donate via PayPal — International</a> </div>
-        <p style="margin-top:14px;font-size:10px;opacity:0.25; font-weight:200; letter-spacing:0.04em;" data-i18n="pix_obs">Chave PIX - E-mail • Titular: Prisma Histórico</p>
-    </div>
-    <div class="info-card">
-        <h2 data-i18n="why_t">Por que doar?</h2>
-        <p data-i18n="why_p1">Por trás de cada artigo tem <strong style="color:var(--ouro); font-weight:400;">centenas de horas de triagem</strong>, revisão e hospedagem pra te entregar o caminho mais curto até a aprovação.</p>
-        <p data-i18n="why_p2">Quando você doa, você financia a <strong style="color:var(--creme); font-weight:300;">continuidade de um projeto independente</strong> que luta contra a decoreba.</p>
-        <div class="valores">
-            <button onclick="copiarValor(5)">R$ 5</button><button onclick="copiarValor(15)">R$ 15</button><button onclick="copiarValor(30)">R$ 30</button>
-            <button onclick="copiarValor(50)">R$ 50</button><button onclick="copiarValor(100)">R$ 100</button><button onclick="copiarValor(0)">Outro valor</button>
-        </div>
-        <div class="impacto">
-            <div><i>◐</i><span><b style="font-weight:400;">Site sem anúncios:</b> rápido e limpo</span></div>
-            <div><i>◑</i><span><b style="font-weight:400;">E-book sempre atualizado</b></span></div>
-            <div><i>◒</i><span><b style="font-weight:400;">Conteúdo novo:</b> mais artigos e simulados</span></div>
-        </div>
-        <p style="margin-top:22px;background:rgba(238,188,108,0.05);border:1px dashed rgba(238,188,108,0.18);padding:14px;border-radius:10px;text-align:center;color:var(--ouro);font-size:11px;font-weight:300; letter-spacing:0.04em;" data-i18n="any">Qualquer valor já ajuda MUITO — de verdade</p>
-    </div>
+  <div class="qr-card">
+    <div class="qr-img" id="qrContainer">QR 240x240</div>
+    <b data-pt="Escaneie o QR Code" data-en="Scan the QR Code" data-es="Escanea el QR" data-fr="Scannez le QR">Escaneie o QR Code</b>
+    <span style="opacity:0.4;font-size:12px;margin:6px 0 14px 0" data-pt="Abra o app do banco e pague via PIX" data-en="Donate via PayPal from abroad" data-es="Dona vía PayPal" data-fr="Faites un don via PayPal">Abra o app do banco e pague via PIX</span>
+    <div class="pix-key-box" id="pixBox"><code id="pixKey">cronologia.prisma.historico@gmail.com</code><button class="btn-copiar" data-pt="COPIAR" data-en="COPY" data-es="COPIAR" data-fr="COPIER">COPIAR</button></div>
+    <div id="paypalBox" style="display:none;width:100%"><a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6" target="_blank" class="btn-paypal">Donate via PayPal</a></div>
+  </div>
+  <div class="info-card">
+    <h2 style="font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px" data-pt="Por que doar?" data-en="Why donate?" data-es="¿Por qué donar?" data-fr="Pourquoi donner?">Por que doar?</h2>
+    <p style="opacity:0.6;line-height:1.8;font-size:14px" data-pt="Por trás de cada artigo tem centenas de horas de triagem de fontes primárias." data-en="Behind each article there are hundreds of hours of primary source research." data-es="Detrás de cada artículo hay cientos de horas de investigación." data-fr="Derrière chaque article, des centaines d'heures de recherche.">Por trás de cada artigo tem centenas de horas...</p>
+    <div class="valores" id="valoresBox"></div>
+  </div>
 </div>
 
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span> Histórico</div>
-        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <a href="../index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="artigos.html">Artigos</a>
-        <a href="curiosidades.html">Curiosidades</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a>
-      </div>
-      <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="ebook.html">📘 E-book</a>
-        <a href="loja.html">🛒 Loja</a>
-        <a href="afiliados.html">🤝 Afiliados</a>
-        <a href="doacao.html">💰 Doação</a>
-        <a href="privacidade.html">🔒 Privacidade</a>
-        <a href="termos.html">📄 Termos</a>
-      </div>
-      <div class="footer-col">
-        <h4>Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn">Entrar pro Clube →</button>
-        </div>
-      </div>
+      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc" data-pt="Desvendando camadas da história com rigor, estética e narrativa." data-en="Unveiling layers of history with rigor." data-es="Desvelando capas de la historia." data-fr="Dévoilant les couches de l'histoire.">Desvendando camadas da história...</p></div>
+      <div class="footer-col"><h4 data-pt="Mapa" data-en="Map" data-es="Mapa" data-fr="Carte">Mapa</h4><a href="sobre.html" data-pt="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a><a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a><a href="ebook.html">E-book</a></div>
+      <div class="footer-col"><h4 data-pt="Explorar" data-en="Explore" data-es="Explorar" data-fr="Explorer">Explorar</h4><a href="quiz.html">Quiz</a><a href="loja.html" data-pt="Loja" data-en="Shop" data-es="Tienda" data-fr="Boutique">Loja</a><a href="doe.html" data-pt="Doe" data-en="Donate" data-es="Donar" data-fr="Faire un don">Doe</a></div>
+      <div class="footer-news-card"><h4 style="color:var(--ouro);font-size:10px;letter-spacing:0.2em;margin-bottom:10px" data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4><p style="opacity:0.5;font-size:12px;margin-bottom:10px" data-pt="Receba roteiros secretos. Grátis." data-en="Get secret guides. Free." data-es="Recibe guías secretas." data-fr="Guides secrets.">Receba roteiros secretos.</p><input type="email" id="prismaEmail" placeholder="email" style="width:100%;padding:12px;border-radius:10px;background:#1E1E1E;border:1px solid var(--borda);color:#fff;margin-bottom:10px"><button id="prismaBtn" style="width:100%;padding:12px;border-radius:10px;background:var(--ouro);border:0;cursor:pointer" data-pt="Entrar →" data-en="Join →" data-es="Entrar →" data-fr="Rejoindre →">Entrar →</button></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico</span>
-      <span>Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
+    <div class="footer-bottom"><span>© <span id="ano"></span> Prisma Histórico</span><span data-pt="Feito com ☕ em SP" data-en="Made with ☕ in SP" data-es="Hecho con ☕ en SP" data-fr="Fait avec ☕ à SP">Feito com ☕ em SP</span></div>
   </div>
 </footer>
 
 <script>
-const T={
-pt:{tag:"Você mantém esse projeto vivo",h1:"Seu apoio é o <span>combustível</span> do Prisma Histórico",sub:"Sem anúncios chatos, sem enrolação. Cada centavo vai direto pra manter o site rápido, o e-book atualizado e o conteúdo chegando até quem não pode pagar cursinho caro.",qr_t:"Escaneie o QR Code",qr_s:"Abra o app do seu banco e pague via PIX",btn_copy:"COPIAR",pix_obs:"Chave PIX - E-mail • Titular: Prisma Histórico",paypal_btn:"Doar via PayPal — Internacional",why_t:"Por que doar?",why_p1:"Por trás de cada artigo tem <strong style='color:var(--ouro); font-weight:400;'>centenas de horas de triagem</strong>, revisão e hospedagem pra te entregar o caminho mais curto até a aprovação.",why_p2:"Quando você doa, você financia a <strong style='color:var(--creme); font-weight:300;'>continuidade de um projeto independente</strong> que luta contra a decoreba.",any:"Qualquer valor já ajuda MUITO — de verdade"},
-en:{tag:"You keep this project alive",h1:"Your support is the <span>fuel</span> of Prisma Histórico",sub:"No annoying ads. Every cent goes directly to keeping the site fast and the e-book updated.",qr_t:"Support from Abroad",qr_s:"Donate securely via PayPal - works worldwide",btn_copy:"COPY",pix_obs:"Secure donation via PayPal • Works worldwide",paypal_btn:"Donate via PayPal",why_t:"Why donate?",why_p1:"Behind each article there are <strong>hundreds of hours of research</strong> to give you the shortest path.",why_p2:"When you donate, you fund <strong>the continuity of an independent project</strong>.",any:"Any amount helps A LOT — for real"},
-es:{tag:"Tú mantienes vivo este proyecto",h1:"Tu apoyo es el <span>combustible</span> de Prisma Histórico",sub:"Sin anuncios molestos. Cada centavo va directo a mantener el sitio rápido.",qr_t:"Apoyo desde el Exterior",qr_s:"Dona seguro vía PayPal",btn_copy:"COPIAR",pix_obs:"Donación segura vía PayPal",paypal_btn:"Donar vía PayPal",why_t:"¿Por qué donar?",why_p1:"Detrás de cada artículo hay <strong>cientos de horas de selección</strong>.",why_p2:"Cuando donas, financias <strong>la continuidad de un proyecto independiente</strong>.",any:"Cualquier valor ya ayuda MUCHO — de verdad"},
-fr:{tag:"Vous maintenez ce projet en vie",h1:"Votre soutien est le <span>carburant</span> de Prisma Histórico",sub:"Pas de pubs. Chaque centime va directement à maintenir le site rapide.",qr_t:"Soutien depuis l'Étranger",qr_s:"Faites un don sécurisé via PayPal",btn_copy:"COPIER",pix_obs:"Don sécurisé via PayPal",paypal_btn:"Faire un don via PayPal",why_t:"Pourquoi faire un don?",why_p1:"Derrière chaque article il y a <strong>des centaines d'heures de tri</strong>.",why_p2:"Vous financez <strong>la continuité d'un projet indépendant</strong>.",any:"N'importe quel montant aide ÉNORMÉMENT"}
-};
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  document.getElementById('btn-'+l).classList.add('active');
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n');
-    if(T[l][k]) el.innerHTML=T[l][k];
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    let t=el.getAttribute('data-'+l);
+    if(t) el.innerHTML=t;
   });
-  const qrC=document.getElementById('qrContainer');
-  const pixBox=document.getElementById('pixBox');
-  const paypalBox=document.getElementById('paypalBox');
-  if(l==='pt'){
-    qrC.innerHTML='COLOQUE SEU QR<br>240x240';
-    pixBox.style.display='flex';
-    paypalBox.style.display='none';
-  }else{
-    qrC.innerHTML='<span style="font-size:50px; font-weight:200;">—</span><br>PayPal';
-    pixBox.style.display='none';
-    paypalBox.style.display='block';
-  }
+  let qr=document.getElementById('qrContainer'), pix=document.getElementById('pixBox'), pay=document.getElementById('paypalBox'), box=document.getElementById('valoresBox');
+  if(l==='pt'){ qr.innerHTML='QR 240x240'; pix.style.display='flex'; pay.style.display='none'; box.innerHTML='<button>R$ 5</button><button>R$ 15</button><button>R$ 30</button><button>R$ 50</button><button>R$ 100</button><button>Outro</button>'; }
+  else{ qr.innerHTML='PayPal'; pix.style.display='none'; pay.style.display='block'; let s=l==='fr'?'€':'$'; box.innerHTML=`<button>${s} 5</button><button>${s} 15</button><button>${s} 30</button><button>${s} 50</button><button>${s} 100</button><button>Other</button>`; }
 }
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+const nav=document.getElementById('prismaNav'), btn=document.getElementById('btnMenu');
+btn.addEventListener('click',e=>{ e.stopPropagation(); nav.classList.toggle('menu-aberto'); });
+document.addEventListener('click',e=>{ if(!e.target.closest('#prismaNav')) nav.classList.remove('menu-aberto'); });
+document.getElementById('ano').textContent=new Date().getFullYear();
 setLang(localStorage.getItem('prisma_lang')||'pt');
-const nav=document.getElementById('prismaNav');
-nav.querySelector('.prisma-menu-hamburguer').addEventListener('click',()=>{
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
-});
-function copiarPix(){
-  const key=document.getElementById('pixKey').innerText;
-  navigator.clipboard.writeText(key);
-  alert('Chave PIX copiada: '+key);
-}
-function copiarValor(v){
-  if(v==0){alert('Digite o valor que quiser no seu banco usando a chave PIX copiada'); copiarPix(); return;}
-  alert('Vlw demais! Doe R$ '+v+' usando a chave PIX que vou copiar agora 🙏'); copiarPix();
-}
-document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-  const v=document.getElementById('prismaEmail').value.trim();
-  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-});
 </script>
 </body>
 </html>
