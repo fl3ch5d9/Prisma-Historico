@@ -5,86 +5,228 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Turismo Colonial - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-
-
 <style>
-:root{--ouro:#eebc6c;--preto:#121212;--preto2:#1A1A1A;--creme:#F5F5F0;--sepia:#d8c9a8;--borda:rgba(238,188,108,0.12);--verde:#2e7d5a}
+:root{--ouro:#eebc6c;--preto:#121212;--preto2:#1A1A1A;--creme:#F5F5F0;--sepia:#d8c9a8;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased; padding-top:78px;}
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10002; font-weight:300;} .prisma-logo span{color:var(--ouro);font-weight:400}
-.lang-switch{display:flex;gap:4px;z-index:10002;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda);}
-.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s; font-weight:200;}
-.lang-switch button .active{background:var(--ouro);color:#121212;font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+html,body{overflow-x:hidden;width:100%;max-width:100vw;background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:200;padding-top:78px;box-sizing:border-box}
+
+/* NAV FINAL - NÃO SAI DA TELA */
+.prisma-nav{position:fixed;top:0;left:0;width:100%;max-width:100vw;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#121212;border-bottom:1px solid var(--borda);gap:8px;box-sizing:border-box;overflow:hidden}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:18px;letter-spacing:0.18em;z-index:10002;font-weight:300;flex-shrink:1;white-space:nowrap}
+.prisma-logo span{color:var(--ouro);font-weight:400}
+.nav-right{display:flex;align-items:center;gap:6px;flex-shrink:0;margin-left:auto}
+.lang-switch{display:flex;gap:3px;z-index:10002;background:rgba(255,255,255,0.04);padding:3px;border-radius:30px;border:1px solid var(--borda)}
+.lang-switch button{background:transparent;border:1px solid transparent;color:var(--creme);padding:5px 7px;border-radius:20px;cursor:pointer;font-size:9px;letter-spacing:0.08em;min-width:30px;min-height:30px}
+.lang-switch button.active{background:var(--ouro);color:#121212;font-weight:400}
+.prisma-menu-hamburguer{display:flex!important;width:42px;height:42px;min-width:42px;max-width:42px;flex-shrink:0;border:1px solid var(--borda);background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;z-index:10002;border-radius:50%}
+.prisma-menu-hamburguer span{width:16px;height:1px;background:var(--ouro);display:block;transition:0.4s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
+.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7;font-weight:200}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
 
-/* HERO TURISMO */
-.hero-tur{max-width:1250px;margin:0 auto;padding:60px 5% 40px 5%;text-align:center;}
-.hero-tur .tag{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ouro);background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px; font-weight:300; display:inline-block; margin-bottom:18px;}
-.hero-tur h1{font-family:'Cormorant Garamond';font-size:clamp(38px,6vw,68px);line-height:0.9;font-weight:300;letter-spacing:-0.02em;}
-.hero-tur h1 span{color:var(--ouro);font-style:italic;font-weight:300;}
-.hero-tur p{max-width:680px;margin:18px auto 0 auto;opacity:0.45;line-height:1.9;font-size:15px;font-weight:200;}
+.hero-tur{max-width:1250px;margin:0 auto;padding:60px 5% 40px;text-align:center;width:100%;box-sizing:border-box}
+.hero-tur.tag{font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ouro);background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;font-weight:300;display:inline-block;margin-bottom:18px}
+.hero-tur h1{font-family:'Cormorant Garamond';font-size:clamp(32px,6vw,68px);line-height:0.9;font-weight:300;letter-spacing:-0.02em}
+.hero-tur h1 span{color:var(--ouro);font-style:italic}
+.hero-tur p{max-width:680px;margin:18px auto 0;opacity:0.45;line-height:1.9;font-size:15px;font-weight:200}
 
-/* MAPA E ROTEIROS */
-.tur-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:22px;max-width:1250px;margin:40px auto;padding:0 5%;}
-.mapa-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;overflow:hidden;position:relative;height:600px;display:flex;flex-direction:column;}
-.mapa-head{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;}
-.mapa-head b{font-family:'Cormorant Garamond';font-size:18px;font-weight:400;letter-spacing:-0.01em;}
-.mapa-head span{font-size:10px;letter-spacing:0.14em;opacity:0.4;font-weight:200;}
-.mapa-img{flex:1;background:radial-gradient(600px 300px at 30% 20%, rgba(238,188,108,0.12), transparent), linear-gradient(180deg,#151515,#0E0E0E);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.mapa-img::before{content:'🗺️ SÃO ROQUE • OURO PRETO • PARATY • OLINDA';position:absolute;font-size:10px;letter-spacing:0.2em;color:var(--ouro);opacity:0.3;transform:rotate(-8deg);border:1px dashed rgba(238,188,108,0.2);padding:12px 20px;border-radius:100px;}
-.pins{position:absolute;inset:0;}
-.pin{position:absolute;width:10px;height:10px;background:var(--ouro);border-radius:50%;box-shadow:0 0 12px var(--ouro);animation:pulse 2s infinite;}
-@keyframes pulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1);opacity:1}}
+.tur-grid{
+  align-items:start !important;
+}
 
-.roteiros{ display:flex; flex-direction:column; gap:16px; height:600px; overflow-y:auto; scrollbar-width:thin; scrollbar-color:rgba(238,188,108,0.2) transparent; padding-right:6px;}
-.roteiros::-webkit-scrollbar{width:4px} .roteiros::-webkit-scrollbar-thumb{background:rgba(238,188,108,0.2);border-radius:10px}
-.rota-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:22px;transition:0.3s;cursor:pointer;}
-.rota-card:hover{border-color:rgba(238,188,108,0.18);transform:translateY(-2px);}
-.rota-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
-.rota-top i{font-size:9px;letter-spacing:0.18em;color:var(--ouro);background:rgba(238,188,108,0.08);border:1px solid rgba(238,188,108,0.12);padding:5px 10px;border-radius:100px;font-style:normal;font-weight:300;text-transform:uppercase;}
-.rota-top b{font-size:11px;opacity:0.3;font-weight:200;}
-.rota-card h3{font-family:'Cormorant Garamond';font-size:20px;font-weight:400;margin-bottom:6px;letter-spacing:-0.01em;}
-.rota-card p{font-size:12.5px;opacity:0.45;line-height:1.7;font-weight:200;}
-.rota-meta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
-.rota-meta span{font-size:10px;letter-spacing:0.08em;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:100px;color:var(--sepia);font-weight:200;}
-.sep{margin:12px 0 0 0;padding:12px 14px;background:rgba(238,188,108,0.04);border-left:1px solid var(--ouro);border-radius:0 10px 10px 0;font-size:11.5px;color:var(--sepia);font-weight:200;line-height:1.6;}
+.mapa-card{
+  height:520px !important;
+  min-height:520px !important;
+  max-height:520px !important;
+  align-self:start !important;
+}
 
-.cta-tur{max-width:1250px;margin:50px auto;padding:40px 5%;text-align:center;background:linear-gradient(180deg,#1A1A1A,#121212);border:1px solid var(--borda);border-radius:18px;}
-.cta-tur h3{font-family:'Cormorant Garamond';font-size:28px;font-weight:300;margin-bottom:10px;}
-.cta-tur p{opacity:0.4;font-weight:200;font-size:14px;margin-bottom:18px;}
-.btn-tur{background:var(--ouro);color:#121212;padding:14px 28px;border-radius:100px;text-decoration:none;font-weight:400;font-size:12px;letter-spacing:0.1em;display:inline-block;transition:0.3s;}
-.btn-tur:hover{background:#fff;transform:translateY(-2px);}
+.rota-card{
+  flex:0 0 auto !important;
+  height:auto !important;
+}
 
-#prismaFooter{--gold:#eebc6c;--bg:#0A0A0A;--card:#121212;--text:#F5F5F0;background:var(--bg);border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:var(--text);line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--gold);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:var(--text); font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--gold);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:var(--text);opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--gold);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:var(--text); font-weight:200;}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--gold);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:400;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:var(--text); font-weight:200; letter-spacing:0.06em;}
-@media(max-width:900px){.tur-grid{grid-template-columns:1fr}.mapa-card,.roteiros{height:auto}.roteiros{max-height:600px}}
+
+
+.mapa-head{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+.mapa-head b{font-family:'Cormorant Garamond';font-size:18px;font-weight:400}
+.mapa-head span{font-size:10px;letter-spacing:0.14em;opacity:0.4;font-weight:200}
+.mapa-img{flex:1;background:radial-gradient(600px 300px at 30% 20%, rgba(238,188,108,0.12), transparent), linear-gradient(180deg,#151515,#0E0E0E);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.mapa-img::before{content:'🗺️ SÃO ROQUE • OURO PRETO • PARATY • OLINDA';position:absolute;font-size:10px;letter-spacing:0.2em;color:var(--ouro);opacity:0.3;transform:rotate(-8deg);border:1px dashed rgba(238,188,108,0.2);padding:12px 20px;border-radius:100px}
+.pin{position:absolute;width:10px;height:10px;background:var(--ouro);border-radius:50%;box-shadow:0 0 12px var(--ouro);animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.4);opacity:0.6}100%{transform:scale(1)}}
+.roteiros{display:flex;flex-direction:column;gap:16px;height:600px;overflow-y:auto;padding-right:6px}
+.rota-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:16px;padding:22px;transition:0.3s}
+.rota-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.rota-top i{font-size:9px;letter-spacing:0.18em;color:var(--ouro);background:rgba(238,188,108,0.08);border:1px solid rgba(238,188,108,0.12);padding:5px 10px;border-radius:100px;font-style:normal;text-transform:uppercase}
+.rota-top b{font-size:11px;opacity:0.3;font-weight:200}
+.rota-card h3{font-family:'Cormorant Garamond';font-size:20px;font-weight:400;margin-bottom:6px}
+.rota-card p{font-size:12.5px;opacity:0.45;line-height:1.7;font-weight:200}
+.rota-meta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.rota-meta span{font-size:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:100px;color:var(--sepia)}
+.sep{margin:12px 0 0;padding:12px 14px;background:rgba(238,188,108,0.04);border-left:1px solid var(--ouro);border-radius:0 10px 10px 0;font-size:11.5px;color:var(--sepia);line-height:1.6}
+
+.cta-tur{max-width:1250px;margin:50px auto;padding:40px 5%;text-align:center;background:linear-gradient(180deg,#1A1A1A,#121212);border:1px solid var(--borda);border-radius:18px;width:92%;box-sizing:border-box}
+.cta-tur h3{font-family:'Cormorant Garamond';font-size:28px;font-weight:300;margin-bottom:10px}
+.cta-tur p{opacity:0.4;font-weight:200;font-size:14px;margin-bottom:18px}
+.btn-tur{background:var(--ouro);color:#121212;padding:14px 28px;border-radius:100px;text-decoration:none;font-weight:400;font-size:12px;letter-spacing:0.1em;display:inline-block}
+
+/*footer*/
+/* FOOTER CORRIGIDO - SELETOR COM ESPAÇO */
+#prismaFooter{
+  background:#0A0A0A;
+  border-top:1px solid rgba(238,188,108,0.12);
+  margin-top:80px;
+  width:100%;
+  max-width:100vw;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+#prismaFooter .footer-wrap{
+  max-width:1280px;
+  margin:0 auto;
+  padding:70px 6% 0;
+  width:100%;
+  box-sizing:border-box;
+}
+#prismaFooter .footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;
+  gap:60px;
+  align-items:start;
+  width:100%;
+}
+#prismaFooter .footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  letter-spacing:0.18em;
+  color:#F5F5F0;
+  line-height:0.9;
+  font-weight:300;
+}
+#prismaFooter .footer-logo span{
+  color:var(--ouro);
+  font-weight:400;
+  display:block;
+}
+#prismaFooter .footer-desc{
+  opacity:0.35;
+  font-size:13px;
+  line-height:1.8;
+  margin-top:18px;
+  max-width:320px;
+  color:#F5F5F0;
+  font-weight:200;
+}
+#prismaFooter .footer-col h4{
+  color:var(--ouro);
+  font-size:10px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  margin-bottom:22px;
+  font-weight:400;
+}
+#prismaFooter .footer-col a{
+  display:block;
+  color:#F5F5F0;
+  opacity:0.4;
+  text-decoration:none;
+  font-size:13px;
+  margin-bottom:14px;
+  font-weight:200;
+  transition:0.2s;
+}
+#prismaFooter .footer-col a:hover{
+  opacity:1;
+  color:var(--ouro);
+  transform:translateX(4px);
+}
+#prismaFooter .footer-news-card{
+  background:#121212;
+  border:1px solid rgba(238,188,108,0.10);
+  border-radius:14px;
+  padding:22px;
+}
+#prismaFooter .footer-news-card p{
+  opacity:0.35;
+  font-size:12px;
+  margin-bottom:14px;
+  line-height:1.6;
+  color:#F5F5F0;
+  font-weight:200;
+}
+#prismaFooter .footer-news-card input{
+  background:#1E1E1E;
+  border:1px solid rgba(238,188,108,0.15);
+  color:#fff;
+  padding:13px 14px;
+  border-radius:10px;
+  width:100%;
+  font-size:13px;
+  margin-bottom:10px;
+  outline:none;
+}
+#prismaFooter .footer-news-card button{
+  background:var(--ouro);
+  color:#121212;
+  border:0;
+  padding:13px 18px;
+  border-radius:10px;
+  width:100%;
+  cursor:pointer;
+  font-size:12px;
+}
+#prismaFooter .footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.06);
+  margin-top:60px;
+  padding:22px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+  opacity:0.25;
+  color:#F5F5F0;
+  font-weight:200;
+  flex-wrap:wrap;
+}
+
+/* MOBILE - 2 COLUNAS ALINHADO */
+@media(max-width:600px){
+  #prismaFooter .footer-wrap{
+    padding:40px 5% 0;
+  }
+  #prismaFooter .footer-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:28px 16px !important;
+  }
+  #prismaFooter .footer-grid > div:first-child{
+    grid-column:1 / -1 !important;
+  }
+  #prismaFooter .footer-grid > div:last-child{
+    grid-column:1 / -1 !important;
+  }
+  #prismaFooter .footer-bottom{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+}
+
+
+
+
+
+
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
-  <div style="display:flex;align-items:center;gap:12px">
+  <div class="nav-right">
     <div class="lang-switch">
       <button data-lang="pt" id="btn-pt" class="active">PT</button>
       <button data-lang="en" id="btn-en">EN</button>
@@ -95,117 +237,126 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
   </div>
   <ul class="prisma-menu-links">
     <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> SOBRE</a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> AFILIADOS</a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> ARTIGOS</a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> CURIOSIDADES</a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
     <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
     <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span> LOJA</a></li>
-    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> TURISMO COLONIAL</a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo-colonial.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
   </ul>
 </nav>
 
 <div class="hero-tur">
-  <span class="tag">Roteiros secretos • São Roque a Ouro Preto</span>
+  <span class="tag" data-pt="Roteiros secretos • São Roque a Ouro Preto" data-en="Secret routes • São Roque to Ouro Preto" data-es="Rutas secretas • São Roque a Ouro Preto" data-fr="Itinéraires secrets • São Roque à Ouro Preto">Roteiros secretos • São Roque a Ouro Preto</span>
   <h1 data-pt="Turismo <span>Colonial</span>" data-en="Colonial <span>Tourism</span>" data-es="Turismo <span>Colonial</span>" data-fr="Tourisme <span>Colonial</span>">Turismo <span>Colonial</span></h1>
-  <p data-pt="Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica." data-en="No rote learning. Only the real Brazil guides don't tell. From São Roque coffee to Minas gold." data-es="Sin memorización. Solo el Brasil real que los guías no cuentan." data-fr="Pas de par cœur. Seulement le vrai Brésil que les guides ne racontent pas.">Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica.</p>
+  <p data-pt="Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica." data-en="No memorization. Only the real Brazil guides don't tell you. From São Roque coffee to Minas gold, with surgical logic." data-es="Sin memorización. Solo el Brasil real que los guías no cuentan. Del café de São Roque al oro de Minas." data-fr="Pas de par cœur. Seulement le vrai Brésil que les guides ne racontent pas. Du café de São Roque à l'or du Minas.">Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica.</p>
 </div>
 
 <div class="tur-grid">
   <div class="mapa-card">
-    <div class="mapa-head"><b>Mapa Colonial Interativo</b><span>12 rotas • 4 estados</span></div>
+    <div class="mapa-head"><b data-pt="Mapa Colonial Interativo" data-en="Interactive Colonial Map" data-es="Mapa Colonial Interactivo" data-fr="Carte Coloniale Interactive">Mapa Colonial Interativo</b><span>12 rotas • 4 estados</span></div>
     <div class="mapa-img">
-      <div class="pins">
-        <div class="pin" style="top:30%;left:45%"></div>
-        <div class="pin" style="top:50%;left:60%"></div>
-        <div class="pin" style="top:65%;left:40%"></div>
-        <div class="pin" style="top:20%;left:70%"></div>
-      </div>
+      <div class="pin" style="top:30%;left:45%"></div>
+      <div class="pin" style="top:50%;left:60%"></div>
+      <div class="pin" style="top:65%;left:40%"></div>
+      <div class="pin" style="top:20%;left:70%"></div>
     </div>
   </div>
-
   <div class="roteiros">
     <div class="rota-card">
       <div class="rota-top"><i>📍 São Roque • SP</i><b>2h de SP</b></div>
-      <h3>Brasital e Vinícolas do Café</h3>
-      <p>O que era centro têxtil e virou vinho. Por que São Roque foi laboratório da imigração italiana.</p>
-      <div class="rota-meta"><span>⏱ 1 dia</span><span>💰 Grátis</span><span>📜 1889</span></div>
-      <div class="sep">Dica do detetive: Vai na Brasital 8h da manhã, luz sépia perfeita pra foto.</div>
+      <h3 data-pt="Brasital e Vinícolas do Café" data-en="Brasital and Coffee Wineries" data-es="Brasital y Viñedos del Café" data-fr="Brasital et Vignobles du Café">Brasital e Vinícolas do Café</h3>
+      <p data-pt="O que era centro têxtil e virou vinho. Por que São Roque foi laboratório da imigração italiana." data-en="What was a textile center and became wine. Why São Roque was a laboratory of Italian immigration." data-es="Lo que era centro textil y se volvió vino. Por qué São Roque fue laboratorio de inmigración italiana." data-fr="Ce qui était centre textile et devenu vin. Pourquoi São Roque fut laboratoire de l'immigration italienne.">O que era centro têxtil e virou vinho. Por que São Roque foi laboratório da imigração italiana.</p>
+      <div class="rota-meta"><span data-pt="⏱ 1 dia" data-en="⏱ 1 day" data-es="⏱ 1 día" data-fr="⏱ 1 jour">⏱ 1 dia</span><span>💰 Grátis</span><span>📜 1889</span></div>
+      <div class="sep" data-pt="Dica do detetive: Vai na Brasital 8h da manhã, luz sépia perfeita pra foto." data-en="Detective tip: Go to Brasital at 8am, perfect sepia light for photos." data-es="Tip del detective: Ve a Brasital a las 8am, luz sepia perfecta." data-fr="Astuce du détective: Allez à Brasital à 8h, lumière sépia parfaite.">Dica do detetive: Vai na Brasital 8h da manhã, luz sépia perfeita pra foto.</div>
     </div>
     <div class="rota-card">
-      <div class="rota-top"><i>📍 Ouro Preto • MG</i><b>Patrimônio</b></div>
-      <h3>Minas do Ouro com 5º do ouro</h3>
-      <p>Como 20% de imposto financiou Lisboa e Londres. Igrejas com ouro que você pode tocar.</p>
-      <div class="rota-meta"><span>⏱ 2 dias</span><span>⛏ Mina</span><span>📜 1720</span></div>
-      <div class="sep">Roteiro secreto: Mina Chico Rei + Aleijadinho sem fila, chega 7h.</div>
-    </div>
-    <div class="rota-card">
-      <div class="rota-top"><i>📍 Paraty • RJ</i><b>Costa do ouro</b></div>
-      <h3>Caminho Velho do Ouro</h3>
-      <p>Por onde o ouro saía escondido. Trilha que ligava Minas ao mar com mulas e escravos.</p>
-      <div class="rota-meta"><span>⏱ 3h trilha</span><span>🌿 Mata</span><span>📜 1690</span></div>
-      <div class="sep">Arquivo: Estrada Real ainda tem calçamento original dos escravos.</div>
-    </div>
-    <div class="rota-card">
-      <div class="rota-top"><i>📍 Olinda • PE</i><b>Nordeste</b></div>
-      <h3>Engenho e Casa-Grande</h3>
-      <p>Por que o Nordeste foi mais rico que o Sudeste por 200 anos. Açúcar e escravidão.</p>
-      <div class="rota-meta"><span>⏱ 1 dia</span><span>🏛 Museu</span><span>📜 1535</span></div>
-      <div class="sep">Pista: Engenho com moenda original ainda funciona, cheiro de garapa.</div>
+      <div class="rota-top"><i>📍 Ouro Preto • MG</i><b data-pt="Patrimônio" data-en="Heritage" data-es="Patrimonio" data-fr="Patrimoine">Patrimônio</b></div>
+      <h3 data-pt="Minas do Ouro com 5º do ouro" data-en="Gold Mines with Royal Fifth" data-es="Minas de Oro con Quinto Real" data-fr="Mines d'Or avec Cinquième Royal">Minas do Ouro com 5º do ouro</h3>
+      <p data-pt="Como 20% de imposto financiou Lisboa e Londres. Igrejas com ouro que você pode tocar." data-en="How 20% tax financed Lisbon and London. Churches with gold you can touch." data-es="Cómo 20% de impuesto financió Lisboa y Londres. Iglesias con oro que puedes tocar." data-fr="Comment 20% d'impôt a financé Lisbonne et Londres. Églises avec or que vous pouvez toucher.">Como 20% de imposto financiou Lisboa e Londres. Igrejas com ouro que você pode tocar.</p>
+      <div class="rota-meta"><span data-pt="⏱ 2 dias" data-en="⏱ 2 days" data-es="⏱ 2 días" data-fr="⏱ 2 jours">⏱ 2 dias</span><span>⛏ Mina</span><span>📜 1720</span></div>
+      <div class="sep" data-pt="Roteiro secreto: Mina Chico Rei + Aleijadinho sem fila, chega 7h." data-en="Secret route: Chico Rei Mine + Aleijadinho no queue, arrive 7am." data-es="Ruta secreta: Mina Chico Rei + Aleijadinho sin cola, llega 7h." data-fr="Itinéraire secret: Mine Chico Rei + Aleijadinho sans file, arrivez 7h.">Roteiro secreto: Mina Chico Rei + Aleijadinho sem fila, chega 7h.</div>
     </div>
   </div>
 </div>
 
 <div class="cta-tur">
-  <h3>Quer o mapa completo com GPS offline?</h3>
-  <p>12 roteiros com coordenadas, história em áudio e onde comer sem cair em cilada turística.</p>
-  <a href="ebook.html" class="btn-tur">Baixar roteiros no e-book →</a>
+  <h3 data-pt="Quer o mapa completo com GPS offline?" data-en="Want the full map with offline GPS?" data-es="¿Quieres el mapa completo con GPS offline?" data-fr="Vous voulez la carte complète avec GPS offline?">Quer o mapa completo com GPS offline?</h3>
+  <p data-pt="12 roteiros com coordenadas, história em áudio e onde comer sem cair em cilada turística." data-en="12 routes with coordinates, audio history and where to eat without tourist traps." data-es="12 rutas con coordenadas, historia en audio y dónde comer sin trampas turísticas." data-fr="12 itinéraires avec coordonnées, histoire audio et où manger sans pièges à touristes.">12 roteiros com coordenadas, história em áudio e onde comer sem cair em cilada turística.</p>
+  <a href="ebook.html" class="btn-tur" data-pt="Baixar roteiros no e-book →" data-en="Download routes in e-book →" data-es="Descargar rutas en e-book →" data-fr="Télécharger itinéraires en e-book →">Baixar roteiros no e-book →</a>
 </div>
 
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p></div>
-      <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="sobre.html">Sobre</a><a href="artigos.html">Artigos</a><a href="quiz.html">Quiz</a><a href="turismo-colonial.html" style="color:#eebc6c!important;opacity:0.8!important">🌍 Turismo Colonial</a></div>
-      <div class="footer-col"><h4>Produtos</h4><a href="ebook.html">📘 E-book</a><a href="loja.html">🛒 Loja</a><a href="afiliados.html">🤝 Afiliados</a><a href="doacao.html">💰 Doação</a></div>
-      <div class="footer-col"><h4>Clube Prisma</h4><div class="footer-news-card"><p>Receba roteiros secretos. Grátis.</p><input type="email" id="prismaEmail" placeholder="seu melhor email"><button id="prismaBtn">Entrar pro Clube →</button></div></div>
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-pt="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From gold mines to colonial tourism, breaking rote learning." data-es="Enfoque analítico de la Historia de Brasil. De las minas de oro al turismo colonial." data-fr="Approche analytique de l'Histoire du Brésil. Des mines d'or au tourisme colonial.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
+        <a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="quiz.html">Quiz</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html">📘 E-book</a>
+        <a href="loja.html" data-pt="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
+        <a href="afiliados.html">🤝 Afiliados</a>
+      </div>
+      <div class="footer-col">
+        <h4>Clube Prisma</h4>
+        <div class="footer-news-card">
+          <p data-pt="Receba roteiros secretos. Grátis." data-en="Get secret routes. Free." data-es="Recibe rutas secretas. Gratis." data-fr="Recevez itinéraires secrets. Gratuit.">Receba roteiros secretos. Grátis.</p>
+          <input type="email" id="prismaEmail" placeholder="seu melhor email">
+          <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Prisma Histórico</span><span>Feito com ☕ e 4h de sono em São Paulo</span></div>
+    <div class="footer-bottom">
+      <span>© <span id="anoAtual">2026</span> Prisma Histórico</span>
+      <span id="dataLocalizada" data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
+    </div>
   </div>
 </footer>
 
 <script>
-const nav = document.getElementById('prismaNav');
-const btnMenu = document.getElementById('btnMenu');
-btnMenu.addEventListener('click', (e)=>{
-  e.stopPropagation();
-  nav.classList.toggle('menu-aberto');
-  document.body.style.overflow = nav.classList.contains('menu-aberto')? 'hidden' : '';
-});
-document.addEventListener('click', (e)=>{
-  if(nav.classList.contains('menu-aberto') && !nav.contains(e.target)){
-    nav.classList.remove('menu-aberto');
-    document.body.style.overflow = '';
-  }
-});
-const langBtns = document.querySelectorAll('.lang-switch button');
+const nav=document.getElementById('prismaNav');
+const btnMenu=document.getElementById('btnMenu');
+btnMenu.addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',(e)=>{if(nav.classList.contains('menu-aberto')&&!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
+
+function atualizarDataFooter(lang){
+  const agora=new Date();
+  document.getElementById('anoAtual').textContent=agora.getFullYear();
+  const localeMap={pt:'pt-BR',en:'en-US',es:'es-ES',fr:'fr-FR'};
+  const tzMap={pt:'America/Sao_Paulo',en:'America/New_York',es:'Europe/Madrid',fr:'Europe/Paris'};
+  try{
+    const fmt=new Intl.DateTimeFormat(localeMap[lang]||'pt-BR',{dateStyle:'long',timeZone:tzMap[lang]||'America/Sao_Paulo'});
+    const el=document.getElementById('dataLocalizada');
+    const base=fmt.format(agora);
+    const prefix={pt:'Feito com ☕ e 4h de sono em ',en:'Made with ☕ in ',es:'Hecho con ☕ en ',fr:'Fait avec ☕ à '}[lang]||'';
+    // Se for PT mantém frase original, se não usa data localizada
+    if(lang==='pt'){ el.textContent='Feito com ☕ e 4h de sono em São Paulo'; }
+    else { el.textContent=prefix + base; }
+  }catch(e){}
+}
+
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
-  localStorage.setItem('prisma-lang',l);
-  langBtns.forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
   document.querySelectorAll('[data-pt]').forEach(el=>{
-    const txt = el.getAttribute('data-'+l);
-    if(txt) el.innerHTML = txt;
+    const txt=el.getAttribute('data-'+l)||el.getAttribute('data-pt');
+    if(txt) el.innerHTML=txt;
   });
+  atualizarDataFooter(l);
 }
-langBtns.forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
-setLang(localStorage.getItem('prisma_lang') || localStorage.getItem('prisma-lang') || 'pt');
-document.getElementById('prismaBtn')?.addEventListener('click', ()=>{
-  const v=document.getElementById('prismaEmail').value.trim();
-  if(!v.includes('@')){ alert('Email inválido mano!'); return; }
-  alert('Salvo! 🚀'); document.getElementById('prismaEmail').value='';
-});
+document.querySelectorAll('.lang-switch button').forEach(b=> b.addEventListener('click', ()=> setLang(b.dataset.lang)));
+setLang(localStorage.getItem('prisma_lang')||'pt');
 </script>
 </body>
 </html>
