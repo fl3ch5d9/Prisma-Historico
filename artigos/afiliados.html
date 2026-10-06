@@ -7,49 +7,145 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-:root{--ouro:#D4AF37;--ouro2:#F5D76E;--preto:#0D0D0B;--card:#171410;--card2:#1E1C18;--creme:#F2EDE3;--sepia-titulo:#D9C5A0;--sepia:#A99B85;--borda:rgba(212,175,55,0.18)}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden}
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(13,13,11,0.98);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em}.prisma-logo span{color:var(--ouro);font-weight:700}
-.lang-switch{display:flex;gap:6px}.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:10px;min-width:38px;min-height:34px;font-weight:600}
-.lang-switch button.active{background:var(--ouro);color:#0D0D0B;border-color:var(--ouro)}
-.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer;z-index:10002}
+:root{--ouro:#eebc6c;--ouro2:#D4AF37;--preto:#121212;--preto2:#1A1A1A;--card:#1A1A1A;--creme:#F5F5F0;--sepia:#d8c9a8;--sepia-titulo:#eebc6c;--borda:rgba(238,188,108,0.14)}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:#121212;width:100%;overflow-x:hidden;color:var(--creme);font-family:'Inter',sans-serif}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.98);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme)}.prisma-logo span{color:var(--ouro);font-weight:700}
+.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
 .prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro);display:block;transition:0.35s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif}
-.hero-afiliado{padding:160px 5% 80px;text-align:center;background:radial-gradient(800px at 50% -20%, rgba(212,175,55,0.18), transparent 70%), var(--preto)}
-.hero-afiliado h1{font-family:'Cinzel',serif;font-size:52px;font-weight:700;line-height:1.1}
-.comissao-box{margin:48px auto 0;max-width:680px;background:linear-gradient(180deg, var(--card2), var(--card));border:1px solid var(--borda);border-radius:22px;padding:34px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212,175,55,0.15)}
-.comissao-box .pct{font-size:84px;color:var(--ouro2);font-family:'Cinzel',serif;font-weight:700;text-shadow:0 2px 20px rgba(212,175,55,0.3)}
-#prismaFooter{background:#0A0A08;border-top:1px solid var(--borda);padding:70px 5% 30px;width:100%}
-#prismaFooter .footer-wrap{max-width:1240px;margin:0 auto;width:100%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.4fr 0.8fr 0.9fr 1.1fr;gap:48px}
-#prismaFooter .footer-logo{font-family:'Cinzel',serif;font-size:24px;letter-spacing:0.22em;color:var(--creme)}
-#prismaFooter .footer-logo span{color:var(--ouro);font-weight:700}
-#prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia);margin-top:18px;max-width:300px;font-weight:400}
-#prismaFooter .footer-col h4{font-family:'Cinzel',serif;font-weight:600;font-size:11px;letter-spacing:0.22em;color:var(--sepia-titulo);margin-bottom:22px}
-#prismaFooter .footer-col a{font-weight:400;font-size:13px;color:var(--sepia);text-decoration:none;display:block;margin-bottom:12px;transition:0.2s}
-#prismaFooter .footer-col a:hover{color:var(--ouro)}
-#prismaFooter .footer-news-card{background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px}
-#prismaFooter .footer-news-card p{font-size:13px;line-height:1.7;color:var(--sepia);font-weight:300;margin:0}
-#prismaFooter .cta-gold{background:linear-gradient(180deg, var(--ouro2), var(--ouro));color:#0D0D0B!important;padding:14px 26px;border-radius:40px;font-size:11px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;font-family:'Cinzel',serif;letter-spacing:0.12em;box-shadow:0 8px 22px rgba(212,175,55,0.22);line-height:1}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(212,175,55,0.1);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-#prismaFooter .footer-bottom span{font-size:11px;color:var(--sepia);opacity:0.7;font-weight:400}
-@media(max-width:600px){
-.prisma-nav{padding:10px 4%}.prisma-logo{font-size:18px}.prisma-menu-links{width:100%;max-width:100vw}
-.hero-afiliado{padding:115px 5% 50px}.hero-afiliado h1{font-size:30px!important}
-.comissao-box{flex-direction:column;text-align:center;padding:26px 20px}.comissao-box .pct{font-size:68px}
-#prismaFooter{padding:45px 5% 25px}#prismaFooter .footer-grid{grid-template-columns:1fr;gap:32px}#prismaFooter .footer-bottom{flex-direction:column;text-align:center}
+.lang-switch{display:flex;gap:6px}.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia);padding:6px 10px;border-radius:20px;font-size:11px;cursor:pointer}
+.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro)}
+.hero-afiliado{padding:120px 5% 60px;text-align:center;background:#121212}.hero-afiliado h1{font-family:'Cinzel',serif;font-size:52px;font-weight:700;line-height:1.1;color:var(--creme)}
+.comissao-box{max-width:520px;margin:28px auto 0;background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:18px 20px;display:flex;align-items:center;gap:16px}
+.comissao-box.pct{font-family:'Cinzel';font-size:32px;font-weight:700;color:var(--ouro)}
+.grid-afiliados{max-width:1100px;margin:40px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 4%;background:#121212}
+.card-afiliado{background:#1A1A1A;border:1px solid var(--borda);border-radius:16px;padding:28px;width:100%;color:var(--creme)}
+@media(max-width:768px){.grid-afiliados{grid-template-columns:1fr!important;gap:16px!important;padding:0 16px!important;width:100%!important}.hero-afiliado h1{font-size:30px!important}.prisma-nav{padding:10px 4%}#prismaFooter.footer-grid{grid-template-columns:1fr!important;gap:32px}}
+
+#prismaFooter{
+  background:#0A0A0A;
+  border-top:1px solid var(--borda);
+  padding:60px 5% 22px;
+  margin-top:60px;
 }
-@media(min-width:601px) and (max-width:1024px){
-#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:36px}.hero-afiliado{padding:135px 5% 65px}
+#prismaFooter .footer-wrap{max-width:1240px;margin:0 auto}
+
+#prismaFooter .footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 0.6fr 0.8fr 1fr;
+  gap:40px;
 }
-@media(min-width:1025px){.hero-afiliado h1{font-size:52px}}
+
+#prismaFooter .footer-logo{
+  font-family:'Cinzel',serif;
+  font-weight:400;
+  font-size:19px;
+  letter-spacing:0.28em;
+  color:var(--creme);
+}
+#prismaFooter .footer-logo span{font-weight:600;color:var(--ouro)}
+
+#prismaFooter .footer-desc{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:12.5px;
+  line-height:1.9;
+  letter-spacing:0.02em;
+  color:var(--sepia);
+  margin-top:14px;
+  opacity:0.85;
+}
+
+#prismaFooter .footer-col h4{
+  font-family:'Cinzel',serif;
+  font-weight:400;
+  font-size:9.5px;
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:var(--ouro);
+  margin-bottom:18px;
+  opacity:0.9;
+}
+
+#prismaFooter .footer-col a{
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  line-height:1.2;
+  color:var(--sepia);
+  text-decoration:none;
+  margin-bottom:12px;
+  display:block;
+  transition:0.2s;
+  opacity:0.8;
+}
+#prismaFooter .footer-col a:hover{
+  color:var(--creme);
+  opacity:1;
+  letter-spacing:0.16em;
+}
+
+#prismaFooter .footer-news-card{
+  background:var(--card);
+  border:1px solid var(--borda);
+  border-radius:14px;
+  padding:18px;
+}
+#prismaFooter .footer-news-card p{
+  font-weight:300;
+  font-size:11.5px;
+  line-height:1.8;
+  letter-spacing:0.02em;
+}
+
+#prismaFooter .footer-bottom{
+  margin-top:40px;
+  padding-top:18px;
+  border-top:1px solid var(--borda);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  font-size:10px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--sepia);
+  opacity:0.6;
+}
+
+/* SÓ A COLUNA SUPORTE QUE SAIU PRA FORA */
+#prismaFooter .footer-col{
+  min-width:0;
+  max-width:100%;
+  overflow:hidden;
+}
+
+#prismaFooter .footer-col a{
+  max-width:100%;
+  white-space:normal;
+  word-break:break-word;
+}
+
+@media(max-width:768px){
+  #prismaFooter .footer-grid{
+    grid-template-columns:1fr !important;
+  }
+  #prismaFooter .footer-col{
+    width:100% !important;
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -60,57 +156,182 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
     <button type="button" class="prisma-menu-hamburguer" id="hambBtn"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span> <span data-pt="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span> <span data-pt="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-pt="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span> <span data-pt="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span> <span data-pt="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span> <span data-pt="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
-    <li><a href="turismo.html"><span class="material-icons">public</span> <span data-pt="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+      <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+      <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+      <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+      <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+      <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+      <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+      <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+      <li><a href="turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    
+  
   </ul>
 </nav>
+
 <header class="hero-afiliado">
   <h1 data-pt-BR="Lucre <span style='color:var(--ouro)'>40%</span>" data-en="Earn <span style='color:var(--ouro)'>40%</span>" data-es="Gana <span style='color:var(--ouro)'>40%</span>" data-fr="Gagnez <span style='color:var(--ouro)'>40%</span>">Lucre <span style='color:var(--ouro)'>40%</span></h1>
-  <p data-pt-BR="Monetize seu público com conteúdo premium e conversão comprovada" data-en="Monetize your audience with premium content and proven conversion" data-es="Monetiza tu audiencia con contenido premium" data-fr="Monétisez votre audience avec du contenu premium" style="color:var(--sepia);margin-top:16px;font-size:14px;font-weight:400">Monetize seu público com conteúdo premium e conversão comprovada</p>
-  <div class="comissao-box">
-    <div class="pct">40%</div>
-    <div style="text-align:left">
-      <b data-pt-BR="Comissão Líquida" data-en="Net Commission" data-es="Comisión Neta" data-fr="Commission Nette" style="font-family:'Cinzel';font-size:16px;color:var(--creme)">Comissão Líquida</b><br>
-      <span data-pt-BR="Conversão alta • Ticket R$69,90 • Aprovação imediata • Pagamento em 7 dias" data-en="High conversion • $19.90 ticket • Instant approval • 7-day payout" data-es="Alta conversión • Ticket €19,90 • Aprobación inmediata • Pago en 7 días" data-fr="Conversion élevée • Ticket 19,90€ • Approbation immédiate • Paiement sous 7 jours" style="font-size:13px;color:var(--sepia);font-weight:400;line-height:1.5">Conversão alta • Ticket R$69,90 • Aprovação imediata • Pagamento em 7 dias</span>
+  <p style="color:var(--sepia);margin-top:16px" data-pt-BR="Monetize seu público com conteúdo premium e conversão comprovada" data-en="Monetize your audience with premium content" data-es="Monetiza tu audiencia con contenido premium" data-fr="Monétisez votre audience avec du contenu premium">Monetize seu público com conteúdo premium e conversão comprovada</p>
+  
+  <div class="comissao-box" style="display:flex;align-items:center;gap:18px">
+    <div class="pct" style="font-family:'Cinzel',serif;font-size:34px;font-weight:400;color:var(--ouro);line-height:1;flex-shrink:0">40%</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;line-height:1.2">
+      <b style="font-family:'Cinzel',serif;font-weight:400;font-size:11px;letter-spacing:0.18em;color:var(--creme);line-height:1" data-pt-BR="Comissão Líquida" data-en="Net Commission" data-es="Comisión Neta" data-fr="Commission Nette">Comissão Líquida</b>
+      <span style="font-family:'Inter',sans-serif;font-size:12px;font-weight:300;color:var(--sepia);margin-top:6px;line-height:1.4" data-pt-BR="Ticket R$69,90 • Aprovação imediata • Pagamento em 7 dias" data-en="Ticket $19.90 • Instant approval • 7-day payout" data-es="Ticket €19,90 • Aprobación inmediata • Pago en 7 días" data-fr="Ticket 19,90€ • Approbation immédiate • Paiement sous 7 jours">Ticket R$69,90 • Aprovação imediata • Pagamento em 7 dias</span>
     </div>
   </div>
 </header>
-<section style="padding:80px 5%;max-width:1240px;margin:0 auto">
-  <div style="max-width:820px;margin:0 auto;text-align:center">
-    <span style="font-family:'Cinzel';font-size:11px;letter-spacing:0.32em;color:var(--ouro);display:block;margin-bottom:18px" data-pt-BR="O NICHO MAIS LUCRATIVO DE 2026" data-en="THE MOST PROFITABLE NICHE IN 2026" data-es="EL NICHO MÁS RENTABLE DE 2026" data-fr="LA NICHE LA PLUS RENTABLE DE 2026">O NICHO MAIS LUCRATIVO DE 2026</span>
-    <h2 style="font-family:'Cinzel';font-size:36px;line-height:1.2;font-weight:400;color:var(--creme)" data-pt-BR="Lucre Alto no Nicho de <strong style='font-weight:700;color:var(--ouro2)'>Educação</strong>" data-en="Earn High in the <strong style='font-weight:700;color:var(--ouro2)'>Education</strong> Niche" data-es="Gana Alto en el Nicho de <strong style='font-weight:700;color:var(--ouro2)'>Educación</strong>" data-fr="Gagnez Gros dans la Niche <strong style='font-weight:700;color:var(--ouro2)'>Éducation</strong>">Lucre Alto no Nicho de <strong style='font-weight:700;color:var(--ouro2)'>Educação</strong></h2>
-    <p style="font-size:15px;line-height:1.9;color:var(--sepia);margin-top:26px;font-weight:300" data-pt-BR="Se você quer promover um produto de <strong style='font-weight:600;color:var(--creme)'>alta conversão</strong>, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar. O e-book <strong style='font-weight:600;color:var(--sepia-titulo)'>'A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República'</strong> resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.)." data-en="If you want to promote a <strong style='font-weight:600;color:var(--creme)'>high-converting</strong> product with a hyper-focused audience ready to buy, you just found it. The e-book <strong style='font-weight:600;color:var(--sepia-titulo)'>'The Hidden Science behind the Construction of Colonial America to the First Republic'</strong> solves the biggest pain point for thousands of students: the need for a differential to ace Enem and major entrance exams." data-es="Si quieres promocionar un producto de <strong style='font-weight:600;color:var(--creme)'>alta conversión</strong>, con un público hiperenfocado y listo para comprar, lo acabas de encontrar. El e-book resuelve el mayor dolor de miles de estudiantes: la necesidad de un diferencial para aprobar el Enem." data-fr="Si vous voulez promouvoir un produit à <strong style='font-weight:600;color:var(--creme)'>forte conversion</strong>, avec une audience hyper-ciblée prête à acheter, vous venez de le trouver. L'e-book résout la plus grande douleur de milliers d'étudiants.">Se você quer promover um produto de <strong style='font-weight:600;color:var(--creme)'>alta conversão</strong>, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar. O e-book <strong style='font-weight:600;color:var(--sepia-titulo)'>'A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República'</strong> resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.).</p>
-    <p style="font-size:14px;line-height:1.8;color:var(--sepia);margin-top:18px;font-weight:300;opacity:0.9" data-pt-BR="Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam <strong style='font-weight:600;color:var(--creme)'>milhões de leads quentes</strong> todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação." data-en="Forget saturated niches. Education and exam prep move <strong style='font-weight:600;color:var(--creme)'>millions of hot leads</strong> every month, and parents or students themselves invest without hesitation in materials that guarantee approval." data-es="Olvida los nichos saturados. La educación mueve <strong style='font-weight:600;color:var(--creme)'>millones de leads calientes</strong> cada mes." data-fr="Oubliez les niches saturées. L'éducation génère <strong style='font-weight:600;color:var(--creme)'>des millions de leads chauds</strong> chaque mois.">Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam <strong style='font-weight:600;color:var(--creme)'>milhões de leads quentes</strong> todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px">
-    <div style="background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:28px">
-      <div style="width:42px;height:42px;border-radius:50%;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="material-icons" style="color:var(--ouro);font-size:22px">payments</span></div>
-      <h3 style="font-family:'Cinzel';font-size:13px;letter-spacing:0.12em;color:var(--creme);font-weight:600" data-pt-BR="COMISSÃO AGRESSIVA" data-en="AGGRESSIVE COMMISSION" data-es="COMISIÓN AGRESIVA" data-fr="COMMISSION AGRESSIVE">COMISSÃO AGRESSIVA</h3>
-      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px;font-weight:300" data-pt-BR="Você recebe <strong style='font-weight:600;color:var(--ouro2)'>40% de comissão líquida</strong> por cada venda realizada. Ticket de R$69,90 com conversão rápida." data-en="You get <strong style='font-weight:600;color:var(--ouro2)'>40% net commission</strong> per sale. R$69.90 ticket with fast conversion." data-es="Recibes <strong style='font-weight:600;color:var(--ouro2)'>40% de comisión neta</strong> por venta." data-fr="Vous recevez <strong style='font-weight:600;color:var(--ouro2)'>40% de commission nette</strong> par vente.">Você recebe <strong style='font-weight:600;color:var(--ouro2)'>40% de comissão líquida</strong> por cada venda realizada. Ticket de R$69,90 com conversão rápida.</p>
+
+<style>
+/* FIX ALINHAMENTO - COLA NO SEU CSS */
+.comissao-box{
+  max-width:520px;
+  margin:28px auto 0;
+  background:var(--card);
+  border:1px solid var(--borda);
+  border-radius:16px;
+  padding:18px 20px;
+  display:flex !important;
+  align-items:center !important;
+  gap:18px !important;
+}
+.comissao-box .pct{
+  line-height:1 !important;
+  display:flex;
+  align-items:center;
+}
+</style>
+
+
+
+<!--secito texto grade-->
+<section id="afiliados-section" class="afiliados-wrap">
+  <div class="afiliados-card">
+    <span class="afiliados-badge" data-pt-BR="NICHO OCULTO • ALTA CONVERSÃO" data-en="HIDDEN NICHE • HIGH CONVERSION" data-es="NICHO OCULTO • ALTA CONVERSIÓN" data-fr="NICHE CACHÉ • HAUTE CONVERSION">NICHO OCULTO • ALTA CONVERSÃO</span>
+
+    <h2 class="afiliados-title" data-pt-BR="Lucre Alto no Nicho de Educação com 40% de Comissão! 🎯" data-en="Earn Big in Education Niche with 40% Commission! 🎯" data-es="¡Gana Alto en Educación con 40% de Comisión! 🎯" data-fr="Gagnez Gros en Éducation avec 40% de Commission! 🎯">Lucre Alto no Nicho de Educação com 40% de Comissão! 🎯</h2>
+
+    <p class="afiliados-text"
+      data-pt-BR="Se você quer promover um produto de alta conversão, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar. O e-book 'A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República' resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.). Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam milhões de leads quentes todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação. 🚀 Por que se afiliar ao nosso projeto? Comissão Agressiva: Você recebe 40% de comissão líquida por cada venda realizada. Produto de Fácil Conversão (Ticket Baixo/Médio): Ideal para vendas rápidas no tráfego direto ou orgânico. Gancho de Vendas Irrecusável: O e-book entrega o que nenhum cursinho tradicional ensina: o 'DNA tecnológico' e o repertório interdisciplinar perfeito para tirar Nota 1000 na Redação e acertar as questões mais difíceis de Ciências Humanas. Mercado Recorrente: Todos os anos, uma nova onda de milhões de alunos faz o Enem. O público se renova de forma automática! Ticket: R$69,90 | Sua Comissão: R$27,96 por venda."
+      data-en="If you want to promote a high-converting product with hyper-focused audience ready to buy, you found it. The e-book 'The Hidden Science behind the Construction of Colonial America to the First Republic' solves the biggest pain of thousands of students: the need for a differential to ace Enem and biggest entrance exams (Fuvest, Unicamp, etc.). Forget saturated niches. Education moves millions of hot leads every month. 🚀 Why affiliate? Aggressive Commission: You get 40% net per sale. Easy Conversion Product (Low/Mid Ticket): Ideal for fast sales. Irresistible Hook: Delivers what no traditional course teaches: the 'technological DNA' and perfect interdisciplinary repertoire for Essay Score 1000. Recurring Market: Every year millions take Enem. Ticket: R$69.90 | Your Commission: $27.96 per sale."
+      data-es="Si quieres promover un producto de alta conversión, con público hiperenfocado y listo para comprar, lo acabas de encontrar. El e-book 'La Ciencia Oculta detrás de la Construcción de una América Colonial a la Primera República' resuelve el mayor dolor de miles de estudiantes: la necesidad de un diferencial para aprobar el Enem y los mayores Vestibulares. Esqueça nichos saturados. La educación mueve millones de leads calientes todos los meses. 🚀 ¿Por qué afiliarse? Comisión Agresiva: 40% líquida por venta. Producto de Fácil Conversión (Ticket Bajo/Medio): Ideal para ventas rápidas. Gancho Irresistible: Entrega lo que ningún curso tradicional enseña: el 'ADN tecnológico' y repertorio perfecto para Nota 1000. Mercado Recurrente: Todos los años millones hacen Enem. Ticket: R$69,90 | Tu Comisión: R$27,96"
+      data-fr="Si vous voulez promouvoir un produit à haute conversion avec public hyper-ciblé prêt à acheter, vous venez de le trouver. L'e-book 'La Science Occulte derrière la Construction d'une Amérique Coloniale à la Première République' résout la plus grande douleur de milliers d'étudiants: besoin d'un différentiel pour réussir l'Enem et les plus grands concours. Oubliez les niches saturées. L'éducation génère des millions de prospects chauds chaque mois. 🚀 Pourquoi s'affilier? Commission Agressive: 40% net par vente. Produit à Conversion Facile: Idéal pour ventes rapides. Accroche Irrésistible: Livre ce qu'aucun cursus n'enseigne: l'ADN technologique et répertoire parfait pour Note 1000. Marché Récurrent: Chaque année des millions passent l'Enem. Ticket: R$69,90 | Votre Commission: R$27,96">
+      Se você quer promover um produto de alta conversão, com público-alvo hiperfocado e pronto para comprar, acabou de encontrar. O e-book "A Ciência Oculta por trás da Construção de uma América Colonial à Primeira República" resolve a maior dor de milhares de estudantes: a necessidade de um diferencial para gabaritar o Enem e os maiores Vestibulares do país (Fuvest, Unicamp, etc.). Esqueça os nichos saturados. A educação e a preparação para vestibulares movimentam milhões de leads quentes todos os meses, e os pais ou os próprios alunos investem sem hesitar em materiais que garantem a aprovação. 🚀 Por que se afiliar ao nosso projeto? Comissão Agressiva: Você recebe 40% de comissão líquida por cada venda realizada. Produto de Fácil Conversão (Ticket Baixo/Médio): Ideal para vendas rápidas no tráfego direto ou orgânico. Gancho de Vendas Irrecusável: O e-book entrega o que nenhum cursinho tradicional ensina: o "DNA tecnológico" e o repertório interdisciplinar perfeito para tirar Nota 1000 na Redação e acertar as questões mais difíceis de Ciências Humanas. Mercado Recorrente: Todos os anos, uma nova onda de milhões de alunos faz o Enem. O público se renova de forma automática! Ticket: R$69,90 | Sua Comissão: R$27,96 por venda.
+    </p>
+
+    <div class="afiliados-desc">
+      <b class="afiliados-label" data-pt-BR="DESCRIÇÃO DO PRODUTO" data-en="PRODUCT DESCRIPTION" data-es="DESCRIPCIÓN DEL PRODUCTO" data-fr="DESCRIPTION DU PRODUIT">DESCRIÇÃO DO PRODUTO</b>
+      <p class="afiliados-text"
+        data-pt-BR="Este e-book é indispensável para historiadores, engenheiros náuticos, entusiastas de estratégia militar, estudantes e qualquer pessoa que queira enxergar a história do Brasil por trás dos bastidores científicos nunca antes revelados pelos livros didáticos tradicionais. A consolidação do território brasileiro sob a ótica de uma sofisticada operação de engenharia náutica, inteligência hidrográfica e biopolítica. Mostre domínio absoluto ao explicar que a sobrevivência nos trópicos não foi mero acaso ou decreto real, mas sim o resultado da física de empuxo das carenas, do cálculo geométrico das caravelas e do uso milimétrico do astrolábio e da balestilha. Garanta o seu exemplar agora, decodifique o verdadeiro DNA tecnológico da América Colonial à Primeira República e gabarite as provas de qualquer concurso público!"
+        data-en="This e-book is indispensable for historians, nautical engineers, military strategy enthusiasts, students and anyone who wants to see Brazilian history behind the scientific backstage never revealed by traditional textbooks. The consolidation of Brazilian territory from the optics of a sophisticated operation of nautical engineering, hydrographic intelligence and biopolitics. Show absolute mastery explaining that survival in the tropics was not mere chance or royal decree, but result of hull buoyancy physics, geometric calculation of caravels and millimetric use of astrolabe and cross-staff. Guarantee your copy now, decode the true technological DNA of Colonial America to the First Republic and ace any public exam!"
+        data-es="Este e-book es indispensable para historiadores, ingenieros náuticos, entusiastas de estrategia militar, estudiantes y cualquiera que quiera ver la historia de Brasil detrás de bastidores científicos nunca antes revelados por los libros tradicionales. La consolidación del territorio brasileño bajo la óptica de una sofisticada operación de ingeniería náutica, inteligencia hidrográfica y biopolítica. Muestre dominio absoluto al explicar que la supervivencia en los trópicos no fue mero azar o decreto real, sino resultado de la física de empuje de las carenas, del cálculo geométrico de las carabelas y del uso milimétrico del astrolabio y la ballestilla. ¡Garantice su ejemplar ahora, decodifique el verdadero ADN tecnológico de la América Colonial a la Primera República y apruebe cualquier concurso público!"
+        data-fr="Cet e-book est indispensable pour les historiens, ingénieurs nautiques, passionnés de stratégie militaire, étudiants et toute personne qui veut voir l'histoire du Brésil derrière les coulisses scientifiques jamais révélées par les manuels traditionnels. La consolidation du territoire brésilien sous l'optique d'une opération sophistiquée d'ingénierie nautique, de renseignement hydrographique et de biopolitique. Montrez une maîtrise absolue en expliquant que la survie sous les tropiques n'était pas un simple hasard ou décret royal, mais bien le résultat de la physique de la poussée des carènes, du calcul géométrique des caravelles et de l'utilisation millimétrique de l'astrolabe et de l'arbalestrille. Garantissez votre exemplaire maintenant, décodez le véritable ADN technologique de l'Amérique Coloniale à la Première République et réussissez n'importe quel concours public!">
+        Este e-book é indispensável para historiadores, engenheiros náuticos, entusiastas de estratégia militar, estudantes e qualquer pessoa que queira enxergar a história do Brasil por trás dos bastidores científicos nunca antes revelados pelos livros didáticos tradicionais. A consolidação do território brasileiro sob a ótica de uma sofisticada operação de engenharia náutica, inteligência hidrográfica e biopolítica. Mostre domínio absoluto ao explicar que a sobrevivência nos trópicos não foi mero acaso ou decreto real, mas sim o resultado da física de empuxo das carenas, do cálculo geométrico das caravelas e do uso milimétrico do astrolábio e da balestilha. Garanta o seu exemplar agora, decodifique o verdadeiro DNA tecnológico da América Colonial à Primeira República e gabarite as provas de qualquer concurso público!
+      </p>
     </div>
-    <div style="background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:28px">
-      <div style="width:42px;height:42px;border-radius:50%;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="material-icons" style="color:var(--ouro);font-size:22px">bolt</span></div>
-      <h3 style="font-family:'Cinzel';font-size:13px;letter-spacing:0.12em;color:var(--creme);font-weight:600" data-pt-BR="GANCHO IRRECUSÁVEL" data-en="IRRESISTIBLE HOOK" data-es="GANCHO IRRESISTIBLE" data-fr="ACCROCHE IRRÉSISTIBLE">GANCHO IRRECUSÁVEL</h3>
-      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px;font-weight:300" data-pt-BR="Entrega o que nenhum cursinho ensina: o <strong style='font-weight:600;color:var(--creme)'>'DNA tecnológico'</strong> e o repertório interdisciplinar perfeito para tirar <strong style='font-weight:600;color:var(--creme)'>Nota 1000 na Redação</strong> e acertar as mais difíceis de Humanas." data-en="Delivers what no prep course teaches: the <strong style='font-weight:600;color:var(--creme)'>'technological DNA'</strong> and perfect interdisciplinary repertoire for a <strong style='font-weight:600;color:var(--creme)'>1000 score essay</strong>." data-es="Entrega lo que ningún cursillo enseña: el <strong style='font-weight:600;color:var(--creme)'>'ADN tecnológico'</strong> para sacar <strong style='font-weight:600;color:var(--creme)'>Nota 1000</strong>." data-fr="Livre ce qu'aucun cours ne donne: l'<strong style='font-weight:600;color:var(--creme)'>'ADN technologique'</strong> pour un <strong style='font-weight:600;color:var(--creme)'>1000 à la rédaction</strong>.">Entrega o que nenhum cursinho ensina: o <strong style='font-weight:600;color:var(--creme)'>'DNA tecnológico'</strong> e o repertório interdisciplinar perfeito para tirar <strong style='font-weight:600;color:var(--creme)'>Nota 1000 na Redação</strong> e acertar as mais difíceis de Humanas.</p>
+
+    <div class="afiliados-footer">
+      <span id="dataLocalizada" class="afiliados-data"></span>
+      <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" class="afiliados-btn" data-pt-BR="QUERO ME AFILIAR - R$27,96 🚀" data-en="BECOME AFFILIATE - $27.96 🚀" data-es="QUIERO AFILIARME - R$27,96 🚀" data-fr="DEVENIR AFFILIÉ - R$27,96 🚀">QUERO ME AFILIAR - R$27,96 🚀</a>
     </div>
-    <div style="background:var(--card);border:1px solid var(--borda);border-radius:18px;padding:28px">
-      <div style="width:42px;height:42px;border-radius:50%;background:rgba(212,175,55,0.12);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="material-icons" style="color:var(--ouro);font-size:22px">autorenew</span></div>
-      <h3 style="font-family:'Cinzel';font-size:13px;letter-spacing:0.12em;color:var(--creme);font-weight:600" data-pt-BR="MERCADO RECORRENTE" data-en="RECURRING MARKET" data-es="MERCADO RECURRENTE" data-fr="MARCHÉ RÉCURRENT">MERCADO RECORRENTE</h3>
-      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px;font-weight:300" data-pt-BR="Todos os anos, uma nova onda de <strong style='font-weight:600;color:var(--creme)'>milhões de alunos</strong> faz o Enem. O público se renova de forma automática! Ideal para tráfego direto ou orgânico." data-en="Every year, a new wave of <strong style='font-weight:600;color:var(--creme)'>millions of students</strong> takes Enem. Audience renews automatically! Ideal for direct or organic traffic." data-es="Cada año, una nueva ola de <strong style='font-weight:600;color:var(--creme)'>millones de alumnos</strong> hace el Enem." data-fr="Chaque année, une nouvelle vague de <strong style='font-weight:600;color:var(--creme)'>millions d'élèves</strong> passe l'Enem.">Todos os anos, uma nova onda de <strong style='font-weight:600;color:var(--creme)'>milhões de alunos</strong> faz o Enem. O público se renova de forma automática! Ideal para tráfego direto ou orgânico.</p>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:52px">
-    <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg, var(--ouro2), var(--ouro));color:#0D0D0B;padding:18px 38px;border-radius:40px;font-family:'Cinzel';font-size:12px;font-weight:700;letter-spacing:0.14em;text-decoration:none;box-shadow:0 10px 30px rgba(212,175,55,0.25)" data-pt-BR="QUERO ME AFILIAR AGORA - 40%" data-en="I WANT TO BECOME AN AFFILIATE NOW - 40%" data-es="QUIERO AFILIARME AHORA - 40%" data-fr="JE VEUX DEVENIR AFFILIÉ MAINTENANT - 40%">QUERO ME AFILIAR AGORA - 40% <span class="material-icons" style="font-size:18px">arrow_forward</span></a>
-    <p style="font-size:11px;color:var(--sepia);margin-top:14px;letter-spacing:0.08em;font-weight:300;opacity:0.7" data-pt-BR="Aprovação imediata • Link na Hotmart • Comissão em 7 dias" data-en="Instant approval • Hotmart link • 7-day commission" data-es="Aprobación inmediata • Link en Hotmart • Comisión en 7 días" data-fr="Approbation immédiate • Lien Hotmart • Commission en 7 jours">Aprovação imediata • Link na Hotmart • Comissão em 7 dias</p>
   </div>
 </section>
+
+<style>
+.afiliados-wrap{max-width:1140px;margin:0 auto;padding:80px 16px;box-sizing:border-box;width:100%;overflow:hidden}
+.afiliados-card{background:#1A1A1A;border:1px solid rgba(238,188,108,0.12);border-radius:20px;padding:32px 24px;min-width:0;max-width:100%}
+.afiliados-badge{display:inline-block;border:1px solid rgba(238,188,108,0.2);background:rgba(238,188,108,0.06);padding:6px 14px;border-radius:100px;font-family:'Cinzel';font-size:9px;letter-spacing:0.28em;color:#eebc6c}
+.afiliados-title{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(22px,4vw,36px);line-height:1.15;color:#F5F5F0;margin:18px 0 0;min-width:0;word-break:break-word}
+.afiliados-text{font-family:'Inter',sans-serif;font-weight:300;font-size:13.5px;line-height:1.9;color:#d8c9a8;margin:18px 0 0;min-width:0;word-break:break-word;white-space:normal;overflow-wrap:break-word}
+.afiliados-desc{margin-top:28px;padding-top:22px;border-top:1px solid rgba(238,188,108,0.1);min-width:0}
+.afiliados-label{font-family:'Cinzel';font-size:9px;letter-spacing:0.28em;color:#eebc6c;display:block;margin-bottom:10px}
+.afiliados-footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.afiliados-data{font-family:'Inter';font-weight:300;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#d8c9a8;opacity:0.6}
+.afiliados-btn{display:inline-flex;background:linear-gradient(180deg,#eebc6c,#D4AF37);color:#121212;padding:16px 28px;border-radius:100px;font-family:'Cinzel';font-size:11px;font-weight:700;letter-spacing:0.16em;text-decoration:none;white-space:nowrap}
+@media(max-width:768px){.afiliados-card{padding:24px 16px}.afiliados-footer{flex-direction:column;align-items:flex-start}}
+</style>
+
+<style>
+/* FIX SÓ NAS LETRAS - NÃO MEXE NO TEXTO */
+.afiliados-title{
+  font-family:'Cinzel',serif !important;
+  font-weight:400 !important; /* era 700 que deixava borrado/gordo */
+  letter-spacing:0.02em !important;
+  text-shadow:none !important;
+  -webkit-font-smoothing:antialiased;
+}
+
+.afiliados-text strong, .card-afiliado strong{
+  font-weight:600 !important; /* era 700 + cor que virava borrão */
+  color:var(--ouro) !important;
+  letter-spacing:0.02em !important;
+  text-shadow:none !important;
+}
+
+#dataLocalizada, #dataLocalizada2, .afiliados-data{
+  font-weight:300 !important;
+  letter-spacing:0.16em !important;
+  opacity:0.7;
+}
+.comissao-box b{
+  font-weight:400 !important; /* Comissão Líquida fina */
+  letter-spacing:0.12em;
+}
+</style>
+
+<script>
+(function(){
+  var lang = localStorage.getItem('prisma_lang') || 'pt-BR';
+  function aplicarTraducao(l){
+    localStorage.setItem('prisma_lang', l);
+    document.querySelectorAll('#afiliados-section [data-pt-BR]').forEach(function(el){
+      var t = el.getAttribute('data-' + l) || el.getAttribute('data-pt-BR');
+      if(!t) return;
+      if(t.indexOf('<') > -1) el.innerHTML = t; else el.textContent = t;
+    });
+    var map = {'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
+    var tz = {'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
+    try{
+      var fmt = new Intl.DateTimeFormat(map[l], {dateStyle:'long', timeZone: tz[l]});
+      var dl = document.getElementById('dataLocalizada');
+      if(dl) dl.textContent = fmt.format(new Date());
+    }catch(e){}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(function(btn){
+    btn.addEventListener('click', function(){ aplicarTraducao(btn.id.replace('btn-','')); });
+  });
+  aplicarTraducao(lang);
+})();
+</script>
+
+
+
+<section style="padding:40px 5%;max-width:1240px;margin:0 auto">
+<div class="grid-afiliados">
+    <div class="card-afiliado">
+      <span class="material-icons" style="color:var(--ouro)">payments</span>
+      <h3 style="font-family:'Cinzel';font-size:13px;margin-top:10px" data-pt-BR="COMISSÃO AGRESSIVA" data-en="AGGRESSIVE COMMISSION" data-es="COMISIÓN AGRESIVA" data-fr="COMMISSION AGRESSIVE">COMISSÃO AGRESSIVA</h3>
+      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px" data-pt-BR="Você recebe <strong style='color:var(--ouro)'>40% de comissão líquida</strong> por cada venda." data-en="You get <strong style='color:var(--ouro)'>40% net commission</strong> per sale." data-es="Recibes <strong style='color:var(--ouro)'>40% de comisión neta</strong> por venta." data-fr="Vous recevez <strong style='color:var(--ouro)'>40% de commission nette</strong> par vente.">Você recebe <strong style='color:var(--ouro)'>40% de comissão líquida</strong> por cada venda.</p>
+    </div>
+    <div class="card-afiliado">
+      <span class="material-icons" style="color:var(--ouro)">bolt</span>
+      <h3 style="font-family:'Cinzel';font-size:13px;margin-top:10px" data-pt-BR="GANCHO IRRECUSÁVEL" data-en="IRRESISTIBLE HOOK" data-es="GANCHO IRRESISTIBLE" data-fr="ACCROCHE IRRÉSISTIBLE">GANCHO IRRECUSÁVEL</h3>
+      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px" data-pt-BR="Entrega o <strong style='color:var(--creme)'>DNA tecnológico</strong> e repertório para Nota 1000." data-en="Delivers the <strong style='color:var(--creme)'>technological DNA</strong> for top score." data-es="Entrega el <strong style='color:var(--creme)'>ADN tecnológico</strong> para Nota 1000." data-fr="Livre l'<strong style='color:var(--creme)'>ADN technologique</strong> pour 1000 points.">Entrega o <strong style='color:var(--creme)'>DNA tecnológico</strong> e repertório para Nota 1000.</p>
+    </div>
+    <div class="card-afiliado">
+      <span class="material-icons" style="color:var(--ouro)">autorenew</span>
+      <h3 style="font-family:'Cinzel';font-size:13px;margin-top:10px" data-pt-BR="MERCADO RECORRENTE" data-en="RECURRING MARKET" data-es="MERCADO RECURRENTE" data-fr="MARCHÉ RÉCURRENT">MERCADO RECORRENTE</h3>
+      <p style="font-size:13px;line-height:1.7;color:var(--sepia);margin-top:10px" data-pt-BR="Milhões de alunos todo ano. Público se renova automático." data-en="Millions of students every year. Auto-renewing audience." data-es="Millones de alumnos cada año. Público se renueva automático." data-fr="Millions d'élèves chaque année. Audience auto-renouvelée.">Milhões de alunos todo ano. Público se renova automático.</p>
+    </div>
+</div>
+
+<div style="text-align:center;margin-top:52px">
+  <a href="https://affiliate.hotmart.com/affiliate-recruiting/view/3083P107552325" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:var(--ouro);color:#121212;padding:18px 38px;border-radius:40px;font-family:'Cinzel';font-size:12px;font-weight:700;letter-spacing:0.14em;text-decoration:none" data-pt-BR="QUERO ME AFILIAR AGORA - 40%" data-en="I WANT TO AFFILIATE NOW - 40%" data-es="QUIERO AFILIARME AHORA - 40%" data-fr="JE VEUX DEVENIR AFFILIÉ - 40%">QUERO ME AFILIAR AGORA - 40%</a>
+  <p style="font-size:11px;color:var(--sepia);margin-top:14px" data-pt-BR="Aprovação imediata • Link na Hotmart • Comissão em 7 dias" data-en="Instant approval • Hotmart link • 7-day commission" data-es="Aprobación inmediata • Link en Hotmart • Comisión en 7 días" data-fr="Approbation immédiate • Lien Hotmart • Commission en 7 jours">Aprovação imediata • Link na Hotmart • Comissão em 7 dias</p>
+</div>
+</section>
+
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
@@ -124,6 +345,9 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
         <a href="artigos.html" data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</a>
         <a href="ebook.html" data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</a>
         <a href="quiz.html" data-pt-BR="QUIZ HISTÓRICO" data-en="HISTORY QUIZ" data-es="QUIZ HISTÓRICO" data-fr="QUIZ HISTORIQUE">QUIZ HISTÓRICO</a>
+        <a href="curiosidades.html" data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</a>
+        <a href="turismo.html" data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</a>
+        <a href="loja.html" data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</a>
       </div>
       <div class="footer-col">
         <h4 data-pt-BR="SUPORTE" data-en="SUPPORT" data-es="SOPORTE" data-fr="SUPPORT">SUPORTE</h4>
@@ -137,13 +361,15 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
         <h4>E-BOOK</h4>
         <div class="footer-news-card">
           <p data-pt-BR="140 páginas premium com mapas exclusivos. O diferencial para gabaritar Humanas e Nota 1000 na Redação." data-en="140 premium pages with exclusive maps." data-es="140 páginas premium con mapas exclusivos." data-fr="140 pages premium avec cartes exclusives.">140 páginas premium com mapas exclusivos. O diferencial para gabaritar Humanas e Nota 1000 na Redação.</p>
-          <a href="ebook.html" class="cta-gold" data-pt-BR="COMPRAR E-BOOK - R$69,90" data-en="BUY E-BOOK - $19.90" data-es="COMPRAR E-BOOK - €19,90" data-fr="ACHETER E-BOOK - 19,90€">COMPRAR E-BOOK - R$69,90 <span class="material-icons" style="font-size:16px;color:#0D0D0B">arrow_forward</span></a>
+          <a href="ebook.html" class="cta-gold" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;background:var(--ouro);color:#121212;padding:10px 18px;border-radius:20px;font-family:'Cinzel';font-size:10px;font-weight:700;text-decoration:none" data-pt-BR="COMPRAR E-BOOK - R$69,90" data-en="BUY E-BOOK - $19.90" data-es="COMPRAR E-BOOK - €19,90" data-fr="ACHETER E-BOOK - 19,90€">COMPRAR E-BOOK - R$69,90 <span class="material-icons" style="font-size:16px;color:#121212">arrow_forward</span></a>
         </div>
       </div>
     </div>
     <div class="footer-bottom"><span>© <span id="anoAtual">2026</span> <span data-pt-BR="Prisma Histórico • Todos os direitos reservados" data-en="Prisma Histórico • All rights reserved" data-es="Prisma Histórico • Todos los derechos reservados" data-fr="Prisma Histórico • Tous droits réservés">Prisma Histórico • Todos os direitos reservados</span></span><span id="dataLocalizada"></span></div>
   </div>
 </footer>
+
+
 <script>
 function aplicarTraducao(lang){
   localStorage.setItem('prisma_lang',lang);
@@ -151,8 +377,7 @@ function aplicarTraducao(lang){
   var b=document.getElementById('btn-'+lang);if(b)b.classList.add('active');
   document.querySelectorAll('[data-pt-BR]').forEach(function(el){
     var t=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
-    if(!t) return;
-    if(t.indexOf('<')>-1) el.innerHTML=t; else el.textContent=t;
+    if(!t)return; if(t.indexOf('<')>-1) el.innerHTML=t; else el.textContent=t;
   });
   var map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
   var tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
