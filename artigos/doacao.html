@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doe - Prisma Histórico</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
-
-
 <style>
 :root{--ouro:#eebc6c;--preto:#121212;--creme:#F5F5F0;--sepia:#d8c9a8;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,7 +16,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 .lang-switch button.active{background:var(--ouro);color:#121212}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10002;border-radius:50%}
 .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s;transform-origin:center}
-/* CORRIGIDO COM ESPAÇO */
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -27,7 +23,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0)!important;pointer-events:all!important;opacity:1!important}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7}
 .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-
 .hero-doacao{padding:90px 5% 50px 5%;text-align:center;max-width:900px;margin:auto}
 .tag{color:var(--ouro);font-size:9px;letter-spacing:0.24em;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:22px;text-transform:uppercase}
 .hero-doacao h1{font-family:'Cormorant Garamond';font-size:clamp(36px,5vw,56px);line-height:0.95;margin-bottom:18px;font-weight:300}
@@ -44,7 +39,6 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 .valores{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:10px!important;margin:24px 0!important;width:100%!important}
 .valores button{width:100%;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);color:var(--sepia);border-radius:12px;cursor:pointer;font-size:13px}
 .valores button:hover{border-color:var(--ouro);color:var(--ouro);background:rgba(238,188,108,0.08)}
-
 #prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px;padding:70px 6% 30px 6%}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto}
 #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.2fr;gap:60px}
@@ -85,35 +79,89 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 </nav>
 
 <header class="hero-doacao">
-  <span class="tag" data-pt="Você mantém esse projeto vivo" data-en="You keep this project alive" data-es="Tú mantienes vivo este proyecto" data-fr="Vous maintenez ce projet en vie">Você mantém esse projeto vivo</span>
-  <h1 data-pt="Seu apoio é o <span>combustível</span> do Prisma" data-en="Your support is the <span>fuel</span> of Prisma" data-es="Tu apoyo es el <span>combustible</span> del Prisma" data-fr="Votre soutien est le <span>carburant</span> du Prisma">Seu apoio é o <span>combustível</span> do Prisma</h1>
-  <p data-pt="Sem anúncios chatos, sem enrolação. 100% independente." data-en="No annoying ads, no fluff. 100% independent." data-es="Sin anuncios molestos. 100% independiente." data-fr="Sans pubs ennuyeuses. 100% indépendant.">Sem anúncios chatos, sem enrolação.</p>
+  <span class="tag" data-pt-BR="Você mantém esse projeto vivo" data-en="You keep this project alive" data-es="Tú mantienes vivo este proyecto" data-fr="Vous maintenez ce projet en vie">Você mantém esse projeto vivo</span>
+  <h1 data-pt-BR="Seu apoio é o <span>combustível</span> do Prisma" data-en="Your support is the <span>fuel</span> of Prisma" data-es="Tu apoyo es el <span>combustible</span> del Prisma" data-fr="Votre soutien est le <span>carburant</span> du Prisma">Seu apoio é o <span>combustível</span> do Prisma</h1>
+  <p data-pt-BR="Sem anúncios chatos, sem enrolação. 100% independente." data-en="No annoying ads, no fluff. 100% independent." data-es="Sin anuncios molestos. 100% independiente." data-fr="Sans pubs ennuyeuses. 100% indépendant.">Sem anúncios chatos, sem enrolação. 100% independente.</p>
 </header>
 
 <div class="box-doacao">
   <div class="qr-card">
     <div class="qr-img" id="qrContainer">QR 240x240</div>
-    <b data-pt="Escaneie o QR Code" data-en="Scan the QR Code" data-es="Escanea el QR" data-fr="Scannez le QR">Escaneie o QR Code</b>
-    <span style="opacity:0.4;font-size:12px;margin:6px 0 14px 0" data-pt="Abra o app do banco e pague via PIX" data-en="Donate via PayPal from abroad" data-es="Dona vía PayPal" data-fr="Faites un don via PayPal">Abra o app do banco e pague via PIX</span>
-    <div class="pix-key-box" id="pixBox"><code id="pixKey">cronologia.prisma.historico@gmail.com</code><button class="btn-copiar" data-pt="COPIAR" data-en="COPY" data-es="COPIAR" data-fr="COPIER">COPIAR</button></div>
-    <div id="paypalBox" style="display:none;width:100%"><a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6" target="_blank" class="btn-paypal">Donate via PayPal</a></div>
+    <b data-pt-BR="Escaneie o QR Code" data-en="Scan the QR Code" data-es="Escanea el QR" data-fr="Scannez le QR">Escaneie o QR Code</b>
+    <span style="opacity:0.4;font-size:12px;margin:6px 0 14px 0" data-pt-BR="Abra o app do banco e pague via PIX" data-en="Donate via PayPal from abroad" data-es="Dona vía PayPal desde el extranjero" data-fr="Faites un don via PayPal depuis l'étranger">Abra o app do banco e pague via PIX</span>
+    <div class="pix-key-box" id="pixBox"><code id="pixKey">cronologia.prisma.historico@gmail.com</code><button class="btn-copiar" data-pt-BR="COPIAR" data-en="COPY" data-es="COPIAR" data-fr="COPIER">COPIAR</button></div>
+    <div id="paypalBox" style="display:none;width:100%"><a href="https://www.paypal.com/donate/?business=DY3X5WXFBF7G6" target="_blank" class="btn-paypal" data-pt-BR="Doar via PayPal" data-en="Donate via PayPal" data-es="Donar vía PayPal" data-fr="Faire un don via PayPal">Donate via PayPal</a></div>
   </div>
   <div class="info-card">
-    <h2 style="font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px" data-pt="Por que doar?" data-en="Why donate?" data-es="¿Por qué donar?" data-fr="Pourquoi donner?">Por que doar?</h2>
-    <p style="opacity:0.6;line-height:1.8;font-size:14px" data-pt="Por trás de cada artigo tem centenas de horas de triagem de fontes primárias." data-en="Behind each article there are hundreds of hours of primary source research." data-es="Detrás de cada artículo hay cientos de horas de investigación." data-fr="Derrière chaque article, des centaines d'heures de recherche.">Por trás de cada artigo tem centenas de horas...</p>
+    <h2 style="font-family:'Cormorant Garamond';font-size:32px;margin-bottom:14px" data-pt-BR="Por que doar?" data-en="Why donate?" data-es="¿Por qué donar?" data-fr="Pourquoi donner?">Por que doar?</h2>
+    <p style="opacity:0.6;line-height:1.8;font-size:14px" data-pt-BR="Por trás de cada artigo tem centenas de horas de triagem de fontes primárias, mapas e cronologia para quem estuda para concursos." data-en="Behind each article there are hundreds of hours of primary source research." data-es="Detrás de cada artículo hay cientos de horas de investigación." data-fr="Derrière chaque article, des centaines d'heures de recherche.">Por trás de cada artigo tem centenas de horas de triagem de fontes primárias, mapas e cronologia para quem estuda para concursos.</p>
     <div class="valores" id="valoresBox"></div>
   </div>
 </div>
 
 <footer id="prismaFooter">
+  <style>
+    #prismaFooter{background:#0a0a0f;color:#fff;padding:60px 20px 30px;border-top:1px solid rgba(255,255,255,0.08)}
+    .footer-wrap{max-width:1200px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 0.8fr 0.8fr 1.2fr;gap:40px}
+    .footer-logo{font-size:22px;font-weight:800;letter-spacing:0.1em;margin-bottom:12px}
+    .footer-logo span{color:var(--ouro,#eebc6c)}
+    .footer-desc{opacity:0.5;font-size:13px;line-height:1.6;max-width:300px;margin-bottom:20px}
+    .footer-col h4{font-size:10px;letter-spacing:0.25em;opacity:0.9;margin-bottom:20px;color:#fff}
+    .footer-col a{display:block;color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;margin-bottom:10px;transition:0.2s}
+    .footer-col a:hover{color:var(--ouro,#eebc6c)}
+    .social-row{display:flex;gap:10px;margin-top:10px}
+    .social-btn{width:38px;height:38px;border-radius:100px;border:1px solid rgba(238,188,108,0.3);background:rgba(238,188,108,0.08);display:flex;align-items:center;justify-content:center;transition:0.2s}
+    .social-btn:hover{background:var(--ouro,#eebc6c);border-color:var(--ouro,#eebc6c)}
+    .social-btn svg{width:16px;height:16px;fill:#fff}
+    .social-btn:hover svg{fill:#121212}
+    .footer-bottom{margin-top:50px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px} .footer-grid > div:first-child{grid-column:1 / -1}}
+  </style>
+
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc" data-pt="Desvendando camadas da história com rigor, estética e narrativa." data-en="Unveiling layers of history with rigor." data-es="Desvelando capas de la historia." data-fr="Dévoilant les couches de l'histoire.">Desvendando camadas da história...</p></div>
-      <div class="footer-col"><h4 data-pt="Mapa" data-en="Map" data-es="Mapa" data-fr="Carte">Mapa</h4><a href="sobre.html" data-pt="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a><a href="artigos.html" data-pt="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a><a href="ebook.html">E-book</a></div>
-      <div class="footer-col"><h4 data-pt="Explorar" data-en="Explore" data-es="Explorar" data-fr="Explorer">Explorar</h4><a href="quiz.html">Quiz</a><a href="loja.html" data-pt="Loja" data-en="Shop" data-es="Tienda" data-fr="Boutique">Loja</a><a href="doe.html" data-pt="Doe" data-en="Donate" data-es="Donar" data-fr="Faire un don">Doe</a></div>
-      <div class="footer-news-card"><h4 style="color:var(--ouro);font-size:10px;letter-spacing:0.2em;margin-bottom:10px" data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4><p style="opacity:0.5;font-size:12px;margin-bottom:10px" data-pt="Receba roteiros secretos. Grátis." data-en="Get secret guides. Free." data-es="Recibe guías secretas." data-fr="Guides secrets.">Receba roteiros secretos.</p><input type="email" id="prismaEmail" placeholder="email" style="width:100%;padding:12px;border-radius:10px;background:#1E1E1E;border:1px solid var(--borda);color:#fff;margin-bottom:10px"><button id="prismaBtn" style="width:100%;padding:12px;border-radius:10px;background:var(--ouro);border:0;cursor:pointer" data-pt="Entrar →" data-en="Join →" data-es="Entrar →" data-fr="Rejoindre →">Entrar →</button></div>
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc">Desvendando camadas da história com rigor, estética e narrativa.</p>
+        <div class="social-row">
+          <a class="social-btn" href="https://instagram.com/" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.2 5.2 0 0 1-5.2 5.2H7.8C4.6 22 2 19.4 2 16.2V7.8A5.2 5.2 0 0 1 7.8 2m-.2 2A3.2 3.2 0 0 0 4.4 7.2v8.4c0 1.8 1.4 3.2 3.2 3.2h8.4a3.2 3.2 0 0 0 3.2-3.2V7.2a3.2 3.2 0 0 0-3.2-3.2H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+          </a>
+          <a class="social-btn" href="https://tiktok.com/" target="_blank" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V8.94a6.27 6.27 0 0 0-.79-.05A6.34 6.34 0 0 0 2.5 15.23a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.14 8.14 0 0 0 4.71 1.5V6.69h-.3z"/></svg>
+          </a>
+          <a class="social-btn" href="https://youtube.com/" target="_blank" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.06.8.1 1.49.1 2.09L22 12c0 2.07-.04 3.51-.1 4.31-.06.8-.15 1.43-.28 1.9-.14.47-.38.88-.72 1.22-.34.34-.75.58-1.22.72-.47.13-1.1.22-1.9.28-.8.06-1.49.1-2.09.1L12 20.5c-2.07 0-3.51-.04-4.31-.1-.8-.06-1.43-.15-1.9-.28-.47-.14-.88-.38-1.22-.72-.34-.34-.58-.75-.72-1.22-.13-.47-.22-1.1-.28-1.9-.06-.8-.1-1.49-.1-2.09L3.5 12c0-2.07.04-3.51.1-4.31.06-.8.15-1.43.28-1.9.14-.47.38-.88.72-1.22.34-.34.75-.58 1.22-.72.47-.13 1.1-.22 1.9-.28.8-.06 1.49-.1 2.09-.1L12 3.5c2.07 0 3.51.04 4.31.1.8.06 1.43.15 1.9.28.47.14.88.38 1.22.72.34.34.58.75.72 1.22z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>MAPA</h4>
+        <a href="sobre.html">Sobre</a>
+        <a href="artigos.html">Artigos</a>
+        <a href="ebook.html">E-book</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>EXPLORAR</h4>
+        <a href="quiz.html">Quiz</a>
+        <a href="loja.html">Loja</a>
+        <a href="doacao.html">Doe</a>
+      </div>
+
+      <div class="footer-col" style="background:rgba(238,188,108,0.08);border:1px solid rgba(238,188,108,0.25);border-radius:16px;padding:20px;">
+        <h4 style="color:var(--ouro,#eebc6c);margin-bottom:10px">APOIE O PRISMA</h4>
+        <p style="opacity:0.6;font-size:12px;line-height:1.6;margin-bottom:16px">Mantenha o arquivo vivo. Cada contribuição preserva mapas e documentos.</p>
+        <a href="doacao.html" style="display:inline-block;padding:12px 22px;border-radius:100px;background:var(--ouro,#eebc6c);color:#121212;font-size:11px;text-decoration:none;font-weight:700;width:100%;text-align:center;box-sizing:border-box;">DOAR AGORA →</a>
+      </div>
     </div>
-    <div class="footer-bottom"><span>© <span id="ano"></span> Prisma Histórico</span><span data-pt="Feito com ☕ em SP" data-en="Made with ☕ in SP" data-es="Hecho con ☕ en SP" data-fr="Fait avec ☕ à SP">Feito com ☕ em SP</span></div>
+
+    <div class="footer-bottom">
+      <span style="color:#A99B85; font-size:10px; opacity:0.6;">© <span id="ano"></span> Prisma Histórico - História do Brasil para Concursos</span>
+      <span style="color:#A99B85; font-size:10px; opacity:0.6;">Feito com ☕ em SP</span>
+    </div>
   </div>
 </footer>
 
@@ -121,13 +169,19 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 function setLang(l){
   localStorage.setItem('prisma_lang',l);
   document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
-  document.querySelectorAll('[data-pt]').forEach(el=>{
-    let t=el.getAttribute('data-'+l);
-    if(t) el.innerHTML=t;
+  document.querySelectorAll('[data-pt-BR]').forEach(el=>{
+    let key = l === 'pt' ? 'pt-BR' : l;
+    let t = el.getAttribute('data-'+key);
+    if(t && el.id !== 'ano') el.innerHTML = t;
   });
   let qr=document.getElementById('qrContainer'), pix=document.getElementById('pixBox'), pay=document.getElementById('paypalBox'), box=document.getElementById('valoresBox');
-  if(l==='pt'){ qr.innerHTML='QR 240x240'; pix.style.display='flex'; pay.style.display='none'; box.innerHTML='<button>R$ 5</button><button>R$ 15</button><button>R$ 30</button><button>R$ 50</button><button>R$ 100</button><button>Outro</button>'; }
-  else{ qr.innerHTML='PayPal'; pix.style.display='none'; pay.style.display='block'; let s=l==='fr'?'€':'$'; box.innerHTML=`<button>${s} 5</button><button>${s} 15</button><button>${s} 30</button><button>${s} 50</button><button>${s} 100</button><button>Other</button>`; }
+  if(l==='pt'){ 
+    qr.textContent='QR 240x240'; pix.style.display='flex'; pay.style.display='none'; 
+    box.innerHTML='<button>R$ 5</button><button>R$ 15</button><button>R$ 30</button><button>R$ 50</button><button>R$ 100</button><button>Outro</button>'; 
+  } else { 
+    qr.textContent='PayPal'; pix.style.display='none'; pay.style.display='block'; 
+    let s=l==='fr'?'€':'$'; box.innerHTML=`<button>${s} 5</button><button>${s} 15</button><button>${s} 30</button><button>${s} 50</button><button>${s} 100</button><button>Other</button>`; 
+  }
 }
 document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 const nav=document.getElementById('prismaNav'), btn=document.getElementById('btnMenu');
@@ -135,6 +189,14 @@ btn.addEventListener('click',e=>{ e.stopPropagation(); nav.classList.toggle('men
 document.addEventListener('click',e=>{ if(!e.target.closest('#prismaNav')) nav.classList.remove('menu-aberto'); });
 document.getElementById('ano').textContent=new Date().getFullYear();
 setLang(localStorage.getItem('prisma_lang')||'pt');
+
+// Copiar PIX funciona
+document.querySelector('.btn-copiar')?.addEventListener('click', () => {
+  navigator.clipboard.writeText(document.getElementById('pixKey').textContent);
+  const b = document.querySelector('.btn-copiar');
+  b.textContent = 'COPIADO!';
+  setTimeout(()=> b.textContent = 'COPIAR', 1500);
+});
 </script>
 </body>
 </html>

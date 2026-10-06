@@ -148,22 +148,31 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;l
         <a href="privacidade.html">🔒 Privacidade</a>
         <a href="termos.html">📄 Termos de Uso</a>
       </div>
-      <div class="footer-col">
-        <h4>Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p>Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn">Entrar pro Clube →</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Prisma Histórico</span>
-      <span>Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
+      <style>
+.footer-news-card{background:rgba(255,255,255,0.03);border:1px solid rgba(212,175,55,0.14);padding:14px;border-radius:10px}
+.footer-news-card p{color:#A99B85;font-size:11px;line-height:1.6;margin-bottom:10px}
+.footer-buy-btn{
+  background:#D4AF37 !important;
+  color:#0D0D0B !important;
+  padding:7px 12px !important;
+  font-size:9px !important;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  letter-spacing:0.08em;
+  border-radius:30px !important;
+  display:inline-flex !important;
+  width:auto !important;
+  text-decoration:none;
+}
+</style>
 
+<div class="footer-col">
+  <h4>Seja um Afiliado</h4>
+  <div class="footer-news-card">
+    <p>Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart.</p>
+    <a href="afiliados.html" class="footer-buy-btn">QUERO SER AFILIADO 40% →</a>
+  </div>
+</div>
 <script>
 const T={
 pt:{

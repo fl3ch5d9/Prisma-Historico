@@ -138,22 +138,42 @@ body{background:var(--carvao);color:var(--off);font-family:'Inter',sans-serif; f
         <a href="privacidade.html" data-pt="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
         <a href="termos.html" data-pt="📄 Termos de Uso" data-en="📄 Terms of Use" data-es="📄 Términos de Uso" data-fr="📄 Conditions d'Utilisation">📄 Termos de Uso</a>
       </div>
-      <div class="footer-col">
-        <h4 data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-pt="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret guides and lessons not on the site. Free." data-es="Recibe guías secretas y clases que no van al sitio. Gratis." data-fr="Recevez des guides secrets et des leçons pas sur le site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join Club →" data-es="Entrar al Club →" data-fr="Rejoindre →">Entrar pro Clube →</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="ano"></span> <span data-pt="Prisma Histórico" data-en="Prisma Histórico" data-es="Prisma Histórico" data-fr="Prisma Histórico">Prisma Histórico</span></span>
-      <span data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
+    <style>
+.footer-news-card{background:rgba(255,255,255,0.03);border:1px solid rgba(212,175,55,0.14);padding:14px;border-radius:10px}
+.footer-news-card p{color:#A99B85;font-size:11px;line-height:1.6;margin-bottom:12px}
+.footer-buy-btn{
+  background:#D4AF37 !important;
+  color:#0D0D0B !important;
+  -webkit-text-fill-color:#0D0D0B !important;
+  padding:7px 12px !important;
+  border-radius:30px;
+  font-family:'Cinzel',serif;
+  font-size:10px !important;
+  font-weight:700;
+  letter-spacing:0.1em;
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  width:auto !important;
+  text-decoration:none;
+  opacity:1 !important;
+}
+</style>
 
+<div class="footer-col">
+  <h4 data-pt-BR="Seja um Afiliado" data-en="Become an Affiliate" data-es="Sé Afiliado" data-fr="Devenez Affilié">Seja um Afiliado</h4>
+  <div class="footer-news-card">
+    <p data-pt-BR="Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart." data-en="Sign up and earn 40% of the ebook value on each sale." data-es="Regístrate y gana 40% del valor del ebook por cada venta." data-fr="Inscrivez-vous et gagnez 40% de la valeur de l'ebook à chaque vente.">Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart.</p>
+    <a href="afiliados.html" class="footer-buy-btn" data-pt-BR="QUERO SER AFILIADO 40% →" data-en="BECOME AFFILIATE 40% →" data-es="QUIERO SER AFILIADO 40% →" data-fr="DEVENIR AFFILIÉ 40% →">QUERO SER AFILIADO 40% →</a>
+  </div>
+</div>
+</div>
+<div class="footer-bottom">
+  <span>© <span id="ano"></span> Prisma Histórico</span>
+  <span data-pt-BR="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h sleep in São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
+</div>
+</div>
+</footer>
 <script>
 function setLang(l){
   localStorage.setItem('prisma_lang',l);

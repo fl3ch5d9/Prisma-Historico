@@ -1,146 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-pt-BR="Quiz - Prisma Histórico" data-en="Quiz - Prisma Histórico" data-es="Quiz - Prisma Histórico" data-fr="Quiz - Prisma Histórico">Quiz - Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Missões - 50 Mapas Mentais</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@200;300;400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
-:root{ --ouro:#eebc6c; --preto:#121212; --creme:#F5F5F0; --sepia:#d8c9a8; --preto2:#1A1A1A; --borda:rgba(238,188,108,0.12); --vermelho:#ff4d4d; }
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; font-weight:200; -webkit-font-smoothing:antialiased; padding-top:72px;}
-.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
-.prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;z-index:10001; font-weight:300;}
-.prisma-logo span{color:var(--ouro);font-weight:400}
-.lang-switch{display:flex;gap:6px;z-index:10001}
-.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:6px 10px;border-radius:20px;cursor:pointer;font-size:11px; min-width:38px; min-height:34px;}
-.lang-switch button.active{background:var(--ouro);color:#121212;border-color:var(--ouro);font-weight:400}
-.prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
-.prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:0.4s}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+:root{--ouro:#eebc6c;--preto:#121212;--preto2:#1A1A1A;--creme:#F5F5F0;--sepia:#d8c9a8;--borda:rgba(238,188,108,0.14)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:200;padding-top:68px}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:12px 4%;background:rgba(18,18,18,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cormorant Garamond';font-size:22px;letter-spacing:0.16em}.prisma-logo span{color:var(--ouro)}
+.lang-switch{display:flex;gap:5px}.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--creme);padding:5px 9px;border-radius:20px;cursor:pointer;font-size:10px;min-width:34px}.lang-switch button.active{background:var(--ouro);color:#121212}
+.prisma-menu-hamburguer{width:44px;height:44px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer;z-index:10001}.prisma-menu-hamburguer span{width:18px;height:1px;background:var(--ouro);display:block;transition:.3s}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:0.4s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:280px;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:90px 0 0 24px;gap:18px;transform:translateX(-100%);transition:.35s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7; font-weight:200;}
-.prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
-.container{max-width:900px;margin:auto;padding:0 5%}
-.quiz-hero{text-align:center;padding:80px 5% 40px}
-.quiz-hero h1{font-family:'Cormorant Garamond';font-size:clamp(42px,5vw,62px);font-weight:300;line-height:.9}
-.quiz-hero p{color:var(--ouro);margin-top:16px;letter-spacing:.12em;font-size:11px;text-transform:uppercase;opacity:.7}
-.quiz-box{background:var(--preto2);border:1px solid var(--borda);border-radius:20px;padding:36px;margin-top:20px}
-.quiz-box h2{font-family:'Cormorant Garamond';font-size:28px;font-weight:300;margin-bottom:22px}
-.opcao{border:1px solid rgba(255,255,255,.08);background:#1E1E1E;border-radius:12px;padding:16px 18px;margin-bottom:12px;cursor:pointer;transition:.2s;font-size:14px}
-.opcao:hover{border-color:var(--ouro);color:var(--ouro)}
-.progress{height:2px;background:rgba(238,188,108,.15);margin:30px 0;border-radius:10px;overflow:hidden}
-.progress span{display:block;height:100%;width:40%;background:var(--ouro)}
-#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
-#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9; font-weight:300;}
-#prismaFooter .footer-logo span{color:var(--ouro);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0; font-weight:200;}
-#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s; font-weight:200;}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro);transform:translateX(4px)}
-#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:#F5F5F0; font-weight:200;}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none; font-weight:200;}
-#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:700;width:100%;cursor:pointer;font-size:12px; letter-spacing:0.08em;}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:#F5F5F0; font-weight:200; letter-spacing:0.06em;}
-@media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:40px}#prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:400px}}
-@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
+.prisma-menu-links a{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;gap:10px;opacity:.7}
+.container{max-width:720px;margin:auto;padding:0 4%}
+.hero{text-align:center;padding:32px 4% 10px}.hero h1{font-family:'Cormorant Garamond';font-size:clamp(26px,4vw,38px);font-weight:300;line-height:1}.hero p{color:var(--ouro);margin-top:6px;letter-spacing:.12em;font-size:10px;text-transform:uppercase;opacity:.7}
+.missao-path{display:flex;justify-content:center;gap:10px;margin:12px 0}.missao-dot{width:32px;height:32px;border-radius:50%;border:1px solid var(--borda);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--sepia);transition:.3s}.missao-dot.ativa{background:var(--ouro);color:#121212;border-color:var(--ouro)}.missao-dot.ok{background:rgba(34,197,94,0.15);border-color:#22c55e;color:#22c55e}
+.quiz-box{background:var(--preto2);border:1px solid var(--borda);border-radius:16px;padding:16px;margin-top:8px}
+.mapa-area{height:170px;background:#0E0E0E;border:1px solid rgba(238,188,108,0.14);border-radius:12px;margin:10px 0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mapa-area img{width:100%;height:100%;object-fit:cover;opacity:.9}
+.mapa-area .pin{position:absolute;bottom:8px;left:10px;background:rgba(0,0,0,0.85);border:1px solid var(--borda);padding:4px 9px;border-radius:20px;font-size:8px;color:var(--ouro);letter-spacing:0.1em;z-index:2}
+.mapa-area .sub{position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.65);padding:3px 8px;border-radius:12px;font-size:8px;color:var(--sepia);z-index:2}
+.progress{height:2px;background:rgba(238,188,108,.12);border-radius:10px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;background:var(--ouro);transition:width.4s}
+.quiz-box h2{font-family:'Cormorant Garamond';font-size:17px;font-weight:400;line-height:1.3;margin-bottom:12px}
+.opcao{border:1px solid rgba(255,255,255,.07);background:#1A1A1A;border-radius:10px;padding:10px 11px;margin-bottom:6px;cursor:pointer;transition:.2s;font-size:12px;display:flex;gap:8px;align-items:flex-start;line-height:1.35}
+.opcao b{min-width:20px;height:20px;border:1px solid rgba(255,255,255,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ouro);flex-shrink:0;margin-top:1px}
+.opcao:hover{border-color:var(--ouro);background:#1E1E1E}.opcao.certa{background:rgba(34,197,94,.12);border-color:#22c55e;color:#22c55e}.opcao.errada{background:rgba(239,68,68,.12);border-color:#ef4444;color:#ef4444}
+.explica{margin-top:10px;padding:10px 12px;background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.1);border-radius:10px;font-size:11px;color:var(--sepia);line-height:1.5;display:none}
+.btn-next{background:var(--ouro);color:#121212;border:0;padding:9px 16px;border-radius:8px;font-weight:700;cursor:pointer;display:none;font-size:11px;margin-top:10px}
+#prismaFooter{background:#0A0A0A;border-top:1px solid var(--borda);margin-top:50px}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:36px 4% 0 4%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.4fr 0.7fr 0.7fr 1fr;gap:28px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:20px;letter-spacing:0.16em}#prismaFooter .footer-logo span{color:var(--ouro);display:block}
+#prismaFooter .footer-desc{opacity:.32;font-size:11px;line-height:1.6;margin-top:8px}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:12px}
+#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:.4;text-decoration:none;font-size:11px;margin-bottom:7px}
+.footer-buy-btn{background:#D4AF37!important;color:#0D0D0B!important;padding:6px 10px!important;font-size:8px!important;font-family:'Cinzel',serif;font-weight:700;border-radius:30px!important;display:inline-flex!important;width:auto!important;text-decoration:none}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:28px;padding:12px 0;display:flex;justify-content:space-between;font-size:8px;opacity:.22}
+@media(max-width:700px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<nav class="prisma-nav" id="prismaNav">
-    <div class="prisma-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="lang-switch">
-        <button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button>
-      </div>
-      <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
-    </div>
-   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-    <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
-    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
-    <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
-    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
-    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
-    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
-    <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
-    <li><a href="turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
- </ul>
-</nav>
-<div class="quiz-hero">
-  <h1 data-pt-BR="Teste sua memória colonial" data-en="Test your colonial memory" data-es="Pon a prueba tu memoria colonial" data-fr="Testez votre mémoire coloniale">Teste sua memória colonial</h1>
-  <p data-pt-BR="10 perguntas • 3 minutos • sem decoreba" data-en="10 questions • 3 minutes • no memorization" data-es="10 preguntas • 3 minutos • sin memorización" data-fr="10 questions • 3 minutes • sans par cœur">10 perguntas • 3 minutos • sem decoreba</p>
-</div>
-<div class="container">
-  <div class="quiz-box">
-    <div class="progress"><span></span></div>
-    <h2 data-pt-BR="1. Por que usavam fezes de cavalo para lavar roupa?" data-en="1. Why did they use horse feces to wash clothes?" data-es="1. ¿Por qué usaban heces de caballo para lavar ropa?" data-fr="1. Pourquoi utilisait-on du crottin de cheval pour laver le linge?">1. Por que usavam fezes de cavalo para lavar roupa?</h2>
-    <div class="opcao" data-pt-BR="A) Porque não tinham sabão e a amônia clareava" data-en="A) Because they had no soap and ammonia bleached" data-es="A) Porque no tenían jabón y el amoníaco blanqueaba" data-fr="A) Parce qu'il n'y avait pas de savon et l'ammoniaque blanchissait">A) Porque não tinham sabão e a amônia clareava</div>
-    <div class="opcao" data-pt-BR="B) Era ritual religioso" data-en="B) It was a religious ritual" data-es="B) Era ritual religioso" data-fr="B) C'était un rituel religieux">B) Era ritual religioso</div>
-    <div class="opcao" data-pt-BR="C) Para espantar insetos" data-en="C) To repel insects" data-es="C) Para espantar insectos" data-fr="C) Pour repousser les insectes">C) Para espantar insetos</div>
-  </div>
-</div>
-<footer id="prismaFooter">
-  <div class="footer-wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span data-pt-BR="Prisma" data-en="Prisma" data-es="Prisma" data-fr="Prisma">Prisma</span> <span data-pt-BR="Histórico" data-en="History" data-es="Histórico" data-fr="Historique">Histórico</span></div>
-        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-      </div>
-      <div class="footer-col">
-        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
-        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
-        <a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
-        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
-        <a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a>
-        <a href="quiz.html" data-pt-BR="Quiz Histórico" data-en="History Quiz" data-es="Quiz Histórico" data-fr="Quiz Historique">Quiz Histórico</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
-        <a href="ebook.html">📘 E-book</a>
-        <a href="loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
-        <a href="afiliados.html" data-pt-BR="🤝 Afiliados 40%" data-en="🤝 Affiliates 40%" data-es="🤝 Afiliados 40%" data-fr="🤝 Affiliés 40%">🤝 Afiliados 40%</a>
-        <a href="doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação</a>
-        <a href="privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
-        <a href="termos.html" data-pt-BR="📄 Termos" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos</a>
-      </div>
-      <div class="footer-col">
-        <h4 data-pt-BR="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-pt-BR="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret itineraries and lessons not on the site. Free." data-es="Recibe itinerarios secretos y clases que no están en el sitio. Gratis." data-fr="Recevez des itinéraires secrets et des cours hors site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-pt-BR="Entrar pro Clube →" data-en="Join the Club →" data-es="Unirse al Club →" data-fr="Rejoindre le Club →">Entrar pro Clube →</button>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="anoAtual">2026</span> Prisma Histórico</span>
-      <span id="dataLocalizada" data-pt-BR="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
-    </div>
-  </div>
-</footer>
+<nav class="prisma-nav" id="prismaNav"><div class="prisma-logo"><span>Prisma</span> Histórico</div>
+<div style="display:flex;gap:10px;align-items:center"><div class="lang-switch"><button data-lang="pt-BR" class="active">PT</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="fr">FR</button></div><button class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button></div>
+<ul class="prisma-menu-links"><li><a href="../index.html"><span class="material-icons">home</span> <span data-i18n="m1">INÍCIO</span></a></li><li><a href="ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li><li><a href="afiliados.html"><span class="material-icons">handshake</span> <span data-i18n="m2">AFILIADOS 40%</span></a></li></ul></nav>
+
+<div class="hero"><h1 data-i18n="titulo">3 Missões → 50 Mapas Mentais</h1><p data-i18n="sub">ZEROU, GANHOU O PDF COM 50 MAPAS</p><p id="dataHoje" style="font-size:9px;opacity:.3;margin-top:6px"></p>
+<div class="missao-path"><div class="missao-dot ativa" id="d1">1</div><div class="missao-dot" id="d2">2</div><div class="missao-dot" id="d3">3</div></div></div>
+
+<div class="container"><div class="quiz-box" id="quizBox"></div></div>
+
+<footer id="prismaFooter"><div class="footer-wrap"><div class="footer-grid">
+<div><div class="footer-logo"><span>Prisma</span> Histórico</div><p class="footer-desc" data-i18n="desc">3 missões = 50 mapas liberados. Sem decoreba.</p></div>
+<div class="footer-col"><h4 data-i18n="nav">Navegação</h4><a href="../index.html" data-i18n="inicio">Início</a><a href="quiz.html">Quiz</a></div>
+<div class="footer-col"><h4 data-i18n="prod">Produtos</h4><a href="ebook.html">📘 E-book R$69,90</a></div>
+<div class="footer-col"><h4 data-i18n="afil">Afiliado</h4><div style="background:#121212;border:1px solid var(--borda);border-radius:12px;padding:12px;margin-top:10px"><p style="opacity:.35;font-size:10px" data-i18n="afilp">Ganhe 40% por venda. Hotmart.</p><a href="afiliados.html" class="footer-buy-btn" style="margin-top:8px">QUERO SER AFILIADO 40% →</a></div></div>
+</div><div class="footer-bottom"><span id="footerAno">© 2026 Prisma Histórico</span><span>3 Missões • 50 Mapas</span></div></div></footer>
+
 <script>
-function aplicarTraducao(l){
-  localStorage.setItem('prisma_lang',l);
-  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
-  var b=document.getElementById('btn-'+l);if(b)b.classList.add('active');
-  document.querySelectorAll('[data-pt-BR]').forEach(function(e){
-    var t=e.getAttribute('data-'+l)||e.getAttribute('data-pt-BR');
-    if(!t)return;e.textContent=t
-  });
+const i18n={
+"pt-BR":{titulo:"3 Missões → 50 Mapas Mentais",sub:"ZEROU 15/15 E GANHOU O PDF COM 50 MAPAS",desc:"3 missões = 50 mapas liberados. Sem decoreba. 1 erro = game over.",nav:"Navegação",inicio:"Início",prod:"Produtos",afil:"Afiliado",afilp:"Ganhe 40% por venda. Hotmart.",m1:"INÍCIO",m2:"AFILIADOS 40%",prox:"PRÓXIMA →",data:"Atualizado em",errou:"ERROU! FIM DE JOGO",acertou:"ACERTOU!"},
+"en":{titulo:"3 Missions → 50 Mind Maps",sub:"GET 15/15 AND WIN 50 MAPS PDF",desc:"3 missions = 50 mind maps. 1 mistake = game over.",nav:"Navigation",inicio:"Home",prod:"Products",afil:"Affiliate",afilp:"Earn 40% per sale.",m1:"HOME",m2:"AFFILIATES 40%",prox:"NEXT →",data:"Updated on",errou:"WRONG! GAME OVER",acertou:"CORRECT!"},
+"es":{titulo:"3 Misiones → 50 Mapas Mentales",sub:"HAZ 15/15 Y GANA 50 MAPAS",desc:"3 misiones = 50 mapas. 1 error = game over.",nav:"Navegación",inicio:"Inicio",prod:"Productos",afil:"Afiliado",afilp:"Gana 40% por venta.",m1:"INICIO",m2:"AFILIADOS 40%",prox:"SIGUIENTE →",data:"Actualizado el",errou:"¡ERROR! FIN DEL JUEGO",acertou:"¡ACIERTO!"},
+"fr":{titulo:"3 Missions → 50 Cartes Mentales",sub:"FAITES 15/15 ET GAGNEZ 50 CARTES",desc:"3 missions = 50 cartes. 1 erreur = game over.",nav:"Navigation",inicio:"Accueil",prod:"Produits",afil:"Affilié",afilp:"Gagnez 40% par vente.",m1:"ACCUEIL",m2:"AFFILIÉS 40%",prox:"SUIVANT →",data:"Mis à jour le",errou:"FAUX! GAME OVER",acertou:"CORRECT!"}
+};
+function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;}
+const missoes=[
+{ nome:"1ª Missão - Colônia", fases:[
+{q:'1. Por que Angola-Brasil dominou 70% do tráfico?',opts:[{t:'Angolanos eram fisicamente mais fortes',c:false},{t:'Guerra civil no Congo gerava prisioneiros baratos + 7 dias até Recife',c:true},{t:'Portugal tinha tratado de exclusividade com Angola',c:false},{t:'Angola ficava mais perto de Lisboa que Guiné',c:false},{t:'Brasileiros pediam especificamente angolanos',c:false}],lab:'ROTA TRANSATLÂNTICA',sub:'Brasil ESQ • África DIR • Correto',img:'ROTA_CORRIGIDA',ex:'Prisão em massa por guerra = preço baixo. Logística curta. Cap 7.'},
+{q:'2. Por que ouro causou fissiparidade e não Estado forte?',opts:[{t:'Rei Dom João era fraco e não mandava em Minas',c:false},{t:'Cada córrego tinha ouro e fiscalização era impossível na serra',c:true},{t:'Bandeirantes eram anarquistas por natureza',c:false},{t:'Igreja não deixava o Estado centralizar',c:false},{t:'Não havia exército português no Brasil',c:false}],lab:'OURO MINAS',sub:'1700-1790',ex:'Ouro pulverizado = cada arraial virou república.'},
+{q:'3. O que era direito regateado nas Filipinas?',opts:[{t:'Escravos não tinham direito a defesa alguma',c:false},{t:'Lei era igual no papel, mas pena era comprável em ouro',c:true},{t:'Só nobres podiam comprar liberdade judicial',c:false},{t:'Padres escapavam de qualquer crime',c:false},{t:'Todos eram iguais perante a lei colonial',c:false}],lab:'ORDENAÇÕES',sub:'Equiparação penal',ex:'Justiça à venda. Cap 13/14.'},
+{q:'4. Amamentação cruzada era dominação por quê?',opts:[{t:'Senhores eram mais humanos e afetivos',c:false},{t:'Criava dívida moral eterna mantendo escrava como escrava',c:true},{t:'Era tradição trazida pelos escravos da África',c:false},{t:'Igreja obrigava por caridade cristã',c:false},{t:'Escravas pediam para amamentar filhos brancos',c:false}],lab:'CASA GRANDE',sub:'Biopolítica',ex:'Ama negra nutre branco, mas continua escrava.'},
+{q:'5. Qual preço real da proteção inglesa em 1808?',opts:[{t:'Inglaterra exigiu terras no sul do Brasil',c:false},{t:'Abertura dos portos + tarifa 15% inglesa vs 24% portuguesa',c:true},{t:'Portugal entregou 2 toneladas de ouro por ano',c:false},{t:'Brasil teve que entregar escravos para marinha',c:false},{t:'Não teve preço, foi aliança gratuita',c:false}],lab:'FUGA 1808',sub:'15 mil pessoas',ex:'Brasil virou colônia econômica inglesa.'},
+]},
+{ nome:"2ª Missão - Império", fases:[
+{q:'6. Por que independência custou 3 milhões de libras?',opts:[{t:'Era dívida pessoal de Dom Pedro I com bancos',c:false},{t:'Portugal exigiu indenização para reconhecer o Brasil',c:true},{t:'Era para construir palácios no Rio',c:false},{t:'Santa Aliança multou o Brasil por rebeldia',c:false},{t:'Valor nunca foi pago, foi só propaganda',c:false}],lab:'DÍVIDA 3MI',sub:'1825',ex:'Brasil comprou reconhecimento. Nasceu endividado.'},
+{q:'7. Por que Paraguai lutou até 60% morrerem?',opts:[{t:'Brasil era fraco militarmente e não vencia',c:false},{t:'Argentina apoiou secretamente o Paraguai',c:false},{t:'Ingleses lutaram ao lado do Paraguai',c:false},{t:'Lógica de guerra total + isolamento sem rendição possível',c:true},{t:'Era uma guerra rápida que deu errado',c:false}],lab:'PARAGUAI 60%',sub:'1864-70',ex:'Estado super-militarizado isolado = suicídio estatal.'},
+{q:'8. Canudos prova a farsa do gradualismo por quê?',opts:[{t:'Canudos queria restaurar a monarquia no sertão',c:false},{t:'República prometeu terra e deu imposto + exército matando',c:true},{t:'Canudos era rica e ameaçava a economia',c:false},{t:'Canudos tinha apoio de potências estrangeiras',c:false},{t:'Canudos era extremamente religiosa e fanática',c:false}],lab:'CANUDOS 1896',sub:'Sertão',ex:'Mesma lógica: abolição sem terra.'},
+{q:'9. Por que vacina obrigatória gerou revolta em 1904?',opts:[{t:'População era antivacina por ignorância natural',c:false},{t:'Agentes entravam sem mandado e mulheres eram despidas',c:true},{t:'Igreja católica proibiu vacina por ser pecado',c:false},{t:'Vacina era veneno de verdade na época',c:false},{t:'Só ricos tinham acesso à vacina gratuita',c:false}],lab:'VACINA 1904',sub:'Oswaldo Cruz',ex:'Biopolítica violenta + invasão domiciliar.'},
+{q:'10. Estopim real da Chibata além das chibatadas?',opts:[{t:'Marinheiros recebiam salário muito baixo mensal',c:false},{t:'Marinheiro morto a chibatadas e jogado ao mar',c:true},{t:'Comida estragada servida todos os dias',c:false},{t:'Racismo isolado de um oficial específico',c:false},{t:'Cansaço por excesso de trabalho naval',c:false}],lab:'CHIBATA 1910',sub:'João Cândido',ex:'Marcelino 250 chibatadas. Vinagre na ferida.'},
+]},
+{ nome:"3ª Missão - República", fases:[
+{q:'11. Por que Coluna Prestes andou 25 mil km e nada?',opts:[{t:'Prestes era fraco estrategicamente como líder',c:false},{t:'Faltaram armas modernas para tomar cidades',c:false},{t:'Marcha de propaganda sem base urbana, fugia de confronto',c:true},{t:'Povo sertanejo não apoiou a marcha',c:false},{t:'Acabou combustível e munição no caminho',c:false}],lab:'COLUNA 25.000KM',sub:'1925-27',ex:'Andar sem parar = não ser derrotado.'},
+{q:'12. Por que deitado era visto como morte?',opts:[{t:'Camas coloniais eram muito pequenas e estreitas',c:false},{t:'Deitado = posição de defunto no caixão + espírito puxa pé',c:true},{t:'Tinha muitos bichos peçonhentos no chão das casas',c:false},{t:'Era mais fresco dormir sentado no calor tropical',c:false},{t:'Rei de Portugal dormia sentado por etiqueta',c:false}],lab:'PSICOLOGIA',sub:'Dormiam sentados',ex:'Cultura da morte presente. Deitar = ensaiar morrer.'},
+{q:'13. O que mais matava nos tumbeiros?',opts:[{t:'Feijoada estragada servida aos escravos',c:false},{t:'Carne seca com muito sal e pouca água',c:false},{t:'Angu de milho com areia + água podre = disenteria',c:true},{t:'Pão mofado trazido de Portugal',c:false},{t:'Apenas fome extrema, sem doença associada',c:false}],lab:'TUMBEIROS',sub:'40% mortos',ex:'Areia aumentava peso para vender. Perfurava intestino.'},
+{q:'14. Por que palmatória tinha furo no meio?',opts:[{t:'Para ser mais leve para o professor bater',c:false},{t:'Furo criava vácuo e arrancava pele com menos força',c:true},{t:'Para assoviar e assustar os alunos com som',c:false},{t:'Era enfeite da escola colonial jesuítica',c:false},{t:'Para não quebrar a madeira com o uso',c:false}],lab:'PALMATÓRIA',sub:'Engenharia da dor',ex:'Buraco = bolha de sangue. Engenharia da tortura pedagógica.'},
+{q:'15. Qual lógica une tudo sem decoreba?',opts:[{t:'Tudo foi culpa exclusiva de Portugal colonizador',c:false},{t:'Ecologia de exploração: recurso escasso + poder fragmentado',c:true},{t:'Tudo foi culpa da Igreja Católica no Brasil',c:false},{t:'Tudo foi puro acaso e sorte histórica',c:false},{t:'Tudo foi culpa dos próprios escravos submissos',c:false}],lab:'MAPA MENTAL FINAL',sub:'Bônus ebook',ex:'Brasil = biologia + geografia + economia disputando recurso. Seus 50 mapas.'},
+]}
+];
+let langAtual=localStorage.getItem('prisma_lang')||'pt-BR';
+let missaoAtual=0,faseAtual=0,pontos=0;
+let faseEmbaralhada=null;
+let gameOver=false;
+
+function render(){
+ const box=document.getElementById('quizBox');
+ if(missaoAtual>=missoes.length){
+  if(pontos<15 || gameOver){
+   box.innerHTML=`<div style="text-align:center;padding:24px 0"><div style="width:70px;height:70px;background:rgba(239,68,68,0.12);border:2px solid #ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto"><span class="material-icons" style="font-size:36px;color:#ef4444">block</span></div><h2 style="font-family:'Cormorant Garamond';font-size:24px;margin-top:12px;color:#ef4444">VOCÊ FALHOU</h2><p style="color:var(--sepia);margin-top:6px;font-size:12px">Fez ${pontos}/15. Errou, não ganha os 50 mapas.</p><p style="font-size:10px;opacity:.4;margin-top:6px">Jogo de mapa é 15/15 ou nada.</p><button onclick="location.reload()" style="background:var(--ouro);color:#121212;padding:12px 20px;border-radius:30px;border:0;font-weight:800;font-size:11px;margin-top:16px;cursor:pointer;width:100%;max-width:260px">🔄 RECOMEÇAR DO ZERO</button></div>`;
+   document.querySelectorAll('.missao-dot').forEach(d=>{d.classList.add('ok');d.classList.remove('ativa')});
+   return;
+  }
+  box.innerHTML=`<div style="text-align:center;padding:18px 0"><div style="width:70px;height:70px;background:rgba(34,197,94,0.15);border:2px solid #22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto"><span class="material-icons" style="font-size:36px;color:#22c55e">check</span></div><h2 style="font-family:'Cormorant Garamond';font-size:26px;margin-top:10px">3 MISSÕES CONCLUÍDAS! 15/15!</h2><p style="color:var(--sepia);margin-top:6px;font-size:11px">Você zerou sem errar • Liberou 50 mapas mentais</p><div style="background:linear-gradient(145deg,#1E1E1E,#121212);border:1px solid var(--borda);border-radius:14px;padding:14px;margin:14px auto;max-width:360px"><p style="font-size:9px;opacity:.6;letter-spacing:0.15em">🎁 BÔNUS DESBLOQUEADO - 15/15</p><h3 style="font-family:'Cormorant Garamond';font-size:17px;margin-top:4px">50 Mapas Mentais - PDF</h3><p style="font-size:10px;opacity:.35;margin-top:4px">51 páginas • Pronto pra imprimir • Você mereceu</p><a href="50_mapas_mentais_prisma.pdf" download="50-Mapas-Mentais-Prisma.pdf" style="background:var(--ouro);color:#121212;padding:12px 18px;border-radius:30px;display:inline-flex;margin-top:12px;text-decoration:none;font-weight:800;font-size:11px;width:100%;justify-content:center">📥 BAIXAR PDF 50 MAPAS MENTAIS</a><br><a href="ebook.html" style="color:var(--ouro);font-size:10px;margin-top:10px;display:inline-block">+ E-book completo R$69,90 →</a></div></div>`;
+  document.querySelectorAll('.missao-dot').forEach(d=>{d.classList.add('ok');d.classList.remove('ativa')}); return;
+ }
+ const missao=missoes[missaoAtual];
+ const f=missao.fases[faseAtual];
+ if(!faseEmbaralhada || faseEmbaralhada.q!==f.q){ faseEmbaralhada={q:f.q,opts:shuffle(f.opts),lab:f.lab,sub:f.sub,ex:f.ex,img:f.img}; }
+ document.getElementById('d1').className='missao-dot'+(missaoAtual===0?' ativa':missaoAtual>0?' ok':'');
+ document.getElementById('d2').className='missao-dot'+(missaoAtual===1?' ativa':missaoAtual>1?' ok':'');
+ document.getElementById('d3').className='missao-dot'+(missaoAtual===2?' ativa':'');
+ const mapaHtml = faseEmbaralhada.img==='ROTA_CORRIGIDA'? `<img src="mapa-rota-corrigida-brasil-esq-africa-dir.webp" alt="mapa" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,0.3))"></div>` : `<span class="material-icons" style="font-size:40px;color:var(--ouro);opacity:.6">map</span>`;
+ box.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:9px;letter-spacing:.16em;color:var(--ouro)">${missao.nome.toUpperCase()} • ${faseAtual+1}/5</span><span style="font-size:9px;opacity:.4">${pontos} PTS • 15/15 PRA GANHAR</span></div><div class="mapa-area">${mapaHtml}<span class="pin">${faseEmbaralhada.lab}</span><span class="sub">${faseEmbaralhada.sub}</span></div><div class="progress"><span style="width:${((missaoAtual*5+faseAtual)/15)*100}%"></span></div><h2>${faseEmbaralhada.q}</h2><div id="ops">${faseEmbaralhada.opts.map((o,i)=>`<div class="opcao" data-c="${o.c}"><b>${String.fromCharCode(65+i)}</b><span>${o.t}</span></div>`).join('')}</div><div class="explica" id="exp"><strong>${faseEmbaralhada.lab}:</strong> ${faseEmbaralhada.ex}</div><button class="btn-next" id="nextBtn">${i18n[langAtual].prox}</button>`;
+ document.querySelectorAll('.opcao').forEach(el=>el.addEventListener('click',()=>{
+   if(gameOver) return;
+   const isCorrect = el.dataset.c==='true';
+   document.querySelectorAll('.opcao').forEach(op=>{
+     op.style.pointerEvents='none';
+     if(op.dataset.c==='true') op.classList.add('certa');
+   });
+   document.getElementById('exp').style.display='block';
+   if(isCorrect){
+     el.classList.add('certa');
+     pontos++;
+     document.getElementById('exp').innerHTML=`<strong style="color:#22c55e">✅ ${i18n[langAtual].acertou}</strong> ${faseEmbaralhada.ex}`;
+     document.getElementById('nextBtn').style.display='inline-block';
+     document.querySelector('.progress span').style.width=((missaoAtual*5+faseAtual+1)/15)*100+'%';
+   }else{
+     el.classList.add('errada');
+     gameOver=true;
+     document.getElementById('exp').innerHTML=`<strong style="color:#ef4444">❌ ${i18n[langAtual].errou}</strong><br>${faseEmbaralhada.ex}`;
+     document.getElementById('nextBtn').style.display='none';
+     setTimeout(()=>{
+       const b=document.getElementById('quizBox');
+       b.innerHTML+=`<div style="margin-top:14px;background:rgba(239,68,68,.10);border:1px solid rgba(239,68,68,.24);border-radius:12px;padding:14px;text-align:center"><p style="font-size:12px;color:#ef4444;font-weight:800">FALHOU NA ${missao.nome.toUpperCase()} • ${faseAtual+1}/5</p><p style="font-size:11px;opacity:.7;margin-top:6px">Fez ${pontos}/15. Regra: 1 erro = perde tudo.</p><p style="font-size:10px;opacity:.5;margin-top:6px">Errou a rota, perdeu o tesouro. 50 mapas só com 15/15.</p><button onclick="location.reload()" style="background:#ef4444;color:#fff;border:0;padding:11px 16px;border-radius:8px;font-weight:800;font-size:11px;margin-top:12px;width:100%;cursor:pointer">🔄 RECOMEÇAR DO ZERO - TENTAR 15/15</button></div>`;
+     },400);
+   }
+ }));
+ document.getElementById('nextBtn').addEventListener('click',()=>{faseAtual++; faseEmbaralhada=null; if(faseAtual>=missao.fases.length){missaoAtual++; faseAtual=0;} render();});
+}
+function aplicarIdioma(l){
+ langAtual=l; localStorage.setItem('prisma_lang',l);
+ document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+ const t=i18n[l]||i18n['pt-BR'];
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(t[k]) el.textContent=t[k];});
+ const hoje=new Date();
+ let dataStr=hoje.toLocaleDateString(l,{day:'numeric',month:'long',year:'numeric'});
+ document.getElementById('dataHoje').textContent=`📅 ${t.data} ${dataStr} • 15/15 PRA GANHAR`;
+ document.getElementById('footerAno').textContent=`© ${hoje.getFullYear()} Prisma Histórico • 3 Missões • 15/15`;
+ render();
 }
 const nav=document.getElementById('prismaNav');
-document.getElementById('btnMenu').addEventListener('click',()=>{nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
-document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
-document.querySelectorAll('.lang-switch button').forEach(function(b){b.addEventListener('click',function(){aplicarTraducao(b.id.replace('btn-',''))})});
-aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
+document.getElementById('btnMenu').addEventListener('click',(e)=>{e.stopPropagation(); nav.classList.toggle('menu-aberto'); document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
+document.addEventListener('click',(e)=>{if(!nav.contains(e.target)){nav.classList.remove('menu-aberto'); document.body.style.overflow='';}});
+document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>aplicarIdioma(b.dataset.lang)));
+aplicarIdioma(langAtual);
 </script>
 </body>
 </html>
