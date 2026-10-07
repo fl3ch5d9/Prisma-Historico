@@ -1,385 +1,167 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TÍTULO: Une a especificidade do seu conteúdo com o foco em exames -->
-
-    <title>Tecnologia Naval e Zoogeografia do Brasil Colonial</title>
-
-<meta name="description" content="Aprenda a engenharia das caravelas, geografia e zoogeografia colonial! Garanta nosso e-book com arquivos e dados raros para concursos, turismo e loja.">
-
-    
-    <!-- PALAVRAS-CHAVE: Inclui os termos técnicos específicos que você utiliza na página -->
-    <meta name="keywords" content="História do Brasil, Brasil Colônia, Brasil Império, Engenharia Naval Colonial, Ciência dos Materiais Histórica, Hidrodinâmica Aplicada, Vestibular, Concurso público, ENEM, FUVEST">
-    
-    <!-- FONTES E ESTILOS (Mantidos exatamente como estão no seu site) -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    
-   <link rel="stylesheet" href="style.css">
-
-    <!-- CÓDIGO OBRIGATÓRIO DO GOOGLE ADSENSE -->
-    <!-- Lembre-se de trocar o 'ca-pub-XXXXXXXXXXXXXXXX' pelo seu ID real após o cadastro -->
-     <script async src="https://googlesyndication.com" crossorigin="anonymous"></script>
-
-
-
-<!-- FONTES CORRETAS - CORRIGE ÍCONES DA GAVETA -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecnologia Naval e Zoogeografia do Brasil Colonial | Prisma Histórico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-
-
-
-
-
-
-
-
-</head>
-
-
 <style>
-
 :root{--carvao-body:#0D0D0B;--carvao-card:#171410;--carvao-card-2:#1E1A16;--sepia-titulo:#D9C5A0;--sepia-texto:#A99B85;--branco-cal:#F2EDE3;--ouro-minas:#D4AF37;--borda:rgba(212,175,55,0.14)}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{overflow-x:hidden;width:100%;background:var(--carvao-body);color:var(--branco-cal);font-family:'Inter',sans-serif;font-weight:300}
-h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-titulo);letter-spacing:0.04em}
+h1,h2{font-family:'Cormorant Garamond',serif;color:var(--sepia-titulo)}
+.material-icons{font-family:'Material Icons'!important;color:var(--ouro-minas);font-size:20px!important}
+.prisma-data,time{display:block;font-family:'Cinzel';font-size:9px;letter-spacing:0.2em;color:var(--ouro-minas);margin-bottom:8px;text-transform:uppercase}
 
-
-.material-icons{
-  font-family: 'Material Icons' !important;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 22px !important;
-  color: var(--ouro-minas);
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-/*nav - SÓ CORRIGIDO SEM MUDAR ESTILO */
-.prisma-nav{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:space-between !important;
-  flex-wrap:nowrap !important;
-  padding:12px 16px !important;
-  box-sizing:border-box !important;
-  gap:12px !important;
-  width:100% !important;
-  overflow:hidden !important;
-}
-
-.prisma-logo{
-  font-family:'Cinzel',serif !important;
-  font-size:18px !important;
-  letter-spacing:0.12em !important;
-  white-space:nowrap !important;
-  flex-shrink:0 !important;
-}
-
-.nav-right{
-  display:flex !important;
-  align-items:center !important;
-  gap:8px !important;
-  flex-shrink:0 !important;
-  margin-left:12px !important;
-}
-
-.lang-switch{ gap:6px !important; }
-
-
-
-
+/* NAV */
+.prisma-nav{display:flex;justify-content:space-between;align-items:center;padding:12px 5%;width:100%;background:rgba(13,13,11,0.9);backdrop-filter:blur(10px);position:fixed;top:0;left:0;z-index:10000;border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cinzel';font-size:18px;letter-spacing:0.22em}
+.nav-right{display:flex;align-items:center;gap:10px}
 .lang-switch{display:flex;gap:5px}
 .lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia-texto);padding:6px 9px;border-radius:20px;cursor:pointer;font-size:10px;min-width:36px;min-height:34px}
 .lang-switch button.active{background:var(--ouro-minas);color:#0D0D0B;font-weight:700;border-color:var(--ouro-minas)}
-.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer;z-index:10002}
+.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
 .prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro-minas);display:block;transition:0.35s}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
 .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda);overflow-y:auto}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:#0F0E0C;list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s cubic-bezier(0.4,0,0.2,1);pointer-events:none;z-index:9999;border-right:1px solid var(--borda);overflow-y:auto}
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
-.prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia-texto);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif}
-.prisma-menu-links li a .material-icons{color:var(--ouro-minas);font-size:20px}
-.prisma-menu-links li a:hover{background:rgba(212,175,55,0.08);color:var(--branco-cal)}
-.hero{padding:140px 5% 70px;text-align:center;background:radial-gradient(700px at 50% -10%, rgba(212,175,55,0.09), transparent)}
-.hero h1{font-size:clamp(36px,9vw,78px);line-height:0.9}
-.hero h1 .ouro{color:var(--ouro-minas);font-style:italic;font-weight:300}
-.hero p{color:var(--sepia-texto);margin-top:16px;font-size:13px;letter-spacing:0.08em;opacity:0.8}
-.ebook-intro{display:flex;flex-wrap:wrap;gap:50px;align-items:center;justify-content:space-between;background:var(--carvao-card);padding:60px 32px;max-width:1180px;margin:30px auto;border:1px solid var(--borda)}
-.ebook-badge{color:var(--ouro-minas);font-family:'Cinzel',serif;font-size:8px;letter-spacing:0.2em;border:1px solid var(--borda);padding:10px 16px;border-radius:100px;margin-bottom:24px;display:inline-flex}
+.prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia-texto);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel'}
+
+/* HERO */
+.hero{padding:140px 5% 70px;text-align:center;background:radial-gradient(700px at 50% -10%, rgba(212,175,55,0.09), transparent);max-width:1100px;margin:0 auto}
+.hero h1{font-size:clamp(36px,7vw,68px);line-height:0.95;font-weight:600}
+.hero h1 em{color:var(--ouro-minas);font-style:italic}
+.hero p{color:var(--branco-cal);margin-top:24px;font-size:15px;line-height:1.9;opacity:0.9;max-width:65ch;margin-left:auto;margin-right:auto}
+
+/* EBOOK INTRO */
+.ebook-intro{display:flex;flex-wrap:wrap;gap:50px;align-items:center;justify-content:space-between;background:var(--carvao-card);padding:60px 32px;max-width:1180px;margin:30px auto;border:1px solid var(--borda);border-radius:8px}
+.ebook-badge{color:var(--ouro-minas);font-family:'Cinzel';font-size:8px;letter-spacing:0.2em;border:1px solid var(--borda);padding:10px 16px;border-radius:100px;margin-bottom:16px;display:inline-flex}
 .ebook-texto{flex:1.2;min-width:280px;max-width:560px}
-.ebook-texto h2{font-size:46px;line-height:0.95;margin-bottom:18px}
+.ebook-texto h2{font-size:clamp(32px,5vw,46px);line-height:1.1;margin-bottom:12px}
 .ebook-texto h2 em{font-style:italic;color:var(--ouro-minas)}
-.ebook-sub{font-size:13px;line-height:1.7;color:var(--sepia-texto);margin-bottom:28px}
-.ebook-texto ul{list-style:none;display:flex;flex-direction:column;gap:18px}
-.ebook-texto li{font-size:14px;color:var(--branco-cal);border-left:1px solid var(--borda);padding-left:16px}
-.ebook-imagem{width:100%;max-width:340px;margin:0 auto}
-.ebook-moldura{background:#0D0D0B;padding:12px;border-radius:4px;border:1px solid var(--borda)}
-.ebook-moldura img{width:100%;display:block}
-.btn-ebook{display:block;width:100%;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.2em;color:var(--sepia-titulo);text-decoration:none;padding:16px 20px;border-radius:100px;border:1px solid var(--borda);margin-top:18px;transition:0.3s}
-.btn-ebook:hover{background:var(--ouro-minas);color:#0D0D0B}
-#amostra-gratis-premium{background:var(--carvao-card-2);padding:80px 16px;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);text-align:center}
-.ag-wrap{max-width:1200px;margin:0 auto}
+.ebook-sub{font-size:15px;line-height:1.9;color:var(--branco-cal);margin-bottom:20px;text-align:left;max-width:60ch}
+.ebook-texto ul{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.ebook-texto li{font-size:14px;color:var(--branco-cal);border:1px solid var(--borda);border-left:1.5px solid var(--ouro-minas);padding:14px 16px;background:rgba(255,255,255,0.02);border-radius:0 8px 8px 0;line-height:1.6}
+.btn-ebook{display:block;width:100%;text-align:center;font-family:'Cinzel';font-size:10px;letter-spacing:0.2em;color:#0D0D0B;background:var(--ouro-minas);text-decoration:none;padding:16px 20px;border-radius:100px;border:1px solid var(--ouro-minas);margin-top:18px;font-weight:700;transition:0.3s}
+.btn-ebook:hover{background:transparent;color:var(--ouro-minas)}
+
+/* AMOSTRA */
+#amostra-gratis-premium{background:var(--carvao-card-2);padding:80px 5%;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda);text-align:center}
 .ag-badge{display:inline-block;color:var(--ouro-minas);font-family:'Cinzel';font-size:8px;letter-spacing:0.2em;border:1px solid var(--borda);background:rgba(212,175,55,0.06);padding:8px 14px;border-radius:100px;margin-bottom:18px}
-#amostra-gratis-premium h2{font-size:clamp(28px,7vw,48px);font-weight:300;line-height:1.05;margin-bottom:16px}
-#amostra-gratis-premium h2 em{color:var(--ouro-minas);font-style:italic;font-weight:300;font-family:'Cormorant Garamond'}
-.ag-desc{color:var(--sepia-texto);font-size:13px;max-width:700px;margin:0 auto;line-height:1.6}
-.ag-carrossel{position:relative;padding:0 40px;margin:32px 0}
-.track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none}
+#amostra-gratis-premium h2{font-size:clamp(28px,7vw,48px);line-height:1.05;margin-bottom:16px}
+#amostra-gratis-premium h2 em{color:var(--ouro-minas);font-style:italic}
+.ag-desc{color:var(--sepia-texto);font-size:14px;max-width:700px;margin:0 auto;line-height:1.6}
+.ag-carrossel{position:relative;max-width:900px;margin:32px auto;padding:0 50px}
+.track{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;justify-content:flex-start;padding:10px 0}
 .track::-webkit-scrollbar{display:none}
-.item{min-width:270px;max-width:300px;flex-shrink:0;background:var(--carvao-card);border-radius:10px;overflow:hidden;border:1px solid var(--borda);transition:0.3s}
-.item:hover{transform:translateY(-4px);border-color:var(--ouro-minas)}
+.item{min-width:280px;max-width:280px;flex-shrink:0;background:var(--carvao-card);border-radius:10px;overflow:hidden;border:1px solid var(--borda);transition:0.3s}
 .item img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
-.item p{text-align:center;color:var(--sepia-texto);padding:12px 0;background:#0D0D0B;font-family:'Cinzel';font-size:10px;letter-spacing:0.1em}
-.item.destaque{border:1.5px solid var(--ouro-minas)}
-.seta{position:absolute;top:50%;transform:translateY(-50%);background:var(--carvao-card);border:1px solid var(--borda);color:var(--ouro-minas);width:38px;height:38px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.item.destaque{border:1.5px solid var(--ouro-minas);transform:scale(1.03)}
+.seta{position:absolute;top:50%;transform:translateY(-50%);background:var(--carvao-card);border:1px solid var(--borda);color:var(--ouro-minas);width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
 .esq{left:0}.dir{right:0}
 .ag-box{max-width:860px;margin:0 auto;background:var(--carvao-card);border:1px solid var(--borda);border-radius:14px;padding:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;text-align:left}
-.ag-box h3{font-family:'Cinzel';font-size:12px;color:var(--branco-cal);margin-bottom:4px}
-.ag-box p{font-size:11px;color:var(--sepia-texto)}
-.ag-btn{background:var(--ouro-minas);color:#0D0D0B;text-decoration:none;font-family:'Cinzel';font-weight:700;font-size:10px;display:flex;align-items:center;gap:10px;padding:5px 5px 5px 16px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.ag-btn{background:var(--ouro-minas);color:#0D0D0B;text-decoration:none;font-family:'Cinzel';font-weight:700;font-size:10px;display:flex;align-items:center;gap:10px;padding:5px 5px 5px 16px;border-radius:100px;white-space:nowrap}
 .ag-btn b{background:#0D0D0B;color:var(--ouro-minas);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
-.ag-obs{display:block;max-width:860px;margin:14px auto 0;color:var(--sepia-texto);opacity:0.5;font-size:10px}
-#dentroEbook{background:var(--carvao-card);padding:80px 16px;text-align:center;border-top:1px solid var(--borda)}
+
+/* DENTRO EBOOK */
+#dentroEbook{background:var(--carvao-card);padding:80px 5%;text-align:center;border-top:1px solid var(--borda)}
 .ebook-header span{color:var(--ouro-minas);font-family:'Cinzel';font-size:9px;letter-spacing:0.22em}
 .ebook-header h2{font-size:38px;margin:12px 0}
 .ebook-header h2 i{color:var(--ouro-minas);font-style:italic;font-weight:300}
 .ebook-header p{color:var(--sepia-texto);max-width:500px;margin:0 auto 40px;font-size:13px}
 .ebook-paginas{display:flex;gap:18px;justify-content:center;max-width:1100px;margin:0 auto 40px;flex-wrap:wrap}
-.pagina{width:290px;background:#0D0D0B;border-radius:10px;border:1px solid var(--borda);padding:8px;transition:0.3s}
-.pagina:hover{border-color:var(--ouro-minas);transform:translateY(-5px)}
+.pagina{width:290px;background:#0D0D0B;border-radius:10px;border:1px solid var(--borda);padding:8px}
 .pagina img{width:100%;height:380px;object-fit:cover;border-radius:6px}
 .pagina label{display:block;margin-top:12px;color:var(--sepia-titulo);font-family:'Cinzel';font-size:9px;letter-spacing:0.15em;text-transform:uppercase}
-.pagina.destaque{border-color:rgba(212,175,55,0.4)}
-.btn-ouro{background:var(--ouro-minas);color:#0D0D0B;padding:14px 28px;border-radius:40px;font-family:'Cinzel';font-size:10px;font-weight:700;letter-spacing:0.15em;text-decoration:none;display:inline-block;transition:0.3s}
-.btn-ouro:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(212,175,55,0.25)}
-#cookieBanner{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:94%;max-width:900px;z-index:99999;background:var(--carvao-card-2);border:1px solid var(--borda);border-radius:14px;padding:16px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
-.cookie-icon{width:36px;height:36px;border-radius:50%;background:rgba(212,175,55,0.1);display:flex;align-items:center;justify-content:center}
-.cookie-icon .material-icons{color:var(--ouro-minas);font-size:20px}
-.cookie-texto{flex:1;min-width:180px}
-.cookie-texto strong{color:var(--sepia-titulo);font-family:'Cinzel';font-size:11px;letter-spacing:0.08em}
-.cookie-texto p{color:var(--sepia-texto);font-size:11px;margin-top:4px}
-.cookie-texto a{color:var(--ouro-minas)}
-.cookie-acoes{display:flex;gap:8px}
-#cookieAceitar{background:var(--ouro-minas);color:#0D0D0B;border:none;padding:10px 20px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;cursor:pointer}
-#cookieRecusar{background:transparent;color:var(--sepia-texto);border:1px solid var(--borda);padding:10px 16px;border-radius:30px;font-family:'Cinzel';font-size:9px;cursor:pointer}
-#prismaFooter{width:100% !important;max-width:100vw !important;overflow:hidden;box-sizing:border-box;background:#0F0E0C;border-top:1px solid rgba(212,175,55,0.14);padding:60px 5% 30px}
-#prismaFooter > div:first-child{max-width:1180px;margin:0 auto;width:100%;box-sizing:border-box;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
-#prismaFooter > div:last-child{max-width:1180px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(212,175,55,0.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-@media(max-width: 900px){.ebook-intro{flex-direction:column;padding:40px 20px}.ebook-texto h2{font-size:34px}#prismaFooter > div:first-child{grid-template-columns:1fr 1fr !important;gap:30px}.hero{padding:120px 4% 50px}.ag-carrossel{padding:0 20px}}
-@media(max-width: 600px){.prisma-nav{padding:10px 4%}.prisma-logo{font-size:18px}.prisma-menu-links{width:100%;max-width:100vw}.ebook-paginas{flex-direction:column;align-items:center}.pagina{width:100%;max-width:340px}.ag-box{flex-direction:column;text-align:center}#prismaFooter > div:first-child{grid-template-columns:1fr !important}#prismaFooter > div:last-child{flex-direction:column;align-items:center;text-align:center}#cookieBanner{bottom:0;width:100%;border-radius:14px 14px 0 0;left:0;transform:none}}
 
-/* FIX HAMBURGUER SUMIDO - PRINT QUE VOCÊ MANDOU */
-
+/* FOOTER */
+#prismaFooter{background:#0F0E0C;border-top:1px solid rgba(212,175,55,0.14);padding:60px 5% 30px}
+@media(max-width:900px){.ebook-intro{flex-direction:column;padding:40px 20px}.ebook-texto h2{font-size:34px}#prismaFooter>div:first-child{grid-template-columns:1fr 1fr!important;gap:30px}.hero{padding:120px 4% 50px}.ag-carrossel{padding:0 20px}}
 </style>
 </head>
 <body>
+
 <nav class="prisma-nav" id="prismaNav">
-  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div class="prisma-logo"><span style="color:#D4AF37;font-weight:700">Prisma</span> <span style="color:#F2EDE3">Histórico</span></div>
   <div class="nav-right">
     <div class="lang-switch"><button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button></div>
     <button type="button" class="prisma-menu-hamburguer" id="hambBtn"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links" id="menuLinks">
     <li><a href="index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-    <li><a href="artigos/doacao.html"><span class="material-icons">volunteer_activism</span><span data-pt-BR="DOAÇÃO" data-en="DONATION" data-es="DONACIÓN" data-fr="DON">DOAÇÃO</span></a></li>
-    <li><a href="artigos/sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
-    <li><a href="artigos/afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
     <li><a href="artigos/artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
-    <li><a href="artigos/curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
-    <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span> QUIZ</a></li>
-    <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span> E-BOOK</a></li>
-    <li><a href="artigos/loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
-    <li><a href="artigos/turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    <li><a href="artigos/ebook.html"><span class="material-icons">menu_book</span>E-BOOK</a></li>
+    <li><a href="artigos/quiz.html"><span class="material-icons">quiz</span>QUIZ</a></li>
+    <li><a href="artigos/sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
   </ul>
 </nav>
 
-
-<header class="hero" style="padding:140px 5% 60px;text-align:center;max-width:1100px;margin:0 auto">
-  <h1 style="font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-titulo);font-size:clamp(36px,7vw,62px);line-height:0.95;letter-spacing:0.02em">
-    <span data-pt-BR="Engenharia Naval no" data-en="Naval Engineering in" data-es="Ingeniería Naval en el" data-fr="Génie Naval au">Engenharia Naval no</span> 
-    <span class="ouro" data-pt-BR="Brasil Colônia" data-en="Colonial Brazil" data-es="Brasil Colonial" data-fr="Brésil Colonial" style="color:var(--ouro-minas);font-style:italic">Brasil Colônia</span>
-  </h1>
-  
-  <p style="color:var(--sepia-texto);margin-top:24px;font-size:15px;line-height:1.9;opacity:0.9;font-weight:300;max-width:900px;margin-left:auto;margin-right:auto;text-align:justify"
-     data-pt-BR="Sejam muito bem-vindos a esta sessão, onde iniciaremos uma análise aprofundada sobre a engenharia naval no contexto do Brasil Colônia. Quando pensamos no desenvolvimento técnico e científico da nossa história, é comum voltarmos os olhos exclusivamente para a agricultura açucareira ou para a mineração, esquecendo que nenhuma dessas riquezas teria cruzado o Atlântico sem o suporte de uma sólida e sofisticada indústria de construção de embarcações. Compreender a engenharia naval desse período exige que o estudante contemporâneo dispa-se do olhar puramente eurocêntrico e passe a valorizar o conhecimento gerado nos estaleiros tropicais, em especial nos Arsenais de Marinha de Salvador e do Rio de Janeiro. Ao longo dos séculos dezessete e dezoito, o território brasileiro deixou de ser apenas um fornecedor de matéria-prima para se consolidar como um dos maiores centros de inovação tecnológica do Hemisfério Sul. A abordagem desse tema na formação de um engenheiro transcende a mera curiosidade histórica, pois envolve conceitos fundamentais de ciência dos materiais e hidrodinâmica aplicada."
-     
-     data-en="Welcome to this session, where we will begin an in-depth analysis of naval engineering in the context of Colonial Brazil. When we think about the technical and scientific development of our history, it is common to look exclusively at sugarcane agriculture or mining, forgetting that none of this wealth would have crossed the Atlantic without the support of a solid and sophisticated shipbuilding industry. Understanding the naval engineering of this period requires the contemporary student to shed a purely Eurocentric perspective and to value the knowledge generated in tropical shipyards, especially in the Naval Arsenals of Salvador and Rio de Janeiro. Throughout the seventeenth and eighteenth centuries, Brazilian territory ceased to be merely a supplier of raw materials and established itself as one of the greatest centers of technological innovation in the Southern Hemisphere. Approaching this theme in an engineer's education transcends mere historical curiosity, as it involves fundamental concepts of materials science and applied hydrodynamics."
-     
-     data-es="Sean muy bienvenidos a esta sesión, donde iniciaremos un análisis profundo sobre la ingeniería naval en el contexto del Brasil Colonial. Cuando pensamos en el desarrollo técnico y científico de nuestra historia, es común mirar exclusivamente hacia la agricultura azucarera o la minería, olvidando que ninguna de estas riquezas habría cruzado el Atlántico sin el soporte de una sólida y sofisticada industria de construcción de embarcaciones. Comprender la ingeniería naval de este período exige que el estudiante contemporáneo se despoje de la mirada puramente eurocéntrica y pase a valorar el conocimiento generado en los astilleros tropicales, especialmente en los Arsenales de Marina de Salvador y Río de Janeiro. A lo largo de los siglos diecisiete y dieciocho, el territorio brasileño dejó de ser solo un proveedor de materia prima para consolidarse como uno de los mayores centros de innovación tecnológica del Hemisferio Sur. El abordaje de este tema en la formación de un ingeniero trasciende la mera curiosidad histórica, pues involucra conceptos fundamentales de ciencia de materiales e hidrodinámica aplicada."
-     
-     data-fr="Soyez les bienvenus à cette session, où nous commencerons une analyse approfondie du génie naval dans le contexte du Brésil Colonial. Quand nous pensons au développement technique et scientifique de notre histoire, il est courant de ne regarder que l'agriculture sucrière ou l'exploitation minière, en oubliant qu'aucune de ces richesses n'aurait traversé l'Atlantique sans le soutien d'une industrie de construction navale solide et sophistiquée. Comprendre le génie naval de cette période exige que l'étudiant contemporain se défasse du regard purement eurocentrique et valorise les connaissances générées dans les chantiers navals tropicaux, en particulier dans les Arsenaux de Marine de Salvador et de Rio de Janeiro. Au cours des dix-septième et dix-huitième siècles, le territoire brésilien a cessé d'être simplement un fournisseur de matières premières pour s'imposer comme l'un des plus grands centres d'innovation technologique de l'hémisphère sud. L'approche de ce thème dans la formation d'un ingénieur transcende la simple curiosité historique, car elle implique des concepts fondamentaux de science des matériaux et d'hydrodynamique appliquée.">Sejam muito bem-vindos a esta sessão, onde iniciaremos uma análise aprofundada sobre a engenharia naval no contexto do Brasil Colônia. Quando pensamos no desenvolvimento técnico e científico da nossa história, é comum voltarmos os olhos exclusivamente para a agricultura açucareira ou para a mineração, esquecendo que nenhuma dessas riquezas teria cruzado o Atlântico sem o suporte de uma sólida e sofisticada indústria de construção de embarcações. Compreender a engenharia naval desse período exige que o estudante contemporâneo dispa-se do olhar puramente eurocêntrico e passe a valorizar o conhecimento gerado nos estaleiros tropicais, em especial nos Arsenais de Marinha de Salvador e do Rio de Janeiro. Ao longo dos séculos dezessete e dezoito, o território brasileiro deixou de ser apenas um fornecedor de matéria-prima para se consolidar como um dos maiores centros de inovação tecnológica do Hemisfério Sul. A abordagem desse tema na formação de um engenheiro transcende a mera curiosidade histórica, pois envolve conceitos fundamentais de ciência dos materiais e hidrodinâmica aplicada.</p>
+<header class="hero">
+  <span class="prisma-data" data-pt-BR="TECNOLOGIA NAVAL • BRASIL COLÔNIA • 1530-1822" data-en="NAVAL TECHNOLOGY • COLONIAL BRAZIL • 1530-1822" data-es="TECNOLOGÍA NAVAL • BRASIL COLONIAL • 1530-1822" data-fr="TECHNOLOGIE NAVALE • BRÉSIL COLONIAL • 1530-1822">TECNOLOGIA NAVAL • BRASIL COLÔNIA • 1530-1822</span>
+  <h1>Engenharia Naval no <em>Brasil Colônia</em></h1>
+  <p data-pt-BR="Sejam muito bem-vindos a esta sessão, onde iniciaremos uma análise aprofundada sobre a engenharia naval no contexto do Brasil Colônia. Quando pensamos no desenvolvimento técnico e científico da nossa história, é comum voltarmos os olhos exclusivamente para a agricultura açucareira ou para a mineração, esquecendo que nenhuma dessas riquezas teria cruzado o Atlântico sem o suporte de uma sólida e sofisticada indústria de construção de embarcações." data-en="Welcome to this session, where we begin an in-depth analysis of naval engineering in Colonial Brazil. When we think about technical development, we often look only at sugar or mining, forgetting that none of this wealth would have crossed the Atlantic without a solid shipbuilding industry." data-es="Bienvenidos a esta sesión, donde iniciamos un análisis profundo sobre la ingeniería naval en el Brasil Colonial." data-fr="Bienvenue dans cette session où nous entamons une analyse approfondie de l'ingénierie navale au Brésil Colonial.">Sejam muito bem-vindos a esta sessão, onde iniciaremos uma análise aprofundada sobre a engenharia naval no contexto do Brasil Colônia. Quando pensamos no desenvolvimento técnico e científico da nossa história, é comum voltarmos os olhos exclusivamente para a agricultura açucareira ou para a mineração, esquecendo que nenhuma dessas riquezas teria cruzado o Atlântico sem o suporte de uma sólida e sofisticada indústria de construção de embarcações.</p>
 </header>
 
-
 <section class="ebook-intro">
   <div class="ebook-texto">
-    <div class="ebook-badge" data-pt-BR="A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS" data-en="NAVAL ENGINEERING: CARAVELS & NAUS" data-es="INGENIERÍA NAVAL: CARABELAS Y NAOS" data-fr="GÉNIE NAVAL: CARAVELLES ET NEFS">A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS</div>
-    <h2><span data-pt-BR="A caravela foi a" data-en="The caravel was the" data-es="La carabela fue la" data-fr="La caravelle fut la">A caravela foi a</span> <em data-pt-BR="grande inovação" data-en="great innovation" data-es="gran innovación" data-fr="grande innovation">grande inovação</em></h2>
-    <p class="ebook-sub" data-pt-BR="Como o design das caravelas portuguesas do século XV transformou a navegação global" data-en="How 15th-century Portuguese caravels transformed global navigation" data-es="Cómo el diseño de las carabelas transformó la navegación global" data-fr="Comment la conception des caravelles a transformé la navigation mondiale">Como o design das caravelas portuguesas do século XV transformou a navegação global</p>
-    
-    <p class="ebook-sub" style="margin-top:22px;text-align:justify;font-size:14px;line-height:1.9"
-       data-pt-BR="Os construtores daquela época enfrentavam o desafio de adaptar os projetos estruturais das naus e dos galeões europeus às severas condições de navegação do Atlântico Sul, demandando modificações profundas no desenho dos cascos e na distribuição de carga. Além disso, a engenharia naval colonial se destacou pela maestria na seleção e no manejo das madeiras de lei nativas, as quais possuíam propriedades mecânicas e de resistência biológica muito superiores às do carvalho europeu tradicional. Estudar esse panorama é, portanto, investigar como a fusão entre o saber empírico local e as diretrizes matemáticas da Coroa Portuguesa deu origem a uma das frotas mais resilientes da era da navegação à vela."
-       data-en="The builders of that time faced the challenge of adapting the structural designs of European naus and galleons to the severe navigation conditions of the South Atlantic, requiring profound modifications in hull design and load distribution. In addition, colonial naval engineering stood out for its mastery in selecting and handling native hardwoods, which possessed mechanical and biological resistance properties far superior to traditional European oak. Studying this panorama is therefore to investigate how the fusion between local empirical knowledge and the mathematical guidelines of the Portuguese Crown gave rise to one of the most resilient fleets of the age of sail."
-       data-es="Los constructores de aquella época enfrentaban el desafío de adaptar los proyectos estructurales de las naos y los galeones europeos a las severas condiciones de navegación del Atlántico Sur, exigiendo modificaciones profundas en el diseño de los cascos y en la distribución de carga. Además, la ingeniería naval colonial se destacó por la maestría en la selección y manejo de las maderas nobles nativas, las cuales poseían propiedades mecánicas y de resistencia biológica muy superiores al roble europeo tradicional. Estudiar este panorama es, por tanto, investigar cómo la fusión entre el saber empírico local y las directrices matemáticas de la Corona Portuguesa dio origen a una de las flotas más resilientes de la era de la navegación a vela."
-       data-fr="Les constructeurs de l'époque faisaient face au défi d'adapter les projets structurels des nefs et des galions européens aux conditions sévères de navigation de l'Atlantique Sud, exigeant des modifications profondes dans la conception des coques et la répartition des charges. De plus, le génie naval colonial s'est distingué par sa maîtrise dans la sélection et la gestion des bois durs natifs, qui possédaient des propriétés mécaniques et de résistance biologique bien supérieures au chêne européen traditionnel. Étudier ce panorama, c'est donc examiner comment la fusion entre le savoir empirique local et les directives mathématiques de la Couronne Portugaise a donné naissance à l'une des flottes les plus résilientes de l'ère de la navigation à voile.">Os construtores daquela época enfrentavam o desafio de adaptar os projetos estruturais das naus e dos galeões europeus às severas condições de navegação do Atlântico Sul, demandando modificações profundas no desenho dos cascos e na distribuição de carga. Além disso, a engenharia naval colonial se destacou pela maestria na seleção e no manejo das madeiras de lei nativas, as quais possuíam propriedades mecânicas e de resistência biológica muito superiores às do carvalho europeu tradicional. Estudar esse panorama é, portanto, investigar como a fusão entre o saber empírico local e as diretrizes matemáticas da Coroa Portuguesa deu origem a uma das frotas mais resilientes da era da navegação à vela.</p>
-
-    <div style="margin-top:24px;padding:14px 16px;background:rgba(212,175,55,0.06);border-left:1px solid var(--ouro-minas);border-radius:0 10px 10px 0">
-      <p style="font-size:13px;line-height:1.7;color:var(--sepia-titulo)"
-         data-pt-BR="Para darmos continuidade à nossa aula, você gostaria que eu elaborasse sobre o impacto específico das madeiras de lei na durabilidade dos cascos ou prefere que exploremos a importância estratégica do Arsenal da Bahia?"
-         data-en="To continue our lesson, would you like me to elaborate on the specific impact of hardwoods on hull durability or would you prefer we explore the strategic importance of the Bahia Arsenal?"
-         data-es="Para continuar nuestra clase, ¿te gustaría que elaborara sobre el impacto específico de las maderas nobles en la durabilidad de los cascos o prefieres que exploremos la importancia estratégica del Arsenal de Bahía?"
-         data-fr="Pour poursuivre notre cours, souhaitez-vous que j'élabore sur l'impact spécifique des bois durs sur la durabilité des coques ou préférez-vous que nous explorions l'importance stratégique de l'Arsenal de Bahia?">Para darmos continuidade à nossa aula, você gostaria que eu elaborasse sobre o impacto específico das madeiras de lei na durabilidade dos cascos ou prefere que exploremos a importância estratégica do Arsenal da Bahia?</p>
-    </div>
-
-    <ul style="margin-top:28px">
-      <li data-pt-BR="Design revolucionário para navegação oceânica" data-en="Revolutionary design for oceanic navigation" data-es="Diseño revolucionario para navegación oceánica" data-fr="Design révolutionnaire pour la navigation océanique">Design revolucionário para navegação oceânica</li>
-      <li data-pt-BR="Velas latinas que permitiam singrar contra o vento" data-en="Lateen sails that allowed sailing against the wind" data-es="Velas latinas que permitían ceñir contra el viento" data-fr="Voiles latines permettant de naviguer contre le vent">Velas latinas que permitiam singrar contra o vento</li>
-      <li data-pt-BR="Casco leve e maior manobrabilidade em mar aberto" data-en="Light hull and greater maneuverability on open sea" data-es="Casco ligero y mayor maniobrabilidad en mar abierto" data-fr="Coque légère et meilleure maniabilité en haute mer">Casco leve e maior manobrabilidade em mar aberto</li>
+    <span class="prisma-data" data-pt-BR="CARAVELAS E NAUS • SÉCULO XV" data-en="CARAVELS AND NAUS • 15TH CENTURY" data-es="CARABELAS Y NAOS • SIGLO XV" data-fr="CARAVELLES ET NAUS • XVe SIÈCLE">CARAVELAS E NAUS • SÉCULO XV</span>
+    <div class="ebook-badge">A ENGENHARIA NAVAL: AS CARAVELAS E AS NAUS</div>
+    <h2 data-pt-BR="A caravela foi a <em>grande inovação</em>" data-en="The caravel was the <em>great innovation</em>" data-es="La carabela fue la <em>gran innovación</em>" data-fr="La caravelle fut la <em>grande innovation</em>">A caravela foi a <em>grande inovação</em></h2>
+    <p class="ebook-sub" data-pt-BR="Como o design das caravelas portuguesas do século XV transformou a navegação global. Os construtores adaptaram naus e galeões às severas condições do Atlântico Sul." data-en="How 15th-century Portuguese caravel design transformed global navigation." data-es="Cómo el diseño de las carabelas portuguesas transformó la navegación global." data-fr="Comment la conception des caravelles portugaises a transformé la navigation mondiale.">Como o design das caravelas portuguesas do século XV transformou a navegação global. Os construtores adaptaram naus e galeões às severas condições do Atlântico Sul.</p>
+    <ul>
+      <li data-pt-BR="Design revolucionário para navegação oceânica" data-en="Revolutionary design for ocean navigation" data-es="Diseño revolucionario para navegación oceánica" data-fr="Conception révolutionnaire pour la navigation océanique">Design revolucionário para navegação oceânica</li>
+      <li data-pt-BR="Velas latinas que permitiam singrar contra o vento" data-en="Lateen sails that allowed sailing against the wind" data-es="Velas latinas que permitían navegar contra el viento" data-fr="Voiles latines permettant de naviguer contre le vent">Velas latinas que permitiam singrar contra o vento</li>
+      <li data-pt-BR="Casco leve e maior manobrabilidade em mar aberto" data-en="Light hull and greater maneuverability" data-es="Casco ligero y mayor maniobrabilidad" data-fr="Coque légère et plus grande maniabilité">Casco leve e maior manobrabilidade em mar aberto</li>
     </ul>
   </div>
-  <div class="ebook-imagem"><div class="ebook-moldura"><img src="img/prisma historico I.png" alt="Capa"></div><a href="https://pay.hotmart.com/S107552304I" class="btn-ebook" data-pt-BR="COMPRAR E-BOOK" data-en="BUY E-BOOK" data-es="COMPRAR E-BOOK" data-fr="ACHETER L'E-BOOK">COMPRAR E-BOOK</a></div>
-</section>
-
-
-
-
-<section class="ebook-intro" style="flex-direction:row-reverse">
-  <!-- IMAGEM PRIMEIRO -->
-  <div class="ebook-imagem">
-    <div class="ebook-moldura"><img src="img/prisma historico I.png" alt="Capa"></div>
-    <a href="https://pay.hotmart.com/S107552304I" class="btn-ebook" data-pt-BR="COMPRAR E-BOOK" data-en="BUY E-BOOK" data-es="COMPRAR E-BOOK" data-fr="ACHETER L'E-BOOK">COMPRAR E-BOOK</a>
-  </div>
-
-  <!-- TEXTO AO LADO -->
-  <div class="ebook-texto">
-    <div class="ebook-badge" data-pt-BR="CIÊNCIA DOS MATERIAIS" data-en="MATERIALS SCIENCE" data-es="CIENCIA DE MATERIALES" data-fr="SCIENCE DES MATÉRIAUX">CIÊNCIA DOS MATERIAIS</div>
-    <h2><span data-pt-BR="A Ciência dos Materiais e o" data-en="Materials Science and the" data-es="La Ciencia de Materiales y el" data-fr="La Science des Matériaux et l'">A Ciência dos Materiais e o</span> <em data-pt-BR="Impacto das Madeiras de Lei" data-en="Impact of Hardwoods" data-es="Impacto de Maderas Nobles" data-fr="Impact des Bois Durs">Impacto das Madeiras de Lei</em></h2>
-    
-    <p class="ebook-sub" style="text-align:justify"
-       data-pt-BR="O termo 'madeira de lei' surgiu justamente nesse período, designando as espécies nobres cuja extração era protegida por leis e decretos da Coroa Portuguesa, sendo exclusivas para as estruturas navais do reino:"
-       data-en="The term 'hardwood' emerged precisely in this period, designating noble species whose extraction was protected by laws and decrees of the Portuguese Crown, exclusive for the kingdom's naval structures:"
-       data-es="El término 'madera de ley' surgió justamente en este período, designando las especies nobles cuya extracción era protegida por leyes y decretos de la Corona Portuguesa, exclusivas para las estructuras navales del reino:"
-       data-fr="Le terme 'bois de loi' est apparu précisément à cette période, désignant les espèces nobles dont l'extraction était protégée par les lois et décrets de la Couronne Portugaise, exclusives aux structures navales du royaume:">O termo "madeira de lei" surgiu justamente nesse período, designando as espécies nobres cuja extração era protegida por leis e decretos da Coroa Portuguesa, sendo exclusivas para as estruturas navais do reino:</p>
-
-    <ul style="margin-top:18px">
-      <li style="border-left-color:var(--ouro-minas)"><b data-pt-BR="Resistência ao Teredo Navalis:" data-en="Resistance to Teredo Navalis:" data-es="Resistencia al Teredo Navalis:" data-fr="Résistance au Taret:">Resistência ao Teredo Navalis:</b> <span data-pt-BR="Alta densidade e óleos naturais no cerne, imune ao bicho-da-madeira que devorava carvalho europeu nas águas quentes." data-en="High density and natural oils in the heartwood, immune to the shipworm that devoured European oak in warm waters." data-es="Alta densidad y aceites naturales en el duramen, inmune al bicho de madera que devoraba el roble europeo." data-fr="Haute densité et huiles naturelles dans le cœur, immunisé contre le taret qui dévorait le chêne européen.">Alta densidade e óleos naturais no cerne, imune ao bicho-da-madeira que devorava carvalho europeu nas águas quentes.</span></li>
-      <li><b>Geometria Funcional:</b> <span data-pt-BR="Carpinteiros usavam a anatomia de cada árvore para partes específicas:" data-en="Shipwrights used the anatomy of each tree for specific parts:" data-es="Carpinteros usaban la anatomía de cada árbol para partes específicas:" data-fr="Les charpentiers utilisaient l'anatomie de chaque arbre pour des parties spécifiques:">Carpinteiros usavam a anatomia de cada árvore para partes específicas:</span>
-        <div style="margin:10px 0 0 10px;font-size:12px;color:var(--sepia-texto);line-height:1.7">
-          • <b>Quilha:</b> Angelim-vermelho - altíssima densidade<br>
-          • <b>Cavernas (costelas):</b> árvores com curvaturas naturais<br>
-          • <b>Mastreação:</b> Guanandi - flexível para absorver ventos
-        </div>
-      </li>
-    </ul>
-
-    <div style="margin-top:28px">
-      <div class="ebook-badge" style="font-size:7px">CATÁLOGO TÉCNICO</div>
-      <div style="display:grid;gap:12px;margin-top:12px">
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:12px">Tapinhoã (Mezilaurus navalium):</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px">Madeira naval por excelência. Densa e oleosa, para linhas d'água e chapeamento exterior.</p></div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:12px">Peroba-rosa:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px">Vigas internas, balizas e conveses. Estabilidade dimensional e resistência a fungos.</p></div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:12px">Pau-brasil:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px">Dureza extrema para moitões e roldanas do sistema de velas.</p></div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:12px">Guanandi:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px">Leve e flexível, madeira oficial para mastros e vergas - Bahia e Rio.</p></div>
-      </div>
-    </div>
-
-    <div style="margin-top:32px;padding:16px;background:rgba(212,175,55,0.06);border:1px solid var(--borda);border-radius:10px">
-      <h4 style="font-family:'Cinzel';font-size:10px;letter-spacing:0.15em;color:var(--ouro-minas);margin-bottom:10px">INSTRUMENTOS GEOGRÁFICOS A BORDO</h4>
-      <p style="font-size:11px;line-height:1.8;color:var(--sepia-texto)">
-        <b style="color:var(--branco-cal)">Bússola:</b> variação da agulha estudada por D. João de Castro<br>
-        <b style="color:var(--branco-cal)">Astrolábio Náutico:</b> latão perfurado, media altitude do Sol / Estrela Polar para latitude<br>
-        <b style="color:var(--branco-cal)">Quadrante:</b> quarto de círculo com fio de prumo<br>
-        <b style="color:var(--branco-cal)">Balestilha:</b> régua virote + soalhas para medir distância angular horizonte-astro
-      </p>
-    </div>
+  <div style="width:100%;max-width:340px;margin:0 auto">
+    <div style="background:#0D0D0B;padding:12px;border-radius:4px;border:1px solid var(--borda)"><img src="img/prisma historico I.png" alt="Capa E-book" style="width:100%;display:block"></div>
+    <a href="https://pay.hotmart.com/S107552304I" class="btn-ebook" data-pt-BR="COMPRAR E-BOOK - R$69,90" data-en="BUY E-BOOK - $19.90" data-es="COMPRAR E-BOOK - €19,90" data-fr="ACHETER E-BOOK - 19,90€">COMPRAR E-BOOK - R$69,90</a>
+    <span class="prisma-data" style="text-align:center;margin-top:10px" id="dataArtigo"></span>
   </div>
 </section>
-
-
-
-<section class="ebook-intro">
-  <!-- TEXTO PRIMEIRO AGORA -->
-  <div class="ebook-texto">
-    <div class="ebook-badge" data-pt-BR="4. CARTOGRAFIA COLONIAL: MAPAS E ROTEIROS" data-en="4. COLONIAL CARTOGRAPHY: MAPS & ROUTES" data-es="4. CARTOGRAFÍA COLONIAL: MAPAS Y RUTAS" data-fr="4. CARTOGRAPHIE COLONIALE: CARTES ET ROUTES">4. CARTOGRAFIA COLONIAL: MAPAS E ROTEIROS</div>
-    <h2><span data-pt-BR="Mapas deixaram de ser" data-en="Maps ceased to be" data-es="Los mapas dejaron de ser" data-fr="Les cartes ont cessé d'être">Mapas deixaram de ser</span> <em data-pt-BR="ilustrações" data-en="illustrations" data-es="ilustraciones" data-fr="illustrations">ilustrações</em> <span data-pt-BR="e viraram geometria exata" data-en="and became exact geometry" data-es="y se volvieron geometría exacta" data-fr="et sont devenues géométrie exacte">e viraram geometria exata</span></h2>
-    
-    <p class="ebook-sub" style="text-align:justify" data-pt-BR="A navegação dependia diretamente da evolução dos registros cartográficos, que deixaram de ser meras ilustrações para se tornarem ferramentas geométricas exatas:" data-en="Navigation depended directly on the evolution of cartographic records, which ceased to be mere illustrations to become exact geometric tools:" data-es="La navegación dependía directamente de la evolución de los registros cartográficos, que dejaron de ser meras ilustraciones para volverse herramientas geométricas exactas:" data-fr="La navigation dépendait directement de l'évolution des registres cartographiques, qui ont cessé d'être de simples illustrations pour devenir des outils géométriques exacts:">A navegação dependia diretamente da evolução dos registros cartográficos, que deixaram de ser meras ilustrações para se tornarem ferramentas geométricas exatas:</p>
-
-    <ul style="margin-top:18px">
-      <li><b>Cartas Portulanas:</b> <span data-pt-BR="Pergaminho com rede de linhas loxodrómicas (rumos) a partir de rosas dos ventos. Não consideravam curvatura, mas permitiam rota reta com bússola em médias distâncias." data-en="Parchment with network of loxodromic lines (bearings) from wind roses. Did not consider curvature, but allowed straight route with compass over medium distances.">Pergaminho com rede de linhas loxodrómicas (rumos) a partir de rosas dos ventos. Não consideravam curvatura, mas permitiam rota reta com bússola em médias distâncias.</span></li>
-      <li><b>Cartas de Latitude:</b> <span data-pt-BR="Século XVI, com escala graduada de latitudes (tronco de léguas), cruzando dado do astrolábio direto no mapa." data-en="16th century, with graduated latitude scale (league trunk), crossing astrolabe data directly on map.">Século XVI, com escala graduada de latitudes (tronco de léguas), cruzando dado do astrolábio direto no mapa.</span></li>
-      <li><b>Roteiros de Navegação:</b> <span data-pt-BR="Manuscritos com perfis de montanhas vistos do mar, sondagens de baías, cor da água, tipo de fundo (areia/lama/pedra) e comportamento dos alísios e correntes." data-en="Manuscripts with mountain profiles seen from sea, bay soundings, water color, bottom type (sand/mud/rock) and behavior of trade winds and currents.">Manuscritos com perfis de montanhas vistos do mar, sondagens de baías, cor da água, tipo de fundo (areia/lama/pedra) e comportamento dos alísios e correntes.</span></li>
-      <li style="border-left-color:#ff4444"><b style="color:#ff8a8a">Erro Crítico:</b> <span data-pt-BR="Erro no cálculo da longitude causava naufrágios na costa brasileira - problema só resolvido com cronômetro no século XVIII." data-en="Error in longitude calculation caused shipwrecks on Brazilian coast - problem only solved with chronometer in 18th century.">Erro no cálculo da longitude causava naufrágios na costa brasileira - problema só resolvido com cronômetro no século XVIII.</span></li>
-    </ul>
-
-    <!-- BLOCO 2 - SISTEMA INTEGRADO -->
-    <div style="margin-top:36px;padding-top:24px;border-top:1px solid var(--borda)">
-      <div class="ebook-badge" style="background:rgba(255,255,255,0.05)" data-pt-BR="BLOCO 2: SISTEMA INTEGRADO" data-en="BLOCK 2: INTEGRATED SYSTEM" data-es="BLOQUE 2: SISTEMA INTEGRADO" data-fr="BLOC 2: SYSTÈME INTÉGRÉ">BLOCO 2: SISTEMA INTEGRADO</div>
-      <h3 style="font-family:'Cormorant Garamond';font-size:22px;font-weight:400;margin:14px 0 12px;color:var(--sepia-titulo)" data-pt-BR="Engenharia como simbiose entre carpintaria, geometria, astronomia e direito" data-en="Engineering as symbiosis between carpentry, geometry, astronomy and law">Engenharia como simbiose entre carpintaria, geometria, astronomia e direito</h3>
-      
-      <p style="font-size:13px;line-height:1.9;text-align:justify;color:var(--sepia-texto);opacity:0.9" data-pt-BR="A arquitetura naval portuguesa assentava no revolucionário método da caverna-mestra e do graminho, invertendo a lógica europeia. Em vez de erguer as tábuas primeiro, montava-se o esqueleto interno para depois fixar o tabuado exterior. A caravela, com calado raso e relação comprimento/largura alongada, usava velas latinas triangulares para bolinar - criar diferencial de pressão aerodinâmica em ziguezague contra o vento. As naus eram fortalezas de carga, bojo pronunciado e castelos defensivos, velas quadradas pesadas sacrificando manobrabilidade por capacidade volumétrica colossal.">A arquitetura naval portuguesa assentava no revolucionário método da caverna-mestra e do graminho, invertendo a lógica europeia. Em vez de erguer as tábuas primeiro, montava-se o esqueleto interno para depois fixar o tabuado exterior. A caravela, com calado raso e relação comprimento/largura alongada, usava velas latinas triangulares para bolinar - criar diferencial de pressão aerodinâmica em ziguezague contra o vento. As naus eram fortalezas de carga, bojo pronunciado e castelos defensivos, velas quadradas pesadas sacrificando manobrabilidade por capacidade volumétrica colossal.</p>
-
-      <div style="display:grid;gap:10px;margin-top:18px">
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px 14px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:11px">FERRAMENTAS DE PRECISÃO:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px;line-height:1.6">Graminho (régua graduada) e besta (matriz de cálculo gráfico) para definir estreitamento das costelas. Machado de estaleiro no desbaste, enxó (lâmina curva) no aplainamento milimétrico, trados de pua para cavilhas que inchavam na água selando a estrutura. Calafates com maços e ferros batiam estopa de linho com breu, revestindo com alcatrão e sebo contra teredo navalis.</p></div>
-        <div style="background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);padding:12px 14px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:11px">CARTOGRAFIA DE ESTADO SECRETA:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px;line-height:1.6">Gerida pela Casa da Índia, partilha punida com morte. De portulanas loxodrómicas (distorções colossais no Atlântico) para cartas de latitude graduadas com escala Equador-Polo por Pedro Nunes. Enquadrada por bulas Romanus Pontifex e Tordesilhas (370 léguas a oeste de Cabo Verde), forçando a volta do mar - navegar para oeste quase tocando o Brasil para pegar ventos do Atlântico Norte dentro dos limites legais.</p></div>
-        <div style="background:rgba(255,255,255,0.03);border:1px solid var(--borda);padding:12px 14px;border-radius:8px"><b style="color:var(--ouro-minas);font-size:11px">NAVEGAÇÃO ASTRONÔMICA:</b><p style="font-size:11px;color:var(--sepia-texto);margin-top:4px;line-height:1.6">Astrolábio náutico perfurado (vento passava sem balançar), quadrante com fio de prumo, balestilha com soalhas deslizantes. Agulha de marear com correção de declinação magnética (nordestear/noroestear) via sombra do sol ao meio-dia e tabelas de declinação solar + Regimentos das Léguas que convertiam graus em léguas sem álgebra avançada.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- IMAGEM DIREITA AGORA -->
-  <div class="ebook-imagem">
-    <div class="ebook-moldura"><img src="img/prisma historico I.png" alt="Cartografia Colonial"></div>
-    <a href="https://pay.hotmart.com/S107552304I" class="btn-ebook" data-pt-BR="BAIXAR MAPAS ORIGINAIS" data-en="DOWNLOAD ORIGINAL MAPS" data-es="DESCARGAR MAPAS ORIGINALES" data-fr="TÉLÉCHARGER CARTES ORIGINALES">BAIXAR MAPAS ORIGINAIS</a>
-    <p style="font-size:10px;color:var(--sepia-texto);opacity:0.4;margin-top:12px;text-align:center" data-pt-BR="Casa da Índia - sigilo sob pena de morte" data-en="Casa da Índia - secrecy under death penalty">Casa da Índia - sigilo sob pena de morte</p>
-  </div>
-</section>
-
-
-
-
-
 
 <section id="amostra-gratis-premium">
-  <div class="ag-wrap">
-    <span class="ag-badge" data-pt-BR="● AMOSTRA OFICIAL LIBERADA" data-en="● OFFICIAL SAMPLE RELEASED" data-es="● MUESTRA OFICIAL LIBERADA" data-fr="● ÉCHANTILLON OFFICIEL DISPONIBLE">● AMOSTRA OFICIAL LIBERADA</span>
-    <h2 data-pt-BR="Baixe <em>três páginas reais</em> do e-book<br>no padrão premium" data-en="Download <em>three real pages</em> of the e-book<br>in premium standard" data-es="Descarga <em>tres páginas reales</em> del e-book<br>en estándar premium" data-fr="Téléchargez <em>trois vraies pages</em> de l'e-book<br>en qualité premium">Baixe <em>três páginas reais</em> do e-book<br>no padrão premium</h2>
-    <p class="ag-desc" data-pt-BR="Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: diagramação premium, artes exclusivas e profundidade analítica." data-en="Immediate access, no commitment. Dive into the PRISMA experience: premium layout, exclusive artworks and analytical depth." data-es="Acceso inmediato y sin compromiso. Sumérgete en la experiencia PRISMA: maquetación premium, artes exclusivos y profundidad analítica." data-fr="Accès immédiat et sans engagement. Plongez dans l'expérience PRISMA : mise en page premium, œuvres exclusives et profondeur analytique.">Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA: diagramação premium, artes exclusivas e profundidade analítica.</p>
-    <div class="ag-carrossel"><button class="seta esq" id="prev">‹</button><div class="track" id="track"><div class="item"><img src="img/28_20260929_025828_0027.png" alt=""><p>Pág 28</p></div><div class="item destaque"><img src="img/52_20260929_025829_0051.png" alt=""><p>Pág 52</p></div><div class="item"><img src="img/64_20260929_025829_0063.png" alt=""><p>Pág 64</p></div></div><button class="seta dir" id="next">›</button></div>
-    <div class="ag-box">
-      <div>
-        <h3 data-pt-BR="📘 HISTÓRIA DO BRASIL - Amostra Grátis" data-en="📘 BRAZILIAN HISTORY - Free Sample" data-es="📘 HISTORIA DE BRASIL - Muestra Gratis" data-fr="📘 HISTOIRE DU BRÉSIL - Échantillon Gratuit">📘 HISTÓRIA DO BRASIL - Amostra Grátis</h3>
-        <p data-pt-BR="PDF com três páginas • Alta resolução • Leitura no celular" data-en="3-page PDF • High resolution • Mobile friendly" data-es="PDF de tres páginas • Alta resolución • Lectura en móvil" data-fr="PDF de trois pages • Haute résolution • Lecture sur mobile">PDF com três páginas • Alta resolução • Leitura no celular</p>
-      </div>
-      <a href="https://drive.google.com/uc?export=download&id=1s6WXqCDNAYQHHx8JQluOG3UiBYhOKz8V" target="_blank" class="ag-btn"><span data-pt-BR="BAIXAR GRÁTIS" data-en="DOWNLOAD FREE" data-es="DESCARGAR GRATIS" data-fr="TÉLÉCHARGER GRATUIT">BAIXAR GRÁTIS</span><b>↓</b></a>
+  <span class="prisma-data">AMOSTRA OFICIAL • ALTA RESOLUÇÃO</span>
+  <span class="ag-badge">● AMOSTRA OFICIAL LIBERADA</span>
+  <h2 data-pt-BR="Baixe <em>três páginas reais</em> do e-book<br>no padrão premium" data-en="Download <em>three real pages</em> of the e-book<br>in premium standard" data-es="Descarga <em>tres páginas reales</em> del e-book" data-fr="Téléchargez <em>trois vraies pages</em> de l'e-book">Baixe <em>três páginas reais</em> do e-book<br>no padrão premium</h2>
+  <p class="ag-desc" data-pt-BR="Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA." data-en="Immediate access, no commitment. Dive into the PRISMA experience." data-es="Acceso inmediato y sin compromiso. Sumérgete en la experiencia PRISMA." data-fr="Accès immédiat et sans engagement. Plongez dans l'expérience PRISMA.">Acesso imediato e sem compromisso. Mergulhe na experiência PRISMA.</p>
+  <div class="ag-carrossel">
+    <button class="seta esq" id="prev">‹</button>
+    <div class="track" id="track">
+      <div class="item"><img src="img/28_20260929_025828_0027.png" alt="Página 1"></div>
+      <div class="item destaque"><img src="img/52_20260929_025829_0051.png" alt="Página 2"></div>
+      <div class="item"><img src="img/64_20260929_025829_0063.png" alt="Página 3"></div>
     </div>
-    <small class="ag-obs" data-pt-BR="Sem cadastro. Veja com seus próprios olhos a diagramação de luxo." data-en="No sign-up needed. See the luxury layout with your own eyes." data-es="Sin registro. Ve con tus propios ojos la maquetación de lujo." data-fr="Sans inscription. Voyez de vos propres yeux la mise en page de luxe.">Sem cadastro. Veja com seus próprios olhos a diagramação de luxo.</small>
+    <button class="seta dir" id="next">›</button>
   </div>
+  <div class="ag-box">
+    <div><h3>📘 HISTÓRIA DO BRASIL - Amostra Grátis</h3><p>PDF com três páginas • Alta resolução • Leitura no celular</p></div>
+    <a href="https://drive.google.com/uc?export=download&id=1s6WXqCDNAYQHHx8JQluOG3UiBYhOKz8V" target="_blank" class="ag-btn"><span data-pt-BR="BAIXAR GRÁTIS" data-en="DOWNLOAD FREE" data-es="DESCARGAR GRATIS" data-fr="TÉLÉCHARGER GRATUIT">BAIXAR GRÁTIS</span><b>↓</b></a>
+  </div>
+  <small style="display:block;max-width:860px;margin:14px auto 0;color:var(--sepia-texto);opacity:0.5;font-size:10px" data-pt-BR="Sem cadastro. Veja com seus próprios olhos a diagramação de luxo." data-en="No signup. See the luxury layout with your own eyes." data-es="Sin registro. Vea la maquetación de lujo con sus propios ojos." data-fr="Sans inscription. Voyez la mise en page de luxe de vos propres yeux.">Sem cadastro. Veja com seus próprios olhos a diagramação de luxo.</small>
 </section>
 
 <section id="dentroEbook">
   <div class="ebook-header">
-    <span data-pt-BR="POR DENTRO DO MATERIAL" data-en="INSIDE THE MATERIAL" data-es="DENTRO DEL MATERIAL" data-fr="À L'INTÉRIEUR DU MATÉRIEL">POR DENTRO DO MATERIAL</span>
-    <h2><span data-pt-BR="Veja o que você vai" data-en="See what you will" data-es="Mira lo que vas a" data-fr="Voyez ce que vous allez">Veja o que você vai</span> <i data-pt-BR="receber" data-en="receive" data-es="recibir" data-fr="recevoir">receber</i></h2>
-    <p data-pt-BR="Um material 100% ilustrado, denso e direto ao ponto" data-en="A 100% illustrated material, dense and straight to the point" data-es="Un material 100% ilustrado, denso y directo" data-fr="Un matériel 100% illustré, dense et direct">Um material 100% ilustrado, denso e direto ao ponto</p>
+    <span class="prisma-data">CONTEÚDO PREMIUM • 140 PÁGINAS</span>
+    <span>POR DENTRO DO MATERIAL</span>
+    <h2 data-pt-BR="Veja o que você vai <i>receber</i>" data-en="See what you will <i>receive</i>" data-es="Vea lo que va a <i>recibir</i>" data-fr="Voyez ce que vous allez <i>recevoir</i>">Veja o que você vai <i>receber</i></h2>
+    <p data-pt-BR="Um material 100% ilustrado, denso e direto ao ponto" data-en="100% illustrated material, dense and to the point" data-es="Material 100% ilustrado, denso y directo" data-fr="Matériel 100% illustré, dense et direct">Um material 100% ilustrado, denso e direto ao ponto</p>
   </div>
   <div class="ebook-paginas">
-    <div class="pagina"><img src="img/nautico pau-brasil.webp" alt=""><label data-pt-BR="Tecnologia Marítima" data-en="Maritime Technology" data-es="Tecnología Marítima" data-fr="Technologie Maritime">Tecnologia Marítima</label></div>
-    <div class="pagina destaque"><img src="img/don-careca.webp" alt=""><label>Dia do Fico</label></div>
-    <div class="pagina"><img src="img/canudos.webp" alt=""><label>Canudos</label></div>
+    <div class="pagina"><img src="img/nautico pau-brasil.webp" alt="Tecnologia Marítima"><label data-pt-BR="Tecnologia Marítima" data-en="Maritime Technology" data-es="Tecnología Marítima" data-fr="Technologie Maritime">Tecnologia Marítima</label><span class="prisma-data" style="margin-top:6px">CAP. 03 • PAU-BRASIL</span></div>
+    <div class="pagina"><img src="img/don-careca.webp" alt="Dia do Fico"><label>Dia do Fico</label><span class="prisma-data" style="margin-top:6px">CAP. 07 • 1822</span></div>
+    <div class="pagina"><img src="img/canudos.webp" alt="Canudos"><label>Canudos</label><span class="prisma-data" style="margin-top:6px">CAP. 11 • SERTÃO</span></div>
   </div>
-  <a href="artigos/ebook.html" class="btn-ouro" data-pt-BR="QUERO ACESSAR O EBOOK COMPLETO" data-en="I WANT FULL EBOOK ACCESS" data-es="QUIERO ACCEDER AL E-BOOK COMPLETO" data-fr="JE VEUX ACCÉDER À L'E-BOOK COMPLET">QUERO ACESSAR O EBOOK COMPLETO</a>
+  <a href="artigos/ebook.html" style="background:var(--ouro-minas);color:#0D0D0B;padding:14px 28px;border-radius:40px;font-family:'Cinzel';font-size:10px;font-weight:700;text-decoration:none;display:inline-block;margin-top:20px" data-pt-BR="QUERO ACESSAR O EBOOK COMPLETO" data-en="I WANT THE FULL E-BOOK" data-es="QUIERO EL E-BOOK COMPLETO" data-fr="JE VEUX L'E-BOOK COMPLET">QUERO ACESSAR O EBOOK COMPLETO</a>
 </section>
 
-<!-- FOOTER GLOBAL ÚNICO -->
 <footer id="prismaFooter" style="background:#0F0E0C;border-top:1px solid rgba(212,175,55,0.14);padding:60px 5% 30px">
-  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;flex-wrap:wrap">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px">
     <div>
       <div style="font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;margin-bottom:16px"><span style="color:#D4AF37;font-weight:700">Prisma</span> <span style="color:#F2EDE3">Histórico</span></div>
       <p style="color:#A99B85;font-size:12px;line-height:1.7;max-width:280px" data-pt-BR="Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From Colonial Brazil to Empire, with surgical logic." data-es="Enfoque analítico de la Historia de Brasil. Del Brasil Colonial al Imperio, con lógica quirúrgica." data-fr="Approche analytique de l'Histoire du Brésil. Du Brésil Colonial à l'Empire, avec une logique chirurgicale.">Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica.</p>
@@ -404,7 +186,7 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
     </div>
     <div>
       <h4 style="font-family:'Cinzel';font-size:10px;letter-spacing:0.2em;color:#D9C5A0;margin-bottom:18px">E-BOOK</h4>
-      <p style="color:#A99B85;font-size:11px;line-height:1.6;margin-bottom:14px" data-pt-BR="140 páginas premium com mapas exclusivos." data-en="140 premium pages with exclusive maps." data-es="140 páginas premium con mapas exclusivos." data-fr="140 pages premium avec cartes exclusives.">140 páginas premium com mapas mentais exclusivos.</p>
+      <p style="color:#A99B85;font-size:11px;line-height:1.6;margin-bottom:14px" data-pt-BR="140 páginas premium com mapas mentais exclusivos." data-en="140 premium pages with exclusive maps." data-es="140 páginas premium con mapas exclusivos." data-fr="140 pages premium avec cartes exclusives.">140 páginas premium com mapas mentais exclusivos.</p>
       <a href="artigos/ebook.html" style="background:#D4AF37;color:#0D0D0B;padding:10px 18px;border-radius:30px;font-family:'Cinzel';font-size:9px;font-weight:700;text-decoration:none;display:inline-block" data-pt-BR="COMPRAR AGORA - R$69,90" data-en="BUY NOW - $19.90" data-es="COMPRAR AHORA - €19,90" data-fr="ACHETER MAINTENANT - 19,90€">COMPRAR AGORA - R$69,90</a>
     </div>
   </div>
@@ -414,25 +196,20 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--sepia-t
   </div>
 </footer>
 
-<div id="cookieBanner">
-  <div class="cookie-icon"><span class="material-icons">cookie</span></div>
-  <div class="cookie-texto">
-    <strong data-pt-BR="Cookies & Privacidade" data-en="Cookies & Privacy" data-es="Cookies & Privacidad" data-fr="Cookies & Confidentialité">Cookies & Privacidade</strong>
-    <p><span data-pt-BR="Usamos cookies para melhorar sua experiência." data-en="We use cookies to improve your experience." data-es="Usamos cookies para mejorar tu experiencia." data-fr="Nous utilisons des cookies pour améliorer votre expérience.">Usamos cookies para melhorar sua experiência.</span> <a href="artigos/privacidade.html" data-pt-BR="Política" data-en="Policy" data-es="Política" data-fr="Politique">Política</a></p>
-  </div>
-  <div class="cookie-acoes">
-    <button id="cookieRecusar" data-pt-BR="Recusar" data-en="Decline" data-es="Rechazar" data-fr="Refuser">Recusar</button>
-    <button id="cookieAceitar" data-pt-BR="Aceitar" data-en="Accept" data-es="Aceptar" data-fr="Accepter">Aceitar</button>
-  </div>
-</div>
-
 <script>
 const nav=document.getElementById('prismaNav');
 const hamb=document.getElementById('hambBtn');
-hamb.addEventListener('click',e=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});
-document.addEventListener('click',e=>{if(!nav.contains(e.target)&&nav.classList.contains('menu-aberto')){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
-document.getElementById('menuLinks').querySelectorAll('a').forEach(a=>{a.addEventListener('click',()=>{nav.classList.remove('menu-aberto');document.body.style.overflow='';});});
-
+hamb.addEventListener('click',e=>{
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+  document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';
+});
+document.addEventListener('click',e=>{
+  if(!nav.contains(e.target)&&nav.classList.contains('menu-aberto')){
+    nav.classList.remove('menu-aberto');
+    document.body.style.overflow='';
+  }
+});
 function aplicarTraducao(lang){
   localStorage.setItem('prisma_lang',lang);
   document.documentElement.lang=lang;
@@ -440,15 +217,18 @@ function aplicarTraducao(lang){
     const txt=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
     if(txt) el.innerHTML=txt;
   });
-  atualizarDataFooter(lang);
+  atualizarDatas(lang);
 }
-function atualizarDataFooter(lang){
+function atualizarDatas(lang){
   const agora=new Date();
   document.getElementById('anoAtual').textContent=agora.getFullYear();
-  const localeMap={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
-  const timeZoneMap={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
-  const fmt=new Intl.DateTimeFormat(localeMap[lang]||'pt-BR',{dateStyle:'long',timeZone:timeZoneMap[lang]||'America/Sao_Paulo'});
-  document.getElementById('dataLocalizada').textContent=fmt.format(agora);
+  const map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
+  const tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
+  const fmtLong=new Intl.DateTimeFormat(map[lang]||'pt-BR',{dateStyle:'long',timeZone:tz[lang]||'America/Sao_Paulo'});
+  const fmtShort=new Intl.DateTimeFormat(map[lang]||'pt-BR',{dateStyle:'medium',timeZone:tz[lang]||'America/Sao_Paulo'});
+  document.getElementById('dataLocalizada').textContent=fmtLong.format(agora);
+  const art=document.getElementById('dataArtigo');
+  if(art) art.textContent=fmtShort.format(agora);
 }
 document.querySelectorAll('.lang-switch button').forEach(b=>{
   b.addEventListener('click',e=>{
@@ -461,18 +241,15 @@ const salvo=localStorage.getItem('prisma_lang')||'pt-BR';
 document.getElementById('btn-'+salvo)?.classList.add('active');
 aplicarTraducao(salvo);
 
+// Carrossel
 const track=document.getElementById('track');
 const prev=document.getElementById('prev');
 const next=document.getElementById('next');
 if(track&&prev&&next){
-  const getScroll=()=>track.querySelector('.item').offsetWidth+16;
-  next.addEventListener('click',()=>track.scrollBy({left:getScroll(),behavior:'smooth'}));
-  prev.addEventListener('click',()=>track.scrollBy({left:-getScroll(),behavior:'smooth'}));
+  const step=()=>track.querySelector('.item').offsetWidth+20;
+  next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+  prev.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
 }
-const banner=document.getElementById('cookieBanner');
-if(localStorage.getItem('prisma_cookies')) banner.style.display='none';
-document.getElementById('cookieAceitar')?.addEventListener('click',()=>{localStorage.setItem('prisma_cookies','aceito-'+new Date().toISOString());banner.style.display='none';});
-document.getElementById('cookieRecusar')?.addEventListener('click',()=>{localStorage.setItem('prisma_cookies','recusado-'+new Date().toISOString());banner.style.display='none';});
 </script>
 </body>
 </html>
