@@ -98,7 +98,12 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
   body{zoom:0.9}
 }
 
+/*email*/
 
+.footer-contact-card p{opacity:.6;font-size:13px;line-height:1.6;margin-bottom:14px}
+.footer-email{display:inline-block;color:#eebc6c;text-decoration:none;font-size:14px;font-weight:600;border:1px solid rgba(238,188,108,.2);padding:8px 14px;border-radius:99px;transition:.2s}
+.footer-email:hover{background:rgba(238,188,108,.1);border-color:#eebc6c}
+.footer-email-hint{display:block;margin-top:10px;font-size:11px;opacity:.4}
 
 </style>
 </head>
@@ -185,15 +190,19 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif; 
         <a href="privacidade.html" data-pt="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
         <a href="termos.html" data-pt="📄 Termos de Uso" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos de Uso</a>
       </div>
-      <div class="footer-col">
-        <h4 data-pt="Clube Prisma" data-en="Prisma Club" data-es="Club Prisma" data-fr="Club Prisma">Clube Prisma</h4>
-        <div class="footer-news-card">
-          <p data-pt="Receba roteiros secretos e aulas que não vão pro site. Grátis." data-en="Get secret guides not on site. Free." data-es="Recibe guías secretas que no van al sitio. Gratis." data-fr="Recevez des guides secrets pas sur le site. Gratuit.">Receba roteiros secretos e aulas que não vão pro site. Grátis.</p>
-          <input type="email" id="prismaEmail" placeholder="seu melhor email">
-          <button id="prismaBtn" data-pt="Entrar pro Clube →" data-en="Join Club →" data-es="Entrar al Club →" data-fr="Rejoindre →">Entrar pro Clube →</button>
-        </div>
-      </div>
-    </div>
+
+
+
+
+    <div class="footer-col">
+  <h4 data-pt="Contato" data-en="Contact" data-es="Contacto" data-fr="Contact">Contato</h4>
+  <div class="footer-contact-card">
+    <p data-pt="Dúvidas, parcerias e correções históricas." data-en="Questions, partnerships and corrections." data-es="Dudas, alianzas y correcciones." data-fr="Questions, partenariats et corrections.">Dúvidas, parcerias e correções históricas.</p>
+    <a href="mailto:contato@prismahistorico.com.br" class="footer-email">contato@prismahistorico.com.br</a>
+    <span class="footer-email-hint" data-pt="Resposta em até 24h" data-en="Reply within 24h" data-es="Respuesta en 24h" data-fr="Réponse sous 24h">Resposta em até 24h</span>
+  </div>
+</div>
+
     <div class="footer-bottom">
       <span>© <span id="ano"></span> <span data-pt="Prisma Histórico" data-en="Prisma Histórico" data-es="Prisma Histórico" data-fr="Prisma Histórico">Prisma Histórico</span></span>
       <span data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>

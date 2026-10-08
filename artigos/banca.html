@@ -16,9 +16,9 @@ html,body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-se
 .prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme);font-weight:400}.prisma-logo span{color:var(--ouro);font-weight:600}
 .prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--ouro);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
 .prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro);display:block;transition:0.35s}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
-.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:var(--preto);list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
 .prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif;font-weight:400}
@@ -50,10 +50,69 @@ html,body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-se
 .preco-de{text-decoration:line-through;color:var(--sepia);font-size:.85rem;display:block;font-weight:300}.preco-por{font-size:2rem;font-weight:400;color:var(--ouro);font-family:'Cinzel',serif}
 .btn-venda{text-align:center;text-decoration:none;padding:14px 20px;border-radius:8px;font-weight:500;background:var(--ouro);color:var(--preto);margin-top:auto;display:block;transition:.2s}
 .btn-venda:hover{background:var(--ouro2)}
-.footer-prisma{background:var(--card);border-top:2px solid var(--ouro);padding:40px 20px;text-align:center;margin-top:60px}
-.footer-prisma h4{color:var(--ouro);margin-bottom:10px;font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.2em}.footer-prisma p{color:var(--sepia);font-size:.9rem;font-weight:300}
-.footer-bottom{margin-top:20px;padding-top:15px;border-top:1px solid var(--borda);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sepia);opacity:.6;font-weight:300}
-@media(max-width:768px){.hero-section h1{font-size:1.9rem}.hero-botoes{flex-direction:column;max-width:320px;margin:0 auto 40px}.btn-hero{width:100%;text-align:center}}
+
+
+/*hamburguer*/
+/* FIX HAMBURGUER GAVETA */
+.prisma-nav.menu-aberto .prisma-menu-links{
+  transform:translateX(0) !important;
+  pointer-events:all !important;
+}
+.prisma-menu-links .material-icons{
+  color:var(--ouro);
+  font-size:18px;
+}
+
+
+
+/*footer*/
+
+#prismaFooter{background:#0A0A0A;border-top:1px solid rgba(212,175,55,.14);padding:70px 5% 26px}
+#prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;width:100%}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.85fr 0.95fr 1.15fr;gap:52px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:.18em;color:#F5F5F0;line-height:.85;font-weight:300}
+#prismaFooter .footer-logo span{color:var(--ouro-minas);display:block;font-weight:400}
+#prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia-texto);margin-top:18px;max-width:310px;font-weight:300;opacity:.8}
+#prismaFooter .footer-col a{font-size:13px;color:var(--sepia-texto);text-decoration:none;display:block;margin-bottom:13px;font-weight:300;opacity:.75;transition:.2s}
+#prismaFooter .footer-col a:hover{color:var(--ouro-minas);opacity:1;transform:translateX(4px)}
+#prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(212,175,55,.12);border-radius:16px;padding:22px}
+#prismaFooter .footer-news-card p{font-size:12px;color:var(--sepia-texto);line-height:1.6;margin-bottom:14px;font-weight:300}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:54px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#prismaFooter .footer-bottom span{font-size:10.5px;color:var(--sepia-texto);opacity:.4;font-weight:300;letter-spacing:.04em}
+@media(max-width:1024px){
+.prisma-nav{padding:10px 4%}
+.ebook-intro{flex-direction:column;gap:30px;padding:40px 20px}
+ #prismaFooter .footer-grid{grid-template-columns:1fr 1fr 1fr;gap:36px}
+ #prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:420px}
+}
+@media(max-width:768px){
+.prisma-logo{font-size:16px}
+.hero{padding:90px 5% 40px}
+.hero h1{font-size:32px}
+.hero p{font-size:14px}
+.ebook-intro{margin:15px auto;padding:30px 18px;border-radius:12px}
+}
+@media(max-width:680px){
+ #prismaFooter{padding:40px 20px 20px}
+ #prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+ #prismaFooter .footer-grid > div:first-child{grid-column:1/-1}
+ #prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:100%}
+ #prismaFooter .footer-bottom{flex-direction:column;align-items:center;text-align:center;margin-top:32px}
+}
+
+#prismaFooter .footer-col h4{
+  font-family:'Cinzel',serif !important;
+  font-weight:300 !important;
+  font-size:10px !important;
+  letter-spacing:.28em !important;
+  color:var(--sepia-titulo) !important;
+  opacity:.85;
+  text-transform:uppercase;
+}
+
+
+
+
 </style>
 </head>
 <body>
@@ -126,10 +185,41 @@ html,body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-se
   </div>
 </section>
 
-<footer class="footer-prisma">
-  <h4>PRISMA HISTÓRICO</h4>
-  <p>© <span id="anoAtual">2026</span> www.prismahistorico.com.br • <span data-pt-BR="Método Cirúrgico" data-en="Surgical Method">Método Cirúrgico</span></p>
-  <div class="footer-bottom"><span id="dataLocalizada"></span><span data-pt-BR="Bizu fixo: Terra Roxa + Ferrovias + Imigrantes" data-en="Fixed trick: Purple Soil + Railways + Immigrants">Bizu fixo: Terra Roxa + Ferrovias + Imigrantes</span></div>
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
+        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a>
+        <a href="quiz.html">Quiz</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="ebook.html">📘 E-book</a>
+        <a href="loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
+        <a href="afiliados.html" data-pt-BR="🤝 Afiliados 40%" data-en="🤝 Affiliates 40%" data-es="🤝 Afiliados 40%" data-fr="🤝 Affiliés 40%">🤝 Afiliados 40%</a>
+        <a href="doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation" data-es="💰 Donación" data-fr="💰 Don">💰 Doação</a>
+        <a href="privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy" data-es="🔒 Privacidad" data-fr="🔒 Confidentialité">🔒 Privacidade</a>
+        <a href="termos.html" data-pt-BR="📄 Termos" data-en="📄 Terms" data-es="📄 Términos" data-fr="📄 Conditions">📄 Termos</a>
+      </div>
+      <div class="footer-col">
+       <h4 data-pt-BR="Comprar Agora" data-en="Buy Now" data-es="Comprar Ahora" data-fr="Acheter Maintenant" style="font-family:'Cinzel',serif;font-weight:300;font-size:10px;letter-spacing:.28em;color:var(--sepia-titulo);opacity:.9;text-transform:uppercase;">Comprar Agora</h4>
+       
+        <div class="footer-news-card">
+          <p data-pt-BR="140 páginas premium com mapas mentais exclusivos. Acesso imediato." data-en="140 premium pages with exclusive mind maps. Instant access." data-es="140 páginas premium con mapas exclusivos. Acceso inmediato." data-fr="140 pages premium avec cartes exclusives. Accès immédiat.">140 páginas premium com mapas mentais exclusivos. Acesso imediato.</p>
+          <a href="ebook.html" style="background:#D4AF37;color:#0D0D0B;padding:12px 18px;border-radius:30px;font-family:'Cinzel';font-size:10px;font-weight:700;text-decoration:none;display:inline-block;text-align:center;width:100%;margin-top:10px" data-pt-BR="COMPRAR E-BOOK - R$69,90" data-en="BUY E-BOOK - $19.90" data-es="COMPRAR E-BOOK - €19,90" data-fr="ACHETER E-BOOK - 19,90€">COMPRAR E-BOOK - R$69,90</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="anoAtual">2026</span> Prisma Histórico</span><span id="dataLocalizada">quarta-feira, 7 de maio de 2026</span></div>
+  </div>
 </footer>
 
 <script>
