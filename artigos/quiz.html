@@ -97,7 +97,23 @@ body{padding-top:68px}
   <p data-i18n="sub">ZEROU, GANHOU O PDF COM 50 MAPAS</p>
   <p id="dataHoje" style="font-size:9px;opacity:.4;margin-top:8px;font-family:'Cinzel',serif;letter-spacing:0.12em"></p>
   <div class="missao-path"><div class="missao-dot ativa" id="d1">1</div><div class="missao-dot" id="d2">2</div><div class="missao-dot" id="d3">3</div></div>
-</div>
+
+  <!-- LINK DE BAIXAR MAPA - AQUI MANO -->
+  <div id="downloadHero" style="margin-top:18px;display:none">
+    <a href="50_mapas_mentais_prisma.pdf" download="50-Mapas-Mentais-Prisma.pdf" style="background:#eebc6c;color:#121212;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:800;font-size:11px;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.05em">
+      📥 <span data-pt-BR="BAIXAR 50 MAPAS MENTAIS - PDF" data-en="DOWNLOAD 50 MIND MAPS - PDF" data-es="DESCARGAR 50 MAPAS MENTALES - PDF" data-fr="TÉLÉCHARGER 50 CARTES MENTALES - PDF">BAIXAR 50 MAPAS MENTAIS - PDF</span>
+    </a>
+    <p style="font-size:8px;opacity:.4;margin-top:8px;font-family:'Cinzel',serif" data-pt-BR="Liberado após 15/15 • 51 páginas" data-en="Unlocked after 15/15 • 51 pages">Liberado após 15/15 • 51 páginas</p>
+  </div>
+
+  <!-- ANTES DE ZERAR MOSTRA O CTA PRO E-BOOK -->
+  <div id="ctaHero" style="margin-top:18px">
+    <a href="https://pay.hotmart.com/S107552304I" target="_blank" style="background:transparent;border:1px solid rgba(238,188,108,0.2);color:#eebc6c;padding:10px 18px;border-radius:30px;text-decoration:none;font-size:9px;font-family:'Cinzel',serif;letter-spacing:0.15em;display:inline-flex">
+      <span data-pt-BR="MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90" data-en="MAPS ARE FREE WITH 15/15 → FULL E-BOOK IS PREMIUM $19.90" data-es="MAPAS GRATIS CON 15/15 → E-BOOK COMPLETO ES PREMIUM" data-fr="CARTES GRATUITES AVEC 15/15 → E-BOOK COMPLET EST PREMIUM">MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90</span>
+    </a>
+    <p style="font-size:7px;opacity:.35;margin-top:6px;font-family:'Inter',sans-serif;letter-spacing:0.05em" data-pt-BR="50 mapas = bônus grátis. E-book = 51 páginas extras com análise profunda." data-en="50 maps = free bonus. E-book = 51 extra pages with deep analysis.">50 mapas = bônus grátis. E-book = 51 páginas extras com análise profunda.</p>
+  </div>
+
 
 <div class="container"><div class="quiz-box" id="quizBox"></div></div>
 
@@ -148,6 +164,8 @@ body{padding-top:68px}
 </div>
 </div></footer>
 <script>
+
+
 const i18n={
 "pt-BR":{titulo:"3 Missões → 50 Mapas Mentais",sub:"ZEROU 15/15 E GANHOU O PDF COM 50 MAPAS",desc:"3 missões = 50 mapas liberados. Sem decoreba. 1 erro = game over.",nav:"Navegação",inicio:"Início",prod:"Produtos",afil:"Afiliado",afilp:"Ganhe 40% por venda. Hotmart.",prox:"PRÓXIMA →",data:"Atualizado em",errou:"ERROU! FIM DE JOGO",acertou:"ACERTOU!"},
 "en":{titulo:"3 Missions → 50 Mind Maps",sub:"GET 15/15 AND WIN 50 MAPS PDF",desc:"3 missions = 50 mind maps. 1 mistake = game over.",nav:"Navigation",inicio:"Home",prod:"Products",afil:"Affiliate",afilp:"Earn 40% per sale.",prox:"NEXT →",data:"Updated on",errou:"WRONG! GAME OVER",acertou:"CORRECT!"},
@@ -157,49 +175,56 @@ const i18n={
 function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;}
 const missoes=[
 { nome:"1ª Missão - Colônia", fases:[
-{q:'1. Por que Angola-Brasil dominou 70% do tráfico?',opts:[{t:'Angolanos eram fisicamente mais fortes',c:false},{t:'Guerra civil no Congo gerava prisioneiros baratos + 7 dias até Recife',c:true},{t:'Portugal tinha tratado de exclusividade com Angola',c:false}],lab:'ROTA TRANSATLÂNTICA',sub:'Brasil ESQ • África DIR',ex:'Prisão em massa por guerra = preço baixo. Logística curta.'},
-{q:'2. Por que ouro causou fissiparidade e não Estado forte?',opts:[{t:'Rei Dom João era fraco',c:false},{t:'Cada córrego tinha ouro e fiscalização era impossível',c:true},{t:'Bandeirantes eram anarquistas',c:false}],lab:'OURO MINAS',sub:'1700-1790',ex:'Ouro pulverizado = cada arraial virou república.'},
-{q:'3. O que era direito regateado?',opts:[{t:'Escravos não tinham direito',c:false},{t:'Lei era igual no papel, mas pena era comprável em ouro',c:true},{t:'Só nobres podiam comprar liberdade',c:false}],lab:'ORDENAÇÕES',sub:'Equiparação penal',ex:'Justiça à venda.'},
+{q:'1. Por que Angola-Brasil dominou 70% do tráfico?',opts:[{t:'Angolanos eram fisicamente mais fortes',c:false},{t:'Guerra civil no Congo gerava prisioneiros baratos + 7 dias até Recife',c:true},{t:'Portugal tinha tratado de exclusividade',c:false}],lab:'ROTA TRANSATLÂNTICA',sub:'Brasil ESQ • África DIR',ex:'Prisão em massa por guerra = preço baixo.'},
+{q:'2. Por que ouro causou fissiparidade?',opts:[{t:'Rei era fraco',c:false},{t:'Cada córrego tinha ouro e fiscalização era impossível',c:true},{t:'Bandeirantes eram anarquistas',c:false}],lab:'OURO MINAS',sub:'1700-1790',ex:'Ouro pulverizado = cada arraial virou república.'},
+{q:'3. O que era direito regateado?',opts:[{t:'Escravos não tinham direito',c:false},{t:'Lei igual no papel, mas pena comprável em ouro',c:true},{t:'Só nobres compravam liberdade',c:false}],lab:'ORDENAÇÕES',sub:'Equiparação penal',ex:'Justiça à venda.'},
 {q:'4. Amamentação cruzada era dominação por quê?',opts:[{t:'Senhores eram mais humanos',c:false},{t:'Criava dívida moral eterna mantendo escrava como escrava',c:true},{t:'Era tradição africana',c:false}],lab:'CASA GRANDE',sub:'Biopolítica',ex:'Ama negra nutre branco, mas continua escrava.'},
-{q:'5. Qual preço real da proteção inglesa em 1808?',opts:[{t:'Inglaterra exigiu terras',c:false},{t:'Abertura dos portos + tarifa 15% inglesa vs 24% portuguesa',c:true},{t:'2 toneladas de ouro por ano',c:false}],lab:'FUGA 1808',sub:'15 mil pessoas',ex:'Brasil virou colônia econômica inglesa.'},
+{q:'5. Preço da proteção inglesa em 1808?',opts:[{t:'Inglaterra exigiu terras',c:false},{t:'Abertura dos portos + tarifa 15% inglesa vs 24% portuguesa',c:true},{t:'2 toneladas de ouro',c:false}],lab:'FUGA 1808',sub:'15 mil pessoas',ex:'Brasil virou colônia econômica inglesa.'},
 ]},
 { nome:"2ª Missão - Império", fases:[
-{q:'6. Por que independência custou 3 milhões de libras?',opts:[{t:'Dívida pessoal de Dom Pedro',c:false},{t:'Portugal exigiu indenização para reconhecer o Brasil',c:true},{t:'Para construir palácios',c:false}],lab:'DÍVIDA 3MI',sub:'1825',ex:'Brasil comprou reconhecimento.'},
-{q:'7. Por que Paraguai lutou até 60% morrerem?',opts:[{t:'Brasil era fraco',c:false},{t:'Lógica de guerra total + isolamento sem rendição',c:true},{t:'Era guerra rápida que deu errado',c:false}],lab:'PARAGUAI 60%',sub:'1864-70',ex:'Estado super-militarizado isolado = suicídio.'},
-{q:'8. Canudos prova a farsa do gradualismo?',opts:[{t:'Queria restaurar monarquia',c:false},{t:'República prometeu terra e deu imposto + exército',c:true},{t:'Era rica e ameaçava economia',c:false}],lab:'CANUDOS 1896',sub:'Sertão',ex:'Mesma lógica: abolição sem terra.'},
-{q:'9. Por que vacina obrigatória gerou revolta em 1904?',opts:[{t:'População antivacina por ignorância',c:false},{t:'Agentes entravam sem mandado e mulheres eram despidas',c:true},{t:'Igreja proibiu vacina',c:false}],lab:'VACINA 1904',sub:'Oswaldo Cruz',ex:'Biopolítica violenta + invasão domiciliar.'},
-{q:'10. Estopim real da Chibata?',opts:[{t:'Salário muito baixo',c:false},{t:'Marinheiro morto a chibatadas e jogado ao mar',c:true},{t:'Comida estragada',c:false}],lab:'CHIBATA 1910',sub:'João Cândido',ex:'Marcelino 250 chibatadas.'},
+{q:'6. Por que independência custou 3M de libras?',opts:[{t:'Dívida pessoal de Dom Pedro',c:false},{t:'Portugal exigiu indenização',c:true},{t:'Para palácios',c:false}],lab:'DÍVIDA 3MI',sub:'1825',ex:'Brasil comprou reconhecimento.'},
+{q:'7. Por que Paraguai lutou até 60% morrerem?',opts:[{t:'Brasil era fraco',c:false},{t:'Lógica de guerra total + isolamento',c:true},{t:'Guerra rápida que deu errado',c:false}],lab:'PARAGUAI 60%',sub:'1864-70',ex:'Estado super-militarizado = suicídio.'},
+{q:'8. Canudos prova a farsa do gradualismo?',opts:[{t:'Queria restaurar monarquia',c:false},{t:'República prometeu terra e deu imposto + exército',c:true},{t:'Era rica',c:false}],lab:'CANUDOS 1896',sub:'Sertão',ex:'Abolição sem terra.'},
+{q:'9. Por que vacina gerou revolta em 1904?',opts:[{t:'Antivacina por ignorância',c:false},{t:'Agentes entravam sem mandado e mulheres despidas',c:true},{t:'Igreja proibiu',c:false}],lab:'VACINA 1904',sub:'Oswaldo Cruz',ex:'Biopolítica violenta.'},
+{q:'10. Estopim real da Chibata?',opts:[{t:'Salário baixo',c:false},{t:'Marinheiro morto a chibatadas',c:true},{t:'Comida estragada',c:false}],lab:'CHIBATA 1910',sub:'João Cândido',ex:'Marcelino 250 chibatadas.'},
 ]},
 { nome:"3ª Missão - República", fases:[
-{q:'11. Por que Coluna Prestes andou 25 mil km e nada?',opts:[{t:'Prestes era fraco',c:false},{t:'Marcha de propaganda sem base urbana, fugia de confronto',c:true},{t:'Faltaram armas modernas',c:false}],lab:'COLUNA 25.000KM',sub:'1925-27',ex:'Andar sem parar = não ser derrotado.'},
-{q:'12. Por que deitado era visto como morte?',opts:[{t:'Camas eram pequenas',c:false},{t:'Deitado = posição de defunto no caixão + espírito puxa pé',c:true},{t:'Tinha muitos bichos no chão',c:false}],lab:'PSICOLOGIA',sub:'Dormiam sentados',ex:'Cultura da morte presente.'},
-{q:'13. O que mais matava nos tumbeiros?',opts:[{t:'Feijoada estragada',c:false},{t:'Angu de milho com areia + água podre = disenteria',c:true},{t:'Pão mofado',c:false}],lab:'TUMBEIROS',sub:'40% mortos',ex:'Areia aumentava peso para vender.'},
-{q:'14. Por que palmatória tinha furo no meio?',opts:[{t:'Para ser mais leve',c:false},{t:'Furo criava vácuo e arrancava pele',c:true},{t:'Para assoviar',c:false}],lab:'PALMATÓRIA',sub:'Engenharia da dor',ex:'Buraco = bolha de sangue.'},
-{q:'15. Qual lógica une tudo sem decoreba?',opts:[{t:'Culpa exclusiva de Portugal',c:false},{t:'Ecologia de exploração: recurso escasso + poder fragmentado',c:true},{t:'Culpa da Igreja',c:false}],lab:'MAPA MENTAL FINAL',sub:'Bônus ebook',ex:'Brasil = biologia + geografia + economia.'},
+{q:'11. Coluna Prestes andou 25 mil km e nada?',opts:[{t:'Prestes fraco',c:false},{t:'Marcha de propaganda sem base urbana',c:true},{t:'Faltaram armas',c:false}],lab:'COLUNA 25.000KM',sub:'1925-27',ex:'Andar sem parar = não ser derrotado.'},
+{q:'12. Por que deitado era visto como morte?',opts:[{t:'Camas pequenas',c:false},{t:'Deitado = posição de defunto + espírito puxa pé',c:true},{t:'Bichos no chão',c:false}],lab:'PSICOLOGIA',sub:'Dormiam sentados',ex:'Cultura da morte.'},
+{q:'13. O que mais matava nos tumbeiros?',opts:[{t:'Feijoada estragada',c:false},{t:'Angu com areia + água podre = disenteria',c:true},{t:'Pão mofado',c:false}],lab:'TUMBEIROS',sub:'40% mortos',ex:'Areia aumentava peso.'},
+{q:'14. Por que palmatória tinha furo?',opts:[{t:'Mais leve',c:false},{t:'Furo criava vácuo e arrancava pele',c:true},{t:'Assoviar',c:false}],lab:'PALMATÓRIA',sub:'Engenharia da dor',ex:'Bolha de sangue.'},
+{q:'15. Lógica que une tudo?',opts:[{t:'Culpa de Portugal',c:false},{t:'Ecologia de exploração: recurso escasso + poder fragmentado',c:true},{t:'Culpa da Igreja',c:false}],lab:'MAPA FINAL',sub:'Bônus',ex:'Brasil = biologia + geografia + economia.'},
 ]}
 ];
 let langAtual=localStorage.getItem('prisma_lang')||'pt-BR';
-let missaoAtual=0,faseAtual=0,pontos=0;
-let faseEmbaralhada=null;
-let gameOver=false;
+let missaoAtual=0,faseAtual=0,pontos=0,faseEmbaralhada=null,gameOver=false;
+
 function render(){
  const box=document.getElementById('quizBox');
+ const downloadHero=document.getElementById('downloadHero');
+ const ctaHero=document.getElementById('ctaHero');
+ if(downloadHero) downloadHero.style.display=(missaoAtual>=missoes.length&&pontos>=15&&!gameOver)?'block':'none';
+ if(ctaHero) ctaHero.style.display=(missaoAtual>=missoes.length&&pontos>=15&&!gameOver)?'none':'block';
+
  if(missaoAtual>=missoes.length){
-  if(pontos<15 || gameOver){
-   box.innerHTML=`<div style="text-align:center;padding:24px 0"><h2 style="font-family:'Cormorant Garamond';font-size:24px;color:#ef4444">VOCÊ FALHOU - ${pontos}/15</h2><button onclick="location.reload()" style="background:var(--ouro);color:#121212;padding:12px 20px;border-radius:30px;border:0;font-weight:800;margin-top:16px;width:100%">🔄 RECOMEÇAR</button></div>`; return;
+  if(pontos<15||gameOver){
+   box.innerHTML=`<div style="text-align:center;padding:24px 0"><h2 style="font-family:'Cormorant Garamond';font-size:24px;color:#ef4444">VOCÊ FALHOU - ${pontos}/15</h2><p style="font-size:10px;opacity:.5;margin-top:6px">1 erro = perde tudo</p><button onclick="location.reload()" style="background:var(--ouro);color:#121212;padding:12px 20px;border-radius:30px;border:0;font-weight:800;margin-top:16px;width:100%;max-width:260px;cursor:pointer">🔄 RECOMEÇAR</button></div>`; return;
   }
-  box.innerHTML=`<div style="text-align:center;padding:18px 0"><h2 style="font-family:'Cormorant Garamond';font-size:26px">3 MISSÕES CONCLUÍDAS! 15/15!</h2><a href="50_mapas_mentais_prisma.pdf" download style="background:var(--ouro);color:#121212;padding:12px 18px;border-radius:30px;display:inline-flex;margin-top:12px;text-decoration:none;font-weight:800">📥 BAIXAR PDF 50 MAPAS</a><br><a href="https://pay.hotmart.com/W107939791Y?checkoutMode=10" style="color:var(--ouro);font-size:10px;margin-top:10px;display:inline-block">+ E-book completo R$69,90 →</a></div>`; return;
+  box.innerHTML=`<div style="text-align:center;padding:18px 0"><h2 style="font-family:'Cormorant Garamond';font-size:26px">3 MISSÕES CONCLUÍDAS! 15/15!</h2><a href="50_mapas_mentais_prisma.pdf" download style="background:var(--ouro);color:#121212;padding:12px 18px;border-radius:30px;display:inline-flex;margin-top:14px;text-decoration:none;font-weight:800">📥 BAIXAR PDF 50 MAPAS</a><br><a href="https://pay.hotmart.com/W107939791Y?checkoutMode=10" target="_blank" style="color:var(--ouro);font-size:10px;margin-top:12px;display:inline-block">+ E-book completo R$69,90 →</a></div>`;
+  if(downloadHero) downloadHero.style.display='block';
+  if(ctaHero) ctaHero.style.display='none';
+  return;
  }
  const missao=missoes[missaoAtual];
  const f=missao.fases[faseAtual];
- if(!faseEmbaralhada || faseEmbaralhada.q!==f.q){ faseEmbaralhada={q:f.q,opts:shuffle(f.opts),lab:f.lab,sub:f.sub,ex:f.ex}; }
+ if(!faseEmbaralhada||faseEmbaralhada.q!==f.q){faseEmbaralhada={q:f.q,opts:shuffle(f.opts),lab:f.lab,sub:f.sub,ex:f.ex};}
  document.getElementById('d1').className='missao-dot'+(missaoAtual===0?' ativa':missaoAtual>0?' ok':'');
  document.getElementById('d2').className='missao-dot'+(missaoAtual===1?' ativa':missaoAtual>1?' ok':'');
  document.getElementById('d3').className='missao-dot'+(missaoAtual===2?' ativa':'');
  box.innerHTML=`<div style="display:flex;justify-content:space-between"><span style="font-size:9px;color:var(--ouro)">${missao.nome.toUpperCase()} • ${faseAtual+1}/5</span><span style="font-size:9px;opacity:.4">${pontos} PTS</span></div><div class="mapa-area"><span class="material-icons" style="font-size:40px;color:var(--ouro);opacity:.6">map</span><span class="pin">${faseEmbaralhada.lab}</span><span class="sub">${faseEmbaralhada.sub}</span></div><div class="progress"><span style="width:${((missaoAtual*5+faseAtual)/15)*100}%"></span></div><h2>${faseEmbaralhada.q}</h2><div id="ops">${faseEmbaralhada.opts.map((o,i)=>`<div class="opcao" data-c="${o.c}"><b>${String.fromCharCode(65+i)}</b><span>${o.t}</span></div>`).join('')}</div><div class="explica" id="exp"></div><button class="btn-next" id="nextBtn">${i18n[langAtual].prox}</button>`;
  document.querySelectorAll('.opcao').forEach(el=>el.addEventListener('click',()=>{
    if(gameOver) return;
-   const isCorrect = el.dataset.c==='true';
+   const isCorrect=el.dataset.c==='true';
    document.querySelectorAll('.opcao').forEach(op=>{op.style.pointerEvents='none'; if(op.dataset.c==='true') op.classList.add('certa');});
    document.getElementById('exp').style.display='block';
    if(isCorrect){
@@ -209,11 +234,12 @@ function render(){
    }else{
      el.classList.add('errada'); gameOver=true;
      document.getElementById('exp').innerHTML=`<strong style="color:#ef4444">❌ ${i18n[langAtual].errou}</strong> ${faseEmbaralhada.ex}`;
-     setTimeout(()=>{document.getElementById('quizBox').innerHTML+=`<button onclick="location.reload()" style="background:#ef4444;color:#fff;border:0;padding:11px;border-radius:8px;font-weight:800;width:100%;margin-top:12px">🔄 RECOMEÇAR</button>`},400);
+     setTimeout(()=>{document.getElementById('quizBox').innerHTML+=`<button onclick="location.reload()" style="background:#ef4444;color:#fff;border:0;padding:11px;border-radius:8px;font-weight:800;width:100%;margin-top:12px;cursor:pointer">🔄 RECOMEÇAR DO ZERO</button>`},400);
    }
  }));
  document.getElementById('nextBtn')?.addEventListener('click',()=>{faseAtual++; faseEmbaralhada=null; if(faseAtual>=missao.fases.length){missaoAtual++; faseAtual=0;} render();});
 }
+
 function aplicarIdioma(l){
  langAtual=l; localStorage.setItem('prisma_lang',l);
  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
@@ -240,6 +266,7 @@ document.getElementById('hambBtn').addEventListener('click',e=>{e.stopPropagatio
 document.addEventListener('click',e=>{if(!nav.contains(e.target)){nav.classList.remove('menu-aberto'); document.body.style.overflow=''}});
 document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>aplicarIdioma(b.dataset.lang)));
 aplicarIdioma(langAtual);
+</script>
 </script>
 </body>
 </html>
