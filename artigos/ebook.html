@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-book Prisma Histórico - R$69,90</title>
+<title>E-book Prisma Histórico </title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Material+Icons&display=swap" rel="stylesheet">
 <style>
 :root{--ouro:#eebc6c;--sepia:#d8c9a8;--creme:#F5F5F0;--preto:#121212;--preto2:#1A1A1A;--borda:rgba(238,188,108,0.12)}
@@ -12,7 +12,7 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(18,18,18,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cormorant Garamond';font-size:26px;letter-spacing:0.18em;font-weight:300}.prisma-logo span{color:var(--ouro);font-weight:400}
 .lang-switch{position:relative;display:flex;gap:4px;background:rgba(255,255,255,0.04);padding:4px;border-radius:30px;border:1px solid var(--borda)}
-.lang-pill{position:absolute;top:4px;left:4px;height:calc(100% - 8px);background:var(--ouro);border-radius:20px;transition:all .35s cubic-bezier(.4,0,.2,1);z-index:1}
+.lang-pill{position:absolute;top:4px;left:4px;height:calc(100% - 8px);background:var(--ouro);border-radius:20px;transition:all.35s cubic-bezier(.4,0,.2,1);z-index:1}
 .lang-switch button{position:relative;z-index:2;background:transparent;border:1px solid transparent;color:var(--creme);padding:6px 11px;border-radius:20px;cursor:pointer;font-size:10px;letter-spacing:0.12em;transition:0.3s;font-weight:200}
 .lang-switch button.active{color:#121212;font-weight:700}
 .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:50%}
@@ -24,7 +24,7 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
 .prisma-menu-links li a{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:0.7;font-weight:200}
 .hero-ebook{max-width:1250px;margin:0 auto;padding:50px 5% 40px 5%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center}
-.hero-ebook-text .tag{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ouro);background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:16px}
+.hero-ebook-text.tag{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--ouro);background:rgba(238,188,108,0.06);border:1px solid rgba(238,188,108,0.15);padding:8px 18px;border-radius:100px;display:inline-block;margin-bottom:16px}
 .hero-ebook-text h1{font-family:'Cormorant Garamond';font-size:clamp(38px,5.5vw,62px);line-height:0.9;font-weight:300}
 .hero-ebook-text h1 em{color:var(--ouro);font-style:italic;font-weight:300}
 .hero-ebook-text p{max-width:560px;margin:18px 0 22px 0;opacity:0.45;line-height:1.9;font-size:14.5px;font-weight:200}
@@ -32,63 +32,75 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
 .ebook-stats span{font-size:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);padding:7px 11px;border-radius:100px;color:var(--sepia)}
 .capa-ebook{width:100%;aspect-ratio:3/4;background:linear-gradient(145deg,#1E1E1E,#121212);border:1px solid rgba(238,188,108,0.12);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;overflow:hidden}
 .capa-ebook::before{content:'';position:absolute;inset:0;background:radial-gradient(500px 300px at 50% 0%, rgba(238,188,108,0.12), transparent 60%)}
-.capa-ebook b{font-family:'Cormorant Garamond';font-size:28px;font-weight:400;z-index:1}
-.capa-ebook i{font-size:10px;letter-spacing:0.2em;color:var(--ouro);z-index:1;margin-top:10px;font-style:normal;text-transform:uppercase;opacity:0.7}
-.btn-buy{width:100%;background:var(--ouro);color:#121212;border:none;padding:15px 22px;border-radius:100px;font-size:11px;letter-spacing:0.12em;font-weight:400;cursor:pointer;transition:0.3s;text-align:center;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn-buy:hover{background:#fff;transform:translateY(-1px)}
-.sumario-wrap{max-width:1250px;margin:20px auto 0 auto;padding:0 5%;display:grid;grid-template-columns:1.2fr 0.8fr;gap:26px}
+
 .oferta-card{background:linear-gradient(180deg,#1E1C18,#171410);border:1px solid rgba(238,188,108,0.18);border-radius:18px;padding:26px;position:sticky;top:90px;height:fit-content}
-.oferta-card .preco-linha{display:flex;align-items:baseline;gap:10px;margin:14px 0}
-.oferta-card .preco-linha .de{font-size:13px;opacity:0.3;text-decoration:line-through}
-.oferta-card .preco-linha .por{font-family:'Cormorant Garamond';font-size:42px;font-weight:400}
-.oferta-card .pix{font-size:11px;opacity:0.5;line-height:1.6;margin-bottom:16px}
-.pag-list{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
-.pag-list span{font-size:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:20px;color:var(--sepia)}
+
+
+
+
+.sumario-wrap{max-width:1250px;margin:20px auto 0 auto;padding:0 5%;display:grid;grid-template-columns:1.2fr 0.8fr;gap:26px}
 .sumario-card{background:var(--preto2);border:1px solid rgba(255,255,255,0.05);border-radius:18px;display:flex;flex-direction:column;height:580px;overflow:hidden}
 .sumario-header{padding:22px 24px 16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);background:linear-gradient(180deg,rgba(238,188,108,0.06),transparent);flex-shrink:0}
 .sumario-header h3{font-family:'Cormorant Garamond';font-size:22px;font-weight:400}
 .sumario-scroll{overflow-y:auto;padding:14px 14px 18px 14px;flex:1;scrollbar-width:thin;scrollbar-color:var(--ouro) transparent}
-.sumario-scroll::-webkit-scrollbar{width:3px}
-.sumario-scroll::-webkit-scrollbar-thumb{background:var(--ouro);border-radius:10px}
-.acordeao-modulo{border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:10px;background:rgba(255,255,255,0.015);overflow:hidden;transition:0.3s}
-.acordeao-modulo:hover{border-color:rgba(238,188,108,0.15)}
+.acordeao-modulo{border:1px solid rgba(255,255,255,0.06);border-radius:12px;margin-bottom:10px;background:rgba(255,255,255,0.015);overflow:hidden}
 .acordeao-head{width:100%;background:transparent;border:none;color:var(--creme);padding:13px 14px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
-.acordeao-head b{font-family:'Cormorant Garamond';font-size:14.5px;font-weight:400;color:var(--creme)}
+.acordeao-head b{font-family:'Cormorant Garamond';font-size:14.5px;font-weight:400}
 .acordeao-head small{font-size:9px;color:var(--ouro);background:rgba(238,188,108,0.1);padding:3px 8px;border-radius:20px;margin-left:8px}
-.acordeao-head .seta{font-size:10px;color:var(--ouro);transition:0.3s;opacity:0.7}
-.acordeao-modulo.aberto .seta{transform:rotate(180deg);opacity:1}
-.acordeao-body{max-height:0;overflow:hidden;transition:0.4s cubic-bezier(0.4,0,0.2,1)}
+.acordeao-body{max-height:0;overflow:hidden;transition:0.4s}
 .acordeao-modulo.aberto .acordeao-body{max-height:1500px}
 .acordeao-grid{padding:0 8px 10px 8px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.sumario-item{padding:9px 10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:8px;display:flex;gap:8px;align-items:center;transition:0.2s}
-.sumario-item:hover{background:rgba(238,188,108,0.06);border-color:rgba(238,188,108,0.12);transform:translateY(-1px)}
-.sumario-item span{font-size:8.5px;color:var(--ouro);min-width:36px;font-weight:300}
-.sumario-item p{font-size:11px;line-height:1.4;opacity:0.65;font-weight:200;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sumario-item{padding:9px 10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);border-radius:8px;display:flex;gap:8px;align-items:center}
+.sumario-item span{font-size:8.5px;color:var(--ouro);min-width:36px}
+.sumario-item p{font-size:11px;opacity:0.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
 #prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,0.12);margin-top:80px}
 #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;padding:70px 6% 0 6%}
-#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px;align-items:start}
-#prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9;font-weight:300}
+#prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.8fr 0.8fr 1.1fr;gap:60px}
+#prismaFooter .footer-logo{font-family:'Cormorant Garamond';font-size:30px;letter-spacing:0.18em;color:#F5F5F0;line-height:0.9;font-weight:300}
 #prismaFooter .footer-logo span{color:var(--ouro);font-weight:400;display:block}
-#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0;font-weight:200}
-#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px;font-weight:400}
-#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px;transition:all 0.2s;font-weight:200}
-#prismaFooter .footer-col a:hover{opacity:1;color:var(--ouro);transform:translateX(4px)}
+#prismaFooter .footer-desc{opacity:0.35;font-size:13px;line-height:1.8;margin-top:18px;max-width:320px;color:#F5F5F0}
+#prismaFooter .footer-col h4{color:var(--ouro);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:22px}
+#prismaFooter .footer-col a{display:block;color:#F5F5F0;opacity:0.4;text-decoration:none;font-size:13px;margin-bottom:14px}
 #prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,0.10);border-radius:14px;padding:22px}
-#prismaFooter .footer-news-card p{opacity:0.35;font-size:12px;margin-bottom:14px;line-height:1.6;color:#F5F5F0;font-weight:200}
-#prismaFooter .footer-news-card input{background:#1E1E1E;border:1px solid rgba(238,188,108,0.15);color:#fff;padding:13px 14px;border-radius:10px;width:100%;font-size:13px;margin-bottom:10px;outline:none;font-weight:200}
-#prismaFooter .footer-news-card button{background:var(--ouro);color:#121212;border:0;padding:13px 18px;border-radius:10px;font-weight:700;width:100%;cursor:pointer;font-size:12px;letter-spacing:0.08em}
-#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-size:10px;opacity:0.25;color:#F5F5F0;font-weight:200;letter-spacing:0.06em}
-@media(max-width:1000px){.hero-ebook{grid-template-columns:1fr}.sumario-wrap{grid-template-columns:1fr}.sumario-card{height:520px}}
-@media(max-width:650px){#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-wrap{padding:50px 5% 0 5%}#prismaFooter .footer-grid > div:first-child{grid-column:1/-1}#prismaFooter .footer-bottom{flex-direction:column}}
-@media(max-width:700px){.acordeao-grid{grid-template-columns:1fr}}
+#prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,0.06);margin-top:60px;padding:22px 0;display:flex;justify-content:space-between;font-size:10px;opacity:0.25;color:#F5F5F0}
+
+
+/* PC */
+@media(min-width:1001px){
+  .hero-ebook{grid-template-columns:1.1fr 0.9fr}
+  .sumario-wrap{grid-template-columns:1.2fr 0.8fr}
+}
+
+/* TABLET 701px a 1000px */
+@media(max-width:1000px){
+  .hero-ebook{grid-template-columns:1fr}
+  .sumario-wrap{grid-template-columns:1fr}
+  .sumario-card{height:520px}
+  #prismaFooter .footer-grid{grid-template-columns:1fr 1fr; gap:40px}
+}
+
+/* CELULAR até 700px - ARRUMA O PRINT */
+@media(max-width:700px){
+  html,body{overflow-x:hidden!important}
+  .hero-ebook, .sumario-wrap, .acordeao-grid{grid-template-columns:1fr!important}
+  .sumario-card{height:auto!important}
+  
+  #prismaFooter{margin-top:40px}
+  #prismaFooter .footer-wrap{padding:30px 5% 0 5%!important}
+  #prismaFooter .footer-grid{grid-template-columns:1fr!important; gap:28px!important}
+  #prismaFooter .footer-bottom{flex-direction:column; gap:10px; text-align:left}
+}
+
+
+
 </style>
 </head>
 <body>
 <nav class="prisma-nav" id="prismaNav">
   <div class="prisma-logo"><span>Prisma</span> Histórico</div>
   <div style="display:flex;align-items:center;gap:12px">
-    <div class="lang-switch" id="langSwitch">
-      <div class="lang-pill" id="langPill"></div>
+    <div class="lang-switch" id="langSwitch"><div class="lang-pill" id="langPill"></div>
       <button data-lang="pt-BR" id="btn-pt-BR" class="active">PT</button>
       <button data-lang="en" id="btn-en">EN</button>
       <button data-lang="es" id="btn-es">ES</button>
@@ -97,59 +109,44 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
     <button type="button" class="prisma-menu-hamburguer" id="btnMenu"><span></span><span></span><span></span></button>
   </div>
   <ul class="prisma-menu-links">
-    <li><a href="../index.html"><span class="material-icons">home</span><span data-i18n="menuInicio" data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
-      <li><a href="sobre.html"><span class="material-icons">info</span><span data-i18n="menuSobre" data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
-      <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-i18n="menuAfiliados" data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
-      <li><a href="artigos.html"><span class="material-icons">article</span><span data-i18n="menuArtigos" data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
-      <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-i18n="menuCuriosidades" data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
-      <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-i18n="menuQuiz" data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
-      <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-i18n="menuEbook" data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
-      <li><a href="loja.html"><span class="material-icons">store</span><span data-i18n="menuLoja" data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
-      <li><a href="turismo.html"><span class="material-icons">public</span><span data-i18n="menuTurismo" data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
-     <li><a href="banca.html"><span class="material-icons">public</span><span data-i18n="menuBanca" data-pt-BR="BANCA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">BANCA</span></a></li>
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span><span data-pt-BR="QUIZ" data-en="QUIZ" data-es="QUIZ" data-fr="QUIZ">QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span data-pt-BR="E-BOOK" data-en="E-BOOK" data-es="E-BOOK" data-fr="E-BOOK">E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    <li><a href="banca.html"><span class="material-icons">storefront</span><span data-pt-BR="BANCA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">BANCA</span></a></li>
   </ul>
 </nav>
 
+
 <div class="hero-ebook">
   <div class="hero-ebook-text">
-    <span class="tag" data-i18n="tag">E-BOOK PREMIUM • 140 PÁGINAS • PDF + MAPAS</span>
-    <h1 data-i18n="h1">A Ciência Oculta por trás da <em>América Colonial</em></h1>
-    <p data-i18n="p1" style="font-weight:300;line-height:1.7;font-size:15px;color:rgba(255,255,255,0.85);margin:0 0 20px 0">
-  <strong style="font-weight:800;color:#fff">Sem decoreba.</strong> 
-  Um único <strong style="font-weight:700;color:#eebc6c">e-book investigativo</strong> com 
-  <span style="color:#eebc6c">140 páginas ilustradas</span> e a 
-  <span style="color:#fff;font-weight:600">lógica cirúrgica</span> que nenhum cursinho ensina.
-</p>
-<ul style="list-style:none;padding:0;margin:0 0 36px 0;display:flex;flex-direction:column;gap:10px">
-  <li style="display:flex;align-items:baseline;gap:10px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.75);font-weight:300">
-    <span style="width:5px;height:5px;border-radius:50%;background:#eebc6c;flex-shrink:0;margin-top:7px"></span>
-    <span><strong style="color:#eebc6c;font-weight:700">Mapas raros</strong> que mostram o porquê, não só o quando</span>
-  </li>
-  <li style="display:flex;align-items:baseline;gap:10px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.75);font-weight:300">
-    <span style="width:5px;height:5px;border-radius:50%;background:#eebc6c;flex-shrink:0;margin-top:7px"></span>
-    <span><strong style="color:#eebc6c;font-weight:700">Diagramas</strong> que ligam causa e consequência</span>
-  </li>
-  <li style="display:flex;align-items:baseline;gap:10px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.75);font-weight:300">
-    <span style="width:5px;height:5px;border-radius:50%;background:#eebc6c;flex-shrink:0;margin-top:7px"></span>
-    <span><strong style="color:#eebc6c;font-weight:700">Infográficos + Mapas Mentais</strong> para fixar em 30s</span>
-  </li>
-  <li style="display:flex;align-items:baseline;gap:10px;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.75);font-weight:300">
-    <span style="width:5px;height:5px;border-radius:50%;background:#fff;flex-shrink:0;margin-top:7px"></span>
-    <span><strong style="color:#fff;font-weight:600">Anotação resumo</strong> em cada página</span>
-  </li>
-</ul>
-    <div class="ebook-stats"><span>📄 140 págs</span><span>🗺 Mapas</span><span>📊 Infográficos</span><span>🌍 PT/EN/ES/FR</span><span id="dataAtual">📅 Atualizado em: 5 de maio de 2026</span></div>
- </div>
-  <div class="capa-ebook" style="padding:0;overflow:hidden;border-radius:16px">
-    <img src="/img/prisma historico I.png " style="width:100%;height:100%;object-fit:cover;display:block;border-radius:16px" alt="Prisma Histórico">
+    <span class="tag" data-i18n="tag" style="display:none"></span>
+    <h1 data-i18n="h1">A Ciência Oculta por trás da América Colonial</h1>
+    <p data-i18n="p1"></p>
+
+
+    
+    <div class="ebook-stats"><span>📄 140 págs</span><span>🗺 Mapas</span><span>📊 Infográficos</span><span id="dataAtual"></span></div>
   </div>
+  <div class="capa-ebook" style="padding:0;overflow:hidden;border-radius:16px"><img src="/img/prisma historico I.png" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:16px" alt="Prisma Histórico"></div>
 </div>
+
+
+
+
+
+
 
 <div class="sumario-wrap">
   <div class="sumario-card">
     <div class="sumario-header">
-      <h3 data-i18n="sumarioTitle">Sumário Oficial</h3>
-      <p style="font-size:10px;letter-spacing:0.15em;color:var(--ouro);opacity:0.6;margin-top:4px" data-i18n="sumarioSub">52 CAPÍTULOS • ROLAGEM INTERNA • 140 PÁGINAS</p>
+      <h3 data-i18n="sumarioTitle"></h3>
+      <p style="font-size:10px;letter-spacing:0.15em;color:var(--ouro);opacity:0.6;margin-top:4px" data-i18n="sumarioSub"></p>
     </div>
     <div class="sumario-scroll">
       <div class="acordeao-modulo aberto">
@@ -222,285 +219,96 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter';font-weight:
       <div class="sumario-item" style="background:rgba(238,188,108,0.08);border-left:2px solid var(--ouro);margin-top:8px"><span>BÔNUS</span><p>Mapas Mentais • Infográficos • Timeline</p></div>
     </div>
   </div>
-
   <div class="oferta-card" id="ofertaCardFinal">
-    <span style="font-size:9px;letter-spacing:0.22em;color:var(--ouro);display:block" data-i18n="oferta">OFERTA OFICIAL • ACESSO IMEDIATO</span>
-    <h3 style="font-family:'Cormorant Garamond';font-size:28px;font-weight:400;margin-top:12px;line-height:1" data-i18n="ofertaTitulo">E-book Completo<br><span style="color:var(--ouro)">Prisma Histórico</span></h3>
+    <span style="font-size:9px;letter-spacing:0.22em;color:var(--ouro);display:block" data-i18n="oferta"></span>
+    <h3 style="font-family:'Cormorant Garamond';font-size:28px;font-weight:400;margin-top:12px;line-height:1" data-i18n="ofertaTitulo"></h3>
     <div class="preco-linha" style="display:flex;gap:10px;align-items:baseline;margin:14px 0 8px 0">
-      <span class="de" data-i18n="precoAntigo" style="font-size:12px;opacity:0.5;text-decoration:line-through">De R$149,90</span>
-      <span class="por" data-i18n="preco" style="font-size:28px;font-weight:700;color:var(--ouro)">R$69,90</span>
+      <span class="de" data-i18n="precoAntigo" style="font-size:12px;opacity:0.5;text-decoration:line-through"></span>
+      <span class="por" data-i18n="preco" style="font-size:28px;font-weight:700;color:var(--ouro)"></span>
     </div>
-    <p class="pix" data-i18n="pixTexto" style="font-size:11px;opacity:.7;margin:0 0 14px 0">Pix, Cartão, PayPal, Boleto. Liberação imediata. Vitalício.</p>
-    <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-buy" data-i18n="btnComprar" style="display:block;text-align:center;background:var(--ouro);color:#000;padding:14px 18px;font-weight:700;text-decoration:none">🔒 COMPRAR POR R$69,90 →</a>
+    <p class="pix" data-i18n="pixTexto" style="font-size:11px;opacity:.7;margin:0 0 14px 0"></p>
+    <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-buy" data-i18n="btnComprar" style="display:block;text-align:center;background:var(--ouro);color:#000;padding:14px 18px;font-weight:700;text-decoration:none"></a>
     <div class="pag-list" style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;font-size:10px;opacity:.8">
-      <span data-i18n="badge12x">💳 12X</span>
-      <span data-i18n="badgePix">⚡ PIX</span>
-      <span data-i18n="badgePaypal">🌍 PAYPAL</span>
-      <span data-i18n="badgeBoleto">🧾 BOLETO</span>
+      <span>💳 12X</span><span>⚡ PIX</span><span>🌍 PAYPAL</span><span>🧾 BOLETO</span>
     </div>
-    <p style="font-size:10px;opacity:0.3;margin-top:12px" id="garantiaTexto" data-i18n="garantia">Hotmart • 7 dias de garantia • Nota fiscal</p>
-    <p style="font-size:10px;opacity:0.25;margin-top:8px" id="footerData2a"></p>
+    <p style="font-size:10px;opacity:0.3;margin-top:12px" id="garantiaTexto" data-i18n="garantia"></p>
+  </div>
 </div>
-</div>
-
 <footer id="prismaFooter">
   <div class="footer-wrap">
     <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span>Prisma</span><span>Histórico</span></div>
-        <p class="footer-desc">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <a href="../index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="artigos.html">Artigos</a>
-        <a href="afiliados.html" style="color:var(--ouro);opacity:1">Afiliados 40%</a>
-      </div>
-      <div class="footer-col">
-        <h4>Produtos</h4>
-        <a href="ebook.html">📘 E-book R$69,90</a>
-        <a href="loja.html">🛒 Loja</a>
-        <a href="doacao.html">💰 Doação</a>
-      </div>
-      <div class="footer-col">
-  <h4 data-i18n="footerAfiliado" data-pt-BR="Seja um Afiliado" data-en="Become an Affiliate" data-es="Sé Afiliado" data-fr="Devenez Affilié">Seja um Afiliado</h4>
-  <div class="footer-news-card">
-    <p data-i18n="footerAfiliadoDesc" data-pt-BR="Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart." data-en="Sign up and earn 40% of the ebook value on each sale. Commission via Hotmart." data-es="Regístrate y gana 40% del valor del ebook por cada venta." data-fr="Inscrivez-vous et gagnez 40% de la valeur de l'ebook à chaque vente.">Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart.</p>
-    <a href="afiliados.html" style="background:#D4AF37;color:#0D0D0B;padding:12px 18px;border-radius:30px;font-family:'Cinzel';font-size:10px;font-weight:700;letter-spacing:0.1em;text-decoration:none;display:flex;align-items:center;justify-content:center;width:100%;margin-top:12px" data-i18n="footerAfiliadoBtn" data-pt-BR="QUERO SER AFILIADO 40% →" data-en="BECOME AFFILIATE 40% →" data-es="QUIERO SER AFILIADO 40% →" data-fr="DEVENIR AFFILIÉ 40% →">QUERO SER AFILIADO 40% →</a>
+      <div><div class="footer-logo"><span>Prisma</span><span>Histórico</span></div><p class="footer-desc">Abordagem analítica da História do Brasil.</p></div>
+      <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="afiliados.html" style="color:var(--ouro);opacity:1">Afiliados 40%</a></div>
+      <div class="footer-col"><h4>Produtos</h4><a href="ebook.html">📘 E-book R$69,90</a></div>
+      <div class="footer-col"><h4>Seja um Afiliado</h4><div class="footer-news-card"><a href="afiliados.html" style="background:#D4AF37;color:#0D0D0B;padding:12px 18px;border-radius:30px;font-size:10px;font-weight:700;text-decoration:none;display:flex;justify-content:center;width:100%;margin-top:12px">QUERO SER AFILIADO 40% →</a></div></div>
+    </div>
+    <div class="footer-bottom"><span id="footerData"></span><span>Pix • Cartão • PayPal • Boleto • Hotmart</span></div>
   </div>
-</div>
-</div>
-<div class="footer-bottom">
-  <span id="footerData">© 2026 Prisma Histórico • E-book R$69,90</span>
-  <span>Pix • Cartão • PayPal • Boleto • Hotmart</span>
-</div>
-</div>
 </footer>
 
 <script>
 const nav=document.getElementById('prismaNav');
 document.getElementById('btnMenu').addEventListener('click',(e)=>{e.stopPropagation();nav.classList.toggle('menu-aberto');});
 document.addEventListener('click',(e)=>{if(nav.classList.contains('menu-aberto')&&!nav.contains(e.target)){nav.classList.remove('menu-aberto');}});
-
-function formatarData(lang){
-  return new Date().toLocaleDateString(lang,{day:'numeric',month:'long',year:'numeric'});
-}
-
-function moverPilha(btn){
-  const pill=document.getElementById('langPill');
-  if(!pill||!btn) return;
-  pill.style.width=btn.offsetWidth+'px';
-  pill.style.transform=`translateX(${btn.offsetLeft-4}px)`;
-}
-
-function getTraducoes(lang){
-  const data = formatarData(lang);
+function formatarData(lang){return new Date().toLocaleDateString(lang,{day:'numeric',month:'long',year:'numeric'});}
+function moverPilha(btn){const pill=document.getElementById('langPill');if(!pill||!btn)return;pill.style.width=btn.offsetWidth+'px';pill.style.transform=`translateX(${btn.offsetLeft-4}px)`;}
+function getTraducoes(){
+  const dPT = formatarData('pt-BR');
+  const dEN = formatarData('en-US');
+  const dES = formatarData('es-ES');
+  const dFR = formatarData('fr-FR');
   return {
    "pt-BR":{
-     tag:`E-BOOK PREMIUM • 140 PÁGINAS • PDF + MAPAS • ${data}`,
+     tag:`E-BOOK PREMIUM • 140 PÁGINAS • PDF + MAPAS • ${dPT}`,
      h1:`A Ciência Oculta por trás da <em>América Colonial</em>`,
-     p1:`<strong style="font-weight:800;color:#fff">Sem decoreba.</strong> Um único <strong style="font-weight:700;color:#eebc6c">e-book investigativo</strong> com <span style="color:#eebc6c">140 páginas ilustradas</span> e a <span style="color:#fff;font-weight:600">lógica cirúrgica</span> que nenhum cursinho ensina. <span style="display:block;margin-top:8px;font-size:11px;opacity:0.5">Atualizado em: ${data}</span>`,
-     sumarioTitle:`Sumário Oficial • ${data}`,
-     sumarioSub:`52 CAPÍTULOS • ROLAGEM INTERNA • 140 PÁGINAS • ${data}`,
-     oferta:`OFERTA OFICIAL • ACESSO IMEDIATO • ${data}`,
-     ofertaTitulo:`E-book Completo<br><span style='color:var(--ouro)'>Prisma Histórico</span>`,
-     precoAntigo:`De R$149,90`,
-     preco:`R$69,90`,
-     pixTexto:`Pix, Cartão, PayPal, Boleto. Liberação imediata. Vitalício. • ${data}`,
-     btnComprar:`🔒 COMPRAR POR R$69,90 →`,
-     garantia:`Hotmart • 7 dias de garantia • Nota fiscal • ${data}`,
-     footer:`© 2026 Prisma Histórico • E-book R$69,90 • ${data}`,
-     badge12x:`💳 12X • ${data}`,
-     badgePix:`⚡ PIX • ${data}`,
-     badgePaypal:`🌍 PAYPAL • ${data}`,
-     badgeBoleto:`🧾 BOLETO • ${data}`,
-     menuInicio:`INÍCIO • ${data}`,
-     menuSobre:`SOBRE • ${data}`,
-     menuAfiliados:`AFILIADOS • ${data}`,
-     menuArtigos:`ARTIGOS • ${data}`,
-     menuCuriosidades:`CURIOSIDADES • ${data}`,
-     menuQuiz:`QUIZ • ${data}`,
-     menuEbook:`E-BOOK • ${data}`,
-     menuLoja:`LOJA • ${data}`,
-     menuTurismo:`TURISMO COLONIAL • ${data}`,
-     menuBanca:`BANCA • ${data}`,
-     footerAfiliado:`Seja um Afiliado • ${data}`,
-     footerAfiliadoDesc:`Se cadastre e ganhe 40% do valor do ebook em cada venda. Comissão via Hotmart. • ${data}`,
-     footerAfiliadoBtn:`QUERO SER AFILIADO 40% → • ${data}`
+     p1:`<strong style="font-weight:800;color:#fff">Sem decoreba.</strong> Um único <strong style="color:#eebc6c">e-book investigativo</strong> com 140 páginas ilustradas e a lógica cirúrgica que nenhum cursinho ensina. • ${dPT}`,
+     sumarioTitle:`Sumário Oficial • ${dPT}`, sumarioSub:`52 CAPÍTULOS • ROLAGEM INTERNA • 140 PÁGINAS • ${dPT}`,
+     oferta:`OFERTA OFICIAL • ACESSO IMEDIATO • ${dPT}`, ofertaTitulo:`E-book Completo<br><span style='color:var(--ouro)'>Prisma Histórico</span>`,
+     precoAntigo:`De R$149,90`, preco:`R$69,90`, pixTexto:`Pix, Cartão, PayPal, Boleto. Liberação imediata. Vitalício. • ${dPT}`,
+     btnComprar:`🔒 COMPRAR POR R$69,90 →`, garantia:`Hotmart • 7 dias de garantia • Nota fiscal • ${dPT}`, footer:`© 2026 Prisma Histórico • E-book R$69,90 • ${dPT}`
    },
    "en":{
-     tag:`PREMIUM E-BOOK • 140 PAGES • PDF + MAPS • ${data}`,
-     h1:`The Hidden Science behind <em>Colonial America</em>`,
-     p1:`<strong style="font-weight:800;color:#fff">No memorization.</strong> A single <strong style="font-weight:700;color:#eebc6c">investigative e-book</strong> with <span style="color:#eebc6c">140 illustrated pages</span> and the <span style="color:#fff;font-weight:600">surgical logic</span> no course teaches. <span style="display:block;margin-top:8px;font-size:11px;opacity:0.5">Updated on: ${data}</span>`,
-     sumarioTitle:`Official Summary • ${data}`,
-     sumarioSub:`52 CHAPTERS • SCROLL INSIDE • 140 PAGES • ${data}`,
-     oferta:`OFFICIAL OFFER • INSTANT ACCESS • ${data}`,
-     ofertaTitulo:`Complete E-book<br><span style='color:var(--ouro)'>Historical Prism</span>`,
-     precoAntigo:`From $149.90`,
-     preco:`$69.90`,
-     pixTexto:`Card, PayPal, Pix. Instant delivery. Lifetime. • ${data}`,
-     btnComprar:`🔒 BUY FOR $69.90 →`,
-     garantia:`Hotmart • 7-day guarantee • ${data}`,
-     footer:`© 2026 Historical Prism • $69.90 • ${data}`,
-     badge12x:`💳 CARD • ${data}`,
-     badgePix:`⚡ INSTANT • ${data}`,
-     badgePaypal:`🌍 PAYPAL • ${data}`,
-     badgeBoleto:`🧾 INVOICE • ${data}`,
-     menuInicio:`HOME • ${data}`,
-     menuSobre:`ABOUT • ${data}`,
-     menuAfiliados:`AFFILIATES • ${data}`,
-     menuArtigos:`ARTICLES • ${data}`,
-     menuCuriosidades:`CURIOSITIES • ${data}`,
-     menuQuiz:`QUIZ • ${data}`,
-     menuEbook:`E-BOOK • ${data}`,
-     menuLoja:`SHOP • ${data}`,
-     menuTurismo:`COLONIAL TOURISM • ${data}`,
-     menuBanca:`SHOP • ${data}`,
-     footerAfiliado:`Become an Affiliate • ${data}`,
-     footerAfiliadoDesc:`Sign up and earn 40% of the ebook value on each sale. Commission via Hotmart. • ${data}`,
-     footerAfiliadoBtn:`BECOME AFFILIATE 40% → • ${data}`
+     tag:`PREMIUM E-BOOK • 140 PAGES • PDF + MAPS • ${dEN}`, h1:`The Hidden Science behind <em>Colonial America</em> • ${dEN}`,
+     p1:`No memorization. A single investigative e-book with 140 illustrated pages. • ${dEN}`,
+     sumarioTitle:`Official Summary • ${dEN}`, sumarioSub:`52 CHAPTERS • 140 PAGES • ${dEN}`,
+     oferta:`OFFICIAL OFFER • INSTANT ACCESS • ${dEN}`, ofertaTitulo:`Complete E-book<br><span style='color:var(--ouro)'>Historical Prism</span>`,
+     precoAntigo:`From $27.90`, preco:`$12.90`, pixTexto:`Card, PayPal. Instant delivery. • ${dEN}`,
+     btnComprar:`🔒 BUY FOR $12.90 →`, garantia:`Hotmart • 7-day guarantee • ${dEN}`, footer:`© 2026 Historical Prism • $12.90 • ${dEN}`
    },
    "es":{
-     tag:`E-BOOK PREMIUM • 140 PÁGINAS • PDF + MAPAS • ${data}`,
-     h1:`La Ciencia Oculta detrás de la <em>América Colonial</em>`,
-     p1:`<strong style="font-weight:800;color:#fff">Sin memorizar.</strong> Un único <strong style="font-weight:700;color:#eebc6c">e-book investigativo</strong> con <span style="color:#eebc6c">140 páginas ilustradas</span> y la <span style="color:#fff;font-weight:600">lógica quirúrgica</span>. <span style="display:block;margin-top:8px;font-size:11px;opacity:0.5">Actualizado el: ${data}</span>`,
-     sumarioTitle:`Sumario Oficial • ${data}`,
-     sumarioSub:`52 CAPÍTULOS • 140 PÁGINAS • ${data}`,
-     oferta:`OFERTA OFICIAL • ACCESO INMEDIATO • ${data}`,
-     ofertaTitulo:`E-book Completo<br><span style='color:var(--ouro)'>Prisma Histórico</span>`,
-     precoAntigo:`De $149,90`,
-     preco:`$69,90`,
-     pixTexto:`Tarjeta, PayPal, Pix. Entrega inmediata. Vitalicio. • ${data}`,
-     btnComprar:`🔒 COMPRAR POR $69,90 →`,
-     garantia:`Hotmart • 7 días de garantía • ${data}`,
-     footer:`© 2026 Prisma Histórico • $69,90 • ${data}`,
-     badge12x:`💳 12X • ${data}`,
-     badgePix:`⚡ PIX • ${data}`,
-     badgePaypal:`🌍 PAYPAL • ${data}`,
-     badgeBoleto:`🧾 BOLETO • ${data}`,
-     menuInicio:`INICIO • ${data}`,
-     menuSobre:`SOBRE • ${data}`,
-     menuAfiliados:`AFILIADOS • ${data}`,
-     menuArtigos:`ARTÍCULOS • ${data}`,
-     menuCuriosidades:`CURIOSIDADES • ${data}`,
-     menuQuiz:`QUIZ • ${data}`,
-     menuEbook:`E-BOOK • ${data}`,
-     menuLoja:`TIENDA • ${data}`,
-     menuTurismo:`TURISMO COLONIAL • ${data}`,
-     menuBanca:`TIENDA • ${data}`,
-     footerAfiliado:`Sé Afiliado • ${data}`,
-     footerAfiliadoDesc:`Regístrate y gana 40% del valor del ebook por cada venta. • ${data}`,
-     footerAfiliadoBtn:`QUIERO SER AFILIADO 40% → • ${data}`
+     tag:`E-BOOK PREMIUM • 140 PÁGINAS • PDF + MAPAS • ${dES}`, h1:`La Ciencia Oculta detrás de la <em>América Colonial</em> • ${dES}`,
+     p1:`Sin memorizar. Un único e-book investigativo con 140 páginas ilustradas. • ${dES}`,
+     sumarioTitle:`Sumario Oficial • ${dES}`, sumarioSub:`52 CAPÍTULOS • 140 PÁGINAS • ${dES}`,
+     oferta:`OFERTA OFICIAL • ACCESO INMEDIATO • ${dES}`, ofertaTitulo:`E-book Completo<br><span style='color:var(--ouro)'>Prisma Histórico</span>`,
+     precoAntigo:`De $27,90`, preco:`$12,90`, pixTexto:`Tarjeta, PayPal. Entrega inmediata. • ${dES}`,
+     btnComprar:`🔒 COMPRAR POR $12,90 →`, garantia:`Hotmart • 7 días de garantía • ${dES}`, footer:`© 2026 Prisma Histórico • $12,90 • ${dES}`
    },
    "fr":{
-     tag:`E-BOOK PREMIUM • 140 PAGES • ${data}`,
-     h1:`La Science Cachée de l'<em>Amérique Coloniale</em>`,
-     p1:`<strong style="font-weight:800;color:#fff">Sans par cœur.</strong> Un seul <strong style="font-weight:700;color:#eebc6c">e-book d'investigation</strong> avec <span style="color:#eebc6c">140 pages illustrées</span>. <span style="display:block;margin-top:8px;font-size:11px;opacity:0.5">Mis à jour le: ${data}</span>`,
-     sumarioTitle:`Sommaire Officiel • ${data}`,
-     sumarioSub:`52 CHAPITRES • 140 PAGES • ${data}`,
-     oferta:`OFFRE OFFICIELLE • ACCÈS IMMÉDIAT • ${data}`,
-     ofertaTitulo:`E-book Complet<br><span style='color:var(--ouro)'>Prisme Historique</span>`,
-     precoAntigo:`De 149,90 €`,
-     preco:`69,90 €`,
-     pixTexto:`Carte, PayPal, Pix. Livraison immédiate. • ${data}`,
-     btnComprar:`🔒 ACHETER POUR 69,90 € →`,
-     garantia:`Hotmart • Garantie 7 jours • ${data}`,
-     footer:`© 2026 Prisme Historique • 69,90 € • ${data}`,
-     badge12x:`💳 CARTE • ${data}`,
-     badgePix:`⚡ VIREMENT • ${data}`,
-     badgePaypal:`🌍 PAYPAL • ${data}`,
-     badgeBoleto:`🧾 FACTURE • ${data}`,
-     menuInicio:`ACCUEIL • ${data}`,
-     menuSobre:`À PROPOS • ${data}`,
-     menuAfiliados:`AFFILIÉS • ${data}`,
-     menuArtigos:`ARTICLES • ${data}`,
-     menuCuriosidades:`CURIOSITÉS • ${data}`,
-     menuQuiz:`QUIZ • ${data}`,
-     menuEbook:`E-BOOK • ${data}`,
-     menuLoja:`BOUTIQUE • ${data}`,
-     menuTurismo:`TOURISME COLONIAL • ${data}`,
-     menuBanca:`BOUTIQUE • ${data}`,
-     footerAfiliado:`Devenez Affilié • ${data}`,
-     footerAfiliadoDesc:`Inscrivez-vous et gagnez 40% de la valeur de l'ebook à chaque vente. • ${data}`,
-     footerAfiliadoBtn:`DEVENIR AFFILIÉ 40% → • ${data}`
+     tag:`E-BOOK PREMIUM • 140 PAGES • PDF + CARTES • ${dFR}`, h1:`La Science Cachée de l'<em>Amérique Coloniale</em> • ${dFR}`,
+     p1:`Sans par cœur. Un seul e-book d'investigation avec 140 pages illustrées. • ${dFR}`,
+     sumarioTitle:`Sommaire Officiel • ${dFR}`, sumarioSub:`52 CHAPITRES • 140 PAGES • ${dFR}`,
+     oferta:`OFFRE OFFICIELLE • ACCÈS IMMÉDIAT • ${dFR}`, ofertaTitulo:`E-book Complet<br><span style='color:var(--ouro)'>Prisme Historique</span>`,
+     precoAntigo:`De 25,90 €`, preco:`11,90 €`, pixTexto:`Carte, PayPal. Livraison immédiate. • ${dFR}`,
+     btnComprar:`🔒 ACHETER POUR 11,90 € →`, garantia:`Hotmart • Garantie 7 jours • ${dFR}`, footer:`© 2026 Prisme Historique • 11,90 € • ${dFR}`
    }
   };
 }
-
 function aplicarIdioma(lang){
- const traducoes = getTraducoes(lang);
- const t = traducoes[lang] || traducoes['pt-BR'];
- document.querySelectorAll('[data-i18n]').forEach(el=>{
-   const key = el.getAttribute('data-i18n');
-   if(t[key]) el.innerHTML=t[key];
- });
- // data-pt-BR legacy support
- document.querySelectorAll('[data-pt-BR]').forEach(el=>{
-   const keyLang = lang.split('-')[0];
-   const val = el.getAttribute('data-'+lang) || el.getAttribute('data-'+keyLang) || el.getAttribute('data-pt-BR');
-   if(val) el.textContent = val.includes('•') ? val : val + ' • ' + formatarData(lang);
- });
-
- const dataTxt = `📅 ${formatarData(lang)}`;
- const dataEl = document.getElementById('dataAtual');
- if(dataEl) dataEl.innerHTML=dataTxt;
- const footerData = document.getElementById('footerData');
- if(footerData) footerData.innerText=t.footer;
- const footerData2a = document.getElementById('footerData2a');
- if(footerData2a) footerData2a.innerText=t.footer;
- const garantiaTexto = document.getElementById('garantiaTexto');
- if(garantiaTexto) garantiaTexto.innerText=t.garantia;
-
+ const t = getTraducoes()[lang];
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k])el.innerHTML=t[k];});
+ const de = document.getElementById('dataAtual'); if(de) de.innerHTML=`📅 ${formatarData(lang)}`;
+ const fd = document.getElementById('footerData'); if(fd) fd.innerText=t.footer;
+ const gt = document.getElementById('garantiaTexto'); if(gt) gt.innerText=t.garantia;
  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.remove('active'));
- const btnAtivo = document.getElementById('btn-'+lang) || document.querySelector(`[data-lang="${lang}"]`);
- if(btnAtivo){ btnAtivo.classList.add('active'); moverPilha(btnAtivo); }
+ const btnAtivo = document.getElementById('btn-'+lang); if(btnAtivo){btnAtivo.classList.add('active');moverPilha(btnAtivo);}
  localStorage.setItem('prisma_lang',lang);
- document.documentElement.lang=lang;
-
- // atualiza preco card antigo se existir
- if(window.aplicarPreco) window.aplicarPreco(lang);
 }
-
-document.querySelectorAll('.lang-switch button').forEach(btn=>{
-  btn.addEventListener('click',()=>aplicarIdioma(btn.dataset.lang));
-});
-
-const langSalva = localStorage.getItem('prisma_lang')||'pt-BR';
-aplicarIdioma(langSalva);
-window.addEventListener('load',()=>{
-  const b=document.querySelector('.lang-switch button.active');
-  if(b) moverPilha(b);
-});
+document.querySelectorAll('.lang-switch button').forEach(btn=>{btn.addEventListener('click',()=>aplicarIdioma(btn.dataset.lang));});
+aplicarIdioma(localStorage.getItem('prisma_lang')||'pt-BR');
+window.addEventListener('load',()=>{const b=document.querySelector('.lang-switch button.active');if(b)moverPilha(b);});
 </script>
 
-<script>
-(function(){
-  const MAP = {
-    "pt-BR":{ antigo:"De R$149,90", atual:"R$69,90", btn:"🔒 COMPRAR POR R$69,90 →", pix:"Pix, Cartão, PayPal, Boleto. Liberação imediata. Vitalício.", b12x:"💳 12X", bPix:"⚡ PIX", bPay:"🌍 PAYPAL", bBol:"🧾 BOLETO", oferta:"OFERTA OFICIAL • ACESSO IMEDIATO", titulo:`E-book Completo<br><span style="color:var(--ouro)">Prisma Histórico</span>`, gar:"Hotmart • 7 dias de garantia • Nota fiscal" },
-    "pt":    { antigo:"De R$149,90", atual:"R$69,90", btn:"🔒 COMPRAR POR R$69,90 →", pix:"Pix, Cartão, PayPal, Boleto. Liberação imediata. Vitalício.", b12x:"💳 12X", bPix:"⚡ PIX", bPay:"🌍 PAYPAL", bBol:"🧾 BOLETO", oferta:"OFERTA OFICIAL • ACESSO IMEDIATO", titulo:`E-book Completo<br><span style="color:var(--ouro)">Prisma Histórico</span>`, gar:"Hotmart • 7 dias de garantia • Nota fiscal" },
-    "en": { antigo:"From $49.90", atual:"$19.90", btn:"🔒 BUY FOR $19.90 →", pix:"Card, PayPal. Instant delivery. Lifetime.", b12x:"💳 CARD", bPix:"⚡ INSTANT", bPay:"🌍 PAYPAL", bBol:"🧾 INVOICE", oferta:"OFFICIAL OFFER • INSTANT ACCESS", titulo:`Complete E-book<br><span style="color:var(--ouro)">Historical Prism</span>`, gar:"Hotmart • 7-day guarantee • Invoice" },
-    "es": { antigo:"De $49,90", atual:"$19,90", btn:"🔒 COMPRAR POR $19,90 →", pix:"Tarjeta, PayPal. Entrega inmediata. Vitalicio.", b12x:"💳 12X", bPix:"⚡ PIX", bPay:"🌍 PAYPAL", bBol:"🧾 BOLETO", oferta:"OFERTA OFICIAL • ACCESO INMEDIATO", titulo:`E-book Completo<br><span style="color:var(--ouro)">Prisma Histórico</span>`, gar:"Hotmart • 7 días de garantía • Factura" },
-    "fr": { antigo:"De 49,90 €", atual:"19,90 €", btn:"🔒 ACHETER POUR 19,90 € →", pix:"Carte, PayPal. Livraison immédiate. À vie.", b12x:"💳 CARTE", bPix:"⚡ VIREMENT", bPay:"🌍 PAYPAL", bBol:"🧾 FACTURE", oferta:"OFFRE OFFICIELLE • ACCÈS IMMÉDIAT", titulo:`E-book Complet<br><span style="color:var(--ouro)">Prisme Historique</span>`, gar:"Hotmart • 7 jours de garantie • Facture" }
-  };
-  window.aplicarPreco = function(lang){
-    const l = (lang||'pt-BR').toLowerCase();
-    const t = MAP[l] || MAP[l.split('-')[0]] || MAP['pt-BR'];
-    const data = new Date().toLocaleDateString(lang,{day:'numeric',month:'long',year:'numeric'});
-    const q = s => document.querySelector('#ofertaCardFinal [data-i18n="'+s+'"]');
-    if(q('precoAntigo')) q('precoAntigo').textContent = t.antigo + ' • ' + data;
-    if(q('preco')) q('preco').textContent = t.atual;
-    if(q('btnComprar')) q('btnComprar').textContent = t.btn;
-    if(q('pixTexto')) q('pixTexto').textContent = t.pix + ' • ' + data;
-    if(q('oferta')) q('oferta').textContent = t.oferta + ' • ' + data;
-    if(q('garantia')) q('garantia').textContent = t.gar + ' • ' + data;
-    if(q('ofertaTitulo')) q('ofertaTitulo').innerHTML = t.titulo;
-    if(q('badge12x')) q('badge12x').textContent = t.b12x + ' • ' + data;
-    if(q('badgePix')) q('badgePix').textContent = t.bPix;
-    if(q('badgePaypal')) q('badgePaypal').textContent = t.bPay;
-    if(q('badgeBoleto')) q('badgeBoleto').textContent = t.bBol;
-  };
-})();
-</script>
+
+
 </body>
 </html>
