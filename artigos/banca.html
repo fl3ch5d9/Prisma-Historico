@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questões | Prisma Histórico</title>
+<meta name="description" content="Domine o Oeste Paulista: Terra Roxa + Ferrovias + Imigrantes Europeus.">
+<meta name="theme-color" content="#0A0A0B">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+:root{--ouro:#C9A86A;--ouro2:#8C6A3F;--preto:#0A0A0B;--card:#1E2025;--creme:#F5F3EF;--sepia:#A8A5A0;--borda:rgba(201,168,106,0.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;letter-spacing:0.02em}
+.prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(10,10,11,0.98);border-bottom:1px solid var(--borda)}
+.prisma-logo{font-family:'Cinzel',serif;font-size:22px;letter-spacing:0.22em;color:var(--creme);font-weight:400}.prisma-logo span{color:var(--ouro);font-weight:600}
+.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--ouro);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:50%;cursor:pointer}
+.prisma-menu-hamburguer span{width:18px;height:1.5px;background:var(--ouro);display:block;transition:0.35s}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(2){opacity:0}
+.prisma-nav.menu-aberto.prisma-menu-hamburguer span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100dvh;background:var(--preto);list-style:none;display:flex;flex-direction:column;padding:90px 22px 30px;gap:2px;transform:translateX(-105%);transition:0.4s;pointer-events:none;z-index:10001;border-right:1px solid var(--borda)}
+.prisma-nav.menu-aberto.prisma-menu-links{transform:translateX(0);pointer-events:all}
+.prisma-menu-links li a{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:10px;font-family:'Cinzel',serif;font-weight:400}
+.prisma-menu-links li a:hover{background:var(--card);color:var(--ouro)}
+.prisma-menu-links.material-icons{color:var(--ouro);font-size:18px}
+.lang-switch{display:flex;gap:6px}.lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia);padding:6px 10px;border-radius:20px;font-size:11px;cursor:pointer}
+.lang-switch button.active{background:var(--ouro);color:var(--preto);border-color:var(--ouro)}
+.hero-section{background:linear-gradient(135deg, var(--preto) 0%, var(--card) 100%);padding:140px 20px 80px;text-align:center;border-bottom:1px solid #2a2d33}
+.hero-conteudo{max-width:900px;margin:0 auto}
+.hero-tag{background:var(--ouro);color:var(--preto);padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:500;display:inline-block;margin-bottom:25px}
+.hero-section h1{font-family:'Cinzel',serif;font-size:2.8rem;font-weight:400;line-height:1.2;margin-bottom:20px}
+.destaque-texto{color:var(--ouro);font-weight:600}
+.hero-subtitulo{font-size:1.1rem;color:var(--sepia);line-height:1.7;max-width:750px;margin:0 auto 40px;font-weight:300}
+.hero-botoes{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin-bottom:40px}
+.btn-hero{padding:16px 28px;border-radius:8px;font-weight:400;text-decoration:none;transition:.2s;font-size:.95rem}
+.btn-militar{background:var(--ouro);color:var(--preto);font-weight:500}.btn-municipal{background:transparent;border:1px solid var(--ouro);color:var(--creme)}.btn-gratis{border:1px solid var(--sepia);color:var(--creme)}
+.hero-beneficios-rapidos{display:flex;gap:25px;justify-content:center;color:var(--sepia);border-top:1px solid #2a2d33;padding-top:25px;font-size:.85rem;font-weight:300}
+.vitrine-produtos{padding:60px 20px;max-width:1200px;margin:0 auto}
+.vitrine-titulo{text-align:center;margin-bottom:40px}.vitrine-titulo h2{font-family:'Cinzel',serif;font-size:2rem;color:var(--ouro);margin-bottom:10px;font-weight:400}.vitrine-titulo p{color:var(--sepia);font-weight:300}
+.cards-container{display:flex;flex-wrap:wrap;gap:30px;justify-content:center}
+.produto-card{background:var(--card);border:1px solid rgba(201,168,106,0.25);border-radius:14px;padding:35px 25px;max-width:360px;width:100%;display:flex;flex-direction:column;position:relative;transition:.3s}
+.produto-card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(201,168,106,.15);border-color:var(--ouro)}
+.badge-categoria{position:absolute;top:15px;right:15px;background:var(--ouro);color:var(--preto);padding:6px 14px;border-radius:30px;font-size:.7rem;font-weight:500}
+.produto-card h3{font-family:'Cinzel',serif;font-size:1.3rem;margin:20px 0 5px;color:var(--creme);font-weight:400}
+.produto-sub{color:var(--ouro);font-size:.9rem;margin-bottom:20px;font-weight:400}
+.produto-descricao{color:var(--sepia);font-size:.95rem;line-height:1.6;margin-bottom:20px;font-weight:300}
+.produto-lista{list-style:none;padding:0;margin:0 0 25px}.produto-lista li{color:var(--creme);margin-bottom:10px;font-size:.9rem;font-weight:300}
+.escassez-box{background:var(--preto);border:1px dashed var(--ouro);color:var(--ouro);font-size:.85rem;padding:8px 12px;border-radius:6px;margin-bottom:20px;text-align:center;font-weight:300}
+.preco-de{text-decoration:line-through;color:var(--sepia);font-size:.85rem;display:block;font-weight:300}.preco-por{font-size:2rem;font-weight:400;color:var(--ouro);font-family:'Cinzel',serif}
+.btn-venda{text-align:center;text-decoration:none;padding:14px 20px;border-radius:8px;font-weight:500;background:var(--ouro);color:var(--preto);margin-top:auto;display:block;transition:.2s}
+.btn-venda:hover{background:var(--ouro2)}
+.footer-prisma{background:var(--card);border-top:2px solid var(--ouro);padding:40px 20px;text-align:center;margin-top:60px}
+.footer-prisma h4{color:var(--ouro);margin-bottom:10px;font-family:'Cinzel',serif;font-weight:400;letter-spacing:0.2em}.footer-prisma p{color:var(--sepia);font-size:.9rem;font-weight:300}
+.footer-bottom{margin-top:20px;padding-top:15px;border-top:1px solid var(--borda);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sepia);opacity:.6;font-weight:300}
+@media(max-width:768px){.hero-section h1{font-size:1.9rem}.hero-botoes{flex-direction:column;max-width:320px;margin:0 auto 40px}.btn-hero{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<nav class="prisma-nav" id="prismaNav">
+  <div class="prisma-logo"><span>Prisma</span> Histórico</div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <div class="lang-switch"><button id="btn-pt-BR" class="active">PT</button><button id="btn-en">EN</button><button id="btn-es">ES</button><button id="btn-fr">FR</button></div>
+    <button type="button" class="prisma-menu-hamburguer" id="hambBtn"><span></span><span></span><span></span></button>
+  </div>
+  <ul class="prisma-menu-links">
+    <li><a href="../index.html"><span class="material-icons">home</span><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a></li>
+    <li><a href="sobre.html"><span class="material-icons">info</span><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a></li>
+    <li><a href="afiliados.html"><span class="material-icons">handshake</span><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a></li>
+    <li><a href="artigos.html"><span class="material-icons">article</span><span data-pt-BR="ARTIGOS" data-en="ARTICLES" data-es="ARTÍCULOS" data-fr="ARTICLES">ARTIGOS</span></a></li>
+    <li><a href="curiosidades.html"><span class="material-icons">lightbulb</span><span data-pt-BR="CURIOSIDADES" data-en="CURIOSITIES" data-es="CURIOSIDADES" data-fr="CURIOSITÉS">CURIOSIDADES</span></a></li>
+    <li><a href="quiz.html"><span class="material-icons">quiz</span><span>QUIZ</span></a></li>
+    <li><a href="ebook.html"><span class="material-icons">menu_book</span><span>E-BOOK</span></a></li>
+    <li><a href="loja.html"><span class="material-icons">store</span><span data-pt-BR="LOJA" data-en="SHOP" data-es="TIENDA" data-fr="BOUTIQUE">LOJA</span></a></li>
+    <li><a href="turismo.html"><span class="material-icons">public</span><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a></li>
+    <li><a href="banca.html"><span class="material-icons">gavel</span><span data-pt-BR="BANCA" data-en="EXAM BOARD" data-es="JUNTA" data-fr="JURY">BANCA</span></a></li>
+  </ul>
+</nav>
+
+<header class="hero-section">
+  <div class="hero-conteudo">
+    <span class="hero-tag" data-pt-BR="⚡ MÉTODO CIRÚRGICO DE ESTUDO" data-en="⚡ SURGICAL STUDY METHOD" data-es="⚡ MÉTODO QUIRÚRGICO" data-fr="⚡ MÉTHODE CHIRURGICALE">⚡ MÉTODO CIRÚRGICO DE ESTUDO</span>
+    <h1 data-pt-BR="Pare de decorar a História.<br><span class='destaque-texto'>Comece a gabaritar a sua prova.</span>" data-en="Stop memorizing History.<br><span class='destaque-texto'>Start acing your exam.</span>">Pare de decorar a História.<br><span class='destaque-texto'>Comece a gabaritar a sua prova.</span></h1>
+    <p class="hero-subtitulo"><strong>BIZU:</strong> <span data-pt-BR="Oeste Paulista = Terra Roxa + Ferrovias + Imigrantes Europeus." data-en="West Paulista = Purple Soil + Railways + European Immigrants." data-es="Oeste Paulista = Tierra Morada + Ferrocarriles + Inmigrantes." data-fr="Ouest Paulista = Terre Violette + Chemins de fer + Immigrants.">Oeste Paulista = Terra Roxa + Ferrovias + Imigrantes Europeus.</span></p>
+    <div class="hero-botoes">
+      <a href="" target="_blank" class="btn-hero btn-militar" data-pt-BR="Gabaritar ESA / EsPCEx" data-en="Ace ESA / EsPCEx">Gabaritar ESA / EsPCEx</a>
+      <a href="https://pay.hotmart.com/W107939791Y" target="_blank" class="btn-hero btn-municipal" data-pt-BR="Concursos Municipais" data-en="Municipal Exams">Concursos Municipais</a>
+     <a href="https://pay.hotmart.com/S107552304I" target="_blank" class="btn-hero btn-gratis" data-pt-BR="Baixar e-book ↓" data-en="Download e-book ↓" data-es="Descargar e-book ↓" data-fr="Télécharger e-book ↓">Baixar e-book ↓</a>
+    
+    </div>
+    <div class="hero-beneficios-rapidos">
+      <span>✓ <span data-pt-BR="Conteúdo 100% Ilustrado" data-en="100% Illustrated">Conteúdo Premium</span></span>
+      <span>✓ <span data-pt-BR="Foco no Edital" data-en="Exam Focused">Foco Total no Edital</span></span>
+      <span>✓ <span data-pt-BR="Sem Enrolação" data-en="No Fluff">Didática sem Enrolação</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="vitrine-produtos">
+  <div class="vitrine-titulo">
+    <h2 data-pt-BR="Materiais Gratuitos & Premium" data-en="Free & Premium Materials">Materiais Gratuitos & Premium</h2>
+    <p data-pt-BR="Prepare-se de forma cirúrgica com foco no edital." data-en="Prepare surgically focused on the exam.">Prepare-se de forma cirúrgica com foco no edital.</p>
+  </div>
+  <div class="cards-container">
+    <div class="produto-card">
+      <div class="badge-categoria">Militar</div>
+      <h3>História do Brasil: ESA & EsPCEx</h3>
+      <p class="produto-sub">100 Questões Comentadas</p>
+      <p class="produto-descricao">Material cirúrgico focado no perfil exato do Exército. Com bizus de datas.</p>
+      <ul class="produto-lista"><li>✓ Foco total no edital</li><li>✓ Bizus de memorização</li><li>✓ PDF digital</li></ul>
+      <div class="escassez-box">🔥 <span data-pt-BR="Apenas" data-en="Only">Apenas</span> <strong class="contador-vagas" data-limite="7">12</strong> cupons!</div>
+      <div class="preco-container"><span class="preco-de">R$ 59,90</span><span class="preco-por">R$ 29,90</span></div>
+      <a href="https://pay.hotmart.com/W107939791Y" target="_blank" class="btn-venda" data-pt-BR="GARANTIR VAGA" data-en="GET IT NOW">GARANTIR VAGA</a>
+    </div>
+    <div class="produto-card">
+      <div class="badge-categoria">Municipais</div>
+      <h3>Brasil Colônia | Império | Primeira República</h3>
+      <p class="produto-sub">Questões por Assunto</p>
+      <p class="produto-descricao">Ideal para Prefeituras. Teoria simples nas pegadinhas.</p>
+      <ul class="produto-lista"><li>✓ Questões recentes + Mapas Mentais</li><li>✓ Explicações diretas</li><li>✓ Download imediato</li></ul>
+      <div class="escassez-box">🔥 Restam <strong class="contador-vagas" data-limite="4">9</strong> e-books!</div>
+      <div class="preco-container"><span class="preco-de">R$ 39,90</span><span class="preco-por">R$ 19,90</span></div>
+     <a href="https://pay.hotmart.com/W107939791Y" target="_blank" class="btn-venda" data-pt-BR="BAIXAR APOSTILA" data-en="DOWNLOAD NOW">BAIXAR APOSTILA</a>
+    
+    </div>
+  </div>
+</section>
+
+<footer class="footer-prisma">
+  <h4>PRISMA HISTÓRICO</h4>
+  <p>© <span id="anoAtual">2026</span> www.prismahistorico.com.br • <span data-pt-BR="Método Cirúrgico" data-en="Surgical Method">Método Cirúrgico</span></p>
+  <div class="footer-bottom"><span id="dataLocalizada"></span><span data-pt-BR="Bizu fixo: Terra Roxa + Ferrovias + Imigrantes" data-en="Fixed trick: Purple Soil + Railways + Immigrants">Bizu fixo: Terra Roxa + Ferrovias + Imigrantes</span></div>
+</footer>
+
+<script>
+const nav=document.getElementById('prismaNav');
+document.getElementById('hambBtn').addEventListener('click',e=>{e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':''});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow=''}});
+function aplicarTraducao(lang){
+  localStorage.setItem('prisma_lang',lang);
+  document.querySelectorAll('.lang-switch button').forEach(x=>x.classList.remove('active'));
+  var b=document.getElementById('btn-'+lang);if(b)b.classList.add('active');
+  document.querySelectorAll('[data-pt-BR]').forEach(el=>{
+    var t=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');
+    if(!t)return;
+    if(t.indexOf('<')>-1) el.innerHTML=t; else el.textContent=t;
+  });
+  var map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
+  var tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
+  try{
+    var fmt=new Intl.DateTimeFormat(map[lang],{dateStyle:'long',timeZone:tz[lang]});
+    document.getElementById('dataLocalizada').textContent=fmt.format(new Date());
+    document.getElementById('anoAtual').textContent=new Date().getFullYear();
+  }catch(e){}
+}
+document.querySelectorAll('.lang-switch button').forEach(btn=>{btn.addEventListener('click',()=>aplicarTraducao(btn.id.replace('btn-','')));});
+aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
+// Contador fora da tradução pra não bugar
+document.querySelectorAll(".contador-vagas").forEach(c=>{
+  let v=parseInt(c.textContent), lim=parseInt(c.dataset.limite);
+  const dim=()=>{if(v>lim&&Math.random()>0.4){v--;c.textContent=v} if(v>lim) setTimeout(dim, Math.random()*17000+8000)};
+  setTimeout(dim,5000)
+});
+</script>
+</body>
+</html>
