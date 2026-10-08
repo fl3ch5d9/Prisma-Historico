@@ -29,20 +29,15 @@ body{padding-top:68px}
 .container{max-width:720px;margin:auto;padding:0 4%}
 .hero{text-align:center;padding:32px 4% 10px}
 .hero h1{font-family:'Cormorant Garamond';font-size:clamp(26px,4vw,38px);font-weight:300;line-height:1}
-.hero p{color:var(--ouro);margin-top:8px;letter-spacing:.12em;font-size:10px;text-transform:uppercase;opacity:.7}
 .missao-path{display:flex;justify-content:center;gap:10px;margin:14px 0}
 .missao-dot{width:32px;height:32px;border-radius:50%;border:1px solid var(--borda);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--sepia);transition:.3s}
 .missao-dot.ativa{background:var(--ouro);color:#121212;border-color:var(--ouro)}
 .missao-dot.ok{background:rgba(34,197,94,0.15);border-color:#22c55e;color:#22c55e}
 .quiz-box{background:var(--preto2);border:1px solid var(--borda);border-radius:16px;padding:18px;margin-top:8px}
-.mapa-area{height:170px;background:#0E0E0E;border:1px solid rgba(238,188,108,0.14);border-radius:12px;margin:12px 0;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.mapa-area img{width:100%;height:100%;object-fit:cover;opacity:.9}
-.mapa-area .pin{position:absolute;bottom:8px;left:10px;background:rgba(0,0,0,0.85);border:1px solid var(--borda);padding:4px 9px;border-radius:20px;font-size:8px;color:var(--ouro);letter-spacing:0.1em;z-index:2}
-.mapa-area .sub{position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.65);padding:3px 8px;border-radius:12px;font-size:8px;color:var(--sepia);z-index:2}
 .progress{height:2px;background:rgba(238,188,108,.12);border-radius:10px;overflow:hidden;margin:12px 0}
 .progress span{display:block;height:100%;background:var(--ouro);transition:width.4s}
-.quiz-box h2{font-family:'Cormorant Garamond';font-size:17px;font-weight:400;line-height:1.3;margin-bottom:14px}
-.opcao{border:1px solid rgba(255,255,255,.07);background:#1A1A1A;border-radius:10px;padding:11px 12px;margin-bottom:7px;cursor:pointer;transition:.2s;font-size:12px;display:flex;gap:9px;align-items:flex-start;line-height:1.35;font-weight:200}
+.quiz-box h2{font-family:'Cormorant Garamond';font-size:16px;font-weight:400;line-height:1.4;margin-bottom:14px}
+.opcao{border:1px solid rgba(255,255,255,.07);background:#1A1A1A;border-radius:10px;padding:11px 12px;margin-bottom:7px;cursor:pointer;transition:.2s;font-size:11.5px;display:flex;gap:9px;align-items:flex-start;line-height:1.4;font-weight:200}
 .opcao b{min-width:20px;height:20px;border:1px solid rgba(255,255,255,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ouro);flex-shrink:0;margin-top:1px}
 .opcao:hover{border-color:var(--ouro);background:#1E1E1E}
 .opcao.certa{background:rgba(34,197,94,.12);border-color:#22c55e;color:#22c55e}
@@ -94,39 +89,38 @@ body{padding-top:68px}
 
 <div class="hero">
   <h1 data-i18n="titulo">3 Missões → 50 Mapas Mentais</h1>
-  <p data-i18n="sub">ZEROU, GANHOU O PDF COM 50 MAPAS</p>
-  <p id="dataHoje" style="font-size:9px;opacity:.4;margin-top:8px;font-family:'Cinzel',serif;letter-spacing:0.12em"></p>
+  <p data-i18n="sub" data-pt-BR="ZEROU 15/15 E GANHOU O PDF COM 50 MAPAS" data-en="GET 15/15 AND WIN THE 50 MAPS PDF" data-es="HAZ 15/15 Y GANA EL PDF CON 50 MAPAS" data-fr="FAITES 15/15 ET GAGNEZ LE PDF DE 50 CARTES" style="font-weight:700; font-size:13px; color:var(--ouro); letter-spacing:0.12em; opacity:1;">ZEROU, GANHOU O PDF COM 50 MAPAS</p>
+
+  <div style="max-width:680px; margin:18px auto 0 auto; background: rgba(26,26,26,0.9); border:1px solid rgba(238,188,108,0.18); border-left:3px solid var(--ouro); border-radius:10px; padding:16px 18px; font-size:11.5px; line-height:1.65; color:var(--sepia); text-align:left; font-weight:300;">
+    <p style="margin:0 0 8px 0; color:var(--creme);" data-pt-BR="Os mapas mentais apresentados neste arquivo são conteúdos mesclados em cada página, organizados de forma ilustrativa para observação do eBook completo." data-en="The mind maps in this file are mixed contents on each page, organized illustratively to preview the full eBook." data-es="Los mapas mentales de este archivo son contenidos mezclados en cada página, organizados de forma ilustrativa para observar el eBook completo." data-fr="Les cartes mentales de ce fichier sont des contenus mélangés sur chaque page, organisés à titre illustratif pour prévisualiser l'eBook complet."><strong style="color:var(--ouro);">Os mapas mentais apresentados neste arquivo são conteúdos mesclados em cada página, organizados de forma ilustrativa para observação do eBook completo.</strong></p>
+    <p style="margin:0 0 8px 0;" data-pt-BR="Este arquivo contém apenas uma AMOSTRA com 50 mapas mentais, selecionados dos nossos acervos de Colônia, Império e Primeira República." data-en="This file contains only a SAMPLE with 50 mind maps, selected from our Colonial, Empire and First Republic collections." data-es="Este archivo contiene solo una MUESTRA con 50 mapas mentales, seleccionados de nuestros acervos de Colonia, Imperio y Primera República." data-fr="Ce fichier ne contient qu'un ÉCHANTILLON de 50 cartes mentales, sélectionnées dans nos collections Colonie, Empire et Première République.">Este arquivo contém apenas uma <strong style="color:var(--creme); background:rgba(238,188,108,0.12); padding:2px 6px; border-radius:4px;">AMOSTRA com 50 mapas mentais</strong>, selecionados dos nossos acervos de Colônia, Império e Primeira República.</p>
+    <p style="margin:0;" data-pt-BR="O eBook completo e oficial do Prisma Histórico contém MAIS DE 250 imagens, incluindo mapas mentais, mapas históricos, linhas do tempo e infográficos exclusivos, com conteúdo aprofundado e 100% organizado para estudo." data-en="The official complete eBook from Prisma Histórico contains MORE THAN 250 images, including mind maps, historical maps, timelines and exclusive infographics." data-es="El eBook completo y oficial de Prisma Histórico contiene MÁS DE 250 imágenes, incluyendo mapas mentales, mapas históricos, líneas de tiempo e infografías exclusivas." data-fr="L'eBook complet et officiel de Prisma Histórico contient PLUS DE 250 images, dont des cartes mentales, des cartes historiques, des chronologies et des infographies exclusives.">O eBook completo e oficial do <strong style="color:var(--ouro);">Prisma Histórico</strong> contém <strong style="color:var(--creme);">MAIS DE 250 imagens</strong>, incluindo mapas mentais, mapas históricos, linhas do tempo e infográficos exclusivos, com conteúdo aprofundado e 100% organizado para estudo.</p>
+  </div>
+
+  <p id="dataHoje" style="font-size:9px;opacity:.4;margin-top:14px;font-family:'Cinzel',serif;letter-spacing:0.12em"></p>
   <div class="missao-path"><div class="missao-dot ativa" id="d1">1</div><div class="missao-dot" id="d2">2</div><div class="missao-dot" id="d3">3</div></div>
 
-  <!-- LINK DE BAIXAR MAPA - AQUI MANO -->
   <div id="downloadHero" style="margin-top:18px;display:none">
-    <a href="50_mapas_mentais_prisma.pdf" download="50-Mapas-Mentais-Prisma.pdf" style="background:#eebc6c;color:#121212;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:800;font-size:11px;display:inline-flex;align-items:center;gap:6px;letter-spacing:0.05em">
-      📥 <span data-pt-BR="BAIXAR 50 MAPAS MENTAIS - PDF" data-en="DOWNLOAD 50 MIND MAPS - PDF" data-es="DESCARGAR 50 MAPAS MENTALES - PDF" data-fr="TÉLÉCHARGER 50 CARTES MENTALES - PDF">BAIXAR 50 MAPAS MENTAIS - PDF</span>
-    </a>
-    <p style="font-size:8px;opacity:.4;margin-top:8px;font-family:'Cinzel',serif" data-pt-BR="Liberado após 15/15 • 51 páginas" data-en="Unlocked after 15/15 • 51 pages">Liberado após 15/15 • 51 páginas</p>
+    <a href="https://drive.google.com/file/d/17mWJGX4UxdE6NPSNEjdyEGB5Jtk3-iVW/view?usp=sharing" download style="background:var(--ouro);color:#121212;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:800;font-size:11px;display:inline-flex;align-items:center;gap:6px">📥 <span data-pt-BR="BAIXAR 50 MAPAS MENTAIS - PDF" data-en="DOWNLOAD 50 MIND MAPS - PDF" data-es="DESCARGAR 50 MAPAS MENTALES - PDF" data-fr="TÉLÉCHARGER 50 CARTES MENTALES - PDF">BAIXAR 50 MAPAS MENTAIS - PDF</span></a>
+    <p style="font-size:8px;opacity:.4;margin-top:8px;font-family:'Cinzel',serif" data-pt-BR="Liberado após 15/15 • 51 páginas" data-en="Unlocked after 15/15 • 51 pages" data-es="Desbloqueado tras 15/15 • 51 páginas" data-fr="Débloqué après 15/15 • 51 pages">Liberado após 15/15 • 51 páginas</p>
   </div>
 
-  <!-- ANTES DE ZERAR MOSTRA O CTA PRO E-BOOK -->
   <div id="ctaHero" style="margin-top:18px">
-    <a href="https://pay.hotmart.com/S107552304I" target="_blank" style="background:transparent;border:1px solid rgba(238,188,108,0.2);color:#eebc6c;padding:10px 18px;border-radius:30px;text-decoration:none;font-size:9px;font-family:'Cinzel',serif;letter-spacing:0.15em;display:inline-flex">
-      <span data-pt-BR="MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90" data-en="MAPS ARE FREE WITH 15/15 → FULL E-BOOK IS PREMIUM $19.90" data-es="MAPAS GRATIS CON 15/15 → E-BOOK COMPLETO ES PREMIUM" data-fr="CARTES GRATUITES AVEC 15/15 → E-BOOK COMPLET EST PREMIUM">MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90</span>
-    </a>
-    <p style="font-size:7px;opacity:.35;margin-top:6px;font-family:'Inter',sans-serif;letter-spacing:0.05em" data-pt-BR="50 mapas = bônus grátis. E-book = 51 páginas extras com análise profunda." data-en="50 maps = free bonus. E-book = 51 extra pages with deep analysis.">50 mapas = bônus grátis. E-book = 51 páginas extras com análise profunda.</p>
+    <a href="https://pay.hotmart.com/S107552304I" target="_blank" style="background:transparent;border:1px solid rgba(238,188,108,0.2);color:var(--ouro);padding:10px 18px;border-radius:30px;text-decoration:none;font-size:9px;font-family:'Cinzel',serif;letter-spacing:0.15em;display:inline-flex"><span data-pt-BR="MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90" data-en="MAPS ARE FREE WITH 15/15 → FULL E-BOOK IS PREMIUM $19.90" data-es="MAPAS GRATIS CON 15/15 → E-BOOK COMPLETO PREMIUM" data-fr="CARTES GRATUITES AVEC 15/15 → E-BOOK COMPLET PREMIUM">MAPAS SÃO GRÁTIS COM 15/15 → E-BOOK COMPLETO É PREMIUM R$69,90</span></a>
+    <p style="font-size:7px;opacity:.35;margin-top:6px;font-family:'Inter',sans-serif;letter-spacing:0.05em" data-pt-BR="50 mapas = bônus grátis. E-book = 140 páginas | + infógrafos | + mapas mentais | + diagramas | + imagens com análise profunda." data-en="50 maps = free bonus. E-book = 51 extra pages with deep analysis." data-es="50 mapas = bono gratis. E-book = 51 páginas extra con análisis profundo." data-fr="50 cartes = bonus gratuit. E-book = 51 pages supplémentaires avec analyse approfondie.">50 mapas = bônus grátis. E-book = 140 páginas extras com análise profunda.</p>
   </div>
-
+</div>
 
 <div class="container"><div class="quiz-box" id="quizBox"></div></div>
 
 <footer id="prismaFooter"><div class="footer-wrap"><div class="footer-grid">
-
 <div>
   <div class="footer-logo"><span>Prisma</span> Histórico</div>
-  <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From Colonial Brazil to Empire." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil." data-i18n="desc">Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica.</p>
+  <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica." data-en="Analytical approach to Brazilian History. From Colonial Brazil to Empire." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Do Brasil Colônia ao Império, com lógica cirúrgica.</p>
   <span class="prisma-data" id="dataFooterQuiz" style="margin-top:12px;display:block"></span>
 </div>
-
 <div class="footer-col">
-  <h4 data-pt-BR="NAVEGAR" data-en="NAVIGATE" data-es="NAVEGAR" data-fr="NAVIGUER" data-i18n="nav">NAVEGAR</h4>
+  <h4 data-pt-BR="NAVEGAR" data-en="NAVIGATE" data-es="NAVEGAR" data-fr="NAVIGUER">NAVEGAR</h4>
   <a href="../index.html"><span data-pt-BR="INÍCIO" data-en="HOME" data-es="INICIO" data-fr="ACCUEIL">INÍCIO</span></a>
   <a href="sobre.html"><span data-pt-BR="SOBRE" data-en="ABOUT" data-es="SOBRE" data-fr="À PROPOS">SOBRE</span></a>
   <a href="afiliados.html"><span data-pt-BR="AFILIADOS" data-en="AFFILIATES" data-es="AFILIADOS" data-fr="AFFILIÉS">AFILIADOS</span></a>
@@ -138,90 +132,95 @@ body{padding-top:68px}
   <a href="turismo.html"><span data-pt-BR="TURISMO COLONIAL" data-en="COLONIAL TOURISM" data-es="TURISMO COLONIAL" data-fr="TOURISME COLONIAL">TURISMO COLONIAL</span></a>
   <a href="banca.html"><span data-pt-BR="BANCA" data-en="EXAM BOARD" data-es="JUNTA" data-fr="JURY">BANCA</span></a>
 </div>
-
 <div class="footer-col">
-  <h4 data-pt-BR="PRODUTOS" data-en="PRODUCTS" data-es="PRODUCTOS" data-fr="PRODUITS" data-i18n="prod">PRODUTOS</h4>
+  <h4 data-pt-BR="PRODUTOS" data-en="PRODUCTS" data-es="PRODUCTOS" data-fr="PRODUITS">PRODUTOS</h4>
   <a href="ebook.html">📘 E-book R$69,90</a>
   <a href="loja.html" data-pt-BR="Loja Oficial" data-en="Official Shop" data-es="Tienda Oficial" data-fr="Boutique Officielle">Loja Oficial</a>
   <a href="../index.html" data-pt-BR="Artigos Premium" data-en="Premium Articles" data-es="Artículos Premium" data-fr="Articles Premium">Artigos Premium</a>
   <a href="turismo.html" data-pt-BR="Turismo Colonial" data-en="Colonial Tourism" data-es="Turismo Colonial" data-fr="Tourisme Colonial">Turismo Colonial</a>
   <a href="quiz.html" data-pt-BR="Quiz 50 Mapas" data-en="Quiz 50 Maps" data-es="Quiz 50 Mapas" data-fr="Quiz 50 Cartes">Quiz 50 Mapas</a>
 </div>
-
 <div class="footer-col">
-  <h4 data-pt-BR="AFILIADO 40%" data-en="AFFILIATE 40%" data-es="AFILIADO 40%" data-fr="AFFILIÉ 40%" data-i18n="afil">AFILIADO 40%</h4>
+  <h4 data-pt-BR="AFILIADO 40%" data-en="AFFILIATE 40%" data-es="AFILIADO 40%" data-fr="AFFILIÉ 40%">AFILIADO 40%</h4>
   <div style="background:#121212;border:1px solid var(--borda);border-radius:12px;padding:12px;margin-top:10px">
-    <p style="opacity:.6;font-size:11px;line-height:1.5" data-pt-BR="Ganhe 40% por venda na Hotmart. E-book R$69,90." data-en="Earn 40% per sale on Hotmart. E-book $19.90." data-es="Gana 40% por venta en Hotmart." data-fr="Gagnez 40% par vente sur Hotmart." data-i18n="afilp">Ganhe 40% por venda. Hotmart. E-book R$69,90.</p>
+    <p style="opacity:.6;font-size:11px;line-height:1.5" data-pt-BR="Ganhe 40% por venda na Hotmart. E-book R$69,90." data-en="Earn 40% per sale on Hotmart. E-book $19.90." data-es="Gana 40% por venta en Hotmart." data-fr="Gagnez 40% par vente sur Hotmart.">Ganhe 40% por venda. Hotmart. E-book R$69,90.</p>
     <a href="afiliados.html" class="footer-buy-btn" style="margin-top:10px" data-pt-BR="QUERO SER AFILIADO 40% →" data-en="I WANT TO BE AFFILIATE 40% →" data-es="QUIERO SER AFILIADO 40% →" data-fr="JE VEUX ÊTRE AFFILIÉ 40% →">QUERO SER AFILIADO 40% →</a>
     <a href="https://pay.hotmart.com/W107939791Y?checkoutMode=10" target="_blank" class="footer-buy-btn" style="margin-top:8px;background:transparent!important;color:var(--ouro)!important;border:1px solid var(--borda)!important" data-pt-BR="COMPRAR E-BOOK ↓" data-en="BUY E-BOOK ↓" data-es="COMPRAR E-BOOK ↓" data-fr="ACHETER E-BOOK ↓">COMPRAR E-BOOK ↓</a>
   </div>
 </div>
-
 </div>
 <div class="footer-bottom">
-  <span id="footerAno">© 2026 Prisma Histórico • <span data-pt-BR="Todos os direitos reservados" data-en="All rights reserved" data-es="Todos los derechos reservados" data-fr="Tous droits réservés">Todos os direitos reservados</span></span>
+  <span id="footerAno">© 2026 Prisma Histórico • Todos os direitos reservados</span>
   <span id="dataLocalizada" style="font-family:'Cinzel',serif;letter-spacing:0.12em"></span>
 </div>
 </div></footer>
+
 <script>
-
-
 const i18n={
-"pt-BR":{titulo:"3 Missões → 50 Mapas Mentais",sub:"ZEROU 15/15 E GANHOU O PDF COM 50 MAPAS",desc:"3 missões = 50 mapas liberados. Sem decoreba. 1 erro = game over.",nav:"Navegação",inicio:"Início",prod:"Produtos",afil:"Afiliado",afilp:"Ganhe 40% por venda. Hotmart.",prox:"PRÓXIMA →",data:"Atualizado em",errou:"ERROU! FIM DE JOGO",acertou:"ACERTOU!"},
-"en":{titulo:"3 Missions → 50 Mind Maps",sub:"GET 15/15 AND WIN 50 MAPS PDF",desc:"3 missions = 50 mind maps. 1 mistake = game over.",nav:"Navigation",inicio:"Home",prod:"Products",afil:"Affiliate",afilp:"Earn 40% per sale.",prox:"NEXT →",data:"Updated on",errou:"WRONG! GAME OVER",acertou:"CORRECT!"},
-"es":{titulo:"3 Misiones → 50 Mapas Mentales",sub:"HAZ 15/15 Y GANA 50 MAPAS",desc:"3 misiones = 50 mapas. 1 error = game over.",nav:"Navegación",inicio:"Inicio",prod:"Productos",afil:"Afiliado",afilp:"Gana 40% por venta.",prox:"SIGUIENTE →",data:"Actualizado el",errou:"¡ERROR! FIN DEL JUEGO",acertou:"¡ACIERTO!"},
-"fr":{titulo:"3 Missions → 50 Cartes Mentales",sub:"FAITES 15/15 ET GAGNEZ 50 CARTES",desc:"3 missions = 50 cartes. 1 erreur = game over.",nav:"Navigation",inicio:"Accueil",prod:"Produits",afil:"Affilié",afilp:"Gagnez 40% par vente.",prox:"SUIVANT →",data:"Mis à jour le",errou:"FAUX! GAME OVER",acertou:"CORRECT!"}
+"pt-BR":{titulo:"3 Missões → 50 Mapas Mentais",sub:"ZEROU 15/15 E GANHOU O PDF COM 50 MAPAS",prox:"PRÓXIMA →",data:"Atualizado em",errou:"ERROU! FIM DE JOGO",acertou:"ACERTOU!"},
+"en":{titulo:"3 Missions → 50 Mind Maps",sub:"GET 15/15 AND WIN 50 MAPS PDF",prox:"NEXT →",data:"Updated on",errou:"WRONG! GAME OVER",acertou:"CORRECT!"},
+"es":{titulo:"3 Misiones → 50 Mapas Mentales",sub:"HAZ 15/15 Y GANA 50 MAPAS",prox:"SIGUIENTE →",data:"Actualizado el",errou:"¡ERROR! FIN DEL JUEGO",acertou:"¡ACIERTO!"},
+"fr":{titulo:"3 Missions → 50 Cartes Mentales",sub:"FAITES 15/15 ET GAGNEZ 50 CARTES",prox:"SUIVANT →",data:"Mis à jour le",errou:"FAUX! GAME OVER",acertou:"CORRECT!"}
 };
 function shuffle(arr){let a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;}
+
 const missoes=[
 { nome:"1ª Missão - Colônia", fases:[
-{q:'1. Por que Angola-Brasil dominou 70% do tráfico?',opts:[{t:'Angolanos eram fisicamente mais fortes',c:false},{t:'Guerra civil no Congo gerava prisioneiros baratos + 7 dias até Recife',c:true},{t:'Portugal tinha tratado de exclusividade',c:false}],lab:'ROTA TRANSATLÂNTICA',sub:'Brasil ESQ • África DIR',ex:'Prisão em massa por guerra = preço baixo.'},
-{q:'2. Por que ouro causou fissiparidade?',opts:[{t:'Rei era fraco',c:false},{t:'Cada córrego tinha ouro e fiscalização era impossível',c:true},{t:'Bandeirantes eram anarquistas',c:false}],lab:'OURO MINAS',sub:'1700-1790',ex:'Ouro pulverizado = cada arraial virou república.'},
-{q:'3. O que era direito regateado?',opts:[{t:'Escravos não tinham direito',c:false},{t:'Lei igual no papel, mas pena comprável em ouro',c:true},{t:'Só nobres compravam liberdade',c:false}],lab:'ORDENAÇÕES',sub:'Equiparação penal',ex:'Justiça à venda.'},
-{q:'4. Amamentação cruzada era dominação por quê?',opts:[{t:'Senhores eram mais humanos',c:false},{t:'Criava dívida moral eterna mantendo escrava como escrava',c:true},{t:'Era tradição africana',c:false}],lab:'CASA GRANDE',sub:'Biopolítica',ex:'Ama negra nutre branco, mas continua escrava.'},
-{q:'5. Preço da proteção inglesa em 1808?',opts:[{t:'Inglaterra exigiu terras',c:false},{t:'Abertura dos portos + tarifa 15% inglesa vs 24% portuguesa',c:true},{t:'2 toneladas de ouro',c:false}],lab:'FUGA 1808',sub:'15 mil pessoas',ex:'Brasil virou colônia econômica inglesa.'},
+{q:'[1610] Por que Angola dominou 70% do tráfico?',opts:[{t:'Angolanos eram mais fortes',c:false},{t:'Tordesilhas proibiu o porto de Mina',c:false},{t:'Guerra interna + rota curta de 35 dias',c:true},{t:'Portos angolanos mais bonitos',c:false},{t:'Holanda bloqueou Mina até 1654',c:false}],ex:'1610: prisioneiro barato + frete curto.'},
+{q:'[1693] Por que ouro gerou fissiparidade?',opts:[{t:'D. João V era fraco e ausente',c:false},{t:'Ouro pulverizado em 500km de rios',c:true},{t:'Bandeirantes eram republicanos',c:false},{t:'Ouro era pouco e irrelevante',c:false},{t:'Igreja apoiou separatismo local',c:false}],ex:'1693: impossível cercar 500km.'},
+{q:'[1603] O que era direito regateado?',opts:[{t:'Escravo sem direito escrito algum',c:false},{t:'Só senhor podia regatear preço',c:false},{t:'Lei igual mas pena comprável',c:true},{t:'Direito de regatear na feira',c:false},{t:'Escravo podia comprar liberdade',c:false}],ex:'1603: justiça à venda.'},
+{q:'[1750] Por que ama negra amamentava?',opts:[{t:'Por caridade cristã dos senhores',c:false},{t:'Leite negro era tido como forte',c:false},{t:'Faltavam amas brancas no Brasil',c:false},{t:'Tradição africana de adoção',c:false},{t:'Criava vínculo que legitimava posse',c:true}],ex:'1750: dominação pela afetividade.'},
+{q:'[1808] Preço oculto da proteção inglesa?',opts:[{t:'Inglaterra exigiu 2 ton de ouro',c:false},{t:'Portugal entregou a Amazônia',c:false},{t:'D. João entregou princesas',c:false},{t:'Tarifa 15% inglesa vs 24% local',c:true},{t:'Inglaterra ficou com Maranhão',c:false}],ex:'1808: submissão econômica até 1844.'},
 ]},
 { nome:"2ª Missão - Império", fases:[
-{q:'6. Por que independência custou 3M de libras?',opts:[{t:'Dívida pessoal de Dom Pedro',c:false},{t:'Portugal exigiu indenização',c:true},{t:'Para palácios',c:false}],lab:'DÍVIDA 3MI',sub:'1825',ex:'Brasil comprou reconhecimento.'},
-{q:'7. Por que Paraguai lutou até 60% morrerem?',opts:[{t:'Brasil era fraco',c:false},{t:'Lógica de guerra total + isolamento',c:true},{t:'Guerra rápida que deu errado',c:false}],lab:'PARAGUAI 60%',sub:'1864-70',ex:'Estado super-militarizado = suicídio.'},
-{q:'8. Canudos prova a farsa do gradualismo?',opts:[{t:'Queria restaurar monarquia',c:false},{t:'República prometeu terra e deu imposto + exército',c:true},{t:'Era rica',c:false}],lab:'CANUDOS 1896',sub:'Sertão',ex:'Abolição sem terra.'},
-{q:'9. Por que vacina gerou revolta em 1904?',opts:[{t:'Antivacina por ignorância',c:false},{t:'Agentes entravam sem mandado e mulheres despidas',c:true},{t:'Igreja proibiu',c:false}],lab:'VACINA 1904',sub:'Oswaldo Cruz',ex:'Biopolítica violenta.'},
-{q:'10. Estopim real da Chibata?',opts:[{t:'Salário baixo',c:false},{t:'Marinheiro morto a chibatadas',c:true},{t:'Comida estragada',c:false}],lab:'CHIBATA 1910',sub:'João Cândido',ex:'Marcelino 250 chibatadas.'},
+{q:'[1825] Por que independência custou 3 mi?',opts:[{t:'Dívida de jogo de D. Pedro I',c:false},{t:'Para construir palácios no Rio',c:false},{t:'Indenização a Portugal via Londres',c:true},{t:'Para comprar armas inglesas',c:false},{t:'Propina para nobreza lusa',c:false}],ex:'1825: Brasil comprou reconhecimento.'},
+{q:'[1864] Por que Paraguai lutou até 60% morrer?',opts:[{t:'Exército brasileiro era fraco',c:false},{t:'López era louco e suicida',c:false},{t:'Paraguai esperava Argentina',c:false},{t:'Estado-quartel em guerra total',c:true},{t:'Guerra durou só 3 meses',c:false}],ex:'1864-70: cada casa era fábrica.'},
+{q:'[1896] Por que Canudos prova farsa abolição?',opts:[{t:'Canudos queria volta da monarquia',c:false},{t:'Antônio traficava armas no sertão',c:false},{t:'Canudos era rico em ouro oculto',c:false},{t:'Sem-terra ocupou latifúndio vazio',c:true},{t:'Era movimento só religioso',c:false}],ex:'1896: liberdade sem terra.'},
+{q:'[1904] Por que vacina gerou revolta?',opts:[{t:'Povo antivacina por ignorância',c:false},{t:'Vacina matava quem tomava',c:false},{t:'Igreja proibiu vacina em 1904',c:false},{t:'Só ricos podiam tomar vacina',c:false},{t:'Brigada entrava e despia mulheres',c:true}],ex:'1904: invasão de domicílio.'},
+{q:'[1910] Estopim real da Chibata?',opts:[{t:'Soldos atrasados em 3 meses',c:false},{t:'Comida estragada todo santo dia',c:false},{t:'Falta de férias para marujos',c:false},{t:'Horário excessivo de trabalho',c:false},{t:'Marinheiro morto com 250 chibatas',c:true}],ex:'1910: 250 chibatadas = morte.'},
 ]},
 { nome:"3ª Missão - República", fases:[
-{q:'11. Coluna Prestes andou 25 mil km e nada?',opts:[{t:'Prestes fraco',c:false},{t:'Marcha de propaganda sem base urbana',c:true},{t:'Faltaram armas',c:false}],lab:'COLUNA 25.000KM',sub:'1925-27',ex:'Andar sem parar = não ser derrotado.'},
-{q:'12. Por que deitado era visto como morte?',opts:[{t:'Camas pequenas',c:false},{t:'Deitado = posição de defunto + espírito puxa pé',c:true},{t:'Bichos no chão',c:false}],lab:'PSICOLOGIA',sub:'Dormiam sentados',ex:'Cultura da morte.'},
-{q:'13. O que mais matava nos tumbeiros?',opts:[{t:'Feijoada estragada',c:false},{t:'Angu com areia + água podre = disenteria',c:true},{t:'Pão mofado',c:false}],lab:'TUMBEIROS',sub:'40% mortos',ex:'Areia aumentava peso.'},
-{q:'14. Por que palmatória tinha furo?',opts:[{t:'Mais leve',c:false},{t:'Furo criava vácuo e arrancava pele',c:true},{t:'Assoviar',c:false}],lab:'PALMATÓRIA',sub:'Engenharia da dor',ex:'Bolha de sangue.'},
-{q:'15. Lógica que une tudo?',opts:[{t:'Culpa de Portugal',c:false},{t:'Ecologia de exploração: recurso escasso + poder fragmentado',c:true},{t:'Culpa da Igreja',c:false}],lab:'MAPA FINAL',sub:'Bônus',ex:'Brasil = biologia + geografia + economia.'},
+{q:'[1925] Por que Coluna andou 25 mil km?',opts:[{t:'Prestes era covarde na hora H',c:false},{t:'Sem base urbana + sem estradas',c:true},{t:'Faltou munição no meio',c:false},{t:'Traição de Juarez Távora',c:false},{t:'EUA interveio com aviões',c:false}],ex:'1925: andavam pra não serem cercados.'},
+{q:'[1880] Por que dormir deitado era tabu?',opts:[{t:'Camas eram pequenas demais',c:false},{t:'Calor excessivo no sertão',c:false},{t:'Preguiça de fazer a cama',c:false},{t:'Deitado = defunto, espírito puxa pé',c:true},{t:'Só influência indígena',c:false}],ex:'Até 1880: medo de morte + cobras.'},
+{q:'[1550] O que mais matava nos tumbeiros?',opts:[{t:'Fome por falta de feijoada',c:false},{t:'Frio no porão do navio',c:false},{t:'Briga entre os escravos',c:false},{t:'Suicídio coletivo no mar',c:false},{t:'Angu com areia + água podre',c:true}],ex:'1550: 40% morriam, areia pra peso.'},
+{q:'[1590] Por que palmatória tinha furo?',opts:[{t:'Para ser mais leve na mão',c:false},{t:'Para assoviar e assustar',c:false},{t:'Para pendurar na parede',c:false},{t:'Furo criava vácuo e arrancava pele',c:true},{t:'Era defeito de fabricação',c:false}],ex:'1590: engenharia da dor.'},
+{q:'[1500] Lógica que une tudo no mapa?',opts:[{t:'Culpa exclusiva de Portugal',c:false},{t:'Culpa da Igreja Católica',c:false},{t:'Falta de líderes bons',c:false},{t:'Clima tropical preguiçoso',c:false},{t:'Recurso escasso + coerção',c:true}],ex:'1500-2026: sistema, não erro.'},
 ]}
 ];
+
 let langAtual=localStorage.getItem('prisma_lang')||'pt-BR';
 let missaoAtual=0,faseAtual=0,pontos=0,faseEmbaralhada=null,gameOver=false;
-
 function render(){
  const box=document.getElementById('quizBox');
  const downloadHero=document.getElementById('downloadHero');
  const ctaHero=document.getElementById('ctaHero');
  if(downloadHero) downloadHero.style.display=(missaoAtual>=missoes.length&&pontos>=15&&!gameOver)?'block':'none';
  if(ctaHero) ctaHero.style.display=(missaoAtual>=missoes.length&&pontos>=15&&!gameOver)?'none':'block';
-
  if(missaoAtual>=missoes.length){
   if(pontos<15||gameOver){
    box.innerHTML=`<div style="text-align:center;padding:24px 0"><h2 style="font-family:'Cormorant Garamond';font-size:24px;color:#ef4444">VOCÊ FALHOU - ${pontos}/15</h2><p style="font-size:10px;opacity:.5;margin-top:6px">1 erro = perde tudo</p><button onclick="location.reload()" style="background:var(--ouro);color:#121212;padding:12px 20px;border-radius:30px;border:0;font-weight:800;margin-top:16px;width:100%;max-width:260px;cursor:pointer">🔄 RECOMEÇAR</button></div>`; return;
   }
-  box.innerHTML=`<div style="text-align:center;padding:18px 0"><h2 style="font-family:'Cormorant Garamond';font-size:26px">3 MISSÕES CONCLUÍDAS! 15/15!</h2><a href="50_mapas_mentais_prisma.pdf" download style="background:var(--ouro);color:#121212;padding:12px 18px;border-radius:30px;display:inline-flex;margin-top:14px;text-decoration:none;font-weight:800">📥 BAIXAR PDF 50 MAPAS</a><br><a href="https://pay.hotmart.com/W107939791Y?checkoutMode=10" target="_blank" style="color:var(--ouro);font-size:10px;margin-top:12px;display:inline-block">+ E-book completo R$69,90 →</a></div>`;
-  if(downloadHero) downloadHero.style.display='block';
-  if(ctaHero) ctaHero.style.display='none';
-  return;
+  box.innerHTML=`<div style="text-align:center;padding:18px 0"><h2 style="font-family:'Cormorant Garamond';font-size:26px">3 MISSÕES CONCLUÍDAS! 15/15!</h2><a href="50_mapas_mentais_prisma.pdf" download style="background:var(--ouro);color:#121212;padding:12px 18px;border-radius:30px;display:inline-flex;margin-top:14px;text-decoration:none;font-weight:800">📥 BAIXAR PDF 50 MAPAS</a><br><a href="https://pay.hotmart.com/W107939791Y?checkoutMode=10" target="_blank" style="color:var(--ouro);font-size:10px;margin-top:12px;display:inline-block">+ E-book completo R$69,90 →</a></div>`; return;
  }
  const missao=missoes[missaoAtual];
  const f=missao.fases[faseAtual];
- if(!faseEmbaralhada||faseEmbaralhada.q!==f.q){faseEmbaralhada={q:f.q,opts:shuffle(f.opts),lab:f.lab,sub:f.sub,ex:f.ex};}
+ if(!faseEmbaralhada||faseEmbaralhada.index!==`${missaoAtual}-${faseAtual}`){
+   faseEmbaralhada={index:`${missaoAtual}-${faseAtual}`,q:f.q,ano:f.ano,opts:shuffle(f.opts),ex:f.ex};
+ }
  document.getElementById('d1').className='missao-dot'+(missaoAtual===0?' ativa':missaoAtual>0?' ok':'');
  document.getElementById('d2').className='missao-dot'+(missaoAtual===1?' ativa':missaoAtual>1?' ok':'');
  document.getElementById('d3').className='missao-dot'+(missaoAtual===2?' ativa':'');
- box.innerHTML=`<div style="display:flex;justify-content:space-between"><span style="font-size:9px;color:var(--ouro)">${missao.nome.toUpperCase()} • ${faseAtual+1}/5</span><span style="font-size:9px;opacity:.4">${pontos} PTS</span></div><div class="mapa-area"><span class="material-icons" style="font-size:40px;color:var(--ouro);opacity:.6">map</span><span class="pin">${faseEmbaralhada.lab}</span><span class="sub">${faseEmbaralhada.sub}</span></div><div class="progress"><span style="width:${((missaoAtual*5+faseAtual)/15)*100}%"></span></div><h2>${faseEmbaralhada.q}</h2><div id="ops">${faseEmbaralhada.opts.map((o,i)=>`<div class="opcao" data-c="${o.c}"><b>${String.fromCharCode(65+i)}</b><span>${o.t}</span></div>`).join('')}</div><div class="explica" id="exp"></div><button class="btn-next" id="nextBtn">${i18n[langAtual].prox}</button>`;
+ box.innerHTML=`
+  <div style="display:flex;justify-content:space-between"><span style="font-size:9px;color:var(--ouro)">${missao.nome.toUpperCase()} • ${faseAtual+1}/5</span><span style="font-size:9px;opacity:.4">${pontos} PTS</span></div>
+  <div class="progress"><span style="width:${((missaoAtual*5+faseAtual)/15)*100}%"></span></div>
+  <div style="margin:14px 0 8px 0;display:flex;gap:8px;align-items:center">
+    <span style="background:rgba(238,188,108,0.15);border:1px solid rgba(238,188,108,0.3);color:var(--ouro);font-family:'Cinzel',serif;font-size:9px;letter-spacing:0.15em;padding:4px 10px;border-radius:20px">${faseEmbaralhada.ano}</span>
+    <span style="font-size:8px;opacity:.35;font-family:'Inter',sans-serif;letter-spacing:0.1em">PERÍODO HISTÓRICO</span>
+  </div>
+  <h2 style="font-family:'Cormorant Garamond';font-size:20px;line-height:1.3;margin:8px 0 16px 0">${faseEmbaralhada.q}</h2>
+  <div id="ops">${faseEmbaralhada.opts.map((o,i)=>`<div class="opcao" data-c="${o.c}"><b>${String.fromCharCode(65+i)}</b><span>${o.t}</span></div>`).join('')}</div>
+  <div class="explica" id="exp"></div>
+  <button class="btn-next" id="nextBtn">${i18n[langAtual].prox}</button>`;
  document.querySelectorAll('.opcao').forEach(el=>el.addEventListener('click',()=>{
    if(gameOver) return;
    const isCorrect=el.dataset.c==='true';
@@ -244,15 +243,14 @@ function aplicarIdioma(l){
  langAtual=l; localStorage.setItem('prisma_lang',l);
  document.querySelectorAll('.lang-switch button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
  document.querySelectorAll('[data-pt-BR]').forEach(el=>{const t=el.getAttribute('data-'+l)||el.getAttribute('data-pt-BR'); if(t) el.textContent=t;});
- const t=i18n[l]||i18n['pt-BR'];
- document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(t[k]) el.textContent=t[k];});
+ document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(i18n[l]&&i18n[l][k]) el.textContent=i18n[l][k];});
  const hoje=new Date();
  const map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};
  const tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};
  try{
   const fmtLong=new Intl.DateTimeFormat(map[l],{dateStyle:'long',timeZone:tz[l]}).format(hoje);
   const fmtFull=new Intl.DateTimeFormat(map[l],{dateStyle:'full',timeZone:tz[l]}).format(hoje);
-  document.getElementById('dataHoje').textContent=`📅 ${t.data} ${fmtLong}`;
+  document.getElementById('dataHoje').textContent=`📅 ${i18n[l].data} ${fmtLong}`;
   document.getElementById('dataLocalizadaMenu').textContent=fmtFull;
   document.getElementById('dataLocalizada').textContent=fmtFull;
   document.getElementById('dataFooterQuiz').textContent=fmtLong;
@@ -266,7 +264,6 @@ document.getElementById('hambBtn').addEventListener('click',e=>{e.stopPropagatio
 document.addEventListener('click',e=>{if(!nav.contains(e.target)){nav.classList.remove('menu-aberto'); document.body.style.overflow=''}});
 document.querySelectorAll('.lang-switch button').forEach(b=>b.addEventListener('click',()=>aplicarIdioma(b.dataset.lang)));
 aplicarIdioma(langAtual);
-</script>
 </script>
 </body>
 </html>
