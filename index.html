@@ -139,9 +139,7 @@ p,li,span,a{font-weight:300} strong,b{font-weight:500;color:var(--sepia-titulo)}
       <a href="https://pay.hotmart.com/S107552304I" target="_blank" style="display:inline-block;background:#D4AF37;color:#0D0D0B;padding:12px 28px;border-radius:100px;text-decoration:none;font-size:10px;letter-spacing:0.18em">COMPRAR E-BOOK - R$69,90</a>
     </div>
 
-  
-<!-- CAPA COM ZOOM AO CLICAR -->
-<!-- CAPA FINAL - FUNCIONA EM TUDO -->
+  <!-- CAPA COM ZOOM AO CLICAR -->
 <div style="max-width:300px;margin:0 auto;text-align:center">
   <style>
     #thumbCapa{width:100%;border-radius:8px;cursor:zoom-in;display:block}
@@ -149,30 +147,28 @@ p,li,span,a{font-weight:300} strong,b{font-weight:500;color:var(--sepia-titulo)}
     #modalCapa.on{display:block}
     #modalCapa img{width:100%;max-width:650px;height:auto;margin:0 auto;display:block;border-radius:8px;cursor:zoom-in;transition:0.25s}
     #modalCapa img.lupa{max-width:1000px;cursor:zoom-out}
-   
-
-#btnFecha{
-  position:fixed;top:16px;right:16px;
-  width:28px;height:28px;
-  border-radius:50%;
-  background:rgba(20,18,12,0.9);
-  color:#D4AF37;
-  font-size:14px;
-  display:grid;place-items:center;
-  cursor:pointer;z-index:100000;
-  border:1px solid rgba(212,175,55,0.35);
-  backdrop-filter:blur(6px);
-  box-shadow:0 4px 12px rgba(0,0,0,0.5);
-}
-
-
-
-
+    #btnFecha{
+      position:fixed;top:16px;right:16px;
+      width:28px;height:28px;
+      border-radius:50%;
+      background:rgba(20,18,12,0.9);
+      color:#D4AF37;
+      font-size:14px;
+      display:grid;place-items:center;
+      cursor:pointer;z-index:100000;
+      border:1px solid rgba(212,175,55,0.35);
+      backdrop-filter:blur(6px);
+      box-shadow:0 4px 12px rgba(0,0,0,0.5);
+    }
     @media(min-width:1024px){ #modalCapa img{max-width:700px} }
   </style>
 
   <img src="/img/primeira_edição.webp" id="thumbCapa" alt="Prisma Histórico" loading="lazy">
-  <p style="font-size:9px;letter-spacing:0.22em;color:#D4AF37;margin-top:8px">CLIQUE PARA VER EM HD</p>
+  <p style="font-size:9px;letter-spacing:0.22em;color:#D4AF37;margin-top:8px"
+     data-pt-BR="CLIQUE PARA VER EM HD"
+     data-en="CLICK TO VIEW IN HD"
+     data-es="HAZ CLIC PARA VER EN HD"
+     data-fr="CLIQUEZ POUR VOIR EN HD">CLIQUE PARA VER EM HD</p>
 
   <div id="modalCapa">
     <div id="btnFecha">✕</div>
@@ -186,7 +182,7 @@ p,li,span,a{font-weight:300} strong,b{font-weight:500;color:var(--sepia-titulo)}
     fotoHD.onclick = (e) => { e.stopPropagation(); fotoHD.classList.toggle('lupa'); }
   </script>
 </div>
-</section>
+
 
 <section class="bloco-gavetas">
 <details class="gaveta" open>
@@ -195,7 +191,7 @@ p,li,span,a{font-weight:300} strong,b{font-weight:500;color:var(--sepia-titulo)}
 <span class="prisma-data" data-pt-BR="ANÁLISE ESPECIALIZADA • ENGENHARIA NAVAL • MÉTODO DA CAVERNA-MESTRA" data-en="SPECIALIZED ANALYSIS • NAVAL ENGINEERING • MASTER-FRAME METHOD" data-es="ANÁLISIS ESPECIALIZADO • INGENIERÍA NAVAL • MÉTODO DE LA CUADERNA MAESTRA" data-fr="ANALYSE SPÉCIALISÉE • GÉNIE NAVAL • MÉTHODE DU COUPLE MAÎTRE">ANÁLISE ESPECIALIZADA • ENGENHARIA NAVAL • MÉTODO DA CAVERNA-MESTRA</span>
 <div class="gaveta-tit" data-pt-BR="História Colonial e <em>Tecnologia Marítima</em>" data-en="Colonial History and <em>Maritime Technology</em>" data-es="Historia Colonial y <em>Tecnología Marítima</em>" data-fr="Histoire Coloniale et <em>Technologie Maritime</em>">História Colonial e <em>Tecnologia Marítima</em></div>
 </div>
-<div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px"><span class="gaveta-data" data-pt-BR="7 DE MAIO DE 2026" data-en="MAY 7, 2026" data-es="7 DE MAYO DE 2026" data-fr="7 MAI 2026">7 DE MAIO DE 2026</span><div class="gaveta-icone">▼</div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px"><span class="gaveta-data" data-pt-BR="7 DE MAIO DE 2026" data-en="MAY 7, 2026" data-es="7 DE MAYO DE 2026" data-fr="7 MAI 2026"></span><div class="gaveta-icone">▼</div></div>
 </summary>
 <div class="gaveta-conteudo">
 <p data-pt-BR="Como analista especializado em <strong>História Colonial e Tecnologia Marítima</strong>, compreendo a engenharia e a ciência da expansão portuguesa como um <strong>sistema integrado</strong> que dispensa divisões artificiais, funcionando através de uma simbiose contínua entre a <strong>carpintaria, a geometria, a astronomia e o direito internacional</strong>." data-en="As a specialist analyst in <strong>Colonial History and Maritime Technology</strong>, I understand Portuguese expansion engineering as an <strong>integrated system</strong> between <strong>carpentry, geometry, astronomy and international law</strong>." data-es="Como analista especializado en <strong>Historia Colonial y Tecnología Marítima</strong>, comprendo la ingeniería de la expansión portuguesa como un <strong>sistema integrado</strong> entre <strong>carpintería, geometría, astronomía y derecho internacional</strong>." data-fr="En tant qu'analyste spécialisé en <strong>Histoire Coloniale et Technologie Maritime</strong>, je comprends l'ingénierie de l'expansion portugaise comme un <strong>système intégré</strong> entre <strong>charpenterie, géométrie, astronomie et droit international</strong>.">Como analista especializado em <strong>História Colonial e Tecnologia Marítima</strong>, compreendo a engenharia e a ciência da expansão portuguesa como um <strong>sistema integrado</strong> que dispensa divisões artificiais, funcionando através de uma simbiose contínua entre a <strong>carpintaria, a geometria, a astronomia e o direito internacional</strong>.</p>
