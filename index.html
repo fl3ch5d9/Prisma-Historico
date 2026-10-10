@@ -77,6 +77,58 @@ p,li,span,a{font-weight:300} strong,b{font-weight:500;color:var(--sepia-titulo)}
 @media(max-width:1024px){#prismaFooter .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:36px}#prismaFooter .footer-grid > div:last-child{grid-column:1 / -1;max-width:420px;margin-top:10px}}
 @media(max-width:768px){#prismaFooter{padding:50px 5% 20px}#prismaFooter .footer-grid{grid-template-columns:1fr 1fr;gap:32px}#prismaFooter .footer-grid > div:first-child{grid-column:1 / -1}#prismaFooter .footer-grid > div:last-child{grid-column:1 / -1;max-width:100%}}
 @media(max-width:480px){#prismaFooter .footer-grid{grid-template-columns:1fr;gap:28px;text-align:left}#prismaFooter.footer-desc{max-width:100%}#prismaFooter.footer-bottom{flex-direction:column;align-items:center;text-align:center;gap:8px}}
+
+
+/* FIX CELULAR - usa só suas variáveis */
+@media(max-width:1024px){
+  .aula-topicos{ grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:640px){
+  html,body{ padding-top: 68px; }
+  
+  .prisma-nav{
+    padding: 10px 16px;
+  }
+  .prisma-logo{ font-size: 14px; }
+
+  .aula-topicos{
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    margin: 24px auto 20px;
+    gap: 16px;
+  }
+  .topico-row{
+    padding: 22px 18px;
+  }
+
+  .bloco-gavetas{
+    padding: 0 16px;
+  }
+  .gaveta summary{
+    padding: 18px 16px;
+  }
+  .gaveta-conteudo{
+    padding: 0 16px 24px;
+  }
+
+  .ebook-intro{
+    padding: 32px 16px;
+    margin: 30px 16px;
+    gap: 24px;
+  }
+
+  /* garante que nada estica pro lado */
+  .aula-topicos, .bloco-gavetas, .ebook-intro, #prismaFooter{
+    width: 100%;
+    max-width: 100vw;
+  }
+}
+
+
+
+
+
 </style>
 </head>
 <body>
