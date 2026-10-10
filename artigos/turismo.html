@@ -250,8 +250,104 @@ html,body{overflow-x:hidden;width:100%;max-width:100vw;background:var(--preto);c
   </ul>
 </nav>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- NOVA SECTION - GUIA CREDENCIADO + CADASTUR -->
+<style>
+ .prisma-cred-section{background:var(--preto); padding:70px 5%; max-width:1250px; margin:0 auto; width:100%; box-sizing:border-box;}
+ .prisma-cred-title{color:var(--ouro); font-family:'Cormorant Garamond'; font-size:clamp(28px,4vw,42px); font-weight:500; text-align:center; letter-spacing:0.04em; margin-bottom:8px;}
+ .prisma-cred-sub{color:var(--ouro); width:60px; height:2px; background:var(--ouro); margin:0 auto 45px auto; opacity:0.6;}
+ .prisma-cred-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:22px;}
+ .prisma-cred-card{background:var(--preto2); border:1px solid rgba(255,255,255,0.06); border-left:3px solid var(--ouro); border-radius:16px; padding:28px 26px; transition:0.3s;}
+ .prisma-cred-card:hover{border-color:rgba(238,188,108,0.2); transform:translateY(-3px);}
+ .prisma-cred-card h3{color:var(--ouro); font-family:'Cormorant Garamond'; font-size:22px; font-weight:400; margin-bottom:16px;}
+ .prisma-cred-card p{color:#FFFFFF; font-weight:200; font-size:13.5px; line-height:1.9; opacity:0.9;}
+ .prisma-cred-card p strong{font-weight:400; color:#fff;}
+ .prisma-cred-list{list-style:none; padding:0; margin-top:18px;}
+ .prisma-cred-list li{display:flex; gap:10px; margin-bottom:11px; font-size:12.5px; font-weight:200; line-height:1.6; color:#fff;}
+ .prisma-cred-list li::before{content:'●'; color:var(--ouro); font-size:8px; margin-top:6px; flex-shrink:0;}
+ .prisma-cred-list li b{color:var(--ouro); font-weight:400;}
+ .prisma-cred-date{display:inline-block; margin-top:18px; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ouro); background:rgba(238,188,108,0.08); border:1px solid rgba(238,188,108,0.14); padding:6px 10px; border-radius:100px; opacity:0.8;}
+ .prisma-cred-quote{background:#121212; border:1px dashed rgba(238,188,108,0.18); border-radius:10px; padding:14px; margin-top:18px; text-align:center; color:var(--sepia); font-size:12px; font-style:italic; font-weight:200;}
+</style>
+
+<section class="prisma-cred-section">
+  <h2 class="prisma-cred-title" data-pt="Por que um Guia Credenciado?" data-en="Why a Certified Guide?" data-es="¿Por qué un Guía Acreditado?" data-fr="Pourquoi un Guide Agréé?">Por que um Guia Credenciado?</h2>
+  <div class="prisma-cred-sub"></div>
+
+  <div class="prisma-cred-grid">
+
+    <div class="prisma-cred-card">
+      <h3 data-pt="O Guia de Verdade" data-en="The Real Guide" data-es="El Guía de Verdad" data-fr="Le Vrai Guide">O Guia de Verdade</h3>
+      <p data-pt="Viajar não é só tirar foto. É entender a história por trás de cada rua. O Guia de Turismo credenciado pelo Ministério do Turismo, regulamentado pela Lei nº 8.623/93, não te leva só até o lugar. Ele te faz enxergar o lugar com lógica cirúrgica." data-en="Traveling is not just taking photos. It is understanding the history behind each street. The certified guide does not just take you to the place, he makes you see it." data-es="Viajar no es solo tomar fotos. Es entender la historia detrás de cada calle. El guía acreditado no solo te lleva al lugar, te hace ver el lugar." data-fr="Voyager ce n'est pas que prendre des photos. C'est comprendre l'histoire derrière chaque rue. Le guide agréé ne vous amène pas seulement au lieu, il vous le fait voir.">Viajar não é só tirar foto. É entender a história por trás de cada rua. O Guia de Turismo credenciado pelo Ministério do Turismo, regulamentado pela <strong>Lei nº 8.623/93</strong>, não te leva só até o lugar. Ele te faz enxergar o lugar com lógica cirúrgica.</p>
+      <ul class="prisma-cred-list">
+        <li><span><b>Segurança:</b> Conhece roteiro, riscos, atalhos e melhores horários. Você não cai em cilada.</span></li>
+        <li><span><b>História Real:</b> Nada de fake da internet. É fonte, documento e pesquisa de 6 meses de Sorocaba.</span></li>
+        <li><span><b>Experiência Viva:</b> Transforma caminhada em viagem no tempo com Floreamento que prende.</span></li>
+      </ul>
+      <span class="prisma-cred-date" data-date="guia">Atualizado em: 09/10/2026</span>
+    </div>
+
+    <div class="prisma-cred-card">
+      <h3 data-pt="A Força do CADASTUR" data-en="The Power of CADASTUR" data-es="La Fuerza del CADASTUR" data-fr="La Force du CADASTUR">A Força do CADASTUR</h3>
+      <p data-pt="O CADASTUR é o Cadastro de Prestadores de Serviços Turísticos do Ministério do Turismo. É o CRM do médico, a OAB do advogado. Sem ele, o exercício é ilegal. Com ele, é garantia de que você está com um profissional de verdade." data-en="CADASTUR is the official registry of the Ministry of Tourism. Without it, the activity is illegal. With it, you have a guarantee of a real professional." data-es="CADASTUR es el registro oficial del Ministerio de Turismo. Sin él, la actividad es ilegal. Con él, es garantía de profesional real." data-fr="CADASTUR est le registre officiel du Ministère du Tourisme. Sans lui, l'activité est illégale. Avec lui, garantie de vrai professionnel.">O <strong>CADASTUR é o Cadastro de Prestadores de Serviços Turísticos do Ministério do Turismo</strong>. É o CRM do médico, a OAB do advogado. Sem ele, o exercício é ilegal. Com ele, é garantia de que você está com um profissional de verdade.</p>
+      <ul class="prisma-cred-list">
+        <li><span><b>Garantia Federal:</b> Formação técnica comprovada e registro ativo que pode ser consultado no site oficial.</span></li>
+        <li><span><b>Segurança Jurídica:</b> Passeio com seguro, respaldo e sem risco de ser interrompido por fiscalização.</span></li>
+        <li><span><b>Profissionalismo:</b> Valoriza quem paga taxas, estuda e vive do turismo em Sorocaba.</span></li>
+      </ul>
+      <span class="prisma-cred-date" data-date="cadastur">Registro verificado em: 09/10/2026</span>
+    </div>
+
+    <div class="prisma-cred-card">
+      <h3 data-pt="Nativo vs Professor vs Guia" data-en="Native vs Teacher vs Guide" data-es="Nativo vs Profesor vs Guía" data-fr="Natif vs Prof vs Guide">Nativo vs Professor vs Guia</h3>
+      <p data-pt="Muita gente confunde. Vamos com respeito:" data-en="Many people confuse it. Let's be respectful:" data-es="Mucha gente se confunde. Vamos con respeto:" data-fr="Beaucoup confondent. Avec respect :"><span style="opacity:0.6">Muita gente confunde. Vamos com respeito:</span></p>
+      <ul class="prisma-cred-list">
+        <li><span><b>Nativo:</b> Ama a cidade e conta causos ótimos, mas sem técnica de condução, primeiros socorros e roteirização.</span></li>
+        <li><span><b>Professor:</b> Conhecimento acadêmico incrível, mas formação para sala de aula, não para 3h no sol conduzindo 15 turistas.</span></li>
+        <li><span><b>Guia Credenciado Prisma:</b> Une os dois mundos + técnica, lei, CADASTUR e 6 meses de pesquisa só de Sorocaba. Sabe a história e COMO te fazer viver ela.</span></li>
+      </ul>
+      <div class="prisma-cred-quote" data-pt="Nativo conta causos. Professor dá aula. Guia credenciado te faz VIVER a cidade." data-en="Native tells tales. Teacher gives class. Certified guide makes you LIVE the city." data-es="Nativo cuenta historias. Profesor da clase. Guía acreditado te hace VIVIR la ciudad." data-fr="Natif raconte des histoires. Prof fait cours. Guide agréé vous fait VIVRE la ville.">Nativo conta causos. Professor dá aula. Guia credenciado te faz VIVER a cidade.</div>
+      <span class="prisma-cred-date" data-date="comparativo">Análise publicada em: 09/10/2026</span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// Atualiza as datas automaticamente com data localizada
+document.querySelectorAll('[data-date]').forEach(el=>{
+  const lang = localStorage.getItem('prisma_lang') || 'pt';
+  const hoje = new Date();
+  const fmt = new Intl.DateTimeFormat(lang==='pt'?'pt-BR':lang, {day:'2-digit', month:'2-digit', year:'numeric', timeZone:'America/Sao_Paulo'});
+  const prefix = {pt: el.textContent.split(':')[0]+': ', en: 'Updated on: ', es: 'Actualizado en: ', fr: 'Mis à jour le: '}[lang] || '';
+  el.textContent = prefix + fmt.format(hoje);
+});
+</script>
+
+
+
+
+
+
+
+
+
 <div class="hero-tur">
-  <span class="tag" data-pt="Roteiros secretos • São Roque a Ouro Preto" data-en="Secret routes • São Roque to Ouro Preto" data-es="Rutas secretas • São Roque a Ouro Preto" data-fr="Itinéraires secrets • São Roque à Ouro Preto">Roteiros secretos • São Roque a Ouro Preto</span>
+  <span class="tag" data-pt="Roteiros secretos •  Ouro Preto" data-en="Secret routes • São Roque to Ouro Preto" data-es="Rutas secretas • São Roque a Ouro Preto" data-fr="Itinéraires secrets • São Roque à Ouro Preto">Roteiros secretos • São Roque a Ouro Preto</span>
   <h1 data-pt="Turismo <span>Colonial</span>" data-en="Colonial <span>Tourism</span>" data-es="Turismo <span>Colonial</span>" data-fr="Tourisme <span>Colonial</span>">Turismo <span>Colonial</span></h1>
   <p data-pt="Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica." data-en="No memorization. Only the real Brazil guides don't tell you. From São Roque coffee to Minas gold, with surgical logic." data-es="Sin memorización. Solo el Brasil real que los guías no cuentan. Del café de São Roque al oro de Minas." data-fr="Pas de par cœur. Seulement le vrai Brésil que les guides ne racontent pas. Du café de São Roque à l'or du Minas.">Sem decoreba. Só o Brasil real que os guias não contam. Do café de São Roque ao ouro de Minas, com lógica cirúrgica.</p>
 </div>
