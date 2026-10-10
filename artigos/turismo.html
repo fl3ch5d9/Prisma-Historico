@@ -362,7 +362,34 @@ document.querySelectorAll('[data-date]').forEach(el=>{
       <div class="pin" style="top:20%;left:70%"></div>
     </div>
   </div>
-  <div class="roteiros">
+  
+
+<style>
+.roteiros{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.rota-card{
+  background: #171410;
+  border: 1px solid rgba(212,175,55,0.14);
+  border-left: 2px solid #D4AF37;
+  border-radius: 0 16px 16px 0;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.rota-top{ display:flex; justify-content:space-between; color:#D4AF37; font-size:11px; }
+.rota-meta{ display:flex; gap:12px; margin-top:auto; color:#A99B85; font-size:12px; }
+.sep{ border-top:1px dashed rgba(212,175,55,0.2); padding-top:12px; color:#D6D1C7; font-size:13px; }
+@media(max-width:850px){ .roteiros{ grid-template-columns:1fr; } }
+</style>
+
+<div class="roteiros">
     <div class="rota-card">
       <div class="rota-top"><i>📍 São Roque • SP</i><b>2h de SP</b></div>
       <h3 data-pt="Brasital e Vinícolas do Café" data-en="Brasital and Coffee Wineries" data-es="Brasital y Viñedos del Café" data-fr="Brasital et Vignobles du Café">Brasital e Vinícolas do Café</h3>
@@ -377,8 +404,13 @@ document.querySelectorAll('[data-date]').forEach(el=>{
       <div class="rota-meta"><span data-pt="⏱ 2 dias" data-en="⏱ 2 days" data-es="⏱ 2 días" data-fr="⏱ 2 jours">⏱ 2 dias</span><span>⛏ Mina</span><span>📜 1720</span></div>
       <div class="sep" data-pt="Roteiro secreto: Mina Chico Rei + Aleijadinho sem fila, chega 7h." data-en="Secret route: Chico Rei Mine + Aleijadinho no queue, arrive 7am." data-es="Ruta secreta: Mina Chico Rei + Aleijadinho sin cola, llega 7h." data-fr="Itinéraire secret: Mine Chico Rei + Aleijadinho sans file, arrivez 7h.">Roteiro secreto: Mina Chico Rei + Aleijadinho sem fila, chega 7h.</div>
     </div>
-  </div>
 </div>
+
+
+
+
+
+
 
 <div class="cta-tur">
   <h3 data-pt="Quer o mapa completo com GPS offline?" data-en="Want the full map with offline GPS?" data-es="¿Quieres el mapa completo con GPS offline?" data-fr="Vous voulez la carte complète avec GPS offline?">Quer o mapa completo com GPS offline?</h3>
@@ -417,7 +449,7 @@ document.querySelectorAll('[data-date]').forEach(el=>{
     </div>
     <div class="footer-bottom">
       <span>© <span id="anoAtual">2026</span> Prisma Histórico</span>
-      <span id="dataLocalizada" data-pt="Feito com ☕ e 4h de sono em São Paulo" data-en="Made with ☕ and 4h of sleep in São Paulo" data-es="Hecho con ☕ y 4h de sueño en São Paulo" data-fr="Fait avec ☕ et 4h de sommeil à São Paulo">Feito com ☕ e 4h de sono em São Paulo</span>
+      <span id="dataLocalizada" data-pt="Feito com ☕ " data-en="Made with ☕" data-es="Hecho con ☕ " data-fr="Fait avec ☕ ">Feito com ☕ </span>
     </div>
   </div>
 </footer>
