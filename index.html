@@ -1,11 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tecnologia Naval | Prisma Histórico</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@200;300;400&family=Cinzel:wght@400&display=swap" rel="stylesheet">
+<title>Prisma Histórico - Ebook para Concursos | 4 Idiomas</title>
+<meta name="description" content="Prisma Histórico - Ebook completo e atualizado para concursos. Conteúdo em 4 idiomas para sua aprovação.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.prismahistorico.com.br/">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!-- CONTROLE DE IDIOMA - ISSO QUE FALTAVA -->
+<link rel="alternate" hreflang="pt-br" href="https://www.prismahistorico.com.br/pt/" />
+<link rel="alternate" hreflang="en" href="https://www.prismahistorico.com.br/en/" />
+<link rel="alternate" hreflang="es" href="https://www.prismahistorico.com.br/es/" />
+<link rel="alternate" hreflang="it" href="https://www.prismahistorico.com.br/it/" />
+<link rel="alternate" hreflang="x-default" href="https://www.prismahistorico.com.br/" />
+
+<!-- Pra aparecer bonito no WhatsApp/Google -->
+<meta property="og:title" content="Prisma Histórico - Ebook para Concursos">
+<meta property="og:description" content="O ebook mais completo para sua aprovação em concursos.">
+<meta property="og:url" content="https://www.prismahistorico.com.br/">
+<meta property="og:type" content="website">
+
+<!--codigo Adsense-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1150917586987745"
+     crossorigin="anonymous"></script>
+
+
+</head>
 <style>
 :root{--ouro:#D4AF37;--creme:#F2EDE3;--sepia:#D9C5A0;--sepia2:#A99B85;--borda:rgba(212,175,55,0.14);--preto:#0D0D0B;--preto2:#171410}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -13,8 +34,20 @@ body{background:var(--preto);color:var(--creme);font-family:'Inter',sans-serif;f
 .prisma-nav{position:fixed;top:0;left:0;width:100%;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:rgba(13,13,11,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda)}
 .prisma-logo{font-family:'Cinzel',serif;font-size:20px;letter-spacing:.22em} .prisma-logo span{color:var(--ouro)}
 .lang-switch{display:flex;gap:5px} .lang-switch button{background:transparent;border:1px solid var(--borda);color:var(--sepia2);padding:6px 9px;border-radius:20px;cursor:pointer;font-size:10px;min-width:36px;min-height:34px} .lang-switch button.active{background:var(--ouro);color:#0D0D0B;border-color:var(--ouro)}
-.prisma-menu-hamburguer{width:46px;height:46px;border:1px solid var(--borda);background:transparent;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer} .prisma-menu-hamburguer span{width:18px;height:1px;background:var(--ouro);display:block}
-.prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:82vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:20px;transform:translateX(-100%);transition:.28s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)} .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all} .prisma-menu-links li a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:.7}
+
+/*hamburguer */
+  .prisma-menu-hamburguer{width:52px;height:52px;border:1px solid var(--borda);background:transparent;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;z-index:10001;border-radius:50%}
+   .prisma-menu-hamburguer span{width:20px;height:1px;background:var(--ouro);display:block;transition:.25s}
+   .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+   .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(2){opacity:0}
+   .prisma-nav.menu-aberto .prisma-menu-hamburguer span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+   .prisma-menu-links{position:fixed;top:0;left:0;width:320px;max-width:80vw;height:100vh;background:#0A0A0A;list-style:none;display:flex;flex-direction:column;padding:110px 0 0 30px;gap:22px;transform:translateX(-100%);transition:.28s;pointer-events:none;z-index:10000;border-right:1px solid var(--borda)}
+   .prisma-nav.menu-aberto .prisma-menu-links{transform:translateX(0);pointer-events:all}
+   .prisma-menu-links li a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sepia);text-decoration:none;display:flex;align-items:center;gap:12px;opacity:.7;font-weight:200}
+   .prisma-menu-links li a:hover{color:var(--ouro);opacity:1}
+   
+   
+
 .hero{background:linear-gradient(rgba(14,14,14,.55),rgba(14,14,14,.92)),url('/img/mapa-atlantico-1500-safe.webp');background-size:cover;background-position:center 30%;text-align:center;padding:130px 20px 70px}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,68px);line-height:.9;font-weight:300}
 .hero p{color:var(--ouro);margin:18px 0 30px;letter-spacing:.06em}
@@ -91,15 +124,100 @@ blockquote{border-left:1px solid var(--ouro);padding-left:22px;margin:36px 0;fon
       <label>DATA</label><div class="box" id="dataLocalizada">quarta-feira, 7 de maio de 2026</div>
     </aside>
 </main>
-<footer id="prismaFooter"><div style="max-width:1200px;margin:0 auto;padding:0 5%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span style="font-family:'Cinzel';font-size:8px;letter-spacing:.28em;color:rgba(217,197,160,.4)">© 2026 Prisma Histórico</span><span style="font-size:10px;color:rgba(169,155,133,.5)">cronologia.prisma.historico@gmail.com</span></div></footer>
+
+
+<style>
+  /* FOOTER CORRIGIDO COM ESPAÇO */
+    #prismaFooter{background:#0A0A0A;border-top:1px solid rgba(238,188,108,.14);padding:70px 5% 26px}
+    #prismaFooter .footer-wrap{max-width:1280px;margin:0 auto;width:100%}
+    #prismaFooter .footer-grid{display:grid;grid-template-columns:1.6fr 0.85fr 0.95fr 1.15fr;gap:52px}
+    #prismaFooter .footer-logo{font-family:'Cormorant Garamond',serif;font-size:30px;letter-spacing:.18em;color:#F5F5F0;line-height:.85;font-weight:300}
+    #prismaFooter .footer-logo span{color:var(--ouro);display:block;font-weight:400}
+    #prismaFooter .footer-desc{font-size:13px;line-height:1.8;color:var(--sepia);margin-top:18px;max-width:310px;font-weight:300;opacity:.8}
+    #prismaFooter .footer-col h4{font-size:10px;letter-spacing:.24em;color:var(--ouro);margin-bottom:20px;font-weight:600;text-transform:uppercase}
+    #prismaFooter .footer-col a{font-size:13px;color:var(--sepia);text-decoration:none;display:block;margin-bottom:13px;font-weight:300;opacity:.75;transition:.2s}
+    #prismaFooter .footer-col a:hover{color:var(--ouro);opacity:1;transform:translateX(4px)}
+    #prismaFooter .footer-news-card{background:#121212;border:1px solid rgba(238,188,108,.12);border-radius:16px;padding:22px}
+    #prismaFooter .footer-news-card p{font-size:12px;color:var(--sepia);line-height:1.6;margin-bottom:14px;font-weight:300}
+    #prismaFooter .footer-news-card input{width:100%;background:#0E0E0E;border:1px solid rgba(238,188,108,.15);border-radius:10px;padding:12px 14px;color:#fff;outline:0;font-size:13px}
+    #prismaFooter .footer-news-card button{width:100%;margin-top:12px;background:var(--ouro);color:#121212;border:0;border-radius:100px;padding:12px;font-weight:700;cursor:pointer;font-size:12px}
+    #prismaFooter .footer-bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:54px;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    #prismaFooter .footer-bottom span{font-size:10.5px;color:var(--sepia);opacity:.4;font-weight:300;letter-spacing:.04em}
+    @media(max-width:1024px){
+      #prismaFooter.footer-grid{grid-template-columns:1fr 1fr 1fr;gap:36px}
+      #prismaFooter .footer-grid > div:last-child{grid-column:1/-1;max-width:420px}
+     .conteudo{flex-direction:column;gap:28px}
+     .ficha{flex:1;width:100%;position:relative;top:0}
+    }
+    @media(max-width:600px){
+      #prismaFooter{padding:44px 5% 20px}
+      #prismaFooter .footer-grid{grid-template-columns:1fr;gap:28px}
+      #prismaFooter .footer-bottom{flex-direction:column;text-align:center}
+     .conteudo{padding:0 4%;margin:30px auto}
+     .hero{padding:110px 16px 50px}
+     .hero h1{font-size:32px!important}
+    }
+  </style>
+
+
+
+
+<footer id="prismaFooter">
+  <div class="footer-wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><span>Prisma</span> Histórico</div>
+        <p class="footer-desc" data-pt-BR="Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica." data-en="Analytical approach to Brazilian History." data-es="Enfoque analítico de la Historia de Brasil." data-fr="Approche analytique de l'Histoire du Brésil.">Abordagem analítica da História do Brasil. Das minas de ouro ao turismo colonial, quebrando a decoreba com lógica cirúrgica.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Navegação" data-en="Navigation" data-es="Navegación" data-fr="Navigation">Navegação</h4>
+        <a href="../index.html" data-pt-BR="Início" data-en="Home" data-es="Inicio" data-fr="Accueil">Início</a>
+        <a href="sobre.html" data-pt-BR="Sobre" data-en="About" data-es="Sobre" data-fr="À propos">Sobre</a>
+        <a href="artigos.html" data-pt-BR="Artigos" data-en="Articles" data-es="Artículos" data-fr="Articles">Artigos</a>
+        <a href="curiosidades.html" data-pt-BR="Curiosidades" data-en="Curiosities" data-es="Curiosidades" data-fr="Curiosités">Curiosidades</a>
+        <a href="quiz.html">Quiz</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Produtos" data-en="Products" data-es="Productos" data-fr="Produits">Produtos</h4>
+        <a href="artigos/ebook.html">📘 E-book</a>
+        <a href="artigos/loja.html" data-pt-BR="🛒 Loja" data-en="🛒 Shop" data-es="🛒 Tienda" data-fr="🛒 Boutique">🛒 Loja</a>
+        <a href="artigos/afiliados.html" data-pt-BR="🤝 Afiliados 40%" data-en="🤝 Affiliates 40%">🤝 Afiliados 40%</a>
+        <a href="artigos/doacao.html" data-pt-BR="💰 Doação" data-en="💰 Donation">💰 Doação</a>
+        <a href="artigos/privacidade.html" data-pt-BR="🔒 Privacidade" data-en="🔒 Privacy">🔒 Privacidade</a>
+        <a href="artigos/termos.html" data-pt-BR="📄 Termos" data-en="📄 Terms">📄 Termos</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-pt-BR="Comprar Agora" data-en="Buy Now" data-es="Comprar Ahora" data-fr="Acheter Maintenant">Comprar Agora</h4>
+        <div class="footer-news-card">
+          <p data-pt-BR=" 250 páginas premium com mapas mentais exclusivos. Acesso imediato." data-en="250 premium pages with exclusive mind maps. Instant access." data-es="250 páginas premium con mapas exclusivos. Acceso inmediato." data-fr="250 pages premium avec cartes exclusives. Accès immédiat.">250 páginas premium com mapas mentais exclusivos. Acesso imediato.</p>
+          <a href="artigos/ebook.html" class="footer-buy-btn" style="background:#D4AF37;color:#0D0D0B;padding:12px 18px;border-radius:30px;font-family:'Cinzel';font-size:10px;font-weight:700;text-decoration:none;display:inline-block;text-align:center;width:100%;margin-top:10px" data-pt-BR="COMPRAR E-BOOK - R$69,90" data-en="BUY E-BOOK - $19.90" data-es="COMPRAR E-BOOK - €19,90" data-fr="ACHETER E-BOOK - 19,90€">COMPRAR E-BOOK - R$69,90</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="anoAtual">2026</span> Prisma Histórico</span><span id="dataLocalizada"></span></div>
+  </div>
+</footer>
+
+
+
+
 <script>
-const nav=document.getElementById('prismaNav');const hambBtn=document.getElementById('hambBtn');
-if(hambBtn&&nav){hambBtn.addEventListener('click',function(e){e.stopPropagation();nav.classList.toggle('menu-aberto');document.body.style.overflow=nav.classList.contains('menu-aberto')?'hidden':'';});}
-document.addEventListener('click',function(e){if(nav&&!nav.contains(e.target)){nav.classList.remove('menu-aberto');document.body.style.overflow='';}});
+//IDIOMAS -  HAMBÚRGUER 
 function aplicarTraducao(lang){localStorage.setItem('prisma_lang',lang);document.querySelectorAll('.lang-switch button').forEach(function(b){b.classList.remove('active');});var btn=document.getElementById('btn-'+lang);if(btn)btn.classList.add('active');document.querySelectorAll('[data-pt-BR]').forEach(function(el){if(el.id==='dataArtigoSecao'||el.id==='dataLocalizada')return;var t=el.getAttribute('data-'+lang)||el.getAttribute('data-pt-BR');if(!t)return;if(t.indexOf('<')!==-1)el.innerHTML=t;else el.textContent=t;});var map={'pt-BR':'pt-BR','en':'en-US','es':'es-ES','fr':'fr-FR'};var tz={'pt-BR':'America/Sao_Paulo','en':'America/New_York','es':'Europe/Madrid','fr':'Europe/Paris'};try{var agora=new Date();var fmt=new Intl.DateTimeFormat(map[lang],{dateStyle:'full',timeZone:tz[lang]});var txt=fmt.format(agora);var a=document.getElementById('dataArtigoSecao');var b=document.getElementById('dataLocalizada');if(a)a.textContent=txt;if(b)b.textContent=txt;}catch(e){}}
 var bPt=document.getElementById('btn-pt-BR');var bEn=document.getElementById('btn-en');var bEs=document.getElementById('btn-es');var bFr=document.getElementById('btn-fr');
 if(bPt)bPt.addEventListener('click',function(){aplicarTraducao('pt-BR');});if(bEn)bEn.addEventListener('click',function(){aplicarTraducao('en');});if(bEs)bEs.addEventListener('click',function(){aplicarTraducao('es');});if(bFr)bFr.addEventListener('click',function(){aplicarTraducao('fr');});
 aplicarTraducao(localStorage.getItem('prisma_lang')||'pt-BR');
+</script>
+
+
+
+<script>
+const nav = document.getElementById('prismaNav');
+const hambBtn = document.getElementById('hambBtn');
+hambBtn.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  nav.classList.toggle('menu-aberto');
+});
 </script>
 </body>
 </html>
